@@ -17,8 +17,8 @@ GLM Analysis (Measured Data)
 In this example we analyse data from a real multichannel fNIRS
 experiment (see :ref:`tut-fnirs-hrf-sim` for a simplified simulated
 analysis). The experiment consists of three conditions
-1) tapping on the left hand,
-2) tapping on the right hand,
+1) tapping with the left hand,
+2) tapping with the right hand,
 3) a control condition where the participant does nothing.
 We use a GLM analysis to examine the neural activity associated with
 the different tapping conditions.
@@ -88,7 +88,7 @@ to meet github memory constraints.
    To view the sensor locations run
    `raw_intensity.plot_sensors()`.
    A sound was presented to indicate which hand the participant should tap.
-   Participants taped their thumb to fingers for 5s.
+   Participants tapped their thumb to their fingers for 5s.
    Conditions were presented in a random order with a randomised inter
    stimulus interval.
 
@@ -274,7 +274,7 @@ line is raised for the duration of the stimulus/condition.
 
     Used Annotations descriptions: ['Control', 'Tapping/Left', 'Tapping/Right']
 
-    Text(0.5, 0, 'Time (s)')
+    Text(0.5, 36.72222222222221, 'Time (s)')
 
 
 
@@ -408,7 +408,7 @@ component followed by an undershoot.
 
     Used Annotations descriptions: ['Control', 'Tapping/Left', 'Tapping/Right']
 
-    Text(0, 0.5, 'Amplitude')
+    Text(42.722222222222214, 0.5, 'Amplitude')
 
 
 
@@ -441,8 +441,8 @@ of a single source detector pair.
 
 
 We then display the results. Note that the control condition sits
-around zero.
-And that the HbO is positive and larger than the HbR, this is to be expected.
+around zero
+and that the HbO is positive and larger than the HbR, this is to be expected.
 Further, we note that for this channel the response to tapping on the
 right hand is larger than the left. And the values are similar to what
 is seen in the epoching tutorial.
@@ -474,7 +474,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f3f48568a30>
+    <matplotlib.collections.LineCollection object at 0x7f4d92249550>
 
 
 
@@ -521,7 +521,7 @@ Analyse regions of interest
 ---------------------------
 
 Or alternatively we can summarise the responses across regions of interest
-for each condition.
+for each condition. And you can plot it with your favorite software.
 
 
 .. code-block:: default
@@ -546,205 +546,177 @@ for each condition.
 
 
 
-.. only:: builder_html
-
-    .. raw:: html
-
-        <div>
-        <style scoped>
-            .dataframe tbody tr th:only-of-type {
-                vertical-align: middle;
-            }
-
-            .dataframe tbody tr th {
-                vertical-align: top;
-            }
-
-            .dataframe thead th {
-                text-align: right;
-            }
-        </style>
-        <table border="1" class="dataframe">
-          <thead>
-            <tr style="text-align: right;">
-              <th></th>
-              <th>Chroma</th>
-              <th>Condition</th>
-              <th>ROI</th>
-              <th>dfe</th>
-              <th>p</th>
-              <th>se</th>
-              <th>t</th>
-              <th>theta</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>0</th>
-              <td>hbo</td>
-              <td>Control</td>
-              <td>Left_ROI</td>
-              <td>9.0</td>
-              <td>0.883756</td>
-              <td>0.972274</td>
-              <td>-0.150413</td>
-              <td>-0.146243</td>
-            </tr>
-            <tr>
-              <th>1</th>
-              <td>hbr</td>
-              <td>Control</td>
-              <td>Left_ROI</td>
-              <td>9.0</td>
-              <td>0.780657</td>
-              <td>0.634913</td>
-              <td>0.286938</td>
-              <td>0.182181</td>
-            </tr>
-            <tr>
-              <th>2</th>
-              <td>hbo</td>
-              <td>Control</td>
-              <td>Right_ROI</td>
-              <td>9.0</td>
-              <td>0.918047</td>
-              <td>0.986590</td>
-              <td>0.105819</td>
-              <td>0.104399</td>
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>hbr</td>
-              <td>Control</td>
-              <td>Right_ROI</td>
-              <td>9.0</td>
-              <td>0.872387</td>
-              <td>0.636521</td>
-              <td>-0.165267</td>
-              <td>-0.105196</td>
-            </tr>
-            <tr>
-              <th>0</th>
-              <td>hbo</td>
-              <td>Tapping/Left</td>
-              <td>Left_ROI</td>
-              <td>9.0</td>
-              <td>0.000411</td>
-              <td>0.982716</td>
-              <td>5.440447</td>
-              <td>5.346417</td>
-            </tr>
-            <tr>
-              <th>1</th>
-              <td>hbr</td>
-              <td>Tapping/Left</td>
-              <td>Left_ROI</td>
-              <td>9.0</td>
-              <td>0.011629</td>
-              <td>0.641765</td>
-              <td>-3.155758</td>
-              <td>-2.025255</td>
-            </tr>
-            <tr>
-              <th>2</th>
-              <td>hbo</td>
-              <td>Tapping/Left</td>
-              <td>Right_ROI</td>
-              <td>9.0</td>
-              <td>0.000005</td>
-              <td>0.997194</td>
-              <td>9.543235</td>
-              <td>9.516460</td>
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>hbr</td>
-              <td>Tapping/Left</td>
-              <td>Right_ROI</td>
-              <td>9.0</td>
-              <td>0.000120</td>
-              <td>0.643366</td>
-              <td>-6.433946</td>
-              <td>-4.139385</td>
-            </tr>
-            <tr>
-              <th>0</th>
-              <td>hbo</td>
-              <td>Tapping/Right</td>
-              <td>Left_ROI</td>
-              <td>9.0</td>
-              <td>0.000002</td>
-              <td>0.983927</td>
-              <td>10.506843</td>
-              <td>10.337964</td>
-            </tr>
-            <tr>
-              <th>1</th>
-              <td>hbr</td>
-              <td>Tapping/Right</td>
-              <td>Left_ROI</td>
-              <td>9.0</td>
-              <td>0.000528</td>
-              <td>0.642436</td>
-              <td>-5.249642</td>
-              <td>-3.372560</td>
-            </tr>
-            <tr>
-              <th>2</th>
-              <td>hbo</td>
-              <td>Tapping/Right</td>
-              <td>Right_ROI</td>
-              <td>9.0</td>
-              <td>0.000110</td>
-              <td>0.998398</td>
-              <td>6.508918</td>
-              <td>6.498489</td>
-            </tr>
-            <tr>
-              <th>3</th>
-              <td>hbr</td>
-              <td>Tapping/Right</td>
-              <td>Right_ROI</td>
-              <td>9.0</td>
-              <td>0.002742</td>
-              <td>0.644119</td>
-              <td>-4.083768</td>
-              <td>-2.630433</td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-        <br />
-        <br />
-
-And we can visualise these summary statistics.
-
-
-.. code-block:: default
-
-
-    import seaborn as sns
-    sns.scatterplot(x="Condition", y="theta", hue="Chroma", style="ROI", s=100, data=df)
 
 
 
+.. raw:: html
 
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
 
-.. image:: /auto_examples/images/sphx_glr_plot_10_hrf_007.png
-    :alt: plot 10 hrf
-    :class: sphx-glr-single-img
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-
-    <AxesSubplot:xlabel='Condition', ylabel='theta'>
-
-
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>Chroma</th>
+          <th>Condition</th>
+          <th>ROI</th>
+          <th>dfe</th>
+          <th>p</th>
+          <th>se</th>
+          <th>t</th>
+          <th>theta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>0</th>
+          <td>hbo</td>
+          <td>Control</td>
+          <td>Left_ROI</td>
+          <td>9.0</td>
+          <td>0.883756</td>
+          <td>0.972274</td>
+          <td>-0.150413</td>
+          <td>-0.146243</td>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td>hbr</td>
+          <td>Control</td>
+          <td>Left_ROI</td>
+          <td>9.0</td>
+          <td>0.780657</td>
+          <td>0.634913</td>
+          <td>0.286938</td>
+          <td>0.182181</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>hbo</td>
+          <td>Control</td>
+          <td>Right_ROI</td>
+          <td>9.0</td>
+          <td>0.918047</td>
+          <td>0.986590</td>
+          <td>0.105819</td>
+          <td>0.104399</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>hbr</td>
+          <td>Control</td>
+          <td>Right_ROI</td>
+          <td>9.0</td>
+          <td>0.872387</td>
+          <td>0.636521</td>
+          <td>-0.165267</td>
+          <td>-0.105196</td>
+        </tr>
+        <tr>
+          <th>0</th>
+          <td>hbo</td>
+          <td>Tapping/Left</td>
+          <td>Left_ROI</td>
+          <td>9.0</td>
+          <td>0.000411</td>
+          <td>0.982716</td>
+          <td>5.440447</td>
+          <td>5.346417</td>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td>hbr</td>
+          <td>Tapping/Left</td>
+          <td>Left_ROI</td>
+          <td>9.0</td>
+          <td>0.011629</td>
+          <td>0.641765</td>
+          <td>-3.155758</td>
+          <td>-2.025255</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>hbo</td>
+          <td>Tapping/Left</td>
+          <td>Right_ROI</td>
+          <td>9.0</td>
+          <td>0.000005</td>
+          <td>0.997194</td>
+          <td>9.543235</td>
+          <td>9.516460</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>hbr</td>
+          <td>Tapping/Left</td>
+          <td>Right_ROI</td>
+          <td>9.0</td>
+          <td>0.000120</td>
+          <td>0.643366</td>
+          <td>-6.433946</td>
+          <td>-4.139385</td>
+        </tr>
+        <tr>
+          <th>0</th>
+          <td>hbo</td>
+          <td>Tapping/Right</td>
+          <td>Left_ROI</td>
+          <td>9.0</td>
+          <td>0.000002</td>
+          <td>0.983927</td>
+          <td>10.506843</td>
+          <td>10.337964</td>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td>hbr</td>
+          <td>Tapping/Right</td>
+          <td>Left_ROI</td>
+          <td>9.0</td>
+          <td>0.000528</td>
+          <td>0.642436</td>
+          <td>-5.249642</td>
+          <td>-3.372560</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>hbo</td>
+          <td>Tapping/Right</td>
+          <td>Right_ROI</td>
+          <td>9.0</td>
+          <td>0.000110</td>
+          <td>0.998398</td>
+          <td>6.508918</td>
+          <td>6.498489</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>hbr</td>
+          <td>Tapping/Right</td>
+          <td>Right_ROI</td>
+          <td>9.0</td>
+          <td>0.002742</td>
+          <td>0.644119</td>
+          <td>-4.083768</td>
+          <td>-2.630433</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <br />
+    <br />
 
 Compute contrasts
 -----------------
@@ -770,7 +742,7 @@ from tapping on the right hand.
 
 
 
-.. image:: /auto_examples/images/sphx_glr_plot_10_hrf_008.png
+.. image:: /auto_examples/images/sphx_glr_plot_10_hrf_007.png
     :alt: Oxyhaemoglobin, Deoxyhaemoglobin
     :class: sphx-glr-single-img
 
@@ -845,102 +817,100 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 
 
-.. only:: builder_html
+.. raw:: html
 
-    .. raw:: html
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
 
-        <div>
-        <style scoped>
-            .dataframe tbody tr th:only-of-type {
-                vertical-align: middle;
-            }
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
 
-            .dataframe tbody tr th {
-                vertical-align: top;
-            }
+        .dataframe thead tr th {
+            text-align: left;
+        }
 
-            .dataframe thead tr th {
-                text-align: left;
-            }
-
-            .dataframe thead tr:last-of-type th {
-                text-align: right;
-            }
-        </style>
-        <table border="1" class="dataframe">
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th>se</th>
-              <th>theta</th>
-              <th>Significant</th>
-            </tr>
-            <tr>
-              <th></th>
-              <th></th>
-              <th>mean</th>
-              <th>mean</th>
-              <th>mean</th>
-            </tr>
-            <tr>
-              <th>condition</th>
-              <th>Chroma</th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th rowspan="2" valign="top">Control</th>
-              <th>hbo</th>
-              <td>1.127638e-06</td>
-              <td>-9.066196e-08</td>
-              <td>0.00</td>
-            </tr>
-            <tr>
-              <th>hbr</th>
-              <td>7.197006e-07</td>
-              <td>6.750751e-09</td>
-              <td>0.00</td>
-            </tr>
-            <tr>
-              <th rowspan="2" valign="top">Tapping/Left</th>
-              <th>hbo</th>
-              <td>1.139741e-06</td>
-              <td>7.249248e-06</td>
-              <td>0.85</td>
-            </tr>
-            <tr>
-              <th>hbr</th>
-              <td>7.274707e-07</td>
-              <td>-3.190265e-06</td>
-              <td>0.75</td>
-            </tr>
-            <tr>
-              <th rowspan="2" valign="top">Tapping/Right</th>
-              <th>hbo</th>
-              <td>1.141163e-06</td>
-              <td>8.276313e-06</td>
-              <td>0.90</td>
-            </tr>
-            <tr>
-              <th>hbr</th>
-              <td>7.282221e-07</td>
-              <td>-3.095988e-06</td>
-              <td>0.80</td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-        <br />
-        <br />
+        .dataframe thead tr:last-of-type th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>se</th>
+          <th>theta</th>
+          <th>Significant</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>mean</th>
+          <th>mean</th>
+          <th>mean</th>
+        </tr>
+        <tr>
+          <th>condition</th>
+          <th>Chroma</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="2" valign="top">Control</th>
+          <th>hbo</th>
+          <td>1.127638e-06</td>
+          <td>-9.066196e-08</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <th>hbr</th>
+          <td>7.197006e-07</td>
+          <td>6.750751e-09</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Tapping/Left</th>
+          <th>hbo</th>
+          <td>1.139741e-06</td>
+          <td>7.249248e-06</td>
+          <td>0.85</td>
+        </tr>
+        <tr>
+          <th>hbr</th>
+          <td>7.274707e-07</td>
+          <td>-3.190265e-06</td>
+          <td>0.75</td>
+        </tr>
+        <tr>
+          <th rowspan="2" valign="top">Tapping/Right</th>
+          <th>hbo</th>
+          <td>1.141163e-06</td>
+          <td>8.276313e-06</td>
+          <td>0.90</td>
+        </tr>
+        <tr>
+          <th>hbr</th>
+          <td>7.282221e-07</td>
+          <td>-3.095988e-06</td>
+          <td>0.80</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <br />
+    <br />
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  29.936 seconds)
+   **Total running time of the script:** ( 0 minutes  34.370 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_10_hrf.py:

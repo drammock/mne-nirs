@@ -29,7 +29,6 @@ import numpy as np
 from mne_nirs.experimental_design import make_first_level_design_matrix
 from mne_nirs.statistics import run_GLM
 from nilearn.reporting import plot_design_matrix
-import seaborn as sns
 np.random.seed(1)
 
 
@@ -119,7 +118,7 @@ print("Estimate:", glm_est['Simulated'].theta[0],
 #
 # Here we add colored noise which better matches what is seen with real data.
 # Again, the same GLM procedure is run.
-# The estimate is reported below, and even though the signal was difficuly to
+# The estimate is reported below, and even though the signal was difficult to
 # observe in the raw data, the GLM analysis has extracted an accurate estimate.
 # However, the error is greater for the colored than white noise.
 
@@ -189,5 +188,5 @@ print("Estimate:", glm_est['Simulated'].theta[0],
 # haemodynamic responses. We were then able to accurately estimate the amplitude
 # of the simulated signal. We then added noise and illustrated that the
 # estimate provided by the GLM was correct, but contained some error. We
-# observed that as the measurement time was increased that the estmate
+# observed that as the measurement time was increased, the estimated
 # error decreased.

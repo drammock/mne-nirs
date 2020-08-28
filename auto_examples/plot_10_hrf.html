@@ -127,8 +127,8 @@
 <p>In this example we analyse data from a real multichannel fNIRS
 experiment (see <a class="reference internal" href="plot_11_hrf_simulation.html#tut-fnirs-hrf-sim"><span class="std std-ref">GLM Analysis (Simulated Data)</span></a> for a simplified simulated
 analysis). The experiment consists of three conditions
-1) tapping on the left hand,
-2) tapping on the right hand,
+1) tapping with the left hand,
+2) tapping with the right hand,
 3) a control condition where the participant does nothing.
 We use a GLM analysis to examine the neural activity associated with
 the different tapping conditions.
@@ -196,7 +196,7 @@ montage, but with 8 short channels added (see their web page for details).
 To view the sensor locations run
 <cite>raw_intensity.plot_sensors()</cite>.
 A sound was presented to indicate which hand the participant should tap.
-Participants taped their thumb to fingers for 5s.
+Participants tapped their thumb to their fingers for 5s.
 Conditions were presented in a random order with a randomised inter
 stimulus interval.</p>
 </div></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fnirs_data_folder</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.datasets.fnirs_motor.data_path.html#mne.datasets.fnirs_motor.data_path" title="mne.datasets.fnirs_motor.data_path" class="sphx-glr-backref-module-mne-datasets-fnirs_motor sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fnirs_motor</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
@@ -292,7 +292,7 @@ line is raised for the duration of the stimulus/condition.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Used Annotations descriptions: [&#39;Control&#39;, &#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]
 
-Text(0.5, 0, &#39;Time (s)&#39;)
+Text(0.5, 36.72222222222221, &#39;Time (s)&#39;)
 </pre></div>
 </div>
 </div>
@@ -369,7 +369,7 @@ component followed by an undershoot.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Used Annotations descriptions: [&#39;Control&#39;, &#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]
 
-Text(0, 0.5, &#39;Amplitude&#39;)
+Text(42.722222222222214, 0.5, &#39;Amplitude&#39;)
 </pre></div>
 </div>
 </div>
@@ -389,8 +389,8 @@ of a single source detector pair.</p>
 </pre></div>
 </div>
 <p>We then display the results. Note that the control condition sits
-around zero.
-And that the HbO is positive and larger than the HbR, this is to be expected.
+around zero
+and that the HbO is positive and larger than the HbR, this is to be expected.
 Further, we note that for this channel the response to tapping on the
 right hand is larger than the left. And the values are similar to what
 is seen in the epoching tutorial.</p>
@@ -404,7 +404,7 @@ is seen in the epoching tutorial.</p>
 </div>
 <img alt="plot 10 hrf" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_10_hrf_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f3f48568a30&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f4d92249550&gt;
 </pre></div>
 </div>
 </div>
@@ -431,7 +431,7 @@ negative sof HbO as expected.</p>
 <div class="section" id="analyse-regions-of-interest">
 <h2><a class="toc-backref" href="#id9">Analyse regions of interest</a><a class="headerlink" href="#analyse-regions-of-interest" title="Permalink to this headline">¶</a></h2>
 <p>Or alternatively we can summarise the responses across regions of interest
-for each condition.</p>
+for each condition. And you can plot it with your favorite software.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">left</span></a> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">right</span></a> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
@@ -611,17 +611,7 @@ for each condition.</p>
 </table>
 </div>
 <br />
-<br /><p>And we can visualise these summary statistics.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Condition&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;theta&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Chroma&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;ROI&quot;</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">s</span></a><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="plot 10 hrf" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_10_hrf_007.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Condition&#39;, ylabel=&#39;theta&#39;&gt;
-</pre></div>
-</div>
-</div>
+<br /></div>
 <div class="section" id="compute-contrasts">
 <h2><a class="toc-backref" href="#id10">Compute contrasts</a><a class="headerlink" href="#compute-contrasts" title="Permalink to this headline">¶</a></h2>
 <p>We can also define a contrast as described in
@@ -637,7 +627,7 @@ from tapping on the right hand.</p>
 <a href="../generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo" title="mne_nirs.visualisation.plot_glm_contrast_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">mne_nirs</span><span class="o">.</span><span class="n">visualisation</span><span class="o">.</span><span class="n">plot_glm_contrast_topo</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <span class="n">contrast</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="Oxyhaemoglobin, Deoxyhaemoglobin" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_10_hrf_008.png" />
+<img alt="Oxyhaemoglobin, Deoxyhaemoglobin" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_10_hrf_007.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1200x700 with 3 Axes&gt;
 </pre></div>
@@ -768,7 +758,7 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </table>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  29.936 seconds)</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  34.370 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-10-hrf-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/5d7784c7a4d7e581cc48ca0671986fdb/plot_10_hrf.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_hrf.py</span></code></a></p>
