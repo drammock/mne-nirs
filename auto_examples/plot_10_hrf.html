@@ -301,7 +301,7 @@ Text(0.5, 36.72222222222221, &#39;Time (s)&#39;)
 <div class="sidebar">
 <p class="sidebar-title">Relevant literature</p>
 <p>For further discussion on design matrices see
-the NILearn examples. Specifically the
+the Nilearn examples. Specifically the
 <a class="reference external" href="https://5712-1235740-gh.circle-artifacts.com/0/doc/_build/html/auto_examples/plot_first_level_model_details.html">first level model</a>
 and
 <a class="reference external" href="https://5712-1235740-gh.circle-artifacts.com/0/doc/_build/html/auto_examples/04_glm_first_level_models/plot_design_matrix.html">design matrix examples</a>.</p>
@@ -311,7 +311,7 @@ The model consists of various components to model different things we assume
 contribute to the measured signal.
 We model the expected neural response for each experimental condition
 using the SPM haemodynamic response
-function combined with the known stimulus event times and durations
+function (HRF) combined with the known stimulus event times and durations
 (as described above).
 We also include a third order polynomial drift and constant to model
 slow fluctuations in the data and a constant DC shift.</p>
@@ -382,7 +382,7 @@ implication on general linear models in functional near-infrared
 spectroscopy. Neurophotonics. 2016;3(1)</p>
 </div>
 <p>We run a GLM fit for the data and experiment matrix.
-First we analyse just the first two channels which correspond HbO and HbR
+First we analyse just the first two channels which correspond to HbO and HbR
 of a single source detector pair.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data_subset</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM" title="mne_nirs.statistics.run_GLM" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_GLM</span></a><span class="p">(</span><span class="n">data_subset</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
@@ -404,7 +404,7 @@ is seen in the epoching tutorial.</p>
 </div>
 <img alt="plot 10 hrf" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_10_hrf_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f4d92249550&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f371990a550&gt;
 </pre></div>
 </div>
 </div>
@@ -415,7 +415,7 @@ topomap.
 We see the same result as in the MNE tutorial,
 that activation is largest
 contralateral to the tapping side. Also note that HbR tends to be the
-negative sof HbO as expected.</p>
+negative of HbO as expected.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM" title="mne_nirs.statistics.run_GLM" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_GLM</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
 <a href="../generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_topo</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span>
               <span class="n">requested_conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tapping/Left&#39;</span><span class="p">,</span>
@@ -758,7 +758,7 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </table>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  34.370 seconds)</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  35.488 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-10-hrf-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/5d7784c7a4d7e581cc48ca0671986fdb/plot_10_hrf.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_hrf.py</span></code></a></p>
