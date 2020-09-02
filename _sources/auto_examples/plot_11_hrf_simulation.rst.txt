@@ -165,6 +165,7 @@ We run the GLM analysis exactly as in the previous section
 and plot the noisy data and the GLM fitted model.
 We print the response estimate and see that is close, but not exactly correct,
 we observe the mean square error is similar to the added noise.
+Note that the clean data plot is so similar to the GLM estimate that it is hard to see unless zoomed in. 
 
 
 .. code-block:: default
@@ -334,7 +335,7 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.270 seconds)
+   **Total running time of the script:** ( 0 minutes  4.552 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_11_hrf_simulation.py:
