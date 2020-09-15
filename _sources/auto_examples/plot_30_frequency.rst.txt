@@ -83,7 +83,7 @@ for a detailed introduction to processing NIRS with MNE.
     annot = mne.Annotations(raw_intensity.annotations.onset,
                             raw_intensity.annotations.duration * 5., new_des)
     raw_intensity.set_annotations(annot)
-    raw_intensity.annotations.crop(60, 2967)
+    raw_intensity.crop(60, 2967)
     raw_intensity.annotations.delete(
         np.where([d == 'Control' for d in raw_intensity.annotations.description]))
 
@@ -252,7 +252,7 @@ is still visible.
     Not setting metadata
     Not setting metadata
     60 matching events found
-    Applying baseline correction (mode: mean)
+    Applying baseline correction (baseline: [None, 0.000] sec, mode: mean)
     0 projection items activated
     Loading data for 60 events and 157 original time points ...
     0 bad epochs dropped
@@ -429,7 +429,7 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  35.495 seconds)
+   **Total running time of the script:** ( 0 minutes  31.891 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_30_frequency.py:
