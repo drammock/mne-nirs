@@ -152,7 +152,7 @@ this result should be the same as the MNE tutorial.
     Not setting metadata
     Not setting metadata
     90 matching events found
-    Applying baseline correction (baseline: [None, 0.000] sec, mode: mean)
+    Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 90 events and 157 original time points ...
         Rejecting  epoch based on HBO : ['S4_D4 hbo']
@@ -161,10 +161,6 @@ this result should be the same as the MNE tutorial.
         Rejecting  epoch based on HBO : ['S8_D8 hbo']
         Rejecting  epoch based on HBO : ['S4_D4 hbo']
     5 bad epochs dropped
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
 
 
 
@@ -209,14 +205,10 @@ Apply Cui et. al. 2010 and extract epochs.
     Not setting metadata
     Not setting metadata
     90 matching events found
-    Applying baseline correction (baseline: [None, 0.000] sec, mode: mean)
+    Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 90 events and 157 original time points ...
     0 bad epochs dropped
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
 
 
 
@@ -281,17 +273,13 @@ Apply Scholkmann et al 2014 and extract epochs.
     Not setting metadata
     Not setting metadata
     90 matching events found
-    Applying baseline correction (baseline: [None, 0.000] sec, mode: mean)
+    Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 90 events and 157 original time points ...
         Rejecting  epoch based on HBO : ['S4_D4 hbo', 'S8_D8 hbo']
         Rejecting  epoch based on HBO : ['S1_D1 hbo', 'S7_D6 hbo', 'S7_D7 hbo', 'S8_D8 hbo']
         Rejecting  epoch based on HBO : ['S4_D4 hbo', 'S8_D8 hbo']
     3 bad epochs dropped
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
 
 
 
@@ -465,18 +453,6 @@ detector pairs for analysis.
 
  .. code-block:: none
 
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
-    No baseline correction applied
     combining channels using "mean"
     combining channels using "mean"
     combining channels using "mean"
@@ -508,7 +484,7 @@ detector pairs for analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.898 seconds)
+   **Total running time of the script:** ( 0 minutes  3.015 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_20_cui.py:

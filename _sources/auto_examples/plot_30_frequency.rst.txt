@@ -252,7 +252,7 @@ is still visible.
     Not setting metadata
     Not setting metadata
     60 matching events found
-    Applying baseline correction (baseline: [None, 0.000] sec, mode: mean)
+    Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 60 events and 157 original time points ...
     0 bad epochs dropped
@@ -429,7 +429,7 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  31.891 seconds)
+   **Total running time of the script:** ( 0 minutes  32.419 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_30_frequency.py:
