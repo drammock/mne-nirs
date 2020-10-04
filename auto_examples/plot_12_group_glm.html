@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Group Level GLM &#8212; MNE-NIRS 0.0.1 dev documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap_divs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/bootstrap_divs.js"></script>
+    <script src="../_static/js/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          MNE-NIRS</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.1 dev</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="index.html">Examples</a></li>
+                <li><a href="../api.html">API</a></li>
+                <li><a href="https://github.com/mne-tools/mne-nirs">GitHub</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Group Level GLM</a><ul>
+<li><a class="reference internal" href="#define-individual-analysis">Define individual analysis</a></li>
+<li><a class="reference internal" href="#run-analysis-on-all-participants">Run analysis on all participants</a></li>
+<li><a class="reference internal" href="#visualise-individual-results">Visualise Individual results</a></li>
+<li><a class="reference internal" href="#compute-group-level-results">Compute group level results</a></li>
+<li><a class="reference internal" href="#visualise-group-results">Visualise group results</a></li>
+<li><a class="reference internal" href="#group-topographic-visualisation">Group topographic visualisation</a></li>
+<li><a class="reference internal" href="#contrasts">Contrasts</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-12-group-glm-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="group-level-glm">
+<span id="tut-fnirs-group"></span><span id="sphx-glr-auto-examples-plot-12-group-glm-py"></span><h1>Group Level GLM<a class="headerlink" href="#group-level-glm" title="Permalink to this headline">¶</a></h1>
+<div class="sidebar">
+<p class="sidebar-title">Relevant literature</p>
+<p>Gorgolewski, Krzysztof J., et al.
+“The brain imaging data structure, a format for organizing and describing
+outputs of neuroimaging experiments.” Scientific data 3.1 (2016): 1-9.</p>
+<p>Santosa, H., Zhai, X., Fishburn, F., &amp; Huppert, T. (2018).
+The NIRS brain AnalyzIR toolbox. Algorithms, 11(5), 73.</p>
+</div>
+<p>This is an example of a group level GLM based fNIRS analysis in MNE-NIRS.</p>
+<p>Individual level analysis of this data is described in the
+<a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/plot_70_fnirs_processing.html">MNE fNIRS waveform tutorial</a>
+and the
+<a class="reference external" href="https://mne.tools/mne-nirs/auto_examples/plot_10_hrf.html">MNE-NIRS fNIRS GLM tutorial</a>.
+So this example will skim over the individual level details
+and focus on the group level aspect of analysis.
+Here we describe how to process multiple measurements
+and summarise  group level effects both as summary statistics and visually.</p>
+<p>The data used in this example is available <a class="reference external" href="https://github.com/rob-luke/BIDS-NIRS-Tapping">at this location</a>.
+It is an finger tapping example and is briefly described below.
+The dataset contains 5 participants.
+The example dataset is in
+<a class="reference external" href="https://bids.neuroimaging.io">BIDS</a>
+format and therefore already contains
+information about triggers, condition names, etc.</p>
+<div class="panel panel-success">
+<div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" href="#collapse_data-description-click-to-expand">Data description (click to expand)</a></h4></div>
+<div id="collapse_data-description-click-to-expand" class="panel-collapse collapse">
+<div class="panel-body"><p>Optodes were placed over the motor cortex using the standard NIRX motor
+montage, but with 8 short channels added (see their web page for details).
+To view the sensor locations run
+<cite>raw_intensity.plot_sensors()</cite>.
+A sound was presented to indicate which hand the participant should tap.
+Participants tapped their thumb to their fingers for 5s.
+Conditions were presented in a random order with a randomised inter
+stimulus interval.</p>
+</div></div></div><div class="contents local topic" id="page-contents">
+<p class="topic-title">Page contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#define-individual-analysis" id="id2">Define individual analysis</a></p></li>
+<li><p><a class="reference internal" href="#run-analysis-on-all-participants" id="id3">Run analysis on all participants</a></p></li>
+<li><p><a class="reference internal" href="#visualise-individual-results" id="id4">Visualise Individual results</a></p></li>
+<li><p><a class="reference internal" href="#compute-group-level-results" id="id5">Compute group level results</a></p></li>
+<li><p><a class="reference internal" href="#visualise-group-results" id="id6">Visualise group results</a></p></li>
+<li><p><a class="reference internal" href="#group-topographic-visualisation" id="id7">Group topographic visualisation</a></p></li>
+<li><p><a class="reference internal" href="#contrasts" id="id8">Contrasts</a></p></li>
+</ul>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># License: BSD (3-clause)</span>
+
+
+<span class="c1"># Import common libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Import MNE processing</span>
+<span class="kn">from</span> <span class="nn">mne.preprocessing.nirs</span> <span class="kn">import</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">optical_density</span></a><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.beer_lambert_law.html#mne.preprocessing.nirs.beer_lambert_law" title="mne.preprocessing.nirs.beer_lambert_law" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">beer_lambert_law</span></a>
+
+<span class="c1"># Import MNE-NIRS processing</span>
+<span class="kn">from</span> <span class="nn">mne_nirs.statistics</span> <span class="kn">import</span> <a href="../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM" title="mne_nirs.statistics.run_GLM" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_GLM</span></a>
+<span class="kn">from</span> <span class="nn">mne_nirs.experimental_design</span> <span class="kn">import</span> <a href="../generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix" class="sphx-glr-backref-module-mne_nirs-experimental_design sphx-glr-backref-type-py-function"><span class="n">make_first_level_design_matrix</span></a>
+<span class="kn">from</span> <span class="nn">mne_nirs.statistics</span> <span class="kn">import</span> <a href="../generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest" title="mne_nirs.statistics.glm_region_of_interest" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">glm_region_of_interest</span></a><span class="p">,</span> <a href="../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a>
+<span class="kn">from</span> <span class="nn">mne_nirs.statistics</span> <span class="kn">import</span> <a href="../generated/mne_nirs.statistics.compute_contrast.html#mne_nirs.statistics.compute_contrast" title="mne_nirs.statistics.compute_contrast" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">compute_contrast</span></a>
+<span class="kn">from</span> <span class="nn">mne_nirs.channels</span> <span class="kn">import</span> <a href="../generated/mne_nirs.channels.get_short_channels.html#mne_nirs.channels.get_short_channels" title="mne_nirs.channels.get_short_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_short_channels</span></a><span class="p">,</span> <a href="../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels" title="mne_nirs.channels.get_long_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_long_channels</span></a>
+<span class="kn">from</span> <span class="nn">mne_nirs.channels</span> <span class="kn">import</span> <a href="../generated/mne_nirs.channels.picks_pair_to_idx.html#mne_nirs.channels.picks_pair_to_idx" title="mne_nirs.channels.picks_pair_to_idx" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">picks_pair_to_idx</span></a>
+<span class="kn">from</span> <span class="nn">mne_nirs.utils._io</span> <span class="kn">import</span> <a href="../generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy" title="mne_nirs.utils.glm_to_tidy" class="sphx-glr-backref-module-mne_nirs-utils sphx-glr-backref-type-py-function"><span class="n">glm_to_tidy</span></a>
+<span class="kn">from</span> <span class="nn">mne_nirs.visualisation</span> <span class="kn">import</span> <a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a>
+
+<span class="c1"># Import MNE-BIDS processing</span>
+<span class="kn">from</span> <span class="nn">mne_bids</span> <span class="kn">import</span> <span class="n">BIDSPath</span><span class="p">,</span> <span class="n">read_raw_bids</span>
+
+<span class="c1"># Import StatsModels</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="c1"># Import Plotting Library</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">from</span> <span class="nn">lets_plot</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">LetsPlot</span><span class="o">.</span><span class="n">setup_html</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="define-individual-analysis">
+<h2><a class="toc-backref" href="#id2">Define individual analysis</a><a class="headerlink" href="#define-individual-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="sidebar-title">Individual analysis procedures</p>
+<p>Waveform individual analysis:
+<a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/plot_70_fnirs_processing.html">MNE docs</a>.</p>
+<p>GLM individual analysis:
+<a class="reference external" href="https://mne.tools/mne-nirs/auto_examples/plot_10_hrf.html">MNE-NIRS docs</a>.</p>
+</div>
+<p>First we define the analysis that will be applied to each file.
+This is a GLM analysis as described in the
+<a class="reference external" href="https://mne.tools/mne-nirs/auto_examples/plot_10_hrf.html">MNE-NIRS fNIRS GLM tutorial</a>,
+so this example will skim over the individual level details.</p>
+<p>The analysis extracts a response estimate for each channel,
+each region of interest, and computes a contrast between left and right
+finger tapping.
+We return the raw object and data frames for the computed results.
+Information about channels, triggers and their meanings are stored in the
+BIDS structure and are automatically obtained when importing the data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">individual_analysis</span><span class="p">(</span><span class="n">bids_path</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">):</span>
+
+    <span class="n">raw_intensity</span> <span class="o">=</span> <span class="n">read_raw_bids</span><span class="p">(</span><span class="n">bids_path</span><span class="o">=</span><span class="n">bids_path</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Convert signal to haemoglobin and resample</span>
+    <span class="n">raw_od</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">optical_density</span></a><span class="p">(</span><span class="n">raw_intensity</span><span class="p">)</span>
+    <span class="n">raw_haemo</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.beer_lambert_law.html#mne.preprocessing.nirs.beer_lambert_law" title="mne.preprocessing.nirs.beer_lambert_law" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">beer_lambert_law</span></a><span class="p">(</span><span class="n">raw_od</span><span class="p">)</span>
+    <a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.resample" title="mne.io.BaseRaw.resample" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">resample</span></a><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+
+    <span class="c1"># Cut out just the short channels for creating a GLM repressor</span>
+    <span class="n">sht_chans</span> <span class="o">=</span> <a href="../generated/mne_nirs.channels.get_short_channels.html#mne_nirs.channels.get_short_channels" title="mne_nirs.channels.get_short_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_short_channels</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">)</span>
+    <span class="n">raw_haemo</span> <span class="o">=</span> <a href="../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels" title="mne_nirs.channels.get_long_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_long_channels</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">)</span>
+
+    <span class="c1"># Create a design matrix</span>
+    <span class="n">design_matrix</span> <span class="o">=</span> <a href="../generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix" class="sphx-glr-backref-module-mne_nirs-experimental_design sphx-glr-backref-type-py-function"><span class="n">make_first_level_design_matrix</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <span class="n">stim_dur</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+
+    <span class="c1"># Append short channels mean to design matrix</span>
+    <span class="n">design_matrix</span><span class="p">[</span><span class="s2">&quot;ShortHbO&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">sht_chans</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">design_matrix</span><span class="p">[</span><span class="s2">&quot;ShortHbR&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">sht_chans</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbr&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_data</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Run GLM</span>
+    <span class="n">glm_est</span> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM" title="mne_nirs.statistics.run_GLM" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_GLM</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
+
+    <span class="c1"># Define channels in each region of interest</span>
+    <span class="c1"># List the channel pairs manually</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+    <span class="c1"># Then generate the correct indices for each pair</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">Left_Hemisphere</span><span class="o">=</span><a href="../generated/mne_nirs.channels.picks_pair_to_idx.html#mne_nirs.channels.picks_pair_to_idx" title="mne_nirs.channels.picks_pair_to_idx" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">picks_pair_to_idx</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">on_missing</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">),</span>
+        <span class="n">Right_Hemisphere</span><span class="o">=</span><a href="../generated/mne_nirs.channels.picks_pair_to_idx.html#mne_nirs.channels.picks_pair_to_idx" title="mne_nirs.channels.picks_pair_to_idx" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">picks_pair_to_idx</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">on_missing</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Extract channel metrics</span>
+    <span class="n">cha</span> <span class="o">=</span> <a href="../generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy" title="mne_nirs.utils.glm_to_tidy" class="sphx-glr-backref-module-mne_nirs-utils sphx-glr-backref-type-py-function"><span class="n">glm_to_tidy</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <span class="n">glm_est</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
+    <span class="n">cha</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a>  <span class="c1"># Add the participant ID to the dataframe</span>
+
+    <span class="c1"># Compute region of interest results from channel data</span>
+    <span class="n">roi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+        <span class="n">roi</span> <span class="o">=</span> <span class="n">roi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="../generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest" title="mne_nirs.statistics.glm_region_of_interest" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">glm_region_of_interest</span></a><span class="p">(</span><span class="n">glm_est</span><span class="p">,</span> <span class="n">groups</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">col</span><span class="p">))</span>
+    <span class="n">roi</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a>  <span class="c1"># Add the participant ID to the dataframe</span>
+
+    <span class="c1"># Contrast left vs right tapping</span>
+    <span class="n">contrast_matrix</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.eye.html#numpy.eye" title="numpy.eye" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">eye</span></a><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">basic_conts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">column</span><span class="p">,</span> <span class="n">contrast_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)])</span>
+    <span class="n">contrast_LvR</span> <span class="o">=</span> <span class="n">basic_conts</span><span class="p">[</span><span class="s1">&#39;Tapping/Left&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">basic_conts</span><span class="p">[</span><span class="s1">&#39;Tapping/Right&#39;</span><span class="p">]</span>
+    <span class="n">contrast</span> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.compute_contrast.html#mne_nirs.statistics.compute_contrast" title="mne_nirs.statistics.compute_contrast" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">compute_contrast</span></a><span class="p">(</span><span class="n">glm_est</span><span class="p">,</span> <span class="n">contrast_LvR</span><span class="p">)</span>
+    <span class="n">con</span> <span class="o">=</span> <a href="../generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy" title="mne_nirs.utils.glm_to_tidy" class="sphx-glr-backref-module-mne_nirs-utils sphx-glr-backref-type-py-function"><span class="n">glm_to_tidy</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <span class="n">contrast</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
+    <span class="n">con</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a>  <span class="c1"># Add the participant ID to the dataframe</span>
+
+    <span class="c1"># Convert to uM for nicer plotting below.</span>
+    <span class="n">cha</span><span class="p">[</span><span class="s2">&quot;theta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="o">*</span> <span class="mf">1.e6</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">cha</span><span class="p">[</span><span class="s2">&quot;theta&quot;</span><span class="p">]]</span>
+    <span class="n">roi</span><span class="p">[</span><span class="s2">&quot;theta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="o">*</span> <span class="mf">1.e6</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">roi</span><span class="p">[</span><span class="s2">&quot;theta&quot;</span><span class="p">]]</span>
+    <span class="n">con</span><span class="p">[</span><span class="s2">&quot;effect&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="o">*</span> <span class="mf">1.e6</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">con</span><span class="p">[</span><span class="s2">&quot;effect&quot;</span><span class="p">]]</span>
+
+    <span class="k">return</span> <span class="n">raw_haemo</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">cha</span><span class="p">,</span> <span class="n">con</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-analysis-on-all-participants">
+<h2><a class="toc-backref" href="#id3">Run analysis on all participants</a><a class="headerlink" href="#run-analysis-on-all-participants" title="Permalink to this headline">¶</a></h2>
+<p>Next we loop through the five measurements and run the individual analysis
+on each. We append the individual results in to a large dataframe that
+will contain the results from all measurements. We create a group dataframe
+for the region of interest, channel level, and contrast results.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df_roi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>  <span class="c1"># To store region of interest results</span>
+<span class="n">df_cha</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>  <span class="c1"># To store channel level results</span>
+<span class="n">df_con</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>  <span class="c1"># To store channel level contrast results</span>
+
+<span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sub</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1"># Loop from first to fifth subject</span>
+    <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%02d</span><span class="s1">&#39;</span> <span class="o">%</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sub</span></a>  <span class="c1"># Tidy the subject name</span>
+
+    <span class="c1"># Create path to file based on experiment info</span>
+    <span class="n">bids_path</span> <span class="o">=</span> <span class="n">BIDSPath</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s2">&quot;tapping&quot;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="s1">&#39;BIDS-NIRS-Tapping&#39;</span><span class="p">,</span>
+                         <span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;nirs&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;nirs&quot;</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s2">&quot;.snirf&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Analyse data and return both ROI and channel results</span>
+    <span class="n">raw_haemo</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">individual_analysis</span><span class="p">(</span><span class="n">bids_path</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">)</span>
+
+    <span class="c1"># Append individual results to all participants</span>
+    <span class="n">df_roi</span> <span class="o">=</span> <span class="n">df_roi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
+    <span class="n">df_cha</span> <span class="o">=</span> <span class="n">df_cha</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>
+    <span class="n">df_con</span> <span class="o">=</span> <span class="n">df_con</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_nirs.snirf
+Reading events from BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_events.tsv.
+Reading channel info from BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_channels.tsv.
+/github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-01_task-tapping.
+
+The search_str was &quot;BIDS-NIRS-Tapping/sub-01/**/sub-01*electrodes.tsv&quot;
+  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
+Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
+Loading BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_nirs.snirf
+Reading events from BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_events.tsv.
+Reading channel info from BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_channels.tsv.
+/github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-02_task-tapping.
+
+The search_str was &quot;BIDS-NIRS-Tapping/sub-02/**/sub-02*electrodes.tsv&quot;
+  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
+Reading 0 ... 18877  =      0.000 ...  2416.256 secs...
+Loading BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_nirs.snirf
+Reading events from BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_events.tsv.
+Reading channel info from BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_channels.tsv.
+/github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-03_task-tapping.
+
+The search_str was &quot;BIDS-NIRS-Tapping/sub-03/**/sub-03*electrodes.tsv&quot;
+  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
+Reading 0 ... 18874  =      0.000 ...  2415.872 secs...
+Loading BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_nirs.snirf
+Reading events from BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_events.tsv.
+Reading channel info from BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_channels.tsv.
+/github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-04_task-tapping.
+
+The search_str was &quot;BIDS-NIRS-Tapping/sub-04/**/sub-04*electrodes.tsv&quot;
+  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
+Reading 0 ... 23120  =      0.000 ...  2959.360 secs...
+Loading BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_nirs.snirf
+Reading events from BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_events.tsv.
+Reading channel info from BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_channels.tsv.
+/github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-05_task-tapping.
+
+The search_str was &quot;BIDS-NIRS-Tapping/sub-05/**/sub-05*electrodes.tsv&quot;
+  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
+Reading 0 ... 23006  =      0.000 ...  2944.768 secs...
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualise-individual-results">
+<h2><a class="toc-backref" href="#id4">Visualise Individual results</a><a class="headerlink" href="#visualise-individual-results" title="Permalink to this headline">¶</a></h2>
+<p>First we visualise the results from each individual to ensure the
+data values look reasonable.
+Here we see that we have data from five participants, we plot just the HbO
+values and observe they are in the expect range.
+We can already see that the control condition is always near zero,
+and that the responses look to be contralateral to the tapping hand.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grp_results</span> <span class="o">=</span> <span class="n">df_roi</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Control&#39;, &#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+<span class="n">grp_results</span> <span class="o">=</span> <span class="n">grp_results</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbo&#39;]&quot;</span><span class="p">)</span>
+
+<span class="n">ggplot</span><span class="p">(</span><span class="n">grp_results</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;theta&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;ROI&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">&#39;ROI&#39;</span><span class="p">))</span> \
+    <span class="o">+</span> <span class="n">geom_hline</span><span class="p">(</span><span class="n">y_intercept</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> \
+    <span class="o">+</span> <span class="n">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> \
+    <span class="o">+</span> <span class="n">facet_grid</span><span class="p">(</span><span class="s1">&#39;ID&#39;</span><span class="p">)</span> \
+    <span class="o">+</span> <span class="n">ggsize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<html lang="en">
+   <head>
+       <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
+   </head>
+   <body>
+          <div id="Ijn3M3"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+       var plotSpec={
+'data':{
+'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
+'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
+'theta':[0.1327533916066394,-0.004405415990844132,3.865080919644873,8.140432000738192,8.918801586894457,4.5054352288701045,-0.5020924875346082,-1.7525511338354276,6.224078867054552,6.8149614090722865,12.892869861905014,3.875273781378974,-0.6491175953097997,-1.5018037087864176,5.721032018151832,11.723810945640691,7.3426157885828545,8.616843751855042,-0.6624631599899815,-1.0096713075887105,0.5232669712606479,11.070220686862124,5.5897283446578845,0.3382919234864324,0.04375816016496609,-0.10894531954362746,6.296544610530287,23.350893470508925,22.079148925168532,10.296595359674114],
+'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
+},
+'mapping':{
+'x':"Condition",
+'y':"theta",
+'color':"ROI",
+'shape':"ROI"
+},
+'data_meta':{
+},
+'facet':{
+'name':"grid",
+'x':"ID"
+},
+'ggsize':{
+'width':800,
+'height':300
+},
+'kind':"plot",
+'scales':[],
+'layers':[{
+'geom':"hline",
+'mapping':{
+},
+'data_meta':{
+},
+'y_intercept':0,
+'linetype':"dashed",
+'size':1,
+'data':{
+}
+},{
+'geom':"point",
+'mapping':{
+},
+'data_meta':{
+},
+'size':5,
+'data':{
+}
+}]
+};
+       var plotContainer = document.getElementById("Ijn3M3");
+       LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
+   </script>
+   </body>
+</html>
+<br />
+<br /></div>
+<div class="section" id="compute-group-level-results">
+<h2><a class="toc-backref" href="#id5">Compute group level results</a><a class="headerlink" href="#compute-group-level-results" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="sidebar-title">Relevant literature</p>
+<p>For an introduction to mixed effects analysis see:
+Winter, Bodo. “A very basic tutorial for performing linear mixed effects
+analyses.” arXiv preprint arXiv:1308.5499 (2013).</p>
+<p>For a summary of linear mixed models in python
+and the relation to lmer see:
+<a class="reference external" href="https://www.statsmodels.org/stable/mixed_linear.html">statsmodels docs</a>.</p>
+<p>For a summary of these models in the context of fNIRS see section 3.5 of:
+Santosa, H., Zhai, X., Fishburn, F., &amp; Huppert, T. (2018).
+The NIRS brain AnalyzIR toolbox. Algorithms, 11(5), 73.</p>
+</div>
+<p>Next we use a linear mixed effects model to examine the
+relation between conditions and our response estimate (theta).
+Combinations of 3 fixed effects will be evaluated, ROI (left vs right),
+condition (control, tapping/left, tapping/right), and chromophore (HbO, HbR).
+With a random effect of subject.
+Alternatively, you could export the group dataframe (<cite>df_roi.to_csv()</cite>) and
+analyse in your favorite stats program.</p>
+<p>We do not explore the modeling procedure in depth here as topics
+such model selection and examining residuals are beyond the scope of
+this example (see relevant literature).
+Alternatively, we could use a robust linear
+model by using the code
+<cite>roi_model = rlm(‘theta ~ -1 + ROI:Condition:Chroma’, grp_results).fit()</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grp_results</span> <span class="o">=</span> <span class="n">df_roi</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Control&#39;,&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+
+<span class="n">roi_model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span><span class="p">(</span><span class="s2">&quot;theta ~ -1 + ROI:Condition:Chroma&quot;</span><span class="p">,</span>
+                        <span class="n">grp_results</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">grp_results</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nm&#39;</span><span class="p">)</span>
+<span class="n">roi_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2168: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+</pre></div>
+</div>
+<table class="simpletable">
+<tr>
+       <td>Model:</td>       <td>MixedLM</td> <td>Dependent Variable:</td>   <td>theta</td>
+</tr>
+<tr>
+  <td>No. Observations:</td>   <td>60</td>          <td>Method:</td>         <td>REML</td>
+</tr>
+<tr>
+     <td>No. Groups:</td>       <td>5</td>          <td>Scale:</td>         <td>11.7283</td>
+</tr>
+<tr>
+  <td>Min. group size:</td>    <td>12</td>      <td>Log-Likelihood:</td>   <td>-136.8537</td>
+</tr>
+<tr>
+  <td>Max. group size:</td>    <td>12</td>        <td>Converged:</td>         <td>Yes</td>
+</tr>
+<tr>
+  <td>Mean group size:</td>   <td>12.0</td>            <td></td>               <td></td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+                               <td></td>                               <th>Coef.</th> <th>Std.Err.</th>    <th>z</th>   <th>P>|z|</th> <th>[0.025</th> <th>0.975]</th>
+</tr>
+<tr>
+  <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbo]</th>        <td>-0.327</td>   <td>1.532</td>  <td>-0.214</td> <td>0.831</td> <td>-3.329</td>  <td>2.674</td>
+</tr>
+<tr>
+  <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbo]</th>       <td>-0.875</td>   <td>1.532</td>  <td>-0.572</td> <td>0.568</td> <td>-3.877</td>  <td>2.126</td>
+</tr>
+<tr>
+  <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>    <td>4.526</td>   <td>1.532</td>   <td>2.955</td> <td>0.003</td>  <td>1.524</td>  <td>7.528</td>
+</tr>
+<tr>
+  <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>  <td>12.220</td>   <td>1.532</td>   <td>7.979</td> <td>0.000</td>  <td>9.218</td> <td>15.222</td>
+</tr>
+<tr>
+  <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>11.365</td>   <td>1.532</td>   <td>7.420</td> <td>0.000</td>  <td>8.363</td> <td>14.366</td>
+</tr>
+<tr>
+  <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>5.526</td>   <td>1.532</td>   <td>3.608</td> <td>0.000</td>  <td>2.525</td>  <td>8.528</td>
+</tr>
+<tr>
+  <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbr]</th>         <td>0.233</td>   <td>1.532</td>   <td>0.152</td> <td>0.879</td> <td>-2.769</td>  <td>3.235</td>
+</tr>
+<tr>
+  <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbr]</th>        <td>0.095</td>   <td>1.532</td>   <td>0.062</td> <td>0.950</td> <td>-2.906</td>  <td>3.097</td>
+</tr>
+<tr>
+  <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>   <td>-2.470</td>   <td>1.532</td>  <td>-1.613</td> <td>0.107</td> <td>-5.472</td>  <td>0.532</td>
+</tr>
+<tr>
+  <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>  <td>-4.599</td>   <td>1.532</td>  <td>-3.003</td> <td>0.003</td> <td>-7.600</td> <td>-1.597</td>
+</tr>
+<tr>
+  <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th>  <td>-4.477</td>   <td>1.532</td>  <td>-2.923</td> <td>0.003</td> <td>-7.479</td> <td>-1.475</td>
+</tr>
+<tr>
+  <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th> <td>-2.109</td>   <td>1.532</td>  <td>-1.377</td> <td>0.168</td> <td>-5.111</td>  <td>0.893</td>
+</tr>
+<tr>
+  <th>Group Var</th>                                                   <td>0.000</td>   <td>0.219</td>     <td></td>      <td></td>       <td></td>       <td></td>
+</tr>
+</table>
+<br />
+<br /></div>
+<div class="section" id="visualise-group-results">
+<h2><a class="toc-backref" href="#id6">Visualise group results</a><a class="headerlink" href="#visualise-group-results" title="Permalink to this headline">¶</a></h2>
+<p>Now we can summarise the output of the second level model.
+This figure shows that the control condition has small responses that
+are not significantly different to zero for both HbO
+and HbR in both hemispheres.
+Whereas clear significant responses are show for the two tapping conditions.
+We also observe the the tapping response is
+larger in the contralateral hemisphere.
+Filled symbols represent HbO, unfilled symbols represent HbR.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a><span class="p">(</span><span class="n">roi_model</span><span class="p">)</span>
+
+<span class="n">ggplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbo&#39;&quot;</span><span class="p">),</span>
+       <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Coef.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Significant&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">&#39;ROI&#39;</span><span class="p">))</span> \
+    <span class="o">+</span> <span class="n">geom_hline</span><span class="p">(</span><span class="n">y_intercept</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> \
+    <span class="o">+</span> <span class="n">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> \
+    <span class="o">+</span> <span class="n">scale_shape_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">])</span> \
+    <span class="o">+</span> <span class="n">ggsize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span> \
+    <span class="o">+</span> <span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbr&#39;&quot;</span><span class="p">)</span>
+                 <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;ROI == &#39;Left_Hemisphere&#39;&quot;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> \
+    <span class="o">+</span> <span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbr&#39;&quot;</span><span class="p">)</span>
+                 <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;ROI == &#39;Right_Hemisphere&#39;&quot;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<html lang="en">
+   <head>
+       <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
+   </head>
+   <body>
+          <div id="XEZppc"></div>
+   <script type="text/javascript" data-lets-plot-script="plot">
+       var plotSpec={
+'data':{
+'Coef.':[-0.327,-0.875,4.526,12.22,11.365,5.526],
+'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
+'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
+'Significant':[false,false,true,true,true,true]
+},
+'mapping':{
+'x':"Condition",
+'y':"Coef.",
+'color':"Significant",
+'shape':"ROI"
+},
+'data_meta':{
+},
+'ggsize':{
+'width':800,
+'height':300
+},
+'kind':"plot",
+'scales':[{
+'aesthetic':"shape",
+'values':[16,17]
+}],
+'layers':[{
+'geom':"hline",
+'mapping':{
+},
+'data_meta':{
+},
+'y_intercept':0,
+'linetype':"dashed",
+'size':1,
+'data':{
+}
+},{
+'geom':"point",
+'mapping':{
+},
+'data_meta':{
+},
+'size':5,
+'data':{
+}
+},{
+'geom':"point",
+'data':{
+'Coef.':[0.233,-2.47,-4.477],
+'Condition':["Control","Tapping/Left","Tapping/Right"],
+'Significant':[false,false,true]
+},
+'mapping':{
+},
+'data_meta':{
+},
+'size':5,
+'shape':1
+},{
+'geom':"point",
+'data':{
+'Coef.':[0.095,-4.599,-2.109],
+'Condition':["Control","Tapping/Left","Tapping/Right"],
+'Significant':[false,true,false]
+},
+'mapping':{
+},
+'data_meta':{
+},
+'size':5,
+'shape':2
+}]
+};
+       var plotContainer = document.getElementById("XEZppc");
+       LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
+   </script>
+   </body>
+</html>
+<br />
+<br /></div>
+<div class="section" id="group-topographic-visualisation">
+<h2><a class="toc-backref" href="#id7">Group topographic visualisation</a><a class="headerlink" href="#group-topographic-visualisation" title="Permalink to this headline">¶</a></h2>
+<p>We can also view the topographic representation of the data
+(rather than the ROI summary above).
+Here we just plot the oxyhaemoglobin for the two tapping conditions.
+First we compute the mixed effects model for each channel (rather
+than region of interest as above).
+Then we pass these results to the topomap function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+                         <span class="n">gridspec_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># Cut down the dataframe just to the conditions we are interested in</span>
+<span class="n">ch_summary</span> <span class="o">=</span> <span class="n">df_cha</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+<span class="n">ch_summary</span> <span class="o">=</span> <span class="n">ch_summary</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbo&#39;]&quot;</span><span class="p">)</span>
+
+<span class="c1"># Run group level model and convert to dataframe</span>
+<span class="n">ch_model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span><span class="p">(</span><span class="s2">&quot;theta ~ -1 + ch_name:Chroma:condition&quot;</span><span class="p">,</span>
+                       <span class="n">ch_summary</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">ch_summary</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nm&#39;</span><span class="p">)</span>
+<span class="n">ch_model_df</span> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a><span class="p">(</span><span class="n">ch_model</span><span class="p">)</span>
+
+<span class="c1"># Plot the two conditions</span>
+<a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">),</span>
+                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Left&#39;]&quot;</span><span class="p">),</span>
+                    <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                    <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Oranges</span></a><span class="p">)</span>
+
+<a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">),</span>
+                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Right&#39;]&quot;</span><span class="p">),</span>
+                    <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                    <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Oranges</span></a><span class="p">)</span>
+
+<span class="c1"># Cut down the dataframe just to the conditions we are interested in</span>
+<span class="n">ch_summary</span> <span class="o">=</span> <span class="n">df_cha</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+<span class="n">ch_summary</span> <span class="o">=</span> <span class="n">ch_summary</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbr&#39;]&quot;</span><span class="p">)</span>
+
+<span class="c1"># Run group level model and convert to dataframe</span>
+<span class="n">ch_model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span><span class="p">(</span><span class="s2">&quot;theta ~ -1 + ch_name:Chroma:condition&quot;</span><span class="p">,</span>
+                       <span class="n">ch_summary</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">ch_summary</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nm&#39;</span><span class="p">)</span>
+<span class="n">ch_model_df</span> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a><span class="p">(</span><span class="n">ch_model</span><span class="p">)</span>
+
+<span class="c1"># Plot the two conditions</span>
+<a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbr&quot;</span><span class="p">),</span>
+                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Left&#39;]&quot;</span><span class="p">),</span>
+                    <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                    <span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues_r</span></a><span class="p">)</span>
+<a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbr&quot;</span><span class="p">),</span>
+                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Right&#39;]&quot;</span><span class="p">),</span>
+                    <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                    <span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues_r</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="Tapping/Left, Tapping/Right, Tapping/Left, Tapping/Right" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_12_group_glm_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Tapping/Right&#39;}&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="contrasts">
+<h2><a class="toc-backref" href="#id8">Contrasts</a><a class="headerlink" href="#contrasts" title="Permalink to this headline">¶</a></h2>
+<p>Finally we can examine the difference between the left and right hand
+tapping conditions by viewing the contrast results
+in a topographic representation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">con_summary</span> <span class="o">=</span> <span class="n">df_con</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbo&#39;]&quot;</span><span class="p">)</span>
+
+<span class="c1"># Run group level model and convert to dataframe</span>
+<span class="n">con_model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span><span class="p">(</span><span class="s2">&quot;effect ~ -1 + ch_name:Chroma&quot;</span><span class="p">,</span>
+                        <span class="n">con_summary</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">con_summary</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nm&#39;</span><span class="p">)</span>
+<span class="n">con_model_df</span> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a><span class="p">(</span><span class="n">con_model</span><span class="p">)</span>
+
+<a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">),</span>
+                    <span class="n">con_model_df</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="Contrast" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_12_group_glm_002.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2168: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+
+&lt;AxesSubplot:title={&#39;center&#39;:&#39;Contrast&#39;}&gt;
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  4.568 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-12-group-glm-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/9005f64d5dafee5d79895fc8347e3976/plot_12_group_glm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_12_group_glm.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/cf4767d56df682fa296cff54bc40904a/plot_12_group_glm.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_12_group_glm.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2020, Robert Luke.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

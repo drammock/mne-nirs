@@ -120,7 +120,8 @@
       
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-10-hrf-py"><span class="std std-ref">here</span></a>     to download the full example code</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-10-hrf-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="glm-analysis-measured-data">
 <span id="tut-fnirs-hrf"></span><span id="sphx-glr-auto-examples-plot-10-hrf-py"></span><h1>GLM Analysis (Measured Data)<a class="headerlink" href="#glm-analysis-measured-data" title="Permalink to this headline">¶</a></h1>
@@ -404,7 +405,7 @@ is seen in the epoching tutorial.</p>
 </div>
 <img alt="plot 10 hrf" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_10_hrf_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f26888e42b0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f77798b3be0&gt;
 </pre></div>
 </div>
 </div>
@@ -443,175 +444,9 @@ for each condition. And you can plot it with your favorite software.</p>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">col</span></a> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">3</span><span class="p">]):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="../generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest" title="mne_nirs.statistics.glm_region_of_interest" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">glm_region_of_interest</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">groups</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">col</span></a><span class="p">))</span>
-<span class="n">df</span>
 </pre></div>
 </div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Chroma</th>
-      <th>Condition</th>
-      <th>ROI</th>
-      <th>dfe</th>
-      <th>p</th>
-      <th>se</th>
-      <th>t</th>
-      <th>theta</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>hbo</td>
-      <td>Control</td>
-      <td>Left_ROI</td>
-      <td>9.0</td>
-      <td>0.883756</td>
-      <td>0.972274</td>
-      <td>-0.150413</td>
-      <td>-0.146243</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>hbr</td>
-      <td>Control</td>
-      <td>Left_ROI</td>
-      <td>9.0</td>
-      <td>0.780657</td>
-      <td>0.634913</td>
-      <td>0.286938</td>
-      <td>0.182181</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>hbo</td>
-      <td>Control</td>
-      <td>Right_ROI</td>
-      <td>9.0</td>
-      <td>0.918047</td>
-      <td>0.986590</td>
-      <td>0.105819</td>
-      <td>0.104399</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>hbr</td>
-      <td>Control</td>
-      <td>Right_ROI</td>
-      <td>9.0</td>
-      <td>0.872387</td>
-      <td>0.636521</td>
-      <td>-0.165267</td>
-      <td>-0.105196</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>hbo</td>
-      <td>Tapping/Left</td>
-      <td>Left_ROI</td>
-      <td>9.0</td>
-      <td>0.000411</td>
-      <td>0.982716</td>
-      <td>5.440447</td>
-      <td>5.346417</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>hbr</td>
-      <td>Tapping/Left</td>
-      <td>Left_ROI</td>
-      <td>9.0</td>
-      <td>0.011629</td>
-      <td>0.641765</td>
-      <td>-3.155758</td>
-      <td>-2.025255</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>hbo</td>
-      <td>Tapping/Left</td>
-      <td>Right_ROI</td>
-      <td>9.0</td>
-      <td>0.000005</td>
-      <td>0.997194</td>
-      <td>9.543235</td>
-      <td>9.516460</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>hbr</td>
-      <td>Tapping/Left</td>
-      <td>Right_ROI</td>
-      <td>9.0</td>
-      <td>0.000120</td>
-      <td>0.643366</td>
-      <td>-6.433946</td>
-      <td>-4.139385</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>hbo</td>
-      <td>Tapping/Right</td>
-      <td>Left_ROI</td>
-      <td>9.0</td>
-      <td>0.000002</td>
-      <td>0.983927</td>
-      <td>10.506843</td>
-      <td>10.337964</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>hbr</td>
-      <td>Tapping/Right</td>
-      <td>Left_ROI</td>
-      <td>9.0</td>
-      <td>0.000528</td>
-      <td>0.642436</td>
-      <td>-5.249642</td>
-      <td>-3.372560</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>hbo</td>
-      <td>Tapping/Right</td>
-      <td>Right_ROI</td>
-      <td>9.0</td>
-      <td>0.000110</td>
-      <td>0.998398</td>
-      <td>6.508918</td>
-      <td>6.498489</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>hbr</td>
-      <td>Tapping/Right</td>
-      <td>Right_ROI</td>
-      <td>9.0</td>
-      <td>0.002742</td>
-      <td>0.644119</td>
-      <td>-4.083768</td>
-      <td>-2.630433</td>
-    </tr>
-  </tbody>
-</table>
 </div>
-<br />
-<br /></div>
 <div class="section" id="compute-contrasts">
 <h2><a class="toc-backref" href="#id10">Compute contrasts</a><a class="headerlink" href="#compute-contrasts" title="Permalink to this headline">¶</a></h2>
 <p>We can also define a contrast as described in
@@ -635,13 +470,6 @@ from tapping on the right hand.</p>
 </div>
 <div class="section" id="export-results">
 <h2><a class="toc-backref" href="#id11">Export Results</a><a class="headerlink" href="#export-results" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The functions used in this section are in development, and are highly
-likely to change. These functions are marked with an underscore (_)
-at the start of their name to indicate they are not public functions
-and have no promise they will be here next week.</p>
-</div>
 <div class="sidebar">
 <p class="sidebar-title">Relevant literature</p>
 <p>Wickham, Hadley. “Tidy data.” Journal of Statistical Software 59.10 (2014): 1-23.</p>
@@ -654,7 +482,6 @@ The long to wide conversion also adds some additonal derived data, such as
 if a significant response (p&lt;0.05) was observed, which sensor and detector is
 in the channel, which chroma, etc.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <a href="../generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy" title="mne_nirs.utils.glm_to_tidy" class="sphx-glr-backref-module-mne_nirs-utils sphx-glr-backref-type-py-function"><span class="n">glm_to_tidy</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">_tidy_long_to_wide</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -758,7 +585,7 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </table>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  27.576 seconds)</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  27.175 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-10-hrf-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/5d7784c7a4d7e581cc48ca0671986fdb/plot_10_hrf.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_hrf.py</span></code></a></p>

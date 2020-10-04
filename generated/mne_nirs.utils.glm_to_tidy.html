@@ -111,7 +111,7 @@
 <h1>mne_nirs.utils.glm_to_tidy<a class="headerlink" href="#mne-nirs-utils-glm-to-tidy" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne_nirs.utils.glm_to_tidy">
-<code class="sig-prename descclassname">mne_nirs.utils.</code><code class="sig-name descname">glm_to_tidy</code><span class="sig-paren">(</span><em class="sig-param">raw</em>, <em class="sig-param">statistic</em>, <em class="sig-param">design_matrix</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/utils/_io.html#glm_to_tidy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.utils.glm_to_tidy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne_nirs.utils.</code><code class="sig-name descname">glm_to_tidy</code><span class="sig-paren">(</span><em class="sig-param">raw</em>, <em class="sig-param">statistic</em>, <em class="sig-param">design_matrix</em>, <em class="sig-param">wide=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/utils/_io.html#glm_to_tidy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.utils.glm_to_tidy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports GLM regression or contrast results in tidy format.</p>
 <p>Creates a long pandas data frame from regression results or contrast
 as computed by run_GLM or compute_contrast.</p>
@@ -125,6 +125,9 @@ by run_GLM, or nilearn.stats.contrasts.Contrast as returned by
 compute_contrast.</p>
 </dd>
 <dt><strong>design_matrix</strong><span class="classifier">DataFrame</span></dt><dd><p>As specified in Nilearn</p>
+</dd>
+<dt><strong>wide</strong><span class="classifier">Bool</span></dt><dd><p>Should the returned dataframe be in wide format. If False, then the
+retuned data will be in long format.</p>
 </dd>
 </dl>
 </dd>
@@ -142,6 +145,10 @@ compute_contrast.</p>
 <div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel fNIRS experiment (see tut-fnirs-hrf-si..."><div class="figure align-default" id="id1">
 <img alt="GLM Analysis (Measured Data)" src="../_images/sphx_glr_plot_10_hrf_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_10_hrf.html#sphx-glr-auto-examples-plot-10-hrf-py"><span class="std std-ref">GLM Analysis (Measured Data)</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="   Gorgolewski, Krzysztof J., et al.    &quot;The brain imaging data structure, a format for organiz..."><div class="figure align-default" id="id2">
+<img alt="Group Level GLM" src="../_images/sphx_glr_plot_12_group_glm_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_12_group_glm.html#sphx-glr-auto-examples-plot-12-group-glm-py"><span class="std std-ref">Group Level GLM</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></div>
 </div>

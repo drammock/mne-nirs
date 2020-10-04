@@ -99,6 +99,27 @@ Introductory examples.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="   Gorgolewski, Krzysztof J., et al.    &quot;The brain imaging data structure, a format for organiz...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_12_group_glm_thumb.png
+     :alt: Group Level GLM
+
+     :ref:`sphx_glr_auto_examples_plot_12_group_glm.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_12_group_glm
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="In this document we investigate the effect of different signal enhancement techniques on NIRS d...">
 
 .. only:: html

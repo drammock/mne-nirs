@@ -110,7 +110,7 @@
 <span class="kn">import</span> <span class="nn">nilearn</span>
 
 
-<div class="viewcode-block" id="glm_to_tidy"><a class="viewcode-back" href="../../../generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy">[docs]</a><span class="k">def</span> <span class="nf">glm_to_tidy</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">statistic</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">):</span>
+<div class="viewcode-block" id="glm_to_tidy"><a class="viewcode-back" href="../../../generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy">[docs]</a><span class="k">def</span> <span class="nf">glm_to_tidy</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">statistic</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span> <span class="n">wide</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Exports GLM regression or contrast results in tidy format.</span>
 
@@ -127,6 +127,9 @@
 <span class="sd">        compute_contrast.</span>
 <span class="sd">    design_matrix : DataFrame</span>
 <span class="sd">        As specified in Nilearn</span>
+<span class="sd">    wide : Bool</span>
+<span class="sd">        Should the returned dataframe be in wide format. If False, then the</span>
+<span class="sd">        retuned data will be in long format.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -146,6 +149,9 @@
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
             <span class="s1">&#39;Unknown statistic type. Expected dict of RegressionResults &#39;</span>
             <span class="s1">&#39;or Contrast type.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">wide</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">_tidy_long_to_wide</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">expand_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">df</span></div>
 
