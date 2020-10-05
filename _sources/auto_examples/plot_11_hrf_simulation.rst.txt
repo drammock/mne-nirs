@@ -365,7 +365,7 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.470 seconds)
+   **Total running time of the script:** ( 0 minutes  4.303 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_11_hrf_simulation.py:
