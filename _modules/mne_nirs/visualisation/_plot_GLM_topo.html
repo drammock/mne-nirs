@@ -360,6 +360,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;MNE data structure does not match regression results&quot;</span><span class="p">)</span>
 
+    <span class="n">statsmodel_df</span> <span class="o">=</span> <span class="n">statsmodel_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ch_name&#39;</span><span class="p">)</span>
+    <span class="n">statsmodel_df</span> <span class="o">=</span> <span class="n">statsmodel_df</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span>
+
     <span class="n">estimates</span> <span class="o">=</span> <span class="n">statsmodel_df</span><span class="p">[</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
     <span class="k">if</span> <span class="n">threshold</span><span class="p">:</span>
