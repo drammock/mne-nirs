@@ -466,7 +466,7 @@ the two signals.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 198-229
+.. GENERATED FROM PYTHON SOURCE LINES 198-230
 
 Summary
 --------------
@@ -486,7 +486,7 @@ However, it was generated from random noise!
 
 As this is an introduction tutorial I do not go in to details about the
 signal process theory behind why the settings above are wrong.
-But if you are interested you should start with a first year DSP text book
+But if you are interested you should start with a DSP text book 
 on signals and systems.
 
 There are many signal processing parameter choices that interact to produce
@@ -504,7 +504,7 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.953 seconds)
+   **Total running time of the script:** ( 0 minutes  5.334 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_99_bad.py:
