@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap_divs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -138,7 +140,7 @@ and focus on the group level aspect of analysis.
 Here we describe how to process multiple measurements
 and summarise  group level effects both as summary statistics and visually.</p>
 <p>The data used in this example is available <a class="reference external" href="https://github.com/rob-luke/BIDS-NIRS-Tapping">at this location</a>.
-It is an finger tapping example and is briefly described below.
+It is a finger tapping example and is briefly described below.
 The dataset contains 5 participants.
 The example dataset is in
 <a class="reference external" href="https://bids.neuroimaging.io">BIDS</a>
@@ -146,8 +148,8 @@ format and therefore already contains
 information about triggers, condition names, etc.</p>
 <div class="panel panel-success">
 <div class="panel-heading"><h4 class="panel-title">
-<a data-toggle="collapse" href="#collapse_data-description-click-to-expand">Data description (click to expand)</a></h4></div>
-<div id="collapse_data-description-click-to-expand" class="panel-collapse collapse">
+<a data-toggle="collapse" href="#collapse_chevron-circle-down-data-description-click-to-expand"><em class="fa fa-chevron-circle-down"></em> Data description (click to expand)</a></h4></div>
+<div id="collapse_chevron-circle-down-data-description-click-to-expand" class="panel-collapse collapse">
 <div class="panel-body"><p>Optodes were placed over the motor cortex using the standard NIRX motor
 montage, but with 8 short channels added (see their web page for details).
 To view the sensor locations run
@@ -370,18 +372,19 @@ and that the responses look to be contralateral to the tapping hand.</p>
     <span class="o">+</span> <span class="n">ggsize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="output_subarea output_html rendered_html output_result">
 <html lang="en">
    <head>
        <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
    </head>
    <body>
-          <div id="0o2l03"></div>
+          <div id="MDyiJN"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
 'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
 'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
-'theta':[0.1327533916066394,-0.004405415990844132,3.865080919644873,8.140432000738192,8.918801586894457,4.5054352288701045,-0.5020924875346082,-1.7525511338354276,6.224078867054552,6.8149614090722865,12.892869861905014,3.875273781378974,-0.6491175953097997,-1.5018037087864176,5.721032018151832,11.723810945640691,7.3426157885828545,8.616843751855042,-0.6624631599899815,-1.0096713075887105,0.5232669712606479,11.070220686862124,5.5897283446578845,0.3382919234864324,0.04375816016496609,-0.10894531954362746,6.296544610530287,23.350893470508925,22.079148925168532,10.296595359674114],
+'theta':[0.13275339160663363,-0.004405415990854665,3.865080919651212,8.14043200076601,8.918801586862608,4.505435228860455,-0.5020924875345971,-1.7525511338354234,6.224078867049755,6.814961409097512,12.892869861923062,3.875273781366724,-0.6491175953097935,-1.5018037087863794,5.721032018121061,11.723810945598093,7.342615788610316,8.616843751884883,-0.6624631599899826,-1.0096713075887087,0.5232669712501627,11.070220686858711,5.589728344661182,0.3382919234816587,0.043758160164955345,-0.10894531954364325,6.296544610499007,23.350893470493563,22.07914892518876,10.296595359654674],
 'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
 },
 'mapping':{
@@ -424,11 +427,12 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("0o2l03");
+       var plotContainer = document.getElementById("MDyiJN");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
 </html>
+</div>
 <br />
 <br /></div>
 <div class="section" id="compute-group-level-results">
@@ -470,6 +474,7 @@ model by using the code
   warnings.warn(msg, ConvergenceWarning)
 </pre></div>
 </div>
+<div class="output_subarea output_html rendered_html output_result">
 <table class="simpletable">
 <tr>
        <td>Model:</td>       <td>MixedLM</td> <td>Dependent Variable:</td>   <td>theta</td>
@@ -534,6 +539,7 @@ model by using the code
   <th>Group Var</th>                                                   <td>0.000</td>   <td>0.219</td>     <td></td>      <td></td>       <td></td>       <td></td>
 </tr>
 </table>
+</div>
 <br />
 <br /></div>
 <div class="section" id="visualise-group-results">
@@ -560,12 +566,13 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
                  <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;ROI == &#39;Right_Hemisphere&#39;&quot;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="output_subarea output_html rendered_html output_result">
 <html lang="en">
    <head>
        <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
    </head>
    <body>
-          <div id="8416xb"></div>
+          <div id="tXh1RZ"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
@@ -639,11 +646,12 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 'shape':2
 }]
 };
-       var plotContainer = document.getElementById("8416xb");
+       var plotContainer = document.getElementById("tXh1RZ");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
 </html>
+</div>
 <br />
 <br /></div>
 <div class="section" id="group-topographic-visualisation">
@@ -728,7 +736,7 @@ in a topographic representation.</p>
 &lt;AxesSubplot:title={&#39;center&#39;:&#39;Contrast&#39;}&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  3.677 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  52.438 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-12-group-glm-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/9005f64d5dafee5d79895fc8347e3976/plot_12_group_glm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_12_group_glm.py</span></code></a></p>
