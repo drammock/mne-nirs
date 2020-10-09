@@ -50,7 +50,7 @@ measurement length has on response amplitude estimates.
     import numpy as np
     from mne_nirs.experimental_design import make_first_level_design_matrix
     from mne_nirs.statistics import run_GLM
-    from nilearn.reporting import plot_design_matrix
+    from nilearn.plotting import plot_design_matrix
     np.random.seed(1)
 
 
@@ -170,7 +170,7 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
-    Estimate: [4.e-06]   MSE: [1.94051454e-44]   Error (uM): [0.]
+    Estimate: [4.e-06]   MSE: [2.7347906e-44]   Error (uM): [-8.47032947e-16]
 
 
 
@@ -365,7 +365,7 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.809 seconds)
+   **Total running time of the script:** ( 0 minutes  3.546 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_11_hrf_simulation.py:

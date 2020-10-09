@@ -69,7 +69,7 @@ This GLM analysis is a wrapper over the excellent
     from mne_nirs.channels import (get_long_channels, get_short_channels,
                                    picks_pair_to_idx)
 
-    from nilearn.reporting import plot_design_matrix
+    from nilearn.plotting import plot_design_matrix
     from mne_nirs.utils._io import glm_to_tidy, _tidy_long_to_wide
 
 
@@ -520,7 +520,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7fd474a3a4f0>
+    <matplotlib.collections.LineCollection object at 0x7efff13b4f70>
 
 
 
@@ -795,7 +795,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.260 seconds)
+   **Total running time of the script:** ( 0 minutes  21.391 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_10_hrf.py:
