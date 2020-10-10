@@ -98,7 +98,7 @@ First we import some example data recorded with a NIRX device.
     Creating ~/mne_data
     Downloading archive MNE-fNIRS-motor-data.tgz to /github/home/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      3%|2         | Downloading : 504k/17.1M [00:00<00:00,    22.2MB/s]      7%|7         | Downloading : 1.24M/17.1M [00:00<00:00,    22.8MB/s]     19%|#9        | Downloading : 3.24M/17.1M [00:00<00:00,    23.6MB/s]     31%|###       | Downloading : 5.24M/17.1M [00:00<00:00,    24.6MB/s]     42%|####2     | Downloading : 7.24M/17.1M [00:00<00:00,    25.6MB/s]     66%|######5   | Downloading : 11.2M/17.1M [00:00<00:00,    26.6MB/s]     89%|########9 | Downloading : 15.2M/17.1M [00:00<00:00,    27.8MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,     102MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]     12%|#1        | Downloading : 1.99M/17.1M [00:00<00:00,    92.6MB/s]     35%|###5      | Downloading : 5.99M/17.1M [00:00<00:00,    94.6MB/s]     59%|#####8    | Downloading : 9.99M/17.1M [00:00<00:00,    97.3MB/s]     82%|########2 | Downloading : 14.0M/17.1M [00:00<00:00,    99.0MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,     101MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,     153MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /github/home/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -187,7 +187,7 @@ ensure that the values are the same.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.272 seconds)
+   **Total running time of the script:** ( 0 minutes  2.673 seconds)
 
 
 .. _sphx_glr_download_auto_examples_plot_90_snirf.py:
