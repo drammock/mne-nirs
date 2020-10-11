@@ -114,7 +114,7 @@ information about triggers, condition names, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-110
+.. GENERATED FROM PYTHON SOURCE LINES 88-114
 
 Define individual analysis
 --------------------------
@@ -139,9 +139,14 @@ We return the raw object and data frames for the computed results.
 Information about channels, triggers and their meanings are stored in the
 BIDS structure and are automatically obtained when importing the data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-170
+Here we also resample to a 0.3 Hz sample rate just to speed up the example
+and use less memory, resampling to 0.6 Hz is a better choice for full
+analyses.
+
+.. GENERATED FROM PYTHON SOURCE LINES 114-175
 
 .. code-block:: default
+
 
 
     def individual_analysis(bids_path, ID):
@@ -151,7 +156,7 @@ BIDS structure and are automatically obtained when importing the data.
         # Convert signal to haemoglobin and resample
         raw_od = optical_density(raw_intensity)
         raw_haemo = beer_lambert_law(raw_od)
-        raw_haemo.resample(0.6)
+        raw_haemo.resample(0.3)
 
         # Cut out just the short channels for creating a GLM repressor
         sht_chans = get_short_channels(raw_haemo)
@@ -210,7 +215,7 @@ BIDS structure and are automatically obtained when importing the data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-178
+.. GENERATED FROM PYTHON SOURCE LINES 176-183
 
 Run analysis on all participants
 --------------------------------
@@ -220,7 +225,7 @@ on each. We append the individual results in to a large dataframe that
 will contain the results from all measurements. We create a group dataframe
 for the region of interest, channel level, and contrast results.
 
-.. GENERATED FROM PYTHON SOURCE LINES 178-199
+.. GENERATED FROM PYTHON SOURCE LINES 183-204
 
 .. code-block:: default
 
@@ -258,7 +263,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-01_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-01_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-01/**/sub-01*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -266,7 +271,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-02_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-02_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-02/**/sub-02*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -274,7 +279,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-03_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-03_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-03/**/sub-03*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -282,7 +287,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-04_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-04_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-04/**/sub-04*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -290,7 +295,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:113: RuntimeWarning: Did not find any electrodes.tsv associated with sub-05_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-05_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-05/**/sub-05*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -299,7 +304,7 @@ for the region of interest, channel level, and contrast results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 200-209
+.. GENERATED FROM PYTHON SOURCE LINES 205-214
 
 Visualise Individual results
 ----------------------------
@@ -311,7 +316,7 @@ values and observe they are in the expect range.
 We can already see that the control condition is always near zero,
 and that the responses look to be contralateral to the tapping hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-220
+.. GENERATED FROM PYTHON SOURCE LINES 214-225
 
 .. code-block:: default
 
@@ -339,13 +344,13 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
        </head>
        <body>
-              <div id="VgTQC6"></div>
+              <div id="sKBg17"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
-    'theta':[0.13275339160663363,-0.004405415990854665,3.865080919651212,8.14043200076601,8.918801586862608,4.505435228860455,-0.5020924875345971,-1.7525511338354234,6.224078867049755,6.814961409097512,12.892869861923062,3.875273781366724,-0.6491175953097935,-1.5018037087863794,5.721032018121061,11.723810945598093,7.342615788610316,8.616843751884883,-0.6624631599899826,-1.0096713075887087,0.5232669712501627,11.070220686858711,5.589728344661182,0.3382919234816587,0.043758160164955345,-0.10894531954364325,6.296544610499007,23.350893470493563,22.07914892518876,10.296595359654674],
+    'theta':[0.37247188799086955,0.25408207236541236,2.2428496612900015,5.501360887007852,7.075323444968471,2.954535893559972,-0.8996860279166383,-1.54407643804668,3.130977426109975,4.205153418792971,7.777819085868472,1.2695468514588912,-0.8860389918563398,-1.972411527125232,0.9799166999260265,5.6531404559033485,3.4549740876426993,3.693797736890318,-0.028472663285747185,-0.17457869709238638,-3.20435765002774,9.426673639550085,4.997328058016714,-1.4423797732209678,0.035379061687909226,-0.4796454540076694,6.652159700228282,23.359206828697804,23.014624888231413,11.009461805457951],
     'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
     'mapping':{
@@ -388,7 +393,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("VgTQC6");
+           var plotContainer = document.getElementById("sKBg17");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -397,7 +402,7 @@ and that the responses look to be contralateral to the tapping hand.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-252
+.. GENERATED FROM PYTHON SOURCE LINES 226-257
 
 Compute group level results
 ---------------------------
@@ -431,7 +436,7 @@ Alternatively, we could use a robust linear
 model by using the code
 `roi_model = rlm('theta ~ -1 + ROI:Condition:Chroma', grp_results).fit()`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 252-260
+.. GENERATED FROM PYTHON SOURCE LINES 257-265
 
 .. code-block:: default
 
@@ -468,10 +473,10 @@ model by using the code
       <td>No. Observations:</td>   <td>60</td>          <td>Method:</td>         <td>REML</td>   
     </tr>
     <tr>
-         <td>No. Groups:</td>       <td>5</td>          <td>Scale:</td>         <td>11.7283</td> 
+         <td>No. Groups:</td>       <td>5</td>          <td>Scale:</td>         <td>16.2281</td> 
     </tr>
     <tr>
-      <td>Min. group size:</td>    <td>12</td>      <td>Log-Likelihood:</td>   <td>-136.8537</td>
+      <td>Min. group size:</td>    <td>12</td>      <td>Log-Likelihood:</td>   <td>-144.6475</td>
     </tr>
     <tr>
       <td>Max. group size:</td>    <td>12</td>        <td>Converged:</td>         <td>Yes</td>   
@@ -485,50 +490,50 @@ model by using the code
                                    <td></td>                               <th>Coef.</th> <th>Std.Err.</th>    <th>z</th>   <th>P>|z|</th> <th>[0.025</th> <th>0.975]</th>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbo]</th>        <td>-0.327</td>   <td>1.532</td>  <td>-0.214</td> <td>0.831</td> <td>-3.329</td>  <td>2.674</td>
+      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbo]</th>        <td>-0.281</td>   <td>1.802</td>  <td>-0.156</td> <td>0.876</td> <td>-3.812</td>  <td>3.250</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbo]</th>       <td>-0.875</td>   <td>1.532</td>  <td>-0.572</td> <td>0.568</td> <td>-3.877</td>  <td>2.126</td>
+      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbo]</th>       <td>-0.783</td>   <td>1.802</td>  <td>-0.435</td> <td>0.664</td> <td>-4.314</td>  <td>2.748</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>    <td>4.526</td>   <td>1.532</td>   <td>2.955</td> <td>0.003</td>  <td>1.524</td>  <td>7.528</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>    <td>1.960</td>   <td>1.802</td>   <td>1.088</td> <td>0.277</td> <td>-1.571</td>  <td>5.491</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>  <td>12.220</td>   <td>1.532</td>   <td>7.979</td> <td>0.000</td>  <td>9.218</td> <td>15.222</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>   <td>9.629</td>   <td>1.802</td>   <td>5.345</td> <td>0.000</td>  <td>6.098</td> <td>13.160</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>11.365</td>   <td>1.532</td>   <td>7.420</td> <td>0.000</td>  <td>8.363</td> <td>14.366</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>   <td>9.264</td>   <td>1.802</td>   <td>5.142</td> <td>0.000</td>  <td>5.733</td> <td>12.795</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>5.526</td>   <td>1.532</td>   <td>3.608</td> <td>0.000</td>  <td>2.525</td>  <td>8.528</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>3.497</td>   <td>1.802</td>   <td>1.941</td> <td>0.052</td> <td>-0.034</td>  <td>7.028</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbr]</th>         <td>0.233</td>   <td>1.532</td>   <td>0.152</td> <td>0.879</td> <td>-2.769</td>  <td>3.235</td>
+      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbr]</th>         <td>0.268</td>   <td>1.802</td>   <td>0.149</td> <td>0.882</td> <td>-3.263</td>  <td>3.799</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbr]</th>        <td>0.095</td>   <td>1.532</td>   <td>0.062</td> <td>0.950</td> <td>-2.906</td>  <td>3.097</td>
+      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbr]</th>        <td>0.103</td>   <td>1.802</td>   <td>0.057</td> <td>0.954</td> <td>-3.428</td>  <td>3.634</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>   <td>-2.470</td>   <td>1.532</td>  <td>-1.613</td> <td>0.107</td> <td>-5.472</td>  <td>0.532</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>   <td>-2.003</td>   <td>1.802</td>  <td>-1.112</td> <td>0.266</td> <td>-5.534</td>  <td>1.528</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>  <td>-4.599</td>   <td>1.532</td>  <td>-3.003</td> <td>0.003</td> <td>-7.600</td> <td>-1.597</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>  <td>-4.258</td>   <td>1.802</td>  <td>-2.364</td> <td>0.018</td> <td>-7.789</td> <td>-0.727</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th>  <td>-4.477</td>   <td>1.532</td>  <td>-2.923</td> <td>0.003</td> <td>-7.479</td> <td>-1.475</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th>  <td>-4.128</td>   <td>1.802</td>  <td>-2.291</td> <td>0.022</td> <td>-7.658</td> <td>-0.597</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th> <td>-2.109</td>   <td>1.532</td>  <td>-1.377</td> <td>0.168</td> <td>-5.111</td>  <td>0.893</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th> <td>-1.768</td>   <td>1.802</td>  <td>-0.981</td> <td>0.326</td> <td>-5.299</td>  <td>1.763</td>
     </tr>
     <tr>
-      <th>Group Var</th>                                                   <td>0.000</td>   <td>0.219</td>     <td></td>      <td></td>       <td></td>       <td></td>   
+      <th>Group Var</th>                                                   <td>0.000</td>   <td>0.271</td>     <td></td>      <td></td>       <td></td>       <td></td>   
     </tr>
     </table>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 261-272
+.. GENERATED FROM PYTHON SOURCE LINES 266-277
 
 Visualise group results
 -----------------------
@@ -542,7 +547,7 @@ We also observe the the tapping response is
 larger in the contralateral hemisphere.
 Filled symbols represent HbO, unfilled symbols represent HbR.
 
-.. GENERATED FROM PYTHON SOURCE LINES 272-287
+.. GENERATED FROM PYTHON SOURCE LINES 277-292
 
 .. code-block:: default
 
@@ -574,14 +579,14 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
        </head>
        <body>
-              <div id="KgimDt"></div>
+              <div id="TaQK47"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
-    'Coef.':[-0.327,-0.875,4.526,12.22,11.365,5.526],
+    'Coef.':[-0.281,-0.783,1.96,9.629,9.264,3.497],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-    'Significant':[false,false,true,true,true,true]
+    'Significant':[false,false,false,true,true,false]
     },
     'mapping':{
     'x':"Condition",
@@ -623,7 +628,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.233,-2.47,-4.477],
+    'Coef.':[0.268,-2.003,-4.128],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,false,true]
     },
@@ -636,7 +641,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.095,-4.599,-2.109],
+    'Coef.':[0.103,-4.258,-1.768],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,true,false]
     },
@@ -648,7 +653,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("KgimDt");
+           var plotContainer = document.getElementById("TaQK47");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -657,7 +662,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 288-297
+.. GENERATED FROM PYTHON SOURCE LINES 293-302
 
 Group topographic visualisation
 -------------------------------
@@ -669,7 +674,7 @@ First we compute the mixed effects model for each channel (rather
 than region of interest as above).
 Then we pass these results to the topomap function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 297-341
+.. GENERATED FROM PYTHON SOURCE LINES 302-346
 
 .. code-block:: default
 
@@ -736,7 +741,7 @@ Then we pass these results to the topomap function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 342-348
+.. GENERATED FROM PYTHON SOURCE LINES 347-353
 
 Contrasts
 ---------
@@ -745,7 +750,7 @@ Finally we can examine the difference between the left and right hand
 tapping conditions by viewing the contrast results
 in a topographic representation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 348-359
+.. GENERATED FROM PYTHON SOURCE LINES 353-364
 
 .. code-block:: default
 
@@ -776,6 +781,8 @@ in a topographic representation.
 
     /usr/local/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2168: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
       warnings.warn(msg, ConvergenceWarning)
+    /usr/local/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2189: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+      warnings.warn(msg, ConvergenceWarning)
 
     <AxesSubplot:title={'center':'Contrast'}>
 
@@ -784,7 +791,9 @@ in a topographic representation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  57.404 seconds)
+   **Total running time of the script:** ( 1 minutes  19.242 seconds)
+
+**Estimated memory usage:**  209 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:
