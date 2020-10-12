@@ -384,13 +384,13 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
    </head>
    <body>
-          <div id="8CgPp8"></div>
+          <div id="L2biKH"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
 'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
 'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
-'theta':[0.37247188799086955,0.25408207236541236,2.2428496612900015,5.501360887007852,7.075323444968471,2.954535893559972,-0.8996860279166383,-1.54407643804668,3.130977426109975,4.205153418792971,7.777819085868472,1.2695468514588912,-0.8860389918563398,-1.972411527125232,0.9799166999260265,5.6531404559033485,3.4549740876426993,3.693797736890318,-0.028472663285747185,-0.17457869709238638,-3.20435765002774,9.426673639550085,4.997328058016714,-1.4423797732209678,0.035379061687909226,-0.4796454540076694,6.652159700228282,23.359206828697804,23.014624888231413,11.009461805457951],
+'theta':[0.3724718879908728,0.25408207236541436,2.2428496613073685,5.501360887012178,7.075323444970353,2.954535893563925,-0.8996860279166226,-1.5440764380466943,3.1309774261451353,4.205153418806352,7.777819085836264,1.2695468514211306,-0.8860389918563332,-1.9724115271252167,0.9799166999337907,5.653140455936352,3.4549740876389743,3.693797736947998,-0.02847266328576234,-0.17457869709240448,-3.2043576500304742,9.426673639551737,4.997328058010415,-1.4423797732337575,0.035379061687884926,-0.47964545400762365,6.6521597002243045,23.359206828697282,23.014624888268433,11.009461805488703],
 'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
 },
 'mapping':{
@@ -433,7 +433,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("8CgPp8");
+       var plotContainer = document.getElementById("L2biKH");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -578,7 +578,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
    </head>
    <body>
-          <div id="Ip0gRH"></div>
+          <div id="iCHQxb"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
@@ -652,7 +652,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 'shape':2
 }]
 };
-       var plotContainer = document.getElementById("Ip0gRH");
+       var plotContainer = document.getElementById("iCHQxb");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -672,48 +672,48 @@ Then we pass these results to the topomap function.</p>
                          <span class="n">gridspec_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
 
 <span class="c1"># Cut down the dataframe just to the conditions we are interested in</span>
-<span class="n">ch_summary</span> <span class="o">=</span> <span class="n">df_cha</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+<span class="n">ch_summary</span> <span class="o">=</span> <span class="n">df_cha</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
 <span class="n">ch_summary</span> <span class="o">=</span> <span class="n">ch_summary</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbo&#39;]&quot;</span><span class="p">)</span>
 
 <span class="c1"># Run group level model and convert to dataframe</span>
-<span class="n">ch_model</span> <span class="o">=</span> <a href="https://www.statsmodels.org/stable/generated/statsmodels.formula.api.mixedlm.html#statsmodels.formula.api.mixedlm" title="statsmodels.formula.api.mixedlm" class="sphx-glr-backref-module-statsmodels-formula-api sphx-glr-backref-type-py-function"><span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span></a><span class="p">(</span><span class="s2">&quot;theta ~ -1 + ch_name:Chroma:condition&quot;</span><span class="p">,</span>
+<span class="n">ch_model</span> <span class="o">=</span> <a href="https://www.statsmodels.org/stable/generated/statsmodels.formula.api.mixedlm.html#statsmodels.formula.api.mixedlm" title="statsmodels.formula.api.mixedlm" class="sphx-glr-backref-module-statsmodels-formula-api sphx-glr-backref-type-py-function"><span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span></a><span class="p">(</span><span class="s2">&quot;theta ~ -1 + ch_name:Chroma:Condition&quot;</span><span class="p">,</span>
                        <span class="n">ch_summary</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">ch_summary</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nm&#39;</span><span class="p">)</span>
 <span class="n">ch_model_df</span> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a><span class="p">(</span><span class="n">ch_model</span><span class="p">)</span>
 
 <span class="c1"># Plot the two conditions</span>
 <a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">),</span>
-                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Left&#39;]&quot;</span><span class="p">),</span>
+                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Left&#39;]&quot;</span><span class="p">),</span>
                     <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
                     <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Oranges</span></a><span class="p">)</span>
 
 <a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">),</span>
-                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Right&#39;]&quot;</span><span class="p">),</span>
+                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Right&#39;]&quot;</span><span class="p">),</span>
                     <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                     <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Oranges</span></a><span class="p">)</span>
 
 <span class="c1"># Cut down the dataframe just to the conditions we are interested in</span>
-<span class="n">ch_summary</span> <span class="o">=</span> <span class="n">df_cha</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+<span class="n">ch_summary</span> <span class="o">=</span> <span class="n">df_cha</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
 <span class="n">ch_summary</span> <span class="o">=</span> <span class="n">ch_summary</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbr&#39;]&quot;</span><span class="p">)</span>
 
 <span class="c1"># Run group level model and convert to dataframe</span>
-<span class="n">ch_model</span> <span class="o">=</span> <a href="https://www.statsmodels.org/stable/generated/statsmodels.formula.api.mixedlm.html#statsmodels.formula.api.mixedlm" title="statsmodels.formula.api.mixedlm" class="sphx-glr-backref-module-statsmodels-formula-api sphx-glr-backref-type-py-function"><span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span></a><span class="p">(</span><span class="s2">&quot;theta ~ -1 + ch_name:Chroma:condition&quot;</span><span class="p">,</span>
+<span class="n">ch_model</span> <span class="o">=</span> <a href="https://www.statsmodels.org/stable/generated/statsmodels.formula.api.mixedlm.html#statsmodels.formula.api.mixedlm" title="statsmodels.formula.api.mixedlm" class="sphx-glr-backref-module-statsmodels-formula-api sphx-glr-backref-type-py-function"><span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span></a><span class="p">(</span><span class="s2">&quot;theta ~ -1 + ch_name:Chroma:Condition&quot;</span><span class="p">,</span>
                        <span class="n">ch_summary</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">ch_summary</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nm&#39;</span><span class="p">)</span>
 <span class="n">ch_model_df</span> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a><span class="p">(</span><span class="n">ch_model</span><span class="p">)</span>
 
 <span class="c1"># Plot the two conditions</span>
 <a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbr&quot;</span><span class="p">),</span>
-                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Left&#39;]&quot;</span><span class="p">),</span>
+                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Left&#39;]&quot;</span><span class="p">),</span>
                     <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
                     <span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues_r</span></a><span class="p">)</span>
 <a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbr&quot;</span><span class="p">),</span>
-                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;condition in [&#39;Tapping/Right&#39;]&quot;</span><span class="p">),</span>
+                    <span class="n">ch_model_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Right&#39;]&quot;</span><span class="p">),</span>
                     <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                     <span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><a href="https://matplotlib.org/api/_as_gen/matplotlib.colors.LinearSegmentedColormap.html#matplotlib.colors.LinearSegmentedColormap" title="matplotlib.colors.LinearSegmentedColormap" class="sphx-glr-backref-module-matplotlib-colors sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues_r</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="Tapping/Left, Tapping/Right, Tapping/Left, Tapping/Right" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_12_group_glm_001.png" />
+<img alt="Contrast, Contrast, Contrast, Contrast" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_12_group_glm_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Tapping/Right&#39;}&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Contrast&#39;}&gt;
 </pre></div>
 </div>
 </div>
@@ -744,8 +744,8 @@ in a topographic representation.</p>
 &lt;AxesSubplot:title={&#39;center&#39;:&#39;Contrast&#39;}&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  21.064 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  262 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  8.081 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  264 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-12-group-glm-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/9005f64d5dafee5d79895fc8347e3976/plot_12_group_glm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_12_group_glm.py</span></code></a></p>
