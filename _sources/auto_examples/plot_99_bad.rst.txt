@@ -20,8 +20,8 @@
 
 .. _tut-fnirs-processing-bad:
 
-On the importance of control conditions and understanding parameter selection
-=============================================================================
+Importance of Controls and Parameter Selection
+==============================================
 
 .. warning:: DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA
 
@@ -33,30 +33,29 @@ On the importance of control conditions and understanding parameter selection
 
 This tutorial demonstrates how **NOT** to process your fNIRS data.
 Here I demonstrate that with a simple process pipelines even random noise
-can look like a canonical neural response.
+can look like a canonical haemodynamic response.
 
 This tutorial was written to motivate further interest in to what affect
 signal processing has on our data. And to provide a concrete example
 about why you should understand your analysis and not vary parameters to meet
 preconceived ideas of what your data should look like.
-I recommend specifying analysis parameters along with your experimental
+I recommend specifying analysis parameters in advance along with your experimental
 protocol. Hopefully this tutorial also highlights the importance of
 including a control condition in your experimental design.
 
 The
-`MNE fNIRS waveform tutorial <https://mne.tools/stable/auto_tutorials/preprocessing/plot_70_fnirs_processing.html>`_
+:ref:`MNE fNIRS waveform tutorial <mne:tut-fnirs-processing>`
 is used as a basis for this analysis, so most of the document looks similar.
 However, at the midpoint we replace the real data with noise and demonstrate
 that without careful attention to the analysis parameter it would still
 appear as if a fNIRS response is observed.
 
-.. warning:: DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA
 
 .. contents:: Page contents
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-61
+.. GENERATED FROM PYTHON SOURCE LINES 40-60
 
 .. code-block:: default
 
@@ -97,7 +96,7 @@ appear as if a fNIRS response is observed.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-69
+.. GENERATED FROM PYTHON SOURCE LINES 61-68
 
 Selecting channels appropriate for detecting neural responses
 -------------------------------------------------------------
@@ -107,7 +106,7 @@ detect a neural response (less than 1 cm distance between optodes).
 These short channels can be seen in the figure above.
 To achieve this we pick all the channels that are not considered to be short.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-78
+.. GENERATED FROM PYTHON SOURCE LINES 68-77
 
 .. code-block:: default
 
@@ -139,14 +138,14 @@ To achieve this we pick all the channels that are not considered to be short.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-83
+.. GENERATED FROM PYTHON SOURCE LINES 78-82
 
 Converting from raw intensity to optical density
 ------------------------------------------------
 
 The raw intensity values are then converted to optical density.
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-89
+.. GENERATED FROM PYTHON SOURCE LINES 82-88
 
 .. code-block:: default
 
@@ -175,7 +174,7 @@ The raw intensity values are then converted to optical density.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-95
+.. GENERATED FROM PYTHON SOURCE LINES 89-94
 
 Converting from optical density to haemoglobin
 ----------------------------------------------
@@ -183,7 +182,7 @@ Converting from optical density to haemoglobin
 Next we convert the optical density data to haemoglobin concentration using
 the modified Beer-Lambert law.
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-102
+.. GENERATED FROM PYTHON SOURCE LINES 94-101
 
 .. code-block:: default
 
@@ -213,7 +212,7 @@ the modified Beer-Lambert law.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-108
+.. GENERATED FROM PYTHON SOURCE LINES 102-107
 
 !!!!!!Replace real data with white noise!!!!!
 ----------------------------------------------
@@ -221,7 +220,7 @@ the modified Beer-Lambert law.
 Here we replace the signals with white noise.
 We make the HbR white noise 3 time smaller than HbO as is commonly observed.
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-114
+.. GENERATED FROM PYTHON SOURCE LINES 107-113
 
 .. code-block:: default
 
@@ -238,7 +237,7 @@ We make the HbR white noise 3 time smaller than HbO as is commonly observed.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-121
+.. GENERATED FROM PYTHON SOURCE LINES 114-120
 
 Removing heart rate from signal (BAD DONT COPY)
 -----------------------------------------------
@@ -247,7 +246,7 @@ This analysis is BAD and is provided just as a demonstration.
 Do not do this!!
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-132
+.. GENERATED FROM PYTHON SOURCE LINES 120-131
 
 .. code-block:: default
 
@@ -309,14 +308,14 @@ Do not do this!!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-137
+.. GENERATED FROM PYTHON SOURCE LINES 132-136
 
 Apply Cui negative correlation method
 -------------------------------------
 
 Here we apply the Cui signal enhancement technique.
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-141
+.. GENERATED FROM PYTHON SOURCE LINES 136-140
 
 .. code-block:: default
 
@@ -331,7 +330,7 @@ Here we apply the Cui signal enhancement technique.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-151
+.. GENERATED FROM PYTHON SOURCE LINES 141-150
 
 Extract epochs
 --------------
@@ -343,7 +342,7 @@ related to each of the experimental conditions.
 First we extract the events of interest and visualise them to ensure they are
 correct.
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-161
+.. GENERATED FROM PYTHON SOURCE LINES 150-160
 
 .. code-block:: default
 
@@ -376,13 +375,13 @@ correct.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-165
+.. GENERATED FROM PYTHON SOURCE LINES 161-164
 
 Next we define the range of our epochs, the rejection criteria,
 baseline correction, and extract the epochs. We visualise the log of which
 epochs were dropped.
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-176
+.. GENERATED FROM PYTHON SOURCE LINES 164-175
 
 .. code-block:: default
 
@@ -418,7 +417,7 @@ epochs were dropped.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-183
+.. GENERATED FROM PYTHON SOURCE LINES 176-182
 
 Plot standard fNIRS response image
 ----------------------------------
@@ -427,7 +426,7 @@ Next we generate the most common visualisation of fNIRS data: plotting
 both the HbO and HbR on the same figure to illustrate the relation between
 the two signals.
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-197
+.. GENERATED FROM PYTHON SOURCE LINES 182-196
 
 .. code-block:: default
 
@@ -466,15 +465,16 @@ the two signals.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 198-230
+.. GENERATED FROM PYTHON SOURCE LINES 197-230
 
 Summary
 --------------
 
 Above is a waveform that has many of the characteristics that are expected
 from a haeomodynamic response.
-We see a baseline that is around zero, the two chromophore are correctly
-positive and negative, the peak occurs around 5 seconds then returns to
+We see a baseline that is around zero, the oxyhaemoglobin is positive
+and the deoxyhaemoglobin is negative,
+the peak occurs around 5 seconds then returns to
 baseline.
 However, it was generated from random noise!
 
@@ -486,7 +486,7 @@ However, it was generated from random noise!
 
 As this is an introduction tutorial I do not go in to details about the
 signal process theory behind why the settings above are wrong.
-But if you are interested you should start with a DSP text book 
+But if you are interested you should start with a DSP textbook
 on signals and systems.
 
 There are many signal processing parameter choices that interact to produce
@@ -497,16 +497,16 @@ has on your output. Using a receiver operating characteristic is a good
 approach to understand your analysis.
 This also highlights some of the concerns with the time domain analysis
 approach, and the benefits of the GLM style of analysis
-`(see MNE-NIRS fNIRS GLM tutorial) <https://mne.tools/mne-nirs/auto_examples/plot_10_hrf.html>`_,.
+:ref:`(see MNE-NIRS fNIRS GLM tutorial) <tut-fnirs-hrf>` (and Huppert 2016).
 
 .. warning:: DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  55.130 seconds)
+   **Total running time of the script:** ( 0 minutes  56.236 seconds)
 
-**Estimated memory usage:**  99 MB
+**Estimated memory usage:**  57 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_99_bad.py:

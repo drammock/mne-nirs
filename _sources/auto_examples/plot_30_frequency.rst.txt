@@ -30,17 +30,11 @@ on experimental design and our model of how the brain reacts to stimuli,
 the actual data measured during an experiment, and the filtering
 that is applied to the data.
 
-.. warning::
-
-      This is a work in progress. Suggestions of improvements are
-      appreciated. I am finalising the code, then will fix the text.
-
-
 .. contents:: Page contents
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-40
+.. GENERATED FROM PYTHON SOURCE LINES 19-34
 
 .. code-block:: default
 
@@ -66,7 +60,7 @@ that is applied to the data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-52
+.. GENERATED FROM PYTHON SOURCE LINES 35-46
 
 Import and preprocess data
 --------------------------
@@ -76,11 +70,11 @@ convert to haemoglobin concentration.
 
 This code is similar to the first sections in the MNE tutorial,
 so will not be described in detail here.
-Please see
-https://mne.tools/dev/auto_tutorials/preprocessing/plot_70_fnirs_processing.html
+Please see the
+:ref:`MNE documentation <mne:tut-fnirs-processing>`.
 for a detailed introduction to processing NIRS with MNE.
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-73
+.. GENERATED FROM PYTHON SOURCE LINES 46-67
 
 .. code-block:: default
 
@@ -121,7 +115,7 @@ for a detailed introduction to processing NIRS with MNE.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-90
+.. GENERATED FROM PYTHON SOURCE LINES 68-84
 
 Model neural response
 ---------------------
@@ -140,7 +134,7 @@ and plot the frequency spectrum.
 We note there is a peak at 0.03 which corresponds approximately to
 the repetition rate of the experiment.
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-104
+.. GENERATED FROM PYTHON SOURCE LINES 84-98
 
 .. code-block:: default
 
@@ -178,7 +172,7 @@ the repetition rate of the experiment.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-114
+.. GENERATED FROM PYTHON SOURCE LINES 99-108
 
 Plot raw measured data
 ----------------------
@@ -190,7 +184,7 @@ We also see an increase in activity around 0.1 Hz, this is likely
 Mayer waves (https://en.wikipedia.org/wiki/Mayer_waves).
 There is also a small bump around 0.3 Hz that is likely the breathing rate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-126
+.. GENERATED FROM PYTHON SOURCE LINES 108-120
 
 .. code-block:: default
 
@@ -226,7 +220,7 @@ There is also a small bump around 0.3 Hz that is likely the breathing rate.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-135
+.. GENERATED FROM PYTHON SOURCE LINES 121-129
 
 Plot epoched data
 -----------------
@@ -237,7 +231,7 @@ The act of averaging the epochs removes some of the systemic components that
 are not time locked to the stimulus. However, the large heart rate component
 is still visible.
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-150
+.. GENERATED FROM PYTHON SOURCE LINES 129-144
 
 .. code-block:: default
 
@@ -284,7 +278,7 @@ is still visible.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-160
+.. GENERATED FROM PYTHON SOURCE LINES 145-154
 
 Plot filter response
 --------------------
@@ -296,7 +290,7 @@ https://mne.tools/stable/auto_tutorials/discussions/plot_background_filtering.ht
 This filter will be designed to remove the heart rate component that remained
 after epoching.
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-170
+.. GENERATED FROM PYTHON SOURCE LINES 154-164
 
 .. code-block:: default
 
@@ -340,7 +334,7 @@ after epoching.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-188
+.. GENERATED FROM PYTHON SOURCE LINES 165-182
 
 Discussion
 ----------
@@ -360,7 +354,7 @@ stimulus interval the act of epoching and averaging the data
 removes these unwanted components and they are not visible in the
 epoched data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-207
+.. GENERATED FROM PYTHON SOURCE LINES 182-201
 
 .. code-block:: default
 
@@ -405,7 +399,7 @@ epoched data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 208-217
+.. GENERATED FROM PYTHON SOURCE LINES 202-211
 
 Understanding the relation between stimulus presentation and response
 ---------------------------------------------------------------------
@@ -417,7 +411,7 @@ values for the ISI. Two repeats are plotted per
 ISI to illustrate the random selection.
 Some common high pass filter values from literature are shown in red.
 
-.. GENERATED FROM PYTHON SOURCE LINES 217-242
+.. GENERATED FROM PYTHON SOURCE LINES 211-236
 
 .. code-block:: default
 
@@ -460,9 +454,9 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  11.469 seconds)
+   **Total running time of the script:** ( 1 minutes  11.897 seconds)
 
-**Estimated memory usage:**  92 MB
+**Estimated memory usage:**  89 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_30_frequency.py:

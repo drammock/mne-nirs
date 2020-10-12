@@ -35,15 +35,16 @@ Group Level GLM
 This is an example of a group level GLM based fNIRS analysis in MNE-NIRS.
 
 Individual level analysis of this data is described in the
-`MNE fNIRS waveform tutorial <https://mne.tools/stable/auto_tutorials/preprocessing/plot_70_fnirs_processing.html>`_
+:ref:`MNE fNIRS waveform tutorial <mne:tut-fnirs-processing>`
 and the
-`MNE-NIRS fNIRS GLM tutorial <https://mne.tools/mne-nirs/auto_examples/plot_10_hrf.html>`_.
+:ref:`MNE-NIRS fNIRS GLM tutorial <tut-fnirs-hrf>`
 So this example will skim over the individual level details
 and focus on the group level aspect of analysis.
 Here we describe how to process multiple measurements
 and summarise  group level effects both as summary statistics and visually.
 
-The data used in this example is available `at this location <https://github.com/rob-luke/BIDS-NIRS-Tapping>`_.
+The data used in this example is available
+`at this location <https://github.com/rob-luke/BIDS-NIRS-Tapping>`_.
 It is a finger tapping example and is briefly described below.
 The dataset contains 5 participants.
 The example dataset is in
@@ -67,10 +68,11 @@ information about triggers, condition names, etc.
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-87
+.. GENERATED FROM PYTHON SOURCE LINES 52-89
 
 .. code-block:: default
 
+    # sphinx_gallery_thumbnail_number = 2
 
     # Authors: Robert Luke <mail@robertluke.net>
     #
@@ -114,7 +116,7 @@ information about triggers, condition names, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-114
+.. GENERATED FROM PYTHON SOURCE LINES 90-116
 
 Define individual analysis
 --------------------------
@@ -122,14 +124,14 @@ Define individual analysis
 .. sidebar:: Individual analysis procedures
 
    Waveform individual analysis:
-   `MNE docs <https://mne.tools/stable/auto_tutorials/preprocessing/plot_70_fnirs_processing.html>`_.
+   :ref:`MNE docs <mne:tut-fnirs-processing>`
 
    GLM individual analysis:
-   `MNE-NIRS docs <https://mne.tools/mne-nirs/auto_examples/plot_10_hrf.html>`_.
+   :ref:`MNE-NIRS docs <tut-fnirs-hrf>`
 
 First we define the analysis that will be applied to each file.
 This is a GLM analysis as described in the
-`MNE-NIRS fNIRS GLM tutorial <https://mne.tools/mne-nirs/auto_examples/plot_10_hrf.html>`_,
+:ref:`individual GLM tutorial <tut-fnirs-hrf>`,
 so this example will skim over the individual level details.
 
 The analysis extracts a response estimate for each channel,
@@ -143,7 +145,7 @@ Here we also resample to a 0.3 Hz sample rate just to speed up the example
 and use less memory, resampling to 0.6 Hz is a better choice for full
 analyses.
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-175
+.. GENERATED FROM PYTHON SOURCE LINES 116-177
 
 .. code-block:: default
 
@@ -215,7 +217,7 @@ analyses.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 176-183
+.. GENERATED FROM PYTHON SOURCE LINES 178-185
 
 Run analysis on all participants
 --------------------------------
@@ -225,7 +227,7 @@ on each. We append the individual results in to a large dataframe that
 will contain the results from all measurements. We create a group dataframe
 for the region of interest, channel level, and contrast results.
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-204
+.. GENERATED FROM PYTHON SOURCE LINES 185-206
 
 .. code-block:: default
 
@@ -263,7 +265,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-01_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-01_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-01/**/sub-01*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -271,7 +273,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-02_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-02_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-02/**/sub-02*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -279,7 +281,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-03_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-03_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-03/**/sub-03*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -287,7 +289,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-04_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-04_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-04/**/sub-04*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -295,7 +297,7 @@ for the region of interest, channel level, and contrast results.
     Loading BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_nirs.snirf
     Reading events from BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_events.tsv.
     Reading channel info from BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_channels.tsv.
-    /github/workspace/examples/plot_12_group_glm.py:118: RuntimeWarning: Did not find any electrodes.tsv associated with sub-05_task-tapping.
+    /github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-05_task-tapping.
 
     The search_str was "BIDS-NIRS-Tapping/sub-05/**/sub-05*electrodes.tsv"
       raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
@@ -304,7 +306,7 @@ for the region of interest, channel level, and contrast results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-214
+.. GENERATED FROM PYTHON SOURCE LINES 207-216
 
 Visualise Individual results
 ----------------------------
@@ -316,7 +318,7 @@ values and observe they are in the expect range.
 We can already see that the control condition is always near zero,
 and that the responses look to be contralateral to the tapping hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 214-225
+.. GENERATED FROM PYTHON SOURCE LINES 216-227
 
 .. code-block:: default
 
@@ -344,7 +346,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
        </head>
        <body>
-              <div id="sKBg17"></div>
+              <div id="8CgPp8"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -393,7 +395,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("sKBg17");
+           var plotContainer = document.getElementById("8CgPp8");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -402,7 +404,7 @@ and that the responses look to be contralateral to the tapping hand.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 226-257
+.. GENERATED FROM PYTHON SOURCE LINES 228-259
 
 Compute group level results
 ---------------------------
@@ -415,7 +417,7 @@ Compute group level results
 
    For a summary of linear mixed models in python
    and the relation to lmer see:
-   `statsmodels docs <https://www.statsmodels.org/stable/mixed_linear.html>`_.
+   :ref:`statsmodels docs <statsmodels:mixedlmmod>`
 
    For a summary of these models in the context of fNIRS see section 3.5 of:
    Santosa, H., Zhai, X., Fishburn, F., & Huppert, T. (2018).
@@ -436,7 +438,7 @@ Alternatively, we could use a robust linear
 model by using the code
 `roi_model = rlm('theta ~ -1 + ROI:Condition:Chroma', grp_results).fit()`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 257-265
+.. GENERATED FROM PYTHON SOURCE LINES 259-267
 
 .. code-block:: default
 
@@ -533,7 +535,7 @@ model by using the code
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 266-277
+.. GENERATED FROM PYTHON SOURCE LINES 268-279
 
 Visualise group results
 -----------------------
@@ -547,7 +549,7 @@ We also observe the the tapping response is
 larger in the contralateral hemisphere.
 Filled symbols represent HbO, unfilled symbols represent HbR.
 
-.. GENERATED FROM PYTHON SOURCE LINES 277-292
+.. GENERATED FROM PYTHON SOURCE LINES 279-294
 
 .. code-block:: default
 
@@ -579,7 +581,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
        </head>
        <body>
-              <div id="TaQK47"></div>
+              <div id="Ip0gRH"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -653,7 +655,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("TaQK47");
+           var plotContainer = document.getElementById("Ip0gRH");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -662,7 +664,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 293-302
+.. GENERATED FROM PYTHON SOURCE LINES 295-304
 
 Group topographic visualisation
 -------------------------------
@@ -674,7 +676,7 @@ First we compute the mixed effects model for each channel (rather
 than region of interest as above).
 Then we pass these results to the topomap function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 302-346
+.. GENERATED FROM PYTHON SOURCE LINES 304-348
 
 .. code-block:: default
 
@@ -741,7 +743,7 @@ Then we pass these results to the topomap function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 347-353
+.. GENERATED FROM PYTHON SOURCE LINES 349-355
 
 Contrasts
 ---------
@@ -750,7 +752,7 @@ Finally we can examine the difference between the left and right hand
 tapping conditions by viewing the contrast results
 in a topographic representation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 353-364
+.. GENERATED FROM PYTHON SOURCE LINES 355-366
 
 .. code-block:: default
 
@@ -791,9 +793,9 @@ in a topographic representation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  19.242 seconds)
+   **Total running time of the script:** ( 1 minutes  21.064 seconds)
 
-**Estimated memory usage:**  209 MB
+**Estimated memory usage:**  262 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:

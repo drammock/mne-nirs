@@ -9,51 +9,7 @@
 General examples
 ================
 
-Introductory examples.
 
-
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="   If you wish to process your .nirs files in MNE use the official snirf    converter to create...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_90_snirf_thumb.png
-     :alt: SNIRF Support in MNE
-
-     :ref:`sphx_glr_auto_examples_plot_90_snirf.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_90_snirf
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="   Huppert TJ. Commentary on the statistical properties of noise and its    implication on gene...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_99_bad_thumb.png
-     :alt: On the importance of control conditions and understanding parameter selection
-
-     :ref:`sphx_glr_auto_examples_plot_99_bad.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_99_bad
 
 .. raw:: html
 
@@ -61,10 +17,10 @@ Introductory examples.
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_11_hrf_simulation_thumb.png
-     :alt: GLM Analysis (Simulated Data)
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_10_hrf_simulation_thumb.png
+     :alt: GLM Analysis (Simulated)
 
-     :ref:`sphx_glr_auto_examples_plot_11_hrf_simulation.py`
+     :ref:`sphx_glr_auto_examples_plot_10_hrf_simulation.py`
 
 .. raw:: html
 
@@ -74,7 +30,7 @@ Introductory examples.
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_11_hrf_simulation
+   /auto_examples/plot_10_hrf_simulation
 
 .. raw:: html
 
@@ -82,31 +38,10 @@ Introductory examples.
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_10_hrf_thumb.png
-     :alt: GLM Analysis (Measured Data)
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_11_hrf_measured_thumb.png
+     :alt: GLM Analysis (Measured)
 
-     :ref:`sphx_glr_auto_examples_plot_10_hrf.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/plot_10_hrf
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example we discuss frequency and filters in the context of NIRS analysis. We examine th...">
-
-.. only:: html
-
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_30_frequency_thumb.png
-     :alt: Frequency and Filter Commentary
-
-     :ref:`sphx_glr_auto_examples_plot_30_frequency.py`
+     :ref:`sphx_glr_auto_examples_plot_11_hrf_measured.py`
 
 .. raw:: html
 
@@ -116,7 +51,7 @@ Introductory examples.
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_30_frequency
+   /auto_examples/plot_11_hrf_measured
 
 .. raw:: html
 
@@ -141,14 +76,14 @@ Introductory examples.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In this document we investigate the effect of different signal enhancement techniques on NIRS d...">
+    <div class="sphx-glr-thumbcontainer" tooltip="   If you wish to process your .nirs files in MNE use the official snirf    converter to create...">
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_20_cui_thumb.png
-     :alt: Signal enhancement techniques
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_19_snirf_thumb.png
+     :alt: SNIRF Support in MNE
 
-     :ref:`sphx_glr_auto_examples_plot_20_cui.py`
+     :ref:`sphx_glr_auto_examples_plot_19_snirf.py`
 
 .. raw:: html
 
@@ -158,7 +93,70 @@ Introductory examples.
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_20_cui
+   /auto_examples/plot_19_snirf
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this document we investigate the effect of different signal enhancement techniques on NIRS d...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_20_enhance_thumb.png
+     :alt: Signal Enhancement Techniques
+
+     :ref:`sphx_glr_auto_examples_plot_20_enhance.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_20_enhance
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we discuss frequency and filters in the context of NIRS analysis. We examine th...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_30_frequency_thumb.png
+     :alt: Frequency and Filter Commentary
+
+     :ref:`sphx_glr_auto_examples_plot_30_frequency.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_30_frequency
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="   Huppert TJ. Commentary on the statistical properties of noise and its    implication on gene...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/images/thumb/sphx_glr_plot_99_bad_thumb.png
+     :alt: Importance of Controls and Parameter Selection
+
+     :ref:`sphx_glr_auto_examples_plot_99_bad.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_99_bad
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

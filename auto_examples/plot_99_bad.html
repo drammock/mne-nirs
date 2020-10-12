@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>On the importance of control conditions and understanding parameter selection &#8212; MNE-NIRS 0.0.1 dev documentation</title>
+    <title>Importance of Controls and Parameter Selection &#8212; MNE-NIRS 0.0.1 dev documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap_divs.css" />
@@ -74,7 +74,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">On the importance of control conditions and understanding parameter selection</a><ul>
+<li><a class="reference internal" href="#">Importance of Controls and Parameter Selection</a><ul>
 <li><a class="reference internal" href="#selecting-channels-appropriate-for-detecting-neural-responses">Selecting channels appropriate for detecting neural responses</a></li>
 <li><a class="reference internal" href="#converting-from-raw-intensity-to-optical-density">Converting from raw intensity to optical density</a></li>
 <li><a class="reference internal" href="#converting-from-optical-density-to-haemoglobin">Converting from optical density to haemoglobin</a></li>
@@ -122,8 +122,8 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-99-bad-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<div class="sphx-glr-example-title section" id="on-the-importance-of-control-conditions-and-understanding-parameter-selection">
-<span id="tut-fnirs-processing-bad"></span><span id="sphx-glr-auto-examples-plot-99-bad-py"></span><h1>On the importance of control conditions and understanding parameter selection<a class="headerlink" href="#on-the-importance-of-control-conditions-and-understanding-parameter-selection" title="Permalink to this headline">¶</a></h1>
+<div class="sphx-glr-example-title section" id="importance-of-controls-and-parameter-selection">
+<span id="tut-fnirs-processing-bad"></span><span id="sphx-glr-auto-examples-plot-99-bad-py"></span><h1>Importance of Controls and Parameter Selection<a class="headerlink" href="#importance-of-controls-and-parameter-selection" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA</p>
@@ -136,24 +136,20 @@ spectroscopy. Neurophotonics. 2016;3(1)</p>
 </div>
 <p>This tutorial demonstrates how <strong>NOT</strong> to process your fNIRS data.
 Here I demonstrate that with a simple process pipelines even random noise
-can look like a canonical neural response.</p>
+can look like a canonical haemodynamic response.</p>
 <p>This tutorial was written to motivate further interest in to what affect
 signal processing has on our data. And to provide a concrete example
 about why you should understand your analysis and not vary parameters to meet
 preconceived ideas of what your data should look like.
-I recommend specifying analysis parameters along with your experimental
+I recommend specifying analysis parameters in advance along with your experimental
 protocol. Hopefully this tutorial also highlights the importance of
 including a control condition in your experimental design.</p>
 <p>The
-<a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/plot_70_fnirs_processing.html">MNE fNIRS waveform tutorial</a>
+<a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/plot_70_fnirs_processing.html#tut-fnirs-processing" title="(in MNE v0.21.0)"><span class="xref std std-ref">MNE fNIRS waveform tutorial</span></a>
 is used as a basis for this analysis, so most of the document looks similar.
 However, at the midpoint we replace the real data with noise and demonstrate
 that without careful attention to the analysis parameter it would still
 appear as if a fNIRS response is observed.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA</p>
-</div>
 <div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
@@ -378,8 +374,9 @@ combining channels using &quot;mean&quot;
 <h2><a class="toc-backref" href="#id9">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>Above is a waveform that has many of the characteristics that are expected
 from a haeomodynamic response.
-We see a baseline that is around zero, the two chromophore are correctly
-positive and negative, the peak occurs around 5 seconds then returns to
+We see a baseline that is around zero, the oxyhaemoglobin is positive
+and the deoxyhaemoglobin is negative,
+the peak occurs around 5 seconds then returns to
 baseline.
 However, it was generated from random noise!</p>
 <div class="sidebar">
@@ -390,7 +387,7 @@ spectroscopy. Neurophotonics. 2016;3(1)</p>
 </div>
 <p>As this is an introduction tutorial I do not go in to details about the
 signal process theory behind why the settings above are wrong.
-But if you are interested you should start with a DSP text book
+But if you are interested you should start with a DSP textbook
 on signals and systems.</p>
 <p>There are many signal processing parameter choices that interact to produce
 your end result. It is important to have a control condition to ensure
@@ -400,13 +397,13 @@ has on your output. Using a receiver operating characteristic is a good
 approach to understand your analysis.
 This also highlights some of the concerns with the time domain analysis
 approach, and the benefits of the GLM style of analysis
-<a class="reference external" href="https://mne.tools/mne-nirs/auto_examples/plot_10_hrf.html">(see MNE-NIRS fNIRS GLM tutorial)</a>,.</p>
+<a class="reference internal" href="plot_11_hrf_measured.html#tut-fnirs-hrf"><span class="std std-ref">(see MNE-NIRS fNIRS GLM tutorial)</span></a> (and Huppert 2016).</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA</p>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  55.130 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  99 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  56.236 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  57 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-99-bad-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/678e06965ad46c3693a1f31f0c10455a/plot_99_bad.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_99_bad.py</span></code></a></p>
