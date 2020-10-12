@@ -207,7 +207,7 @@ stimulus interval.</p>
 </div></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fnirs_data_folder</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.datasets.fnirs_motor.data_path.html#mne.datasets.fnirs_motor.data_path" title="mne.datasets.fnirs_motor.data_path" class="sphx-glr-backref-module-mne-datasets-fnirs_motor sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fnirs_motor</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fnirs_raw_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fnirs_data_folder</span></a><span class="p">,</span> <span class="s1">&#39;Participant-1&#39;</span><span class="p">)</span>
 <span class="n">raw_intensity</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.io.read_raw_nirx.html#mne.io.read_raw_nirx" title="mne.io.read_raw_nirx" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_nirx</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fnirs_raw_dir</span></a><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
-<a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.resample" title="mne.io.BaseRaw.resample" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_intensity</span><span class="o">.</span><span class="n">resample</span></a><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.resample" title="mne.io.BaseRaw.resample" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_intensity</span><span class="o">.</span><span class="n">resample</span></a><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -217,15 +217,18 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /github/home/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  6%|5         | Downloading : 0.99M/17.1M [00:00&lt;00:00,    27.0MB/s]
- 15%|#4        | Downloading : 2.49M/17.1M [00:00&lt;00:00,    27.7MB/s]
- 26%|##6       | Downloading : 4.49M/17.1M [00:00&lt;00:00,    28.7MB/s]
- 38%|###8      | Downloading : 6.49M/17.1M [00:00&lt;00:00,    29.6MB/s]
- 50%|####9     | Downloading : 8.49M/17.1M [00:00&lt;00:00,    30.3MB/s]
- 67%|######7   | Downloading : 11.5M/17.1M [00:00&lt;00:00,    31.1MB/s]
- 79%|#######9  | Downloading : 13.5M/17.1M [00:00&lt;00:00,    32.2MB/s]
- 91%|######### | Downloading : 15.5M/17.1M [00:00&lt;00:00,    33.3MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    68.4MB/s]
+  0%|          | Downloading : 56.0k/17.1M [00:00&lt;00:06,    2.87MB/s]
+  1%|          | Downloading : 88.0k/17.1M [00:00&lt;00:06,    2.82MB/s]
+  1%|1         | Downloading : 248k/17.1M [00:00&lt;00:06,    2.91MB/s]
+  4%|3         | Downloading : 632k/17.1M [00:00&lt;00:05,    3.04MB/s]
+  8%|8         | Downloading : 1.37M/17.1M [00:00&lt;00:05,    3.19MB/s]
+ 20%|#9        | Downloading : 3.37M/17.1M [00:00&lt;00:04,    3.35MB/s]
+ 31%|###1      | Downloading : 5.37M/17.1M [00:00&lt;00:03,    3.52MB/s]
+ 55%|#####4    | Downloading : 9.37M/17.1M [00:00&lt;00:02,    3.70MB/s]
+ 67%|######6   | Downloading : 11.4M/17.1M [00:00&lt;00:01,    3.88MB/s]
+ 78%|#######8  | Downloading : 13.4M/17.1M [00:00&lt;00:00,    4.08MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    4.28MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    67.1MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /github/home/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -235,7 +238,7 @@ Attempting to create new mne-python configuration file:
 Loading /github/home/mne_data/MNE-fNIRS-motor-data/Participant-1
 Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 
-&lt;RawNIRX | Participant-1, 56 x 2975 (2974.0 s), ~1.4 MB, data loaded&gt;
+&lt;RawNIRX | Participant-1, 56 x 2082 (2972.9 s), ~1.0 MB, data loaded&gt;
 </pre></div>
 </div>
 </div>
@@ -260,7 +263,7 @@ experimental conditions.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;RawNIRX | Participant-1, 56 x 2975 (2974.0 s), ~1.4 MB, data loaded&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;RawNIRX | Participant-1, 56 x 2082 (2972.9 s), ~1.0 MB, data loaded&gt;
 </pre></div>
 </div>
 </div>
@@ -430,7 +433,7 @@ is seen in the epoching tutorial.</p>
 </div>
 <img alt="plot 11 hrf measured" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f4f16789b20&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f949993a850&gt;
 </pre></div>
 </div>
 </div>
@@ -571,40 +574,40 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
     <tr>
       <th rowspan="2" valign="top">Control</th>
       <th>hbo</th>
-      <td>1.127638e-06</td>
-      <td>-9.066196e-08</td>
+      <td>1.073247e-06</td>
+      <td>-4.698181e-08</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>hbr</th>
-      <td>7.197006e-07</td>
-      <td>6.750751e-09</td>
+      <td>6.064905e-07</td>
+      <td>1.899649e-08</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Tapping/Left</th>
       <th>hbo</th>
-      <td>1.139741e-06</td>
-      <td>7.249248e-06</td>
-      <td>0.85</td>
+      <td>1.089022e-06</td>
+      <td>6.885871e-06</td>
+      <td>0.90</td>
     </tr>
     <tr>
       <th>hbr</th>
-      <td>7.274707e-07</td>
-      <td>-3.190265e-06</td>
+      <td>6.154109e-07</td>
+      <td>-3.050769e-06</td>
       <td>0.75</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">Tapping/Right</th>
       <th>hbo</th>
-      <td>1.141163e-06</td>
-      <td>8.276313e-06</td>
+      <td>1.091798e-06</td>
+      <td>7.594851e-06</td>
       <td>0.90</td>
     </tr>
     <tr>
       <th>hbr</th>
-      <td>7.282221e-07</td>
-      <td>-3.095988e-06</td>
+      <td>6.170074e-07</td>
+      <td>-2.839041e-06</td>
       <td>0.80</td>
     </tr>
   </tbody>
@@ -612,8 +615,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  42.935 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  2959 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  38.068 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  1445 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-11-hrf-measured-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/6349beabaa4511e7439da4ba434affa5/plot_11_hrf_measured.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_11_hrf_measured.py</span></code></a></p>
