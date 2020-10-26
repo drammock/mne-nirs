@@ -196,7 +196,7 @@ stimulus interval.</p>
 <span class="kn">from</span> <span class="nn">mne_nirs.visualisation</span> <span class="kn">import</span> <a href="../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a>
 
 <span class="c1"># Import MNE-BIDS processing</span>
-<span class="kn">from</span> <span class="nn">mne_bids</span> <span class="kn">import</span> <span class="n">BIDSPath</span><span class="p">,</span> <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.read_raw_bids.html#mne_bids.read_raw_bids" title="mne_bids.read_raw_bids" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-function"><span class="n">read_raw_bids</span></a>
+<span class="kn">from</span> <span class="nn">mne_bids</span> <span class="kn">import</span> <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class"><span class="n">BIDSPath</span></a><span class="p">,</span> <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.read_raw_bids.html#mne_bids.read_raw_bids" title="mne_bids.read_raw_bids" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-function"><span class="n">read_raw_bids</span></a>
 
 <span class="c1"># Import StatsModels</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
@@ -230,9 +230,9 @@ BIDS structure and are automatically obtained when importing the data.</p>
 <p>Here we also resample to a 0.3 Hz sample rate just to speed up the example
 and use less memory, resampling to 0.6 Hz is a better choice for full
 analyses.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">individual_analysis</span><span class="p">(</span><span class="n">bids_path</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">individual_analysis</span><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">):</span>
 
-    <span class="n">raw_intensity</span> <span class="o">=</span> <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.read_raw_bids.html#mne_bids.read_raw_bids" title="mne_bids.read_raw_bids" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-function"><span class="n">read_raw_bids</span></a><span class="p">(</span><span class="n">bids_path</span><span class="o">=</span><span class="n">bids_path</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">raw_intensity</span> <span class="o">=</span> <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.read_raw_bids.html#mne_bids.read_raw_bids" title="mne_bids.read_raw_bids" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-function"><span class="n">read_raw_bids</span></a><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="o">=</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="c1"># Convert signal to haemoglobin and resample</span>
     <span class="n">raw_od</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density" class="sphx-glr-backref-module-mne-preprocessing-nirs sphx-glr-backref-type-py-function"><span class="n">optical_density</span></a><span class="p">(</span><span class="n">raw_intensity</span><span class="p">)</span>
@@ -304,11 +304,11 @@ for the region of interest, channel level, and contrast results.</p>
     <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%02d</span><span class="s1">&#39;</span> <span class="o">%</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sub</span></a>  <span class="c1"># Tidy the subject name</span>
 
     <span class="c1"># Create path to file based on experiment info</span>
-    <span class="n">bids_path</span> <span class="o">=</span> <span class="n">BIDSPath</span><span class="p">(</span><span class="n">subject</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s2">&quot;tapping&quot;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="s1">&#39;BIDS-NIRS-Tapping&#39;</span><span class="p">,</span>
+    <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a> <span class="o">=</span> <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class"><span class="n">BIDSPath</span></a><span class="p">(</span><span class="n">subject</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s2">&quot;tapping&quot;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="s1">&#39;BIDS-NIRS-Tapping&#39;</span><span class="p">,</span>
                          <span class="n">datatype</span><span class="o">=</span><span class="s2">&quot;nirs&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;nirs&quot;</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s2">&quot;.snirf&quot;</span><span class="p">)</span>
 
     <span class="c1"># Analyse data and return both ROI and channel results</span>
-    <span class="n">raw_haemo</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">individual_analysis</span><span class="p">(</span><span class="n">bids_path</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">)</span>
+    <span class="n">raw_haemo</span><span class="p">,</span> <span class="n">roi</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">con</span> <span class="o">=</span> <span class="n">individual_analysis</span><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ID</span></a><span class="p">)</span>
 
     <span class="c1"># Append individual results to all participants</span>
     <span class="n">df_roi</span> <span class="o">=</span> <span class="n">df_roi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
@@ -384,7 +384,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
    </head>
    <body>
-          <div id="bQfiuL"></div>
+          <div id="ST1Sci"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
@@ -433,7 +433,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("bQfiuL");
+       var plotContainer = document.getElementById("ST1Sci");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -578,7 +578,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.2.min.js"></script>
    </head>
    <body>
-          <div id="a3r9an"></div>
+          <div id="LLFgec"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
@@ -652,7 +652,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 'shape':2
 }]
 };
-       var plotContainer = document.getElementById("a3r9an");
+       var plotContainer = document.getElementById("LLFgec");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -744,8 +744,8 @@ in a topographic representation.</p>
 &lt;AxesSubplot:title={&#39;center&#39;:&#39;Contrast&#39;}&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  13.254 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  269 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  59.806 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  274 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-12-group-glm-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/9005f64d5dafee5d79895fc8347e3976/plot_12_group_glm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_12_group_glm.py</span></code></a></p>
