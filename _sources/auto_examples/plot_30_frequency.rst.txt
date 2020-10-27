@@ -354,7 +354,7 @@ stimulus interval the act of epoching and averaging the data
 removes these unwanted components and they are not visible in the
 epoched data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-201
+.. GENERATED FROM PYTHON SOURCE LINES 182-202
 
 .. code-block:: default
 
@@ -371,7 +371,8 @@ epoched data.
 
     leg_lines = [line for line in fig.axes[0].lines if line.get_linestyle() == '-']
     fig.legend(leg_lines, ['Model Response', 'Measured Data',
-                           'Epoched Data', 'Filter Response'])
+                           'Epoched Data', 'Filter Response'],
+                           loc="lower left", bbox_to_anchor=(0.15, 0.2))
     fig.axes[0].set_ylabel('Filter Magnitude (dB) [invalid for other lines]')
     fig.axes[0].set_title('')
 
@@ -399,7 +400,7 @@ epoched data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-211
+.. GENERATED FROM PYTHON SOURCE LINES 203-212
 
 Understanding the relation between stimulus presentation and response
 ---------------------------------------------------------------------
@@ -411,7 +412,7 @@ values for the ISI. Two repeats are plotted per
 ISI to illustrate the random selection.
 Some common high pass filter values from literature are shown in red.
 
-.. GENERATED FROM PYTHON SOURCE LINES 211-236
+.. GENERATED FROM PYTHON SOURCE LINES 212-237
 
 .. code-block:: default
 
@@ -454,7 +455,7 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  54.840 seconds)
+   **Total running time of the script:** ( 1 minutes  3.127 seconds)
 
 **Estimated memory usage:**  99 MB
 

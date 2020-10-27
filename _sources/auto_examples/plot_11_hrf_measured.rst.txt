@@ -129,7 +129,7 @@ to meet github memory constraints.
     Creating ~/mne_data
     Downloading archive MNE-fNIRS-motor-data.tgz to /github/home/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      0%|          | Downloading : 56.0k/17.1M [00:00<00:06,    2.55MB/s]      1%|          | Downloading : 152k/17.1M [00:00<00:06,    2.61MB/s]       2%|1         | Downloading : 344k/17.1M [00:00<00:06,    2.72MB/s]      7%|7         | Downloading : 1.21M/17.1M [00:00<00:05,    2.85MB/s]     16%|#5        | Downloading : 2.71M/17.1M [00:00<00:05,    3.00MB/s]     28%|##7       | Downloading : 4.71M/17.1M [00:00<00:04,    3.15MB/s]     39%|###9      | Downloading : 6.71M/17.1M [00:00<00:03,    3.31MB/s]     51%|#####1    | Downloading : 8.71M/17.1M [00:00<00:02,    3.48MB/s]     63%|######2   | Downloading : 10.7M/17.1M [00:00<00:01,    3.65MB/s]     98%|#########7| Downloading : 16.7M/17.1M [00:00<00:00,    3.84MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    72.7MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      0%|          | Downloading : 40.0k/17.1M [00:00<00:07,    2.48MB/s]      0%|          | Downloading : 72.0k/17.1M [00:00<00:07,    2.39MB/s]      1%|          | Downloading : 136k/17.1M [00:00<00:07,    2.42MB/s]       2%|1         | Downloading : 264k/17.1M [00:00<00:07,    2.50MB/s]      2%|2         | Downloading : 392k/17.1M [00:00<00:06,    2.58MB/s]      4%|4         | Downloading : 776k/17.1M [00:00<00:06,    2.70MB/s]      7%|7         | Downloading : 1.26M/17.1M [00:00<00:05,    2.82MB/s]     13%|#3        | Downloading : 2.26M/17.1M [00:00<00:05,    2.96MB/s]     22%|##2       | Downloading : 3.76M/17.1M [00:00<00:04,    3.11MB/s]     40%|###9      | Downloading : 6.76M/17.1M [00:00<00:03,    3.27MB/s]     51%|#####1    | Downloading : 8.76M/17.1M [00:00<00:02,    3.44MB/s]     75%|#######4  | Downloading : 12.8M/17.1M [00:00<00:01,    3.61MB/s]     98%|#########8| Downloading : 16.8M/17.1M [00:00<00:00,    3.80MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    60.0MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /github/home/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -531,7 +531,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f2fcec07e80>
+    <matplotlib.collections.LineCollection object at 0x7ff690e35fa0>
 
 
 
@@ -806,7 +806,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  29.290 seconds)
+   **Total running time of the script:** ( 1 minutes  33.076 seconds)
 
 **Estimated memory usage:**  1443 MB
 
