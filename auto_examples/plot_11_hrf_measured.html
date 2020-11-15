@@ -139,11 +139,7 @@ An alternative epoching style analysis on the same data can be
 viewed in the
 <a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/plot_70_fnirs_processing.html#tut-fnirs-processing" title="(in MNE v0.21.1)"><span class="xref std std-ref">MNE documentation</span></a>.</p>
 <p>This GLM analysis is a wrapper over the excellent
-<a class="reference external" href="https://github.com/nilearn/nilearn/tree/master/nilearn/stats">Nilearn stats</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The Nilearn links in this document may be broken. See <a class="reference external" href="https://github.com/mne-tools/mne-nirs/issues/112">https://github.com/mne-tools/mne-nirs/issues/112</a></p>
-</div>
+<a class="reference external" href="http://nilearn.github.io/modules/reference.html#module-nilearn.glm">Nilearn GLM</a>.</p>
 <div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
@@ -217,15 +213,15 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /github/home/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  3%|3         | Downloading : 568k/17.1M [00:00&lt;00:00,    26.7MB/s]
-  9%|9         | Downloading : 1.55M/17.1M [00:00&lt;00:00,    27.4MB/s]
- 27%|##6       | Downloading : 4.55M/17.1M [00:00&lt;00:00,    28.5MB/s]
- 38%|###8      | Downloading : 6.55M/17.1M [00:00&lt;00:00,    29.6MB/s]
- 50%|#####     | Downloading : 8.55M/17.1M [00:00&lt;00:00,    26.9MB/s]
- 68%|######7   | Downloading : 11.6M/17.1M [00:00&lt;00:00,    28.0MB/s]
- 79%|#######9  | Downloading : 13.6M/17.1M [00:00&lt;00:00,    29.1MB/s]
- 91%|#########1| Downloading : 15.6M/17.1M [00:00&lt;00:00,    30.3MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    47.8MB/s]
+  1%|1         | Downloading : 184k/17.1M [00:00&lt;00:02,    8.53MB/s]
+  3%|2         | Downloading : 440k/17.1M [00:00&lt;00:02,    8.71MB/s]
+  7%|6         | Downloading : 1.18M/17.1M [00:00&lt;00:01,    9.06MB/s]
+ 16%|#5        | Downloading : 2.68M/17.1M [00:00&lt;00:01,    9.49MB/s]
+ 27%|##7       | Downloading : 4.68M/17.1M [00:00&lt;00:01,    9.94MB/s]
+ 63%|######2   | Downloading : 10.7M/17.1M [00:00&lt;00:00,    10.4MB/s]
+ 86%|########6 | Downloading : 14.7M/17.1M [00:00&lt;00:00,    10.8MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    11.3MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    61.3MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /github/home/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -328,9 +324,9 @@ Text(0.5, 36.72222222222221, &#39;Time (s)&#39;)
 <p class="sidebar-title">Relevant literature</p>
 <p>For further discussion on design matrices see
 the Nilearn examples. Specifically the
-<a class="reference external" href="https://5712-1235740-gh.circle-artifacts.com/0/doc/_build/html/auto_examples/plot_first_level_model_details.html">first level model</a>
+<a class="reference external" href="http://nilearn.github.io/auto_examples/04_glm_first_level/plot_first_level_details.html">first level model</a>
 and
-<a class="reference external" href="https://5712-1235740-gh.circle-artifacts.com/0/doc/_build/html/auto_examples/04_glm_first_level_models/plot_design_matrix.html">design matrix examples</a>.</p>
+<a class="reference external" href="http://nilearn.github.io/auto_examples/04_glm_first_level/plot_design_matrix.html">design matrix examples</a>.</p>
 </div>
 <p>Next we create a model to fit our data to.
 The model consists of various components to model different things we assume
@@ -430,7 +426,7 @@ is seen in the epoching tutorial.</p>
 </div>
 <img alt="plot 11 hrf measured" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f1a63039f40&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f68fa3b2760&gt;
 </pre></div>
 </div>
 </div>
@@ -475,7 +471,7 @@ for each condition. And you can plot it with your favorite software.</p>
 <div class="section" id="compute-contrasts">
 <h2><a class="toc-backref" href="#id10">Compute contrasts</a><a class="headerlink" href="#compute-contrasts" title="Permalink to this headline">¶</a></h2>
 <p>We can also define a contrast as described in
-<a class="reference external" href="https://5874-1235740-gh.circle-artifacts.com/0/doc/_build/html/auto_examples/04_glm_first_level_models/plot_localizer_surface_analysis.html">Nilearn docs</a>
+<a class="reference external" href="http://nilearn.github.io/auto_examples/04_glm_first_level/plot_localizer_surface_analysis.html">Nilearn docs</a>
 and plot it.
 Here we contrast the response to tapping on the left hand with the response
 from tapping on the right hand.</p>
@@ -612,8 +608,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  31.067 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  1476 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  39.800 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  1444 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-11-hrf-measured-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/6349beabaa4511e7439da4ba434affa5/plot_11_hrf_measured.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_11_hrf_measured.py</span></code></a></p>
