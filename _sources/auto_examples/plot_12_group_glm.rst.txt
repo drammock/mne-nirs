@@ -346,7 +346,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="ceXGjn"></div>
+              <div id="Ph9ayY"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -395,7 +395,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("ceXGjn");
+           var plotContainer = document.getElementById("Ph9ayY");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -581,7 +581,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="lxubeC"></div>
+              <div id="uxGBAX"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -655,7 +655,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("lxubeC");
+           var plotContainer = document.getElementById("uxGBAX");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -793,9 +793,9 @@ in a topographic representation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  9.773 seconds)
+   **Total running time of the script:** ( 1 minutes  0.397 seconds)
 
-**Estimated memory usage:**  276 MB
+**Estimated memory usage:**  275 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:
