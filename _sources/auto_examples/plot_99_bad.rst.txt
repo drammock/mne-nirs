@@ -491,7 +491,7 @@ on signals and systems.
 
 There are many signal processing parameter choices that interact to produce
 your end result. It is important to have a control condition to ensure
-that you arent forcing your data to have these fake responses.
+that you aren't forcing your data to have these fake responses.
 Its also important to understand the effect that each parameter choice
 has on your output. Using a receiver operating characteristic is a good
 approach to understand your analysis.
@@ -504,7 +504,7 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  58.810 seconds)
+   **Total running time of the script:** ( 0 minutes  49.546 seconds)
 
 **Estimated memory usage:**  85 MB
 
