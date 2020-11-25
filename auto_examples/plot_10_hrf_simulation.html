@@ -1,10 +1,30 @@
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title>GLM Analysis (Simulated) &#8212; MNE-NIRS 0.0.1 documentation</title>
-    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/font-awesome.css" />
@@ -12,6 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -21,100 +44,183 @@
     <script src="../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
-<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
-<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+    <link rel="next" title="GLM Analysis (Measured)" href="plot_11_hrf_measured.html" />
+    <link rel="prev" title="Examples" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
 
-  </head><body>
+    <a class="navbar-brand" href="../index.html">
+    
+      <p class="title">MNE-NIRS</p>
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../index.html">
-          MNE-NIRS</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.1</b></span>
-      </div>
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html">MNE-NIRS</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../api.html">API</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://github.com/mne-tools/mne-nirs">GitHub<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
 
-        <div class="collapse navbar-collapse nav-collapse">
-          <ul class="nav navbar-nav">
-            
-                <li><a href="index.html">Examples</a></li>
-                <li><a href="../api.html">API</a></li>
-                <li><a href="https://github.com/mne-tools/mne-nirs">GitHub</a></li>
-            
-            
-              <li class="dropdown globaltoc-container">
-  <a role="button"
-     id="dLabelGlobalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="../index.html">Site <b class="caret"></b></a>
-  <ul class="dropdown-menu globaltoc"
-      role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
-</li>
-              
-                <li class="dropdown">
-  <a role="button"
-     id="dLabelLocalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"
-      role="menu"
-      aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">GLM Analysis (Simulated)</a><ul>
-<li><a class="reference internal" href="#simulate-noise-free-nirs-data">Simulate noise free NIRS data</a></li>
-<li><a class="reference internal" href="#create-design-matrix">Create design matrix</a></li>
-<li><a class="reference internal" href="#estimate-response-on-clean-data">Estimate response on clean data</a></li>
-<li><a class="reference internal" href="#simulate-noisy-nirs-data-white">Simulate noisy NIRS data (white)</a></li>
-<li><a class="reference internal" href="#simulate-noisy-nirs-data-colored">Simulate noisy NIRS data (colored)</a></li>
-<li><a class="reference internal" href="#how-does-increasing-the-measurement-length-affect-estimation-accuracy">How does increasing the measurement length affect estimation accuracy?</a></li>
-<li><a class="reference internal" href="#conclusion">Conclusion?</a></li>
-</ul>
-</li>
-</ul>
-</ul>
-</li>
-              
-            
-            
-            
-            
-            
-              <li class="hidden-sm"></li>
-            
-          </ul>
 
-          
-            
-<form class="navbar-form navbar-right" action="../search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
+      <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-          
-        </div>
-    </div>
-  </div>
-
-<div class="container">
-  <div class="row">
-    <div class="body col-md-12 content" role="main">
       
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+          
+        
+        
+        
+          
+            
+                <li class="active">
+                    <a href="">GLM Analysis (Simulated)</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plot_11_hrf_measured.html">GLM Analysis (Measured)</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plot_12_group_glm.html">Group Level GLM</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plot_19_snirf.html">SNIRF Support in MNE</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plot_20_enhance.html">Signal Enhancement Techniques</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plot_30_frequency.html">Frequency and Filter Commentary</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="plot_99_bad.html">Importance of Controls and Parameter Selection</a>
+                </li>
+            
+          
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#simulate-noise-free-nirs-data" class="nav-link">Simulate noise free NIRS data</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#create-design-matrix" class="nav-link">Create design matrix</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#estimate-response-on-clean-data" class="nav-link">Estimate response on clean data</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#simulate-noisy-nirs-data-white" class="nav-link">Simulate noisy NIRS data (white)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#simulate-noisy-nirs-data-colored" class="nav-link">Simulate noisy NIRS data (colored)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#how-does-increasing-the-measurement-length-affect-estimation-accuracy" class="nav-link">How does increasing the measurement length affect estimation accuracy?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#conclusion" class="nav-link">Conclusion?</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-10-hrf-simulation-py"><span class="std std-ref">here</span></a>
@@ -204,7 +310,7 @@ We also see that the mean square error of the model fit is close to zero.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [4.e-06]   MSE: [2.7347906e-44]   Error (uM): [-8.47032947e-16]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [4.e-06]   MSE: [1.94051454e-44]   Error (uM): [0.]
 </pre></div>
 </div>
 </div>
@@ -325,8 +431,8 @@ of the simulated signal. We then added noise and illustrated that the
 estimate provided by the GLM was correct, but contained some error. We
 observed that as the measurement time was increased, the estimated
 error decreased.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  42.026 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  737 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  53.535 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  738 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-10-hrf-simulation-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/cc0fd99e521b68320bc82f551e3619b9/plot_10_hrf_simulation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_hrf_simulation.py</span></code></a></p>
@@ -340,19 +446,31 @@ error decreased.</p>
 </div>
 
 
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Examples</a>
+    <a class='right-next' id="next-link" href="plot_11_hrf_measured.html" title="next page">GLM Analysis (Measured)</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
     </div>
-      
-  </div>
-</div>
-<footer class="footer">
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
   <div class="container">
-    <p class="pull-right">
-      <a href="#">Back to top</a>
-      
-    </p>
     <p>
-        &copy; Copyright 2020, Robert Luke.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+          &copy; Copyright 2020, Robert Luke.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
     </p>
   </div>
 </footer>
