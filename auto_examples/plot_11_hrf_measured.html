@@ -278,7 +278,7 @@ viewed in the
 <li><p><a class="reference internal" href="#determine-true-and-false-positive-rates" id="id12">Determine true and false positive rates</a></p></li>
 </ul>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 7</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 8</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
 <span class="c1">#</span>
@@ -334,25 +334,17 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /github/home/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  1%|          | Downloading : 120k/17.1M [00:00&lt;00:09,    1.78MB/s]
-  3%|3         | Downloading : 568k/17.1M [00:00&lt;00:09,    1.86MB/s]
-  6%|6         | Downloading : 1.05M/17.1M [00:00&lt;00:08,    1.95MB/s]
-  9%|9         | Downloading : 1.55M/17.1M [00:00&lt;00:07,    2.05MB/s]
- 12%|#2        | Downloading : 2.05M/17.1M [00:00&lt;00:07,    2.15MB/s]
- 15%|#4        | Downloading : 2.55M/17.1M [00:00&lt;00:06,    2.25MB/s]
- 21%|##        | Downloading : 3.55M/17.1M [00:00&lt;00:06,    2.36MB/s]
- 30%|##9       | Downloading : 5.05M/17.1M [00:00&lt;00:05,    2.48MB/s]
- 36%|###5      | Downloading : 6.05M/17.1M [00:00&lt;00:04,    2.60MB/s]
- 41%|####1     | Downloading : 7.05M/17.1M [00:00&lt;00:03,    2.73MB/s]
- 47%|####7     | Downloading : 8.05M/17.1M [00:00&lt;00:03,    2.86MB/s]
- 53%|#####3    | Downloading : 9.05M/17.1M [00:00&lt;00:02,    3.01MB/s]
- 65%|######4   | Downloading : 11.1M/17.1M [00:00&lt;00:01,    3.15MB/s]
- 71%|#######   | Downloading : 12.1M/17.1M [00:00&lt;00:01,    3.31MB/s]
- 77%|#######6  | Downloading : 13.1M/17.1M [00:00&lt;00:01,    3.47MB/s]
- 88%|########8 | Downloading : 15.1M/17.1M [00:00&lt;00:00,    3.64MB/s]
- 94%|#########4| Downloading : 16.1M/17.1M [00:00&lt;00:00,    3.82MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    4.01MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    37.7MB/s]
+  0%|          | Downloading : 56.0k/17.1M [00:00&lt;00:06,    2.69MB/s]
+  1%|          | Downloading : 152k/17.1M [00:00&lt;00:06,    2.76MB/s]
+  2%|1         | Downloading : 344k/17.1M [00:00&lt;00:06,    2.87MB/s]
+  5%|4         | Downloading : 856k/17.1M [00:00&lt;00:05,    3.01MB/s]
+ 14%|#3        | Downloading : 2.34M/17.1M [00:00&lt;00:04,    3.16MB/s]
+ 31%|###1      | Downloading : 5.34M/17.1M [00:00&lt;00:03,    3.32MB/s]
+ 55%|#####4    | Downloading : 9.34M/17.1M [00:00&lt;00:02,    3.49MB/s]
+ 66%|######6   | Downloading : 11.3M/17.1M [00:00&lt;00:01,    3.67MB/s]
+ 90%|########9 | Downloading : 15.3M/17.1M [00:00&lt;00:00,    3.86MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    4.05MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    75.8MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /github/home/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -435,8 +427,8 @@ events is also randomised.</p>
 Alternatively, we can view the experiment using a boxcar plot, where the
 line is raised for the duration of the stimulus/condition.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">s</span></a> <span class="o">=</span> <a href="../generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar" title="mne_nirs.experimental_design.create_boxcar" class="sphx-glr-backref-module-mne_nirs-experimental_design sphx-glr-backref-type-py-function"><span class="n">mne_nirs</span><span class="o">.</span><span class="n">experimental_design</span><span class="o">.</span><span class="n">create_boxcar</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.times" title="mne.io.BaseRaw.times" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">times</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">s</span></a><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.times" title="mne.io.BaseRaw.times" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">times</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">s</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">([</span><span class="s2">&quot;Control&quot;</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span><span class="p">,</span> <span class="s2">&quot;Right&quot;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper right&quot;</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">);</span>
 </pre></div>
@@ -492,8 +484,8 @@ The first three columns represent the SPM HRF convolved with our stimulus
 event information.
 The next columns illustrate the drift and constant components.
 The last columns illustrate the short channel signals.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <a href="http://nilearn.github.io/modules/generated/nilearn.plotting.plot_design_matrix.html#nilearn.plotting.plot_design_matrix" title="nilearn.plotting.plot_design_matrix" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_design_matrix</span></a><span class="p">(</span><span class="n">design_matrix</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a> <span class="o">=</span> <a href="http://nilearn.github.io/modules/generated/nilearn.plotting.plot_design_matrix.html#nilearn.plotting.plot_design_matrix" title="nilearn.plotting.plot_design_matrix" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_design_matrix</span></a><span class="p">(</span><span class="n">design_matrix</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="plot 11 hrf measured" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_003.png" />
@@ -557,7 +549,7 @@ is seen in the epoching tutorial.</p>
 </div>
 <img alt="plot 11 hrf measured" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f1006cd5e20&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f0fac6e0d60&gt;
 </pre></div>
 </div>
 </div>
@@ -578,6 +570,53 @@ negative of HbO as expected.</p>
 <img alt="Tapping/Left, Tapping/Right, Tapping/Left, Tapping/Right" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_006.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1200x700 with 6 Axes&gt;
+</pre></div>
+</div>
+<p>Note that the topographic visualisation is a high level representation
+of the underlying data. This visual representation fits a smoothed surface
+to the data and makes many assumptions including that the data is
+spatially smooth and that the sensors sufficiently cover the scalp surface.
+These assumptions can be violated with fNIRS due to the improved spatial
+sensitivity (relative to EEG) and typically low number of sensors that are
+unevenly distributed over the scalp.
+As such, researchers should understand the underlying data and ensure that
+the figure accurately reflects the effect of interest.</p>
+<p>As an example of how the topoplot can be deceiving, we replot
+the <cite>Tapping/Right</cite> condition from above for each hemisphere
+separately. When both hemisphere are plotted together (left),
+the function smooths
+the large space between sensors, making the activity on the left hemisphere
+smear towards the center and appear larger than the underlying data shows.
+When each hemisphere is plotted independently (right) it becomes immediately
+apparent that the data does not indicate that activity spreads across
+the center of the head.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+                         <span class="n">gridspec_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width_ratios</span><span class="o">=</span><span class="p">[</span><span class="mf">0.92</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+
+<a href="../generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">),</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span>
+              <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="n">requested_conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tapping/Right&#39;</span><span class="p">])</span>
+<a href="../generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)),</span>
+              <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">16</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+              <span class="n">requested_conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tapping/Right&#39;</span><span class="p">],</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a href="../generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_topo</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.copy" title="mne.io.BaseRaw.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_haemo</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)),</span>
+              <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">16</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+              <span class="n">requested_conditions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tapping/Right&#39;</span><span class="p">])</span>
+
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Smoothed across hemispheres&quot;</span><span class="p">)</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Hemispheres plotted independently&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="Smoothed across hemispheres, Hemispheres plotted independently" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_007.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: reducing GLM results to match raw
+  warn(&quot;reducing GLM results to match raw&quot;)
+../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: reducing GLM results to match raw
+  warn(&quot;reducing GLM results to match raw&quot;)
+../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: reducing GLM results to match raw
+  warn(&quot;reducing GLM results to match raw&quot;)
+
+Text(0.5, 1.0, &#39;Hemispheres plotted independently&#39;)
 </pre></div>
 </div>
 </div>
@@ -614,7 +653,7 @@ from tapping on the right hand.</p>
 <a href="../generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo" title="mne_nirs.visualisation.plot_glm_contrast_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">mne_nirs</span><span class="o">.</span><span class="n">visualisation</span><span class="o">.</span><span class="n">plot_glm_contrast_topo</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span> <a href="http://nilearn.github.io/modules/generated/nilearn.glm.Contrast.html#nilearn.glm.Contrast" title="nilearn.glm.Contrast" class="sphx-glr-backref-module-nilearn-glm sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">contrast</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="Oxyhaemoglobin, Deoxyhaemoglobin" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_007.png" />
+<img alt="Oxyhaemoglobin, Deoxyhaemoglobin" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_008.png" />
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1200x700 with 3 Axes&gt;
 </pre></div>
@@ -739,8 +778,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  4.677 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  1445 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  44.109 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  1474 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-11-hrf-measured-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/6349beabaa4511e7439da4ba434affa5/plot_11_hrf_measured.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_11_hrf_measured.py</span></code></a></p>

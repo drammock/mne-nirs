@@ -426,42 +426,22 @@ for the region of interest, channel level, and contrast results.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_nirs.snirf
 Reading events from BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_events.tsv.
 Reading channel info from BIDS-NIRS-Tapping/sub-01/nirs/sub-01_task-tapping_channels.tsv.
-/github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-01_task-tapping.
-
-The search_str was &quot;BIDS-NIRS-Tapping/sub-01/**/sub-01*electrodes.tsv&quot;
-  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
 Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 Loading BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_nirs.snirf
 Reading events from BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_events.tsv.
 Reading channel info from BIDS-NIRS-Tapping/sub-02/nirs/sub-02_task-tapping_channels.tsv.
-/github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-02_task-tapping.
-
-The search_str was &quot;BIDS-NIRS-Tapping/sub-02/**/sub-02*electrodes.tsv&quot;
-  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
 Reading 0 ... 18877  =      0.000 ...  2416.256 secs...
 Loading BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_nirs.snirf
 Reading events from BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_events.tsv.
 Reading channel info from BIDS-NIRS-Tapping/sub-03/nirs/sub-03_task-tapping_channels.tsv.
-/github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-03_task-tapping.
-
-The search_str was &quot;BIDS-NIRS-Tapping/sub-03/**/sub-03*electrodes.tsv&quot;
-  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
 Reading 0 ... 18874  =      0.000 ...  2415.872 secs...
 Loading BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_nirs.snirf
 Reading events from BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_events.tsv.
 Reading channel info from BIDS-NIRS-Tapping/sub-04/nirs/sub-04_task-tapping_channels.tsv.
-/github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-04_task-tapping.
-
-The search_str was &quot;BIDS-NIRS-Tapping/sub-04/**/sub-04*electrodes.tsv&quot;
-  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
 Reading 0 ... 23120  =      0.000 ...  2959.360 secs...
 Loading BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_nirs.snirf
 Reading events from BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_events.tsv.
 Reading channel info from BIDS-NIRS-Tapping/sub-05/nirs/sub-05_task-tapping_channels.tsv.
-/github/workspace/examples/plot_12_group_glm.py:120: RuntimeWarning: Did not find any electrodes.tsv associated with sub-05_task-tapping.
-
-The search_str was &quot;BIDS-NIRS-Tapping/sub-05/**/sub-05*electrodes.tsv&quot;
-  raw_intensity = read_raw_bids(bids_path=bids_path, verbose=False)
 Reading 0 ... 23006  =      0.000 ...  2944.768 secs...
 </pre></div>
 </div>
@@ -490,13 +470,13 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
    </head>
    <body>
-          <div id="Vp1e51"></div>
+          <div id="x56cw1"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
 'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
 'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
-'theta':[0.37247188799086955,0.25408207236541236,2.2428496612900015,5.501360887007852,7.075323444968471,2.954535893559972,-0.8996860279166383,-1.54407643804668,3.130977426109975,4.205153418792971,7.777819085868472,1.2695468514588912,-0.8860389918563398,-1.972411527125232,0.9799166999260265,5.6531404559033485,3.4549740876426993,3.693797736890318,-0.028472663285747185,-0.17457869709238638,-3.20435765002774,9.426673639550085,4.997328058016714,-1.4423797732209678,0.035379061687909226,-0.4796454540076694,6.652159700228282,23.359206828697804,23.014624888231413,11.009461805457951],
+'theta':[0.3724718879908728,0.25408207236541436,2.2428496613073685,5.501360887012178,7.075323444970353,2.954535893563925,-0.8996860279166226,-1.5440764380466943,3.1309774261451353,4.205153418806352,7.777819085836264,1.2695468514211306,-0.8860389918563332,-1.9724115271252167,0.9799166999337907,5.653140455936352,3.4549740876389743,3.693797736947998,-0.02847266328576234,-0.17457869709240448,-3.2043576500304742,9.426673639551737,4.997328058010415,-1.4423797732337575,0.035379061687884926,-0.47964545400762365,6.6521597002243045,23.359206828697282,23.014624888268433,11.009461805488703],
 'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
 },
 'mapping':{
@@ -539,7 +519,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("Vp1e51");
+       var plotContainer = document.getElementById("x56cw1");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -684,7 +664,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
    </head>
    <body>
-          <div id="bmREUa"></div>
+          <div id="qOHSrf"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
@@ -758,7 +738,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 'shape':2
 }]
 };
-       var plotContainer = document.getElementById("bmREUa");
+       var plotContainer = document.getElementById("qOHSrf");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -850,8 +830,8 @@ in a topographic representation.</p>
 &lt;AxesSubplot:title={&#39;center&#39;:&#39;Contrast&#39;}&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  30.852 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  270 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  10.715 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  274 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-12-group-glm-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/9005f64d5dafee5d79895fc8347e3976/plot_12_group_glm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_12_group_glm.py</span></code></a></p>

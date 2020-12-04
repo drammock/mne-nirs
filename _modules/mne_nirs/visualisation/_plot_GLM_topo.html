@@ -149,6 +149,10 @@
 
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.axes_divider</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
+
 <span class="kn">import</span> <span class="nn">mne</span>
 <span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">warn</span>
 <span class="kn">from</span> <span class="nn">mne.channels.layout</span> <span class="kn">import</span> <span class="n">_merge_ch_data</span>
@@ -157,9 +161,13 @@
 
 <div class="viewcode-block" id="plot_glm_topo"><a class="viewcode-back" href="../../../generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo">[docs]</a><span class="k">def</span> <span class="nf">plot_glm_topo</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">glm_estimates</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span>
                   <span class="n">requested_conditions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                  <span class="n">axes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                   <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">sphere</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot topomap of NIRS GLM data.</span>
+
+<span class="sd">    If the channels in raw is a subset of those in the GLM estimate,</span>
+<span class="sd">    then only the subset in raw will be plotted.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -172,7 +180,18 @@
 <span class="sd">        As specified in Nilearn</span>
 <span class="sd">    requested_conditions : array</span>
 <span class="sd">        Which conditions should be displayed.</span>
+<span class="sd">    axes : instance of Axes | None</span>
+<span class="sd">        The axes to plot to. If None, a new figure is used.</span>
+<span class="sd">    vmin : float | None</span>
+<span class="sd">        The value specifying the lower bound of the color range.</span>
+<span class="sd">        If None, and vmax is None, -vmax is used. Else np.min(data).</span>
+<span class="sd">        Defaults to None.</span>
+<span class="sd">    vmax : float | None</span>
+<span class="sd">        The value specifying the upper bound of the color range.</span>
+<span class="sd">        If None, the maximum absolute value is used. Defaults to None.</span>
 <span class="sd">    figsize : TODO: Remove this, how does MNE usually deal with this?</span>
+<span class="sd">    colorbar : Bool</span>
+<span class="sd">        Should a colorbar be plotted.</span>
 <span class="sd">    sphere : As specified in MNE</span>
 
 <span class="sd">    Returns</span>
@@ -181,12 +200,14 @@
 <span class="sd">          and hbr (bottom row).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-    <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-    <span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.axes_divider</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
-
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">glm_estimates</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
-        <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;MNE data structure does not match regression results&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">glm_estimates</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;reducing GLM results to match raw&quot;</span><span class="p">)</span>
+            <span class="n">glm_estimates</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="n">glm_estimates</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;MNE data structure does not match regression &#39;</span>
+                               <span class="sa">f</span><span class="s1">&#39;results. Raw = {len(raw.ch_names)}. &#39;</span>
+                               <span class="sa">f</span><span class="s1">&#39;GLM = {len(list(glm_estimates.keys()))}&#39;</span><span class="p">)</span>
 
     <span class="n">estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">glm_estimates</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
 
@@ -198,9 +219,11 @@
     <span class="k">if</span> <span class="n">requested_conditions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">requested_conditions</span> <span class="o">=</span> <span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span>
 
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">types</span><span class="p">),</span>
-                             <span class="n">ncols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">requested_conditions</span><span class="p">),</span>
-                             <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="c1"># Plotting setup</span>
+    <span class="k">if</span> <span class="n">axes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">types</span><span class="p">),</span>
+                                 <span class="n">ncols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">requested_conditions</span><span class="p">),</span>
+                                 <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
 
     <span class="n">estimates</span> <span class="o">=</span> <span class="n">estimates</span><span class="p">[:,</span> <span class="p">[</span><span class="n">c</span> <span class="ow">in</span> <span class="n">requested_conditions</span>
                               <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">]]</span>
@@ -208,8 +231,10 @@
     <span class="n">estimates</span> <span class="o">=</span> <span class="n">estimates</span> <span class="o">*</span> <span class="mf">1e6</span>
     <span class="n">design_matrix</span> <span class="o">=</span> <span class="n">design_matrix</span><span class="p">[</span><span class="n">requested_conditions</span><span class="p">]</span>
 
-    <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">estimates</span><span class="p">))</span>
-    <span class="n">vmin</span> <span class="o">=</span> <span class="n">vmax</span> <span class="o">*</span> <span class="o">-</span><span class="mf">1.</span>
+    <span class="k">if</span> <span class="n">vmax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">estimates</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">vmin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">vmin</span> <span class="o">=</span> <span class="n">vmax</span> <span class="o">*</span> <span class="o">-</span><span class="mf">1.</span>
     <span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">RdBu_r</span>
     <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
 
@@ -219,24 +244,37 @@
 
         <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">requested_conditions</span><span class="p">:</span>
+
+                <span class="c1"># Deal with case when only a single</span>
+                <span class="c1"># chroma or condition is available</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">requested_conditions</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">types</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span>
+                <span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">requested_conditions</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">types</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">t_idx</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">requested_conditions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">types</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">t_idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">]</span>
+
                 <span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">topomap</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">estmrg</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">pos</span><span class="p">,</span>
                                              <span class="n">extrapolate</span><span class="o">=</span><span class="s1">&#39;local&#39;</span><span class="p">,</span>
                                              <span class="n">names</span><span class="o">=</span><span class="n">chs</span><span class="p">,</span>
                                              <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span>
                                              <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span>
                                              <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
-                                             <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">t_idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span>
+                                             <span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
                                              <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                                              <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
-                <span class="n">axes</span><span class="p">[</span><span class="n">t_idx</span><span class="p">,</span> <span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
 
-        <span class="n">ax1_divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">t_idx</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">cax1</span> <span class="o">=</span> <span class="n">ax1_divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;7%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s2">&quot;2%&quot;</span><span class="p">)</span>
-        <span class="n">cbar</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">ColorbarBase</span><span class="p">(</span><span class="n">cax1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-                                         <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
-        <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Haemoglobin (uM)&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">270</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">colorbar</span><span class="p">:</span>
+            <span class="n">ax1_divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+            <span class="n">cax1</span> <span class="o">=</span> <span class="n">ax1_divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;7%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s2">&quot;2%&quot;</span><span class="p">)</span>
+            <span class="n">cbar</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">ColorbarBase</span><span class="p">(</span><span class="n">cax1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+                                             <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
+            <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Haemoglobin (uM)&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">270</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">fig</span></div>
+    <span class="k">return</span> <span class="n">_get_fig_from_axes</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="plot_glm_contrast_topo"><a class="viewcode-back" href="../../../generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo">[docs]</a><span class="k">def</span> <span class="nf">plot_glm_contrast_topo</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">contrast</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">sphere</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -257,10 +295,6 @@
 <span class="sd">    fig : Figure of each design matrix componenent for hbo (top row)</span>
 <span class="sd">          and hbr (bottom row).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-    <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-    <span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.axes_divider</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
 
     <span class="c1"># Extract types. One subplot is created per type (hbo/hbr)</span>
     <span class="n">types</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">get_channel_types</span><span class="p">())</span>
@@ -368,9 +402,6 @@
 <span class="sd">    -------</span>
 <span class="sd">    fig : Figure with topographic representation of statsmodel_df value.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-    <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-    <span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.axes_divider</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
 
     <span class="c1"># Check that the channels in two inputs match</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">statsmodel_df</span><span class="p">[</span><span class="s2">&quot;ch_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)):</span>
@@ -453,6 +484,16 @@
         <span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">topomap</span><span class="o">.</span><span class="n">_prepare_topomap_plot</span><span class="p">(</span><span class="n">raw_subset</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span>
     <span class="n">estmrg</span><span class="p">,</span> <span class="n">ch_names</span> <span class="o">=</span> <span class="n">_merge_ch_data</span><span class="p">(</span><span class="n">estimates</span><span class="o">.</span><span class="n">copy</span><span class="p">()[</span><span class="n">picks</span><span class="p">],</span> <span class="n">t</span><span class="p">,</span> <span class="n">ch_names</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">estmrg</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ch_names</span><span class="p">,</span> <span class="n">sphere</span>
+
+
+<span class="k">def</span> <span class="nf">_get_fig_from_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ax</span><span class="p">),</span> <span class="n">mpl</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">SubplotBase</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">figure</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_get_fig_from_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to extract figure from </span><span class="si">{ax}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span>
 </pre></div>
 
               </div>

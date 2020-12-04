@@ -159,8 +159,10 @@
 <h1>mne_nirs.visualisation.plot_glm_topo<a class="headerlink" href="#mne-nirs-visualisation-plot-glm-topo" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="mne_nirs.visualisation.plot_glm_topo">
-<code class="sig-prename descclassname">mne_nirs.visualisation.</code><code class="sig-name descname">plot_glm_topo</code><span class="sig-paren">(</span><em class="sig-param">raw</em>, <em class="sig-param">glm_estimates</em>, <em class="sig-param">design_matrix</em>, <em class="sig-param">requested_conditions=None</em>, <em class="sig-param">figsize=(12</em>, <em class="sig-param">7)</em>, <em class="sig-param">sphere=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/visualisation/_plot_GLM_topo.html#plot_glm_topo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.visualisation.plot_glm_topo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne_nirs.visualisation.</code><code class="sig-name descname">plot_glm_topo</code><span class="sig-paren">(</span><em class="sig-param">raw</em>, <em class="sig-param">glm_estimates</em>, <em class="sig-param">design_matrix</em>, <em class="sig-param">requested_conditions=None</em>, <em class="sig-param">axes=None</em>, <em class="sig-param">vmin=None</em>, <em class="sig-param">vmax=None</em>, <em class="sig-param">colorbar=True</em>, <em class="sig-param">figsize=(12</em>, <em class="sig-param">7)</em>, <em class="sig-param">sphere=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/visualisation/_plot_GLM_topo.html#plot_glm_topo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.visualisation.plot_glm_topo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot topomap of NIRS GLM data.</p>
+<p>If the channels in raw is a subset of those in the GLM estimate,
+then only the subset in raw will be plotted.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -173,7 +175,18 @@ RegressionResults instances corresponding to the voxels.</p>
 </dd>
 <dt><strong>requested_conditions</strong><span class="classifier">array</span></dt><dd><p>Which conditions should be displayed.</p>
 </dd>
+<dt><strong>axes</strong><span class="classifier">instance of Axes | None</span></dt><dd><p>The axes to plot to. If None, a new figure is used.</p>
+</dd>
+<dt><strong>vmin</strong><span class="classifier">float | None</span></dt><dd><p>The value specifying the lower bound of the color range.
+If None, and vmax is None, -vmax is used. Else np.min(data).
+Defaults to None.</p>
+</dd>
+<dt><strong>vmax</strong><span class="classifier">float | None</span></dt><dd><p>The value specifying the upper bound of the color range.
+If None, the maximum absolute value is used. Defaults to None.</p>
+</dd>
 <dt><strong>figsize</strong><span class="classifier">TODO: Remove this, how does MNE usually deal with this?</span></dt><dd></dd>
+<dt><strong>colorbar</strong><span class="classifier">Bool</span></dt><dd><p>Should a colorbar be plotted.</p>
+</dd>
 <dt><strong>sphere</strong><span class="classifier">As specified in MNE</span></dt><dd></dd>
 </dl>
 </dd>
