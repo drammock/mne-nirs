@@ -190,7 +190,7 @@ ensure that the values are the same.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.472 seconds)
+   **Total running time of the script:** ( 0 minutes  24.448 seconds)
 
 **Estimated memory usage:**  65 MB
 
