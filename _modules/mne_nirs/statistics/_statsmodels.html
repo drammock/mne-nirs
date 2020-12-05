@@ -186,7 +186,7 @@
     <span class="k">if</span> <span class="s1">&#39;Coef.&#39;</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
         <span class="n">summary</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;Coef.&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;Coef.&quot;</span><span class="p">]]</span>
     <span class="k">elif</span> <span class="s1">&#39;coef&#39;</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-        <span class="n">summary</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Coef.&quot;</span><span class="p">:</span> <span class="s2">&quot;coef&quot;</span><span class="p">})</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;coef&quot;</span><span class="p">:</span> <span class="s2">&quot;Coef.&quot;</span><span class="p">})</span>
 
     <span class="k">return</span> <span class="n">summary</span>
 

@@ -326,13 +326,13 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="EoWwmn"></div>
+              <div id="G95qHa"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
-    'theta':[0.37247188799086955,0.25408207236541236,2.2428496612900015,5.501360887007852,7.075323444968471,2.954535893559972,-0.8996860279166383,-1.54407643804668,3.130977426109975,4.205153418792971,7.777819085868472,1.2695468514588912,-0.8860389918563398,-1.972411527125232,0.9799166999260265,5.6531404559033485,3.4549740876426993,3.693797736890318,-0.028472663285747185,-0.17457869709238638,-3.20435765002774,9.426673639550085,4.997328058016714,-1.4423797732209678,0.035379061687909226,-0.4796454540076694,6.652159700228282,23.359206828697804,23.014624888231413,11.009461805457951],
+    'theta':[0.3724718879908728,0.25408207236541436,2.2428496613073685,5.501360887012178,7.075323444970353,2.954535893563925,-0.8996860279166226,-1.5440764380466943,3.1309774261451353,4.205153418806352,7.777819085836264,1.2695468514211306,-0.8860389918563332,-1.9724115271252167,0.9799166999337907,5.653140455936352,3.4549740876389743,3.693797736947998,-0.02847266328576234,-0.17457869709240448,-3.2043576500304742,9.426673639551737,4.997328058010415,-1.4423797732337575,0.035379061687884926,-0.47964545400762365,6.6521597002243045,23.359206828697282,23.014624888268433,11.009461805488703],
     'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
     'mapping':{
@@ -375,7 +375,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("EoWwmn");
+           var plotContainer = document.getElementById("G95qHa");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -561,7 +561,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="7bC52X"></div>
+              <div id="x7o1gJ"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -635,7 +635,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("7bC52X");
+           var plotContainer = document.getElementById("x7o1gJ");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -807,9 +807,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  32.756 seconds)
+   **Total running time of the script:** ( 1 minutes  5.720 seconds)
 
-**Estimated memory usage:**  267 MB
+**Estimated memory usage:**  270 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:
