@@ -126,7 +126,7 @@ to meet github memory constraints.
     Creating ~/mne_data
     Downloading archive MNE-fNIRS-motor-data.tgz to /github/home/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]     12%|#1        | Downloading : 1.99M/17.1M [00:00<00:00,    97.1MB/s]     23%|##3       | Downloading : 3.99M/17.1M [00:00<00:00,    98.1MB/s]     35%|###5      | Downloading : 5.99M/17.1M [00:00<00:00,    97.9MB/s]     70%|#######   | Downloading : 12.0M/17.1M [00:00<00:00,    99.8MB/s]     94%|#########3| Downloading : 16.0M/17.1M [00:00<00:00,     101MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,     133MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      0%|          | Downloading : 56.0k/17.1M [00:00<00:06,    2.71MB/s]      1%|          | Downloading : 152k/17.1M [00:00<00:06,    2.78MB/s]       2%|1         | Downloading : 344k/17.1M [00:00<00:06,    2.89MB/s]      5%|4         | Downloading : 856k/17.1M [00:00<00:05,    3.03MB/s]     14%|#3        | Downloading : 2.34M/17.1M [00:00<00:04,    3.18MB/s]     31%|###1      | Downloading : 5.34M/17.1M [00:00<00:03,    3.34MB/s]     55%|#####4    | Downloading : 9.34M/17.1M [00:00<00:02,    3.51MB/s]     78%|#######8  | Downloading : 13.3M/17.1M [00:00<00:01,    3.69MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    3.87MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    60.8MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /github/home/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -528,7 +528,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f446d11fd60>
+    <matplotlib.collections.LineCollection object at 0x7f76d8093d30>
 
 
 
@@ -632,12 +632,12 @@ the center of the head.
 
  .. code-block:: none
 
-    ../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: reducing GLM results to match raw
-      warn("reducing GLM results to match raw")
-    ../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: reducing GLM results to match raw
-      warn("reducing GLM results to match raw")
-    ../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: reducing GLM results to match raw
-      warn("reducing GLM results to match raw")
+    ../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: Reducing GLM results to match MNE data
+      warn("Reducing GLM results to match MNE data")
+    ../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: Reducing GLM results to match MNE data
+      warn("Reducing GLM results to match MNE data")
+    ../mne_nirs/visualisation/_plot_GLM_topo.py:60: RuntimeWarning: Reducing GLM results to match MNE data
+      warn("Reducing GLM results to match MNE data")
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
 
@@ -872,9 +872,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  46.024 seconds)
+   **Total running time of the script:** ( 1 minutes  40.161 seconds)
 
-**Estimated memory usage:**  1445 MB
+**Estimated memory usage:**  1471 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_11_hrf_measured.py:
