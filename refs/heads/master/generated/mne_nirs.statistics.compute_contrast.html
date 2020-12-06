@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mne_nirs.statistics.compute_contrast &#8212; MNE-NIRS 0.0.1 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap_divs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/bootstrap_divs.js"></script>
+    <script src="../_static/js/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mne_nirs.statistics.glm_region_of_interest" href="mne_nirs.statistics.glm_region_of_interest.html" />
+    <link rel="prev" title="mne_nirs.statistics.run_GLM" href="mne_nirs.statistics.run_GLM.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <p class="title">MNE-NIRS</p>
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../api.html">API</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://github.com/mne-tools/mne-nirs">GitHub<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+<h3>Releases</h3>
+<ul>
+</ul>
+<h3>In Development</h3>
+<ul>
+  <li><a href="../../../../master/index.html">master</a></li>
+  <li><a href="mne_nirs.statistics.compute_contrast.html">refs/heads/master</a></li>
+</ul>
+
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#examples-using-mne-nirs-statistics-compute-contrast" class="nav-link">Examples using mne_nirs.statistics.compute_contrast</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="mne-nirs-statistics-compute-contrast">
+<h1>mne_nirs.statistics.compute_contrast<a class="headerlink" href="#mne-nirs-statistics-compute-contrast" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="mne_nirs.statistics.compute_contrast">
+<code class="sig-prename descclassname">mne_nirs.statistics.</code><code class="sig-name descname">compute_contrast</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">glm_est</span></em>, <em class="sig-param"><span class="n">contrast</span></em>, <em class="sig-param"><span class="n">contrast_type</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_run_GLM.html#compute_contrast"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.statistics.compute_contrast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute contrasts on regression results.</p>
+<p>This is a wrapper function for nilearn.stats.contrasts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>glm_estimates</strong><span class="classifier">dict</span></dt><dd><p>Dictionary of nilearn regression results as returned by <cite>run_glm</cite>.</p>
+</dd>
+<dt><strong>contrast</strong><span class="classifier">numpy.ndarray of shape (p) or (q, p),</span></dt><dd><p>Where q = number of contrast vectors and p = number of regressors.</p>
+</dd>
+<dt><strong>contrast_type</strong><span class="classifier">{None, ‘t’, ‘F’}, optional</span></dt><dd><p>Type of the contrast. If None, then defaults to ‘t’ for 1D con_val
+and ‘F’ for 2D con_val.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>contrast</strong><span class="classifier">Contrast instance,</span></dt><dd><p>Yields the statistics of the contrast (effects, variance, p-values).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="examples-using-mne-nirs-statistics-compute-contrast">
+<span id="sphx-glr-backreferences-mne-nirs-statistics-compute-contrast"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne_nirs.statistics.compute_contrast</span></code><a class="headerlink" href="#examples-using-mne-nirs-statistics-compute-contrast" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel fNIRS experiment (see tut-fnirs-hrf-si..."><div class="figure align-default" id="id1">
+<img alt="GLM Analysis (Measured)" src="../_images/sphx_glr_plot_11_hrf_measured_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_11_hrf_measured.html#sphx-glr-auto-examples-plot-11-hrf-measured-py"><span class="std std-ref">GLM Analysis (Measured)</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="   Gorgolewski, Krzysztof J., et al.    &quot;The brain imaging data structure, a format for organiz..."><div class="figure align-default" id="id2">
+<img alt="Group Level GLM" src="../_images/sphx_glr_plot_12_group_glm_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_12_group_glm.html#sphx-glr-auto-examples-plot-12-group-glm-py"><span class="std std-ref">Group Level GLM</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-clear"></div></div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="mne_nirs.statistics.run_GLM.html" title="previous page">mne_nirs.statistics.run_GLM</a>
+    <a class='right-next' id="next-link" href="mne_nirs.statistics.glm_region_of_interest.html" title="next page">mne_nirs.statistics.glm_region_of_interest</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, Robert Luke.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

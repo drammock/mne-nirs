@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mne_nirs.visualisation.plot_nirs_source_detector &#8212; MNE-NIRS 0.0.1 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap_divs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/bootstrap_divs.js"></script>
+    <script src="../_static/js/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mne_nirs.visualisation.plot_glm_topo" href="mne_nirs.visualisation.plot_glm_topo.html" />
+    <link rel="prev" title="mne_nirs.statistics.statsmodels_to_results" href="mne_nirs.statistics.statsmodels_to_results.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <p class="title">MNE-NIRS</p>
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../api.html">API</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://github.com/mne-tools/mne-nirs">GitHub<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+<h3>Releases</h3>
+<ul>
+</ul>
+<h3>In Development</h3>
+<ul>
+  <li><a href="../../../../master/index.html">master</a></li>
+  <li><a href="mne_nirs.visualisation.plot_nirs_source_detector.html">refs/heads/master</a></li>
+</ul>
+
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#examples-using-mne-nirs-visualisation-plot-nirs-source-detector" class="nav-link">Examples using mne_nirs.visualisation.plot_nirs_source_detector</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="mne-nirs-visualisation-plot-nirs-source-detector">
+<h1>mne_nirs.visualisation.plot_nirs_source_detector<a class="headerlink" href="#mne-nirs-visualisation-plot-nirs-source-detector" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="mne_nirs.visualisation.plot_nirs_source_detector">
+<code class="sig-prename descclassname">mne_nirs.visualisation.</code><code class="sig-name descname">plot_nirs_source_detector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">info</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">radius</span><span class="o">=</span><span class="default_value">0.001</span></em>, <em class="sig-param"><span class="n">trans</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subject</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subjects_dir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">surfaces</span><span class="o">=</span><span class="default_value">'head'</span></em>, <em class="sig-param"><span class="n">coord_frame</span><span class="o">=</span><span class="default_value">'head'</span></em>, <em class="sig-param"><span class="n">meg</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eeg</span><span class="o">=</span><span class="default_value">'original'</span></em>, <em class="sig-param"><span class="n">fwd</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dig</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ecog</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">src</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mri_fiducials</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bem</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">seeg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">fnirs</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_axes</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">fig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cmap</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">interaction</span><span class="o">=</span><span class="default_value">'trackball'</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/visualisation/_plot_nirs_source_detector.html#plot_nirs_source_detector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.visualisation.plot_nirs_source_detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot NIRS activity between sources and detectors in 3D.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>data: array</strong></dt><dd><p>Array of values to be plotted between source and detectors.
+One value should be specified per channel in the same order
+as <cite>info.chs</cite>.</p>
+</dd>
+<dt><strong>info</strong><span class="classifier">dict | None</span></dt><dd><p>The measurement info.
+If None (default), no sensor information will be shown.</p>
+</dd>
+<dt><strong>%(trans)s</strong></dt><dd></dd>
+<dt><strong>subject</strong><span class="classifier">str | None</span></dt><dd><p>The subject name corresponding to FreeSurfer environment
+variable SUBJECT. Can be omitted if <code class="docutils literal notranslate"><span class="pre">src</span></code> is provided.</p>
+</dd>
+<dt><strong>%(subjects_dir)s</strong></dt><dd></dd>
+<dt><strong>surfaces</strong><span class="classifier">str | list</span></dt><dd><p>Surfaces to plot. Supported values:</p>
+<ul class="simple">
+<li><p>scalp: one of ‘head’, ‘outer_skin’ (alias for ‘head’),
+‘head-dense’, or ‘seghead’ (alias for ‘head-dense’)</p></li>
+<li><p>skull: ‘outer_skull’, ‘inner_skull’, ‘brain’ (alias for
+‘inner_skull’)</p></li>
+<li><p>brain: one of ‘pial’, ‘white’, ‘inflated’, or ‘brain’
+(alias for ‘pial’).</p></li>
+</ul>
+<p>Defaults to ‘head’.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For single layer BEMs it is recommended to use ‘brain’.</p>
+</div>
+</dd>
+<dt><strong>coord_frame</strong><span class="classifier">str</span></dt><dd><p>Coordinate frame to use, ‘head’, ‘meg’, or ‘mri’.</p>
+</dd>
+<dt><strong>meg</strong><span class="classifier">str | list | bool | None</span></dt><dd><p>Can be “helmet”, “sensors” or “ref” to show the MEG helmet, sensors or
+reference sensors respectively, or a combination like
+<code class="docutils literal notranslate"><span class="pre">('helmet',</span> <span class="pre">'sensors')</span></code> (same as None, default). True translates to
+<code class="docutils literal notranslate"><span class="pre">('helmet',</span> <span class="pre">'sensors',</span> <span class="pre">'ref')</span></code>.</p>
+</dd>
+<dt><strong>eeg</strong><span class="classifier">bool | str | list</span></dt><dd><p>String options are:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“original” (default; equivalent to <code class="docutils literal notranslate"><span class="pre">True</span></code>)</dt><dd><p>Shows EEG sensors using their digitized locations (after
+transformation to the chosen <code class="docutils literal notranslate"><span class="pre">coord_frame</span></code>)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“projected”</dt><dd><p>The EEG locations projected onto the scalp, as is done in forward
+modeling</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Can also be a list of these options, or an empty list (<code class="docutils literal notranslate"><span class="pre">[]</span></code>,
+equivalent of <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+</dd>
+<dt><strong>fwd</strong><span class="classifier">instance of Forward</span></dt><dd><p>The forward solution. If present, the orientations of the dipoles
+present in the forward solution are displayed.</p>
+</dd>
+<dt><strong>dig</strong><span class="classifier">bool | ‘fiducials’</span></dt><dd><p>If True, plot the digitization points; ‘fiducials’ to plot fiducial
+points only.</p>
+</dd>
+<dt><strong>ecog</strong><span class="classifier">bool</span></dt><dd><p>If True (default), show ECoG sensors.</p>
+</dd>
+<dt><strong>src</strong><span class="classifier">instance of SourceSpaces | None</span></dt><dd><p>If not None, also plot the source space points.</p>
+</dd>
+<dt><strong>cmap</strong><span class="classifier">str</span></dt><dd><p>Colormap to be used.</p>
+</dd>
+<dt><strong>mri_fiducials</strong><span class="classifier">bool | str</span></dt><dd><p>Plot MRI fiducials (default False). If <code class="docutils literal notranslate"><span class="pre">True</span></code>, look for a file with
+the canonical name (<code class="docutils literal notranslate"><span class="pre">bem/{subject}-fiducials.fif</span></code>). If <code class="docutils literal notranslate"><span class="pre">str</span></code> it
+should provide the full path to the fiducials file.</p>
+</dd>
+<dt><strong>bem</strong><span class="classifier">list of dict | instance of ConductorModel | None</span></dt><dd><p>Can be either the BEM surfaces (list of dict), a BEM solution or a
+sphere model. If None, we first try loading
+<cite>‘$SUBJECTS_DIR/$SUBJECT/bem/$SUBJECT-$SOURCE.fif’</cite>, and then look for
+<cite>‘$SUBJECT*$SOURCE.fif’</cite> in the same directory. For <cite>‘outer_skin’</cite>,
+the subjects bem and bem/flash folders are searched. Defaults to None.</p>
+</dd>
+<dt><strong>seeg</strong><span class="classifier">bool</span></dt><dd><p>If True (default), show sEEG electrodes.</p>
+</dd>
+<dt><strong>fnirs</strong><span class="classifier">bool</span></dt><dd><p>If True (default), show fNIRS electrodes.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>fig</strong><span class="classifier">Figure</span></dt><dd><p>The 3D figure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For more information see <a class="reference external" href="https://mne.tools/stable/generated/mne.viz.plot_alignment.html#mne.viz.plot_alignment" title="(in MNE v0.21.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.viz.plot_alignment()</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.15.</span></p>
+</div>
+</dd></dl>
+
+<div class="section" id="examples-using-mne-nirs-visualisation-plot-nirs-source-detector">
+<span id="sphx-glr-backreferences-mne-nirs-visualisation-plot-nirs-source-detector"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne_nirs.visualisation.plot_nirs_source_detector</span></code><a class="headerlink" href="#examples-using-mne-nirs-visualisation-plot-nirs-source-detector" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-clear"></div></div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="mne_nirs.statistics.statsmodels_to_results.html" title="previous page">mne_nirs.statistics.statsmodels_to_results</a>
+    <a class='right-next' id="next-link" href="mne_nirs.visualisation.plot_glm_topo.html" title="next page">mne_nirs.visualisation.plot_glm_topo</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, Robert Luke.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
