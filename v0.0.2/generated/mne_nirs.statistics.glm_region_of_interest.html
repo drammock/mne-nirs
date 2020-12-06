@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mne_nirs.statistics.glm_region_of_interest &#8212; MNE-NIRS 0.0.2 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap_divs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/bootstrap_divs.js"></script>
+    <script src="../_static/js/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="mne_nirs.statistics.statsmodels_to_results" href="mne_nirs.statistics.statsmodels_to_results.html" />
+    <link rel="prev" title="mne_nirs.statistics.compute_contrast" href="mne_nirs.statistics.compute_contrast.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <p class="title">MNE-NIRS</p>
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../auto_examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../api.html">API</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://github.com/mne-tools/mne-nirs">GitHub<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+<h3>Releases</h3>
+<ul>
+  <li><a href="mne_nirs.statistics.glm_region_of_interest.html">v0.0.2</a></li>
+</ul>
+<h3>In Development</h3>
+<ul>
+  <li><a href="../../master/index.html">master</a></li>
+  <li><a href="../../refs/heads/master/index.html">refs/heads/master</a></li>
+</ul>
+
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#examples-using-mne-nirs-statistics-glm-region-of-interest" class="nav-link">Examples using mne_nirs.statistics.glm_region_of_interest</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="mne-nirs-statistics-glm-region-of-interest">
+<h1>mne_nirs.statistics.glm_region_of_interest<a class="headerlink" href="#mne-nirs-statistics-glm-region-of-interest" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="mne_nirs.statistics.glm_region_of_interest">
+<code class="sig-prename descclassname">mne_nirs.statistics.</code><code class="sig-name descname">glm_region_of_interest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stats</span></em>, <em class="sig-param"><span class="n">group_by</span></em>, <em class="sig-param"><span class="n">cond_idx</span></em>, <em class="sig-param"><span class="n">cond_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_roi.html#glm_region_of_interest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.statistics.glm_region_of_interest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate statistics for region of interest.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>stats</strong><span class="classifier">dict</span></dt><dd><p>Need to write.</p>
+</dd>
+<dt><strong>group_by</strong><span class="classifier">dict</span></dt><dd><p>Specifies which channels are aggregated into a single ROI.
+The dict key will be used as the ROI label and the dict
+values must be lists of picks (either channel names or integer indices
+of <code class="docutils literal notranslate"><span class="pre">epochs.ch_names</span></code>). For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">group_by</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">Left_ROI</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">Right_ROI</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Note that within a dict entry all channels must have the same type.</p>
+</dd>
+<dt><strong>cond_idx</strong><span class="classifier">integer</span></dt><dd><p>Index of condition of interest.</p>
+</dd>
+<dt><strong>cond_idx</strong><span class="classifier">String</span></dt><dd><p>Name to be used for condition.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>stats</strong><span class="classifier">DataFrame</span></dt><dd><p>Statistics for each ROI.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="examples-using-mne-nirs-statistics-glm-region-of-interest">
+<span id="sphx-glr-backreferences-mne-nirs-statistics-glm-region-of-interest"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne_nirs.statistics.glm_region_of_interest</span></code><a class="headerlink" href="#examples-using-mne-nirs-statistics-glm-region-of-interest" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel fNIRS experiment (see tut-fnirs-hrf-si..."><div class="figure align-default" id="id1">
+<img alt="GLM Analysis (Measured)" src="../_images/sphx_glr_plot_11_hrf_measured_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_11_hrf_measured.html#sphx-glr-auto-examples-plot-11-hrf-measured-py"><span class="std std-ref">GLM Analysis (Measured)</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="   Gorgolewski, Krzysztof J., et al.    &quot;The brain imaging data structure, a format for organiz..."><div class="figure align-default" id="id2">
+<img alt="Group Level GLM" src="../_images/sphx_glr_plot_12_group_glm_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/plot_12_group_glm.html#sphx-glr-auto-examples-plot-12-group-glm-py"><span class="std std-ref">Group Level GLM</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-clear"></div></div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="mne_nirs.statistics.compute_contrast.html" title="previous page">mne_nirs.statistics.compute_contrast</a>
+    <a class='right-next' id="next-link" href="mne_nirs.statistics.statsmodels_to_results.html" title="next page">mne_nirs.statistics.statsmodels_to_results</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, Robert Luke.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

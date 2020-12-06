@@ -267,7 +267,7 @@ for the region of interest, channel level, and contrast results.
     Using default location ~/mne_data for None...
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 24.0k/0.00 [00:00<00:00,     368kB/s]      0%|          | Downloading : 40.0k/0.00 [00:00<00:00,     358kB/s]      0%|          | Downloading : 88.0k/0.00 [00:00<00:00,     368kB/s]      0%|          | Downloading : 120k/0.00 [00:00<00:00,     372kB/s]       0%|          | Downloading : 216k/0.00 [00:00<00:00,     386kB/s]      0%|          | Downloading : 408k/0.00 [00:00<00:00,     404kB/s]      0%|          | Downloading : 792k/0.00 [00:00<00:00,     423kB/s]      0%|          | Downloading : 1.52M/0.00 [00:00<00:00,     445kB/s]      0%|          | Downloading : 3.02M/0.00 [00:00<00:00,     468kB/s]      0%|          | Downloading : 6.02M/0.00 [00:00<00:00,     492kB/s]      0%|          | Downloading : 10.0M/0.00 [00:00<00:00,     518kB/s]      0%|          | Downloading : 12.0M/0.00 [00:00<00:00,     544kB/s]      0%|          | Downloading : 16.0M/0.00 [00:00<00:00,     573kB/s]      0%|          | Downloading : 18.0M/0.00 [00:00<00:00,     602kB/s]      0%|          | Downloading : 20.0M/0.00 [00:01<00:00,     633kB/s]      0%|          | Downloading : 22.0M/0.00 [00:01<00:00,     667kB/s]      0%|          | Downloading : 24.0M/0.00 [00:01<00:00,     697kB/s]      0%|          | Downloading : 27.0M/0.00 [00:01<00:00,     733kB/s]      0%|          | Downloading : 33.0M/0.00 [00:02<00:00,     769kB/s]      0%|          | Downloading : 39.0M/0.00 [00:02<00:00,     809kB/s]      0%|          | Downloading : 41.0M/0.00 [00:02<00:00,     850kB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    19.4MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 24.0k/0.00 [00:00<00:00,     285kB/s]      0%|          | Downloading : 40.0k/0.00 [00:00<00:00,     277kB/s]      0%|          | Downloading : 88.0k/0.00 [00:00<00:00,     284kB/s]      0%|          | Downloading : 184k/0.00 [00:00<00:00,     295kB/s]       0%|          | Downloading : 376k/0.00 [00:00<00:00,     309kB/s]      0%|          | Downloading : 760k/0.00 [00:00<00:00,     324kB/s]      0%|          | Downloading : 1.49M/0.00 [00:00<00:00,     340kB/s]      0%|          | Downloading : 2.99M/0.00 [00:00<00:00,     358kB/s]      0%|          | Downloading : 5.99M/0.00 [00:00<00:00,     376kB/s]      0%|          | Downloading : 12.0M/0.00 [00:00<00:00,     396kB/s]      0%|          | Downloading : 18.0M/0.00 [00:01<00:00,     417kB/s]      0%|          | Downloading : 20.0M/0.00 [00:01<00:00,     438kB/s]      0%|          | Downloading : 22.0M/0.00 [00:01<00:00,     461kB/s]      0%|          | Downloading : 24.0M/0.00 [00:01<00:00,     484kB/s]      0%|          | Downloading : 27.0M/0.00 [00:01<00:00,     509kB/s]      0%|          | Downloading : 29.0M/0.00 [00:01<00:00,     535kB/s]      0%|          | Downloading : 31.0M/0.00 [00:01<00:00,     563kB/s]      0%|          | Downloading : 33.0M/0.00 [00:02<00:00,     590kB/s]      0%|          | Downloading : 36.0M/0.00 [00:02<00:00,     621kB/s]      0%|          | Downloading : 38.0M/0.00 [00:02<00:00,     653kB/s]      0%|          | Downloading : 40.0M/0.00 [00:02<00:00,     687kB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,     722kB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    19.0MB/s]
     Verifying hash 60472f83805b5676730e0d256fabeb7d.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -339,7 +339,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="9E6ljt"></div>
+              <div id="9ZVmMt"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -388,7 +388,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("9E6ljt");
+           var plotContainer = document.getElementById("9ZVmMt");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -574,7 +574,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="lt5eHP"></div>
+              <div id="NVBYs6"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -648,7 +648,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("lt5eHP");
+           var plotContainer = document.getElementById("NVBYs6");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -820,9 +820,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  28.398 seconds)
+   **Total running time of the script:** ( 0 minutes  31.061 seconds)
 
-**Estimated memory usage:**  268 MB
+**Estimated memory usage:**  265 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:
