@@ -51,6 +51,9 @@ The example dataset is in
 `BIDS <https://bids.neuroimaging.io>`_
 format and therefore already contains
 information about triggers, condition names, etc.
+The BIDS specification for NIRS data is still under development,
+as such you must use the development branch of MNE-BIDS as listed in the
+requirements_doc.txt file to run this example.
 
 .. collapse:: |chevron-circle-down| Data description (click to expand)
    :class: success
@@ -68,7 +71,7 @@ information about triggers, condition names, etc.
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-90
+.. GENERATED FROM PYTHON SOURCE LINES 55-93
 
 .. code-block:: default
 
@@ -117,7 +120,7 @@ information about triggers, condition names, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-117
+.. GENERATED FROM PYTHON SOURCE LINES 94-120
 
 Define individual analysis
 --------------------------
@@ -146,7 +149,7 @@ Here we also resample to a 0.3 Hz sample rate just to speed up the example
 and use less memory, resampling to 0.6 Hz is a better choice for full
 analyses.
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-178
+.. GENERATED FROM PYTHON SOURCE LINES 120-181
 
 .. code-block:: default
 
@@ -218,7 +221,7 @@ analyses.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 179-186
+.. GENERATED FROM PYTHON SOURCE LINES 182-189
 
 Run analysis on all participants
 --------------------------------
@@ -228,7 +231,7 @@ on each. We append the individual results in to a large dataframe that
 will contain the results from all measurements. We create a group dataframe
 for the region of interest, channel level, and contrast results.
 
-.. GENERATED FROM PYTHON SOURCE LINES 186-208
+.. GENERATED FROM PYTHON SOURCE LINES 189-211
 
 .. code-block:: default
 
@@ -267,7 +270,7 @@ for the region of interest, channel level, and contrast results.
     Using default location ~/mne_data for None...
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 24.0k/0.00 [00:00<00:00,     285kB/s]      0%|          | Downloading : 40.0k/0.00 [00:00<00:00,     277kB/s]      0%|          | Downloading : 88.0k/0.00 [00:00<00:00,     284kB/s]      0%|          | Downloading : 184k/0.00 [00:00<00:00,     295kB/s]       0%|          | Downloading : 376k/0.00 [00:00<00:00,     309kB/s]      0%|          | Downloading : 760k/0.00 [00:00<00:00,     324kB/s]      0%|          | Downloading : 1.49M/0.00 [00:00<00:00,     340kB/s]      0%|          | Downloading : 2.99M/0.00 [00:00<00:00,     358kB/s]      0%|          | Downloading : 5.99M/0.00 [00:00<00:00,     376kB/s]      0%|          | Downloading : 12.0M/0.00 [00:00<00:00,     396kB/s]      0%|          | Downloading : 18.0M/0.00 [00:01<00:00,     417kB/s]      0%|          | Downloading : 20.0M/0.00 [00:01<00:00,     438kB/s]      0%|          | Downloading : 22.0M/0.00 [00:01<00:00,     461kB/s]      0%|          | Downloading : 24.0M/0.00 [00:01<00:00,     484kB/s]      0%|          | Downloading : 27.0M/0.00 [00:01<00:00,     509kB/s]      0%|          | Downloading : 29.0M/0.00 [00:01<00:00,     535kB/s]      0%|          | Downloading : 31.0M/0.00 [00:01<00:00,     563kB/s]      0%|          | Downloading : 33.0M/0.00 [00:02<00:00,     590kB/s]      0%|          | Downloading : 36.0M/0.00 [00:02<00:00,     621kB/s]      0%|          | Downloading : 38.0M/0.00 [00:02<00:00,     653kB/s]      0%|          | Downloading : 40.0M/0.00 [00:02<00:00,     687kB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,     722kB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    19.0MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 24.0k/0.00 [00:00<00:00,    1.16MB/s]      0%|          | Downloading : 40.0k/0.00 [00:00<00:00,    1.13MB/s]      0%|          | Downloading : 88.0k/0.00 [00:00<00:00,    1.15MB/s]      0%|          | Downloading : 120k/0.00 [00:00<00:00,    1.16MB/s]       0%|          | Downloading : 216k/0.00 [00:00<00:00,    1.20MB/s]      0%|          | Downloading : 280k/0.00 [00:00<00:00,    1.24MB/s]      0%|          | Downloading : 472k/0.00 [00:00<00:00,    1.30MB/s]      0%|          | Downloading : 1.34M/0.00 [00:00<00:00,    1.36MB/s]      0%|          | Downloading : 1.84M/0.00 [00:00<00:00,    1.43MB/s]      0%|          | Downloading : 3.34M/0.00 [00:00<00:00,    1.50MB/s]      0%|          | Downloading : 6.34M/0.00 [00:00<00:00,    1.58MB/s]      0%|          | Downloading : 8.34M/0.00 [00:00<00:00,    1.66MB/s]      0%|          | Downloading : 10.3M/0.00 [00:00<00:00,    1.73MB/s]      0%|          | Downloading : 13.3M/0.00 [00:00<00:00,    1.82MB/s]      0%|          | Downloading : 15.3M/0.00 [00:00<00:00,    1.91MB/s]      0%|          | Downloading : 17.3M/0.00 [00:01<00:00,    1.97MB/s]      0%|          | Downloading : 20.3M/0.00 [00:01<00:00,    2.07MB/s]      0%|          | Downloading : 26.3M/0.00 [00:01<00:00,    2.16MB/s]      0%|          | Downloading : 30.3M/0.00 [00:01<00:00,    2.27MB/s]      0%|          | Downloading : 32.3M/0.00 [00:01<00:00,    2.39MB/s]      0%|          | Downloading : 34.3M/0.00 [00:02<00:00,    2.43MB/s]      0%|          | Downloading : 37.3M/0.00 [00:02<00:00,    2.56MB/s]      0%|          | Downloading : 39.3M/0.00 [00:02<00:00,    2.69MB/s]      0%|          | Downloading : 41.3M/0.00 [00:02<00:00,    2.83MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    18.6MB/s]
     Verifying hash 60472f83805b5676730e0d256fabeb7d.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -299,7 +302,7 @@ for the region of interest, channel level, and contrast results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-218
+.. GENERATED FROM PYTHON SOURCE LINES 212-221
 
 Visualise Individual results
 ----------------------------
@@ -311,7 +314,7 @@ values and observe they are in the expect range.
 We can already see that the control condition is always near zero,
 and that the responses look to be contralateral to the tapping hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 218-229
+.. GENERATED FROM PYTHON SOURCE LINES 221-232
 
 .. code-block:: default
 
@@ -339,7 +342,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="9ZVmMt"></div>
+              <div id="J04iOA"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -388,7 +391,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("9ZVmMt");
+           var plotContainer = document.getElementById("J04iOA");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -397,7 +400,7 @@ and that the responses look to be contralateral to the tapping hand.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 230-261
+.. GENERATED FROM PYTHON SOURCE LINES 233-264
 
 Compute group level results
 ---------------------------
@@ -431,7 +434,7 @@ Alternatively, we could use a robust linear
 model by using the code
 `roi_model = rlm('theta ~ -1 + ROI:Condition:Chroma', grp_results).fit()`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 261-269
+.. GENERATED FROM PYTHON SOURCE LINES 264-272
 
 .. code-block:: default
 
@@ -528,7 +531,7 @@ model by using the code
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 270-281
+.. GENERATED FROM PYTHON SOURCE LINES 273-284
 
 Visualise group results
 -----------------------
@@ -542,7 +545,7 @@ We also observe the the tapping response is
 larger in the contralateral hemisphere.
 Filled symbols represent HbO, unfilled symbols represent HbR.
 
-.. GENERATED FROM PYTHON SOURCE LINES 281-296
+.. GENERATED FROM PYTHON SOURCE LINES 284-299
 
 .. code-block:: default
 
@@ -574,7 +577,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="NVBYs6"></div>
+              <div id="BzWL8V"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -648,7 +651,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("NVBYs6");
+           var plotContainer = document.getElementById("BzWL8V");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -657,7 +660,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 297-306
+.. GENERATED FROM PYTHON SOURCE LINES 300-309
 
 Group topographic visualisation
 -------------------------------
@@ -669,7 +672,7 @@ First we compute the mixed effects model for each channel (rather
 than region of interest as above).
 Then we pass these results to the topomap function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 306-350
+.. GENERATED FROM PYTHON SOURCE LINES 309-353
 
 .. code-block:: default
 
@@ -736,7 +739,7 @@ Then we pass these results to the topomap function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 351-357
+.. GENERATED FROM PYTHON SOURCE LINES 354-360
 
 Contrasts
 ---------
@@ -745,7 +748,7 @@ Finally we can examine the difference between the left and right hand
 tapping conditions by viewing the contrast results
 in a topographic representation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 357-370
+.. GENERATED FROM PYTHON SOURCE LINES 360-373
 
 .. code-block:: default
 
@@ -785,13 +788,13 @@ in a topographic representation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 371-374
+.. GENERATED FROM PYTHON SOURCE LINES 374-377
 
 Or we can view only the left hemisphere for the contrast.
 And set all channels that dont have a significant response to zero.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 375-377
+.. GENERATED FROM PYTHON SOURCE LINES 378-380
 
 .. code-block:: default
 
@@ -820,9 +823,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  31.061 seconds)
+   **Total running time of the script:** ( 0 minutes  28.998 seconds)
 
-**Estimated memory usage:**  265 MB
+**Estimated memory usage:**  272 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:
