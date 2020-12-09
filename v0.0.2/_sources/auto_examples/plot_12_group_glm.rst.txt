@@ -333,7 +333,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="oGlKGp"></div>
+              <div id="ryqG82"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -382,7 +382,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("oGlKGp");
+           var plotContainer = document.getElementById("ryqG82");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -568,7 +568,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
        </head>
        <body>
-              <div id="JKfHqu"></div>
+              <div id="BxDBlw"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -642,7 +642,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("JKfHqu");
+           var plotContainer = document.getElementById("BxDBlw");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -814,7 +814,7 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  28.182 seconds)
+   **Total running time of the script:** ( 0 minutes  31.123 seconds)
 
 **Estimated memory usage:**  263 MB
 

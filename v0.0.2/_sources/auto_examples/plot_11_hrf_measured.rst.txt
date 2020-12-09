@@ -517,7 +517,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7efe1bf4e610>
+    <matplotlib.collections.LineCollection object at 0x7f772e1315e0>
 
 
 
@@ -621,11 +621,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmp2n5793wx/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmph_11ejom/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmp2n5793wx/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmph_11ejom/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmp2n5793wx/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmph_11ejom/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -861,9 +861,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.413 seconds)
+   **Total running time of the script:** ( 0 minutes  18.367 seconds)
 
-**Estimated memory usage:**  1479 MB
+**Estimated memory usage:**  1464 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_11_hrf_measured.py:

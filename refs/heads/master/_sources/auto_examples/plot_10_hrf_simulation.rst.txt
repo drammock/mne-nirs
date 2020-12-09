@@ -362,9 +362,9 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.230 seconds)
+   **Total running time of the script:** ( 0 minutes  5.766 seconds)
 
-**Estimated memory usage:**  741 MB
+**Estimated memory usage:**  745 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_10_hrf_simulation.py:
