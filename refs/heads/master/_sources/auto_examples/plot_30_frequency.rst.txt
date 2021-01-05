@@ -168,7 +168,7 @@ the repetition rate of the experiment.
 
     Effective window size : 262.144 (s)
 
-    <Figure size 640x480 with 1 Axes>
+    <MNELineFigure size 1000x350 with 1 Axes>
 
 
 
@@ -216,7 +216,7 @@ There is also a small bump around 0.3 Hz that is likely the breathing rate.
 
     Effective window size : 262.144 (s)
 
-    <Figure size 640x480 with 1 Axes>
+    <MNELineFigure size 1000x350 with 1 Axes>
 
 
 
@@ -268,13 +268,14 @@ is still visible.
     Not setting metadata
     Not setting metadata
     60 matching events found
+    Setting baseline interval to [-4.992, 0.0] sec
     Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 60 events and 157 original time points ...
     0 bad epochs dropped
         Using multitaper spectrum estimation with 7 DPSS windows
 
-    <Figure size 640x480 with 1 Axes>
+    <MNELineFigure size 1000x350 with 1 Axes>
 
 
 
@@ -455,9 +456,9 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  41.280 seconds)
+   **Total running time of the script:** ( 0 minutes  25.528 seconds)
 
-**Estimated memory usage:**  93 MB
+**Estimated memory usage:**  89 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_30_frequency.py:

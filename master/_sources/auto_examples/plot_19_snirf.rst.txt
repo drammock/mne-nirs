@@ -40,7 +40,7 @@ Read the SNIRF protocol over at https://github.com/fNIRS/snirf
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-40
+.. GENERATED FROM PYTHON SOURCE LINES 25-39
 
 .. code-block:: default
 
@@ -65,15 +65,14 @@ Read the SNIRF protocol over at https://github.com/fNIRS/snirf
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 41-45
+.. GENERATED FROM PYTHON SOURCE LINES 40-44
 
 Import raw NIRS data from vendor
 --------------------------------
 
 First we import some example data recorded with a NIRX device.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-52
+.. GENERATED FROM PYTHON SOURCE LINES 44-51
 
 .. code-block:: default
 
@@ -100,14 +99,14 @@ First we import some example data recorded with a NIRX device.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-57
+.. GENERATED FROM PYTHON SOURCE LINES 52-56
 
 Write data as SNIRF
 -------------------
 
 Now we can write this data back to disk in the SNIRF format.
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-61
+.. GENERATED FROM PYTHON SOURCE LINES 56-60
 
 .. code-block:: default
 
@@ -122,14 +121,14 @@ Now we can write this data back to disk in the SNIRF format.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-66
+.. GENERATED FROM PYTHON SOURCE LINES 61-65
 
 Read back SNIRF file
 --------------------
 
 Next we can read back the snirf file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-70
+.. GENERATED FROM PYTHON SOURCE LINES 65-69
 
 .. code-block:: default
 
@@ -152,7 +151,7 @@ Next we can read back the snirf file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-76
+.. GENERATED FROM PYTHON SOURCE LINES 70-75
 
 Compare files
 -------------
@@ -160,7 +159,7 @@ Compare files
 Finally we can compare the data of the original to the SNIRF format and
 ensure that the values are the same.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-80
+.. GENERATED FROM PYTHON SOURCE LINES 75-79
 
 .. code-block:: default
 
@@ -183,16 +182,16 @@ ensure that the values are the same.
  .. code-block:: none
 
 
-    <Figure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 640x480 with 4 Axes>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.977 seconds)
+   **Total running time of the script:** ( 0 minutes  2.184 seconds)
 
-**Estimated memory usage:**  93 MB
+**Estimated memory usage:**  36 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_19_snirf.py:

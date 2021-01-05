@@ -330,16 +330,16 @@ and that the responses look to be contralateral to the tapping hand.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.6.min.js"></script>
        </head>
        <body>
-              <div id="ryqG82"></div>
+              <div id="8PxqbD"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
-    'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
-    'theta':[0.37247188799086683,0.25408207236541713,2.242849661285841,5.50136088701287,7.075323444994607,2.9545358935528223,-0.8996860279166524,-1.5440764380466974,3.130977426133792,4.205153418778897,7.777819085844279,1.2695468514835004,-0.8860389918563338,-1.9724115271252622,0.9799166999623115,5.653140455892356,3.4549740876208803,3.693797736937878,-0.02847266328575329,-0.1745786970923922,-3.2043576500313686,9.426673639552247,4.997328058024655,-1.4423797732283803,0.03537906168788708,-0.47964545400762376,6.65215970019276,23.359206828682286,23.014624888323674,11.00946180545952],
+    'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
+    'theta':[0.3724718879898774,0.2540820723653551,2.242849661288385,5.501360887003979,7.075323444988547,2.9545358935644472,-0.8996860279164847,-1.5440764380456287,3.130977426100965,4.205153418795456,7.777819085869451,1.2695468514844421,-0.8860389918548852,-1.9724115271262397,0.9799166999415265,5.653140455907624,3.45497408763389,3.693797736944789,-0.028472663285348254,-0.17457869709230894,-3.2043576500292326,9.426673639554267,4.997328058016763,-1.4423797732392185,0.035379061689793836,-0.4796454540077129,6.652159700212272,23.359206828695775,23.01462488829791,11.009461805452503],
     'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
     'mapping':{
@@ -382,7 +382,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("ryqG82");
+           var plotContainer = document.getElementById("8PxqbD");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -565,10 +565,10 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.4.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.6.min.js"></script>
        </head>
        <body>
-              <div id="BxDBlw"></div>
+              <div id="vbuMQD"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -642,7 +642,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("BxDBlw");
+           var plotContainer = document.getElementById("vbuMQD");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -814,9 +814,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  31.123 seconds)
+   **Total running time of the script:** ( 0 minutes  12.714 seconds)
 
-**Estimated memory usage:**  263 MB
+**Estimated memory usage:**  48 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:

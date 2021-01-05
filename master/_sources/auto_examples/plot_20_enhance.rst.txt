@@ -162,6 +162,7 @@ this result should be the same as the MNE tutorial.
     Not setting metadata
     Not setting metadata
     90 matching events found
+    Setting baseline interval to [-4.992, 0.0] sec
     Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 90 events and 157 original time points ...
@@ -218,6 +219,7 @@ Apply Cui et. al. 2010 and extract epochs.
     Not setting metadata
     Not setting metadata
     90 matching events found
+    Setting baseline interval to [-4.992, 0.0] sec
     Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 90 events and 157 original time points ...
@@ -289,6 +291,7 @@ Apply Scholkmann et al 2014 and extract epochs.
     Not setting metadata
     Not setting metadata
     90 matching events found
+    Setting baseline interval to [-4.992, 0.0] sec
     Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 90 events and 157 original time points ...
@@ -506,9 +509,9 @@ detector pairs for analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.991 seconds)
+   **Total running time of the script:** ( 0 minutes  3.130 seconds)
 
-**Estimated memory usage:**  93 MB
+**Estimated memory usage:**  65 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_20_enhance.py:

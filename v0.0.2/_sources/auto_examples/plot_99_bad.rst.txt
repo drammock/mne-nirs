@@ -92,7 +92,7 @@ appear as if a fNIRS response is observed.
     Loading /home/runner/mne_data/MNE-fNIRS-motor-data/Participant-1
     Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 
-    <RawNIRX | Participant-1, 56 x 23239 (2974.5 s), ~10.1 MB, data loaded>
+    <RawNIRX | Participant-1, 56 x 23239 (2974.5 s), ~10.0 MB, data loaded>
 
 
 
@@ -134,7 +134,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <Figure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 640x480 with 4 Axes>
 
 
 
@@ -170,7 +170,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <Figure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 640x480 with 4 Axes>
 
 
 
@@ -208,7 +208,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <Figure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 640x480 with 4 Axes>
 
 
 
@@ -409,6 +409,7 @@ epochs were dropped.
     Not setting metadata
     Not setting metadata
     90 matching events found
+    Setting baseline interval to [-1.536, 0.0] sec
     Applying baseline correction (mode: mean)
     0 projection items activated
     Loading data for 90 events and 95 original time points ...
@@ -504,9 +505,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.752 seconds)
+   **Total running time of the script:** ( 0 minutes  5.344 seconds)
 
-**Estimated memory usage:**  53 MB
+**Estimated memory usage:**  25 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_99_bad.py:
