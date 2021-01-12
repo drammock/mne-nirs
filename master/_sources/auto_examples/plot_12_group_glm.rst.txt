@@ -270,7 +270,7 @@ for the region of interest, channel level, and contrast results.
     Using default location ~/mne_data for None...
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 24.0k/0.00 [00:00<00:00,     932kB/s]      0%|          | Downloading : 40.0k/0.00 [00:00<00:00,     745kB/s]      0%|          | Downloading : 88.0k/0.00 [00:00<00:00,    1.09MB/s]      0%|          | Downloading : 184k/0.00 [00:00<00:00,    1.73MB/s]       0%|          | Downloading : 376k/0.00 [00:00<00:00,    2.88MB/s]      0%|          | Downloading : 760k/0.00 [00:00<00:00,    4.94MB/s]      0%|          | Downloading : 1.49M/0.00 [00:00<00:00,    8.71MB/s]      0%|          | Downloading : 4.99M/0.00 [00:00<00:00,    24.9MB/s]      0%|          | Downloading : 6.99M/0.00 [00:00<00:00,    31.3MB/s]      0%|          | Downloading : 8.99M/0.00 [00:00<00:00,    37.4MB/s]      0%|          | Downloading : 11.0M/0.00 [00:00<00:00,    26.6MB/s]      0%|          | Downloading : 13.0M/0.00 [00:00<00:00,    30.4MB/s]      0%|          | Downloading : 15.0M/0.00 [00:00<00:00,    33.9MB/s]      0%|          | Downloading : 17.0M/0.00 [00:00<00:00,    19.4MB/s]      0%|          | Downloading : 20.0M/0.00 [00:00<00:00,    22.9MB/s]      0%|          | Downloading : 26.0M/0.00 [00:01<00:00,    17.7MB/s]      0%|          | Downloading : 28.0M/0.00 [00:01<00:00,    19.2MB/s]      0%|          | Downloading : 30.0M/0.00 [00:01<00:00,    20.5MB/s]      0%|          | Downloading : 32.0M/0.00 [00:01<00:00,    22.0MB/s]      0%|          | Downloading : 34.0M/0.00 [00:02<00:00,    16.1MB/s]      0%|          | Downloading : 37.0M/0.00 [00:02<00:00,    17.8MB/s]      0%|          | Downloading : 39.0M/0.00 [00:02<00:00,    18.9MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    20.6MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    20.3MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 24.0k/0.00 [00:00<00:00,     287kB/s]      0%|          | Downloading : 40.0k/0.00 [00:00<00:00,     235kB/s]      0%|          | Downloading : 88.0k/0.00 [00:00<00:00,     350kB/s]      0%|          | Downloading : 184k/0.00 [00:00<00:00,     559kB/s]       0%|          | Downloading : 376k/0.00 [00:00<00:00,     932kB/s]      0%|          | Downloading : 760k/0.00 [00:00<00:00,    1.60MB/s]      0%|          | Downloading : 1.49M/0.00 [00:00<00:00,    2.81MB/s]      0%|          | Downloading : 2.99M/0.00 [00:00<00:00,    5.02MB/s]      0%|          | Downloading : 5.99M/0.00 [00:00<00:00,    9.09MB/s]      0%|          | Downloading : 7.99M/0.00 [00:00<00:00,    11.0MB/s]      0%|          | Downloading : 9.99M/0.00 [00:00<00:00,    13.0MB/s]      0%|          | Downloading : 12.0M/0.00 [00:00<00:00,    15.1MB/s]      0%|          | Downloading : 14.0M/0.00 [00:01<00:00,    16.2MB/s]      0%|          | Downloading : 16.0M/0.00 [00:01<00:00,    17.7MB/s]      0%|          | Downloading : 18.0M/0.00 [00:01<00:00,    18.5MB/s]      0%|          | Downloading : 20.0M/0.00 [00:01<00:00,    20.1MB/s]      0%|          | Downloading : 22.0M/0.00 [00:01<00:00,    20.6MB/s]      0%|          | Downloading : 24.0M/0.00 [00:01<00:00,    19.3MB/s]      0%|          | Downloading : 27.0M/0.00 [00:01<00:00,    20.6MB/s]      0%|          | Downloading : 29.0M/0.00 [00:01<00:00,    21.1MB/s]      0%|          | Downloading : 31.0M/0.00 [00:01<00:00,    21.5MB/s]      0%|          | Downloading : 33.0M/0.00 [00:02<00:00,    18.1MB/s]      0%|          | Downloading : 34.0M/0.00 [00:02<00:00,    18.7MB/s]      0%|          | Downloading : 35.0M/0.00 [00:02<00:00,    18.6MB/s]      0%|          | Downloading : 36.0M/0.00 [00:02<00:00,    19.2MB/s]      0%|          | Downloading : 37.0M/0.00 [00:02<00:00,    19.1MB/s]      0%|          | Downloading : 38.0M/0.00 [00:02<00:00,    19.6MB/s]      0%|          | Downloading : 39.0M/0.00 [00:02<00:00,    19.5MB/s]      0%|          | Downloading : 40.0M/0.00 [00:02<00:00,    20.1MB/s]      0%|          | Downloading : 41.0M/0.00 [00:02<00:00,    19.9MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    18.4MB/s]
     Verifying hash 60472f83805b5676730e0d256fabeb7d.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -342,7 +342,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.6.min.js"></script>
        </head>
        <body>
-              <div id="yRnZNS"></div>
+              <div id="kslX0O"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -391,7 +391,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("yRnZNS");
+           var plotContainer = document.getElementById("kslX0O");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -577,7 +577,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.6.min.js"></script>
        </head>
        <body>
-              <div id="vgUai5"></div>
+              <div id="CQydZM"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -651,7 +651,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("vgUai5");
+           var plotContainer = document.getElementById("CQydZM");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -823,9 +823,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.564 seconds)
+   **Total running time of the script:** ( 0 minutes  19.548 seconds)
 
-**Estimated memory usage:**  50 MB
+**Estimated memory usage:**  51 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:
