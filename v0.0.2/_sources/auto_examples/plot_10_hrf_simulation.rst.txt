@@ -167,7 +167,7 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
-    Estimate: [4.e-06]   MSE: [2.16189967e-44]   Error (uM): [8.47032947e-16]
+    Estimate: [4.e-06]   MSE: [2.1680925e-44]   Error (uM): [-8.47032947e-16]
 
 
 
@@ -362,7 +362,7 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.846 seconds)
+   **Total running time of the script:** ( 0 minutes  2.956 seconds)
 
 **Estimated memory usage:**  56 MB
 

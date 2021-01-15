@@ -146,24 +146,27 @@
 <h1>mne_nirs.simulation.simulate_nirs_raw<a class="headerlink" href="#mne-nirs-simulation-simulate-nirs-raw" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="mne_nirs.simulation.simulate_nirs_raw">
-<code class="sig-prename descclassname">mne_nirs.simulation.</code><code class="sig-name descname">simulate_nirs_raw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sfreq</span><span class="o">=</span><span class="default_value">3.0</span></em>, <em class="sig-param"><span class="n">amplitude</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">annot_desc</span><span class="o">=</span><span class="default_value">'A'</span></em>, <em class="sig-param"><span class="n">sig_dur</span><span class="o">=</span><span class="default_value">300.0</span></em>, <em class="sig-param"><span class="n">stim_dur</span><span class="o">=</span><span class="default_value">5.0</span></em>, <em class="sig-param"><span class="n">isi_min</span><span class="o">=</span><span class="default_value">15.0</span></em>, <em class="sig-param"><span class="n">isi_max</span><span class="o">=</span><span class="default_value">45.0</span></em>, <em class="sig-param"><span class="n">ch_name</span><span class="o">=</span><span class="default_value">'Simulated'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/simulation/_simulation.html#simulate_nirs_raw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.simulation.simulate_nirs_raw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">mne_nirs.simulation.</code><code class="sig-name descname">simulate_nirs_raw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sfreq</span><span class="o">=</span><span class="default_value">3.0</span></em>, <em class="sig-param"><span class="n">amplitude</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">annot_desc</span><span class="o">=</span><span class="default_value">'A'</span></em>, <em class="sig-param"><span class="n">sig_dur</span><span class="o">=</span><span class="default_value">300.0</span></em>, <em class="sig-param"><span class="n">stim_dur</span><span class="o">=</span><span class="default_value">5.0</span></em>, <em class="sig-param"><span class="n">isi_min</span><span class="o">=</span><span class="default_value">15.0</span></em>, <em class="sig-param"><span class="n">isi_max</span><span class="o">=</span><span class="default_value">45.0</span></em>, <em class="sig-param"><span class="n">ch_name</span><span class="o">=</span><span class="default_value">'Simulated'</span></em>, <em class="sig-param"><span class="n">hrf_model</span><span class="o">=</span><span class="default_value">'glover'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/simulation/_simulation.html#simulate_nirs_raw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mne_nirs.simulation.simulate_nirs_raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create simulated data.</p>
-<blockquote>
-<div><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Work in progress: I am trying to think on the best API.</p>
-</div>
-</div></blockquote>
+<p>The returned data is of type <cite>hbo</cite>.
+One or more conditions can be simulated.
+To simulate multiple conditions pass in a description and amplitude
+for each
+<cite>amplitude=[0., 2., 4.], annot_desc=[‘Control’, ‘Cond_A’, ‘Cond_B’]</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>sfreq</strong><span class="classifier">Number</span></dt><dd><p>The sample rate.</p>
 </dd>
-<dt><strong>amplitude</strong><span class="classifier">Number, Array of numbers</span></dt><dd><p>The amplitude of the signal to simulate in uM.</p>
+<dt><strong>amplitude</strong><span class="classifier">Number, Array of numbers</span></dt><dd><p>The amplitude of the signal to simulate in uM.
+Pass in an array to simulate multiple conditions.</p>
 </dd>
-<dt><strong>annot_desc</strong><span class="classifier">String, Array of strings</span></dt><dd><p>The name of the annotations for simulated amplitudes.</p>
+<dt><strong>annot_desc</strong><span class="classifier">String, Array of strings</span></dt><dd><p>The name of the annotations for simulated amplitudes.
+Pass in an array to simulate multiple conditions,
+must be the same length as amplitude.</p>
 </dd>
-<dt><strong>sig_dur</strong><span class="classifier">Number</span></dt><dd><p>The length of the signal to generate in seconds.</p>
+<dt><strong>sig_dur</strong><span class="classifier">Number</span></dt><dd><p>The length of the boxcar signal to generate in seconds that will
+be convolved with the HRF.</p>
 </dd>
 <dt><strong>stim_dur</strong><span class="classifier">Number, Array of numbers</span></dt><dd><p>The length of the stimulus to generate in seconds.</p>
 </dd>
@@ -172,6 +175,8 @@
 <dt><strong>isi_max</strong><span class="classifier">Number</span></dt><dd><p>The maximum duration of the inter stimulus interval in seconds.</p>
 </dd>
 <dt><strong>ch_name</strong><span class="classifier">String</span></dt><dd><p>Channel name to be used in returned raw instance.</p>
+</dd>
+<dt><strong>hrf_model</strong><span class="classifier">string</span></dt><dd><p>Specifies the hemodynamic response function. See nilearn docs.</p>
 </dd>
 </dl>
 </dd>

@@ -143,14 +143,24 @@
 <span class="kn">from</span> <span class="nn">mne.io</span> <span class="kn">import</span> <span class="n">RawArray</span>
 
 
-<div class="viewcode-block" id="simulate_nirs_raw"><a class="viewcode-back" href="../../../generated/mne_nirs.simulation.simulate_nirs_raw.html#mne_nirs.simulation.simulate_nirs_raw">[docs]</a><span class="k">def</span> <span class="nf">simulate_nirs_raw</span><span class="p">(</span><span class="n">sfreq</span><span class="o">=</span><span class="mf">3.</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">annot_desc</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
-                      <span class="n">sig_dur</span><span class="o">=</span><span class="mf">300.</span><span class="p">,</span> <span class="n">stim_dur</span><span class="o">=</span><span class="mf">5.</span><span class="p">,</span>
-                      <span class="n">isi_min</span><span class="o">=</span><span class="mf">15.</span><span class="p">,</span> <span class="n">isi_max</span><span class="o">=</span><span class="mf">45.</span><span class="p">,</span>
-                      <span class="n">ch_name</span><span class="o">=</span><span class="s1">&#39;Simulated&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="simulate_nirs_raw"><a class="viewcode-back" href="../../../generated/mne_nirs.simulation.simulate_nirs_raw.html#mne_nirs.simulation.simulate_nirs_raw">[docs]</a><span class="k">def</span> <span class="nf">simulate_nirs_raw</span><span class="p">(</span><span class="n">sfreq</span><span class="o">=</span><span class="mf">3.</span><span class="p">,</span>
+                      <span class="n">amplitude</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+                      <span class="n">annot_desc</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+                      <span class="n">sig_dur</span><span class="o">=</span><span class="mf">300.</span><span class="p">,</span>
+                      <span class="n">stim_dur</span><span class="o">=</span><span class="mf">5.</span><span class="p">,</span>
+                      <span class="n">isi_min</span><span class="o">=</span><span class="mf">15.</span><span class="p">,</span>
+                      <span class="n">isi_max</span><span class="o">=</span><span class="mf">45.</span><span class="p">,</span>
+                      <span class="n">ch_name</span><span class="o">=</span><span class="s1">&#39;Simulated&#39;</span><span class="p">,</span>
+                      <span class="n">hrf_model</span><span class="o">=</span><span class="s1">&#39;glover&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create simulated data.</span>
 
-<span class="sd">      .. warning:: Work in progress: I am trying to think on the best API.</span>
+<span class="sd">    The returned data is of type `hbo`.</span>
+<span class="sd">    One or more conditions can be simulated.</span>
+<span class="sd">    To simulate multiple conditions pass in a description and amplitude</span>
+<span class="sd">    for each</span>
+<span class="sd">    `amplitude=[0., 2., 4.], annot_desc=[&#39;Control&#39;, &#39;Cond_A&#39;, &#39;Cond_B&#39;]`.</span>
+
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -158,10 +168,14 @@
 <span class="sd">        The sample rate.</span>
 <span class="sd">    amplitude : Number, Array of numbers</span>
 <span class="sd">        The amplitude of the signal to simulate in uM.</span>
+<span class="sd">        Pass in an array to simulate multiple conditions.</span>
 <span class="sd">    annot_desc : String, Array of strings</span>
 <span class="sd">        The name of the annotations for simulated amplitudes.</span>
+<span class="sd">        Pass in an array to simulate multiple conditions,</span>
+<span class="sd">        must be the same length as amplitude.</span>
 <span class="sd">    sig_dur : Number</span>
-<span class="sd">        The length of the signal to generate in seconds.</span>
+<span class="sd">        The length of the boxcar signal to generate in seconds that will</span>
+<span class="sd">        be convolved with the HRF.</span>
 <span class="sd">    stim_dur : Number, Array of numbers</span>
 <span class="sd">        The length of the stimulus to generate in seconds.</span>
 <span class="sd">    isi_min : Number</span>
@@ -170,6 +184,8 @@
 <span class="sd">        The maximum duration of the inter stimulus interval in seconds.</span>
 <span class="sd">    ch_name : String</span>
 <span class="sd">        Channel name to be used in returned raw instance.</span>
+<span class="sd">    hrf_model : string</span>
+<span class="sd">        Specifies the hemodynamic response function. See nilearn docs.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -209,6 +225,7 @@
                         <span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="n">durations</span><span class="p">})</span>
 
     <span class="n">dm</span> <span class="o">=</span> <span class="n">make_first_level_design_matrix</span><span class="p">(</span><span class="n">frame_times</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span>
+                                        <span class="n">hrf_model</span><span class="o">=</span><span class="n">hrf_model</span><span class="p">,</span>
                                         <span class="n">drift_model</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">,</span>
                                         <span class="n">drift_order</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">dm</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">)</span>
