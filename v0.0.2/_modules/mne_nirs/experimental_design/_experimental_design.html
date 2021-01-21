@@ -205,7 +205,7 @@
 
     <span class="c1"># Create events for nilearn</span>
     <span class="n">conditions</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">description</span>
-    <span class="n">onsets</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">onset</span>
+    <span class="n">onsets</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">onset</span> <span class="o">-</span> <span class="n">raw</span><span class="o">.</span><span class="n">first_time</span>
     <span class="n">duration</span> <span class="o">=</span> <span class="n">stim_dur</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">conditions</span><span class="p">))</span>
     <span class="n">events</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;trial_type&#39;</span><span class="p">:</span> <span class="n">conditions</span><span class="p">,</span>
                         <span class="s1">&#39;onset&#39;</span><span class="p">:</span> <span class="n">onsets</span><span class="p">,</span>
