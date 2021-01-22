@@ -44,7 +44,7 @@
     <script src="../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GLM Analysis (Simulated)" href="plot_10_hrf_simulation.html" />
+    <link rel="next" title="GLM Analysis (Simulated)" href="general/plot_10_hrf_simulation.html" />
     <link rel="prev" title="MNE-NIRS" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -118,9 +118,20 @@
           
           <div class="d-none d-xl-block col-xl-2 bd-toc">
               
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#analysis-examples" class="nav-link">Analysis examples</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#migrating-from-other-software-packages" class="nav-link">Migrating from other software packages</a>
+        </li>
     
     </ul>
 </nav>
@@ -137,49 +148,75 @@
                 
   <div class="section" id="examples">
 <span id="general-examples"></span><span id="sphx-glr-auto-examples"></span><h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example we simulate a block design fNIRS experiment and analyse the simulated signal. W..."><div class="figure align-default" id="id1">
+<p>The examples gallery provides working code samples demonstrating various
+analysis and visualization techniques.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These examples sometimes use simulations or shortcuts (such as intentionally
+adding noise to recordings) to illustrate a point. Use caution when
+copy-pasting code samples.</p>
+</div>
+<div class="sphx-glr-clear"></div><div class="section" id="analysis-examples">
+<span id="id1"></span><h2>Analysis examples<a class="headerlink" href="#analysis-examples" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="In this example we simulate a block design fNIRS experiment and analyse the simulated signal. W..."><div class="figure align-default" id="id2">
 <img alt="GLM Analysis (Simulated)" src="../_images/sphx_glr_plot_10_hrf_simulation_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_10_hrf_simulation.html#sphx-glr-auto-examples-plot-10-hrf-simulation-py"><span class="std std-ref">GLM Analysis (Simulated)</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="general/plot_10_hrf_simulation.html#sphx-glr-auto-examples-general-plot-10-hrf-simulation-py"><span class="std std-ref">GLM Analysis (Simulated)</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel fNIRS experiment (see tut-fnirs-hrf-si..."><div class="figure align-default" id="id2">
+<div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel fNIRS experiment (see tut-fnirs-hrf-si..."><div class="figure align-default" id="id3">
 <img alt="GLM Analysis (Measured)" src="../_images/sphx_glr_plot_11_hrf_measured_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_11_hrf_measured.html#sphx-glr-auto-examples-plot-11-hrf-measured-py"><span class="std std-ref">GLM Analysis (Measured)</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="general/plot_11_hrf_measured.html#sphx-glr-auto-examples-general-plot-11-hrf-measured-py"><span class="std std-ref">GLM Analysis (Measured)</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="   Gorgolewski, Krzysztof J., et al.    &quot;The brain imaging data structure, a format for organiz..."><div class="figure align-default" id="id3">
+<div class="sphx-glr-thumbcontainer" tooltip="   Gorgolewski, Krzysztof J., et al.    &quot;The brain imaging data structure, a format for organiz..."><div class="figure align-default" id="id4">
 <img alt="Group Level GLM" src="../_images/sphx_glr_plot_12_group_glm_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_12_group_glm.html#sphx-glr-auto-examples-plot-12-group-glm-py"><span class="std std-ref">Group Level GLM</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="general/plot_12_group_glm.html#sphx-glr-auto-examples-general-plot-12-group-glm-py"><span class="std std-ref">Group Level GLM</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="   If you wish to process your .nirs files in MNE use the official snirf    converter to create..."><div class="figure align-default" id="id4">
+<div class="sphx-glr-thumbcontainer" tooltip="   If you wish to process your .nirs files in MNE use the official snirf    converter to create..."><div class="figure align-default" id="id5">
 <img alt="SNIRF Support in MNE" src="../_images/sphx_glr_plot_19_snirf_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_19_snirf.html#sphx-glr-auto-examples-plot-19-snirf-py"><span class="std std-ref">SNIRF Support in MNE</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="general/plot_19_snirf.html#sphx-glr-auto-examples-general-plot-19-snirf-py"><span class="std std-ref">SNIRF Support in MNE</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="In this document we investigate the effect of different signal enhancement techniques on NIRS d..."><div class="figure align-default" id="id5">
+<div class="sphx-glr-thumbcontainer" tooltip="In this document we investigate the effect of different signal enhancement techniques on NIRS d..."><div class="figure align-default" id="id6">
 <img alt="Signal Enhancement Techniques" src="../_images/sphx_glr_plot_20_enhance_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_20_enhance.html#sphx-glr-auto-examples-plot-20-enhance-py"><span class="std std-ref">Signal Enhancement Techniques</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="general/plot_20_enhance.html#sphx-glr-auto-examples-general-plot-20-enhance-py"><span class="std std-ref">Signal Enhancement Techniques</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example we discuss frequency and filters in the context of NIRS analysis. We examine th..."><div class="figure align-default" id="id6">
+<div class="sphx-glr-thumbcontainer" tooltip="In this example we discuss frequency and filters in the context of NIRS analysis. We examine th..."><div class="figure align-default" id="id7">
 <img alt="Frequency and Filter Commentary" src="../_images/sphx_glr_plot_30_frequency_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_30_frequency.html#sphx-glr-auto-examples-plot-30-frequency-py"><span class="std std-ref">Frequency and Filter Commentary</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="general/plot_30_frequency.html#sphx-glr-auto-examples-general-plot-30-frequency-py"><span class="std std-ref">Frequency and Filter Commentary</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="   Huppert TJ. Commentary on the statistical properties of noise and its    implication on gene..."><div class="figure align-default" id="id7">
+<div class="sphx-glr-thumbcontainer" tooltip="   Huppert TJ. Commentary on the statistical properties of noise and its    implication on gene..."><div class="figure align-default" id="id8">
 <img alt="Importance of Controls and Parameter Selection" src="../_images/sphx_glr_plot_99_bad_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="plot_99_bad.html#sphx-glr-auto-examples-plot-99-bad-py"><span class="std std-ref">Importance of Controls and Parameter Selection</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="general/plot_99_bad.html#sphx-glr-auto-examples-general-plot-99-bad-py"><span class="std std-ref">Importance of Controls and Parameter Selection</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
+<div class="section" id="migrating-from-other-software-packages">
+<span id="migration"></span><span id="sphx-glr-auto-examples-migration"></span><h2>Migrating from other software packages<a class="headerlink" href="#migrating-from-other-software-packages" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="This tutorial will demonstrate how to do convert a basic Homer script to MNE and highlight diff..."><div class="figure align-default" id="id9">
+<img alt="Migrating from Homer to MNE" src="../_images/sphx_glr_plot_01_homer_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="migration/plot_01_homer.html#sphx-glr-auto-examples-migration-plot-01-homer-py"><span class="std std-ref">Migrating from Homer to MNE</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This tutorial will demonstrate how to do convert a nirs-toolbox script to MNE and highlight dif..."><div class="figure align-default" id="id10">
+<img alt="Migrating from nirs-toolbox to MNE" src="../_images/sphx_glr_plot_02_nirstoolbox_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="migration/plot_02_nirstoolbox.html#sphx-glr-auto-examples-migration-plot-02-nirstoolbox-py"><span class="std std-ref">Migrating from nirs-toolbox to MNE</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-clear"></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
 </div>
 
 
@@ -189,7 +226,7 @@
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="../index.html" title="previous page">MNE-NIRS</a>
-    <a class='right-next' id="next-link" href="plot_10_hrf_simulation.html" title="next page">GLM Analysis (Simulated)</a>
+    <a class='right-next' id="next-link" href="general/plot_10_hrf_simulation.html" title="next page">GLM Analysis (Simulated)</a>
 
               </div>
               

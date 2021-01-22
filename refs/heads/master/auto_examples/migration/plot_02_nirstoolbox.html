@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Migrating from nirs-toolbox to MNE &#8212; MNE-NIRS 0.0.2 documentation</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap_divs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/bootstrap_divs.js"></script>
+    <script src="../../_static/js/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="API" href="../../api.html" />
+    <link rel="prev" title="Migrating from Homer to MNE" href="plot_01_homer.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../index.html">
+    
+      <p class="title">MNE-NIRS</p>
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../api.html">API</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://github.com/mne-tools/mne-nirs">GitHub<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+<h3>Releases</h3>
+<ul>
+  <li><a href="../../../../../v0.0.2/index.html">v0.0.2</a></li>
+</ul>
+<h3>In Development</h3>
+<ul>
+  <li><a href="../../../../../master/index.html">master</a></li>
+  <li><a href="plot_02_nirstoolbox.html">refs/heads/master</a></li>
+</ul>
+
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#" class="nav-link">Migrating from nirs-toolbox to MNE</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#basic-nirs-toolbox-script-to-be-reproduced-in-mne" class="nav-link">Basic nirs-toolbox script to be reproduced in MNE</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#mne-equivalent-of-nirs-toolbox-script" class="nav-link">MNE equivalent of nirs-toolbox script</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#differences-between-toolboxes" class="nav-link">Differences between toolboxes</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#further-analysis-details" class="nav-link">Further analysis details</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-migration-plot-02-nirstoolbox-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="migrating-from-nirs-toolbox-to-mne">
+<span id="tut-migration-nirstoolbox"></span><span id="sphx-glr-auto-examples-migration-plot-02-nirstoolbox-py"></span><h1>Migrating from nirs-toolbox to MNE<a class="headerlink" href="#migrating-from-nirs-toolbox-to-mne" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will demonstrate how to do convert a nirs-toolbox script to MNE
+and highlight differences and common issues you may encounter.</p>
+<p>nirs-toolbox is a MATLAB based software analysis
+package. <a class="reference external" href="https://github.com/huppertt/nirs-toolbox">https://github.com/huppertt/nirs-toolbox</a></p>
+</div>
+<div class="section" id="basic-nirs-toolbox-script-to-be-reproduced-in-mne">
+<h1>Basic nirs-toolbox script to be reproduced in MNE<a class="headerlink" href="#basic-nirs-toolbox-script-to-be-reproduced-in-mne" title="Permalink to this headline">¶</a></h1>
+<p>Below is a common example analysis performed in nirs-toolbox.
+The NIRx data is loaded and trigger names are modified.
+Then the intensity signal is convert to optical density then
+converted to haemoglobin concentration.
+After which, a GLM analysis is performed with iteratively reweighted
+autoregressive noise model.
+Finally a mixed effects model is run on the group level dat.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span># <span class="n">Load</span> <span class="n">data</span>
+<span class="n">raw</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">loadDirectory</span><span class="p">()</span>
+
+# <span class="n">Preprocess</span> <span class="n">data</span>
+<span class="n">pipeline_preprocess</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">RenameStims</span><span class="p">(</span><span class="n">pipeline_preprocess</span><span class="p">);</span>
+<span class="n">pipeline_preprocess</span><span class="p">.</span><span class="n">listOfChanges</span> <span class="p">=</span> <span class="p">{</span>
+ <span class="s">&#39;channel_1&#39;</span><span class="p">,</span> <span class="s">&#39;Control&#39;</span><span class="p">;</span>
+ <span class="s">&#39;channel_2&#39;</span><span class="p">,</span> <span class="s">&#39;Condition1&#39;</span><span class="p">;</span>
+ <span class="s">&#39;channel_3&#39;</span><span class="p">,</span> <span class="s">&#39;Condition2&#39;</span><span class="p">};</span>
+<span class="n">pipeline_preprocess</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">DiscardStims</span><span class="p">(</span><span class="n">pipeline_preprocess</span><span class="p">);</span>
+<span class="n">raw</span> <span class="p">=</span> <span class="n">pipeline_preprocess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">raw</span><span class="p">);</span>
+
+# <span class="n">Analyse</span> <span class="n">data</span>
+<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">Resample</span><span class="p">();</span>                     <span class="n">pipeline</span><span class="p">.</span><span class="n">Fs</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">OpticalDensity</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">BeerLambertLaw</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">AR_IRLS</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
+<span class="n">subj_stats</span> <span class="p">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">raw</span><span class="p">);</span>
+
+# <span class="n">Group</span> <span class="n">level</span> <span class="n">analysis</span>
+<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">MixedEffects</span><span class="p">();</span>
+<span class="n">pipeline</span><span class="p">.</span><span class="n">formula</span> <span class="p">=</span> <span class="s">&#39;beta ~ -1 + cond + (1|Name)&#39;</span><span class="p">;</span>
+<span class="n">group_stats</span> <span class="p">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">subj_stats</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mne-equivalent-of-nirs-toolbox-script">
+<h1>MNE equivalent of nirs-toolbox script<a class="headerlink" href="#mne-equivalent-of-nirs-toolbox-script" title="Permalink to this headline">¶</a></h1>
+<p>The MNE equivalent of this analysis is well described
+in <a class="reference internal" href="../general/plot_12_group_glm.html#tut-fnirs-group"><span class="std std-ref">the group level tutorial</span></a>.</p>
+<p>So this page will focus on the differences between the two approaches.</p>
+<div class="section" id="differences-between-toolboxes">
+<h2>Differences between toolboxes<a class="headerlink" href="#differences-between-toolboxes" title="Permalink to this headline">¶</a></h2>
+<p>MNE does not higher order autoregressive noise models
+in the GLM analysis. See <a class="reference external" href="https://github.com/mne-tools/mne-nirs/issues/233">https://github.com/mne-tools/mne-nirs/issues/233</a></p>
+<p>MNE does not have iterative reweighting of the noise estimate
+in the GLM analysis.</p>
+</div>
+<div class="section" id="further-analysis-details">
+<h2>Further analysis details<a class="headerlink" href="#further-analysis-details" title="Permalink to this headline">¶</a></h2>
+<p>If there is useful processing in the nirs-toolbox
+that is not available in MNE
+please let us know by creating an issue at
+<a class="reference external" href="https://github.com/mne-tools/mne-nirs/issues">https://github.com/mne-tools/mne-nirs/issues</a></p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  8 MB</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-migration-plot-02-nirstoolbox-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/6c27298b14a8697a79a029fa07a6593e/plot_02_nirstoolbox.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_02_nirstoolbox.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/31bac555831ffd591b846ef6f29bef4a/plot_02_nirstoolbox.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_02_nirstoolbox.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="plot_01_homer.html" title="previous page">Migrating from Homer to MNE</a>
+    <a class='right-next' id="next-link" href="../../api.html" title="next page">API</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, Robert Luke.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -9,6 +9,29 @@
 Examples
 ========
 
+The examples gallery provides working code samples demonstrating various
+analysis and visualization techniques.
+
+.. warning::
+
+   These examples sometimes use simulations or shortcuts (such as intentionally
+   adding noise to recordings) to illustrate a point. Use caution when
+   copy-pasting code samples.
+
+
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_general:
+
+.. _general_examples:
+
+Analysis examples
+-----------------
+
 
 
 .. raw:: html
@@ -17,10 +40,10 @@ Examples
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_10_hrf_simulation_thumb.png
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_10_hrf_simulation_thumb.png
      :alt: GLM Analysis (Simulated)
 
-     :ref:`sphx_glr_auto_examples_plot_10_hrf_simulation.py`
+     :ref:`sphx_glr_auto_examples_general_plot_10_hrf_simulation.py`
 
 .. raw:: html
 
@@ -30,7 +53,7 @@ Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_10_hrf_simulation
+   /auto_examples/general/plot_10_hrf_simulation
 
 .. raw:: html
 
@@ -38,10 +61,10 @@ Examples
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_11_hrf_measured_thumb.png
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_11_hrf_measured_thumb.png
      :alt: GLM Analysis (Measured)
 
-     :ref:`sphx_glr_auto_examples_plot_11_hrf_measured.py`
+     :ref:`sphx_glr_auto_examples_general_plot_11_hrf_measured.py`
 
 .. raw:: html
 
@@ -51,7 +74,7 @@ Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_11_hrf_measured
+   /auto_examples/general/plot_11_hrf_measured
 
 .. raw:: html
 
@@ -59,10 +82,10 @@ Examples
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_12_group_glm_thumb.png
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_12_group_glm_thumb.png
      :alt: Group Level GLM
 
-     :ref:`sphx_glr_auto_examples_plot_12_group_glm.py`
+     :ref:`sphx_glr_auto_examples_general_plot_12_group_glm.py`
 
 .. raw:: html
 
@@ -72,7 +95,7 @@ Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_12_group_glm
+   /auto_examples/general/plot_12_group_glm
 
 .. raw:: html
 
@@ -80,10 +103,10 @@ Examples
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_19_snirf_thumb.png
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_19_snirf_thumb.png
      :alt: SNIRF Support in MNE
 
-     :ref:`sphx_glr_auto_examples_plot_19_snirf.py`
+     :ref:`sphx_glr_auto_examples_general_plot_19_snirf.py`
 
 .. raw:: html
 
@@ -93,7 +116,7 @@ Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_19_snirf
+   /auto_examples/general/plot_19_snirf
 
 .. raw:: html
 
@@ -101,10 +124,10 @@ Examples
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_20_enhance_thumb.png
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_20_enhance_thumb.png
      :alt: Signal Enhancement Techniques
 
-     :ref:`sphx_glr_auto_examples_plot_20_enhance.py`
+     :ref:`sphx_glr_auto_examples_general_plot_20_enhance.py`
 
 .. raw:: html
 
@@ -114,7 +137,7 @@ Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_20_enhance
+   /auto_examples/general/plot_20_enhance
 
 .. raw:: html
 
@@ -122,10 +145,10 @@ Examples
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_30_frequency_thumb.png
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_30_frequency_thumb.png
      :alt: Frequency and Filter Commentary
 
-     :ref:`sphx_glr_auto_examples_plot_30_frequency.py`
+     :ref:`sphx_glr_auto_examples_general_plot_30_frequency.py`
 
 .. raw:: html
 
@@ -135,7 +158,7 @@ Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_30_frequency
+   /auto_examples/general/plot_30_frequency
 
 .. raw:: html
 
@@ -143,10 +166,10 @@ Examples
 
 .. only:: html
 
- .. figure:: /auto_examples/images/thumb/sphx_glr_plot_99_bad_thumb.png
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_99_bad_thumb.png
      :alt: Importance of Controls and Parameter Selection
 
-     :ref:`sphx_glr_auto_examples_plot_99_bad.py`
+     :ref:`sphx_glr_auto_examples_general_plot_99_bad.py`
 
 .. raw:: html
 
@@ -156,7 +179,63 @@ Examples
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_99_bad
+   /auto_examples/general/plot_99_bad
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_migration:
+
+.. _migration:
+
+Migrating from other software packages
+--------------------------------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial will demonstrate how to do convert a basic Homer script to MNE and highlight diff...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/migration/images/thumb/sphx_glr_plot_01_homer_thumb.png
+     :alt: Migrating from Homer to MNE
+
+     :ref:`sphx_glr_auto_examples_migration_plot_01_homer.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/migration/plot_01_homer
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial will demonstrate how to do convert a nirs-toolbox script to MNE and highlight dif...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/migration/images/thumb/sphx_glr_plot_02_nirstoolbox_thumb.png
+     :alt: Migrating from nirs-toolbox to MNE
+
+     :ref:`sphx_glr_auto_examples_migration_plot_02_nirstoolbox.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/migration/plot_02_nirstoolbox
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
