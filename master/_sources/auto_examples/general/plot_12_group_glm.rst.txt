@@ -270,7 +270,7 @@ for the region of interest, channel level, and contrast results.
     Using default location ~/mne_data for None...
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 504k/0.00 [00:00<00:00,    21.8MB/s]      0%|          | Downloading : 1.24M/0.00 [00:00<00:00,    29.7MB/s]      0%|          | Downloading : 2.24M/0.00 [00:00<00:00,    35.8MB/s]      0%|          | Downloading : 4.24M/0.00 [00:00<00:00,    48.8MB/s]      0%|          | Downloading : 7.24M/0.00 [00:00<00:00,    64.4MB/s]      0%|          | Downloading : 9.24M/0.00 [00:00<00:00,    17.5MB/s]      0%|          | Downloading : 12.2M/0.00 [00:00<00:00,    23.1MB/s]      0%|          | Downloading : 16.2M/0.00 [00:00<00:00,    30.3MB/s]      0%|          | Downloading : 18.2M/0.00 [00:00<00:00,    18.4MB/s]      0%|          | Downloading : 21.2M/0.00 [00:01<00:00,    21.5MB/s]      0%|          | Downloading : 25.2M/0.00 [00:01<00:00,    15.9MB/s]      0%|          | Downloading : 28.2M/0.00 [00:01<00:00,    18.0MB/s]      0%|          | Downloading : 32.2M/0.00 [00:01<00:00,    20.9MB/s]      0%|          | Downloading : 34.2M/0.00 [00:02<00:00,    15.9MB/s]      0%|          | Downloading : 37.2M/0.00 [00:02<00:00,    17.5MB/s]      0%|          | Downloading : 41.2M/0.00 [00:02<00:00,    19.8MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    20.0MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 24.0k/0.00 [00:00<00:00,     287kB/s]      0%|          | Downloading : 40.0k/0.00 [00:00<00:00,     235kB/s]      0%|          | Downloading : 88.0k/0.00 [00:00<00:00,     349kB/s]      0%|          | Downloading : 184k/0.00 [00:00<00:00,     556kB/s]       0%|          | Downloading : 632k/0.00 [00:00<00:00,    1.58MB/s]      0%|          | Downloading : 888k/0.00 [00:00<00:00,    1.85MB/s]      0%|          | Downloading : 1.62M/0.00 [00:00<00:00,    3.02MB/s]      0%|          | Downloading : 3.12M/0.00 [00:00<00:00,    5.22MB/s]      0%|          | Downloading : 6.12M/0.00 [00:00<00:00,    9.23MB/s]      0%|          | Downloading : 8.12M/0.00 [00:00<00:00,    11.1MB/s]      0%|          | Downloading : 10.1M/0.00 [00:00<00:00,    12.6MB/s]      0%|          | Downloading : 14.1M/0.00 [00:01<00:00,    16.2MB/s]      0%|          | Downloading : 16.1M/0.00 [00:01<00:00,    17.1MB/s]      0%|          | Downloading : 18.1M/0.00 [00:01<00:00,    17.8MB/s]      0%|          | Downloading : 22.1M/0.00 [00:01<00:00,    20.2MB/s]      0%|          | Downloading : 24.1M/0.00 [00:01<00:00,    19.0MB/s]      0%|          | Downloading : 27.1M/0.00 [00:01<00:00,    20.3MB/s]      0%|          | Downloading : 29.1M/0.00 [00:01<00:00,    20.8MB/s]      0%|          | Downloading : 31.1M/0.00 [00:01<00:00,    21.2MB/s]      0%|          | Downloading : 33.1M/0.00 [00:02<00:00,    17.5MB/s]      0%|          | Downloading : 36.1M/0.00 [00:02<00:00,    18.6MB/s]      0%|          | Downloading : 38.1M/0.00 [00:02<00:00,    19.0MB/s]      0%|          | Downloading : 40.1M/0.00 [00:02<00:00,    19.4MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    19.6MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    18.0MB/s]
     Verifying hash 60472f83805b5676730e0d256fabeb7d.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -342,7 +342,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.6.min.js"></script>
        </head>
        <body>
-              <div id="3A1aVa"></div>
+              <div id="cxiWA5"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -391,7 +391,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("3A1aVa");
+           var plotContainer = document.getElementById("cxiWA5");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -456,7 +456,7 @@ model by using the code
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+    /opt/hostedtoolcache/Python/3.8.7/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
       warnings.warn(msg, ConvergenceWarning)
 
 
@@ -577,7 +577,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.6.min.js"></script>
        </head>
        <body>
-              <div id="XJAcFJ"></div>
+              <div id="FR8Qnz"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -651,7 +651,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("XJAcFJ");
+           var plotContainer = document.getElementById("FR8Qnz");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -779,9 +779,9 @@ in a topographic representation.
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+    /opt/hostedtoolcache/Python/3.8.7/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
       warnings.warn(msg, ConvergenceWarning)
-    /opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+    /opt/hostedtoolcache/Python/3.8.7/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
       warnings.warn(msg, ConvergenceWarning)
 
     <AxesSubplot:title={'center':'Contrast'}>
@@ -823,9 +823,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.232 seconds)
+   **Total running time of the script:** ( 0 minutes  19.047 seconds)
 
-**Estimated memory usage:**  50 MB
+**Estimated memory usage:**  52 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:

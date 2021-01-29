@@ -61,7 +61,7 @@ measurement length has on response amplitude estimates.
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.6/x64/lib/python3.8/site-packages/nilearn/datasets/__init__.py:87: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
+    /opt/hostedtoolcache/Python/3.8.7/x64/lib/python3.8/site-packages/nilearn/datasets/__init__.py:87: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
       warn("Fetchers from the nilearn.datasets module will be "
 
 
@@ -371,7 +371,7 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.706 seconds)
+   **Total running time of the script:** ( 0 minutes  2.739 seconds)
 
 **Estimated memory usage:**  64 MB
 
