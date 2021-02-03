@@ -517,7 +517,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f6090ae23a0>
+    <matplotlib.collections.LineCollection object at 0x7f8b29141250>
 
 
 
@@ -621,11 +621,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmp39vybq8v/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpx2jgrfuq/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmp39vybq8v/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpx2jgrfuq/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmp39vybq8v/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpx2jgrfuq/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')

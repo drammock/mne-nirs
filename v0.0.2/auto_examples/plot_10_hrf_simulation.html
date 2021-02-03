@@ -88,7 +88,7 @@
         <!-- version dropdown -->
         <li class="dropdown">
             <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-                v0.0.3 dev
+                v0.0.2
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dLabelMore">
@@ -235,7 +235,9 @@ The simulated signal is plotted below.</p>
 </div>
 <img alt="plot 10 hrf simulation" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_10_hrf_simulation_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;MNEBrowseFigure size 640x480 with 4 Axes&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;__array_function__ internals&gt;:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate(([&#39;string&#39;], [0]))` will raise an error, while `np.asarray([&#39;string&#39;, 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype=&#39;U&#39;` (or &#39;S&#39;).  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
+
+&lt;MNEBrowseFigure size 640x480 with 4 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -269,7 +271,7 @@ We also see that the mean square error of the model fit is close to zero.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [4.e-06]   MSE: [2.68254781e-44]   Error (uM): [1.69406589e-15]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [4.e-06]   MSE: [2.16189967e-44]   Error (uM): [8.47032947e-16]
 </pre></div>
 </div>
 </div>
@@ -285,7 +287,7 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># First take a copy of noise free data for comparison</span>
 <a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray" title="mne.io.RawArray" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw_noise_free</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray.copy" title="mne.io.RawArray.copy" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw</span><span class="o">.</span><span class="n">copy</span></a><span class="p">()</span>
 
-<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span><span class="o">.</span><span class="n">_data</span></a> <span class="o">+=</span> <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.sqrt.html#numpy.sqrt" title="numpy.sqrt" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span></a><span class="p">(</span><span class="mf">1e-11</span><span class="p">),</span> <a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span>
+<a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span><span class="o">.</span><span class="n">_data</span></a> <span class="o">+=</span> <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span></a><span class="p">(</span><span class="mf">1e-11</span><span class="p">),</span> <a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a> <span class="o">=</span> <a href="../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM" title="mne_nirs.statistics.run_GLM" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_GLM</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray" title="mne.io.RawArray" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span></a><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray.times" title="mne.io.RawArray.times" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw</span><span class="o">.</span><span class="n">times</span></a><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray.get_data" title="mne.io.RawArray.get_data" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw_noise_free</span><span class="o">.</span><span class="n">get_data</span></a><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">)</span>
@@ -390,8 +392,8 @@ of the simulated signal. We then added noise and illustrated that the
 estimate provided by the GLM was correct, but contained some error. We
 observed that as the measurement time was increased, the estimated
 error decreased.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.166 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  55 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.855 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  56 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-10-hrf-simulation-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/cc0fd99e521b68320bc82f551e3619b9/plot_10_hrf_simulation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_hrf_simulation.py</span></code></a></p>

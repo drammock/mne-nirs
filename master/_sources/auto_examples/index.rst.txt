@@ -78,7 +78,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="   Gorgolewski, Krzysztof J., et al.    &quot;The brain imaging data structure, a format for organiz...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of a group level GLM based fNIRS analysis in MNE-NIRS.">
 
 .. only:: html
 

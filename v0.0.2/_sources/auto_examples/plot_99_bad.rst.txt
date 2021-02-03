@@ -133,6 +133,7 @@ To achieve this we pick all the channels that are not considered to be short.
 
  .. code-block:: none
 
+    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -169,6 +170,7 @@ The raw intensity values are then converted to optical density.
 
  .. code-block:: none
 
+    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -207,6 +209,7 @@ the modified Beer-Lambert law.
 
  .. code-block:: none
 
+    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -505,9 +508,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.336 seconds)
+   **Total running time of the script:** ( 0 minutes  6.162 seconds)
 
-**Estimated memory usage:**  48 MB
+**Estimated memory usage:**  58 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_99_bad.py:
