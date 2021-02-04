@@ -93,7 +93,6 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dLabelMore">
                     <li><a href="plot_11_hrf_measured.html">master</a></li>
-                    <li><a href="https://mne.tools/mne-nirs/master/index.html">v0.0.3 (devel)</a></li>
                     <li><a href="https://mne.tools/mne-nirs/v0.0.2/index.html">v0.0.2 (stable)</a></li>
             </ul>
           </li>
@@ -288,12 +287,21 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  3%|2         | Downloading : 504k/17.1M [00:00&lt;00:01,    17.1MB/s]
-  7%|7         | Downloading : 1.24M/17.1M [00:00&lt;00:00,    27.9MB/s]
- 28%|##7       | Downloading : 4.74M/17.1M [00:00&lt;00:00,    67.4MB/s]
- 63%|######2   | Downloading : 10.7M/17.1M [00:00&lt;00:00,    75.7MB/s]
- 86%|########6 | Downloading : 14.7M/17.1M [00:00&lt;00:00,    84.4MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    88.8MB/s]
+  0%|          | Downloading : 8.00k/17.1M [00:00&lt;00:52,     343kB/s]
+  1%|          | Downloading : 120k/17.1M [00:00&lt;00:09,    1.89MB/s]
+  2%|1         | Downloading : 312k/17.1M [00:00&lt;00:04,    4.03MB/s]
+  4%|3         | Downloading : 696k/17.1M [00:00&lt;00:02,    7.67MB/s]
+  5%|5         | Downloading : 952k/17.1M [00:00&lt;00:02,    8.15MB/s]
+  7%|6         | Downloading : 1.18M/17.1M [00:00&lt;00:02,    8.02MB/s]
+ 17%|#7        | Downloading : 2.93M/17.1M [00:00&lt;00:00,    18.6MB/s]
+ 29%|##8       | Downloading : 4.93M/17.1M [00:00&lt;00:00,    24.1MB/s]
+ 41%|####      | Downloading : 6.93M/17.1M [00:00&lt;00:00,    30.6MB/s]
+ 52%|#####2    | Downloading : 8.93M/17.1M [00:00&lt;00:00,    32.6MB/s]
+ 64%|######4   | Downloading : 10.9M/17.1M [00:00&lt;00:00,    36.0MB/s]
+ 76%|#######5  | Downloading : 12.9M/17.1M [00:00&lt;00:00,    33.4MB/s]
+ 88%|########7 | Downloading : 14.9M/17.1M [00:00&lt;00:00,    34.1MB/s]
+ 99%|#########9| Downloading : 16.9M/17.1M [00:00&lt;00:00,    35.4MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    33.0MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -498,7 +506,7 @@ is seen in the epoching tutorial.</p>
 </div>
 <img alt="plot 11 hrf measured" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_11_hrf_measured_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f2261181610&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7fe3b3503760&gt;
 </pre></div>
 </div>
 </div>
@@ -558,11 +566,11 @@ the center of the head.</p>
 </div>
 <img alt="Smoothed across hemispheres, Hemispheres plotted independently" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_11_hrf_measured_007.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpx2jgrfuq/5ac95afc1a1a27c90053ce7fed5dd429fa5f3ee5/examples/general/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmp9hc6npw3/72013c547a6e43f9d9691d0d4b415e603adec4cf/examples/general/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;), glm_est, design_matrix,
-/tmp/tmpx2jgrfuq/5ac95afc1a1a27c90053ce7fed5dd429fa5f3ee5/examples/general/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
+/tmp/tmp9hc6npw3/72013c547a6e43f9d9691d0d4b415e603adec4cf/examples/general/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10)),
-/tmp/tmpx2jgrfuq/5ac95afc1a1a27c90053ce7fed5dd429fa5f3ee5/examples/general/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
+/tmp/tmp9hc6npw3/72013c547a6e43f9d9691d0d4b415e603adec4cf/examples/general/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10, 20)),
 
 Text(0.5, 1.0, &#39;Hemispheres plotted independently&#39;)
@@ -727,7 +735,7 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.998 seconds)</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.494 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  62 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-11-hrf-measured-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
