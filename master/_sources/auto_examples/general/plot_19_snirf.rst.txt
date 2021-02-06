@@ -29,7 +29,9 @@ SNIRF Support in MNE
    converter to create .snirf file.
    See https://github.com/fNIRS/snirf_homer3
 
-SNIRF is a file format for storing NIRS data. The specification is maintained
+SNIRF is a file format for storing
+functional near-infrared spectroscopy (fNIRS)
+data. The specification is maintained
 by the society for functional near infrared spectroscopy. In this tutorial
 we demonstrate how to convert your MNE data to SNIRF and also how to read
 SNIRF files.
@@ -40,7 +42,7 @@ Read the SNIRF protocol over at https://github.com/fNIRS/snirf
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-39
+.. GENERATED FROM PYTHON SOURCE LINES 27-41
 
 .. code-block:: default
 
@@ -65,14 +67,14 @@ Read the SNIRF protocol over at https://github.com/fNIRS/snirf
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-44
+.. GENERATED FROM PYTHON SOURCE LINES 42-46
 
 Import raw NIRS data from vendor
 --------------------------------
 
 First we import some example data recorded with a NIRX device.
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-51
+.. GENERATED FROM PYTHON SOURCE LINES 46-53
 
 .. code-block:: default
 
@@ -99,14 +101,14 @@ First we import some example data recorded with a NIRX device.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-56
+.. GENERATED FROM PYTHON SOURCE LINES 54-58
 
 Write data as SNIRF
 -------------------
 
 Now we can write this data back to disk in the SNIRF format.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-60
+.. GENERATED FROM PYTHON SOURCE LINES 58-62
 
 .. code-block:: default
 
@@ -121,14 +123,14 @@ Now we can write this data back to disk in the SNIRF format.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-65
+.. GENERATED FROM PYTHON SOURCE LINES 63-67
 
 Read back SNIRF file
 --------------------
 
 Next we can read back the snirf file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-69
+.. GENERATED FROM PYTHON SOURCE LINES 67-71
 
 .. code-block:: default
 
@@ -151,7 +153,7 @@ Next we can read back the snirf file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-75
+.. GENERATED FROM PYTHON SOURCE LINES 72-77
 
 Compare files
 -------------
@@ -159,7 +161,7 @@ Compare files
 Finally we can compare the data of the original to the SNIRF format and
 ensure that the values are the same.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-79
+.. GENERATED FROM PYTHON SOURCE LINES 77-81
 
 .. code-block:: default
 
@@ -190,9 +192,9 @@ ensure that the values are the same.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.281 seconds)
+   **Total running time of the script:** ( 0 minutes  2.703 seconds)
 
-**Estimated memory usage:**  63 MB
+**Estimated memory usage:**  88 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_19_snirf.py:

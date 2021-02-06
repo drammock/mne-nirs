@@ -24,13 +24,15 @@ Signal Enhancement Techniques
 =============================
 
 In this document we investigate the effect of different signal enhancement
-techniques on NIRS data.
+techniques on
+functional near-infrared spectroscopy (fNIRS)
+data.
 
 .. contents:: Page contents
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-30
+.. GENERATED FROM PYTHON SOURCE LINES 17-32
 
 .. code-block:: default
 
@@ -56,7 +58,7 @@ techniques on NIRS data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-38
+.. GENERATED FROM PYTHON SOURCE LINES 33-40
 
 Import and preprocess data
 --------------------------
@@ -66,7 +68,7 @@ See
 https://mne.tools/dev/auto_tutorials/preprocessing/plot_70_fnirs_processing.html
 for more details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-54
+.. GENERATED FROM PYTHON SOURCE LINES 40-56
 
 .. code-block:: default
 
@@ -117,7 +119,7 @@ for more details.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-60
+.. GENERATED FROM PYTHON SOURCE LINES 57-62
 
 Extract epochs with no additional processing
 --------------------------------------------
@@ -125,7 +127,7 @@ Extract epochs with no additional processing
 First we extract the epochs with no additional processing,
 this result should be the same as the MNE tutorial.
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-80
+.. GENERATED FROM PYTHON SOURCE LINES 62-82
 
 .. code-block:: default
 
@@ -176,14 +178,14 @@ this result should be the same as the MNE tutorial.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-85
+.. GENERATED FROM PYTHON SOURCE LINES 83-87
 
 Apply negative correlation enhancement algorithm
 ------------------------------------------------
 
 Apply Cui et. al. 2010 and extract epochs.
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-104
+.. GENERATED FROM PYTHON SOURCE LINES 87-106
 
 .. code-block:: default
 
@@ -228,14 +230,14 @@ Apply Cui et. al. 2010 and extract epochs.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-109
+.. GENERATED FROM PYTHON SOURCE LINES 107-111
 
 Apply short channel correction
 ------------------------------
 
 Apply Scholkmann et al 2014 and extract epochs.
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-134
+.. GENERATED FROM PYTHON SOURCE LINES 111-136
 
 .. code-block:: default
 
@@ -303,14 +305,14 @@ Apply Scholkmann et al 2014 and extract epochs.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-139
+.. GENERATED FROM PYTHON SOURCE LINES 137-141
 
 Plot approaches for comparison
 ------------------------------
 
 Plot the average epochs with and without Cui 2010 applied.
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-166
+.. GENERATED FROM PYTHON SOURCE LINES 141-168
 
 .. code-block:: default
 
@@ -371,7 +373,7 @@ Plot the average epochs with and without Cui 2010 applied.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-172
+.. GENERATED FROM PYTHON SOURCE LINES 169-174
 
 Plot hemisphere for each approach
 ---------------------------------
@@ -379,7 +381,7 @@ Plot hemisphere for each approach
 Plot the epoch image for each approach. First we specify the source
 detector pairs for analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 172-253
+.. GENERATED FROM PYTHON SOURCE LINES 174-255
 
 .. code-block:: default
 
@@ -509,7 +511,7 @@ detector pairs for analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.454 seconds)
+   **Total running time of the script:** ( 0 minutes  3.767 seconds)
 
 **Estimated memory usage:**  93 MB
 

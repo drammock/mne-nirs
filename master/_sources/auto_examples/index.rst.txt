@@ -36,7 +36,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example we simulate a block design fNIRS experiment and analyse the simulated signal. W...">
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we simulate a block design functional near-infrared spectroscopy (fNIRS) experi...">
 
 .. only:: html
 
@@ -57,7 +57,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel fNIRS experiment (see tut-fnirs-hrf-si...">
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel functional near-infrared spectroscopy ...">
 
 .. only:: html
 
@@ -78,7 +78,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of a group level GLM based fNIRS analysis in MNE-NIRS.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of a group level GLM based functional near-infrared spectroscopy (fNIRS) ana...">
 
 .. only:: html
 
@@ -96,6 +96,27 @@ Analysis examples
    :hidden:
 
    /auto_examples/general/plot_12_group_glm
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" This tutorial covers how to convert functional near-infrared spectroscopy (fNIRS) data from ra...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_15_waveform_thumb.png
+     :alt: Waveform averaging analysis
+
+     :ref:`sphx_glr_auto_examples_general_plot_15_waveform.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_15_waveform
 
 .. raw:: html
 
@@ -120,7 +141,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In this document we investigate the effect of different signal enhancement techniques on NIRS d...">
+    <div class="sphx-glr-thumbcontainer" tooltip="In this document we investigate the effect of different signal enhancement techniques on functi...">
 
 .. only:: html
 
@@ -141,7 +162,28 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example we discuss frequency and filters in the context of NIRS analysis. We examine th...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Here we artificially introduce several artifacts in a functional near-infrared spectroscopy (fN...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_21_artifacts_thumb.png
+     :alt: Artifact correction techniques
+
+     :ref:`sphx_glr_auto_examples_general_plot_21_artifacts.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_21_artifacts
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we discuss frequency and filters in the context of functional near-infrared spe...">
 
 .. only:: html
 

@@ -24,7 +24,9 @@ Frequency and Filter Commentary
 ===============================
 
 In this example we discuss frequency and filters in the context
-of NIRS analysis.
+of
+functional near-infrared spectroscopy (fNIRS)
+analysis.
 We examine the interplay between the expected brain response based
 on experimental design and our model of how the brain reacts to stimuli,
 the actual data measured during an experiment, and the filtering
@@ -34,7 +36,7 @@ that is applied to the data.
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-34
+.. GENERATED FROM PYTHON SOURCE LINES 21-36
 
 .. code-block:: default
 
@@ -60,7 +62,7 @@ that is applied to the data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-46
+.. GENERATED FROM PYTHON SOURCE LINES 37-48
 
 Import and preprocess data
 --------------------------
@@ -74,7 +76,7 @@ Please see the
 :ref:`MNE documentation <mne:tut-fnirs-processing>`.
 for a detailed introduction to processing NIRS with MNE.
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-67
+.. GENERATED FROM PYTHON SOURCE LINES 48-69
 
 .. code-block:: default
 
@@ -115,7 +117,7 @@ for a detailed introduction to processing NIRS with MNE.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-84
+.. GENERATED FROM PYTHON SOURCE LINES 70-86
 
 Model neural response
 ---------------------
@@ -134,7 +136,7 @@ and plot the frequency spectrum.
 We note there is a peak at 0.03 which corresponds approximately to
 the repetition rate of the experiment.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-98
+.. GENERATED FROM PYTHON SOURCE LINES 86-100
 
 .. code-block:: default
 
@@ -172,7 +174,7 @@ the repetition rate of the experiment.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-108
+.. GENERATED FROM PYTHON SOURCE LINES 101-110
 
 Plot raw measured data
 ----------------------
@@ -184,7 +186,7 @@ We also see an increase in activity around 0.1 Hz, this is likely
 Mayer waves (https://en.wikipedia.org/wiki/Mayer_waves).
 There is also a small bump around 0.3 Hz that is likely the breathing rate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-120
+.. GENERATED FROM PYTHON SOURCE LINES 110-122
 
 .. code-block:: default
 
@@ -220,7 +222,7 @@ There is also a small bump around 0.3 Hz that is likely the breathing rate.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-129
+.. GENERATED FROM PYTHON SOURCE LINES 123-131
 
 Plot epoched data
 -----------------
@@ -231,7 +233,7 @@ The act of averaging the epochs removes some of the systemic components that
 are not time locked to the stimulus. However, the large heart rate component
 is still visible.
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-144
+.. GENERATED FROM PYTHON SOURCE LINES 131-146
 
 .. code-block:: default
 
@@ -279,7 +281,7 @@ is still visible.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-154
+.. GENERATED FROM PYTHON SOURCE LINES 147-156
 
 Plot filter response
 --------------------
@@ -291,7 +293,7 @@ https://mne.tools/stable/auto_tutorials/discussions/plot_background_filtering.ht
 This filter will be designed to remove the heart rate component that remained
 after epoching.
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-164
+.. GENERATED FROM PYTHON SOURCE LINES 156-166
 
 .. code-block:: default
 
@@ -335,7 +337,7 @@ after epoching.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-182
+.. GENERATED FROM PYTHON SOURCE LINES 167-184
 
 Discussion
 ----------
@@ -355,7 +357,7 @@ stimulus interval the act of epoching and averaging the data
 removes these unwanted components and they are not visible in the
 epoched data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-202
+.. GENERATED FROM PYTHON SOURCE LINES 184-204
 
 .. code-block:: default
 
@@ -401,7 +403,7 @@ epoched data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-212
+.. GENERATED FROM PYTHON SOURCE LINES 205-214
 
 Understanding the relation between stimulus presentation and response
 ---------------------------------------------------------------------
@@ -413,7 +415,7 @@ values for the ISI. Two repeats are plotted per
 ISI to illustrate the random selection.
 Some common high pass filter values from literature are shown in red.
 
-.. GENERATED FROM PYTHON SOURCE LINES 212-237
+.. GENERATED FROM PYTHON SOURCE LINES 214-239
 
 .. code-block:: default
 
@@ -456,9 +458,9 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  37.042 seconds)
+   **Total running time of the script:** ( 0 minutes  37.722 seconds)
 
-**Estimated memory usage:**  93 MB
+**Estimated memory usage:**  92 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_30_frequency.py:
