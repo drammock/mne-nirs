@@ -189,29 +189,29 @@ converted to haemoglobin concentration.
 After which, a GLM analysis is performed with iteratively reweighted
 autoregressive noise model.
 Finally a mixed effects model is run on the group level dat.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span># <span class="n">Load</span> <span class="n">data</span>
-<span class="n">raw</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">loadDirectory</span><span class="p">()</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span>#<span class="w"> </span><span class="n">Load</span><span class="w"> </span><span class="n">data</span><span class="w"></span>
+<span class="n">raw</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nirs</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">loadDirectory</span><span class="p">()</span><span class="w"></span>
 
-# <span class="n">Preprocess</span> <span class="n">data</span>
-<span class="n">pipeline_preprocess</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">RenameStims</span><span class="p">(</span><span class="n">pipeline_preprocess</span><span class="p">);</span>
-<span class="n">pipeline_preprocess</span><span class="p">.</span><span class="n">listOfChanges</span> <span class="p">=</span> <span class="p">{</span>
- <span class="s">&#39;channel_1&#39;</span><span class="p">,</span> <span class="s">&#39;Control&#39;</span><span class="p">;</span>
- <span class="s">&#39;channel_2&#39;</span><span class="p">,</span> <span class="s">&#39;Condition1&#39;</span><span class="p">;</span>
- <span class="s">&#39;channel_3&#39;</span><span class="p">,</span> <span class="s">&#39;Condition2&#39;</span><span class="p">};</span>
-<span class="n">pipeline_preprocess</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">DiscardStims</span><span class="p">(</span><span class="n">pipeline_preprocess</span><span class="p">);</span>
-<span class="n">raw</span> <span class="p">=</span> <span class="n">pipeline_preprocess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">raw</span><span class="p">);</span>
+#<span class="w"> </span><span class="n">Preprocess</span><span class="w"> </span><span class="n">data</span><span class="w"></span>
+<span class="n">pipeline_preprocess</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">RenameStims</span><span class="p">(</span><span class="n">pipeline_preprocess</span><span class="p">);</span><span class="w"></span>
+<span class="n">pipeline_preprocess</span><span class="p">.</span><span class="n">listOfChanges</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="s">&#39;channel_1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Control&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="s">&#39;channel_2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Condition1&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="s">&#39;channel_3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;Condition2&#39;</span><span class="p">};</span><span class="w"></span>
+<span class="n">pipeline_preprocess</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">DiscardStims</span><span class="p">(</span><span class="n">pipeline_preprocess</span><span class="p">);</span><span class="w"></span>
+<span class="n">raw</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pipeline_preprocess</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">raw</span><span class="p">);</span><span class="w"></span>
 
-# <span class="n">Analyse</span> <span class="n">data</span>
-<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">Resample</span><span class="p">();</span>                     <span class="n">pipeline</span><span class="p">.</span><span class="n">Fs</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">OpticalDensity</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
-<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">BeerLambertLaw</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
-<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">AR_IRLS</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span>
-<span class="n">subj_stats</span> <span class="p">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">raw</span><span class="p">);</span>
+#<span class="w"> </span><span class="n">Analyse</span><span class="w"> </span><span class="n">data</span><span class="w"></span>
+<span class="n">pipeline</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">Resample</span><span class="p">();</span><span class="w">                     </span><span class="n">pipeline</span><span class="p">.</span><span class="n">Fs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="n">pipeline</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">OpticalDensity</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span><span class="w"></span>
+<span class="n">pipeline</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">BeerLambertLaw</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span><span class="w"></span>
+<span class="n">pipeline</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">AR_IRLS</span><span class="p">(</span><span class="n">pipeline</span><span class="p">);</span><span class="w"></span>
+<span class="n">subj_stats</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pipeline</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">raw</span><span class="p">);</span><span class="w"></span>
 
-# <span class="n">Group</span> <span class="n">level</span> <span class="n">analysis</span>
-<span class="n">pipeline</span> <span class="p">=</span> <span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">MixedEffects</span><span class="p">();</span>
-<span class="n">pipeline</span><span class="p">.</span><span class="n">formula</span> <span class="p">=</span> <span class="s">&#39;beta ~ -1 + cond + (1|Name)&#39;</span><span class="p">;</span>
-<span class="n">group_stats</span> <span class="p">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">subj_stats</span><span class="p">);</span>
+#<span class="w"> </span><span class="n">Group</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="n">analysis</span><span class="w"></span>
+<span class="n">pipeline</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nirs</span><span class="p">.</span><span class="n">modules</span><span class="p">.</span><span class="n">MixedEffects</span><span class="p">();</span><span class="w"></span>
+<span class="n">pipeline</span><span class="p">.</span><span class="n">formula</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;beta ~ -1 + cond + (1|Name)&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="n">group_stats</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pipeline</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">subj_stats</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

@@ -330,10 +330,10 @@ and that the responses look to be contralateral to the tapping hand.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.6.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.0.min.js"></script>
        </head>
        <body>
-              <div id="1j9My2"></div>
+              <div id="Vo4VPJ"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -352,7 +352,9 @@ and that the responses look to be contralateral to the tapping hand.
     },
     'facet':{
     'name':"grid",
-    'x':"ID"
+    'x':"ID",
+    'x_order':1,
+    'y_order':1
     },
     'ggsize':{
     'width':800,
@@ -382,7 +384,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("1j9My2");
+           var plotContainer = document.getElementById("Vo4VPJ");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -565,10 +567,10 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-1.5.6.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.0.min.js"></script>
        </head>
        <body>
-              <div id="N4RaVX"></div>
+              <div id="ceLdaZ"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -642,7 +644,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("N4RaVX");
+           var plotContainer = document.getElementById("ceLdaZ");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -814,9 +816,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.501 seconds)
+   **Total running time of the script:** ( 0 minutes  16.663 seconds)
 
-**Estimated memory usage:**  49 MB
+**Estimated memory usage:**  48 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:

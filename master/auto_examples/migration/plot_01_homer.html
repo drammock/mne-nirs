@@ -194,19 +194,19 @@ and highlight differences and common issues you may encounter.</p>
 The NIRx data is converted to .nirs format.
 Then the intensity signal is convert to optical density,
 motion corrected using TDDR, and converted to haemoglobin concentration.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">HomerOfflineConverter</span><span class="p">(</span><span class="s">&#39;~/mne_data/MNE-fNIRS-motor-data/Participant-1&#39;</span><span class="p">);</span>
-<span class="n">load</span><span class="p">(</span><span class="s">&#39;file.nirs&#39;</span><span class="p">,</span> <span class="s">&#39;-mat&#39;</span><span class="p">);</span>
-<span class="n">fs</span> <span class="p">=</span> <span class="mf">7.8125</span><span class="p">;</span>
-<span class="n">dRange</span> <span class="p">=</span> <span class="p">[</span><span class="mf">0.07</span> <span class="mi">3</span><span class="p">];</span>
-<span class="n">SNRthresh</span> <span class="p">=</span> <span class="mi">7</span><span class="p">;</span>
-<span class="n">SDrange</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">45</span><span class="p">];</span>
-<span class="n">reset</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">tIncMan</span> <span class="p">=</span> <span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">dod</span> <span class="p">=</span> <span class="n">hmrIntensity2OD</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
-<span class="n">SD</span> <span class="p">=</span> <span class="n">enPruneChannels</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">SD</span><span class="p">,</span><span class="n">tIncMan</span><span class="p">,</span><span class="n">dRange</span><span class="p">,</span><span class="n">SNRthresh</span><span class="p">,</span><span class="n">SDrange</span><span class="p">,</span><span class="n">reset</span><span class="p">);</span>
-<span class="n">tddr</span> <span class="p">=</span> <span class="n">hmrMotionCorrectTDDR</span><span class="p">(</span><span class="n">dod</span><span class="p">,</span><span class="n">SD</span><span class="p">,</span><span class="n">fs</span><span class="p">);</span>
-<span class="n">ppf</span> <span class="p">=</span> <span class="p">[</span><span class="mi">6</span> <span class="mi">6</span><span class="p">];</span>
-<span class="n">dc</span> <span class="p">=</span> <span class="n">hmrOD2Conc</span><span class="p">(</span><span class="n">tddr</span><span class="p">,</span><span class="n">SD</span><span class="p">,</span><span class="n">ppf</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">HomerOfflineConverter</span><span class="p">(</span><span class="s">&#39;~/mne_data/MNE-fNIRS-motor-data/Participant-1&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">load</span><span class="p">(</span><span class="s">&#39;file.nirs&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;-mat&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">fs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">7.8125</span><span class="p">;</span><span class="w"></span>
+<span class="n">dRange</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0.07</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w"></span>
+<span class="n">SNRthresh</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"></span>
+<span class="n">SDrange</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">45</span><span class="p">];</span><span class="w"></span>
+<span class="nb">reset</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">tIncMan</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">dod</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">hmrIntensity2OD</span><span class="p">(</span><span class="n">d</span><span class="p">);</span><span class="w"></span>
+<span class="n">SD</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">enPruneChannels</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">SD</span><span class="p">,</span><span class="n">tIncMan</span><span class="p">,</span><span class="n">dRange</span><span class="p">,</span><span class="n">SNRthresh</span><span class="p">,</span><span class="n">SDrange</span><span class="p">,</span><span class="nb">reset</span><span class="p">);</span><span class="w"></span>
+<span class="n">tddr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">hmrMotionCorrectTDDR</span><span class="p">(</span><span class="n">dod</span><span class="p">,</span><span class="n">SD</span><span class="p">,</span><span class="n">fs</span><span class="p">);</span><span class="w"></span>
+<span class="n">ppf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="w"> </span><span class="mi">6</span><span class="p">];</span><span class="w"></span>
+<span class="n">dc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">hmrOD2Conc</span><span class="p">(</span><span class="n">tddr</span><span class="p">,</span><span class="n">SD</span><span class="p">,</span><span class="n">ppf</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -271,8 +271,8 @@ If there is useful processing in the Homer
 that is not available in MNE
 please let us know by creating an issue at
 <a class="reference external" href="https://github.com/mne-tools/mne-nirs/issues">https://github.com/mne-tools/mne-nirs/issues</a></p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.080 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  79 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.009 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  72 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-migration-plot-01-homer-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/866042570f5904f93bc56723c37f3d28/plot_01_homer.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_01_homer.py</span></code></a></p>
