@@ -333,7 +333,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.0.min.js"></script>
        </head>
        <body>
-              <div id="Vo4VPJ"></div>
+              <div id="qOtxgU"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -384,7 +384,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("Vo4VPJ");
+           var plotContainer = document.getElementById("qOtxgU");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -570,11 +570,11 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.0.min.js"></script>
        </head>
        <body>
-              <div id="ceLdaZ"></div>
+              <div id="xCcxJJ"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
-    'Coef.':[-0.281,-0.783,1.96,9.629,9.264,3.497],
+    'Coef.':[-0.2812693466757778,-0.7833260087803474,1.9603091675064235,9.629107045996983,9.26401391296063,3.496992502833377],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     'Significant':[false,false,false,true,true,false]
@@ -619,7 +619,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.268,-2.003,-4.128],
+    'Coef.':[0.26795165968756557,-2.0033229830615977,-4.127503911480092],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,false,true]
     },
@@ -632,7 +632,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.103,-4.258,-1.768],
+    'Coef.':[0.10310784778106843,-4.258081496451249,-1.7680131502555918],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,true,false]
     },
@@ -644,7 +644,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("ceLdaZ");
+           var plotContainer = document.getElementById("xCcxJJ");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -816,7 +816,7 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.663 seconds)
+   **Total running time of the script:** ( 0 minutes  18.128 seconds)
 
 **Estimated memory usage:**  48 MB
 

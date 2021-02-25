@@ -147,10 +147,15 @@
 <span class="c1"># License: BSD (3-clause)</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="k">def</span> <span class="nf">summary_to_dataframe</span><span class="p">(</span><span class="n">summary</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;Convert statsmodels summary to pandas dataframe&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;Convert statsmodels summary to pandas dataframe.</span>
+
+<span class="sd">    .. warning:: The summary has precision issues, use the numerical values</span>
+<span class="sd">                 from it with caution.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">results</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">as_html</span><span class="p">()</span>
@@ -197,6 +202,14 @@
     <span class="k">return</span> <span class="n">summary</span>
 
 
+<span class="n">_REPLACEMENTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;P&gt;|z|&#39;</span><span class="p">,</span> <span class="s1">&#39;pvalues&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Coef.&#39;</span><span class="p">,</span> <span class="s1">&#39;fe_params&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;tvalues&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;P&gt;|t|&#39;</span><span class="p">,</span> <span class="s1">&#39;pvalues&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+
+
 <div class="viewcode-block" id="statsmodels_to_results"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results">[docs]</a><span class="k">def</span> <span class="nf">statsmodels_to_results</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert statsmodels summary to a dataframe.</span>
@@ -210,7 +223,44 @@
 <span class="sd">    -------</span>
 <span class="sd">    df : Pandas dataframe.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">statsmodels.regression.mixed_linear_model</span> <span class="kn">import</span> <span class="n">MixedLMResultsWrapper</span>
+    <span class="kn">from</span> <span class="nn">scipy.stats.distributions</span> <span class="kn">import</span> <span class="n">norm</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">summary_to_dataframe</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+    <span class="c1"># deal with numerical precision loss in at least some of the values</span>
+    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">_REPLACEMENTS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+
+    <span class="c1"># This one messes up the standard error and quartiles, too</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">MixedLMResultsWrapper</span><span class="p">):</span>
+        <span class="n">sl</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">k_fe</span><span class="p">)</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sl</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s1">&#39;Coef.&#39;</span><span class="p">])[:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># Adapted from statsmodels, see</span>
+        <span class="c1"># https://github.com/statsmodels/statsmodels/blob/master/statsmodels/regression/mixed_linear_model.py#L2710-L2736  # noqa: E501</span>
+        <span class="n">stderr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">cov_params</span><span class="p">()[</span><span class="n">sl</span><span class="p">]))</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sl</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s1">&#39;Std.Err.&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stderr</span>
+        <span class="c1"># Confidence intervals</span>
+        <span class="n">qm</span> <span class="o">=</span> <span class="o">-</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sl</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s1">&#39;[0.025&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">-</span> <span class="n">qm</span> <span class="o">*</span> <span class="n">stderr</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">sl</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s1">&#39;0.975]&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">qm</span> <span class="o">*</span> <span class="n">stderr</span>
+        <span class="c1"># All random effects variances and covariances</span>
+        <span class="n">sdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">model</span><span class="o">.</span><span class="n">k_re2</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">k_vc</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">jj</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">k_re</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">sdf</span><span class="p">[</span><span class="n">jj</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">cov_re</span><span class="p">)[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+                <span class="n">sdf</span><span class="p">[</span><span class="n">jj</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">scale</span><span class="p">)</span> <span class="o">*</span> <span class="n">model</span><span class="o">.</span><span class="n">bse</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">k_fe</span> <span class="o">+</span> <span class="n">jj</span><span class="p">]</span>
+                <span class="n">jj</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Variance components</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">k_vc</span><span class="p">):</span>
+            <span class="n">sdf</span><span class="p">[</span><span class="n">jj</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">vcomp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">sdf</span><span class="p">[</span><span class="n">jj</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">scale</span><span class="p">)</span> <span class="o">*</span> <span class="n">model</span><span class="o">.</span><span class="n">bse</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">k_fe</span> <span class="o">+</span> <span class="n">jj</span><span class="p">]</span>
+            <span class="n">jj</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">k_fe</span><span class="p">:,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s1">&#39;Coef.&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sdf</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">k_fe</span><span class="p">:,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s1">&#39;Std.Err.&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sdf</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+
     <span class="n">df</span> <span class="o">=</span> <span class="n">expand_summary_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">df</span></div>
 </pre></div>
