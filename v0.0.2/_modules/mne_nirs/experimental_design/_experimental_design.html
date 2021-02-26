@@ -167,44 +167,55 @@
 <span class="sd">    ----------</span>
 <span class="sd">    raw : instance of Raw</span>
 <span class="sd">        Haemoglobin data.</span>
+
 <span class="sd">    stim_dur : Number</span>
 <span class="sd">        The length of your stimulus.</span>
-<span class="sd">    hrf_model : {&#39;spm&#39;, &#39;spm + derivative&#39;, &#39;spm + derivative + dispersion&#39;,</span>
-<span class="sd">        &#39;glover&#39;, &#39;glover + derivative&#39;, &#39;glover + derivative + dispersion&#39;,</span>
-<span class="sd">        &#39;fir&#39;, None}, optional,</span>
-<span class="sd">        Specifies the hemodynamic response function</span>
-<span class="sd">    drift_model : {&#39;polynomial&#39;, &#39;cosine&#39;, None}, optional</span>
-<span class="sd">        Specifies the desired drift model,</span>
-<span class="sd">    period_cut : float, optional</span>
-<span class="sd">        Cut period of the high-pass filter in seconds.</span>
-<span class="sd">        Used only if drift_model is &#39;cosine&#39;.</span>
+
+<span class="sd">    hrf_model : {&#39;glover&#39;, &#39;spm&#39;, &#39;spm + derivative&#39;,</span>
+<span class="sd">         &#39;spm + derivative + dispersion&#39;,</span>
+<span class="sd">        &#39;glover + derivative&#39;, &#39;glover + derivative + dispersion&#39;,</span>
+<span class="sd">        &#39;fir&#39;, None}, optional</span>
+<span class="sd">        Specifies the hemodynamic response function. Default=&#39;glover&#39;.</span>
+
+<span class="sd">    drift_model : {&#39;cosine&#39;, &#39;polynomial&#39;, None}, optional</span>
+<span class="sd">        Specifies the desired drift model. Default=&#39;cosine&#39;.</span>
+
+<span class="sd">    high_pass : float, optional</span>
+<span class="sd">        High-pass frequency in case of a cosine model (in Hz).</span>
+<span class="sd">        Default=0.01.</span>
+
 <span class="sd">    drift_order : int, optional</span>
 <span class="sd">        Order of the drift model (in case it is polynomial).</span>
-<span class="sd">    fir_delays : array of shape(n_onsets) or list, optional,</span>
+<span class="sd">        Default=1.</span>
+
+<span class="sd">    fir_delays : array of shape(n_onsets) or list, optional</span>
 <span class="sd">        In case of FIR design, yields the array of delays used in the FIR</span>
-<span class="sd">        model (in scans).</span>
-<span class="sd">    add_regs : array of shape(n_frames, n_add_reg), optional</span>
+<span class="sd">        model (in scans). Default=[0].</span>
+
+<span class="sd">    add_regs : array of shape(n_frames, n_add_reg) or pandas DataFrame</span>
 <span class="sd">        additional user-supplied regressors, e.g. data driven noise regressors</span>
 <span class="sd">        or seed based regressors.</span>
+
 <span class="sd">    add_reg_names : list of (n_add_reg,) strings, optional</span>
 <span class="sd">        If None, while add_regs was provided, these will be termed</span>
 <span class="sd">        &#39;reg_%i&#39;, i = 0..n_add_reg - 1</span>
+<span class="sd">        If add_regs is a DataFrame, the corresponding column names are used</span>
+<span class="sd">        and add_reg_names is ignored.</span>
+
 <span class="sd">    min_onset : float, optional</span>
 <span class="sd">        Minimal onset relative to frame_times[0] (in seconds)</span>
 <span class="sd">        events that start before frame_times[0] + min_onset are not considered.</span>
-<span class="sd">    oversampling: int, optional,</span>
-<span class="sd">        Oversampling factor used in temporal convolutions.</span>
+<span class="sd">        Default=-24.</span>
+
+<span class="sd">    oversampling : int, optional</span>
+<span class="sd">        Oversampling factor used in temporal convolutions. Default=50.</span>
+
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    design_matrix : DataFrame instance,</span>
 <span class="sd">        holding the computed design matrix, the index being the frames_times</span>
 <span class="sd">        and each column a regressor.</span>
-<span class="sd">    oversampling : As specified in Nilearn</span>
 
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    dm : Design matrix</span>
-<span class="sd">        As specified in Nilearn.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">make_first_level_design_matrix</span>
     <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>

@@ -158,49 +158,51 @@
 <dd><p>Generate a design matrix for the experiment.</p>
 <p>This is a wrapper function for
 nilearn.stats.first_level_model.make_first_level_design_matrix.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>raw</strong><span class="classifier">instance of Raw</span></dt><dd><p>Haemoglobin data.</p>
 </dd>
 <dt><strong>stim_dur</strong><span class="classifier">Number</span></dt><dd><p>The length of your stimulus.</p>
 </dd>
-<dt><strong>hrf_model</strong><span class="classifier">{‘spm’, ‘spm + derivative’, ‘spm + derivative + dispersion’,</span></dt><dd><p>‘glover’, ‘glover + derivative’, ‘glover + derivative + dispersion’,
-‘fir’, None}, optional,
-Specifies the hemodynamic response function</p>
+<dt><strong>hrf_model</strong><span class="classifier">{‘glover’, ‘spm’, ‘spm + derivative’,</span></dt><dd><blockquote>
+<div><p>‘spm + derivative + dispersion’,</p>
+</div></blockquote>
+<p>‘glover + derivative’, ‘glover + derivative + dispersion’,
+‘fir’, None}, optional
+Specifies the hemodynamic response function. Default=’glover’.</p>
 </dd>
-<dt><strong>drift_model</strong><span class="classifier">{‘polynomial’, ‘cosine’, None}, optional</span></dt><dd><p>Specifies the desired drift model,</p>
+<dt><strong>drift_model</strong><span class="classifier">{‘cosine’, ‘polynomial’, None}, optional</span></dt><dd><p>Specifies the desired drift model. Default=’cosine’.</p>
 </dd>
-<dt><strong>period_cut</strong><span class="classifier">float, optional</span></dt><dd><p>Cut period of the high-pass filter in seconds.
-Used only if drift_model is ‘cosine’.</p>
+<dt><strong>high_pass</strong><span class="classifier">float, optional</span></dt><dd><p>High-pass frequency in case of a cosine model (in Hz).
+Default=0.01.</p>
 </dd>
-<dt><strong>drift_order</strong><span class="classifier">int, optional</span></dt><dd><p>Order of the drift model (in case it is polynomial).</p>
+<dt><strong>drift_order</strong><span class="classifier">int, optional</span></dt><dd><p>Order of the drift model (in case it is polynomial).
+Default=1.</p>
 </dd>
-<dt><strong>fir_delays</strong><span class="classifier">array of shape(n_onsets) or list, optional,</span></dt><dd><p>In case of FIR design, yields the array of delays used in the FIR
-model (in scans).</p>
+<dt><strong>fir_delays</strong><span class="classifier">array of shape(n_onsets) or list, optional</span></dt><dd><p>In case of FIR design, yields the array of delays used in the FIR
+model (in scans). Default=[0].</p>
 </dd>
-<dt><strong>add_regs</strong><span class="classifier">array of shape(n_frames, n_add_reg), optional</span></dt><dd><p>additional user-supplied regressors, e.g. data driven noise regressors
+<dt><strong>add_regs</strong><span class="classifier">array of shape(n_frames, n_add_reg) or pandas DataFrame</span></dt><dd><p>additional user-supplied regressors, e.g. data driven noise regressors
 or seed based regressors.</p>
 </dd>
 <dt><strong>add_reg_names</strong><span class="classifier">list of (n_add_reg,) strings, optional</span></dt><dd><p>If None, while add_regs was provided, these will be termed
-‘reg_%i’, i = 0..n_add_reg - 1</p>
+‘reg_%i’, i = 0..n_add_reg - 1
+If add_regs is a DataFrame, the corresponding column names are used
+and add_reg_names is ignored.</p>
 </dd>
 <dt><strong>min_onset</strong><span class="classifier">float, optional</span></dt><dd><p>Minimal onset relative to frame_times[0] (in seconds)
-events that start before frame_times[0] + min_onset are not considered.</p>
+events that start before frame_times[0] + min_onset are not considered.
+Default=-24.</p>
 </dd>
-<dt><strong>oversampling: int, optional,</strong></dt><dd><p>Oversampling factor used in temporal convolutions.</p>
+<dt><strong>oversampling</strong><span class="classifier">int, optional</span></dt><dd><p>Oversampling factor used in temporal convolutions. Default=50.</p>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
-<dt><strong>design_matrix</strong><span class="classifier">DataFrame instance,</span></dt><dd><p>holding the computed design matrix, the index being the frames_times
-and each column a regressor.</p>
-</dd>
-<dt><strong>oversampling</strong><span class="classifier">As specified in Nilearn</span></dt><dd></dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>dm</strong><span class="classifier">Design matrix</span></dt><dd><p>As specified in Nilearn.</p>
+<dt><strong>design_matrix</strong><span class="classifier">DataFrame instance,</span></dt><dd><p>holding the computed design matrix, the index being the frames_times
+and each column a regressor.</p>
 </dd>
 </dl>
 </dd>
