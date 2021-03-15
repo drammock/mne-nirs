@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Waveform averaging analysis &#8212; MNE-NIRS 0.0.3 dev documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,10 +20,6 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../_static/js/index.d8bbf5861d671d414e1a.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -119,8 +116,9 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-          </div>
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
           
 
           
@@ -131,53 +129,64 @@
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#selecting-channels-appropriate-for-detecting-neural-responses" class="nav-link">Selecting channels appropriate for detecting neural responses</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#converting-from-raw-intensity-to-optical-density" class="nav-link">Converting from raw intensity to optical density</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#evaluating-the-quality-of-the-data" class="nav-link">Evaluating the quality of the data</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#converting-from-optical-density-to-haemoglobin" class="nav-link">Converting from optical density to haemoglobin</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#removing-heart-rate-from-signal" class="nav-link">Removing heart rate from signal</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#extract-epochs" class="nav-link">Extract epochs</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#view-consistency-of-responses-across-trials" class="nav-link">View consistency of responses across trials</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#view-consistency-of-responses-across-channels" class="nav-link">View consistency of responses across channels</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#plot-standard-fnirs-response-image" class="nav-link">Plot standard fNIRS response image</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#view-topographic-representation-of-activity" class="nav-link">View topographic representation of activity</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#compare-tapping-of-left-and-right-hands" class="nav-link">Compare tapping of left and right hands</a>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-channels-appropriate-for-detecting-neural-responses">
+   Selecting channels appropriate for detecting neural responses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-from-raw-intensity-to-optical-density">
+   Converting from raw intensity to optical density
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluating-the-quality-of-the-data">
+   Evaluating the quality of the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-from-optical-density-to-haemoglobin">
+   Converting from optical density to haemoglobin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#removing-heart-rate-from-signal">
+   Removing heart rate from signal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extract-epochs">
+   Extract epochs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#view-consistency-of-responses-across-trials">
+   View consistency of responses across trials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#view-consistency-of-responses-across-channels">
+   View consistency of responses across channels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-standard-fnirs-response-image">
+   Plot standard fNIRS response image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#view-topographic-representation-of-activity">
+   View topographic representation of activity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-tapping-of-left-and-right-hands">
+   Compare tapping of left and right hands
+  </a>
+ </li>
+</ul>
+
 </nav>
 
 
@@ -186,7 +195,10 @@
           
 
           
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          
+            
+          
+          <main class="col-12 col-md-11 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
                 
@@ -518,7 +530,7 @@ motor cortex, and all channels show a similar pattern in the data.</p>
         <a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.set_title.html#matplotlib.axes.Axes.set_title" title="matplotlib.axes.Axes.set_title" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span></a><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">condition</span></a><span class="p">,</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.get_title.html#matplotlib.axes.Axes.get_title" title="matplotlib.axes.Axes.get_title" class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method"><span class="n">ax</span><span class="o">.</span><span class="n">get_title</span></a><span class="p">()))</span>
 </pre></div>
 </div>
-<img alt="Control: Oxyhemoglobin (20 channels), Tapping: Oxyhemoglobin (20 channels), Control: Deoxyhemoglobin (20 channels), µM, µM, µM, µM, Tapping: Deoxyhemoglobin (20 channels)" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_15_waveform_013.png" />
+<img alt="Control: Oxyhemoglobin (20 channels), Tapping: Oxyhemoglobin (20 channels), Control: Deoxyhemoglobin (20 channels), Tapping: Deoxyhemoglobin (20 channels), µM, µM, µM, µM" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_15_waveform_013.png" />
 </div>
 <div class="section" id="plot-standard-fnirs-response-image">
 <h2><a class="toc-backref" href="#id9">Plot standard fNIRS response image</a><a class="headerlink" href="#plot-standard-fnirs-response-image" title="Permalink to this headline">¶</a></h2>
@@ -661,10 +673,10 @@ driving the topographic plot above.</p>
 </div>
 <img alt="plot 15 waveform" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_15_waveform_021.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f4917f725b0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f2f81372c10&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.333 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  14.839 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  63 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-15-waveform-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
@@ -696,7 +708,7 @@ driving the topographic plot above.</p>
     </div>
 
     
-  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../../_static/js/index.d8bbf5861d671d414e1a.js"></script>
 
 
     

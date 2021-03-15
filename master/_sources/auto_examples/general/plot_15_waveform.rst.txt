@@ -592,7 +592,7 @@ motor cortex, and all channels show a similar pattern in the data.
 
 
 .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
-    :alt: Control: Oxyhemoglobin (20 channels), Tapping: Oxyhemoglobin (20 channels), Control: Deoxyhemoglobin (20 channels), µM, µM, µM, µM, Tapping: Deoxyhemoglobin (20 channels)
+    :alt: Control: Oxyhemoglobin (20 channels), Tapping: Oxyhemoglobin (20 channels), Control: Deoxyhemoglobin (20 channels), Tapping: Deoxyhemoglobin (20 channels), µM, µM, µM, µM
     :class: sphx-glr-single-img
 
 
@@ -873,14 +873,14 @@ driving the topographic plot above.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f4917f725b0>
+    <matplotlib.legend.Legend object at 0x7f2f81372c10>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.333 seconds)
+   **Total running time of the script:** ( 0 minutes  14.839 seconds)
 
 **Estimated memory usage:**  63 MB
 

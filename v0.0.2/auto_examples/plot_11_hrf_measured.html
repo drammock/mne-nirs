@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GLM Analysis (Measured) &#8212; MNE-NIRS 0.0.3 dev documentation</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,10 +20,6 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.d8bbf5861d671d414e1a.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -119,8 +116,9 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-          </div>
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
           
 
           
@@ -131,57 +129,69 @@
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#import-raw-nirs-data" class="nav-link">Import raw NIRS data</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#clean-up-annotations-before-analysis" class="nav-link">Clean up annotations before analysis</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#preprocess-nirs-data" class="nav-link">Preprocess NIRS data</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#view-experiment-events" class="nav-link">View experiment events</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#create-design-matrix" class="nav-link">Create design matrix</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#examine-expected-response" class="nav-link">Examine expected response</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#fit-glm-to-subset-of-data-and-estimate-response-for-each-experimental-condition" class="nav-link">Fit GLM to subset of data and estimate response for each experimental condition</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#fit-glm-to-all-data-and-view-topographic-distribution" class="nav-link">Fit GLM to all data and view topographic distribution</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#analyse-regions-of-interest" class="nav-link">Analyse regions of interest</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#compute-contrasts" class="nav-link">Compute contrasts</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#export-results" class="nav-link">Export Results</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#determine-true-and-false-positive-rates" class="nav-link">Determine true and false positive rates</a>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-raw-nirs-data">
+   Import raw NIRS data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clean-up-annotations-before-analysis">
+   Clean up annotations before analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocess-nirs-data">
+   Preprocess NIRS data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#view-experiment-events">
+   View experiment events
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-design-matrix">
+   Create design matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examine-expected-response">
+   Examine expected response
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-glm-to-subset-of-data-and-estimate-response-for-each-experimental-condition">
+   Fit GLM to subset of data and estimate response for each experimental condition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-glm-to-all-data-and-view-topographic-distribution">
+   Fit GLM to all data and view topographic distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyse-regions-of-interest">
+   Analyse regions of interest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-contrasts">
+   Compute contrasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#export-results">
+   Export Results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#determine-true-and-false-positive-rates">
+   Determine true and false positive rates
+  </a>
+ </li>
+</ul>
+
 </nav>
 
 
@@ -190,7 +200,10 @@
           
 
           
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          
+            
+          
+          <main class="col-12 col-md-11 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
                 
@@ -479,7 +492,7 @@ is seen in the epoching tutorial.</p>
 </div>
 <img alt="plot 11 hrf measured" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_005.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7fe884054c70&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7effb0bb5760&gt;
 </pre></div>
 </div>
 </div>
@@ -539,11 +552,11 @@ the center of the head.</p>
 </div>
 <img alt="Smoothed across hemispheres, Hemispheres plotted independently" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_11_hrf_measured_007.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpo2gklbo5/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmp58h01gny/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;), glm_est, design_matrix,
-/tmp/tmpo2gklbo5/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
+/tmp/tmp58h01gny/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10)),
-/tmp/tmpo2gklbo5/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
+/tmp/tmp58h01gny/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10, 20)),
 
 Text(0.5, 1.0, &#39;Hemispheres plotted independently&#39;)
@@ -708,8 +721,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.919 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  67 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.992 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  62 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-11-hrf-measured-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/6349beabaa4511e7439da4ba434affa5/plot_11_hrf_measured.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_11_hrf_measured.py</span></code></a></p>
@@ -740,7 +753,7 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.d8bbf5861d671d414e1a.js"></script>
 
 
     

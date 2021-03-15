@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Importance of Controls and Parameter Selection &#8212; MNE-NIRS 0.0.3 dev documentation</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,10 +20,6 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.d8bbf5861d671d414e1a.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -119,8 +116,9 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-          </div>
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
           
 
           
@@ -131,45 +129,54 @@
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#selecting-channels-appropriate-for-detecting-neural-responses" class="nav-link">Selecting channels appropriate for detecting neural responses</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#converting-from-raw-intensity-to-optical-density" class="nav-link">Converting from raw intensity to optical density</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#converting-from-optical-density-to-haemoglobin" class="nav-link">Converting from optical density to haemoglobin</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#replace-real-data-with-white-noise" class="nav-link">!!!!!!Replace real data with white noise!!!!!</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#removing-heart-rate-from-signal-bad-dont-copy" class="nav-link">Removing heart rate from signal (BAD DONT COPY)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#apply-cui-negative-correlation-method" class="nav-link">Apply Cui negative correlation method</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#extract-epochs" class="nav-link">Extract epochs</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#plot-standard-fnirs-response-image" class="nav-link">Plot standard fNIRS response image</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#summary" class="nav-link">Summary</a>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-channels-appropriate-for-detecting-neural-responses">
+   Selecting channels appropriate for detecting neural responses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-from-raw-intensity-to-optical-density">
+   Converting from raw intensity to optical density
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-from-optical-density-to-haemoglobin">
+   Converting from optical density to haemoglobin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#replace-real-data-with-white-noise">
+   !!!!!!Replace real data with white noise!!!!!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#removing-heart-rate-from-signal-bad-dont-copy">
+   Removing heart rate from signal (BAD DONT COPY)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apply-cui-negative-correlation-method">
+   Apply Cui negative correlation method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extract-epochs">
+   Extract epochs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-standard-fnirs-response-image">
+   Plot standard fNIRS response image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
 </nav>
 
 
@@ -178,7 +185,10 @@
           
 
           
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          
+            
+          
+          <main class="col-12 col-md-11 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
                 
@@ -474,8 +484,8 @@ approach, and the benefits of the GLM style of analysis
 <p class="admonition-title">Warning</p>
 <p>DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA</p>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.978 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  85 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.880 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  75 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-99-bad-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/678e06965ad46c3693a1f31f0c10455a/plot_99_bad.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_99_bad.py</span></code></a></p>
@@ -506,7 +516,7 @@ approach, and the benefits of the GLM style of analysis
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.d8bbf5861d671d414e1a.js"></script>
 
 
     

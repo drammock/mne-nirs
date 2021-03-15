@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GLM Analysis (Simulated) &#8212; MNE-NIRS 0.0.3 dev documentation</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.101715efdecc9b59cb6e1ddfa685c31f.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,10 +20,6 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.d8bbf5861d671d414e1a.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -119,8 +116,9 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-          </div>
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
           
 
           
@@ -131,37 +129,44 @@
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#simulate-noise-free-nirs-data" class="nav-link">Simulate noise free NIRS data</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#create-design-matrix" class="nav-link">Create design matrix</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#estimate-response-on-clean-data" class="nav-link">Estimate response on clean data</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#simulate-noisy-nirs-data-white" class="nav-link">Simulate noisy NIRS data (white)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#simulate-noisy-nirs-data-colored" class="nav-link">Simulate noisy NIRS data (colored)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#how-does-increasing-the-measurement-length-affect-estimation-accuracy" class="nav-link">How does increasing the measurement length affect estimation accuracy?</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#conclusion" class="nav-link">Conclusion?</a>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-noise-free-nirs-data">
+   Simulate noise free NIRS data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-design-matrix">
+   Create design matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimate-response-on-clean-data">
+   Estimate response on clean data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-noisy-nirs-data-white">
+   Simulate noisy NIRS data (white)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulate-noisy-nirs-data-colored">
+   Simulate noisy NIRS data (colored)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-does-increasing-the-measurement-length-affect-estimation-accuracy">
+   How does increasing the measurement length affect estimation accuracy?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion?
+  </a>
+ </li>
+</ul>
+
 </nav>
 
 
@@ -170,7 +175,10 @@
           
 
           
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          
+            
+          
+          <main class="col-12 col-md-11 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
                 
@@ -213,7 +221,7 @@ measurement length has on response amplitude estimates.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.7/x64/lib/python3.8/site-packages/nilearn/datasets/__init__.py:87: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/nilearn/datasets/__init__.py:87: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
   warn(&quot;Fetchers from the nilearn.datasets module will be &quot;
 </pre></div>
 </div>
@@ -270,7 +278,7 @@ We also see that the mean square error of the model fit is close to zero.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [4.e-06]   MSE: [2.16189967e-44]   Error (uM): [8.47032947e-16]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [4.e-06]   MSE: [2.68254781e-44]   Error (uM): [1.69406589e-15]
 </pre></div>
 </div>
 </div>
@@ -391,8 +399,8 @@ of the simulated signal. We then added noise and illustrated that the
 estimate provided by the GLM was correct, but contained some error. We
 observed that as the measurement time was increased, the estimated
 error decreased.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.777 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  55 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.062 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  57 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-10-hrf-simulation-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/cc0fd99e521b68320bc82f551e3619b9/plot_10_hrf_simulation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_hrf_simulation.py</span></code></a></p>
@@ -423,7 +431,7 @@ error decreased.</p>
     </div>
 
     
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  <script src="../_static/js/index.d8bbf5861d671d414e1a.js"></script>
 
 
     
