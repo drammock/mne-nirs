@@ -510,7 +510,7 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.464 seconds)
+   **Total running time of the script:** ( 0 minutes  6.161 seconds)
 
 **Estimated memory usage:**  93 MB
 
