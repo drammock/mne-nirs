@@ -330,16 +330,16 @@ and that the responses look to be contralateral to the tapping hand.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.0.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.1.min.js"></script>
        </head>
        <body>
-              <div id="cCsapg"></div>
+              <div id="H9hyCt"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-    'theta':[0.3724718879899088,0.2540820723655211,2.2428496612980497,5.5013608870121615,7.07532344498877,2.9545358935558355,-0.899686027915888,-1.5440764380464786,3.1309774260997476,4.205153418797705,7.777819085890952,1.2695468514586856,-0.8860389918573853,-1.9724115271225915,0.979916699952877,5.6531404559243,3.4549740876142767,3.693797736939034,-0.028472663285748517,-0.17457869709157223,-3.204357650033524,9.426673639551781,4.997328058023263,-1.4423797732372168,0.03537906169022417,-0.4796454540066159,6.652159700214968,23.359206828698966,23.014624888285887,11.009461805450554],
+    'theta':[0.3724718879905805,0.25408207236549674,2.2428496613105025,5.501360887011099,7.075323444986539,2.9545358935545485,-0.899686027916591,-1.5440764380471226,3.1309774261032963,4.205153418798838,7.777819085874712,1.2695468514747568,-0.8860389918573129,-1.9724115271221552,0.9799166999465443,5.653140455928586,3.454974087624517,3.6937977369142896,-0.028472663285384253,-0.17457869709211254,-3.204357650032906,9.42667363955525,4.997328058020889,-1.4423797732368582,0.03537906168955272,-0.4796454540074201,6.652159700216077,23.359206828700486,23.014624888293508,11.00946180544992],
     'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
     'mapping':{
@@ -384,7 +384,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("cCsapg");
+           var plotContainer = document.getElementById("H9hyCt");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -567,14 +567,14 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.0.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.1.min.js"></script>
        </head>
        <body>
-              <div id="g3Xnkr"></div>
+              <div id="HThn5T"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
-    'Coef.':[-0.2812693466757778,-0.7833260087803474,1.9603091675064235,9.629107045996983,9.26401391296063,3.496992502833377],
+    'Coef.':[-0.28126934667583103,-0.7833260087806627,1.9603091675087025,9.629107045998852,9.264013912960033,3.4969925028313305],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     'Significant':[false,false,false,true,true,false]
@@ -619,7 +619,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.26795165968756557,-2.0033229830615977,-4.127503911480092],
+    'Coef.':[0.2679516596873928,-2.0033229830615236,-4.127503911483082],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,false,true]
     },
@@ -632,7 +632,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.10310784778106843,-4.258081496451249,-1.7680131502555918],
+    'Coef.':[0.1031078477809278,-4.258081496448946,-1.7680131502559784],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,true,false]
     },
@@ -644,7 +644,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("g3Xnkr");
+           var plotContainer = document.getElementById("HThn5T");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -816,9 +816,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.180 seconds)
+   **Total running time of the script:** ( 0 minutes  13.878 seconds)
 
-**Estimated memory usage:**  50 MB
+**Estimated memory usage:**  48 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:
