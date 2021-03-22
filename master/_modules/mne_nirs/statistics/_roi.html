@@ -144,7 +144,8 @@
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<div class="viewcode-block" id="glm_region_of_interest"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest">[docs]</a><span class="k">def</span> <span class="nf">glm_region_of_interest</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">group_by</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">,</span> <span class="n">cond_name</span><span class="p">):</span>
+<div class="viewcode-block" id="glm_region_of_interest"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest">[docs]</a><span class="k">def</span> <span class="nf">glm_region_of_interest</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">group_by</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">,</span>
+                           <span class="n">cond_name</span><span class="p">,</span> <span class="n">weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate statistics for region of interest.</span>
 
@@ -163,8 +164,10 @@
 <span class="sd">        Note that within a dict entry all channels must have the same type.</span>
 <span class="sd">    cond_idx : integer</span>
 <span class="sd">        Index of condition of interest.</span>
-<span class="sd">    cond_idx : String</span>
+<span class="sd">    cond_name : String</span>
 <span class="sd">        Name to be used for condition.</span>
+<span class="sd">    weighted : Bool</span>
+<span class="sd">        Should channels be weighted by inverse of standard error (True).</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -198,7 +201,11 @@
                 <span class="n">ses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_se</span><span class="p">(</span><span class="n">stats</span><span class="p">[</span><span class="n">ch_names</span><span class="p">[</span><span class="n">pick</span><span class="p">]])[</span><span class="n">cond_idx</span><span class="p">])</span>
                 <span class="n">dfe</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="n">ch_names</span><span class="p">[</span><span class="n">pick</span><span class="p">]]</span><span class="o">.</span><span class="n">df_model</span>
 
-            <span class="n">weights</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
+            <span class="c1"># Should channels be weighted by inverse of standard error</span>
+            <span class="k">if</span> <span class="n">weighted</span><span class="p">:</span>
+                <span class="n">weights</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">ses</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ses</span><span class="p">))</span>
             <span class="n">weights</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
 
             <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">thetas</span> <span class="o">*</span> <span class="n">weights</span><span class="p">)</span>

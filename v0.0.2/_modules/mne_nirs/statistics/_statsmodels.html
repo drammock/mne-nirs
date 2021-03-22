@@ -181,7 +181,10 @@
     <span class="k">for</span> <span class="n">row_idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">indices</span><span class="p">):</span>
         <span class="n">col_vals</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">col_idx</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">col_names</span><span class="p">):</span>
-            <span class="n">val</span> <span class="o">=</span> <span class="n">col_vals</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">&quot;]&quot;</span> <span class="ow">in</span> <span class="n">col_vals</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">col_vals</span><span class="p">[</span><span class="n">col_idx</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">col</span>
             <span class="n">summary</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
 
     <span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># Copies required to suppress .loc warnings</span>
@@ -209,7 +212,7 @@
 <span class="p">)</span>
 
 
-<div class="viewcode-block" id="statsmodels_to_results"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results">[docs]</a><span class="k">def</span> <span class="nf">statsmodels_to_results</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<div class="viewcode-block" id="statsmodels_to_results"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results">[docs]</a><span class="k">def</span> <span class="nf">statsmodels_to_results</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert statsmodels summary to a dataframe.</span>
 
@@ -217,6 +220,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    model : statsmodels model output</span>
 <span class="sd">        The output of a statsmodels analysis. For example rlm or mixedlm.</span>
+<span class="sd">    order : array of strings</span>
+<span class="sd">        Requested order of the channels.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -261,6 +266,16 @@
         <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">k_fe</span><span class="p">:,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s1">&#39;Std.Err.&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sdf</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 
     <span class="n">df</span> <span class="o">=</span> <span class="n">expand_summary_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">order</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;old_index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;ch_name&#39;</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">order</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ch_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;old_index&#39;</span><span class="p">]</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;old_index&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">df</span></div>
 </pre></div>
 
