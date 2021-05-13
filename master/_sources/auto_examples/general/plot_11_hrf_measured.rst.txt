@@ -127,7 +127,7 @@ to meet github memory constraints.
     Creating ~/mne_data
     Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      1%|          | Downloading : 120k/17.1M [00:00<00:03,    4.54MB/s]      2%|1         | Downloading : 312k/17.1M [00:00<00:02,    6.05MB/s]      3%|3         | Downloading : 568k/17.1M [00:00<00:02,    7.96MB/s]      6%|6         | Downloading : 1.05M/17.1M [00:00<00:01,    11.7MB/s]     12%|#2        | Downloading : 2.05M/17.1M [00:00<00:00,    18.6MB/s]     18%|#7        | Downloading : 3.05M/17.1M [00:00<00:00,    24.7MB/s]     36%|###5      | Downloading : 6.05M/17.1M [00:00<00:00,    40.2MB/s]     71%|#######   | Downloading : 12.1M/17.1M [00:00<00:00,    66.3MB/s]     94%|#########4| Downloading : 16.1M/17.1M [00:00<00:00,    76.9MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    72.4MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      6%|5         | Downloading : 0.99M/17.1M [00:00<00:00,    40.0MB/s]     15%|#4        | Downloading : 2.49M/17.1M [00:00<00:00,    62.5MB/s]     38%|###8      | Downloading : 6.49M/17.1M [00:00<00:00,    97.8MB/s]     73%|#######3  | Downloading : 12.5M/17.1M [00:00<00:00,     137MB/s]     97%|#########6| Downloading : 16.5M/17.1M [00:00<00:00,     111MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,     112MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -137,9 +137,72 @@ to meet github memory constraints.
     Loading /home/runner/mne_data/MNE-fNIRS-motor-data/Participant-1
     Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 
-    <RawNIRX | Participant-1, 56 x 2082 (2972.9 s), ~981 kB, data loaded>
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
 
 
+    <table class="table table-hover">
+        <tr>
+            <th>Measurement date</th>
+            <td>November 02, 2019  13:16:16 GMT</td>
+        
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+    <td>Unknown</td>
+        </tr>
+            <th>Participant</th>
+        
+        </tr>
+        <tr>
+            <th>Digitized points</th>
+            <td>31 points</td>
+        </tr>
+        <tr>
+            <th>Good channels</th>
+            <td>0 magnetometer, 0 gradiometer,
+                and 0 EEG channels</td>
+        </tr>
+        <tr>
+            <th>Bad channels</th>
+            <td></td>
+        
+        </tr>
+        <tr>
+            <th>EOG channels</th>
+            <td>Not available</td>
+        </tr>
+        <tr>
+            <th>ECG channels</th>
+            <td>Not available</td>
+        <tr>
+            <th>Sampling frequency</th>
+            <td>0.70 Hz</td>
+        </tr>
+        <tr>
+            <th>Highpass</th>
+            <td>0.00 Hz</td>
+        </tr>
+         <tr>
+            <th>Lowpass</th>
+            <td>0.35 Hz</td>
+        </tr>
+
+        <tr>
+            <th>Filenames</th>
+            <td>Participant-1</td>
+        </tr>
+        <tr>
+            <th>Duration</th>
+            <td>00:49:32 (HH:MM:SS)</td>
+        </tr>
+    </table>
+
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 82-88
 
@@ -174,16 +237,72 @@ experimental conditions.
 
 
 
-.. rst-class:: sphx-glr-script-out
 
- Out:
+.. raw:: html
 
- .. code-block:: none
-
-
-    <RawNIRX | Participant-1, 56 x 2082 (2972.9 s), ~981 kB, data loaded>
+    <div class="output_subarea output_html rendered_html output_result">
 
 
+    <table class="table table-hover">
+        <tr>
+            <th>Measurement date</th>
+            <td>November 02, 2019  13:16:16 GMT</td>
+        
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+    <td>Unknown</td>
+        </tr>
+            <th>Participant</th>
+        
+        </tr>
+        <tr>
+            <th>Digitized points</th>
+            <td>31 points</td>
+        </tr>
+        <tr>
+            <th>Good channels</th>
+            <td>0 magnetometer, 0 gradiometer,
+                and 0 EEG channels</td>
+        </tr>
+        <tr>
+            <th>Bad channels</th>
+            <td></td>
+        
+        </tr>
+        <tr>
+            <th>EOG channels</th>
+            <td>Not available</td>
+        </tr>
+        <tr>
+            <th>ECG channels</th>
+            <td>Not available</td>
+        <tr>
+            <th>Sampling frequency</th>
+            <td>0.70 Hz</td>
+        </tr>
+        <tr>
+            <th>Highpass</th>
+            <td>0.00 Hz</td>
+        </tr>
+         <tr>
+            <th>Lowpass</th>
+            <td>0.35 Hz</td>
+        </tr>
+
+        <tr>
+            <th>Filenames</th>
+            <td>Participant-1</td>
+        </tr>
+        <tr>
+            <th>Duration</th>
+            <td>00:49:32 (HH:MM:SS)</td>
+        </tr>
+    </table>
+
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 105-108
 
@@ -261,9 +380,10 @@ events is also randomised.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_001.png
-    :alt: plot 11 hrf measured
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_001.png
+   :alt: plot 11 hrf measured
+   :srcset: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -298,9 +418,10 @@ line is raised for the duration of the stimulus/condition.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_002.png
-    :alt: plot 11 hrf measured
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_002.png
+   :alt: plot 11 hrf measured
+   :srcset: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -404,9 +525,10 @@ The last columns illustrate the short channel signals.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_003.png
-    :alt: plot 11 hrf measured
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_003.png
+   :alt: plot 11 hrf measured
+   :srcset: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_003.png
+   :class: sphx-glr-single-img
 
 
 
@@ -444,9 +566,10 @@ component followed by an undershoot.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_004.png
-    :alt: plot 11 hrf measured
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_004.png
+   :alt: plot 11 hrf measured
+   :srcset: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -517,9 +640,10 @@ is seen in the epoching tutorial.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_005.png
-    :alt: plot 11 hrf measured
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_005.png
+   :alt: plot 11 hrf measured
+   :srcset: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_005.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -529,7 +653,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7fc6a548ab80>
+    <matplotlib.collections.LineCollection object at 0x7fa3278eef40>
 
 
 
@@ -559,9 +683,10 @@ negative of HbO as expected.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_006.png
-    :alt: Tapping/Left, Tapping/Right, Tapping/Left, Tapping/Right
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_006.png
+   :alt: Tapping/Left, Tapping/Right, Tapping/Left, Tapping/Right
+   :srcset: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_006.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -622,9 +747,10 @@ the center of the head.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_007.png
-    :alt: Smoothed across hemispheres, Hemispheres plotted independently
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_007.png
+   :alt: Smoothed across hemispheres, Hemispheres plotted independently
+   :srcset: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_007.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -633,11 +759,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmp71brop9t/c0431047e2c044bb83f721132bcb74f65b941817/examples/general/plot_11_hrf_measured.py:316: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpy9lph933/d422f3856bd59df511aa0b3238acbf4a75e70405/examples/general/plot_11_hrf_measured.py:316: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmp71brop9t/c0431047e2c044bb83f721132bcb74f65b941817/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpy9lph933/d422f3856bd59df511aa0b3238acbf4a75e70405/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmp71brop9t/c0431047e2c044bb83f721132bcb74f65b941817/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpy9lph933/d422f3856bd59df511aa0b3238acbf4a75e70405/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -704,9 +830,10 @@ from tapping on the right hand.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_008.png
-    :alt: Oxyhaemoglobin, Deoxyhaemoglobin
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_008.png
+   :alt: Oxyhaemoglobin, Deoxyhaemoglobin
+   :srcset: /auto_examples/general/images/sphx_glr_plot_11_hrf_measured_008.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -873,7 +1000,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.320 seconds)
+   **Total running time of the script:** ( 0 minutes  7.598 seconds)
 
 **Estimated memory usage:**  62 MB
 

@@ -63,7 +63,7 @@ measurement length has on response amplitude estimates.
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/nilearn/datasets/__init__.py:87: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
+    /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/nilearn/datasets/__init__.py:87: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
       warn("Fetchers from the nilearn.datasets module will be "
 
 
@@ -96,9 +96,10 @@ The simulated signal is plotted below.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_001.png
-    :alt: plot 10 hrf simulation
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_001.png
+   :alt: plot 10 hrf simulation
+   :srcset: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -107,7 +108,6 @@ The simulated signal is plotted below.
 
  .. code-block:: none
 
-    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -137,9 +137,10 @@ For more details on this procedure see :ref:`tut-fnirs-hrf`.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_002.png
-    :alt: plot 10 hrf simulation
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_002.png
+   :alt: plot 10 hrf simulation
+   :srcset: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_002.png
+   :class: sphx-glr-single-img
 
 
 
@@ -179,7 +180,7 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
-    Estimate: [4.e-06]   MSE: [2.16189967e-44]   Error (uM): [8.47032947e-16]
+    Estimate: [4.e-06]   MSE: [2.68254781e-44]   Error (uM): [1.69406589e-15]
 
 
 
@@ -223,9 +224,10 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_003.png
-    :alt: plot 10 hrf simulation
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_003.png
+   :alt: plot 10 hrf simulation
+   :srcset: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -282,9 +284,10 @@ However, the error is greater for the colored than white noise.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_004.png
-    :alt: plot 10 hrf simulation
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_004.png
+   :alt: plot 10 hrf simulation
+   :srcset: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -342,9 +345,10 @@ approximately 0.6 uM for 5 minutes of data to 0.25 uM for 30 minutes of data.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_005.png
-    :alt: plot 10 hrf simulation
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_005.png
+   :alt: plot 10 hrf simulation
+   :srcset: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_005.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -374,9 +378,9 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.829 seconds)
+   **Total running time of the script:** ( 0 minutes  3.269 seconds)
 
-**Estimated memory usage:**  57 MB
+**Estimated memory usage:**  58 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:

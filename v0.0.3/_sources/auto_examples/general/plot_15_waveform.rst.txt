@@ -74,9 +74,72 @@ Here we will work with the :ref:`fNIRS motor data <mne:fnirs-motor-dataset>`.
     Loading /home/runner/mne_data/MNE-fNIRS-motor-data/Participant-1
     Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 
-    <RawNIRX | Participant-1, 56 x 23239 (2974.5 s), ~10.0 MB, data loaded>
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
 
 
+    <table class="table table-hover">
+        <tr>
+            <th>Measurement date</th>
+            <td>November 02, 2019  13:16:16 GMT</td>
+        
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+    <td>Unknown</td>
+        </tr>
+            <th>Participant</th>
+        
+        </tr>
+        <tr>
+            <th>Digitized points</th>
+            <td>31 points</td>
+        </tr>
+        <tr>
+            <th>Good channels</th>
+            <td>0 magnetometer, 0 gradiometer,
+                and 0 EEG channels</td>
+        </tr>
+        <tr>
+            <th>Bad channels</th>
+            <td></td>
+        
+        </tr>
+        <tr>
+            <th>EOG channels</th>
+            <td>Not available</td>
+        </tr>
+        <tr>
+            <th>ECG channels</th>
+            <td>Not available</td>
+        <tr>
+            <th>Sampling frequency</th>
+            <td>7.81 Hz</td>
+        </tr>
+        <tr>
+            <th>Highpass</th>
+            <td>0.00 Hz</td>
+        </tr>
+         <tr>
+            <th>Lowpass</th>
+            <td>3.91 Hz</td>
+        </tr>
+
+        <tr>
+            <th>Filenames</th>
+            <td>Participant-1</td>
+        </tr>
+        <tr>
+            <th>Duration</th>
+            <td>00:49:34 (HH:MM:SS)</td>
+        </tr>
+    </table>
+
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 42-49
 
@@ -104,9 +167,10 @@ To achieve this we pick all the channels that are not considered to be short.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_001.png
-    :alt: plot 15 waveform
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_001.png
+   :alt: plot 15 waveform
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -115,7 +179,6 @@ To achieve this we pick all the channels that are not considered to be short.
 
  .. code-block:: none
 
-    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -141,9 +204,10 @@ The raw intensity values are then converted to optical density.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_002.png
-    :alt: plot 15 waveform
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_002.png
+   :alt: plot 15 waveform
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -152,7 +216,6 @@ The raw intensity values are then converted to optical density.
 
  .. code-block:: none
 
-    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -186,9 +249,10 @@ coupling index.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_003.png
-    :alt: plot 15 waveform
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_003.png
+   :alt: plot 15 waveform
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -252,9 +316,10 @@ the modified Beer-Lambert law.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_004.png
-    :alt: plot 15 waveform
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_004.png
+   :alt: plot 15 waveform
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -263,7 +328,6 @@ the modified Beer-Lambert law.
 
  .. code-block:: none
 
-    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -302,15 +366,17 @@ in the data.
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_005.png
-          :alt: Before filtering, Oxyhemoglobin, Deoxyhemoglobin
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_005.png
+         :alt: Before filtering, Oxyhemoglobin, Deoxyhemoglobin
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_005.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_006.png
-          :alt: After filtering, Oxyhemoglobin, Deoxyhemoglobin
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_006.png
+         :alt: After filtering, Oxyhemoglobin, Deoxyhemoglobin
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_006.png
+         :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -370,9 +436,10 @@ correct.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_007.png
-    :alt: plot 15 waveform
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_007.png
+   :alt: plot 15 waveform
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_007.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -411,9 +478,10 @@ epochs were dropped.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_008.png
-    :alt: Unknown: 6.7%
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_008.png
+   :alt: Unknown subj: 6.7% of all epochs rejected
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_008.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -470,15 +538,17 @@ the HbO peak.
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_009.png
-          :alt: Deoxyhemoglobin (mean)
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_009.png
+         :alt: Oxyhemoglobin (mean)
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_009.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
-          :alt: Oxyhemoglobin (mean)
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
+         :alt: Deoxyhemoglobin (mean)
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
+         :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -529,15 +599,17 @@ that it does not show the expected morphology.
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
-          :alt: Deoxyhemoglobin (mean)
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
+         :alt: Oxyhemoglobin (mean)
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
-          :alt: Oxyhemoglobin (mean)
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
+         :alt: Deoxyhemoglobin (mean)
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
+         :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -591,9 +663,10 @@ motor cortex, and all channels show a similar pattern in the data.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
-    :alt: Control: Oxyhemoglobin (20 channels), Tapping: Oxyhemoglobin (20 channels), Control: Deoxyhemoglobin (20 channels), Tapping: Deoxyhemoglobin (20 channels), µM, µM, µM, µM
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
+   :alt: Control: Oxyhemoglobin (20 channels), Tapping: Oxyhemoglobin (20 channels), Control: Deoxyhemoglobin (20 channels), Tapping: Deoxyhemoglobin (20 channels), µM, µM, µM, µM
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_013.png
+   :class: sphx-glr-single-img
 
 
 
@@ -632,9 +705,10 @@ the two signals.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_014.png
-    :alt: plot 15 waveform
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_014.png
+   :alt: plot 15 waveform
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_014.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -673,9 +747,10 @@ Next we view how the topographic activity changes throughout the response.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_015.png
-    :alt: -3.500 s, -0.500 s, 2.500 s, 5.500 s, 8.500 s, 11.500 s
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_015.png
+   :alt: -3.500 s, -0.500 s, 2.500 s, 5.500 s, 8.500 s, 11.500 s
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_015.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -717,15 +792,17 @@ the location of activity. First we visualise the HbO activity.
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_016.png
-          :alt: 4.000 s, 5.000 s, 6.000 s, 7.000 s, 8.000 s, 9.000 s, 10.000 s, µM
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_016.png
+         :alt: 4.000 s, 5.000 s, 6.000 s, 7.000 s, 8.000 s, 9.000 s, 10.000 s, µM
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_016.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_017.png
-          :alt: 4.000 s, 5.000 s, 6.000 s, 7.000 s, 8.000 s, 9.000 s, 10.000 s, µM
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_017.png
+         :alt: 4.000 s, 5.000 s, 6.000 s, 7.000 s, 8.000 s, 9.000 s, 10.000 s, µM
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_017.png
+         :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -735,7 +812,7 @@ the location of activity. First we visualise the HbO activity.
  .. code-block:: none
 
 
-    <Figure size 1200x195 with 8 Axes>
+    <MNEFigure size 1200x220 with 8 Axes>
 
 
 
@@ -761,15 +838,17 @@ And we also view the HbR activity for the two conditions.
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_018.png
-          :alt: 4.000 s, 5.000 s, 6.000 s, 7.000 s, 8.000 s, 9.000 s, 10.000 s, µM
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_018.png
+         :alt: 4.000 s, 5.000 s, 6.000 s, 7.000 s, 8.000 s, 9.000 s, 10.000 s, µM
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_018.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_019.png
-          :alt: 4.000 s, 5.000 s, 6.000 s, 7.000 s, 8.000 s, 9.000 s, 10.000 s, µM
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_019.png
+         :alt: 4.000 s, 5.000 s, 6.000 s, 7.000 s, 8.000 s, 9.000 s, 10.000 s, µM
+         :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_019.png
+         :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -779,7 +858,7 @@ And we also view the HbR activity for the two conditions.
  .. code-block:: none
 
 
-    <Figure size 1200x195 with 8 Axes>
+    <MNEFigure size 1200x220 with 8 Axes>
 
 
 
@@ -830,9 +909,10 @@ And we can plot the comparison at a single time point for two conditions.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_020.png
-    :alt: HbO: Tapping Left, HbO: Tapping Right, HbO: Left-Right, µM, HbR: Tapping Left, HbR: Tapping Right, HbR: Left-Right, µM
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_020.png
+   :alt: HbO: Tapping Left, HbO: Tapping Right, HbO: Left-Right, µM, HbR: Tapping Left, HbR: Tapping Right, HbR: Left-Right, µM
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_020.png
+   :class: sphx-glr-single-img
 
 
 
@@ -861,9 +941,10 @@ driving the topographic plot above.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_15_waveform_021.png
-    :alt: plot 15 waveform
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_021.png
+   :alt: plot 15 waveform
+   :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_021.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -873,16 +954,16 @@ driving the topographic plot above.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7faefec87dc0>
+    <matplotlib.legend.Legend object at 0x7fe53e4b5a30>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.591 seconds)
+   **Total running time of the script:** ( 0 minutes  15.318 seconds)
 
-**Estimated memory usage:**  33 MB
+**Estimated memory usage:**  63 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:

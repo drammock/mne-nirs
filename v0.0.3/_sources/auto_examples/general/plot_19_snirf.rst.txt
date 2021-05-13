@@ -148,7 +148,7 @@ Next we can read back the snirf file.
 
  .. code-block:: none
 
-    Loading test_raw.snirf
+    Loading /tmp/tmpy9lph933/3f2cf6f0304bd84837ddfbfd191e70aadfc335f1/examples/general/test_raw.snirf
 
 
 
@@ -172,9 +172,10 @@ ensure that the values are the same.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_19_snirf_001.png
-    :alt: plot 19 snirf
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_19_snirf_001.png
+   :alt: plot 19 snirf
+   :srcset: /auto_examples/general/images/sphx_glr_plot_19_snirf_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -183,7 +184,6 @@ ensure that the values are the same.
 
  .. code-block:: none
 
-    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -192,9 +192,9 @@ ensure that the values are the same.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.801 seconds)
+   **Total running time of the script:** ( 0 minutes  3.100 seconds)
 
-**Estimated memory usage:**  58 MB
+**Estimated memory usage:**  88 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_19_snirf.py:

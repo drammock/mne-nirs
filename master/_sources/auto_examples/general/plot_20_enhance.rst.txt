@@ -346,9 +346,10 @@ Plot the average epochs with and without Cui 2010 applied.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_20_enhance_001.png
-    :alt: Original Data, With Enhanced Anticorrelation, With Short Regression
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_20_enhance_001.png
+   :alt: Original Data, With Enhanced Anticorrelation, With Short Regression
+   :srcset: /auto_examples/general/images/sphx_glr_plot_20_enhance_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -469,9 +470,10 @@ detector pairs for analysis.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_20_enhance_002.png
-    :alt: Original: Left, Original: Right, Anticorrelation: Left, Anticorrelation: Right, Short Regression: Left, Short Regression: Right
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_20_enhance_002.png
+   :alt: Original: Left, Original: Right, Anticorrelation: Left, Anticorrelation: Right, Short Regression: Left, Short Regression: Right
+   :srcset: /auto_examples/general/images/sphx_glr_plot_20_enhance_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -511,9 +513,9 @@ detector pairs for analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.810 seconds)
+   **Total running time of the script:** ( 0 minutes  4.064 seconds)
 
-**Estimated memory usage:**  93 MB
+**Estimated memory usage:**  25 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_20_enhance.py:

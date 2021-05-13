@@ -330,16 +330,16 @@ and that the responses look to be contralateral to the tapping hand.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.1.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="i9mUsF"></div>
+              <div id="tKINNR"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-    'theta':[0.3724718879905805,0.25408207236549674,2.2428496613105025,5.501360887011099,7.075323444986539,2.9545358935545485,-0.899686027916591,-1.5440764380471226,3.1309774261032963,4.205153418798838,7.777819085874712,1.2695468514747568,-0.8860389918573129,-1.9724115271221552,0.9799166999465443,5.653140455928586,3.454974087624517,3.6937977369142896,-0.028472663285384253,-0.17457869709211254,-3.204357650032906,9.42667363955525,4.997328058020889,-1.4423797732368582,0.03537906168955272,-0.4796454540074201,6.652159700216077,23.359206828700486,23.014624888293508,11.00946180544992],
+    'theta':[0.3724718879903247,0.2540820723655172,2.242849661288043,5.501360887009184,7.075323444989376,2.954535893566523,-0.8996860279156702,-1.5440764380488212,3.1309774261128087,4.205153418784076,7.777819085877154,1.2695468514653578,-0.8860389918590507,-1.9724115271260032,0.9799166999618748,5.653140455917381,3.454974087607434,3.6937977369292367,-0.028472663285422084,-0.17457869709239765,-3.2043576500356155,9.426673639555046,4.997328058018111,-1.442379773234067,0.03537906168816616,-0.47964545400728825,6.652159700217347,23.35920682870431,23.01462488829286,11.00946180544491],
     'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
     'mapping':{
@@ -384,7 +384,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("i9mUsF");
+           var plotContainer = document.getElementById("tKINNR");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -449,7 +449,7 @@ model by using the code
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+    /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
       warnings.warn(msg, ConvergenceWarning)
 
 
@@ -567,14 +567,14 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://dl.bintray.com/jetbrains/lets-plot/lets-plot-2.0.1.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="pApC4i"></div>
+              <div id="0C5tKv"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
-    'Coef.':[-0.28126934667583103,-0.7833260087806627,1.9603091675087025,9.629107045998852,9.264013912960033,3.4969925028313305],
+    'Coef.':[-0.2812693466763304,-0.7833260087817987,1.9603091675088915,9.629107045994,9.264013912956987,3.4969925028343916],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     'Significant':[false,false,false,true,true,false]
@@ -619,7 +619,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.2679516596873928,-2.0033229830615236,-4.127503911483082],
+    'Coef.':[0.26795165968717144,-2.0033229830589625,-4.127503911482504],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,false,true]
     },
@@ -632,7 +632,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.1031078477809278,-4.258081496448946,-1.7680131502559784],
+    'Coef.':[0.10310784778075795,-4.258081496451341,-1.7680131502546472],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,true,false]
     },
@@ -644,7 +644,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("pApC4i");
+           var plotContainer = document.getElementById("0C5tKv");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -716,9 +716,10 @@ Then we pass these results to the topomap function.
 
 
 
-.. image:: /auto_examples/images/sphx_glr_plot_12_group_glm_001.png
-    :alt: Tapping/Left, Tapping/Right, Tapping/Left, Tapping/Right
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/images/sphx_glr_plot_12_group_glm_001.png
+   :alt: Tapping/Left, Tapping/Right, Tapping/Left, Tapping/Right
+   :srcset: /auto_examples/images/sphx_glr_plot_12_group_glm_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -761,9 +762,10 @@ in a topographic representation.
 
 
 
-.. image:: /auto_examples/images/sphx_glr_plot_12_group_glm_002.png
-    :alt: Contrast
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/images/sphx_glr_plot_12_group_glm_002.png
+   :alt: Contrast
+   :srcset: /auto_examples/images/sphx_glr_plot_12_group_glm_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -772,9 +774,9 @@ in a topographic representation.
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+    /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
       warnings.warn(msg, ConvergenceWarning)
-    /opt/hostedtoolcache/Python/3.8.8/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+    /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
       warnings.warn(msg, ConvergenceWarning)
 
     <AxesSubplot:title={'center':'Contrast'}>
@@ -796,9 +798,10 @@ And set all channels that dont have a significant response to zero.
                         con_model_df, colorbar=True, threshold=True)
 
 
-.. image:: /auto_examples/images/sphx_glr_plot_12_group_glm_003.png
-    :alt: Contrast
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/images/sphx_glr_plot_12_group_glm_003.png
+   :alt: Contrast
+   :srcset: /auto_examples/images/sphx_glr_plot_12_group_glm_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -816,9 +819,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.684 seconds)
+   **Total running time of the script:** ( 0 minutes  17.164 seconds)
 
-**Estimated memory usage:**  48 MB
+**Estimated memory usage:**  49 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:

@@ -157,9 +157,10 @@ the repetition rate of the experiment.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_30_frequency_001.png
-    :alt: Oxyhemoglobin
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_30_frequency_001.png
+   :alt: Oxyhemoglobin
+   :srcset: /auto_examples/general/images/sphx_glr_plot_30_frequency_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -205,9 +206,10 @@ There is also a small bump around 0.3 Hz that is likely the breathing rate.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_30_frequency_002.png
-    :alt: Oxyhemoglobin
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_30_frequency_002.png
+   :alt: Oxyhemoglobin
+   :srcset: /auto_examples/general/images/sphx_glr_plot_30_frequency_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -255,9 +257,10 @@ is still visible.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_30_frequency_003.png
-    :alt: Oxyhemoglobin
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_30_frequency_003.png
+   :alt: Oxyhemoglobin
+   :srcset: /auto_examples/general/images/sphx_glr_plot_30_frequency_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -310,9 +313,10 @@ after epoching.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_30_frequency_004.png
-    :alt: plot 30 frequency
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_30_frequency_004.png
+   :alt: plot 30 frequency
+   :srcset: /auto_examples/general/images/sphx_glr_plot_30_frequency_004.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -384,9 +388,10 @@ epoched data.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_30_frequency_005.png
-    :alt: plot 30 frequency
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_30_frequency_005.png
+   :alt: plot 30 frequency
+   :srcset: /auto_examples/general/images/sphx_glr_plot_30_frequency_005.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -447,9 +452,10 @@ Some common high pass filter values from literature are shown in red.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_30_frequency_006.png
-    :alt: ISI: 0 (s) to Max ISI, ISI: 15 (s) to Max ISI, ISI: 0 (s) to Max ISI, ISI: 15 (s) to Max ISI
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_30_frequency_006.png
+   :alt: ISI: 0 (s) to Max ISI, ISI: 15 (s) to Max ISI, ISI: 0 (s) to Max ISI, ISI: 15 (s) to Max ISI
+   :srcset: /auto_examples/general/images/sphx_glr_plot_30_frequency_006.png
+   :class: sphx-glr-single-img
 
 
 
@@ -458,9 +464,9 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  32.017 seconds)
+   **Total running time of the script:** ( 0 minutes  34.744 seconds)
 
-**Estimated memory usage:**  93 MB
+**Estimated memory usage:**  66 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_30_frequency.py:

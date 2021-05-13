@@ -94,9 +94,72 @@ appear as if a fNIRS response is observed.
     Loading /home/runner/mne_data/MNE-fNIRS-motor-data/Participant-1
     Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 
-    <RawNIRX | Participant-1, 56 x 23239 (2974.5 s), ~10.0 MB, data loaded>
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
 
 
+    <table class="table table-hover">
+        <tr>
+            <th>Measurement date</th>
+            <td>November 02, 2019  13:16:16 GMT</td>
+        
+        </tr>
+        <tr>
+            <th>Experimenter</th>
+    <td>Unknown</td>
+        </tr>
+            <th>Participant</th>
+        
+        </tr>
+        <tr>
+            <th>Digitized points</th>
+            <td>31 points</td>
+        </tr>
+        <tr>
+            <th>Good channels</th>
+            <td>0 magnetometer, 0 gradiometer,
+                and 0 EEG channels</td>
+        </tr>
+        <tr>
+            <th>Bad channels</th>
+            <td></td>
+        
+        </tr>
+        <tr>
+            <th>EOG channels</th>
+            <td>Not available</td>
+        </tr>
+        <tr>
+            <th>ECG channels</th>
+            <td>Not available</td>
+        <tr>
+            <th>Sampling frequency</th>
+            <td>7.81 Hz</td>
+        </tr>
+        <tr>
+            <th>Highpass</th>
+            <td>0.00 Hz</td>
+        </tr>
+         <tr>
+            <th>Lowpass</th>
+            <td>3.91 Hz</td>
+        </tr>
+
+        <tr>
+            <th>Filenames</th>
+            <td>Participant-1</td>
+        </tr>
+        <tr>
+            <th>Duration</th>
+            <td>00:49:34 (HH:MM:SS)</td>
+        </tr>
+    </table>
+
+    </div>
+    <br />
+    <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 63-70
 
@@ -124,9 +187,10 @@ To achieve this we pick all the channels that are not considered to be short.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_99_bad_001.png
-    :alt: plot 99 bad
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_99_bad_001.png
+   :alt: plot 99 bad
+   :srcset: /auto_examples/general/images/sphx_glr_plot_99_bad_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -135,7 +199,6 @@ To achieve this we pick all the channels that are not considered to be short.
 
  .. code-block:: none
 
-    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -161,9 +224,10 @@ The raw intensity values are then converted to optical density.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_99_bad_002.png
-    :alt: plot 99 bad
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_99_bad_002.png
+   :alt: plot 99 bad
+   :srcset: /auto_examples/general/images/sphx_glr_plot_99_bad_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -172,7 +236,6 @@ The raw intensity values are then converted to optical density.
 
  .. code-block:: none
 
-    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -200,9 +263,10 @@ the modified Beer-Lambert law.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_99_bad_003.png
-    :alt: plot 99 bad
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_99_bad_003.png
+   :alt: plot 99 bad
+   :srcset: /auto_examples/general/images/sphx_glr_plot_99_bad_003.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -211,7 +275,6 @@ the modified Beer-Lambert law.
 
  .. code-block:: none
 
-    <__array_function__ internals>:5: FutureWarning: Promotion of numbers and bools to strings is deprecated. In the future, code such as `np.concatenate((['string'], [0]))` will raise an error, while `np.asarray(['string', 0])` will return an array with `dtype=object`.  To avoid the warning while retaining a string result use `dtype='U'` (or 'S').  To get an array of Python objects use `dtype=object`. (Warning added in NumPy 1.21)
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -274,15 +337,17 @@ Do not do this!!
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_99_bad_004.png
-          :alt: Before filtering, Oxyhemoglobin, Deoxyhemoglobin
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_99_bad_004.png
+         :alt: Before filtering, Oxyhemoglobin, Deoxyhemoglobin
+         :srcset: /auto_examples/general/images/sphx_glr_plot_99_bad_004.png
+         :class: sphx-glr-multi-img
 
     *
 
-      .. image:: /auto_examples/general/images/sphx_glr_plot_99_bad_005.png
-          :alt: After filtering, Oxyhemoglobin, Deoxyhemoglobin
-          :class: sphx-glr-multi-img
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_99_bad_005.png
+         :alt: After filtering, Oxyhemoglobin, Deoxyhemoglobin
+         :srcset: /auto_examples/general/images/sphx_glr_plot_99_bad_005.png
+         :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -364,9 +429,10 @@ correct.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_99_bad_006.png
-    :alt: plot 99 bad
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_99_bad_006.png
+   :alt: plot 99 bad
+   :srcset: /auto_examples/general/images/sphx_glr_plot_99_bad_006.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -453,9 +519,10 @@ the two signals.
 
 
 
-.. image:: /auto_examples/general/images/sphx_glr_plot_99_bad_007.png
-    :alt: plot 99 bad
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_99_bad_007.png
+   :alt: plot 99 bad
+   :srcset: /auto_examples/general/images/sphx_glr_plot_99_bad_007.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -510,9 +577,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.120 seconds)
+   **Total running time of the script:** ( 0 minutes  6.684 seconds)
 
-**Estimated memory usage:**  65 MB
+**Estimated memory usage:**  38 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_99_bad.py:
