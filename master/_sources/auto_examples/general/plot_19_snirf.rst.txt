@@ -148,7 +148,7 @@ Next we can read back the snirf file.
 
  .. code-block:: none
 
-    Loading /tmp/tmpkvnl8knz/75ccfe48246a05d417c8fb58dc1a3ed32bcafb39/examples/general/test_raw.snirf
+    Loading /tmp/tmpx63t7kg6/bf38b369d3db2a86711f51194febdfe50cca2f40/examples/general/test_raw.snirf
 
 
 
@@ -192,9 +192,9 @@ ensure that the values are the same.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.033 seconds)
+   **Total running time of the script:** ( 0 minutes  3.088 seconds)
 
-**Estimated memory usage:**  57 MB
+**Estimated memory usage:**  58 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_19_snirf.py:
