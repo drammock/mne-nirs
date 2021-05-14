@@ -147,7 +147,7 @@ Next we can read back the snirf file.
 
  .. code-block:: none
 
-    Loading /tmp/tmpx63t7kg6/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/test_raw.snirf
+    Loading /tmp/tmpul_dfqip/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/test_raw.snirf
 
 
 
@@ -191,7 +191,7 @@ ensure that the values are the same.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.855 seconds)
+   **Total running time of the script:** ( 0 minutes  2.506 seconds)
 
 **Estimated memory usage:**  63 MB
 
