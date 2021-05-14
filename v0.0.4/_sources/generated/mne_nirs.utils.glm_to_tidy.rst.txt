@@ -1,0 +1,11 @@
+﻿mne\_nirs.utils.glm\_to\_tidy
+=============================
+
+.. currentmodule:: mne_nirs.utils
+
+.. autofunction:: glm_to_tidy
+
+.. _sphx_glr_backreferences_mne_nirs.utils.glm_to_tidy:
+
+.. minigallery:: mne_nirs.utils.glm_to_tidy
+    :add-heading:
