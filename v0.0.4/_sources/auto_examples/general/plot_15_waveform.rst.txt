@@ -954,16 +954,16 @@ driving the topographic plot above.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f13441342b0>
+    <matplotlib.legend.Legend object at 0x7ff47c0e1c70>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.699 seconds)
+   **Total running time of the script:** ( 0 minutes  14.948 seconds)
 
-**Estimated memory usage:**  35 MB
+**Estimated memory usage:**  63 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:
