@@ -36,6 +36,27 @@ Analysis examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="MNE includes various functions and utilities for reading fNIRS data and optode locations. Regar...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_01_data_io_thumb.png
+     :alt: Importing data from fNIRS devices
+
+     :ref:`sphx_glr_auto_examples_general_plot_01_data_io.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_01_data_io
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="In this example we simulate a block design functional near-infrared spectroscopy (fNIRS) experi...">
 
 .. only:: html
@@ -99,7 +120,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip=" This tutorial covers how to convert functional near-infrared spectroscopy (fNIRS) data from ra...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers how to convert functional near-infrared spectroscopy (fNIRS) data from raw...">
 
 .. only:: html
 
