@@ -36,7 +36,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="MNE includes various functions and utilities for reading fNIRS data and optode locations. Regar...">
+    <div class="sphx-glr-thumbcontainer" tooltip="MNE-Python provides functions for reading fNIRS data and optode locations from several file for...">
 
 .. only:: html
 

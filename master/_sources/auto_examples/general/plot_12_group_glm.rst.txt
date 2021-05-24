@@ -270,8 +270,8 @@ for the region of interest, channel level, and contrast results.
  .. code-block:: none
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
-    Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (41.7 MB)
-      0%|          | Downloading : 0.00/41.7M [00:00<?,        ?B/s]      1%|          | Downloading : 248k/41.7M [00:00<00:03,    13.2MB/s]      5%|4         | Downloading : 1.99M/41.7M [00:00<00:01,    28.2MB/s]      7%|7         | Downloading : 2.99M/41.7M [00:00<00:01,    23.3MB/s]     10%|9         | Downloading : 3.99M/41.7M [00:00<00:01,    21.3MB/s]     12%|#1        | Downloading : 4.99M/41.7M [00:00<00:01,    20.0MB/s]     14%|#4        | Downloading : 5.99M/41.7M [00:00<00:01,    19.4MB/s]     22%|##1       | Downloading : 8.99M/41.7M [00:00<00:01,    20.5MB/s]     24%|##3       | Downloading : 9.99M/41.7M [00:00<00:01,    20.2MB/s]     26%|##6       | Downloading : 11.0M/41.7M [00:00<00:01,    19.8MB/s]     29%|##8       | Downloading : 12.0M/41.7M [00:00<00:01,    19.5MB/s]     36%|###5      | Downloading : 15.0M/41.7M [00:00<00:01,    20.3MB/s]     38%|###8      | Downloading : 16.0M/41.7M [00:00<00:01,    20.1MB/s]     41%|####      | Downloading : 17.0M/41.7M [00:00<00:01,    19.7MB/s]     48%|####7     | Downloading : 20.0M/41.7M [00:01<00:01,    20.5MB/s]     50%|#####     | Downloading : 21.0M/41.7M [00:01<00:01,    20.2MB/s]     53%|#####2    | Downloading : 22.0M/41.7M [00:01<00:01,    19.9MB/s]     60%|#####9    | Downloading : 25.0M/41.7M [00:01<00:00,    20.5MB/s]     62%|######2   | Downloading : 26.0M/41.7M [00:01<00:00,    20.3MB/s]     69%|######9   | Downloading : 29.0M/41.7M [00:01<00:00,    20.8MB/s]     72%|#######1  | Downloading : 30.0M/41.7M [00:01<00:00,    20.6MB/s]     74%|#######4  | Downloading : 31.0M/41.7M [00:01<00:00,    20.3MB/s]     81%|########1 | Downloading : 34.0M/41.7M [00:01<00:00,    20.8MB/s]     84%|########3 | Downloading : 35.0M/41.7M [00:01<00:00,    20.6MB/s]     91%|#########1| Downloading : 38.0M/41.7M [00:01<00:00,    20.9MB/s]     93%|#########3| Downloading : 39.0M/41.7M [00:01<00:00,    20.7MB/s]    100%|##########| Downloading : 41.7M/41.7M [00:02<00:00,    20.9MB/s]    100%|##########| Downloading : 41.7M/41.7M [00:02<00:00,    20.7MB/s]
+    Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    15.7kB/s]      0%|          | Downloading : 64.0k/0.00 [00:00<00:00,     126kB/s]      0%|          | Downloading : 128k/0.00 [00:00<00:00,     251kB/s]       0%|          | Downloading : 320k/0.00 [00:00<00:00,     623kB/s]      0%|          | Downloading : 1.44M/0.00 [00:00<00:00,    2.93MB/s]      0%|          | Downloading : 4.44M/0.00 [00:00<00:00,    8.59MB/s]      0%|          | Downloading : 6.44M/0.00 [00:00<00:00,    11.2MB/s]      0%|          | Downloading : 8.44M/0.00 [00:00<00:00,    13.5MB/s]      0%|          | Downloading : 10.4M/0.00 [00:00<00:00,    13.1MB/s]      0%|          | Downloading : 11.4M/0.00 [00:01<00:00,    13.6MB/s]      0%|          | Downloading : 14.4M/0.00 [00:01<00:00,    16.3MB/s]      0%|          | Downloading : 16.4M/0.00 [00:01<00:00,    14.0MB/s]      0%|          | Downloading : 19.4M/0.00 [00:01<00:00,    16.1MB/s]      0%|          | Downloading : 21.4M/0.00 [00:01<00:00,    17.1MB/s]      0%|          | Downloading : 23.4M/0.00 [00:01<00:00,    18.0MB/s]      0%|          | Downloading : 25.4M/0.00 [00:01<00:00,    15.3MB/s]      0%|          | Downloading : 26.4M/0.00 [00:01<00:00,    15.5MB/s]      0%|          | Downloading : 29.4M/0.00 [00:02<00:00,    17.0MB/s]      0%|          | Downloading : 31.4M/0.00 [00:02<00:00,    17.8MB/s]      0%|          | Downloading : 33.4M/0.00 [00:02<00:00,    15.6MB/s]      0%|          | Downloading : 36.4M/0.00 [00:02<00:00,    16.9MB/s]      0%|          | Downloading : 38.4M/0.00 [00:02<00:00,    17.6MB/s]      0%|          | Downloading : 40.4M/0.00 [00:02<00:00,    18.2MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    18.4MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.6MB/s]
     Verifying hash b91af49a59aea246727ac574517ac4fc.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -339,13 +339,13 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="i41chh"></div>
+              <div id="njJZHh"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-    'theta':[0.3724718879902031,0.2540820723654466,2.2428496612892785,5.501360887014428,7.075323444989445,2.9545358935487465,-0.8996860279166289,-1.5440764380468106,3.130977426100282,4.205153418799467,7.7778190858842775,1.2695468514720358,-0.8860389918568918,-1.9724115271303944,0.979916699941874,5.653140455896979,3.4549740876260944,3.6937977369351698,-0.02847266328546344,-0.17457869709381046,-3.204357650033054,9.426673639555398,4.99732805801545,-1.4423797732351917,0.035379061687721106,-0.4796454540077501,6.652159700224985,23.359206828703577,23.0146248882662,11.009461805440035],
+    'theta':[0.3724718879903247,0.2540820723655172,2.242849661288043,5.501360887009184,7.075323444989376,2.954535893566523,-0.8996860279156702,-1.5440764380488212,3.1309774261128087,4.205153418784076,7.777819085877154,1.2695468514653578,-0.8860389918590507,-1.9724115271260032,0.9799166999618748,5.653140455917381,3.454974087607434,3.6937977369292367,-0.028472663285422084,-0.17457869709239765,-3.2043576500356155,9.426673639555046,4.997328058018111,-1.442379773234067,0.03537906168816616,-0.47964545400728825,6.652159700217347,23.35920682870431,23.01462488829286,11.00946180544491],
     'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
     'mapping':{
@@ -390,7 +390,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("i41chh");
+           var plotContainer = document.getElementById("njJZHh");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -576,11 +576,11 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="C3wNzn"></div>
+              <div id="hHQuf8"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
-    'Coef.':[-0.28126934667621206,-0.7833260087826638,1.960309167504673,9.62910704599397,9.264013912956294,3.4969925028321573],
+    'Coef.':[-0.2812693466763304,-0.7833260087817987,1.9603091675088915,9.629107045994,9.264013912956987,3.4969925028343916],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     'Significant':[false,false,false,true,true,false]
@@ -625,7 +625,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.2679516596875082,-2.00332298306164,-4.1275039114830365],
+    'Coef.':[0.26795165968717144,-2.0033229830589625,-4.127503911482504],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,false,true]
     },
@@ -638,7 +638,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     'geom':"point",
     'data':{
-    'Coef.':[0.1031078477814307,-4.2580814964510205,-1.7680131502553376],
+    'Coef.':[0.10310784778075795,-4.258081496451341,-1.7680131502546472],
     'Condition':["Control","Tapping/Left","Tapping/Right"],
     'Significant':[false,true,false]
     },
@@ -650,7 +650,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     'shape':2
     }]
     };
-           var plotContainer = document.getElementById("C3wNzn");
+           var plotContainer = document.getElementById("hHQuf8");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -1375,9 +1375,9 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  19.083 seconds)
+   **Total running time of the script:** ( 0 minutes  23.422 seconds)
 
-**Estimated memory usage:**  48 MB
+**Estimated memory usage:**  47 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
