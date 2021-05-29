@@ -435,14 +435,6 @@ correct.
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Used Annotations descriptions: ['1.0', '2.0', '3.0']
-
 
 
 
@@ -531,8 +523,6 @@ the two signals.
 
  .. code-block:: none
 
-    combining channels using "mean"
-    combining channels using "mean"
 
     [<Figure size 800x600 with 1 Axes>]
 
@@ -577,9 +567,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.142 seconds)
+   **Total running time of the script:** ( 0 minutes  8.191 seconds)
 
-**Estimated memory usage:**  92 MB
+**Estimated memory usage:**  93 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_99_bad.py:

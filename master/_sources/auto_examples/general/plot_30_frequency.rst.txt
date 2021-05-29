@@ -269,7 +269,6 @@ is still visible.
 
  .. code-block:: none
 
-    Used Annotations descriptions: ['Tapping/Left', 'Tapping/Right']
     Not setting metadata
     Not setting metadata
     60 matching events found
@@ -278,7 +277,6 @@ is still visible.
     0 projection items activated
     Loading data for 60 events and 157 original time points ...
     0 bad epochs dropped
-        Using multitaper spectrum estimation with 7 DPSS windows
 
     <MNELineFigure size 1000x350 with 1 Axes>
 
@@ -324,17 +322,6 @@ after epoching.
  Out:
 
  .. code-block:: none
-
-    Setting up low-pass filter at 0.4 Hz
-
-    FIR filter parameters
-    ---------------------
-    Designing a one-pass, zero-phase, non-causal lowpass filter:
-    - Windowed time-domain design (firwin) method
-    - Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
-    - Upper passband edge: 0.40 Hz
-    - Upper transition bandwidth: 0.20 Hz (-6 dB cutoff frequency: 0.50 Hz)
-    - Filter length: 129 samples (16.512 sec)
 
 
     <Figure size 640x480 with 1 Axes>
@@ -402,7 +389,6 @@ epoched data.
 
     Effective window size : 262.144 (s)
     Effective window size : 262.144 (s)
-        Using multitaper spectrum estimation with 7 DPSS windows
 
     Text(0.5, 1.0, '')
 
@@ -464,7 +450,7 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  29.662 seconds)
+   **Total running time of the script:** ( 0 minutes  46.067 seconds)
 
 **Estimated memory usage:**  92 MB
 

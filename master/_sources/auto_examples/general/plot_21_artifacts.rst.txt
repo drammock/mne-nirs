@@ -147,9 +147,6 @@ seconds to the data.
 
  .. code-block:: none
 
-    Creating RawArray with float64 data, n_channels=56, n_times=8924
-        Range : 0 ... 8923 =      0.000 ...  2974.333 secs
-    Ready.
 
     <MNEBrowseFigure size 640x480 with 4 Axes>
 
@@ -208,9 +205,9 @@ References
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.022 seconds)
+   **Total running time of the script:** ( 0 minutes  3.820 seconds)
 
-**Estimated memory usage:**  93 MB
+**Estimated memory usage:**  94 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_21_artifacts.py:

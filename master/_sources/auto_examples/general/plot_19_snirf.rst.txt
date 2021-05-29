@@ -89,15 +89,6 @@ First we import some example data recorded with a NIRX device.
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Loading /home/runner/mne_data/MNE-fNIRS-motor-data/Participant-1
-    Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
-
 
 
 
@@ -142,14 +133,6 @@ Next we can read back the snirf file.
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Loading /tmp/tmpm6z5g1xq/b40fa4191144cf65dd1a93b3d818bd3eefee38ba/examples/general/test_raw.snirf
-
 
 
 
@@ -192,9 +175,9 @@ ensure that the values are the same.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.164 seconds)
+   **Total running time of the script:** ( 0 minutes  3.518 seconds)
 
-**Estimated memory usage:**  72 MB
+**Estimated memory usage:**  63 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_19_snirf.py:

@@ -141,6 +141,27 @@ Analysis examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of a group level waveform based functional near-infrared spectroscopy (fNIRS...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_16_waveform_group_thumb.png
+     :alt: Group Level Waveform Analysis
+
+     :ref:`sphx_glr_auto_examples_general_plot_16_waveform_group.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_16_waveform_group
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="   If you wish to process your .nirs files in MNE use the official snirf    converter to create...">
 
 .. only:: html
