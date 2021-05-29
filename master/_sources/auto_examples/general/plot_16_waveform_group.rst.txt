@@ -130,18 +130,16 @@ requirements_doc.txt file to run this example.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-120
+.. GENERATED FROM PYTHON SOURCE LINES 104-118
 
 Define individual analysis
 --------------------------
 
 .. sidebar:: Individual analysis procedures
 
-   Waveform individual analysis:
-   :ref:`MNE docs <mne:tut-fnirs-processing>`
+   :ref:`Waveform individual analysis <tut-fnirs-processing>`
 
-   GLM individual analysis:
-   :ref:`MNE-NIRS docs <tut-fnirs-hrf>`
+   :ref:`GLM individual analysis <tut-fnirs-hrf>`
 
 First we define the analysis that will be applied to each file.
 This is a waveform analysis as described in the
@@ -149,7 +147,7 @@ This is a waveform analysis as described in the
 and :ref:`artifact correction tutorial <ex-fnirs-artifacts>`.
 As such, this example will skim over the individual level details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-159
+.. GENERATED FROM PYTHON SOURCE LINES 118-157
 
 .. code-block:: default
 
@@ -199,7 +197,7 @@ As such, this example will skim over the individual level details.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-168
+.. GENERATED FROM PYTHON SOURCE LINES 158-166
 
 Run analysis on all data
 ------------------------
@@ -210,7 +208,7 @@ epoch structure. The epoch structure is then averaged to obtain an evoked
 response per participant. The individual evoked data is stored in a
 dictionary (`all_evokeds`) by condition.
 
-.. GENERATED FROM PYTHON SOURCE LINES 168-186
+.. GENERATED FROM PYTHON SOURCE LINES 166-184
 
 .. code-block:: default
 
@@ -242,13 +240,13 @@ dictionary (`all_evokeds`) by condition.
 
  .. code-block:: none
 
-    /tmp/tmpt2q7s2k2/8f4f28ad9af6e292ee5aab8a0ec3e897eb25d03a/examples/general/plot_16_waveform_group.py:130: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmppait051g/4dc0217c03d606ee85e871140140c0162ec4c19e/examples/general/plot_16_waveform_group.py:128: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 187-192
+.. GENERATED FROM PYTHON SOURCE LINES 185-190
 
 The end result is a dictionary indexed per condition.
 With each item in the dictionary being a list of evoked responses.
@@ -256,7 +254,7 @@ See below that for each condition we have obtained an MNE evoked type
 that is generated from the average of 30 trials and epoched from -5 to
 20 seconds.
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-195
+.. GENERATED FROM PYTHON SOURCE LINES 190-193
 
 .. code-block:: default
 
@@ -293,7 +291,7 @@ that is generated from the average of 30 trials and epoched from -5 to
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 196-202
+.. GENERATED FROM PYTHON SOURCE LINES 194-200
 
 View average waveform
 ---------------------
@@ -302,7 +300,7 @@ Next a grand average epoch waveform is generated per condition.
 This is generated using all long fNIRS channels, as illustrated in the head
 inset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-216
+.. GENERATED FROM PYTHON SOURCE LINES 200-214
 
 .. code-block:: default
 
@@ -336,18 +334,18 @@ inset.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f0f43f39130>
+    <matplotlib.legend.Legend object at 0x7f1729dbe6a0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 217-221
+.. GENERATED FROM PYTHON SOURCE LINES 215-219
 
 From this figure we observe that the response to the tapping condition
 with the right hand seems larger than when no tapping occurred in the control
 condition (similar for tapping with the left hand).
 We test if this is the case in the analysis below.
 
-.. GENERATED FROM PYTHON SOURCE LINES 224-247
+.. GENERATED FROM PYTHON SOURCE LINES 222-245
 
 Generate regions of interest
 --------------------------------
@@ -373,7 +371,7 @@ In this example two ROIs are generated. One for the left motor cortex,
 and one for the right motor cortex. These are called `Left_Hemisphere` and
 `Right_Hemisphere` and stored in the `rois` dictionary.
 
-.. GENERATED FROM PYTHON SOURCE LINES 247-258
+.. GENERATED FROM PYTHON SOURCE LINES 245-257
 
 .. code-block:: default
 
@@ -387,15 +385,25 @@ and one for the right motor cortex. These are called `Left_Hemisphere` and
         Left_Hemisphere=picks_pair_to_idx(raw_haemo, left, on_missing='ignore'),
         Right_Hemisphere=picks_pair_to_idx(raw_haemo, right, on_missing='ignore'))
 
+    pprint(rois)
 
 
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    {'Left_Hemisphere': [16, 17, 4, 5, 14, 15, 2, 3, 8, 9, 0, 1],
+     'Right_Hemisphere': [36, 37, 24, 25, 34, 35, 22, 23, 28, 29, 20, 21]}
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 259-265
+
+.. GENERATED FROM PYTHON SOURCE LINES 258-264
 
 Create average waveform per ROI
 -------------------------------
@@ -404,7 +412,7 @@ Next an average waveform is generated per condition per region of interest.
 This allows the researcher to view the responses elicited in different
 regions of the brain per condition.
 
-.. GENERATED FROM PYTHON SOURCE LINES 265-288
+.. GENERATED FROM PYTHON SOURCE LINES 264-287
 
 .. code-block:: default
 
@@ -415,21 +423,21 @@ regions of the brain per condition.
     lims = dict(hbo=[-8, 16], hbr=[-8, 16])
 
     for (pick, color) in zip(['hbo', 'hbr'], ['r', 'b']):
-        for cidx, evoked in enumerate(all_evokeds):
-            for ridx, roi in enumerate(rois):
+        for ridx, roi in enumerate(rois):
+            for cidx, evoked in enumerate(all_evokeds):
                 if pick == 'hbr':
                     picks = rois[roi][1::2]  # Select only the hbr channels
                 else:
                     picks = rois[roi][0::2]  # Select only the hbo channels
+
                 plot_compare_evokeds({evoked: all_evokeds[evoked]}, combine='mean',
                                      picks=picks, axes=axes[ridx, cidx],
                                      show=False, colors=[color], legend=False,
                                      ylim=lims, ci=0.95, show_sensors=cidx == 2)
-            axes[0, cidx].set_title(f"{evoked}")
-            axes[1, cidx].set_title("")
+                axes[0, cidx].set_title(f"{evoked}")
+                axes[1, cidx].set_title("") 
+            axes[ridx, 0].set_ylabel(f"{roi}\nChromophore (ΔμMol)")
     axes[0, 0].legend(["Oxyhaemoglobin", "Deoxyhaemoglobin"])
-    axes[0, 0].set_ylabel("Left ROI\nChromophore (ΔμMol)")
-    axes[1, 0].set_ylabel("Right ROI\nChromophore (ΔμMol)")
 
 
 
@@ -447,17 +455,17 @@ regions of the brain per condition.
  .. code-block:: none
 
 
-    Text(151.84722222222223, 0.5, 'Right ROI\nChromophore (ΔμMol)')
+    <matplotlib.legend.Legend object at 0x7f172b92bb80>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 289-292
+.. GENERATED FROM PYTHON SOURCE LINES 288-291
 
 From this figure we observe that the response to the tapping seems
 largest in the brain region contralateral to the tapping.
 We test if this is the case in the analysis below.
 
-.. GENERATED FROM PYTHON SOURCE LINES 295-305
+.. GENERATED FROM PYTHON SOURCE LINES 294-304
 
 Extract evoked amplitude
 ------------------------
@@ -470,7 +478,7 @@ chromophore. This data is stored in a dataframe. The dataframe is saved
 to a csv for easy analysis in any statistical analysis software.
 We also demonstrate two example analysis on these values below.
 
-.. GENERATED FROM PYTHON SOURCE LINES 305-328
+.. GENERATED FROM PYTHON SOURCE LINES 304-327
 
 .. code-block:: default
 
@@ -578,7 +586,7 @@ We also demonstrate two example analysis on these values below.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 329-341
+.. GENERATED FROM PYTHON SOURCE LINES 328-340
 
 View individual results
 -----------------------
@@ -593,7 +601,7 @@ skull thickness, both of which vary across the head and across participants.
 For this reason fNIRS is most appropriate for detecting changes within a
 single ROI between conditions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 341-350
+.. GENERATED FROM PYTHON SOURCE LINES 340-349
 
 .. code-block:: default
 
@@ -619,14 +627,14 @@ single ROI between conditions.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="KxC0Zn"></div>
+              <div id="EmmAjh"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
     'ID':["P1","P1","P2","P2","P3","P3","P4","P4","P5","P5","P1","P1","P2","P2","P3","P3","P4","P4","P5","P5","P1","P1","P2","P2","P3","P3","P4","P4","P5","P5"],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Control","Control","Control","Control","Control","Control","Control","Control","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right"],
-    'Value':[-0.36171035106247146,-0.1748785859074002,0.006948598459393231,-0.12254052088057554,-0.008625826466313378,0.6201879757179651,0.3845391483323666,0.23462047002809924,0.8232055465206068,1.367153210906921,8.109055235504846,13.5171321155525,3.717871713157756,4.973709586448015,2.4579163431979585,2.816467284888441,5.439843344516775,16.478856720123076,4.895892596155515,12.748167542176494,10.114996699691911,7.882978135065472,5.7437838153799285,2.4401233363787775,1.644605394058579,0.9741334959796241,5.506854437811619,4.222640426408157,10.0300365099505,9.036825762539921]
+    'Value':[-0.36171035106247945,-0.1748785859074037,0.00694859845939739,-0.12254052088058381,-0.008625826466316445,0.6201879757179695,0.38453914833237257,0.23462047002809786,0.8232055465206102,1.3671532109069244,8.109055235504849,13.517132115552439,3.717871713157761,4.973709586448003,2.4579163431979714,2.8164672848884362,5.439843344516769,16.478856720123055,4.895892596155512,12.748167542176516,10.114996699691915,7.882978135065416,5.74378381537993,2.4401233363787735,1.6446053940585814,0.9741334959796175,5.5068544378116115,4.222640426408192,10.030036509950502,9.03682576253993]
     },
     'mapping':{
     'x':"Condition",
@@ -667,7 +675,7 @@ single ROI between conditions.
     }
     }]
     };
-           var plotContainer = document.getElementById("KxC0Zn");
+           var plotContainer = document.getElementById("EmmAjh");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -676,7 +684,7 @@ single ROI between conditions.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 351-358
+.. GENERATED FROM PYTHON SOURCE LINES 350-357
 
 Research question 1: Comparison of conditions
 ---------------------------------------------------------------------------------------------------
@@ -686,7 +694,7 @@ with the right hand larger than the response when not tapping (control)?
 For this token example we subset the dataframe and then apply the mixed
 effect model.
 
-.. GENERATED FROM PYTHON SOURCE LINES 358-367
+.. GENERATED FROM PYTHON SOURCE LINES 357-366
 
 .. code-block:: default
 
@@ -745,13 +753,13 @@ effect model.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 368-371
+.. GENERATED FROM PYTHON SOURCE LINES 367-370
 
 The model indicates that for the oxyhaemoglobin data in the left
 region of interest, that the tapping condition with the right hand evokes
 a 6.4 μM larger response than the control.
 
-.. GENERATED FROM PYTHON SOURCE LINES 374-384
+.. GENERATED FROM PYTHON SOURCE LINES 373-383
 
 Research question 2: Are responses larger on the contralateral side to tapping?
 -------------------------------------------------------------------------------
@@ -764,7 +772,7 @@ First the ROI data in the dataframe is encoded as ipsi- and contralateral
 to the tapping. Then the data is subset to just examine the tapping
 conditions and the model is applied.
 
-.. GENERATED FROM PYTHON SOURCE LINES 384-404
+.. GENERATED FROM PYTHON SOURCE LINES 383-403
 
 .. code-block:: default
 
@@ -834,7 +842,7 @@ conditions and the model is applied.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 405-408
+.. GENERATED FROM PYTHON SOURCE LINES 404-407
 
 And the model indicates that for the oxyhaemoglobin data that ipsilateral
 responses are 3.4 μMol smaller than those on the contralateral side to the
@@ -843,9 +851,9 @@ hand that is tapping.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.872 seconds)
+   **Total running time of the script:** ( 0 minutes  9.114 seconds)
 
-**Estimated memory usage:**  18 MB
+**Estimated memory usage:**  19 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_16_waveform_group.py:
