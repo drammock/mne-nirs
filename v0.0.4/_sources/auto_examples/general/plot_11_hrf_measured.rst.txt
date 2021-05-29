@@ -642,7 +642,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f3803fddeb0>
+    <matplotlib.collections.LineCollection object at 0x7f802cc4afd0>
 
 
 
@@ -748,11 +748,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmpro40aacx/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:316: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpm6z5g1xq/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:316: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmpro40aacx/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpm6z5g1xq/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmpro40aacx/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpm6z5g1xq/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -893,6 +893,15 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /tmp/tmpm6z5g1xq/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:397: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument 'labels' will be keyword-only
+      (df
+
 
 .. raw:: html
 
@@ -922,6 +931,8 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th></th>
           <th>se</th>
           <th>theta</th>
+          <th>Source</th>
+          <th>Detector</th>
           <th>Significant</th>
         </tr>
         <tr>
@@ -930,10 +941,14 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th>mean</th>
           <th>mean</th>
           <th>mean</th>
+          <th>mean</th>
+          <th>mean</th>
         </tr>
         <tr>
           <th>Condition</th>
           <th>Chroma</th>
+          <th></th>
+          <th></th>
           <th></th>
           <th></th>
           <th></th>
@@ -945,12 +960,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th>hbo</th>
           <td>1.073247e-06</td>
           <td>-4.698181e-08</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.00</td>
         </tr>
         <tr>
           <th>hbr</th>
           <td>6.064905e-07</td>
           <td>1.899649e-08</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.00</td>
         </tr>
         <tr>
@@ -958,12 +977,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th>hbo</th>
           <td>1.089022e-06</td>
           <td>6.885871e-06</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.90</td>
         </tr>
         <tr>
           <th>hbr</th>
           <td>6.154109e-07</td>
           <td>-3.050769e-06</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.75</td>
         </tr>
         <tr>
@@ -971,12 +994,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th>hbo</th>
           <td>1.091798e-06</td>
           <td>7.594851e-06</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.90</td>
         </tr>
         <tr>
           <th>hbr</th>
           <td>6.170074e-07</td>
           <td>-2.839041e-06</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.80</td>
         </tr>
       </tbody>
@@ -989,7 +1016,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.421 seconds)
+   **Total running time of the script:** ( 0 minutes  5.517 seconds)
 
 **Estimated memory usage:**  62 MB
 

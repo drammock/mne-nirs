@@ -34,7 +34,10 @@ We use a GLM analysis to examine the neural activity associated with
 the different tapping conditions.
 An alternative epoching style analysis on the same data can be
 viewed in the
-:ref:`MNE documentation <mne:tut-fnirs-processing>`.
+:ref:`waveform analysis example <tut-fnirs-processing>`.
+See
+`Luke et al (2021) <https://www.spiedigitallibrary.org/journals/neurophotonics/volume-8/issue-2/025008/Analysis-methods-for-measuring-passive-auditory-fNIRS-responses-generated-by/10.1117/1.NPh.8.2.025008.short>`_
+for a comparison of the epoching and GLM approaches.
 
 This GLM analysis is a wrapper over the excellent
 `Nilearn GLM <http://nilearn.github.io/modules/reference.html#module-nilearn.glm>`_.
@@ -43,7 +46,7 @@ This GLM analysis is a wrapper over the excellent
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-52
+.. GENERATED FROM PYTHON SOURCE LINES 31-55
 
 .. code-block:: default
 
@@ -78,7 +81,7 @@ This GLM analysis is a wrapper over the excellent
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-74
+.. GENERATED FROM PYTHON SOURCE LINES 56-77
 
 Import raw NIRS data
 --------------------
@@ -102,7 +105,7 @@ to meet github memory constraints.
    Conditions were presented in a random order with a randomised inter
    stimulus interval.
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-81
+.. GENERATED FROM PYTHON SOURCE LINES 77-84
 
 .. code-block:: default
 
@@ -126,7 +129,7 @@ to meet github memory constraints.
     Using default location ~/mne_data for fnirs_motor...
     Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      1%|          | Downloading : 88.0k/17.1M [00:00<00:14,    1.19MB/s]      3%|3         | Downloading : 568k/17.1M [00:00<00:02,    6.33MB/s]      24%|##3       | Downloading : 4.05M/17.1M [00:00<00:00,    28.5MB/s]     36%|###5      | Downloading : 6.05M/17.1M [00:00<00:00,    35.5MB/s]     47%|####7     | Downloading : 8.05M/17.1M [00:00<00:00,    39.0MB/s]     59%|#####8    | Downloading : 10.1M/17.1M [00:00<00:00,    42.1MB/s]     71%|#######   | Downloading : 12.1M/17.1M [00:00<00:00,    43.0MB/s]     82%|########2 | Downloading : 14.1M/17.1M [00:00<00:00,    45.3MB/s]     94%|#########4| Downloading : 16.1M/17.1M [00:00<00:00,    45.8MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    45.0MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      3%|2         | Downloading : 504k/17.1M [00:00<00:00,    32.2MB/s]      9%|8         | Downloading : 1.49M/17.1M [00:00<00:00,    44.9MB/s]     15%|#4        | Downloading : 2.49M/17.1M [00:00<00:00,    46.1MB/s]     20%|##        | Downloading : 3.49M/17.1M [00:00<00:00,    50.4MB/s]     26%|##6       | Downloading : 4.49M/17.1M [00:00<00:00,    52.0MB/s]     38%|###8      | Downloading : 6.49M/17.1M [00:00<00:00,    54.4MB/s]     44%|####3     | Downloading : 7.49M/17.1M [00:00<00:00,    55.8MB/s]     50%|####9     | Downloading : 8.49M/17.1M [00:00<00:00,    55.6MB/s]     62%|######1   | Downloading : 10.5M/17.1M [00:00<00:00,    58.4MB/s]     67%|######7   | Downloading : 11.5M/17.1M [00:00<00:00,    57.9MB/s]     73%|#######3  | Downloading : 12.5M/17.1M [00:00<00:00,    58.2MB/s]     79%|#######9  | Downloading : 13.5M/17.1M [00:00<00:00,    58.4MB/s]     85%|########4 | Downloading : 14.5M/17.1M [00:00<00:00,    58.6MB/s]     91%|######### | Downloading : 15.5M/17.1M [00:00<00:00,    58.6MB/s]     97%|#########6| Downloading : 16.5M/17.1M [00:00<00:00,    58.7MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    58.7MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -201,7 +204,7 @@ to meet github memory constraints.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-88
+.. GENERATED FROM PYTHON SOURCE LINES 85-91
 
 Clean up annotations before analysis
 ------------------------------------
@@ -210,7 +213,7 @@ Next we update the annotations by assigning names to each trigger ID.
 Then we crop the recording to the section containing our
 experimental conditions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-104
+.. GENERATED FROM PYTHON SOURCE LINES 91-107
 
 .. code-block:: default
 
@@ -301,13 +304,13 @@ experimental conditions.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-108
+.. GENERATED FROM PYTHON SOURCE LINES 108-111
 
 Preprocess NIRS data
 --------------------
 Next we convert the raw data to haemoglobin concentration.
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-113
+.. GENERATED FROM PYTHON SOURCE LINES 111-116
 
 .. code-block:: default
 
@@ -323,7 +326,7 @@ Next we convert the raw data to haemoglobin concentration.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-123
+.. GENERATED FROM PYTHON SOURCE LINES 117-126
 
 .. sidebar:: Relevant literature
 
@@ -335,7 +338,7 @@ We then split the data in to
 short channels which predominantly contain systemic responses and
 long channels which have both neural and systemic contributions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-129
+.. GENERATED FROM PYTHON SOURCE LINES 127-132
 
 .. code-block:: default
 
@@ -351,7 +354,7 @@ long channels which have both neural and systemic contributions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-139
+.. GENERATED FROM PYTHON SOURCE LINES 133-142
 
 View experiment events
 ----------------------
@@ -363,7 +366,7 @@ Here each dot represents when an event started.
 We observe that the order of conditions was randomised and the time between
 events is also randomised.
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-146
+.. GENERATED FROM PYTHON SOURCE LINES 142-149
 
 .. code-block:: default
 
@@ -394,13 +397,13 @@ events is also randomised.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-150
+.. GENERATED FROM PYTHON SOURCE LINES 150-153
 
 The previous plot did not illustrate the duration that an event lasted for.
 Alternatively, we can view the experiment using a boxcar plot, where the
 line is raised for the duration of the stimulus/condition.
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-159
+.. GENERATED FROM PYTHON SOURCE LINES 154-162
 
 .. code-block:: default
 
@@ -433,7 +436,7 @@ line is raised for the duration of the stimulus/condition.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-180
+.. GENERATED FROM PYTHON SOURCE LINES 163-183
 
 Create design matrix
 --------------------
@@ -456,7 +459,7 @@ function (HRF) combined with the known stimulus event times and durations
 We also include a third order polynomial drift and constant to model
 slow fluctuations in the data and a constant DC shift.
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-187
+.. GENERATED FROM PYTHON SOURCE LINES 183-190
 
 .. code-block:: default
 
@@ -474,7 +477,7 @@ slow fluctuations in the data and a constant DC shift.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-193
+.. GENERATED FROM PYTHON SOURCE LINES 191-196
 
 We also add the mean of the short channels to the design matrix.
 In theory these channels contain only systemic components, so including
@@ -482,7 +485,7 @@ them in the design matrix allows us to estimate the neural component
 related to each experimental condition
 uncontaminated by systemic effects.
 
-.. GENERATED FROM PYTHON SOURCE LINES 194-202
+.. GENERATED FROM PYTHON SOURCE LINES 197-205
 
 .. code-block:: default
 
@@ -501,7 +504,7 @@ uncontaminated by systemic effects.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-209
+.. GENERATED FROM PYTHON SOURCE LINES 206-212
 
 And we display a summary of the design matrix
 using standard Nilearn reporting functions.
@@ -510,7 +513,7 @@ event information.
 The next columns illustrate the drift and constant components.
 The last columns illustrate the short channel signals.
 
-.. GENERATED FROM PYTHON SOURCE LINES 210-215
+.. GENERATED FROM PYTHON SOURCE LINES 213-218
 
 .. code-block:: default
 
@@ -531,7 +534,7 @@ The last columns illustrate the short channel signals.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 216-228
+.. GENERATED FROM PYTHON SOURCE LINES 219-231
 
 Examine expected response
 -------------------------
@@ -546,7 +549,7 @@ we observe that each time a stimulus is presented there is an expected
 brain response that lags the stimulus onset and consists of a large positive
 component followed by an undershoot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 228-238
+.. GENERATED FROM PYTHON SOURCE LINES 231-241
 
 .. code-block:: default
 
@@ -581,7 +584,7 @@ component followed by an undershoot.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 239-251
+.. GENERATED FROM PYTHON SOURCE LINES 242-254
 
 Fit GLM to subset of data and estimate response for each experimental condition
 -------------------------------------------------------------------------------
@@ -596,7 +599,7 @@ We run a GLM fit for the data and experiment matrix.
 First we analyse just the first two channels which correspond to HbO and HbR
 of a single source detector pair.
 
-.. GENERATED FROM PYTHON SOURCE LINES 252-257
+.. GENERATED FROM PYTHON SOURCE LINES 255-260
 
 .. code-block:: default
 
@@ -612,7 +615,7 @@ of a single source detector pair.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 258-264
+.. GENERATED FROM PYTHON SOURCE LINES 261-267
 
 We then display the results. Note that the control condition sits
 around zero
@@ -621,7 +624,7 @@ Further, we note that for this channel the response to tapping on the
 right hand is larger than the left. And the values are similar to what
 is seen in the epoching tutorial.
 
-.. GENERATED FROM PYTHON SOURCE LINES 265-274
+.. GENERATED FROM PYTHON SOURCE LINES 268-277
 
 .. code-block:: default
 
@@ -650,11 +653,11 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f6b748158b0>
+    <matplotlib.collections.LineCollection object at 0x7f8ad5da5c10>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 275-284
+.. GENERATED FROM PYTHON SOURCE LINES 278-287
 
 Fit GLM to all data and view topographic distribution
 -----------------------------------------------------
@@ -666,7 +669,7 @@ that activation is largest
 contralateral to the tapping side. Also note that HbR tends to be the
 negative of HbO as expected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 284-291
+.. GENERATED FROM PYTHON SOURCE LINES 287-294
 
 .. code-block:: default
 
@@ -697,7 +700,7 @@ negative of HbO as expected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 292-311
+.. GENERATED FROM PYTHON SOURCE LINES 295-314
 
 Note that the topographic visualisation is a high level representation
 of the underlying data. This visual representation fits a smoothed surface
@@ -719,7 +722,7 @@ When each hemisphere is plotted independently (right) it becomes immediately
 apparent that the data does not indicate that activity spreads across
 the center of the head.
 
-.. GENERATED FROM PYTHON SOURCE LINES 312-330
+.. GENERATED FROM PYTHON SOURCE LINES 315-333
 
 .. code-block:: default
 
@@ -756,26 +759,40 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmpro40aacx/e8403172637672d21d9b9babc81f3f6817e8e977/examples/general/plot_11_hrf_measured.py:316: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpm6z5g1xq/b40fa4191144cf65dd1a93b3d818bd3eefee38ba/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmpro40aacx/e8403172637672d21d9b9babc81f3f6817e8e977/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpm6z5g1xq/b40fa4191144cf65dd1a93b3d818bd3eefee38ba/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmpro40aacx/e8403172637672d21d9b9babc81f3f6817e8e977/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpm6z5g1xq/b40fa4191144cf65dd1a93b3d818bd3eefee38ba/examples/general/plot_11_hrf_measured.py:325: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 331-336
+.. GENERATED FROM PYTHON SOURCE LINES 334-353
 
 Analyse regions of interest
 ---------------------------
 
+.. sidebar:: Relevant literature
+
+   Zimeo Morais, G.A., Balardin, J.B. & Sato, J.R.
+   fNIRS Optodes’ Location Decider (fOLD): a toolbox for probe arrangement
+   guided by brain regions-of-interest. Sci Rep 8, 3341 (2018).
+
+   Shader and Luke et al. "The use of broad vs restricted regions of
+   interest in functional near-infrared spectroscopy for measuring cortical
+   activation to auditory-only and visual-only speech."
+   Hearing Research (2021): `108256 <https://www.sciencedirect.com/science/article/pii/S0378595521000903>`_.
+
 Or alternatively we can summarise the responses across regions of interest
 for each condition. And you can plot it with your favorite software.
+Region of interest analysis can be more robust than single channel analysis.
+The fOLD toolbox can be used to assist in the design of ROIs.
+And consideration should be paid to ensure optimal size ROIs are selected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 336-350
+.. GENERATED FROM PYTHON SOURCE LINES 353-367
 
 .. code-block:: default
 
@@ -800,7 +817,7 @@ for each condition. And you can plot it with your favorite software.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 351-359
+.. GENERATED FROM PYTHON SOURCE LINES 368-376
 
 Compute contrasts
 -----------------
@@ -811,7 +828,7 @@ and plot it.
 Here we contrast the response to tapping on the left hand with the response
 from tapping on the right hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 360-369
+.. GENERATED FROM PYTHON SOURCE LINES 377-386
 
 .. code-block:: default
 
@@ -844,7 +861,7 @@ from tapping on the right hand.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 370-384
+.. GENERATED FROM PYTHON SOURCE LINES 387-401
 
 Export Results
 ---------------
@@ -861,7 +878,7 @@ The long to wide conversion also adds some additional derived data, such as
 if a significant response (p<0.05) was observed, which sensor and detector is
 in the channel, which chroma, etc.
 
-.. GENERATED FROM PYTHON SOURCE LINES 384-388
+.. GENERATED FROM PYTHON SOURCE LINES 401-405
 
 .. code-block:: default
 
@@ -876,7 +893,7 @@ in the channel, which chroma, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 389-396
+.. GENERATED FROM PYTHON SOURCE LINES 406-413
 
 Determine true and false positive rates
 ---------------------------------------
@@ -886,7 +903,7 @@ positive rates. Note: optodes cover a greater region than just the
 motor cortex, so we dont expect 100% of channels to detect responses to
 the tapping, but we do expect 5% or less for the false positive rate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 396-403
+.. GENERATED FROM PYTHON SOURCE LINES 413-420
 
 .. code-block:: default
 
@@ -930,6 +947,8 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th></th>
           <th>se</th>
           <th>theta</th>
+          <th>Source</th>
+          <th>Detector</th>
           <th>Significant</th>
         </tr>
         <tr>
@@ -938,10 +957,14 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th>mean</th>
           <th>mean</th>
           <th>mean</th>
+          <th>mean</th>
+          <th>mean</th>
         </tr>
         <tr>
           <th>Condition</th>
           <th>Chroma</th>
+          <th></th>
+          <th></th>
           <th></th>
           <th></th>
           <th></th>
@@ -953,12 +976,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th>hbo</th>
           <td>1.073247e-06</td>
           <td>-4.698181e-08</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.00</td>
         </tr>
         <tr>
           <th>hbr</th>
           <td>6.064905e-07</td>
           <td>1.899649e-08</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.00</td>
         </tr>
         <tr>
@@ -966,12 +993,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th>hbo</th>
           <td>1.089022e-06</td>
           <td>6.885871e-06</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.90</td>
         </tr>
         <tr>
           <th>hbr</th>
           <td>6.154109e-07</td>
           <td>-3.050769e-06</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.75</td>
         </tr>
         <tr>
@@ -979,12 +1010,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
           <th>hbo</th>
           <td>1.091798e-06</td>
           <td>7.594851e-06</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.90</td>
         </tr>
         <tr>
           <th>hbr</th>
           <td>6.170074e-07</td>
           <td>-2.839041e-06</td>
+          <td>5.561117e+17</td>
+          <td>6.156712e+17</td>
           <td>0.80</td>
         </tr>
       </tbody>
@@ -997,9 +1032,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.576 seconds)
+   **Total running time of the script:** ( 0 minutes  8.978 seconds)
 
-**Estimated memory usage:**  62 MB
+**Estimated memory usage:**  65 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:
