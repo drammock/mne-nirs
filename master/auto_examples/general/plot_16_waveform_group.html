@@ -242,10 +242,15 @@ The dataset contains 5 participants.
 The example dataset is in
 <a class="reference external" href="https://bids.neuroimaging.io">BIDS</a>
 format and therefore already contains
-information about triggers, condition names, etc.
-The BIDS specification for NIRS data is still under development,
-as such you must use the development branch of MNE-BIDS as listed in the
-requirements_doc.txt file to run this example.</p>
+information about triggers, condition names, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The BIDS specification for NIRS data is still under development. See:
+<a class="reference external" href="https://github.com/bids-standard/bids-specification/pull/802">fNIRS BIDS proposal</a>.
+As such, you must use the development branch of MNE-BIDS.</p>
+<p>To install the fNIRS development branch of MNE-BIDS run:
+<cite>pip install https://codeload.github.com/rob-luke/mne-bids/zip/nirs</cite></p>
+</div>
 <div class="panel panel-success">
 <div class="panel-heading"><h4 class="panel-title">
 <a data-toggle="collapse" href="#collapse_chevron-circle-down-data-description-click-to-expand"><em class="fa fa-chevron-circle-down"></em> Data description (click to expand)</a></h4></div>
@@ -389,7 +394,7 @@ dictionary (<cite>all_evokeds</cite>) by condition.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmppait051g/4dc0217c03d606ee85e871140140c0162ec4c19e/examples/general/plot_16_waveform_group.py:128: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmps13khcyz/5954256d14765971f01e2545dca20dd9e7d75de6/examples/general/plot_16_waveform_group.py:134: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
 </pre></div>
 </div>
@@ -441,7 +446,7 @@ inset.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f1729dbe6a0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f18253554c0&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping condition
@@ -517,7 +522,7 @@ regions of the brain per condition.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f172b92bb80&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f1825cc7eb0&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping seems
@@ -653,7 +658,7 @@ single ROI between conditions.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="EmmAjh"></div>
+          <div id="plrydb"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
@@ -701,7 +706,7 @@ single ROI between conditions.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("EmmAjh");
+       var plotContainer = document.getElementById("plrydb");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -833,8 +838,8 @@ conditions and the model is applied.</p>
 <br /><p>And the model indicates that for the oxyhaemoglobin data that ipsilateral
 responses are 3.4 μMol smaller than those on the contralateral side to the
 hand that is tapping.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.114 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  19 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.720 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  18 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-16-waveform-group-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/dbf2d5f5770776e46b2030610adfa52f/plot_16_waveform_group.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_16_waveform_group.py</span></code></a></p>

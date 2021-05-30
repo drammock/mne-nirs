@@ -104,7 +104,7 @@ Analysis examples
 .. only:: html
 
  .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_12_group_glm_thumb.png
-     :alt: Group Level GLM
+     :alt: Group Level GLM Analysis
 
      :ref:`sphx_glr_auto_examples_general_plot_12_group_glm.py`
 

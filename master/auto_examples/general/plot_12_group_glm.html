@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group Level GLM &#8212; MNE-NIRS 0.0.5 dev documentation</title>
+    <title>Group Level GLM Analysis &#8212; MNE-NIRS 0.0.5 dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -205,8 +205,8 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-general-plot-12-group-glm-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
-<div class="sphx-glr-example-title section" id="group-level-glm">
-<span id="tut-fnirs-group"></span><span id="sphx-glr-auto-examples-general-plot-12-group-glm-py"></span><h1>Group Level GLM<a class="headerlink" href="#group-level-glm" title="Permalink to this headline">¶</a></h1>
+<div class="sphx-glr-example-title section" id="group-level-glm-analysis">
+<span id="tut-fnirs-group"></span><span id="sphx-glr-auto-examples-general-plot-12-group-glm-py"></span><h1>Group Level GLM Analysis<a class="headerlink" href="#group-level-glm-analysis" title="Permalink to this headline">¶</a></h1>
 <p>This is an example of a group level GLM based
 functional near-infrared spectroscopy (fNIRS)
 analysis in MNE-NIRS.</p>
@@ -237,10 +237,15 @@ The dataset contains 5 participants.
 The example dataset is in
 <a class="reference external" href="https://bids.neuroimaging.io">BIDS</a>
 format and therefore already contains
-information about triggers, condition names, etc.
-The BIDS specification for NIRS data is still under development,
-as such you must use the development branch of MNE-BIDS as listed in the
-<cite>requirements_doc.txt</cite> file to run this example.</p>
+information about triggers, condition names, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The BIDS specification for NIRS data is still under development. See:
+<a class="reference external" href="https://github.com/bids-standard/bids-specification/pull/802">fNIRS BIDS proposal</a>.
+As such, you must use the development branch of MNE-BIDS.</p>
+<p>To install the fNIRS development branch of MNE-BIDS run:
+<cite>pip install https://codeload.github.com/rob-luke/mne-bids/zip/nirs</cite></p>
+</div>
 <div class="panel panel-success">
 <div class="panel-heading"><h4 class="panel-title">
 <a data-toggle="collapse" href="#collapse_chevron-circle-down-data-description-click-to-expand"><em class="fa fa-chevron-circle-down"></em> Data description (click to expand)</a></h4></div>
@@ -416,24 +421,18 @@ for the region of interest, channel level, and contrast results.</p>
 Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
 
   0%|          | Downloading : 0.00/0.00 [00:00&lt;?,        ?B/s]
-  0%|          | Downloading : 8.00k/0.00 [00:00&lt;00:00,    16.0kB/s]
-  0%|          | Downloading : 256k/0.00 [00:00&lt;00:00,     520kB/s]
-  0%|          | Downloading : 768k/0.00 [00:00&lt;00:00,    1.55MB/s]
-  0%|          | Downloading : 1.75M/0.00 [00:00&lt;00:00,    3.56MB/s]
-  0%|          | Downloading : 2.75M/0.00 [00:00&lt;00:00,    5.51MB/s]
-  0%|          | Downloading : 3.75M/0.00 [00:00&lt;00:00,    7.44MB/s]
-  0%|          | Downloading : 5.75M/0.00 [00:00&lt;00:00,    11.4MB/s]
-  0%|          | Downloading : 7.75M/0.00 [00:00&lt;00:00,    15.2MB/s]
-  0%|          | Downloading : 9.75M/0.00 [00:00&lt;00:00,    11.6MB/s]
-  0%|          | Downloading : 12.8M/0.00 [00:01&lt;00:00,    15.4MB/s]
-  0%|          | Downloading : 16.8M/0.00 [00:01&lt;00:00,    13.7MB/s]
-  0%|          | Downloading : 19.8M/0.00 [00:01&lt;00:00,    16.4MB/s]
-  0%|          | Downloading : 23.8M/0.00 [00:01&lt;00:00,    20.0MB/s]
-  0%|          | Downloading : 25.8M/0.00 [00:01&lt;00:00,    14.6MB/s]
-  0%|          | Downloading : 28.8M/0.00 [00:01&lt;00:00,    16.5MB/s]
-  0%|          | Downloading : 34.8M/0.00 [00:02&lt;00:00,    15.2MB/s]
-  0%|          | Downloading : 40.8M/0.00 [00:02&lt;00:00,    18.3MB/s]
-  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    17.1MB/s]
+  0%|          | Downloading : 8.00k/0.00 [00:00&lt;00:00,    16.6kB/s]
+  0%|          | Downloading : 512k/0.00 [00:00&lt;00:00,    1.08MB/s]
+  0%|          | Downloading : 2.00M/0.00 [00:00&lt;00:00,    4.30MB/s]
+  0%|          | Downloading : 5.00M/0.00 [00:00&lt;00:00,    10.5MB/s]
+  0%|          | Downloading : 9.00M/0.00 [00:00&lt;00:00,    18.6MB/s]
+  0%|          | Downloading : 13.0M/0.00 [00:00&lt;00:00,    15.6MB/s]
+  0%|          | Downloading : 19.0M/0.00 [00:01&lt;00:00,    16.0MB/s]
+  0%|          | Downloading : 25.0M/0.00 [00:01&lt;00:00,    15.3MB/s]
+  0%|          | Downloading : 31.0M/0.00 [00:01&lt;00:00,    19.2MB/s]
+  0%|          | Downloading : 35.0M/0.00 [00:02&lt;00:00,    16.5MB/s]
+  0%|          | Downloading : 41.0M/0.00 [00:02&lt;00:00,    19.7MB/s]
+  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    18.8MB/s]
 Verifying hash ef2d41fc2824ded78d065214cdbc9b36.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
 (please be patient, this can take some time)
@@ -484,7 +483,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="zEZ8d0"></div>
+          <div id="uwI63x"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
@@ -535,7 +534,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("zEZ8d0");
+       var plotContainer = document.getElementById("uwI63x");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -680,7 +679,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="FcQgSo"></div>
+          <div id="yADkJQ"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
@@ -754,7 +753,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 'shape':2
 }]
 };
-       var plotContainer = document.getElementById("FcQgSo");
+       var plotContainer = document.getElementById("yADkJQ");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -1388,8 +1387,8 @@ This can be generated from the statistics dataframe.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.817 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  46 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  15.690 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  48 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-12-group-glm-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ad7b38cd82f9127b80c918454c0397d1/plot_12_group_glm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_12_group_glm.py</span></code></a></p>
