@@ -378,7 +378,7 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.292 seconds)
+   **Total running time of the script:** ( 0 minutes  3.257 seconds)
 
 **Estimated memory usage:**  63 MB
 

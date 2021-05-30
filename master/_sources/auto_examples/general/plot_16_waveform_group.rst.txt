@@ -244,9 +244,9 @@ dictionary (`all_evokeds`) by condition.
 
  .. code-block:: none
 
-    /tmp/tmp0h4e2g6u/8795c113cb3e803bffe7be503d3f0bc5078c73eb/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmpkz0_iccm/b66f5d135ced4683ee401c50c03b4b5d8734d648/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
-    /tmp/tmp0h4e2g6u/8795c113cb3e803bffe7be503d3f0bc5078c73eb/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmpkz0_iccm/b66f5d135ced4683ee401c50c03b4b5d8734d648/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
 
 
@@ -340,7 +340,7 @@ inset.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f9377ad11c0>
+    <matplotlib.legend.Legend object at 0x7f88d6036c40>
 
 
 
@@ -460,7 +460,7 @@ regions of the brain per condition.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f9377b1cca0>
+    <matplotlib.legend.Legend object at 0x7f88d6b34d90>
 
 
 
@@ -632,7 +632,7 @@ single ROI between conditions.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="LpXnS7"></div>
+              <div id="ZRnwL1"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
@@ -680,7 +680,7 @@ single ROI between conditions.
     }
     }]
     };
-           var plotContainer = document.getElementById("LpXnS7");
+           var plotContainer = document.getElementById("ZRnwL1");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -856,9 +856,9 @@ hand that is tapping.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.877 seconds)
+   **Total running time of the script:** ( 0 minutes  10.487 seconds)
 
-**Estimated memory usage:**  27 MB
+**Estimated memory usage:**  20 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_16_waveform_group.py:

@@ -50,6 +50,10 @@ This GLM analysis is a wrapper over the excellent
 .. note::
 
    This is an advanced tutorial and requires knowledge of pandas and numpy.
+   In the future I would like to write some functions to make this more
+   convenient.
+
+.. note::
 
    The sample rate used in this example is set to 0.5 Hz. This is to ensure
    the code can run on the continuous integration servers. You may wish to
@@ -60,7 +64,7 @@ This GLM analysis is a wrapper over the excellent
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-76
+.. GENERATED FROM PYTHON SOURCE LINES 49-80
 
 .. code-block:: default
 
@@ -102,7 +106,7 @@ This GLM analysis is a wrapper over the excellent
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-86
+.. GENERATED FROM PYTHON SOURCE LINES 81-90
 
 Define FIR analysis
 ---------------------------------------------------------------------
@@ -114,7 +118,7 @@ This results in values being estimated for 10 `delay` steps,
 due to the sample rate of 0.5 Hz, these delays
 correspond to 0, 2, 4... seconds from the onset of the stimulus.
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-128
+.. GENERATED FROM PYTHON SOURCE LINES 90-132
 
 .. code-block:: default
 
@@ -167,7 +171,7 @@ correspond to 0, 2, 4... seconds from the onset of the stimulus.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-134
+.. GENERATED FROM PYTHON SOURCE LINES 133-138
 
 Run analysis
 ---------------------------------------------------------------------
@@ -175,7 +179,7 @@ Run analysis
 Each subject is looped over and the above analysis is performed on each
 measurement. The results are appended to a dataframe for analysis below.
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-150
+.. GENERATED FROM PYTHON SOURCE LINES 138-154
 
 .. code-block:: default
 
@@ -229,7 +233,7 @@ measurement. The results are appended to a dataframe for analysis below.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-157
+.. GENERATED FROM PYTHON SOURCE LINES 155-161
 
 Tidy the dataframe
 ---------------------------------------------------------------------
@@ -238,7 +242,7 @@ To simplify this tutorial we only examine the data from the right hand
 tapping condition. The code below retains only the relevant information
 in the dataframe and design matrix for the following statistical analysis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-177
+.. GENERATED FROM PYTHON SOURCE LINES 161-181
 
 .. code-block:: default
 
@@ -269,7 +273,7 @@ in the dataframe and design matrix for the following statistical analysis.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 178-183
+.. GENERATED FROM PYTHON SOURCE LINES 182-187
 
 Run group level model
 ---------------------------------------------------------------------
@@ -277,7 +281,7 @@ Run group level model
 A linear mixed effects model is used to determine the effect of delay and
 chromophore on the response with participant as a random variable.
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-191
+.. GENERATED FROM PYTHON SOURCE LINES 187-195
 
 .. code-block:: default
 
@@ -296,7 +300,7 @@ chromophore on the response with participant as a random variable.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-199
+.. GENERATED FROM PYTHON SOURCE LINES 196-203
 
 Summarise group level findings
 ---------------------------------------------------------------------
@@ -306,7 +310,7 @@ easier analysis below.
 A subset of the results is displayed, illustrating the estimated coefficients
 for the tapping condition with the oxyhaemoglobin data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 199-208
+.. GENERATED FROM PYTHON SOURCE LINES 203-212
 
 .. code-block:: default
 
@@ -495,14 +499,14 @@ for the tapping condition with the oxyhaemoglobin data.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-213
+.. GENERATED FROM PYTHON SOURCE LINES 213-217
 
 In the output above note that there are 10 delays. And an estimate of the
 coefficient has been calculated for each delay.
 These coefficients must be multiplied by the FIR function to obtain the
 morphology of the fNIRS response.
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-223
+.. GENERATED FROM PYTHON SOURCE LINES 219-227
 
 Plot response from single condition
 ---------------------------------------------------------------------
@@ -513,7 +517,7 @@ for the right hand tapping condition for the oxyhaemoglobin data.
 The second facet illustrates the overall estimated response for each
 chromophore and is calculated by summing the individual FIR components.
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-259
+.. GENERATED FROM PYTHON SOURCE LINES 227-267
 
 .. code-block:: default
 
@@ -544,8 +548,10 @@ chromophore and is calculated by summing the individual FIR components.
     axes[1].plot(index_values, np.sum(dm_cond_scaled_hbr, axis=1), 'b')
 
     # Format the plot
-    axes[0].set_xlim(-5, 35)
-    axes[1].set_xlim(-5, 35)
+    axes[0].set_xlim(-5, 30)
+    axes[1].set_xlim(-5, 30)
+    axes[0].set_ylim(-5, 8)
+    axes[1].set_ylim(-5, 8)
     axes[0].set_title("FIR Components (Tapping/Right)")
     axes[1].set_title("Evoked Response (Tapping/Right)")
     axes[0].set_ylabel("Oyxhaemoglobin (ΔμMol)")
@@ -553,6 +559,8 @@ chromophore and is calculated by summing the individual FIR components.
     axes[1].legend(["Oyxhaemoglobin", "Deoyxhaemoglobin"])
     axes[0].set_xlabel("Time (s)")
     axes[1].set_xlabel("Time (s)")
+
+
 
 
 
@@ -573,12 +581,74 @@ chromophore and is calculated by summing the individual FIR components.
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 268-271
+
+Plot responses with confidence intervals
+---------------------------------------------------------------------
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 271-303
+
+.. code-block:: default
+
+
+    # We can also extract the 95% confidence intervals of the estimates too
+    l95_hbo = [float(v) for v in df_hbo["[0.025"]]  # lower estimate
+    u95_hbo = [float(v) for v in df_hbo["0.975]"]]  # upper estimate
+    dm_cond_scaled_hbo_l95 = dm_cond * l95_hbo
+    dm_cond_scaled_hbo_u95 = dm_cond * u95_hbo
+    l95_hbr = [float(v) for v in df_hbr["[0.025"]]  # lower estimate
+    u95_hbr = [float(v) for v in df_hbr["0.975]"]]  # upper estimate
+    dm_cond_scaled_hbr_l95 = dm_cond * l95_hbr
+    dm_cond_scaled_hbr_u95 = dm_cond * u95_hbr
+
+    fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(7, 7))
+
+    # Plot the result
+    axes.plot(index_values, np.sum(dm_cond_scaled_hbo, axis=1), 'r')
+    axes.plot(index_values, np.sum(dm_cond_scaled_hbr, axis=1), 'b')
+    axes.fill_between(index_values,
+                         np.sum(dm_cond_scaled_hbo_l95, axis=1),
+                         np.sum(dm_cond_scaled_hbo_u95, axis=1),
+                         facecolor='red', alpha=0.25)
+    axes.fill_between(index_values,
+                         np.sum(dm_cond_scaled_hbr_l95, axis=1),
+                         np.sum(dm_cond_scaled_hbr_u95, axis=1),
+                         facecolor='blue', alpha=0.25)
+
+    # Format the plot
+    axes.set_xlim(-5, 30)
+    axes.set_ylim(-7, 10)
+    axes.set_title("Evoked Response (Tapping/Right)")
+    axes.set_ylabel("Haemoglobin (ΔμMol)")
+    axes.legend(["Oyxhaemoglobin", "Deoyxhaemoglobin"])
+    axes.set_xlabel("Time (s)")
+
+
+
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_13_fir_glm_002.png
+   :alt: Evoked Response (Tapping/Right)
+   :srcset: /auto_examples/general/images/sphx_glr_plot_13_fir_glm_002.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    Text(0.5, 47.7222222222222, 'Time (s)')
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.368 seconds)
+   **Total running time of the script:** ( 0 minutes  24.041 seconds)
 
-**Estimated memory usage:**  65 MB
+**Estimated memory usage:**  62 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_13_fir_glm.py:
