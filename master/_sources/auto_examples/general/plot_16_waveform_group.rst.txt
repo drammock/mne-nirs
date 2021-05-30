@@ -244,9 +244,9 @@ dictionary (`all_evokeds`) by condition.
 
  .. code-block:: none
 
-    /tmp/tmpv214mm9e/1738b94cd9b11c944a9e9156d2652358319a296a/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmp0h4e2g6u/8795c113cb3e803bffe7be503d3f0bc5078c73eb/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
-    /tmp/tmpv214mm9e/1738b94cd9b11c944a9e9156d2652358319a296a/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmp0h4e2g6u/8795c113cb3e803bffe7be503d3f0bc5078c73eb/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
 
 
@@ -340,7 +340,7 @@ inset.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7faf2e7c6130>
+    <matplotlib.legend.Legend object at 0x7f9377ad11c0>
 
 
 
@@ -460,7 +460,7 @@ regions of the brain per condition.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7faf2e809250>
+    <matplotlib.legend.Legend object at 0x7f9377b1cca0>
 
 
 
@@ -632,14 +632,14 @@ single ROI between conditions.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="O0vUdf"></div>
+              <div id="LpXnS7"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     'data':{
     'ID':["P1","P1","P2","P2","P3","P3","P4","P4","P5","P5","P1","P1","P2","P2","P3","P3","P4","P4","P5","P5","P1","P1","P2","P2","P3","P3","P4","P4","P5","P5"],
     'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     'Condition':["Control","Control","Control","Control","Control","Control","Control","Control","Control","Control","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right"],
-    'Value':[-0.3295528573408303,-0.6133735919400423,-0.16729631089212055,-0.6047449882561275,-0.15189216881524625,1.1555431609075442,0.35071337426859933,0.19914298445674314,1.258891348043883,1.741419373277339,8.211843698809327,11.294978700456616,7.655505813602202,9.05672405932611,2.750590839195569,5.5220526297042944,8.196649348247886,16.764419825157983,7.083026405396805,14.491281382572621,10.262367793693684,6.4368693886198205,11.77835511377441,4.504846370846221,1.860814131700515,2.4750090383740995,8.18491013292426,3.9350617324464756,14.305775852714703,10.221162137455634]
+    'Value':[-0.3295528573408232,-0.6133735919400433,-0.167296310892127,-0.6047449882561191,-0.15189216881524356,1.1555431609075404,0.3507133742685919,0.19914298445673811,1.2588913480438833,1.741419373277338,8.211843698809316,11.29497870045667,7.655505813602199,9.056724059326124,2.7505908391955534,5.522052629704317,8.196649348247906,16.764419825157972,7.083026405396799,14.491281382572614,10.262367793693675,6.436869388619864,11.778355113774406,4.504846370846226,1.860814131700511,2.475009038374111,8.184910132924282,3.935061732446445,14.305775852714694,10.22116213745563]
     },
     'mapping':{
     'x':"Condition",
@@ -680,7 +680,7 @@ single ROI between conditions.
     }
     }]
     };
-           var plotContainer = document.getElementById("O0vUdf");
+           var plotContainer = document.getElementById("LpXnS7");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -856,9 +856,9 @@ hand that is tapping.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.249 seconds)
+   **Total running time of the script:** ( 0 minutes  9.877 seconds)
 
-**Estimated memory usage:**  18 MB
+**Estimated memory usage:**  27 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_16_waveform_group.py:
