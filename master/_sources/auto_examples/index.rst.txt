@@ -120,7 +120,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel functional near-infrared spectroscopy ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multi-channel functional near-infrared spectroscopy...">
 
 .. only:: html
 
