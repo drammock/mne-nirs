@@ -162,7 +162,7 @@ Analysis examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of a group level waveform based functional near-infrared spectroscopy (fNIRS...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of a group-level waveform-based functional near-infrared spectroscopy (fNIRS...">
 
 .. only:: html
 

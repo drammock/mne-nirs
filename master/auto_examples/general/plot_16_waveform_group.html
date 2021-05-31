@@ -212,7 +212,7 @@ to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="group-level-waveform-analysis">
 <span id="tut-fnirs-group-wave"></span><span id="sphx-glr-auto-examples-general-plot-16-waveform-group-py"></span><h1>Group Level Waveform Analysis<a class="headerlink" href="#group-level-waveform-analysis" title="Permalink to this headline">¶</a></h1>
-<p>This is an example of a group level waveform based
+<p>This is an example of a group-level waveform-based
 functional near-infrared spectroscopy (fNIRS)
 analysis in MNE-NIRS.</p>
 <div class="sidebar">
@@ -227,17 +227,19 @@ outputs of neuroimaging experiments.” Scientific data 3.1 (2016): 1-9.</p>
 <p>Santosa, H., Zhai, X., Fishburn, F., &amp; Huppert, T. (2018).
 The NIRS brain AnalyzIR toolbox. Algorithms, 11(5), 73.</p>
 </div>
-<p>Individual level analysis of this data is described in the
+<p>Individual-level analysis of this data is described in the
 <a class="reference internal" href="plot_15_waveform.html#tut-fnirs-processing"><span class="std std-ref">MNE-NIRS fNIRS waveform tutorial</span></a>
 and the
 <a class="reference internal" href="plot_11_hrf_measured.html#tut-fnirs-hrf"><span class="std std-ref">MNE-NIRS fNIRS GLM tutorial</span></a>.
-As such, this example will skim over the individual level details
-and focus on the group level aspects of analysis.
+As such, this example will skim over the individual-level details
+and focus on the group-level aspects of analysis.
 Here we describe how to process multiple measurements
-and summarise group level effects both as summary statistics and visually.</p>
+and how to summarise group-level effects either by
+visual presentation of the results or with summary statistics.</p>
 <p>The data used in this example is available
 <a class="reference external" href="https://github.com/rob-luke/BIDS-NIRS-Tapping">at this location</a>.
-It is a finger tapping example and is briefly described below.
+The data was collected from a finger tapping experiment
+that is briefly described below.
 The dataset contains 5 participants.
 The example dataset is in
 <a class="reference external" href="https://bids.neuroimaging.io">BIDS</a>
@@ -255,13 +257,14 @@ As such, you must use the development branch of MNE-BIDS.</p>
 <div class="panel-heading"><h4 class="panel-title">
 <a data-toggle="collapse" href="#collapse_chevron-circle-down-data-description-click-to-expand"><em class="fa fa-chevron-circle-down"></em> Data description (click to expand)</a></h4></div>
 <div id="collapse_chevron-circle-down-data-description-click-to-expand" class="panel-collapse collapse">
-<div class="panel-body"><p>Optodes were placed over the motor cortex using the standard NIRX motor
-montage, but with 8 short channels added (see their web page for details).
+<div class="panel-body"><p>Optodes were placed over the motor cortex using the standard NIRx motor
+montage with 8 short channels added (see their web page for details).
 To view the sensor locations run
 <cite>raw_intensity.plot_sensors()</cite>.
-A sound was presented to indicate which hand the participant should tap.
-Participants tapped their thumb to their fingers for 5s.
-Conditions were presented in a random order with a randomised inter
+A 5 sec sound was presented in either the left or right ear to indicate
+which hand the participant should tap.
+Participants tapped their thumb to their fingers for the entire 5 sec.
+Conditions were presented in a random order with a randomised inter-
 stimulus interval.</p>
 </div></div></div><div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
@@ -314,7 +317,7 @@ stimulus interval.</p>
 <span class="kn">from</span> <span class="nn">lets_plot</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Set general parameters</span>
-<a href="https://mne.tools/stable/generated/mne.set_log_level.html#mne.set_log_level" title="mne.set_log_level" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-function"><span class="n">set_log_level</span></a><span class="p">(</span><span class="s2">&quot;WARNING&quot;</span><span class="p">)</span>  <span class="c1"># Don&#39;t show info, as is repetitive for many subjects</span>
+<a href="https://mne.tools/stable/generated/mne.set_log_level.html#mne.set_log_level" title="mne.set_log_level" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-function"><span class="n">set_log_level</span></a><span class="p">(</span><span class="s2">&quot;WARNING&quot;</span><span class="p">)</span>  <span class="c1"># Don&#39;t show info, as it is repetitive for many subjects</span>
 <span class="n">LetsPlot</span><span class="o">.</span><span class="n">setup_html</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -325,11 +328,11 @@ stimulus interval.</p>
 <p><a class="reference internal" href="plot_15_waveform.html#tut-fnirs-processing"><span class="std std-ref">Waveform individual analysis</span></a></p>
 <p><a class="reference internal" href="plot_11_hrf_measured.html#tut-fnirs-hrf"><span class="std std-ref">GLM individual analysis</span></a></p>
 </div>
-<p>First we define the analysis that will be applied to each file.
-This is a waveform analysis as described in the
+<p>First, we define the analysis that will be applied to each participant file.
+This is the same waveform analysis as described in the
 <a class="reference internal" href="plot_15_waveform.html#tut-fnirs-processing"><span class="std std-ref">individual waveform tutorial</span></a>
 and <a class="reference internal" href="plot_21_artifacts.html#ex-fnirs-artifacts"><span class="std std-ref">artifact correction tutorial</span></a>.
-As such, this example will skim over the individual level details.</p>
+As such, this example will skim over the individual-level details.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">individual_analysis</span><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="p">):</span>
 
     <span class="c1"># Read data with annotations in BIDS format</span>
@@ -369,11 +372,12 @@ As such, this example will skim over the individual level details.</p>
 </div>
 <div class="section" id="run-analysis-on-all-data">
 <h2><a class="toc-backref" href="#id4">Run analysis on all data</a><a class="headerlink" href="#run-analysis-on-all-data" title="Permalink to this headline">¶</a></h2>
-<p>Next we loop through the five measurements and run the individual analysis
-on each. For each individual the function returns the raw data and an
-epoch structure. The epoch structure is then averaged to obtain an evoked
-response per participant. The individual evoked data is stored in a
-dictionary (<cite>all_evokeds</cite>) by condition.</p>
+<p>Next, we loop through the five participants’ measurements and run the
+individual analysis on each. For each individual, the function
+returns the raw data and an epoch structure. The epoch structure is
+then averaged to obtain an evoked response from each participant.
+The individual-evoked data is stored in a
+dictionary (<cite>all_evokeds</cite>) for each condition.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class"><span class="n">defaultdict</span></a><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 
 <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sub</span></a> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>  <span class="c1"># Loop from first to fifth subject</span>
@@ -386,22 +390,22 @@ dictionary (<cite>all_evokeds</cite>) by condition.</p>
     <span class="c1"># Analyse data and return both ROI and channel results</span>
     <span class="n">raw_haemo</span><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span></a> <span class="o">=</span> <span class="n">individual_analysis</span><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">bids_path</span></a><span class="p">)</span>
 
-    <span class="c1"># Save evoked individual participant data along with others in all_evokeds</span>
+    <span class="c1"># Save individual-evoked participant data along with others in all_evokeds</span>
     <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cidx</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.str_" title="numpy.str_" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">condition</span></a> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span><span class="o">.</span><span class="n">event_id</span></a><span class="p">):</span>
         <a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">[</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.str_" title="numpy.str_" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">condition</span></a><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.Epochs.html#mne.Epochs" title="mne.Epochs" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">epochs</span></a><span class="p">[</span><a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.str_" title="numpy.str_" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">condition</span></a><span class="p">]</span><span class="o">.</span><span class="n">average</span><span class="p">())</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpamrkxu_7/ca3d6a698d339f53794937184436472bd1919a16/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmp7z1d12uh/459cb3ce7722bd42f4a7f5449debfc00c2b88c94/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
-/tmp/tmpamrkxu_7/ca3d6a698d339f53794937184436472bd1919a16/examples/general/plot_16_waveform_group.py:135: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+/tmp/tmp7z1d12uh/459cb3ce7722bd42f4a7f5449debfc00c2b88c94/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
 </pre></div>
 </div>
-<p>The end result is a dictionary indexed per condition.
-With each item in the dictionary being a list of evoked responses.
-See below that for each condition we have obtained an MNE evoked type
-that is generated from the average of 30 trials and epoched from -5 to
+<p>The end result is a dictionary that is indexed per condition,
+with each item in the dictionary being a list of evoked responses.
+See below that for each condition we have obtained a MNE evoked type
+that is generated from the average of all 30 trials and epoched from -5 to
 20 seconds.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/pprint.html#pprint.pprint" title="pprint.pprint" class="sphx-glr-backref-module-pprint sphx-glr-backref-type-py-function"><span class="n">pprint</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">)</span>
 </pre></div>
@@ -428,10 +432,10 @@ that is generated from the average of 30 trials and epoched from -5 to
 </div>
 <div class="section" id="view-average-waveform">
 <h2><a class="toc-backref" href="#id5">View average waveform</a><a class="headerlink" href="#view-average-waveform" title="Permalink to this headline">¶</a></h2>
-<p>Next a grand average epoch waveform is generated per condition.
-This is generated using all long fNIRS channels, as illustrated in the head
-inset.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the figure size and limits per chromophore.</span>
+<p>Next, a grand average epoch waveform is generated for each condition.
+This is generated using all of the standard (long) fNIRS channels,
+as illustrated by the head inset in the top right corner of the figure.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the figure size and limits per chromophore</span>
 <a href="https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lims</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">hbo</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> <span class="n">hbr</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
 
@@ -446,12 +450,12 @@ inset.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f6800e16760&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fe59797bca0&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping condition
-with the right hand seems larger than when no tapping occurred in the control
-condition (similar for tapping with the left hand).
+with the right hand appears larger than when no tapping occurred in the
+control condition (similar for when tapping occurred with the left hand).
 We test if this is the case in the analysis below.</p>
 </div>
 <div class="section" id="generate-regions-of-interest">
@@ -466,15 +470,15 @@ interest in functional near-infrared spectroscopy for measuring cortical
 activation to auditory-only and visual-only speech.”
 Hearing Research (2021): <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378595521000903">108256</a>.</p>
 </div>
-<p>Here we specify two regions of interest by listing out the source-detector
+<p>Here we specify two regions of interest (ROIs) by listing the source-detector
 pairs of interest and then determining which channels these correspond to
 within the raw data structure. The channel indices are stored in a
 dictionary for access below.
 The fOLD toolbox can be used to assist in the design of ROIs.
 And consideration should be paid to ensure optimal size ROIs are selected.</p>
-<p>In this example two ROIs are generated. One for the left motor cortex,
+<p>In this example, two ROIs are generated. One for the left motor cortex
 and one for the right motor cortex. These are called <cite>Left_Hemisphere</cite> and
-<cite>Right_Hemisphere</cite> and stored in the <cite>rois</cite> dictionary.</p>
+<cite>Right_Hemisphere</cite> and are stored in the <cite>rois</cite> dictionary.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify channel pairs for each ROI</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">left</span></a> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">right</span></a> <span class="o">=</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
@@ -494,9 +498,9 @@ and one for the right motor cortex. These are called <cite>Left_Hemisphere</cite
 </div>
 <div class="section" id="create-average-waveform-per-roi">
 <h2><a class="toc-backref" href="#id7">Create average waveform per ROI</a><a class="headerlink" href="#create-average-waveform-per-roi" title="Permalink to this headline">¶</a></h2>
-<p>Next an average waveform is generated per condition per region of interest.
+<p>Next, an average waveform is generated per condition per region of interest.
 This allows the researcher to view the responses elicited in different
-regions of the brain per condition.</p>
+regions of the brain for each condition.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the figure size and limits per chromophore.</span>
 <a href="https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fig</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rois</span></a><span class="p">),</span> <span class="n">ncols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">),</span>
                          <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -521,22 +525,23 @@ regions of the brain per condition.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f67fef0da30&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fe59984f5b0&gt;
 </pre></div>
 </div>
-<p>From this figure we observe that the response to the tapping seems
-largest in the brain region contralateral to the tapping.
-We test if this is the case in the analysis below.</p>
+<p>From this figure we observe that the response to tapping appears
+largest in the brain region that is contralateral to the hand
+that is tapping. We test if this is the case in the analysis below.</p>
 </div>
 <div class="section" id="extract-evoked-amplitude">
 <h2><a class="toc-backref" href="#id8">Extract evoked amplitude</a><a class="headerlink" href="#extract-evoked-amplitude" title="Permalink to this headline">¶</a></h2>
 <p>The waveforms above provide a qualitative overview of the data.
-It is also useful to perform a quantitative analysis based on features in
-the dataset. Here we extract the average value of the waveform between
+It is also useful to perform a quantitative analysis based on the relevant
+features in the dataset.
+Here we extract the average value of the waveform between
 5 and 7 seconds for each subject, condition, region of interest, and
-chromophore. This data is stored in a dataframe. The dataframe is saved
-to a csv for easy analysis in any statistical analysis software.
-We also demonstrate two example analysis on these values below.</p>
+chromophore. The data is then stored in a dataframe, which is saved
+to a csv file for easy analysis in any statistical analysis software.
+We also demonstrate two example analyses on these values below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;ROI&#39;</span><span class="p">,</span> <span class="s1">&#39;Chroma&#39;</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">])</span>
 
 <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/arrays.scalars.html#numpy.str_" title="numpy.str_" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">evoked</span></a> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">all_evokeds</span></a><span class="p">):</span>
@@ -637,11 +642,11 @@ We also demonstrate two example analysis on these values below.</p>
 <p>This figure simply summarises the information in the dataframe created above.
 We observe that the values extracted from the waveform for the control
 condition generally sit around 0. Whereas the tapping conditions have
-larger values. There is quite some spread in the values for the tapping
-conditions, this is typical of a group study. Many factors affect the
-response amplitude in an fNIRS experiment including skin thickness,
+larger values. There is quite some variation in the values for the tapping
+conditions, which is typical of a group-level result. Many factors affect the
+response amplitude in an fNIRS experiment, including skin thickness and
 skull thickness, both of which vary across the head and across participants.
-For this reason fNIRS is most appropriate for detecting changes within a
+For this reason, fNIRS is most appropriate for detecting changes within a
 single ROI between conditions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ggplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbo&#39;&quot;</span><span class="p">),</span>
        <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Value&#39;</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">color</span></a><span class="o">=</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">&#39;ROI&#39;</span><span class="p">))</span> \
@@ -657,14 +662,14 @@ single ROI between conditions.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="veE1eG"></div>
+          <div id="EGlLs4"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 'data':{
 'ID':["P1","P1","P2","P2","P3","P3","P4","P4","P5","P5","P1","P1","P2","P2","P3","P3","P4","P4","P5","P5","P1","P1","P2","P2","P3","P3","P4","P4","P5","P5"],
 'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
 'Condition':["Control","Control","Control","Control","Control","Control","Control","Control","Control","Control","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right"],
-'Value':[-0.3295528573408303,-0.6133735919400423,-0.16729631089212055,-0.6047449882561275,-0.15189216881524625,1.1555431609075442,0.35071337426859933,0.19914298445674314,1.258891348043883,1.741419373277339,8.211843698809327,11.294978700456616,7.655505813602202,9.05672405932611,2.750590839195569,5.5220526297042944,8.196649348247886,16.764419825157983,7.083026405396805,14.491281382572621,10.262367793693684,6.4368693886198205,11.77835511377441,4.504846370846221,1.860814131700515,2.4750090383740995,8.18491013292426,3.9350617324464756,14.305775852714703,10.221162137455634]
+'Value':[-0.3295528573408232,-0.6133735919400433,-0.167296310892127,-0.6047449882561191,-0.15189216881524356,1.1555431609075404,0.3507133742685919,0.19914298445673811,1.2588913480438833,1.741419373277338,8.211843698809316,11.29497870045667,7.655505813602199,9.056724059326124,2.7505908391955534,5.522052629704317,8.196649348247906,16.764419825157972,7.083026405396799,14.491281382572614,10.262367793693675,6.436869388619864,11.778355113774406,4.504846370846226,1.860814131700511,2.475009038374111,8.184910132924282,3.935061732446445,14.305775852714694,10.22116213745563]
 },
 'mapping':{
 'x':"Condition",
@@ -705,7 +710,7 @@ single ROI between conditions.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("veE1eG");
+       var plotContainer = document.getElementById("EGlLs4");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -715,8 +720,9 @@ single ROI between conditions.</p>
 <br /></div>
 <div class="section" id="research-question-1-comparison-of-conditions">
 <h2><a class="toc-backref" href="#id10">Research question 1: Comparison of conditions</a><a class="headerlink" href="#research-question-1-comparison-of-conditions" title="Permalink to this headline">¶</a></h2>
-<p>In this example question we ask: is the hbo responsen the left ROI to tapping
-with the right hand larger than the response when not tapping (control)?
+<p>In this example question we ask: is the HbO response in the
+left ROI to tapping with the right hand larger
+than the response when not tapping (control)?
 For this token example we subset the dataframe and then apply the mixed
 effect model.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">input_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Control&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
@@ -765,17 +771,17 @@ effect model.</p>
 </table>
 </div>
 <br />
-<br /><p>The model indicates that for the oxyhaemoglobin data in the left
-region of interest, that the tapping condition with the right hand evokes
-a 9 μM larger response than the control.</p>
+<br /><p>The model indicates that for the oxyhaemoglobin (HbO) data in the left
+ROI, that the tapping condition with the right hand evokes
+a 9.0 μMol larger response than the control condition.</p>
 </div>
 <div class="section" id="research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping">
 <h2><a class="toc-backref" href="#id11">Research question 2: Are responses larger on the contralateral side to tapping?</a><a class="headerlink" href="#research-question-2-are-responses-larger-on-the-contralateral-side-to-tapping" title="Permalink to this headline">¶</a></h2>
 <p>In this example question we ask: when tapping, is the brain region on the
 contralateral side of the brain to the tapping hand larger than the
 ipsilateral side?</p>
-<p>First the ROI data in the dataframe is encoded as ipsi- and contralateral
-to the tapping. Then the data is subset to just examine the tapping
+<p>First, the ROI data in the dataframe is encoded as ipsi- and contralateral
+to the tapping hand. Then the data is subset to just examine the two tapping
 conditions and the model is applied.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encode the ROIs as ipsi- or contralateral to the hand that is tapping.</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Hemishphere&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Unknown&quot;</span>
@@ -834,11 +840,11 @@ conditions and the model is applied.</p>
 </table>
 </div>
 <br />
-<br /><p>And the model indicates that for the oxyhaemoglobin data that ipsilateral
-responses are 3.4 μMol smaller than those on the contralateral side to the
+<br /><p>The model indicates that for the oxyhaemoglobin (HbO) data, the ipsilateral
+responses are 4.2 μMol smaller than those on the contralateral side to the
 hand that is tapping.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.005 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  20 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.829 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  18 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-16-waveform-group-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/dbf2d5f5770776e46b2030610adfa52f/plot_16_waveform_group.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_16_waveform_group.py</span></code></a></p>
