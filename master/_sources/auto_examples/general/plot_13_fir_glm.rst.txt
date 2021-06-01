@@ -507,23 +507,30 @@ A coefficient estimate has been calculated for each delay.
 These coefficients must be multiplied by the FIR function to obtain the
 morphology of the fNIRS response.
 
-.. GENERATED FROM PYTHON SOURCE LINES 220-228
+.. GENERATED FROM PYTHON SOURCE LINES 220-235
 
 Plot the response from a single condition
 ---------------------------------------------------------------------
 
-Finally we create a plot with two facets.
-The first facet illustrates the estimated amplitude of each FIR component
-for the right hand tapping condition for the oxyhaemoglobin data.
-The second facet illustrates the overall estimated response for each
-chromophore and is calculated by summing all the individual FIR components.
+Finally we create a plot with three facets.
+The first facet illustrates the FIR model that was used in the GLM analysis,
+the model results displayed in the table above indicate the scaling values
+that should be applied to this model so that it best describes the
+measured data.
+The second facet illustrates the estimated amplitude of each FIR component
+for the right hand tapping condition for the oxyhaemoglobin data,
+it is obtained by multiplying the FIR model by the estimated coefficients
+from the GLM output.
+The third facet illustrates the overall estimated response for each
+chromophore and is calculated by summing all the individual FIR components
+per chromophore (HbR not shown in first two facets).
 
-.. GENERATED FROM PYTHON SOURCE LINES 228-268
+.. GENERATED FROM PYTHON SOURCE LINES 235-277
 
 .. code-block:: default
 
 
-    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(15, 7))
+    fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(20, 10))
 
     # Extract design matrix columns that correspond to the condition of interest
     dm_cond_idxs = np.where(["Tapping" in n for n in dm.columns])[0]
@@ -544,29 +551,31 @@ chromophore and is calculated by summing all the individual FIR components.
     index_values = dm_cond_scaled_hbo.index - np.ceil(raw.annotations.onset[1])
 
     # Plot the result
-    axes[0].plot(index_values, dm_cond_scaled_hbo)
-    axes[1].plot(index_values, np.sum(dm_cond_scaled_hbo, axis=1), 'r')
-    axes[1].plot(index_values, np.sum(dm_cond_scaled_hbr, axis=1), 'b')
+    axes[0].plot(index_values, dm_cond)
+    axes[1].plot(index_values, dm_cond_scaled_hbo)
+    axes[2].plot(index_values, np.sum(dm_cond_scaled_hbo, axis=1), 'r')
+    axes[2].plot(index_values, np.sum(dm_cond_scaled_hbr, axis=1), 'b')
 
     # Format the plot
-    axes[0].set_xlim(-5, 30)
-    axes[1].set_xlim(-5, 30)
-    axes[0].set_ylim(-5, 8)
-    axes[1].set_ylim(-5, 8)
-    axes[0].set_title("FIR Components (Tapping/Right)")
-    axes[1].set_title("Evoked Response (Tapping/Right)")
-    axes[0].set_ylabel("Oyxhaemoglobin (ΔμMol)")
-    axes[1].set_ylabel("Haemoglobin (ΔμMol)")
-    axes[1].legend(["Oyxhaemoglobin", "Deoyxhaemoglobin"])
-    axes[0].set_xlabel("Time (s)")
-    axes[1].set_xlabel("Time (s)")
-
+    for ax in range(3):
+        axes[ax].set_xlim(-5, 30)
+        axes[ax].set_xlabel("Time (s)")
+    axes[0].set_ylim(-0.5, 1.3)
+    axes[1].set_ylim(-3, 8)
+    axes[2].set_ylim(-3, 8)
+    axes[0].set_title("FIR Model (Unscaled by GLM estimates)")
+    axes[1].set_title("FIR Components (Scaled by Tapping/Right GLM Estimates)")
+    axes[2].set_title("Evoked Response (Tapping/Right)")
+    axes[0].set_ylabel("FIR Model")
+    axes[1].set_ylabel("Oyxhaemoglobin (ΔμMol)")
+    axes[2].set_ylabel("Haemoglobin (ΔμMol)")
+    axes[2].legend(["Oyxhaemoglobin", "Deoyxhaemoglobin"])
 
 
 
 
 .. image-sg:: /auto_examples/general/images/sphx_glr_plot_13_fir_glm_001.png
-   :alt: FIR Components (Tapping/Right), Evoked Response (Tapping/Right)
+   :alt: FIR Model (Unscaled by GLM estimates), FIR Components (Scaled by Tapping/Right GLM Estimates), Evoked Response (Tapping/Right)
    :srcset: /auto_examples/general/images/sphx_glr_plot_13_fir_glm_001.png
    :class: sphx-glr-single-img
 
@@ -578,17 +587,17 @@ chromophore and is calculated by summing all the individual FIR components.
  .. code-block:: none
 
 
-    Text(0.5, 47.7222222222222, 'Time (s)')
+    <matplotlib.legend.Legend object at 0x7fb47a5b4ca0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 269-272
+.. GENERATED FROM PYTHON SOURCE LINES 278-281
 
 Plot the response with confidence intervals
 ---------------------------------------------------------------------
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 272-304
+.. GENERATED FROM PYTHON SOURCE LINES 281-313
 
 .. code-block:: default
 
@@ -647,9 +656,9 @@ Plot the response with confidence intervals
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.622 seconds)
+   **Total running time of the script:** ( 0 minutes  18.222 seconds)
 
-**Estimated memory usage:**  62 MB
+**Estimated memory usage:**  61 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_13_fir_glm.py:
