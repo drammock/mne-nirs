@@ -280,7 +280,7 @@ for the region of interest, channel level, and contrast results.
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    15.9kB/s]      0%|          | Downloading : 256k/0.00 [00:00<00:00,     517kB/s]       0%|          | Downloading : 768k/0.00 [00:00<00:00,    1.53MB/s]      0%|          | Downloading : 1.25M/0.00 [00:00<00:00,    2.51MB/s]      0%|          | Downloading : 2.25M/0.00 [00:00<00:00,    4.52MB/s]      0%|          | Downloading : 3.25M/0.00 [00:00<00:00,    6.50MB/s]      0%|          | Downloading : 5.25M/0.00 [00:00<00:00,    10.5MB/s]      0%|          | Downloading : 7.25M/0.00 [00:00<00:00,    14.4MB/s]      0%|          | Downloading : 9.25M/0.00 [00:00<00:00,    11.3MB/s]      0%|          | Downloading : 12.2M/0.00 [00:00<00:00,    15.2MB/s]      0%|          | Downloading : 16.2M/0.00 [00:01<00:00,    20.2MB/s]      0%|          | Downloading : 20.2M/0.00 [00:01<00:00,    16.9MB/s]      0%|          | Downloading : 26.2M/0.00 [00:01<00:00,    15.5MB/s]      0%|          | Downloading : 32.2M/0.00 [00:01<00:00,    19.5MB/s]      0%|          | Downloading : 36.2M/0.00 [00:02<00:00,    16.2MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    19.0MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    17.5MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    14.2kB/s]      0%|          | Downloading : 128k/0.00 [00:00<00:00,     230kB/s]       0%|          | Downloading : 1.00M/0.00 [00:00<00:00,    1.85MB/s]      0%|          | Downloading : 2.00M/0.00 [00:00<00:00,    3.64MB/s]      0%|          | Downloading : 4.00M/0.00 [00:00<00:00,    6.77MB/s]      0%|          | Downloading : 7.00M/0.00 [00:00<00:00,    10.9MB/s]      0%|          | Downloading : 9.00M/0.00 [00:00<00:00,    13.0MB/s]      0%|          | Downloading : 11.0M/0.00 [00:01<00:00,    12.2MB/s]      0%|          | Downloading : 12.0M/0.00 [00:01<00:00,    12.6MB/s]      0%|          | Downloading : 13.0M/0.00 [00:01<00:00,    12.9MB/s]      0%|          | Downloading : 16.0M/0.00 [00:01<00:00,    15.4MB/s]      0%|          | Downloading : 18.0M/0.00 [00:01<00:00,    13.4MB/s]      0%|          | Downloading : 19.0M/0.00 [00:01<00:00,    13.7MB/s]      0%|          | Downloading : 22.0M/0.00 [00:01<00:00,    15.6MB/s]      0%|          | Downloading : 24.0M/0.00 [00:02<00:00,    12.6MB/s]      0%|          | Downloading : 27.0M/0.00 [00:02<00:00,    14.1MB/s]      0%|          | Downloading : 29.0M/0.00 [00:02<00:00,    14.9MB/s]      0%|          | Downloading : 31.0M/0.00 [00:02<00:00,    15.7MB/s]      0%|          | Downloading : 33.0M/0.00 [00:02<00:00,    13.6MB/s]      0%|          | Downloading : 36.0M/0.00 [00:02<00:00,    14.9MB/s]      0%|          | Downloading : 38.0M/0.00 [00:02<00:00,    15.5MB/s]      0%|          | Downloading : 40.0M/0.00 [00:02<00:00,    16.2MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.6MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    15.1MB/s]
     Verifying hash ef2d41fc2824ded78d065214cdbc9b36.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -345,61 +345,61 @@ and that the responses look to be contralateral to the tapping hand.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.3/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="gN85bx"></div>
+              <div id="aP49Kh"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
-    'data':{
-    'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
-    'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-    'theta':[0.3724718879902031,0.284364516790551,2.2428496612892785,5.628744504398227,7.075323444989445,3.158844693081631,-0.8996860279166289,-1.850050311180377,3.130977426100282,5.763042997606537,7.7778190858842775,1.8480759605792583,-0.8860389918568918,-2.121124503544912,0.979916699941874,5.0400796651779585,3.4549740876260944,2.936091305876565,-0.02847266328546344,-0.21196250364750124,-3.204357650033054,10.660849563486453,4.99732805801545,-0.6416203002239802,0.035379061687721106,-0.48843010167800605,6.652159700224985,23.386850177546076,23.0146248882662,11.595597046239073],
-    'ID':["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
+    "data":{
+    "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
+    "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
+    "theta":[0.3724718879908668,0.284364516791042,2.242849661326212,5.628744504413117,7.0753234449698885,3.15884469309133,-0.8996860279166436,-1.8500503111795592,3.1309774260792587,5.763042997640291,7.7778190858814975,1.8480759605584094,-0.8860389918563488,-2.121124503540997,0.9799166999586605,5.040079665201102,3.4549740876117894,2.936091305863488,-0.02847266328574566,-0.21196250364603525,-3.20435765003868,10.660849563484199,4.997328058016911,-0.641620300223548,0.03537906168786982,-0.48843010167755474,6.652159700190124,23.386850177541564,23.014624888305434,11.595597046241496],
+    "ID":["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
-    'mapping':{
-    'x':"Condition",
-    'y':"theta",
-    'color':"ROI",
-    'shape':"ROI"
+    "mapping":{
+    "x":"Condition",
+    "y":"theta",
+    "color":"ROI",
+    "shape":"ROI"
     },
-    'data_meta':{
+    "data_meta":{
     },
-    'facet':{
-    'name':"grid",
-    'x':"ID",
-    'x_order':1,
-    'y_order':1
+    "facet":{
+    "name":"grid",
+    "x":"ID",
+    "x_order":1,
+    "y_order":1
     },
-    'ggsize':{
-    'width':900,
-    'height':350
+    "ggsize":{
+    "width":900,
+    "height":350
     },
-    'kind':"plot",
-    'scales':[],
-    'layers':[{
-    'geom':"hline",
-    'mapping':{
+    "kind":"plot",
+    "scales":[],
+    "layers":[{
+    "geom":"hline",
+    "mapping":{
     },
-    'data_meta':{
+    "data_meta":{
     },
-    'y_intercept':0,
-    'linetype':"dashed",
-    'size':1,
-    'data':{
+    "y_intercept":0,
+    "linetype":"dashed",
+    "size":1,
+    "data":{
     }
     },{
-    'geom':"point",
-    'mapping':{
+    "geom":"point",
+    "mapping":{
     },
-    'data_meta':{
+    "data_meta":{
     },
-    'size':5,
-    'data':{
+    "size":5,
+    "data":{
     }
     }]
     };
-           var plotContainer = document.getElementById("gN85bx");
+           var plotContainer = document.getElementById("aP49Kh");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -582,84 +582,84 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <div class="output_subarea output_html rendered_html output_result">
     <html lang="en">
        <head>
-           <script type="text/javascript" data-lets-plot-script="library" src="https://cdnjs.cloudflare.com/ajax/libs/lets-plot/2.0.2/lets-plot.min.js"></script>
+           <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.3/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="sm9iiG"></div>
+              <div id="6EzNDQ"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
-    'data':{
-    'Coef.':[-0.28126934667621195,-0.8774405806520487,1.9603091675046724,10.095913381643053,9.264013912956294,3.779397741110508],
-    'ROI':["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
-    'Condition':["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-    'Significant':[false,false,false,true,true,true]
+    "data":{
+    "Coef.":[-0.28126934667600023,-0.8774405806506205,1.9603091675031141,10.095913381656056,9.264013912957104,3.779397741106233],
+    "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
+    "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
+    "Significant":[false,false,false,true,true,true]
     },
-    'mapping':{
-    'x':"Condition",
-    'y':"Coef.",
-    'color':"Significant",
-    'shape':"ROI"
+    "mapping":{
+    "x":"Condition",
+    "y":"Coef.",
+    "color":"Significant",
+    "shape":"ROI"
     },
-    'data_meta':{
+    "data_meta":{
     },
-    'ggsize':{
-    'width':900,
-    'height':300
+    "ggsize":{
+    "width":900,
+    "height":300
     },
-    'kind':"plot",
-    'scales':[{
-    'aesthetic':"shape",
-    'values':[16,17]
+    "kind":"plot",
+    "scales":[{
+    "aesthetic":"shape",
+    "values":[16,17]
     }],
-    'layers':[{
-    'geom':"hline",
-    'mapping':{
+    "layers":[{
+    "geom":"hline",
+    "mapping":{
     },
-    'data_meta':{
+    "data_meta":{
     },
-    'y_intercept':0,
-    'linetype':"dashed",
-    'size':1,
-    'data':{
+    "y_intercept":0,
+    "linetype":"dashed",
+    "size":1,
+    "data":{
     }
     },{
-    'geom':"point",
-    'mapping':{
+    "geom":"point",
+    "mapping":{
     },
-    'data_meta':{
+    "data_meta":{
     },
-    'size':5,
-    'data':{
+    "size":5,
+    "data":{
     }
     },{
-    'geom':"point",
-    'data':{
-    'Coef.':[0.2679516596875082,-2.0033229830616395,-4.127503911483038],
-    'Condition':["Control","Tapping/Left","Tapping/Right"],
-    'Significant':[false,false,true]
+    "geom":"point",
+    "data":{
+    "Coef.":[0.2679516596873759,-2.0033229830593418,-4.127503911481753],
+    "Condition":["Control","Tapping/Left","Tapping/Right"],
+    "Significant":[false,false,true]
     },
-    'mapping':{
+    "mapping":{
     },
-    'data_meta':{
+    "data_meta":{
     },
-    'size':5,
-    'shape':1
+    "size":5,
+    "shape":1
     },{
-    'geom':"point",
-    'data':{
-    'Coef.':[0.1393843417028529,-4.429538585423124,-1.9576676325179878],
-    'Condition':["Control","Tapping/Left","Tapping/Right"],
-    'Significant':[false,true,false]
+    "geom":"point",
+    "data":{
+    "Coef.":[0.13938434170241096,-4.429538585423527,-1.9576676325178926],
+    "Condition":["Control","Tapping/Left","Tapping/Right"],
+    "Significant":[false,true,false]
     },
-    'mapping':{
+    "mapping":{
     },
-    'data_meta':{
+    "data_meta":{
     },
-    'size':5,
-    'shape':2
+    "size":5,
+    "shape":2
     }]
     };
-           var plotContainer = document.getElementById("sm9iiG");
+           var plotContainer = document.getElementById("6EzNDQ");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -1384,9 +1384,9 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  19.187 seconds)
+   **Total running time of the script:** ( 0 minutes  20.998 seconds)
 
-**Estimated memory usage:**  48 MB
+**Estimated memory usage:**  46 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
