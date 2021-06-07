@@ -642,7 +642,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f2def37ad00>
+    <matplotlib.collections.LineCollection object at 0x7f7a175059d0>
 
 
 
@@ -748,11 +748,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmpdxg4r7l8/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:316: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpjazz1lga/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:316: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmpdxg4r7l8/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpjazz1lga/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmpdxg4r7l8/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpjazz1lga/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -899,7 +899,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
  .. code-block:: none
 
-    /tmp/tmpdxg4r7l8/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:397: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument 'labels' will be keyword-only
+    /tmp/tmpjazz1lga/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_11_hrf_measured.py:397: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument 'labels' will be keyword-only
       (df
 
 
@@ -958,16 +958,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
         <tr>
           <th rowspan="2" valign="top">Control</th>
           <th>hbo</th>
-          <td>1.073247e-06</td>
-          <td>-4.698181e-08</td>
+          <td>1.084555e-06</td>
+          <td>-3.386871e-08</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.00</td>
         </tr>
         <tr>
           <th>hbr</th>
-          <td>6.064905e-07</td>
-          <td>1.899649e-08</td>
+          <td>6.083848e-07</td>
+          <td>1.348140e-08</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.00</td>
@@ -975,16 +975,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
         <tr>
           <th rowspan="2" valign="top">Tapping/Left</th>
           <th>hbo</th>
-          <td>1.089022e-06</td>
-          <td>6.885871e-06</td>
+          <td>1.100472e-06</td>
+          <td>6.898189e-06</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.90</td>
         </tr>
         <tr>
           <th>hbr</th>
-          <td>6.154109e-07</td>
-          <td>-3.050769e-06</td>
+          <td>6.173233e-07</td>
+          <td>-3.039020e-06</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.75</td>
@@ -992,16 +992,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
         <tr>
           <th rowspan="2" valign="top">Tapping/Right</th>
           <th>hbo</th>
-          <td>1.091798e-06</td>
-          <td>7.594851e-06</td>
+          <td>1.103144e-06</td>
+          <td>7.604877e-06</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.90</td>
         </tr>
         <tr>
           <th>hbr</th>
-          <td>6.170074e-07</td>
-          <td>-2.839041e-06</td>
+          <td>6.188749e-07</td>
+          <td>-2.841256e-06</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.80</td>
@@ -1016,7 +1016,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.674 seconds)
+   **Total running time of the script:** ( 0 minutes  6.099 seconds)
 
 **Estimated memory usage:**  62 MB
 

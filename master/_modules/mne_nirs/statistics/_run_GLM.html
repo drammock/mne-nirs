@@ -148,7 +148,7 @@
 <span class="kn">from</span> <span class="nn">mne.io.pick</span> <span class="kn">import</span> <span class="n">_picks_to_idx</span>
 
 
-<div class="viewcode-block" id="run_GLM"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM">[docs]</a><span class="k">def</span> <span class="nf">run_GLM</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span> <span class="n">noise_model</span><span class="o">=</span><span class="s1">&#39;ar1&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+<div class="viewcode-block" id="run_GLM"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM">[docs]</a><span class="k">def</span> <span class="nf">run_GLM</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span> <span class="n">noise_model</span><span class="o">=</span><span class="s1">&#39;ar1&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
             <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run GLM on data using supplied design matrix.</span>
@@ -161,10 +161,18 @@
 <span class="sd">        The haemoglobin data.</span>
 <span class="sd">    design_matrix : as specified in Nilearn</span>
 <span class="sd">        The design matrix.</span>
-<span class="sd">    noise_model : {&#39;ar1&#39;, &#39;ols&#39;}, optional</span>
-<span class="sd">        The temporal variance model. Defaults to &#39;ar1&#39;.</span>
-<span class="sd">    bins : : int, optional</span>
-<span class="sd">        Maximum number of discrete bins for the AR(1) coef histogram.</span>
+<span class="sd">    noise_model : {&#39;ar1&#39;, &#39;ols&#39;, &#39;arN&#39;, &#39;auto&#39;}, optional</span>
+<span class="sd">        The temporal variance model. Defaults to first order</span>
+<span class="sd">        auto regressive model &#39;ar1&#39;.</span>
+<span class="sd">        The AR model can be set to any integer value by modifying the value</span>
+<span class="sd">        of N. E.g. use `ar5` for a fifth order model.</span>
+<span class="sd">        If the string `auto` is provided a model with order 4 times the sample</span>
+<span class="sd">        rate will be used.</span>
+<span class="sd">    bins : int, optional</span>
+<span class="sd">        Maximum number of discrete bins for the AR coef histogram/clustering.</span>
+<span class="sd">        By default the value is 0, which will set the number of bins to the</span>
+<span class="sd">        number of channels, effectively estimating the AR model for each</span>
+<span class="sd">        channel.</span>
 <span class="sd">    n_jobs : int, optional</span>
 <span class="sd">        The number of CPUs to use to do the computation. -1 means</span>
 <span class="sd">        &#39;all CPUs&#39;.</span>
@@ -181,6 +189,12 @@
 
     <span class="n">picks</span> <span class="o">=</span> <span class="n">_picks_to_idx</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">,</span> <span class="s1">&#39;fnirs&#39;</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">[],</span> <span class="n">allow_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">ch_names</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span>
+
+    <span class="k">if</span> <span class="n">noise_model</span> <span class="o">==</span> <span class="s1">&#39;auto&#39;</span><span class="p">:</span>
+        <span class="n">noise_model</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;ar</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">if</span> <span class="n">bins</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span>
 
     <span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">pick</span> <span class="ow">in</span> <span class="n">picks</span><span class="p">:</span>

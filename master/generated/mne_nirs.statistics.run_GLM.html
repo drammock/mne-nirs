@@ -174,7 +174,7 @@
 <h1>mne_nirs.statistics.run_GLM<a class="headerlink" href="#mne-nirs-statistics-run-glm" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="mne_nirs.statistics.run_GLM">
-<span class="sig-prename descclassname"><span class="pre">mne_nirs.statistics.</span></span><span class="sig-name descname"><span class="pre">run_GLM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">design_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ar1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_run_GLM.html#run_GLM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.run_GLM" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mne_nirs.statistics.</span></span><span class="sig-name descname"><span class="pre">run_GLM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">design_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ar1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_run_GLM.html#run_GLM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.run_GLM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run GLM on data using supplied design matrix.</p>
 <p>This is a wrapper function for nilearn.stats.first_level_model.run_glm.</p>
 <dl class="field-list simple">
@@ -184,9 +184,17 @@
 </dd>
 <dt><strong>design_matrix</strong><span class="classifier">as specified in Nilearn</span></dt><dd><p>The design matrix.</p>
 </dd>
-<dt><strong>noise_model</strong><span class="classifier">{‘ar1’, ‘ols’}, optional</span></dt><dd><p>The temporal variance model. Defaults to ‘ar1’.</p>
+<dt><strong>noise_model</strong><span class="classifier">{‘ar1’, ‘ols’, ‘arN’, ‘auto’}, optional</span></dt><dd><p>The temporal variance model. Defaults to first order
+auto regressive model ‘ar1’.
+The AR model can be set to any integer value by modifying the value
+of N. E.g. use <cite>ar5</cite> for a fifth order model.
+If the string <cite>auto</cite> is provided a model with order 4 times the sample
+rate will be used.</p>
 </dd>
-<dt><strong>bins</strong><span class="classifier">: int, optional</span></dt><dd><p>Maximum number of discrete bins for the AR(1) coef histogram.</p>
+<dt><strong>bins</strong><span class="classifier">int, optional</span></dt><dd><p>Maximum number of discrete bins for the AR coef histogram/clustering.
+By default the value is 0, which will set the number of bins to the
+number of channels, effectively estimating the AR model for each
+channel.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier">int, optional</span></dt><dd><p>The number of CPUs to use to do the computation. -1 means
 ‘all CPUs’.</p>

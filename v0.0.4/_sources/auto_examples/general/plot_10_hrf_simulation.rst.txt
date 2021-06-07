@@ -180,7 +180,7 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
-    Estimate: [4.e-06]   MSE: [2.47490436e-44]   Error (uM): [-1.69406589e-15]
+    Estimate: [4.e-06]   MSE: [1.52643584e-42]   Error (uM): [3.38813179e-15]
 
 
 
@@ -236,7 +236,7 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
 
  .. code-block:: none
 
-    Estimate: [3.85074873e-06]   MSE: [9.37888051e-12]   Error (uM): [-0.14925127]
+    Estimate: [3.85152156e-06]   MSE: [9.4081311e-12]   Error (uM): [-0.14847844]
 
 
 
@@ -297,7 +297,7 @@ However, the error is greater for the colored than white noise.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
-    Estimate: [3.4194109e-06]   MSE: [1.67693644e-11]   Error (uM): [-0.5805891]
+    Estimate: [5.6774337e-06]   MSE: [4.703062e-10]   Error (uM): [1.6774337]
 
 
 
@@ -358,7 +358,7 @@ approximately 0.6 uM for 5 minutes of data to 0.25 uM for 30 minutes of data.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
-    Estimate: [4.25985282e-06]   MSE: [1.56389028e-11]   Error (uM): [0.25985282]
+    Estimate: [6.84350151e-06]   MSE: [1.14130839e-09]   Error (uM): [2.84350151]
 
 
 
@@ -378,9 +378,9 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.093 seconds)
+   **Total running time of the script:** ( 0 minutes  3.087 seconds)
 
-**Estimated memory usage:**  60 MB
+**Estimated memory usage:**  61 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:

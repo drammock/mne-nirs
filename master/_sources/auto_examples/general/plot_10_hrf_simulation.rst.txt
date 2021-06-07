@@ -171,7 +171,7 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
-    Estimate: [4.e-06]   MSE: [2.47490436e-44]   Error (uM): [-1.69406589e-15]
+    Estimate: [4.e-06]   MSE: [1.52643584e-42]   Error (uM): [3.38813179e-15]
 
 
 
@@ -227,7 +227,7 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
 
  .. code-block:: none
 
-    Estimate: [3.85074873e-06]   MSE: [9.37888051e-12]   Error (uM): [-0.14925127]
+    Estimate: [3.85152156e-06]   MSE: [9.4081311e-12]   Error (uM): [-0.14847844]
 
 
 
@@ -288,7 +288,7 @@ However, the error is greater for the colored than white noise.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
-    Estimate: [3.4194109e-06]   MSE: [1.67693644e-11]   Error (uM): [-0.5805891]
+    Estimate: [5.6774337e-06]   MSE: [4.703062e-10]   Error (uM): [1.6774337]
 
 
 
@@ -349,12 +349,93 @@ approximately 0.6 uM for 5 minutes of data to 0.25 uM for 30 minutes of data.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
-    Estimate: [4.25985282e-06]   MSE: [1.56389028e-11]   Error (uM): [0.25985282]
+    Estimate: [6.84350151e-06]   MSE: [1.14130839e-09]   Error (uM): [2.84350151]
 
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 184-193
+
+Using autoregressive models in the GLM to account for noise structure
+---------------------------------------------------------------------
+
+An auto regressive noise model can be used account for temporal structure
+in the noise. To account for the noise properties in the example above,
+a fifth order auto regressive model is used below. Given this
+is a simulation, we can verify if the correct estimate of the noise
+properties was extracted from the data and if this
+improved the response estimate.
+
+.. GENERATED FROM PYTHON SOURCE LINES 193-204
+
+.. code-block:: default
+
+
+    glm_est = run_GLM(raw, design_matrix, noise_model='ar5')
+
+    fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(15, 6))
+    plt.plot([-0.58853134, -0.29575669, -0.52246482, 0.38735476, 0.02428681],
+             axes=axes)  # actual values from model above
+    plt.plot(glm_est['Simulated'].model.rho * -1.0,  axes=axes)  # estimates
+    plt.legend(["Simulation AR coefficients", "Estimated AR coefficients"])
+    plt.xlabel("Coefficient")
+
+
+
+
+
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_006.png
+   :alt: plot 10 hrf simulation
+   :srcset: /auto_examples/general/images/sphx_glr_plot_10_hrf_simulation_006.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    Text(0.5, 36.72222222222221, 'Coefficient')
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 205-207
+
+We can see that the estimates from the GLM AR model are quite accurate,
+but how does this affect the accuracy of the response estimate?
+
+.. GENERATED FROM PYTHON SOURCE LINES 207-212
+
+.. code-block:: default
+
+
+    print("Estimate:", glm_est['Simulated'].theta[0],
+          "  MSE:", glm_est['Simulated'].MSE,
+          "  Error (uM):", 1e6*(glm_est['Simulated'].theta[0] - amp*1e-6))
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Estimate: [4.26283431e-06]   MSE: [9.88198782e-12]   Error (uM): [0.26283431]
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 213-215
+
+The response estimate using the AR(5) model is more accurate than the
+AR(1) model (error of 0.25 vs 2.8 uM).
+
+.. GENERATED FROM PYTHON SOURCE LINES 217-228
 
 Conclusion?
 -----------
@@ -365,11 +446,13 @@ of the simulated signal. We then added noise and illustrated that the
 estimate provided by the GLM was correct, but contained some error. We
 observed that as the measurement time was increased, the estimated
 error decreased.
+We also observed in this idealised example that including an appropriate
+model of the noise can improve the accuracy of the response estimate.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.944 seconds)
+   **Total running time of the script:** ( 0 minutes  4.910 seconds)
 
 **Estimated memory usage:**  37 MB
 
