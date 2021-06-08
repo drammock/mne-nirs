@@ -246,6 +246,27 @@ Analysis examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial demonstrates how signal quality can be evaluated using MNE-NIRS.">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_22_quality_thumb.png
+     :alt: Signal Quality Evaluation
+
+     :ref:`sphx_glr_auto_examples_general_plot_22_quality.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_22_quality
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="In this example we discuss frequency and filters in the context of functional near-infrared spe...">
 
 .. only:: html
