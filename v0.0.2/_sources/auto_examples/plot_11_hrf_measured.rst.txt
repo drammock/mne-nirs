@@ -641,7 +641,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7ffb26be0f70>
+    <matplotlib.collections.LineCollection object at 0x7f95fa193d30>
 
 
 
@@ -747,11 +747,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmpnnnr7yio/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpjhyi2ep4/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:315: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmpnnnr7yio/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpjhyi2ep4/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:318: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmpnnnr7yio/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpjhyi2ep4/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:321: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -898,7 +898,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
  .. code-block:: none
 
-    /tmp/tmpnnnr7yio/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:396: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument 'labels' will be keyword-only
+    /tmp/tmpjhyi2ep4/091b7e6b32740c0b9a13be01fc620bcfaec2c9cf/examples/plot_11_hrf_measured.py:396: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument 'labels' will be keyword-only
       (df
 
 
@@ -1015,7 +1015,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.742 seconds)
+   **Total running time of the script:** ( 0 minutes  6.753 seconds)
 
 **Estimated memory usage:**  62 MB
 
