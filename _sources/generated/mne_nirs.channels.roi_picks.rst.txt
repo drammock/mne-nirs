@@ -1,6 +1,0 @@
-mne\_nirs.channels.roi\_picks
-=============================
-
-.. currentmodule:: mne_nirs.channels
-
-.. autofunction:: roi_picks

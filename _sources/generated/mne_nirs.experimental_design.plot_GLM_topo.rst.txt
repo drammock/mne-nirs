@@ -1,6 +1,0 @@
-mne\_nirs.experimental\_design.plot\_GLM\_topo
-==============================================
-
-.. currentmodule:: mne_nirs.experimental_design
-
-.. autofunction:: plot_GLM_topo

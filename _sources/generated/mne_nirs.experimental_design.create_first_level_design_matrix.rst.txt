@@ -1,6 +1,0 @@
-mne\_nirs.experimental\_design.create\_first\_level\_design\_matrix
-===================================================================
-
-.. currentmodule:: mne_nirs.experimental_design
-
-.. autofunction:: create_first_level_design_matrix

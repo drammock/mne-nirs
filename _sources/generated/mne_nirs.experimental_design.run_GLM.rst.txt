@@ -1,6 +1,0 @@
-mne\_nirs.experimental\_design.run\_GLM
-=======================================
-
-.. currentmodule:: mne_nirs.experimental_design
-
-.. autofunction:: run_GLM

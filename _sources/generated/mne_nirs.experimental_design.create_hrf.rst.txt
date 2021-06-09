@@ -1,6 +1,0 @@
-mne\_nirs.experimental\_design.create\_hrf
-==========================================
-
-.. currentmodule:: mne_nirs.experimental_design
-
-.. autofunction:: create_hrf

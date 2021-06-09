@@ -1,163 +1,0 @@
-.. only:: html
-
-    .. note::
-        :class: sphx-glr-download-link-note
-
-        Click :ref:`here <sphx_glr_download_auto_examples_plot_hrf.py>`     to download the full example code
-    .. rst-class:: sphx-glr-example-title
-
-    .. _sphx_glr_auto_examples_plot_hrf.py:
-
-
-.. _tut-fnirs-processing:
-
-Plot experiment expected haemodynamic response
-==============================================
-
-
-
-.. contents:: Page contents
-   :local:
-   :depth: 2
-
-
-.. code-block:: default
-
-    # sphinx_gallery_thumbnail_number = 1
-
-    import os
-    import matplotlib.pyplot as plt
-    import mne
-
-    import mne_nirs
-
-
-    fnirs_data_folder = mne.datasets.fnirs_motor.data_path()
-    fnirs_raw_dir = os.path.join(fnirs_data_folder, 'Participant-1')
-    raw_intensity = mne.io.read_raw_nirx(fnirs_raw_dir, verbose=True).load_data()
-    raw_intensity = raw_intensity.pick(picks=[0])
-
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Using default location ~/mne_data for fnirs_motor...
-    Creating ~/mne_data
-    Downloading archive MNE-fNIRS-motor-data.tgz to /github/home/mne_data
-    Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      1%|          | Downloading : 120k/17.1M [00:00<00:02,    7.30MB/s]      6%|5         | Downloading : 0.99M/17.1M [00:00<00:00,    21.3MB/s]      9%|8         | Downloading : 1.49M/17.1M [00:00<00:07,    2.28MB/s]     13%|#3        | Downloading : 2.24M/17.1M [00:00<00:01,    12.9MB/s]     19%|#9        | Downloading : 3.24M/17.1M [00:00<00:00,    28.0MB/s]     22%|##1       | Downloading : 3.74M/17.1M [00:00<00:00,    24.3MB/s]     25%|##4       | Downloading : 4.24M/17.1M [00:00<00:00,    29.5MB/s]     28%|##7       | Downloading : 4.74M/17.1M [00:00<00:00,    26.3MB/s]     31%|###       | Downloading : 5.24M/17.1M [00:00<00:00,    24.1MB/s]     34%|###3      | Downloading : 5.74M/17.1M [00:00<00:00,    22.9MB/s]     37%|###6      | Downloading : 6.24M/17.1M [00:00<00:00,    27.9MB/s]     40%|###9      | Downloading : 6.74M/17.1M [00:00<00:00,    27.1MB/s]     42%|####2     | Downloading : 7.24M/17.1M [00:00<00:00,    26.4MB/s]     45%|####5     | Downloading : 7.74M/17.1M [00:00<00:00,    26.0MB/s]     48%|####8     | Downloading : 8.24M/17.1M [00:00<00:00,    21.3MB/s]     51%|#####1    | Downloading : 8.74M/17.1M [00:00<00:00,    29.5MB/s]     54%|#####4    | Downloading : 9.24M/17.1M [00:00<00:00,    27.6MB/s]     57%|#####7    | Downloading : 9.74M/17.1M [00:00<00:00,    27.3MB/s]     60%|######    | Downloading : 10.2M/17.1M [00:00<00:00,    23.1MB/s]     63%|######2   | Downloading : 10.7M/17.1M [00:00<00:00,    27.5MB/s]     66%|######5   | Downloading : 11.2M/17.1M [00:00<00:00,    29.0MB/s]     69%|######8   | Downloading : 11.7M/17.1M [00:00<00:00,    26.3MB/s]     72%|#######1  | Downloading : 12.2M/17.1M [00:00<00:00,    22.9MB/s]     75%|#######4  | Downloading : 12.7M/17.1M [00:00<00:00,    24.4MB/s]     81%|########  | Downloading : 13.7M/17.1M [00:00<00:00,    25.6MB/s]     84%|########3 | Downloading : 14.2M/17.1M [00:00<00:00,    23.8MB/s]     89%|########9 | Downloading : 15.2M/17.1M [00:00<00:00,    27.2MB/s]     92%|#########2| Downloading : 15.7M/17.1M [00:00<00:00,    20.2MB/s]     95%|#########5| Downloading : 16.2M/17.1M [00:00<00:00,    22.1MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    40.6MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    19.4MB/s]
-    Verifying hash c4935d19ddab35422a69f3326a01fef8.
-    Decompressing the archive: /github/home/mne_data/MNE-fNIRS-motor-data.tgz
-    (please be patient, this can take some time)
-    Successfully extracted to: ['/github/home/mne_data/MNE-fNIRS-motor-data']
-    Attempting to create new mne-python configuration file:
-    /github/home/.mne/mne-python.json
-    Loading /github/home/mne_data/MNE-fNIRS-motor-data/Participant-1
-    Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
-
-
-
-
-Display boxcar of experiment
-----------------------------
-
-Add some text here.
-
-
-.. code-block:: default
-
-
-    s = mne_nirs.create_boxcar(raw_intensity)
-    plt.plot(s)
-    plt.xlim(0, 3000)
-
-
-
-
-
-.. image:: /auto_examples/images/sphx_glr_plot_hrf_001.png
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Used Annotations descriptions: ['1.0', '15.0', '2.0', '3.0']
-
-    (0.0, 3000.0)
-
-
-
-Examine the expected haemodynamic response
-------------------------------------------
-
-Add some text here.
-
-
-.. code-block:: default
-
-
-    s = mne_nirs.create_hrf(raw_intensity)
-    plt.plot(s)
-    plt.xlim(0, 3000)
-
-
-
-.. image:: /auto_examples/images/sphx_glr_plot_hrf_002.png
-    :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Used Annotations descriptions: ['1.0', '15.0', '2.0', '3.0']
-
-    (0.0, 3000.0)
-
-
-
-
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  4.158 seconds)
-
-
-.. _sphx_glr_download_auto_examples_plot_hrf.py:
-
-
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
-
-
-
-  .. container:: sphx-glr-download sphx-glr-download-python
-
-     :download:`Download Python source code: plot_hrf.py <plot_hrf.py>`
-
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_hrf.ipynb <plot_hrf.ipynb>`
-
-
-.. only:: html
-
- .. rst-class:: sphx-glr-signature
-
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

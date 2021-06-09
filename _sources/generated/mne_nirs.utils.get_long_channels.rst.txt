@@ -1,6 +1,0 @@
-mne\_nirs.utils.get\_long\_channels
-===================================
-
-.. currentmodule:: mne_nirs.utils
-
-.. autofunction:: get_long_channels
