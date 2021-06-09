@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mne_nirs.utils._io &#8212; MNE-NIRS 0.0.5 dev documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap_divs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/bootstrap_divs.js"></script>
+    <script src="../../../_static/js/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../../index.html">
+    
+      <p class="title">MNE-NIRS</p>
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../../auto_examples/index.html">Examples</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../../../api.html">API</a>
+        </li>
+        
+        
+      </ul>
+
+      <form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+      
+
+      <ul class="navbar-nav">
+        <!-- version dropdown -->
+        <li class="dropdown">
+            <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
+                v0.0.2
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dLabelMore">
+                    <li><a href="../../../../master/index.html">master</a></li>
+                    <li><a href="_io.html">v0.0.2</a></li>
+                    <li><a href="../../../../v0.0.3/index.html">v0.0.3</a></li>
+                    <li><a href="../../../../v0.0.4/index.html">v0.0.4</a></li>
+                    <li><a href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4 (stable)</a></li>
+                    <li><a href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a></li>
+                    <li><a href="https://mne.tools/mne-nirs/v0.0.2/index.html">v0.0.2</a></li>
+            </ul>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/mne-tools/mne-nirs" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+        <!-- discourse forum link -->
+        <li class="nav-item">
+            <a class="nav-link" href="https://mne.discourse.group" target="_blank" rel="noopener">
+              <span><i class="fab fa-discourse"></i></span>
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-11 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+
+<p>
+  <strong>
+    <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
+    
+    You're reading the documentation for a development version.
+    For the latest released version, please have a look at <a href="../../../../master/index.html">master</a>.
+    
+    </p>
+  </strong>
+</p>
+
+
+  <h1>Source code for mne_nirs.utils._io</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">warn</span>
+<span class="kn">import</span> <span class="nn">nilearn</span>
+
+
+<div class="viewcode-block" id="glm_to_tidy"><a class="viewcode-back" href="../../../generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy">[docs]</a><span class="k">def</span> <span class="nf">glm_to_tidy</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">statistic</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">,</span> <span class="n">wide</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exports GLM regression or contrast results in tidy format.</span>
+
+<span class="sd">    Creates a long pandas data frame from regression results or contrast</span>
+<span class="sd">    as computed by run_GLM or compute_contrast.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : MNE.Raw</span>
+<span class="sd">        Instance of MNE raw.</span>
+<span class="sd">    statistic : nilearn data,</span>
+<span class="sd">        Either dict of nilearn.stats.regression.RegressionResults as returned</span>
+<span class="sd">        by run_GLM, or nilearn.stats.contrasts.Contrast as returned by</span>
+<span class="sd">        compute_contrast.</span>
+<span class="sd">    design_matrix : DataFrame</span>
+<span class="sd">        As specified in Nilearn</span>
+<span class="sd">    wide : Bool</span>
+<span class="sd">        Should the returned dataframe be in wide format. If False, then the</span>
+<span class="sd">        returned data will be in long format.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : Tidy data frame,</span>
+<span class="sd">        Data from statistic object in tidy data form.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">statistic</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> \
+            <span class="nb">isinstance</span><span class="p">(</span><span class="n">statistic</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">statistic</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]],</span>
+                       <span class="n">nilearn</span><span class="o">.</span><span class="n">glm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">RegressionResults</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">_tidy_RegressionResults</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">statistic</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">statistic</span><span class="p">,</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">glm</span><span class="o">.</span><span class="n">contrasts</span><span class="o">.</span><span class="n">Contrast</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">_tidy_Contrast</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">statistic</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="s1">&#39;Unknown statistic type. Expected dict of RegressionResults &#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;or Contrast type. Received </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">statistic</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">wide</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">_tidy_long_to_wide</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">expand_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<span class="k">def</span> <span class="nf">_tidy_Contrast</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">glm_est</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ch_names</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span>
+                        <span class="s1">&#39;ContrastType&#39;</span><span class="p">:</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">contrast_type</span><span class="p">,</span>
+                        <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;effect&quot;</span><span class="p">,</span>
+                        <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">effect</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="p">]},</span>
+                       <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span>
+                        <span class="s1">&#39;ContrastType&#39;</span><span class="p">:</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">contrast_type</span><span class="p">,</span>
+                        <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;p_value&quot;</span><span class="p">,</span>
+                        <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">p_value</span><span class="p">()[</span><span class="n">idx</span><span class="p">]},</span>
+                       <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span>
+                        <span class="s1">&#39;ContrastType&#39;</span><span class="p">:</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">contrast_type</span><span class="p">,</span>
+                        <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;stat&quot;</span><span class="p">,</span>
+                        <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">stat</span><span class="p">()[</span><span class="n">idx</span><span class="p">]},</span>
+                       <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span>
+                        <span class="s1">&#39;ContrastType&#39;</span><span class="p">:</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">contrast_type</span><span class="p">,</span>
+                        <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;z_score&quot;</span><span class="p">,</span>
+                        <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">z_score</span><span class="p">()[</span><span class="n">idx</span><span class="p">]},</span>
+                       <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">_tidy_RegressionResults</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">glm_est</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ch_names</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">glm_est</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
+        <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;MNE data structure does not match regression results&quot;</span><span class="p">)</span>
+
+    <span class="n">theta_estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">glm_est</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+    <span class="n">t_estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">glm_est</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+    <span class="n">df_estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">glm_est</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+    <span class="n">p_estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">glm_est</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+    <span class="n">mse_estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">glm_est</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+    <span class="n">se_estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">glm_est</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">glm_est</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="n">theta_estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">glm_est</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">theta</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">df_estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">glm_est</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">df_model</span>
+        <span class="n">mse_estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">glm_est</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">MSE</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">cond_idx</span><span class="p">,</span> <span class="n">cond</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="n">t_estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">glm_est</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">t</span><span class="p">(</span>
+                <span class="n">column</span><span class="o">=</span><span class="n">cond_idx</span><span class="p">)</span>
+            <span class="n">p_estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span>
+                <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">t_estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">]),</span>
+                <span class="n">df</span><span class="o">=</span><span class="n">df_estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">])</span>
+            <span class="n">se_estimates</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span>
+                <span class="n">glm_est</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">vcov</span><span class="p">()))[</span><span class="n">cond_idx</span><span class="p">]</span>
+
+    <span class="n">list_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span> <span class="o">*</span>
+                        <span class="nb">len</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">ch_idx</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ch_names</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">cond_idx</span><span class="p">,</span> <span class="n">cond</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="n">list_vals</span><span class="p">[</span><span class="mi">0</span> <span class="o">+</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">:</span> <span class="n">cond</span><span class="p">,</span>
+                                  <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;theta&quot;</span><span class="p">,</span>
+                                  <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">theta_estimates</span><span class="p">[</span><span class="n">ch_idx</span><span class="p">][</span><span class="n">cond_idx</span><span class="p">]}</span>
+            <span class="n">list_vals</span><span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">:</span> <span class="n">cond</span><span class="p">,</span>
+                                  <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;t&quot;</span><span class="p">,</span>
+                                  <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">t_estimates</span><span class="p">[</span><span class="n">ch_idx</span><span class="p">][</span><span class="n">cond_idx</span><span class="p">]}</span>
+            <span class="n">list_vals</span><span class="p">[</span><span class="mi">2</span> <span class="o">+</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">:</span> <span class="n">cond</span><span class="p">,</span>
+                                  <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;df&quot;</span><span class="p">,</span>
+                                  <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">df_estimates</span><span class="p">[</span><span class="n">ch_idx</span><span class="p">][</span><span class="n">cond_idx</span><span class="p">]}</span>
+            <span class="n">list_vals</span><span class="p">[</span><span class="mi">3</span> <span class="o">+</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">:</span> <span class="n">cond</span><span class="p">,</span>
+                                  <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;p_value&quot;</span><span class="p">,</span>
+                                  <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">p_estimates</span><span class="p">[</span><span class="n">ch_idx</span><span class="p">][</span><span class="n">cond_idx</span><span class="p">]}</span>
+            <span class="n">list_vals</span><span class="p">[</span><span class="mi">4</span> <span class="o">+</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">:</span> <span class="n">cond</span><span class="p">,</span>
+                                  <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;mse&quot;</span><span class="p">,</span>
+                                  <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">mse_estimates</span><span class="p">[</span><span class="n">ch_idx</span><span class="p">][</span><span class="n">cond_idx</span><span class="p">]}</span>
+            <span class="n">list_vals</span><span class="p">[</span><span class="mi">5</span> <span class="o">+</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ch_name&#39;</span><span class="p">:</span> <span class="n">ch</span><span class="p">,</span> <span class="s1">&#39;Condition&#39;</span><span class="p">:</span> <span class="n">cond</span><span class="p">,</span>
+                                  <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="s2">&quot;se&quot;</span><span class="p">,</span>
+                                  <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">se_estimates</span><span class="p">[</span><span class="n">ch_idx</span><span class="p">][</span><span class="n">cond_idx</span><span class="p">]}</span>
+            <span class="n">idx</span> <span class="o">+=</span> <span class="mi">6</span>
+
+    <span class="n">dict_vals</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="p">{},</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">list_vals</span><span class="p">:</span>
+        <span class="n">dict_vals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ch_name&quot;</span><span class="p">:</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;ch_name&#39;</span><span class="p">],</span>
+                        <span class="s2">&quot;Condition&quot;</span><span class="p">:</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;Condition&#39;</span><span class="p">],</span>
+                        <span class="s2">&quot;variable&quot;</span><span class="p">:</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;variable&#39;</span><span class="p">],</span>
+                        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]}</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">dict_vals</span><span class="p">,</span> <span class="s2">&quot;index&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">_tidy_long_to_wide</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">expand_output</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+    <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ch_name&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s1">&#39;Condition&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="c1"># Regression results have a column condition</span>
+        <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Condition&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;ContrastType&#39;</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="c1"># Regression results have a column condition</span>
+        <span class="n">indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;ContrastType&#39;</span><span class="p">)</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;variable&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span>
+                      <span class="n">index</span><span class="o">=</span><span class="n">indices</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">expand_output</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">d</span><span class="p">[</span><span class="s2">&quot;Source&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;S(\d+)_D(\d+) (\w+)&#39;</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                           <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;ch_name&quot;</span><span class="p">]]</span>
+            <span class="n">d</span><span class="p">[</span><span class="s2">&quot;Detector&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;S(\d+)_D(\d+) (\w+)&#39;</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                             <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;ch_name&quot;</span><span class="p">]]</span>
+            <span class="n">d</span><span class="p">[</span><span class="s2">&quot;Chroma&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;S(\d+)_D(\d+) (\w+)&#39;</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+                           <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;ch_name&quot;</span><span class="p">]]</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Non standard source detector names used&quot;</span><span class="p">)</span>
+        <span class="n">d</span><span class="p">[</span><span class="s2">&quot;Significant&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;p_value&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
+
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-188272121-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2020, Robert Luke.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
