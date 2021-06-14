@@ -1,0 +1,1596 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Importing data from fNIRS devices &#8212; MNE-NIRS 0.0.5 dev documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap_divs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/bootstrap_divs.js"></script>
+    <script src="../../_static/js/copybutton.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="GLM Analysis (Simulated)" href="plot_10_hrf_simulation.html" />
+    <link rel="prev" title="Examples" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../index.html">
+<p class="title">MNE-NIRS</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../api.html">
+  API
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <div class="dropdown">
+    <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
+        v0.0.5 dev
+        <span class="caret"></span>
+    </button>
+    <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
+        <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4 (stable)</a>
+        <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
+        <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.2/index.html">v0.0.2</a>
+    </div>
+</div>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/mne-tools/mne-nirs" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+      <div class="navbar-end-item">
+        <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <div class="col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standardized-data">
+   Standardized data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#snirf-snirf">
+     SNIRF (.snirf)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-wave-devices">
+   Continuous Wave Devices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nirx-directory-or-hdr">
+     NIRx (directory or hdr)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hitachi-csv">
+     Hitachi (.csv)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frequency-domain-devices">
+   Frequency Domain Devices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boxy-txt">
+     BOXY (.txt)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#custom-data-import">
+   Custom Data Import
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loading-legacy-data-in-csv-or-tsv-format">
+     Loading legacy data in CSV or TSV format
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#applying-standard-sensor-locations-to-imported-data">
+       Applying standard sensor locations to imported data
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-11 col-xl-8 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+
+
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-general-plot-01-data-io-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="importing-data-from-fnirs-devices">
+<span id="tut-importing-fnirs-data"></span><span id="sphx-glr-auto-examples-general-plot-01-data-io-py"></span><h1>Importing data from fNIRS devices<a class="headerlink" href="#importing-data-from-fnirs-devices" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial is a mirror of the
+(<a class="reference external" href="https://mne.tools/dev/auto_tutorials/io/30_reading_fnirs_data.html">MNE tutorial</a>),
+and is reproduced in MNE-NIRS for convenience and so that all
+relevant material is easily accessible to users.</p>
+</div>
+<p>fNIRS devices consist of two kinds of optodes: light sources (AKA “emitters” or
+“transmitters”) and light detectors (AKA “receivers”). Channels are defined as
+source-detector pairs, and channel locations are defined as the midpoint
+between source and detector.</p>
+<p>MNE-Python provides functions for reading fNIRS data and optode locations from
+several file formats. Regardless of the device manufacturer or file format,
+MNE-Python’s fNIRS functions will internally store the measurement data and its
+metadata in the same way (e.g., data values are always converted into SI
+units). Supported measurement types include amplitude, optical density,
+oxyhaemoglobin concentration, and deoxyhemoglobin concentration (for continuous
+wave fNIRS), and additionally AC amplitude and phase (for
+frequency domain fNIRS).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>MNE-Python stores metadata internally with a specific structure,
+and internal functions expect specific naming conventions.
+Manual modification of channel names and metadata
+is not recommended.</p>
+</div>
+<div class="section" id="standardized-data">
+<span id="import-snirf"></span><h2>Standardized data<a class="headerlink" href="#standardized-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="snirf-snirf">
+<h3>SNIRF (.snirf)<a class="headerlink" href="#snirf-snirf" title="Permalink to this headline">¶</a></h3>
+<p>The Shared Near Infrared Spectroscopy Format
+(<a class="reference external" href="https://github.com/fNIRS/snirf/blob/master/snirf_specification.md">SNIRF</a>)
+is designed by the fNIRS community in an effort to facilitate
+sharing and analysis of fNIRS data. And is the official format of the
+Society for functional near-infrared spectroscopy (SfNIRS).
+SNIRF is the preferred format for reading data in to MNE-Python.
+Data stored in the SNIRF format can be read in
+using <a class="reference external" href="https://mne.tools/stable/generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.io.read_raw_snirf()</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SNIRF format has provisions for many different types of fNIRS
+recordings. MNE-Python currently only supports reading continuous
+wave data stored in the .snirf format.</p>
+</div>
+</div>
+</div>
+<div class="section" id="continuous-wave-devices">
+<h2>Continuous Wave Devices<a class="headerlink" href="#continuous-wave-devices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nirx-directory-or-hdr">
+<span id="import-nirx"></span><h3>NIRx (directory or hdr)<a class="headerlink" href="#nirx-directory-or-hdr" title="Permalink to this headline">¶</a></h3>
+<p>NIRx produce continuous wave fNIRS devices.
+NIRx recordings can be read in using <a class="reference external" href="https://mne.tools/stable/generated/mne.io.read_raw_nirx.html#mne.io.read_raw_nirx" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.io.read_raw_nirx()</span></code></a>.
+The NIRx device stores data directly to a directory with multiple file types,
+MNE-Python extracts the appropriate information from each file.
+MNE-Python only supports NIRx files recorded with NIRStar
+version 15.0 and above.
+MNE-Python supports reading data from NIRScout and NIRSport 1 devices.</p>
+</div>
+<div class="section" id="hitachi-csv">
+<span id="import-hitachi"></span><h3>Hitachi (.csv)<a class="headerlink" href="#hitachi-csv" title="Permalink to this headline">¶</a></h3>
+<p>Hitachi produce continuous wave fNIRS devices.
+Hitachi fNIRS recordings can be read using <cite>mne.io.read_raw_hitachi</cite>.
+No optode information is stored so you’ll need to set the montage manually,
+see the Notes section of <cite>mne.io.read_raw_hitachi</cite>.</p>
+</div>
+</div>
+<div class="section" id="frequency-domain-devices">
+<h2>Frequency Domain Devices<a class="headerlink" href="#frequency-domain-devices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="boxy-txt">
+<span id="import-boxy"></span><h3>BOXY (.txt)<a class="headerlink" href="#boxy-txt" title="Permalink to this headline">¶</a></h3>
+<p>BOXY recordings can be read in using <a class="reference external" href="https://mne.tools/stable/generated/mne.io.read_raw_boxy.html#mne.io.read_raw_boxy" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.io.read_raw_boxy()</span></code></a>.
+The BOXY software and ISS Imagent I and II devices are frequency domain
+systems that store data in a single <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file containing what they call
+(with MNE-Python’s name for that type of data in parens):</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>DC</dt><dd><p>All light collected by the detector (<code class="docutils literal notranslate"><span class="pre">fnirs_cw_amplitude</span></code>)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>AC</dt><dd><p>High-frequency modulated light intensity (<code class="docutils literal notranslate"><span class="pre">fnirs_fd_ac_amplitude</span></code>)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Phase</dt><dd><p>Phase of the modulated light (<code class="docutils literal notranslate"><span class="pre">fnirs_fd_phase</span></code>)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>DC data is stored as the type <code class="docutils literal notranslate"><span class="pre">fnirs_cw_amplitude</span></code> because it
+collects both the modulated and any unmodulated light, and hence is analogous
+to what is collected by continuous wave systems such as NIRx. This helps with
+conformance to SNIRF standard types.</p>
+<p>These raw data files can be saved by the acquisition devices as parsed or
+unparsed <code class="docutils literal notranslate"><span class="pre">.txt</span></code> files, which affects how the data in the file is organised.
+MNE-Python will read either file type and extract the raw DC, AC,
+and Phase data. If triggers are sent using the <code class="docutils literal notranslate"><span class="pre">digaux</span></code> port of the
+recording hardware, MNE-Python will also read the <code class="docutils literal notranslate"><span class="pre">digaux</span></code> data and
+create annotations for any triggers.</p>
+</div>
+</div>
+<div class="section" id="custom-data-import">
+<h2>Custom Data Import<a class="headerlink" href="#custom-data-import" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loading-legacy-data-in-csv-or-tsv-format">
+<h3>Loading legacy data in CSV or TSV format<a class="headerlink" href="#loading-legacy-data-in-csv-or-tsv-format" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is not supported and users are discoraged to use it.
+You should convert your data to the
+<a class="reference external" href="https://github.com/fNIRS/snirf">SNIRF</a> format using the tools
+provided by the Society for functional Near-Infrared Spectroscopy,
+and then load it using <a class="reference external" href="https://mne.tools/stable/generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.io.read_raw_snirf()</span></code></a>.</p>
+</div>
+<p>fNIRS measurements may be stored in a non-standardised format that is not
+supported by MNE-Python and cannot be converted easily into SNIRF.
+This legacy data is often in CSV or TSV format,
+we show here a way to load it even though it is not officially supported by
+MNE-Python due to the lack of standardisation of the file format (the
+naming and ordering of channels, the type and scaling of data, and
+specification of sensor positions varies between each vendor). You will likely
+have to adapt this depending on the system from which your CSV originated.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">mne</span>
+
+<span class="c1"># sphinx_gallery_thumbnail_number = 1</span>
+</pre></div>
+</div>
+<p>First, we generate an example CSV file which will then be loaded in to
+MNE-Python. This step would be skipped if you have actual data you wish to
+load. We simulate 16 channels with 100 samples of data and save this to a
+file called fnirs.csv.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html#numpy.random.normal" title="numpy.random.normal" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span></a><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">100</span><span class="p">)))</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;fnirs.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The channels must be ordered in haemoglobin pairs, such that for
+a single channel all the types are in subsequent indices. The
+type order must be ‘hbo’ then ‘hbr’.
+The data below is already in the correct order and may be
+used as a template for how data must be stored.
+If the order that your data is stored is different to the
+mandatory formatting, then you must first read the data with
+channel naming according to the data structure, then reorder
+the channels to match the required format.</p>
+</div>
+<p>Next, we will load the example CSV file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;fnirs.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, the metadata must be specified manually as the CSV file does not
+contain information about channel names, types, sample rate etc.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In MNE-Python the naming of channels MUST follow the structure
+<code class="docutils literal notranslate"><span class="pre">S#_D#</span> <span class="pre">type</span></code> where # is replaced by the appropriate source and
+detector numbers and type is either <code class="docutils literal notranslate"><span class="pre">hbo</span></code>, <code class="docutils literal notranslate"><span class="pre">hbr</span></code> or the
+wavelength.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ch_names</span></a> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;S1_D1 hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;S1_D1 hbr&#39;</span><span class="p">,</span> <span class="s1">&#39;S2_D1 hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;S2_D1 hbr&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;S3_D1 hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;S3_D1 hbr&#39;</span><span class="p">,</span> <span class="s1">&#39;S4_D1 hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;S4_D1 hbr&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;S5_D2 hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;S5_D2 hbr&#39;</span><span class="p">,</span> <span class="s1">&#39;S6_D2 hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;S6_D2 hbr&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;S7_D2 hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;S7_D2 hbr&#39;</span><span class="p">,</span> <span class="s1">&#39;S8_D2 hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;S8_D2 hbr&#39;</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ch_types</span></a> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">,</span> <span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">,</span> <span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">,</span> <span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">,</span> <span class="s1">&#39;hbo&#39;</span><span class="p">,</span> <span class="s1">&#39;hbr&#39;</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">=</span> <span class="mf">10.</span>  <span class="c1"># in Hz</span>
+</pre></div>
+</div>
+<p>Finally, the data can be converted in to an MNE-Python data structure.
+The metadata above is used to create an <a class="reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="(in MNE v0.23.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.Info</span></code></a> data structure,
+and this is combined with the data to create an MNE-Python
+<a class="reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="(in MNE v0.23.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Raw</span></code></a> object. For more details on the info structure
+see <a class="reference external" href="https://mne.tools/stable/auto_tutorials/intro/30_info.html#tut-info-class" title="(in MNE v0.23.0)"><span>The Info data structure</span></a>, and for additional details on how continuous data
+is stored in MNE-Python see <a class="reference external" href="https://mne.tools/stable/auto_tutorials/raw/10_raw_overview.html#tut-raw-class" title="(in MNE v0.23.0)"><span>The Raw data structure: continuous data</span></a>.
+For a more extensive description of how to create MNE-Python data structures
+from raw array data see <a class="reference external" href="https://mne.tools/stable/auto_tutorials/simulation/10_array_objs.html#tut-creating-data-structures" title="(in MNE v0.23.0)"><span>Creating MNE-Python data structures from scratch</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne.Info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">info</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.create_info.html#mne.create_info" title="mne.create_info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">create_info</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ch_names</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ch_names</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ch_types</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ch_types</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a><span class="p">)</span>
+<a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray" title="mne.io.RawArray" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray" title="mne.io.RawArray" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class"><span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">RawArray</span></a><span class="p">(</span><span class="n">data</span><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne.Info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">info</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Creating RawArray with float64 data, n_channels=16, n_times=101
+    Range : 0 ... 100 =      0.000 ...    10.000 secs
+Ready.
+</pre></div>
+</div>
+<div class="section" id="applying-standard-sensor-locations-to-imported-data">
+<h4>Applying standard sensor locations to imported data<a class="headerlink" href="#applying-standard-sensor-locations-to-imported-data" title="Permalink to this headline">¶</a></h4>
+<p>Having information about optode locations may assist in your analysis.
+Beyond the general benefits this provides (e.g. creating regions of interest,
+etc), this is may be particularly important for fNIRS as information about
+the optode locations is required to convert the optical density data in to an
+estimate of the haemoglobin concentrations.
+MNE-Python provides methods to load standard sensor configurations
+(montages) from some vendors, and this is demonstrated below.
+Some handy tutorials for understanding sensor locations, coordinate systems,
+and how to store and view this information in MNE-Python are:
+<a class="reference external" href="https://mne.tools/stable/auto_tutorials/intro/40_sensor_locations.html#tut-sensor-locations" title="(in MNE v0.23.0)"><span>Working with sensor locations</span></a>, <a class="reference external" href="https://mne.tools/stable/auto_tutorials/forward/20_source_alignment.html#plot-source-alignment" title="(in MNE v0.23.0)"><span>Source alignment and coordinate frames</span></a>, and
+<a class="reference external" href="https://mne.tools/stable/auto_examples/visualization/eeg_on_scalp.html#ex-eeg-on-scalp" title="(in MNE v0.23.0)"><span>Plotting EEG sensors on the scalp</span></a>.</p>
+<p>Below is an example of how to load the optode positions for an Artinis
+OctaMon device.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is also possible to create a custom montage from a file for
+fNIRS with <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.read_custom_montage.html#mne.channels.read_custom_montage" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.read_custom_montage()</span></code></a> by setting
+<code class="docutils literal notranslate"><span class="pre">coord_frame</span></code> to <code class="docutils literal notranslate"><span class="pre">'mri'</span></code>.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://mne.tools/stable/generated/mne.channels.DigMontage.html#mne.channels.DigMontage" title="mne.channels.DigMontage" class="sphx-glr-backref-module-mne-channels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">montage</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html#mne.channels.make_standard_montage" title="mne.channels.make_standard_montage" class="sphx-glr-backref-module-mne-channels sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">make_standard_montage</span></a><span class="p">(</span><span class="s1">&#39;artinis-octamon&#39;</span><span class="p">)</span>
+<a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray.set_montage" title="mne.io.RawArray.set_montage" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw</span><span class="o">.</span><span class="n">set_montage</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.channels.DigMontage.html#mne.channels.DigMontage" title="mne.channels.DigMontage" class="sphx-glr-backref-module-mne-channels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">montage</span></a><span class="p">)</span>
+
+<span class="c1"># View the position of optodes in 2D to confirm the positions are correct.</span>
+<a href="https://mne.tools/stable/generated/mne.io.RawArray.html#mne.io.RawArray.plot_sensors" title="mne.io.RawArray.plot_sensors" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw</span><span class="o">.</span><span class="n">plot_sensors</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_01_data_io_001.png" srcset="../../_images/sphx_glr_plot_01_data_io_001.png" alt="plot 01 data io" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x640 with 1 Axes&gt;
+</pre></div>
+</div>
+<p>To validate the positions were loaded correctly it is also possible to view
+the location of the sources (red), detectors (black), and channels (white
+lines and orange dots) in a 3D representation.
+The ficiduals are marked in blue, green and red.
+See <a class="reference external" href="https://mne.tools/stable/auto_tutorials/forward/20_source_alignment.html#plot-source-alignment" title="(in MNE v0.23.0)"><span>Source alignment and coordinate frames</span></a> for more details.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/subjects&#39;</span>
+<a href="https://mne.tools/stable/generated/mne.datasets.fetch_fsaverage.html#mne.datasets.fetch_fsaverage" title="mne.datasets.fetch_fsaverage" class="sphx-glr-backref-module-mne-datasets sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">fetch_fsaverage</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a><span class="p">)</span>
+
+<a href="https://mne.tools/stable/generated/mne.transforms.Transform.html#mne.transforms.Transform" title="mne.transforms.Transform" class="sphx-glr-backref-module-mne-transforms sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">trans</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.channels.compute_native_head_t.html#mne.channels.compute_native_head_t" title="mne.channels.compute_native_head_t" class="sphx-glr-backref-module-mne-channels sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">compute_native_head_t</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.channels.DigMontage.html#mne.channels.DigMontage" title="mne.channels.DigMontage" class="sphx-glr-backref-module-mne-channels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">montage</span></a><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.viz.create_3d_figure.html#mne.viz.create_3d_figure" title="mne.viz.create_3d_figure" class="sphx-glr-backref-module-mne-viz sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">create_3d_figure</span></a><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">),</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.viz.plot_alignment.html#mne.viz.plot_alignment" title="mne.viz.plot_alignment" class="sphx-glr-backref-module-mne-viz sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_alignment</span></a><span class="p">(</span>
+    <a href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne.Info" class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span><span class="o">.</span><span class="n">info</span></a><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.transforms.Transform.html#mne.transforms.Transform" title="mne.transforms.Transform" class="sphx-glr-backref-module-mne-transforms sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">trans</span></a><span class="o">=</span><a href="https://mne.tools/stable/generated/mne.transforms.Transform.html#mne.transforms.Transform" title="mne.transforms.Transform" class="sphx-glr-backref-module-mne-transforms sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">trans</span></a><span class="p">,</span> <span class="n">subject</span><span class="o">=</span><span class="s1">&#39;fsaverage&#39;</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a><span class="p">,</span>
+    <span class="n">surfaces</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;brain&#39;</span><span class="p">,</span> <span class="s1">&#39;head&#39;</span><span class="p">],</span> <span class="n">coord_frame</span><span class="o">=</span><span class="s1">&#39;mri&#39;</span><span class="p">,</span> <span class="n">dig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_axes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fnirs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;channels&#39;</span><span class="p">,</span> <span class="s1">&#39;pairs&#39;</span><span class="p">,</span> <span class="s1">&#39;sources&#39;</span><span class="p">,</span> <span class="s1">&#39;detectors&#39;</span><span class="p">],</span> <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+<a href="https://mne.tools/stable/generated/mne.viz.set_3d_view.html#mne.viz.set_3d_view" title="mne.viz.set_3d_view" class="sphx-glr-backref-module-mne-viz sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">set_3d_view</span></a><span class="p">(</span><span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">azimuth</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                    <span class="n">focalpoint</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using default location ~/mne_data for sample...
+Creating ~/mne_data
+Downloading archive MNE-sample-data-processed.tar.gz to /home/runner/mne_data
+Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/59c0e26f9ad5a1025c4ab159?version=5&amp;action=download&amp;direct (1.54 GB)
+
+  0%|          | Downloading : 0.00/1.54G [00:00&lt;?,        ?B/s]
+  0%|          | Downloading : 120k/1.54G [00:00&lt;14:42,    1.87MB/s]
+  0%|          | Downloading : 1.05M/1.54G [00:00&lt;02:01,    13.6MB/s]
+  0%|          | Downloading : 4.05M/1.54G [00:00&lt;00:52,    31.4MB/s]
+  0%|          | Downloading : 6.05M/1.54G [00:00&lt;00:39,    41.7MB/s]
+  1%|          | Downloading : 8.05M/1.54G [00:00&lt;00:47,    34.5MB/s]
+  1%|          | Downloading : 10.1M/1.54G [00:00&lt;00:40,    40.2MB/s]
+  1%|          | Downloading : 12.1M/1.54G [00:00&lt;00:41,    39.9MB/s]
+  1%|          | Downloading : 14.1M/1.54G [00:00&lt;00:37,    44.1MB/s]
+  1%|1         | Downloading : 16.1M/1.54G [00:00&lt;00:37,    43.1MB/s]
+  1%|1         | Downloading : 18.1M/1.54G [00:00&lt;00:34,    46.8MB/s]
+  1%|1         | Downloading : 20.1M/1.54G [00:00&lt;00:35,    45.7MB/s]
+  1%|1         | Downloading : 22.1M/1.54G [00:00&lt;00:33,    48.7MB/s]
+  2%|1         | Downloading : 24.1M/1.54G [00:00&lt;00:34,    47.4MB/s]
+  2%|1         | Downloading : 26.1M/1.54G [00:00&lt;00:32,    50.3MB/s]
+  2%|1         | Downloading : 30.1M/1.54G [00:00&lt;00:31,    51.0MB/s]
+  2%|2         | Downloading : 34.1M/1.54G [00:00&lt;00:33,    48.3MB/s]
+  2%|2         | Downloading : 36.1M/1.54G [00:00&lt;00:31,    50.6MB/s]
+  2%|2         | Downloading : 38.1M/1.54G [00:00&lt;00:32,    49.5MB/s]
+  3%|2         | Downloading : 40.1M/1.54G [00:00&lt;00:31,    51.6MB/s]
+  3%|2         | Downloading : 42.1M/1.54G [00:00&lt;00:32,    50.3MB/s]
+  3%|2         | Downloading : 44.1M/1.54G [00:00&lt;00:30,    52.2MB/s]
+  3%|2         | Downloading : 46.1M/1.54G [00:00&lt;00:31,    50.9MB/s]
+  3%|3         | Downloading : 48.1M/1.54G [00:01&lt;00:30,    52.5MB/s]
+  3%|3         | Downloading : 50.1M/1.54G [00:01&lt;00:31,    51.5MB/s]
+  3%|3         | Downloading : 52.1M/1.54G [00:01&lt;00:29,    53.3MB/s]
+  3%|3         | Downloading : 54.1M/1.54G [00:01&lt;00:30,    52.0MB/s]
+  4%|3         | Downloading : 56.1M/1.54G [00:01&lt;00:31,    50.8MB/s]
+  4%|3         | Downloading : 58.1M/1.54G [00:01&lt;00:30,    52.5MB/s]
+  4%|3         | Downloading : 60.1M/1.54G [00:01&lt;00:30,    51.4MB/s]
+  4%|3         | Downloading : 62.1M/1.54G [00:01&lt;00:29,    53.1MB/s]
+  4%|4         | Downloading : 64.1M/1.54G [00:01&lt;00:33,    47.8MB/s]
+  4%|4         | Downloading : 67.1M/1.54G [00:01&lt;00:34,    46.5MB/s]
+  4%|4         | Downloading : 69.1M/1.54G [00:01&lt;00:32,    48.3MB/s]
+  5%|4         | Downloading : 71.1M/1.54G [00:01&lt;00:33,    47.3MB/s]
+  5%|4         | Downloading : 77.1M/1.54G [00:01&lt;00:31,    49.9MB/s]
+  5%|5         | Downloading : 81.1M/1.54G [00:01&lt;00:31,    49.9MB/s]
+  5%|5         | Downloading : 85.1M/1.54G [00:01&lt;00:32,    48.5MB/s]
+  6%|5         | Downloading : 89.1M/1.54G [00:01&lt;00:31,    49.2MB/s]
+  6%|5         | Downloading : 91.1M/1.54G [00:01&lt;00:30,    50.4MB/s]
+  6%|5         | Downloading : 93.1M/1.54G [00:01&lt;00:31,    49.7MB/s]
+  6%|6         | Downloading : 95.1M/1.54G [00:01&lt;00:30,    51.0MB/s]
+  6%|6         | Downloading : 97.1M/1.54G [00:02&lt;00:30,    50.3MB/s]
+  6%|6         | Downloading : 99.1M/1.54G [00:02&lt;00:30,    51.6MB/s]
+  6%|6         | Downloading : 101M/1.54G [00:02&lt;00:30,    50.8MB/s]
+  7%|6         | Downloading : 103M/1.54G [00:02&lt;00:29,    51.9MB/s]
+  7%|6         | Downloading : 105M/1.54G [00:02&lt;00:30,    51.1MB/s]
+  7%|6         | Downloading : 107M/1.54G [00:02&lt;00:30,    50.2MB/s]
+  7%|6         | Downloading : 109M/1.54G [00:02&lt;00:29,    51.6MB/s]
+  7%|7         | Downloading : 111M/1.54G [00:02&lt;00:30,    50.4MB/s]
+  7%|7         | Downloading : 115M/1.54G [00:02&lt;00:29,    51.1MB/s]
+  7%|7         | Downloading : 117M/1.54G [00:02&lt;00:29,    52.4MB/s]
+  8%|7         | Downloading : 119M/1.54G [00:02&lt;00:29,    51.5MB/s]
+  8%|7         | Downloading : 121M/1.54G [00:02&lt;00:28,    52.8MB/s]
+  8%|7         | Downloading : 123M/1.54G [00:02&lt;00:29,    51.8MB/s]
+  8%|7         | Downloading : 125M/1.54G [00:02&lt;00:28,    53.1MB/s]
+  8%|8         | Downloading : 127M/1.54G [00:02&lt;00:29,    52.1MB/s]
+  8%|8         | Downloading : 129M/1.54G [00:02&lt;00:29,    51.2MB/s]
+  8%|8         | Downloading : 131M/1.54G [00:02&lt;00:28,    52.6MB/s]
+  8%|8         | Downloading : 133M/1.54G [00:02&lt;00:29,    51.6MB/s]
+  9%|8         | Downloading : 135M/1.54G [00:02&lt;00:28,    52.9MB/s]
+  9%|8         | Downloading : 137M/1.54G [00:02&lt;00:29,    51.9MB/s]
+  9%|8         | Downloading : 139M/1.54G [00:02&lt;00:28,    53.1MB/s]
+  9%|8         | Downloading : 141M/1.54G [00:02&lt;00:28,    52.3MB/s]
+  9%|9         | Downloading : 143M/1.54G [00:02&lt;00:28,    53.5MB/s]
+  9%|9         | Downloading : 145M/1.54G [00:02&lt;00:28,    52.5MB/s]
+  9%|9         | Downloading : 147M/1.54G [00:03&lt;00:29,    51.5MB/s]
+  9%|9         | Downloading : 149M/1.54G [00:03&lt;00:28,    52.9MB/s]
+ 10%|9         | Downloading : 151M/1.54G [00:03&lt;00:28,    51.7MB/s]
+ 10%|9         | Downloading : 153M/1.54G [00:03&lt;00:28,    53.1MB/s]
+ 10%|9         | Downloading : 155M/1.54G [00:03&lt;00:28,    52.3MB/s]
+ 10%|9         | Downloading : 157M/1.54G [00:03&lt;00:27,    53.6MB/s]
+ 10%|#         | Downloading : 159M/1.54G [00:03&lt;00:28,    52.5MB/s]
+ 10%|#         | Downloading : 161M/1.54G [00:03&lt;00:27,    53.9MB/s]
+ 10%|#         | Downloading : 163M/1.54G [00:03&lt;00:28,    52.9MB/s]
+ 10%|#         | Downloading : 165M/1.54G [00:03&lt;00:27,    54.2MB/s]
+ 11%|#         | Downloading : 167M/1.54G [00:03&lt;00:27,    53.0MB/s]
+ 11%|#         | Downloading : 169M/1.54G [00:03&lt;00:27,    54.4MB/s]
+ 11%|#         | Downloading : 171M/1.54G [00:03&lt;00:27,    53.3MB/s]
+ 11%|#         | Downloading : 173M/1.54G [00:03&lt;00:28,    52.0MB/s]
+ 11%|#1        | Downloading : 177M/1.54G [00:03&lt;00:28,    52.3MB/s]
+ 11%|#1        | Downloading : 181M/1.54G [00:03&lt;00:27,    52.7MB/s]
+ 12%|#1        | Downloading : 183M/1.54G [00:03&lt;00:26,    54.1MB/s]
+ 12%|#1        | Downloading : 185M/1.54G [00:03&lt;00:27,    53.0MB/s]
+ 12%|#1        | Downloading : 187M/1.54G [00:03&lt;00:26,    54.4MB/s]
+ 12%|#1        | Downloading : 189M/1.54G [00:03&lt;00:27,    53.1MB/s]
+ 12%|#2        | Downloading : 193M/1.54G [00:03&lt;00:27,    53.5MB/s]
+ 12%|#2        | Downloading : 195M/1.54G [00:03&lt;00:27,    52.4MB/s]
+ 13%|#2        | Downloading : 197M/1.54G [00:03&lt;00:26,    53.8MB/s]
+ 13%|#2        | Downloading : 199M/1.54G [00:04&lt;00:27,    52.7MB/s]
+ 13%|#2        | Downloading : 201M/1.54G [00:04&lt;00:26,    54.1MB/s]
+ 13%|#2        | Downloading : 203M/1.54G [00:04&lt;00:27,    53.0MB/s]
+ 13%|#3        | Downloading : 205M/1.54G [00:04&lt;00:26,    54.4MB/s]
+ 13%|#3        | Downloading : 207M/1.54G [00:04&lt;00:26,    53.2MB/s]
+ 13%|#3        | Downloading : 211M/1.54G [00:04&lt;00:26,    53.4MB/s]
+ 14%|#3        | Downloading : 213M/1.54G [00:04&lt;00:27,    52.3MB/s]
+ 14%|#3        | Downloading : 217M/1.54G [00:04&lt;00:27,    52.8MB/s]
+ 14%|#3        | Downloading : 219M/1.54G [00:04&lt;00:26,    54.0MB/s]
+ 14%|#4        | Downloading : 221M/1.54G [00:04&lt;00:26,    52.9MB/s]
+ 14%|#4        | Downloading : 223M/1.54G [00:04&lt;00:26,    54.3MB/s]
+ 14%|#4        | Downloading : 225M/1.54G [00:04&lt;00:26,    53.2MB/s]
+ 15%|#4        | Downloading : 229M/1.54G [00:04&lt;00:26,    53.5MB/s]
+ 15%|#4        | Downloading : 233M/1.54G [00:04&lt;00:26,    53.7MB/s]
+ 15%|#4        | Downloading : 235M/1.54G [00:04&lt;00:26,    52.7MB/s]
+ 15%|#5        | Downloading : 237M/1.54G [00:04&lt;00:26,    54.0MB/s]
+ 15%|#5        | Downloading : 239M/1.54G [00:04&lt;00:26,    53.0MB/s]
+ 15%|#5        | Downloading : 241M/1.54G [00:04&lt;00:25,    54.3MB/s]
+ 15%|#5        | Downloading : 243M/1.54G [00:04&lt;00:26,    53.1MB/s]
+ 16%|#5        | Downloading : 247M/1.54G [00:04&lt;00:26,    53.4MB/s]
+ 16%|#5        | Downloading : 251M/1.54G [00:05&lt;00:25,    53.7MB/s]
+ 16%|#6        | Downloading : 253M/1.54G [00:05&lt;00:25,    54.9MB/s]
+ 16%|#6        | Downloading : 255M/1.54G [00:05&lt;00:25,    53.8MB/s]
+ 16%|#6        | Downloading : 257M/1.54G [00:05&lt;00:26,    52.8MB/s]
+ 16%|#6        | Downloading : 259M/1.54G [00:05&lt;00:25,    54.0MB/s]
+ 17%|#6        | Downloading : 261M/1.54G [00:05&lt;00:26,    53.0MB/s]
+ 17%|#6        | Downloading : 263M/1.54G [00:05&lt;00:25,    54.4MB/s]
+ 17%|#6        | Downloading : 265M/1.54G [00:05&lt;00:25,    53.2MB/s]
+ 17%|#7        | Downloading : 269M/1.54G [00:05&lt;00:25,    53.5MB/s]
+ 17%|#7        | Downloading : 271M/1.54G [00:05&lt;00:24,    54.8MB/s]
+ 17%|#7        | Downloading : 273M/1.54G [00:05&lt;00:25,    53.7MB/s]
+ 17%|#7        | Downloading : 275M/1.54G [00:05&lt;00:24,    54.8MB/s]
+ 18%|#7        | Downloading : 277M/1.54G [00:05&lt;00:25,    53.9MB/s]
+ 18%|#7        | Downloading : 279M/1.54G [00:05&lt;00:25,    52.8MB/s]
+ 18%|#7        | Downloading : 281M/1.54G [00:05&lt;00:25,    54.1MB/s]
+ 18%|#7        | Downloading : 283M/1.54G [00:05&lt;00:25,    52.9MB/s]
+ 18%|#8        | Downloading : 287M/1.54G [00:05&lt;00:25,    53.3MB/s]
+ 18%|#8        | Downloading : 291M/1.54G [00:05&lt;00:25,    53.5MB/s]
+ 19%|#8        | Downloading : 293M/1.54G [00:05&lt;00:24,    54.8MB/s]
+ 19%|#8        | Downloading : 295M/1.54G [00:05&lt;00:25,    53.6MB/s]
+ 19%|#8        | Downloading : 299M/1.54G [00:05&lt;00:24,    54.0MB/s]
+ 19%|#9        | Downloading : 301M/1.54G [00:06&lt;00:25,    52.9MB/s]
+ 19%|#9        | Downloading : 303M/1.54G [00:06&lt;00:24,    54.1MB/s]
+ 19%|#9        | Downloading : 305M/1.54G [00:06&lt;00:25,    53.0MB/s]
+ 19%|#9        | Downloading : 307M/1.54G [00:06&lt;00:24,    54.3MB/s]
+ 20%|#9        | Downloading : 309M/1.54G [00:06&lt;00:24,    53.3MB/s]
+ 20%|#9        | Downloading : 311M/1.54G [00:06&lt;00:24,    54.3MB/s]
+ 20%|#9        | Downloading : 313M/1.54G [00:06&lt;00:24,    53.2MB/s]
+ 20%|##        | Downloading : 317M/1.54G [00:06&lt;00:24,    53.8MB/s]
+ 20%|##        | Downloading : 319M/1.54G [00:06&lt;00:23,    55.0MB/s]
+ 20%|##        | Downloading : 321M/1.54G [00:06&lt;00:24,    53.7MB/s]
+ 20%|##        | Downloading : 323M/1.54G [00:06&lt;00:24,    52.9MB/s]
+ 21%|##        | Downloading : 325M/1.54G [00:06&lt;00:24,    54.0MB/s]
+ 21%|##        | Downloading : 327M/1.54G [00:06&lt;00:24,    53.1MB/s]
+ 21%|##        | Downloading : 329M/1.54G [00:06&lt;00:24,    54.3MB/s]
+ 21%|##1       | Downloading : 331M/1.54G [00:06&lt;00:24,    53.2MB/s]
+ 21%|##1       | Downloading : 333M/1.54G [00:06&lt;00:23,    54.5MB/s]
+ 21%|##1       | Downloading : 335M/1.54G [00:06&lt;00:24,    53.5MB/s]
+ 21%|##1       | Downloading : 337M/1.54G [00:06&lt;00:23,    54.7MB/s]
+ 22%|##1       | Downloading : 339M/1.54G [00:06&lt;00:24,    53.6MB/s]
+ 22%|##1       | Downloading : 341M/1.54G [00:06&lt;00:23,    54.5MB/s]
+ 22%|##1       | Downloading : 343M/1.54G [00:06&lt;00:24,    53.5MB/s]
+ 22%|##1       | Downloading : 345M/1.54G [00:06&lt;00:24,    52.9MB/s]
+ 22%|##2       | Downloading : 347M/1.54G [00:06&lt;00:23,    53.9MB/s]
+ 22%|##2       | Downloading : 349M/1.54G [00:06&lt;00:24,    53.0MB/s]
+ 22%|##2       | Downloading : 351M/1.54G [00:06&lt;00:23,    54.2MB/s]
+ 22%|##2       | Downloading : 353M/1.54G [00:07&lt;00:24,    53.3MB/s]
+ 23%|##2       | Downloading : 355M/1.54G [00:07&lt;00:23,    54.5MB/s]
+ 23%|##2       | Downloading : 357M/1.54G [00:07&lt;00:23,    53.6MB/s]
+ 23%|##2       | Downloading : 359M/1.54G [00:07&lt;00:23,    54.6MB/s]
+ 23%|##2       | Downloading : 361M/1.54G [00:07&lt;00:23,    53.5MB/s]
+ 23%|##3       | Downloading : 363M/1.54G [00:07&lt;00:23,    54.6MB/s]
+ 23%|##3       | Downloading : 365M/1.54G [00:07&lt;00:23,    53.5MB/s]
+ 23%|##3       | Downloading : 367M/1.54G [00:07&lt;00:23,    52.9MB/s]
+ 23%|##3       | Downloading : 369M/1.54G [00:07&lt;00:23,    54.0MB/s]
+ 24%|##3       | Downloading : 371M/1.54G [00:07&lt;00:23,    53.0MB/s]
+ 24%|##3       | Downloading : 373M/1.54G [00:07&lt;00:23,    54.2MB/s]
+ 24%|##3       | Downloading : 375M/1.54G [00:07&lt;00:23,    53.3MB/s]
+ 24%|##3       | Downloading : 377M/1.54G [00:07&lt;00:23,    54.5MB/s]
+ 24%|##4       | Downloading : 379M/1.54G [00:07&lt;00:23,    53.5MB/s]
+ 24%|##4       | Downloading : 381M/1.54G [00:07&lt;00:22,    54.8MB/s]
+ 24%|##4       | Downloading : 383M/1.54G [00:07&lt;00:23,    53.6MB/s]
+ 24%|##4       | Downloading : 385M/1.54G [00:07&lt;00:22,    55.1MB/s]
+ 25%|##4       | Downloading : 387M/1.54G [00:07&lt;00:23,    53.6MB/s]
+ 25%|##4       | Downloading : 389M/1.54G [00:07&lt;00:23,    52.8MB/s]
+ 25%|##4       | Downloading : 391M/1.54G [00:07&lt;00:23,    54.0MB/s]
+ 25%|##4       | Downloading : 393M/1.54G [00:07&lt;00:23,    52.9MB/s]
+ 25%|##5       | Downloading : 395M/1.54G [00:07&lt;00:22,    54.3MB/s]
+ 25%|##5       | Downloading : 397M/1.54G [00:07&lt;00:23,    53.3MB/s]
+ 25%|##5       | Downloading : 399M/1.54G [00:07&lt;00:22,    54.6MB/s]
+ 25%|##5       | Downloading : 401M/1.54G [00:07&lt;00:23,    53.6MB/s]
+ 26%|##5       | Downloading : 403M/1.54G [00:08&lt;00:22,    54.8MB/s]
+ 26%|##5       | Downloading : 405M/1.54G [00:08&lt;00:22,    53.6MB/s]
+ 26%|##5       | Downloading : 407M/1.54G [00:08&lt;00:22,    55.0MB/s]
+ 26%|##5       | Downloading : 409M/1.54G [00:08&lt;00:22,    53.6MB/s]
+ 26%|##6       | Downloading : 411M/1.54G [00:08&lt;00:23,    52.8MB/s]
+ 26%|##6       | Downloading : 413M/1.54G [00:08&lt;00:22,    53.9MB/s]
+ 26%|##6       | Downloading : 415M/1.54G [00:08&lt;00:23,    52.8MB/s]
+ 26%|##6       | Downloading : 417M/1.54G [00:08&lt;00:22,    54.2MB/s]
+ 27%|##6       | Downloading : 419M/1.54G [00:08&lt;00:22,    53.1MB/s]
+ 27%|##6       | Downloading : 421M/1.54G [00:08&lt;00:22,    54.5MB/s]
+ 27%|##6       | Downloading : 423M/1.54G [00:08&lt;00:22,    53.4MB/s]
+ 27%|##6       | Downloading : 425M/1.54G [00:08&lt;00:22,    54.8MB/s]
+ 27%|##7       | Downloading : 427M/1.54G [00:08&lt;00:22,    53.7MB/s]
+ 27%|##7       | Downloading : 429M/1.54G [00:08&lt;00:21,    55.1MB/s]
+ 27%|##7       | Downloading : 431M/1.54G [00:08&lt;00:22,    53.5MB/s]
+ 27%|##7       | Downloading : 433M/1.54G [00:08&lt;00:22,    52.8MB/s]
+ 28%|##7       | Downloading : 435M/1.54G [00:08&lt;00:22,    53.6MB/s]
+ 28%|##7       | Downloading : 437M/1.54G [00:08&lt;00:22,    52.9MB/s]
+ 28%|##7       | Downloading : 439M/1.54G [00:08&lt;00:22,    53.7MB/s]
+ 28%|##7       | Downloading : 441M/1.54G [00:08&lt;00:22,    53.2MB/s]
+ 28%|##8       | Downloading : 443M/1.54G [00:08&lt;00:21,    54.4MB/s]
+ 28%|##8       | Downloading : 445M/1.54G [00:08&lt;00:22,    53.5MB/s]
+ 28%|##8       | Downloading : 447M/1.54G [00:08&lt;00:21,    54.7MB/s]
+ 28%|##8       | Downloading : 449M/1.54G [00:08&lt;00:22,    53.5MB/s]
+ 29%|##8       | Downloading : 451M/1.54G [00:08&lt;00:21,    54.9MB/s]
+ 29%|##8       | Downloading : 453M/1.54G [00:08&lt;00:21,    53.6MB/s]
+ 29%|##8       | Downloading : 455M/1.54G [00:09&lt;00:22,    52.8MB/s]
+ 29%|##8       | Downloading : 457M/1.54G [00:09&lt;00:21,    53.8MB/s]
+ 29%|##9       | Downloading : 459M/1.54G [00:09&lt;00:22,    53.0MB/s]
+ 29%|##9       | Downloading : 461M/1.54G [00:09&lt;00:21,    54.0MB/s]
+ 29%|##9       | Downloading : 463M/1.54G [00:09&lt;00:21,    53.1MB/s]
+ 30%|##9       | Downloading : 465M/1.54G [00:09&lt;00:21,    54.4MB/s]
+ 30%|##9       | Downloading : 467M/1.54G [00:09&lt;00:21,    53.4MB/s]
+ 30%|##9       | Downloading : 469M/1.54G [00:09&lt;00:21,    54.7MB/s]
+ 30%|##9       | Downloading : 471M/1.54G [00:09&lt;00:21,    53.5MB/s]
+ 30%|###       | Downloading : 473M/1.54G [00:09&lt;00:21,    55.0MB/s]
+ 30%|###       | Downloading : 475M/1.54G [00:09&lt;00:21,    53.6MB/s]
+ 30%|###       | Downloading : 477M/1.54G [00:09&lt;00:21,    52.7MB/s]
+ 30%|###       | Downloading : 479M/1.54G [00:09&lt;00:21,    53.8MB/s]
+ 31%|###       | Downloading : 481M/1.54G [00:09&lt;00:21,    53.1MB/s]
+ 31%|###       | Downloading : 483M/1.54G [00:09&lt;00:21,    54.1MB/s]
+ 31%|###       | Downloading : 485M/1.54G [00:09&lt;00:21,    53.2MB/s]
+ 31%|###       | Downloading : 487M/1.54G [00:09&lt;00:20,    54.4MB/s]
+ 31%|###1      | Downloading : 489M/1.54G [00:09&lt;00:21,    53.2MB/s]
+ 31%|###1      | Downloading : 491M/1.54G [00:09&lt;00:20,    54.7MB/s]
+ 31%|###1      | Downloading : 493M/1.54G [00:09&lt;00:21,    53.5MB/s]
+ 31%|###1      | Downloading : 495M/1.54G [00:09&lt;00:20,    54.9MB/s]
+ 32%|###1      | Downloading : 497M/1.54G [00:09&lt;00:21,    53.7MB/s]
+ 32%|###1      | Downloading : 499M/1.54G [00:09&lt;00:21,    52.8MB/s]
+ 32%|###1      | Downloading : 501M/1.54G [00:09&lt;00:20,    53.9MB/s]
+ 32%|###1      | Downloading : 503M/1.54G [00:09&lt;00:21,    52.7MB/s]
+ 32%|###2      | Downloading : 505M/1.54G [00:10&lt;00:20,    54.0MB/s]
+ 32%|###2      | Downloading : 507M/1.54G [00:10&lt;00:21,    53.3MB/s]
+ 32%|###2      | Downloading : 509M/1.54G [00:10&lt;00:20,    54.5MB/s]
+ 32%|###2      | Downloading : 511M/1.54G [00:10&lt;00:21,    53.1MB/s]
+ 33%|###2      | Downloading : 515M/1.54G [00:10&lt;00:20,    53.5MB/s]
+ 33%|###2      | Downloading : 517M/1.54G [00:10&lt;00:21,    52.8MB/s]
+ 33%|###2      | Downloading : 519M/1.54G [00:10&lt;00:20,    53.8MB/s]
+ 33%|###3      | Downloading : 521M/1.54G [00:10&lt;00:20,    53.0MB/s]
+ 33%|###3      | Downloading : 523M/1.54G [00:10&lt;00:20,    54.2MB/s]
+ 33%|###3      | Downloading : 525M/1.54G [00:10&lt;00:20,    53.3MB/s]
+ 33%|###3      | Downloading : 527M/1.54G [00:10&lt;00:20,    54.3MB/s]
+ 34%|###3      | Downloading : 529M/1.54G [00:10&lt;00:20,    53.5MB/s]
+ 34%|###3      | Downloading : 531M/1.54G [00:10&lt;00:20,    54.6MB/s]
+ 34%|###3      | Downloading : 533M/1.54G [00:10&lt;00:20,    53.3MB/s]
+ 34%|###4      | Downloading : 537M/1.54G [00:10&lt;00:20,    53.6MB/s]
+ 34%|###4      | Downloading : 539M/1.54G [00:10&lt;00:20,    52.9MB/s]
+ 34%|###4      | Downloading : 541M/1.54G [00:10&lt;00:20,    53.9MB/s]
+ 34%|###4      | Downloading : 543M/1.54G [00:10&lt;00:20,    53.1MB/s]
+ 35%|###4      | Downloading : 545M/1.54G [00:10&lt;00:19,    54.3MB/s]
+ 35%|###4      | Downloading : 547M/1.54G [00:10&lt;00:20,    53.4MB/s]
+ 35%|###4      | Downloading : 549M/1.54G [00:10&lt;00:19,    54.2MB/s]
+ 35%|###4      | Downloading : 551M/1.54G [00:10&lt;00:20,    53.6MB/s]
+ 35%|###5      | Downloading : 553M/1.54G [00:10&lt;00:19,    54.6MB/s]
+ 35%|###5      | Downloading : 555M/1.54G [00:10&lt;00:20,    53.5MB/s]
+ 35%|###5      | Downloading : 557M/1.54G [00:11&lt;00:19,    55.0MB/s]
+ 35%|###5      | Downloading : 559M/1.54G [00:11&lt;00:19,    53.6MB/s]
+ 36%|###5      | Downloading : 561M/1.54G [00:11&lt;00:20,    52.8MB/s]
+ 36%|###5      | Downloading : 563M/1.54G [00:11&lt;00:19,    53.8MB/s]
+ 36%|###5      | Downloading : 565M/1.54G [00:11&lt;00:19,    53.1MB/s]
+ 36%|###5      | Downloading : 567M/1.54G [00:11&lt;00:20,    51.1MB/s]
+ 36%|###6      | Downloading : 569M/1.54G [00:11&lt;00:21,    49.4MB/s]
+ 36%|###6      | Downloading : 571M/1.54G [00:11&lt;00:22,    47.8MB/s]
+ 36%|###6      | Downloading : 573M/1.54G [00:11&lt;00:21,    48.4MB/s]
+ 36%|###6      | Downloading : 575M/1.54G [00:11&lt;00:21,    48.5MB/s]
+ 37%|###6      | Downloading : 577M/1.54G [00:11&lt;00:21,    49.0MB/s]
+ 37%|###6      | Downloading : 579M/1.54G [00:11&lt;00:21,    48.2MB/s]
+ 37%|###6      | Downloading : 581M/1.54G [00:11&lt;00:21,    49.6MB/s]
+ 37%|###6      | Downloading : 583M/1.54G [00:11&lt;00:21,    48.8MB/s]
+ 37%|###7      | Downloading : 585M/1.54G [00:11&lt;00:20,    50.2MB/s]
+ 37%|###7      | Downloading : 587M/1.54G [00:11&lt;00:21,    49.3MB/s]
+ 37%|###7      | Downloading : 591M/1.54G [00:11&lt;00:20,    49.7MB/s]
+ 38%|###7      | Downloading : 593M/1.54G [00:11&lt;00:20,    50.2MB/s]
+ 38%|###7      | Downloading : 595M/1.54G [00:11&lt;00:20,    50.3MB/s]
+ 38%|###7      | Downloading : 597M/1.54G [00:11&lt;00:20,    50.7MB/s]
+ 38%|###8      | Downloading : 599M/1.54G [00:11&lt;00:20,    50.8MB/s]
+ 38%|###8      | Downloading : 601M/1.54G [00:11&lt;00:20,    50.1MB/s]
+ 38%|###8      | Downloading : 603M/1.54G [00:12&lt;00:19,    51.3MB/s]
+ 38%|###8      | Downloading : 605M/1.54G [00:12&lt;00:20,    50.7MB/s]
+ 39%|###8      | Downloading : 607M/1.54G [00:12&lt;00:19,    51.9MB/s]
+ 39%|###8      | Downloading : 609M/1.54G [00:12&lt;00:19,    51.1MB/s]
+ 39%|###8      | Downloading : 611M/1.54G [00:12&lt;00:19,    52.3MB/s]
+ 39%|###8      | Downloading : 613M/1.54G [00:12&lt;00:19,    51.2MB/s]
+ 39%|###9      | Downloading : 615M/1.54G [00:12&lt;00:19,    51.5MB/s]
+ 39%|###9      | Downloading : 617M/1.54G [00:12&lt;00:19,    51.7MB/s]
+ 39%|###9      | Downloading : 619M/1.54G [00:12&lt;00:19,    52.0MB/s]
+ 39%|###9      | Downloading : 621M/1.54G [00:12&lt;00:19,    52.0MB/s]
+ 40%|###9      | Downloading : 623M/1.54G [00:12&lt;00:19,    51.4MB/s]
+ 40%|###9      | Downloading : 625M/1.54G [00:12&lt;00:19,    52.2MB/s]
+ 40%|###9      | Downloading : 627M/1.54G [00:12&lt;00:19,    51.6MB/s]
+ 40%|###9      | Downloading : 629M/1.54G [00:12&lt;00:18,    52.6MB/s]
+ 40%|####      | Downloading : 631M/1.54G [00:12&lt;00:19,    52.1MB/s]
+ 40%|####      | Downloading : 633M/1.54G [00:12&lt;00:18,    53.1MB/s]
+ 40%|####      | Downloading : 635M/1.54G [00:12&lt;00:18,    52.2MB/s]
+ 40%|####      | Downloading : 637M/1.54G [00:12&lt;00:18,    52.5MB/s]
+ 41%|####      | Downloading : 639M/1.54G [00:12&lt;00:18,    52.5MB/s]
+ 41%|####      | Downloading : 641M/1.54G [00:12&lt;00:18,    52.9MB/s]
+ 41%|####      | Downloading : 643M/1.54G [00:12&lt;00:18,    52.8MB/s]
+ 41%|####      | Downloading : 645M/1.54G [00:12&lt;00:18,    52.1MB/s]
+ 41%|####1     | Downloading : 647M/1.54G [00:12&lt;00:18,    53.0MB/s]
+ 41%|####1     | Downloading : 649M/1.54G [00:12&lt;00:18,    52.4MB/s]
+ 41%|####1     | Downloading : 651M/1.54G [00:12&lt;00:18,    53.4MB/s]
+ 41%|####1     | Downloading : 653M/1.54G [00:13&lt;00:18,    52.7MB/s]
+ 42%|####1     | Downloading : 655M/1.54G [00:13&lt;00:17,    53.8MB/s]
+ 42%|####1     | Downloading : 657M/1.54G [00:13&lt;00:18,    52.8MB/s]
+ 42%|####1     | Downloading : 659M/1.54G [00:13&lt;00:18,    53.1MB/s]
+ 42%|####1     | Downloading : 661M/1.54G [00:13&lt;00:18,    53.1MB/s]
+ 42%|####2     | Downloading : 663M/1.54G [00:13&lt;00:18,    53.2MB/s]
+ 42%|####2     | Downloading : 665M/1.54G [00:13&lt;00:17,    53.4MB/s]
+ 42%|####2     | Downloading : 667M/1.54G [00:13&lt;00:18,    52.5MB/s]
+ 42%|####2     | Downloading : 669M/1.54G [00:13&lt;00:17,    53.0MB/s]
+ 43%|####2     | Downloading : 671M/1.54G [00:13&lt;00:18,    52.3MB/s]
+ 43%|####2     | Downloading : 673M/1.54G [00:13&lt;00:17,    53.3MB/s]
+ 43%|####2     | Downloading : 675M/1.54G [00:13&lt;00:17,    52.6MB/s]
+ 43%|####2     | Downloading : 677M/1.54G [00:13&lt;00:17,    53.7MB/s]
+ 43%|####3     | Downloading : 679M/1.54G [00:13&lt;00:17,    52.6MB/s]
+ 43%|####3     | Downloading : 681M/1.54G [00:13&lt;00:17,    53.4MB/s]
+ 43%|####3     | Downloading : 683M/1.54G [00:13&lt;00:17,    52.8MB/s]
+ 43%|####3     | Downloading : 685M/1.54G [00:13&lt;00:17,    53.4MB/s]
+ 44%|####3     | Downloading : 687M/1.54G [00:13&lt;00:17,    53.0MB/s]
+ 44%|####3     | Downloading : 689M/1.54G [00:13&lt;00:17,    53.0MB/s]
+ 44%|####3     | Downloading : 691M/1.54G [00:13&lt;00:17,    53.2MB/s]
+ 44%|####3     | Downloading : 693M/1.54G [00:13&lt;00:17,    53.4MB/s]
+ 44%|####4     | Downloading : 695M/1.54G [00:13&lt;00:17,    53.7MB/s]
+ 44%|####4     | Downloading : 697M/1.54G [00:13&lt;00:17,    52.9MB/s]
+ 44%|####4     | Downloading : 699M/1.54G [00:13&lt;00:17,    53.8MB/s]
+ 44%|####4     | Downloading : 701M/1.54G [00:13&lt;00:17,    52.9MB/s]
+ 45%|####4     | Downloading : 703M/1.54G [00:13&lt;00:17,    53.7MB/s]
+ 45%|####4     | Downloading : 705M/1.54G [00:14&lt;00:17,    53.1MB/s]
+ 45%|####4     | Downloading : 707M/1.54G [00:14&lt;00:16,    53.7MB/s]
+ 45%|####4     | Downloading : 709M/1.54G [00:14&lt;00:17,    53.3MB/s]
+ 45%|####5     | Downloading : 711M/1.54G [00:14&lt;00:17,    53.3MB/s]
+ 45%|####5     | Downloading : 713M/1.54G [00:14&lt;00:16,    53.6MB/s]
+ 45%|####5     | Downloading : 715M/1.54G [00:14&lt;00:17,    52.9MB/s]
+ 45%|####5     | Downloading : 717M/1.54G [00:14&lt;00:16,    54.0MB/s]
+ 46%|####5     | Downloading : 719M/1.54G [00:14&lt;00:16,    53.0MB/s]
+ 46%|####5     | Downloading : 721M/1.54G [00:14&lt;00:16,    54.0MB/s]
+ 46%|####5     | Downloading : 723M/1.54G [00:14&lt;00:16,    53.2MB/s]
+ 46%|####6     | Downloading : 725M/1.54G [00:14&lt;00:16,    53.8MB/s]
+ 46%|####6     | Downloading : 727M/1.54G [00:14&lt;00:16,    53.3MB/s]
+ 46%|####6     | Downloading : 729M/1.54G [00:14&lt;00:16,    53.9MB/s]
+ 46%|####6     | Downloading : 731M/1.54G [00:14&lt;00:16,    53.5MB/s]
+ 47%|####6     | Downloading : 733M/1.54G [00:14&lt;00:16,    53.6MB/s]
+ 47%|####6     | Downloading : 735M/1.54G [00:14&lt;00:16,    53.6MB/s]
+ 47%|####6     | Downloading : 737M/1.54G [00:14&lt;00:16,    53.1MB/s]
+ 47%|####6     | Downloading : 739M/1.54G [00:14&lt;00:16,    54.0MB/s]
+ 47%|####7     | Downloading : 741M/1.54G [00:14&lt;00:16,    53.4MB/s]
+ 47%|####7     | Downloading : 743M/1.54G [00:14&lt;00:16,    54.1MB/s]
+ 47%|####7     | Downloading : 745M/1.54G [00:14&lt;00:16,    53.2MB/s]
+ 47%|####7     | Downloading : 747M/1.54G [00:14&lt;00:16,    54.0MB/s]
+ 48%|####7     | Downloading : 749M/1.54G [00:14&lt;00:16,    53.5MB/s]
+ 48%|####7     | Downloading : 751M/1.54G [00:14&lt;00:16,    54.1MB/s]
+ 48%|####7     | Downloading : 753M/1.54G [00:14&lt;00:16,    53.8MB/s]
+ 48%|####7     | Downloading : 755M/1.54G [00:14&lt;00:16,    53.7MB/s]
+ 48%|####8     | Downloading : 757M/1.54G [00:15&lt;00:15,    53.8MB/s]
+ 48%|####8     | Downloading : 759M/1.54G [00:15&lt;00:16,    53.1MB/s]
+ 48%|####8     | Downloading : 761M/1.54G [00:15&lt;00:15,    53.8MB/s]
+ 48%|####8     | Downloading : 763M/1.54G [00:15&lt;00:15,    53.4MB/s]
+ 49%|####8     | Downloading : 765M/1.54G [00:15&lt;00:15,    54.2MB/s]
+ 49%|####8     | Downloading : 767M/1.54G [00:15&lt;00:15,    53.3MB/s]
+ 49%|####8     | Downloading : 769M/1.54G [00:15&lt;00:15,    54.1MB/s]
+ 49%|####8     | Downloading : 771M/1.54G [00:15&lt;00:15,    53.6MB/s]
+ 49%|####9     | Downloading : 773M/1.54G [00:15&lt;00:15,    54.2MB/s]
+ 49%|####9     | Downloading : 775M/1.54G [00:15&lt;00:15,    53.9MB/s]
+ 49%|####9     | Downloading : 777M/1.54G [00:15&lt;00:15,    53.8MB/s]
+ 49%|####9     | Downloading : 779M/1.54G [00:15&lt;00:15,    53.9MB/s]
+ 50%|####9     | Downloading : 781M/1.54G [00:15&lt;00:15,    53.2MB/s]
+ 50%|####9     | Downloading : 783M/1.54G [00:15&lt;00:15,    54.0MB/s]
+ 50%|####9     | Downloading : 785M/1.54G [00:15&lt;00:15,    53.1MB/s]
+ 50%|####9     | Downloading : 787M/1.54G [00:15&lt;00:15,    54.0MB/s]
+ 50%|#####     | Downloading : 789M/1.54G [00:15&lt;00:15,    53.4MB/s]
+ 50%|#####     | Downloading : 791M/1.54G [00:15&lt;00:15,    53.9MB/s]
+ 50%|#####     | Downloading : 793M/1.54G [00:15&lt;00:15,    53.6MB/s]
+ 50%|#####     | Downloading : 795M/1.54G [00:15&lt;00:15,    54.2MB/s]
+ 51%|#####     | Downloading : 797M/1.54G [00:15&lt;00:15,    53.9MB/s]
+ 51%|#####     | Downloading : 799M/1.54G [00:15&lt;00:15,    53.9MB/s]
+ 51%|#####     | Downloading : 801M/1.54G [00:15&lt;00:15,    54.0MB/s]
+ 51%|#####     | Downloading : 803M/1.54G [00:15&lt;00:15,    53.2MB/s]
+ 51%|#####1    | Downloading : 805M/1.54G [00:15&lt;00:14,    54.1MB/s]
+ 51%|#####1    | Downloading : 807M/1.54G [00:16&lt;00:15,    53.2MB/s]
+ 51%|#####1    | Downloading : 809M/1.54G [00:16&lt;00:14,    54.0MB/s]
+ 51%|#####1    | Downloading : 811M/1.54G [00:16&lt;00:15,    53.4MB/s]
+ 52%|#####1    | Downloading : 813M/1.54G [00:16&lt;00:14,    54.3MB/s]
+ 52%|#####1    | Downloading : 815M/1.54G [00:16&lt;00:14,    53.7MB/s]
+ 52%|#####1    | Downloading : 817M/1.54G [00:16&lt;00:14,    54.3MB/s]
+ 52%|#####1    | Downloading : 819M/1.54G [00:16&lt;00:14,    54.0MB/s]
+ 52%|#####2    | Downloading : 821M/1.54G [00:16&lt;00:14,    53.8MB/s]
+ 52%|#####2    | Downloading : 823M/1.54G [00:16&lt;00:14,    54.1MB/s]
+ 52%|#####2    | Downloading : 825M/1.54G [00:16&lt;00:14,    53.2MB/s]
+ 52%|#####2    | Downloading : 827M/1.54G [00:16&lt;00:14,    54.2MB/s]
+ 53%|#####2    | Downloading : 829M/1.54G [00:16&lt;00:14,    53.1MB/s]
+ 53%|#####2    | Downloading : 831M/1.54G [00:16&lt;00:14,    54.1MB/s]
+ 53%|#####2    | Downloading : 833M/1.54G [00:16&lt;00:14,    53.5MB/s]
+ 53%|#####2    | Downloading : 835M/1.54G [00:16&lt;00:14,    54.4MB/s]
+ 53%|#####3    | Downloading : 837M/1.54G [00:16&lt;00:14,    53.8MB/s]
+ 53%|#####3    | Downloading : 839M/1.54G [00:16&lt;00:14,    54.4MB/s]
+ 53%|#####3    | Downloading : 841M/1.54G [00:16&lt;00:14,    54.0MB/s]
+ 53%|#####3    | Downloading : 843M/1.54G [00:16&lt;00:14,    53.6MB/s]
+ 54%|#####3    | Downloading : 845M/1.54G [00:16&lt;00:14,    54.1MB/s]
+ 54%|#####3    | Downloading : 847M/1.54G [00:16&lt;00:14,    53.3MB/s]
+ 54%|#####3    | Downloading : 849M/1.54G [00:16&lt;00:14,    54.2MB/s]
+ 54%|#####3    | Downloading : 851M/1.54G [00:16&lt;00:14,    52.0MB/s]
+ 54%|#####4    | Downloading : 853M/1.54G [00:16&lt;00:15,    50.1MB/s]
+ 54%|#####4    | Downloading : 855M/1.54G [00:17&lt;00:15,    48.5MB/s]
+ 54%|#####4    | Downloading : 857M/1.54G [00:17&lt;00:15,    47.2MB/s]
+ 55%|#####4    | Downloading : 861M/1.54G [00:17&lt;00:15,    47.9MB/s]
+ 55%|#####4    | Downloading : 865M/1.54G [00:17&lt;00:15,    48.6MB/s]
+ 55%|#####5    | Downloading : 867M/1.54G [00:17&lt;00:14,    49.9MB/s]
+ 55%|#####5    | Downloading : 869M/1.54G [00:17&lt;00:15,    49.1MB/s]
+ 55%|#####5    | Downloading : 871M/1.54G [00:17&lt;00:14,    49.9MB/s]
+ 55%|#####5    | Downloading : 873M/1.54G [00:17&lt;00:14,    49.6MB/s]
+ 56%|#####5    | Downloading : 875M/1.54G [00:17&lt;00:15,    48.8MB/s]
+ 56%|#####5    | Downloading : 879M/1.54G [00:17&lt;00:14,    49.5MB/s]
+ 56%|#####5    | Downloading : 881M/1.54G [00:17&lt;00:14,    50.9MB/s]
+ 56%|#####6    | Downloading : 883M/1.54G [00:17&lt;00:14,    50.0MB/s]
+ 56%|#####6    | Downloading : 885M/1.54G [00:17&lt;00:14,    51.3MB/s]
+ 56%|#####6    | Downloading : 887M/1.54G [00:17&lt;00:14,    50.4MB/s]
+ 57%|#####6    | Downloading : 891M/1.54G [00:17&lt;00:14,    50.7MB/s]
+ 57%|#####6    | Downloading : 893M/1.54G [00:17&lt;00:13,    51.7MB/s]
+ 57%|#####6    | Downloading : 895M/1.54G [00:17&lt;00:13,    51.1MB/s]
+ 57%|#####6    | Downloading : 897M/1.54G [00:17&lt;00:14,    50.3MB/s]
+ 57%|#####7    | Downloading : 899M/1.54G [00:17&lt;00:13,    51.7MB/s]
+ 57%|#####7    | Downloading : 901M/1.54G [00:17&lt;00:13,    50.8MB/s]
+ 57%|#####7    | Downloading : 903M/1.54G [00:17&lt;00:13,    51.9MB/s]
+ 57%|#####7    | Downloading : 905M/1.54G [00:18&lt;00:13,    51.2MB/s]
+ 58%|#####7    | Downloading : 907M/1.54G [00:18&lt;00:13,    52.3MB/s]
+ 58%|#####7    | Downloading : 909M/1.54G [00:18&lt;00:13,    51.5MB/s]
+ 58%|#####7    | Downloading : 911M/1.54G [00:18&lt;00:13,    52.8MB/s]
+ 58%|#####7    | Downloading : 913M/1.54G [00:18&lt;00:13,    51.9MB/s]
+ 58%|#####8    | Downloading : 915M/1.54G [00:18&lt;00:13,    52.7MB/s]
+ 58%|#####8    | Downloading : 917M/1.54G [00:18&lt;00:13,    52.2MB/s]
+ 58%|#####8    | Downloading : 919M/1.54G [00:18&lt;00:13,    51.2MB/s]
+ 58%|#####8    | Downloading : 921M/1.54G [00:18&lt;00:13,    52.4MB/s]
+ 59%|#####8    | Downloading : 923M/1.54G [00:18&lt;00:13,    51.7MB/s]
+ 59%|#####8    | Downloading : 925M/1.54G [00:18&lt;00:12,    52.9MB/s]
+ 59%|#####8    | Downloading : 927M/1.54G [00:18&lt;00:13,    52.1MB/s]
+ 59%|#####8    | Downloading : 929M/1.54G [00:18&lt;00:12,    53.3MB/s]
+ 59%|#####9    | Downloading : 931M/1.54G [00:18&lt;00:12,    52.3MB/s]
+ 59%|#####9    | Downloading : 933M/1.54G [00:18&lt;00:12,    53.6MB/s]
+ 59%|#####9    | Downloading : 935M/1.54G [00:18&lt;00:12,    52.7MB/s]
+ 59%|#####9    | Downloading : 937M/1.54G [00:18&lt;00:12,    53.4MB/s]
+ 60%|#####9    | Downloading : 939M/1.54G [00:18&lt;00:12,    52.9MB/s]
+ 60%|#####9    | Downloading : 941M/1.54G [00:18&lt;00:12,    51.8MB/s]
+ 60%|#####9    | Downloading : 943M/1.54G [00:18&lt;00:12,    53.1MB/s]
+ 60%|#####9    | Downloading : 945M/1.54G [00:18&lt;00:12,    52.3MB/s]
+ 60%|######    | Downloading : 947M/1.54G [00:18&lt;00:12,    53.5MB/s]
+ 60%|######    | Downloading : 949M/1.54G [00:18&lt;00:12,    52.6MB/s]
+ 60%|######    | Downloading : 951M/1.54G [00:18&lt;00:12,    53.8MB/s]
+ 60%|######    | Downloading : 953M/1.54G [00:18&lt;00:12,    52.8MB/s]
+ 61%|######    | Downloading : 955M/1.54G [00:18&lt;00:12,    54.1MB/s]
+ 61%|######    | Downloading : 957M/1.54G [00:19&lt;00:12,    53.2MB/s]
+ 61%|######    | Downloading : 959M/1.54G [00:19&lt;00:12,    53.8MB/s]
+ 61%|######    | Downloading : 961M/1.54G [00:19&lt;00:12,    53.3MB/s]
+ 61%|######1   | Downloading : 963M/1.54G [00:19&lt;00:12,    52.3MB/s]
+ 61%|######1   | Downloading : 965M/1.54G [00:19&lt;00:11,    53.5MB/s]
+ 61%|######1   | Downloading : 967M/1.54G [00:19&lt;00:12,    52.6MB/s]
+ 61%|######1   | Downloading : 969M/1.54G [00:19&lt;00:11,    53.9MB/s]
+ 62%|######1   | Downloading : 971M/1.54G [00:19&lt;00:12,    52.8MB/s]
+ 62%|######1   | Downloading : 973M/1.54G [00:19&lt;00:11,    54.1MB/s]
+ 62%|######1   | Downloading : 975M/1.54G [00:19&lt;00:11,    53.2MB/s]
+ 62%|######1   | Downloading : 977M/1.54G [00:19&lt;00:11,    54.5MB/s]
+ 62%|######2   | Downloading : 979M/1.54G [00:19&lt;00:11,    53.4MB/s]
+ 62%|######2   | Downloading : 981M/1.54G [00:19&lt;00:11,    54.0MB/s]
+ 62%|######2   | Downloading : 983M/1.54G [00:19&lt;00:11,    53.6MB/s]
+ 62%|######2   | Downloading : 985M/1.54G [00:19&lt;00:11,    52.5MB/s]
+ 63%|######2   | Downloading : 987M/1.54G [00:19&lt;00:11,    53.7MB/s]
+ 63%|######2   | Downloading : 989M/1.54G [00:19&lt;00:11,    52.9MB/s]
+ 63%|######2   | Downloading : 991M/1.54G [00:19&lt;00:11,    54.0MB/s]
+ 63%|######3   | Downloading : 993M/1.54G [00:19&lt;00:11,    53.0MB/s]
+ 63%|######3   | Downloading : 995M/1.54G [00:19&lt;00:11,    54.3MB/s]
+ 63%|######3   | Downloading : 997M/1.54G [00:19&lt;00:11,    53.3MB/s]
+ 63%|######3   | Downloading : 999M/1.54G [00:19&lt;00:11,    53.9MB/s]
+ 64%|######3   | Downloading : 0.98G/1.54G [00:19&lt;00:11,    53.6MB/s]
+ 64%|######3   | Downloading : 0.98G/1.54G [00:19&lt;00:11,    54.3MB/s]
+ 64%|######3   | Downloading : 0.98G/1.54G [00:19&lt;00:11,    53.8MB/s]
+ 64%|######3   | Downloading : 0.98G/1.54G [00:20&lt;00:11,    52.7MB/s]
+ 64%|######4   | Downloading : 0.99G/1.54G [00:20&lt;00:11,    53.8MB/s]
+ 64%|######4   | Downloading : 0.99G/1.54G [00:20&lt;00:11,    53.0MB/s]
+ 64%|######4   | Downloading : 0.99G/1.54G [00:20&lt;00:10,    54.2MB/s]
+ 64%|######4   | Downloading : 0.99G/1.54G [00:20&lt;00:11,    53.2MB/s]
+ 65%|######4   | Downloading : 0.99G/1.54G [00:20&lt;00:10,    54.4MB/s]
+ 65%|######4   | Downloading : 1.00G/1.54G [00:20&lt;00:10,    53.4MB/s]
+ 65%|######4   | Downloading : 1.00G/1.54G [00:20&lt;00:10,    54.0MB/s]
+ 65%|######4   | Downloading : 1.00G/1.54G [00:20&lt;00:10,    53.8MB/s]
+ 65%|######5   | Downloading : 1.00G/1.54G [00:20&lt;00:10,    54.4MB/s]
+ 65%|######5   | Downloading : 1.00G/1.54G [00:20&lt;00:10,    53.9MB/s]
+ 65%|######5   | Downloading : 1.00G/1.54G [00:20&lt;00:10,    52.5MB/s]
+ 65%|######5   | Downloading : 1.01G/1.54G [00:20&lt;00:10,    53.9MB/s]
+ 66%|######5   | Downloading : 1.01G/1.54G [00:20&lt;00:10,    52.8MB/s]
+ 66%|######5   | Downloading : 1.01G/1.54G [00:20&lt;00:10,    54.3MB/s]
+ 66%|######5   | Downloading : 1.01G/1.54G [00:20&lt;00:10,    53.2MB/s]
+ 66%|######5   | Downloading : 1.01G/1.54G [00:20&lt;00:10,    54.5MB/s]
+ 66%|######6   | Downloading : 1.02G/1.54G [00:20&lt;00:10,    53.4MB/s]
+ 66%|######6   | Downloading : 1.02G/1.54G [00:20&lt;00:10,    54.1MB/s]
+ 66%|######6   | Downloading : 1.02G/1.54G [00:20&lt;00:10,    53.8MB/s]
+ 66%|######6   | Downloading : 1.02G/1.54G [00:20&lt;00:10,    54.5MB/s]
+ 67%|######6   | Downloading : 1.02G/1.54G [00:20&lt;00:10,    54.0MB/s]
+ 67%|######6   | Downloading : 1.03G/1.54G [00:20&lt;00:10,    52.7MB/s]
+ 67%|######6   | Downloading : 1.03G/1.54G [00:20&lt;00:10,    54.0MB/s]
+ 67%|######6   | Downloading : 1.03G/1.54G [00:20&lt;00:10,    52.9MB/s]
+ 67%|######7   | Downloading : 1.03G/1.54G [00:20&lt;00:10,    54.3MB/s]
+ 67%|######7   | Downloading : 1.03G/1.54G [00:21&lt;00:10,    53.3MB/s]
+ 67%|######7   | Downloading : 1.04G/1.54G [00:21&lt;00:10,    53.6MB/s]
+ 67%|######7   | Downloading : 1.04G/1.54G [00:21&lt;00:10,    53.6MB/s]
+ 68%|######7   | Downloading : 1.04G/1.54G [00:21&lt;00:09,    55.0MB/s]
+ 68%|######7   | Downloading : 1.04G/1.54G [00:21&lt;00:09,    53.7MB/s]
+ 68%|######7   | Downloading : 1.04G/1.54G [00:21&lt;00:09,    54.6MB/s]
+ 68%|######7   | Downloading : 1.05G/1.54G [00:21&lt;00:09,    54.0MB/s]
+ 68%|######8   | Downloading : 1.05G/1.54G [00:21&lt;00:10,    52.7MB/s]
+ 68%|######8   | Downloading : 1.05G/1.54G [00:21&lt;00:09,    54.1MB/s]
+ 68%|######8   | Downloading : 1.05G/1.54G [00:21&lt;00:09,    53.0MB/s]
+ 68%|######8   | Downloading : 1.05G/1.54G [00:21&lt;00:09,    54.3MB/s]
+ 69%|######8   | Downloading : 1.06G/1.54G [00:21&lt;00:09,    53.3MB/s]
+ 69%|######8   | Downloading : 1.06G/1.54G [00:21&lt;00:09,    54.6MB/s]
+ 69%|######8   | Downloading : 1.06G/1.54G [00:21&lt;00:09,    53.4MB/s]
+ 69%|######8   | Downloading : 1.06G/1.54G [00:21&lt;00:09,    54.4MB/s]
+ 69%|######9   | Downloading : 1.06G/1.54G [00:21&lt;00:09,    53.8MB/s]
+ 69%|######9   | Downloading : 1.07G/1.54G [00:21&lt;00:09,    54.6MB/s]
+ 69%|######9   | Downloading : 1.07G/1.54G [00:21&lt;00:09,    54.1MB/s]
+ 69%|######9   | Downloading : 1.07G/1.54G [00:21&lt;00:09,    52.7MB/s]
+ 70%|######9   | Downloading : 1.07G/1.54G [00:21&lt;00:09,    54.1MB/s]
+ 70%|######9   | Downloading : 1.07G/1.54G [00:21&lt;00:09,    53.0MB/s]
+ 70%|######9   | Downloading : 1.08G/1.54G [00:21&lt;00:09,    54.4MB/s]
+ 70%|######9   | Downloading : 1.08G/1.54G [00:21&lt;00:09,    53.3MB/s]
+ 70%|#######   | Downloading : 1.08G/1.54G [00:21&lt;00:09,    54.7MB/s]
+ 70%|#######   | Downloading : 1.08G/1.54G [00:21&lt;00:09,    53.5MB/s]
+ 70%|#######   | Downloading : 1.08G/1.54G [00:21&lt;00:09,    54.4MB/s]
+ 70%|#######   | Downloading : 1.09G/1.54G [00:22&lt;00:09,    53.8MB/s]
+ 71%|#######   | Downloading : 1.09G/1.54G [00:22&lt;00:08,    54.6MB/s]
+ 71%|#######   | Downloading : 1.09G/1.54G [00:22&lt;00:08,    54.1MB/s]
+ 71%|#######   | Downloading : 1.09G/1.54G [00:22&lt;00:09,    52.7MB/s]
+ 71%|#######   | Downloading : 1.09G/1.54G [00:22&lt;00:08,    54.2MB/s]
+ 71%|#######1  | Downloading : 1.09G/1.54G [00:22&lt;00:09,    52.8MB/s]
+ 71%|#######1  | Downloading : 1.10G/1.54G [00:22&lt;00:08,    54.4MB/s]
+ 71%|#######1  | Downloading : 1.10G/1.54G [00:22&lt;00:08,    53.2MB/s]
+ 72%|#######1  | Downloading : 1.10G/1.54G [00:22&lt;00:08,    54.7MB/s]
+ 72%|#######1  | Downloading : 1.10G/1.54G [00:22&lt;00:08,    53.5MB/s]
+ 72%|#######1  | Downloading : 1.10G/1.54G [00:22&lt;00:08,    54.4MB/s]
+ 72%|#######1  | Downloading : 1.11G/1.54G [00:22&lt;00:08,    53.7MB/s]
+ 72%|#######2  | Downloading : 1.11G/1.54G [00:22&lt;00:08,    54.7MB/s]
+ 72%|#######2  | Downloading : 1.11G/1.54G [00:22&lt;00:08,    54.0MB/s]
+ 72%|#######2  | Downloading : 1.11G/1.54G [00:22&lt;00:08,    52.8MB/s]
+ 72%|#######2  | Downloading : 1.11G/1.54G [00:22&lt;00:08,    54.1MB/s]
+ 73%|#######2  | Downloading : 1.12G/1.54G [00:22&lt;00:08,    52.9MB/s]
+ 73%|#######2  | Downloading : 1.12G/1.54G [00:22&lt;00:08,    54.5MB/s]
+ 73%|#######2  | Downloading : 1.12G/1.54G [00:22&lt;00:08,    53.2MB/s]
+ 73%|#######3  | Downloading : 1.12G/1.54G [00:22&lt;00:08,    53.5MB/s]
+ 73%|#######3  | Downloading : 1.13G/1.54G [00:22&lt;00:08,    54.4MB/s]
+ 73%|#######3  | Downloading : 1.13G/1.54G [00:22&lt;00:08,    53.6MB/s]
+ 73%|#######3  | Downloading : 1.13G/1.54G [00:22&lt;00:08,    52.5MB/s]
+ 74%|#######3  | Downloading : 1.13G/1.54G [00:22&lt;00:08,    54.0MB/s]
+ 74%|#######3  | Downloading : 1.13G/1.54G [00:23&lt;00:08,    52.9MB/s]
+ 74%|#######3  | Downloading : 1.14G/1.54G [00:23&lt;00:07,    54.3MB/s]
+ 74%|#######3  | Downloading : 1.14G/1.54G [00:23&lt;00:08,    53.0MB/s]
+ 74%|#######4  | Downloading : 1.14G/1.54G [00:23&lt;00:08,    53.3MB/s]
+ 74%|#######4  | Downloading : 1.15G/1.54G [00:23&lt;00:07,    53.5MB/s]
+ 75%|#######4  | Downloading : 1.15G/1.54G [00:23&lt;00:07,    54.5MB/s]
+ 75%|#######4  | Downloading : 1.15G/1.54G [00:23&lt;00:07,    53.7MB/s]
+ 75%|#######4  | Downloading : 1.15G/1.54G [00:23&lt;00:07,    54.8MB/s]
+ 75%|#######4  | Downloading : 1.15G/1.54G [00:23&lt;00:07,    54.0MB/s]
+ 75%|#######5  | Downloading : 1.16G/1.54G [00:23&lt;00:07,    53.0MB/s]
+ 75%|#######5  | Downloading : 1.16G/1.54G [00:23&lt;00:07,    54.2MB/s]
+ 75%|#######5  | Downloading : 1.16G/1.54G [00:23&lt;00:07,    53.1MB/s]
+ 75%|#######5  | Downloading : 1.16G/1.54G [00:23&lt;00:07,    54.5MB/s]
+ 76%|#######5  | Downloading : 1.16G/1.54G [00:23&lt;00:07,    53.3MB/s]
+ 76%|#######5  | Downloading : 1.17G/1.54G [00:23&lt;00:07,    54.7MB/s]
+ 76%|#######5  | Downloading : 1.17G/1.54G [00:23&lt;00:07,    53.5MB/s]
+ 76%|#######5  | Downloading : 1.17G/1.54G [00:23&lt;00:07,    54.6MB/s]
+ 76%|#######6  | Downloading : 1.17G/1.54G [00:23&lt;00:07,    53.7MB/s]
+ 76%|#######6  | Downloading : 1.17G/1.54G [00:23&lt;00:07,    54.9MB/s]
+ 76%|#######6  | Downloading : 1.17G/1.54G [00:23&lt;00:07,    53.9MB/s]
+ 76%|#######6  | Downloading : 1.18G/1.54G [00:23&lt;00:07,    53.0MB/s]
+ 77%|#######6  | Downloading : 1.18G/1.54G [00:23&lt;00:07,    54.2MB/s]
+ 77%|#######6  | Downloading : 1.18G/1.54G [00:23&lt;00:07,    52.7MB/s]
+ 77%|#######6  | Downloading : 1.18G/1.54G [00:24&lt;00:07,    53.4MB/s]
+ 77%|#######7  | Downloading : 1.19G/1.54G [00:24&lt;00:06,    54.6MB/s]
+ 77%|#######7  | Downloading : 1.19G/1.54G [00:24&lt;00:07,    53.5MB/s]
+ 77%|#######7  | Downloading : 1.19G/1.54G [00:24&lt;00:06,    54.7MB/s]
+ 77%|#######7  | Downloading : 1.19G/1.54G [00:24&lt;00:06,    53.7MB/s]
+ 78%|#######7  | Downloading : 1.19G/1.54G [00:24&lt;00:07,    52.7MB/s]
+ 78%|#######7  | Downloading : 1.20G/1.54G [00:24&lt;00:06,    53.9MB/s]
+ 78%|#######7  | Downloading : 1.20G/1.54G [00:24&lt;00:06,    52.9MB/s]
+ 78%|#######7  | Downloading : 1.20G/1.54G [00:24&lt;00:06,    54.4MB/s]
+ 78%|#######8  | Downloading : 1.20G/1.54G [00:24&lt;00:06,    53.2MB/s]
+ 78%|#######8  | Downloading : 1.20G/1.54G [00:24&lt;00:06,    54.6MB/s]
+ 78%|#######8  | Downloading : 1.21G/1.54G [00:24&lt;00:06,    53.4MB/s]
+ 78%|#######8  | Downloading : 1.21G/1.54G [00:24&lt;00:06,    54.6MB/s]
+ 79%|#######8  | Downloading : 1.21G/1.54G [00:24&lt;00:06,    53.6MB/s]
+ 79%|#######8  | Downloading : 1.21G/1.54G [00:24&lt;00:06,    54.7MB/s]
+ 79%|#######8  | Downloading : 1.21G/1.54G [00:24&lt;00:06,    53.8MB/s]
+ 79%|#######8  | Downloading : 1.22G/1.54G [00:24&lt;00:06,    52.7MB/s]
+ 79%|#######9  | Downloading : 1.22G/1.54G [00:24&lt;00:06,    54.1MB/s]
+ 79%|#######9  | Downloading : 1.22G/1.54G [00:24&lt;00:06,    52.9MB/s]
+ 79%|#######9  | Downloading : 1.22G/1.54G [00:24&lt;00:06,    53.9MB/s]
+ 79%|#######9  | Downloading : 1.22G/1.54G [00:24&lt;00:06,    53.3MB/s]
+ 80%|#######9  | Downloading : 1.23G/1.54G [00:24&lt;00:06,    54.7MB/s]
+ 80%|#######9  | Downloading : 1.23G/1.54G [00:24&lt;00:06,    53.4MB/s]
+ 80%|#######9  | Downloading : 1.23G/1.54G [00:24&lt;00:06,    54.8MB/s]
+ 80%|########  | Downloading : 1.23G/1.54G [00:24&lt;00:06,    53.6MB/s]
+ 80%|########  | Downloading : 1.23G/1.54G [00:24&lt;00:05,    54.8MB/s]
+ 80%|########  | Downloading : 1.24G/1.54G [00:25&lt;00:06,    53.6MB/s]
+ 80%|########  | Downloading : 1.24G/1.54G [00:25&lt;00:06,    52.7MB/s]
+ 81%|########  | Downloading : 1.24G/1.54G [00:25&lt;00:05,    54.1MB/s]
+ 81%|########  | Downloading : 1.24G/1.54G [00:25&lt;00:06,    53.0MB/s]
+ 81%|########  | Downloading : 1.24G/1.54G [00:25&lt;00:05,    54.4MB/s]
+ 81%|########  | Downloading : 1.25G/1.54G [00:25&lt;00:05,    53.1MB/s]
+ 81%|########1 | Downloading : 1.25G/1.54G [00:25&lt;00:05,    54.6MB/s]
+ 81%|########1 | Downloading : 1.25G/1.54G [00:25&lt;00:05,    53.5MB/s]
+ 81%|########1 | Downloading : 1.25G/1.54G [00:25&lt;00:05,    54.9MB/s]
+ 81%|########1 | Downloading : 1.25G/1.54G [00:25&lt;00:05,    53.5MB/s]
+ 82%|########1 | Downloading : 1.25G/1.54G [00:25&lt;00:05,    54.9MB/s]
+ 82%|########1 | Downloading : 1.26G/1.54G [00:25&lt;00:05,    53.6MB/s]
+ 82%|########1 | Downloading : 1.26G/1.54G [00:25&lt;00:05,    52.6MB/s]
+ 82%|########1 | Downloading : 1.26G/1.54G [00:25&lt;00:05,    54.0MB/s]
+ 82%|########2 | Downloading : 1.26G/1.54G [00:25&lt;00:05,    52.9MB/s]
+ 82%|########2 | Downloading : 1.26G/1.54G [00:25&lt;00:05,    54.1MB/s]
+ 82%|########2 | Downloading : 1.27G/1.54G [00:25&lt;00:05,    53.3MB/s]
+ 82%|########2 | Downloading : 1.27G/1.54G [00:25&lt;00:05,    54.4MB/s]
+ 83%|########2 | Downloading : 1.27G/1.54G [00:25&lt;00:05,    53.2MB/s]
+ 83%|########2 | Downloading : 1.27G/1.54G [00:25&lt;00:05,    54.8MB/s]
+ 83%|########2 | Downloading : 1.27G/1.54G [00:25&lt;00:05,    53.4MB/s]
+ 83%|########3 | Downloading : 1.28G/1.54G [00:25&lt;00:05,    53.7MB/s]
+ 83%|########3 | Downloading : 1.28G/1.54G [00:25&lt;00:05,    52.8MB/s]
+ 83%|########3 | Downloading : 1.28G/1.54G [00:25&lt;00:05,    54.0MB/s]
+ 83%|########3 | Downloading : 1.28G/1.54G [00:26&lt;00:05,    53.1MB/s]
+ 84%|########3 | Downloading : 1.29G/1.54G [00:26&lt;00:05,    54.3MB/s]
+ 84%|########3 | Downloading : 1.29G/1.54G [00:26&lt;00:05,    53.3MB/s]
+ 84%|########3 | Downloading : 1.29G/1.54G [00:26&lt;00:04,    54.5MB/s]
+ 84%|########3 | Downloading : 1.29G/1.54G [00:26&lt;00:04,    53.3MB/s]
+ 84%|########4 | Downloading : 1.30G/1.54G [00:26&lt;00:04,    53.5MB/s]
+ 84%|########4 | Downloading : 1.30G/1.54G [00:26&lt;00:04,    54.4MB/s]
+ 84%|########4 | Downloading : 1.30G/1.54G [00:26&lt;00:04,    53.7MB/s]
+ 85%|########4 | Downloading : 1.30G/1.54G [00:26&lt;00:04,    52.8MB/s]
+ 85%|########4 | Downloading : 1.30G/1.54G [00:26&lt;00:04,    53.4MB/s]
+ 85%|########4 | Downloading : 1.31G/1.54G [00:26&lt;00:04,    53.1MB/s]
+ 85%|########4 | Downloading : 1.31G/1.54G [00:26&lt;00:04,    54.1MB/s]
+ 85%|########5 | Downloading : 1.31G/1.54G [00:26&lt;00:04,    53.4MB/s]
+ 85%|########5 | Downloading : 1.31G/1.54G [00:26&lt;00:04,    54.5MB/s]
+ 85%|########5 | Downloading : 1.31G/1.54G [00:26&lt;00:04,    53.2MB/s]
+ 85%|########5 | Downloading : 1.32G/1.54G [00:26&lt;00:04,    54.7MB/s]
+ 86%|########5 | Downloading : 1.32G/1.54G [00:26&lt;00:04,    53.5MB/s]
+ 86%|########5 | Downloading : 1.32G/1.54G [00:26&lt;00:04,    55.0MB/s]
+ 86%|########5 | Downloading : 1.32G/1.54G [00:26&lt;00:04,    53.6MB/s]
+ 86%|########5 | Downloading : 1.32G/1.54G [00:26&lt;00:04,    52.9MB/s]
+ 86%|########6 | Downloading : 1.33G/1.54G [00:26&lt;00:04,    53.7MB/s]
+ 86%|########6 | Downloading : 1.33G/1.54G [00:26&lt;00:04,    53.2MB/s]
+ 86%|########6 | Downloading : 1.33G/1.54G [00:26&lt;00:04,    54.1MB/s]
+ 86%|########6 | Downloading : 1.33G/1.54G [00:26&lt;00:04,    53.3MB/s]
+ 87%|########6 | Downloading : 1.33G/1.54G [00:26&lt;00:04,    54.3MB/s]
+ 87%|########6 | Downloading : 1.34G/1.54G [00:27&lt;00:04,    53.1MB/s]
+ 87%|########6 | Downloading : 1.34G/1.54G [00:27&lt;00:03,    54.7MB/s]
+ 87%|########6 | Downloading : 1.34G/1.54G [00:27&lt;00:04,    53.4MB/s]
+ 87%|########7 | Downloading : 1.34G/1.54G [00:27&lt;00:03,    53.8MB/s]
+ 87%|########7 | Downloading : 1.34G/1.54G [00:27&lt;00:03,    53.0MB/s]
+ 87%|########7 | Downloading : 1.35G/1.54G [00:27&lt;00:03,    54.0MB/s]
+ 88%|########7 | Downloading : 1.35G/1.54G [00:27&lt;00:03,    53.3MB/s]
+ 88%|########7 | Downloading : 1.35G/1.54G [00:27&lt;00:03,    54.1MB/s]
+ 88%|########7 | Downloading : 1.35G/1.54G [00:27&lt;00:03,    53.4MB/s]
+ 88%|########7 | Downloading : 1.35G/1.54G [00:27&lt;00:03,    54.3MB/s]
+ 88%|########8 | Downloading : 1.36G/1.54G [00:27&lt;00:03,    53.2MB/s]
+ 88%|########8 | Downloading : 1.36G/1.54G [00:27&lt;00:03,    54.6MB/s]
+ 88%|########8 | Downloading : 1.36G/1.54G [00:27&lt;00:03,    53.5MB/s]
+ 89%|########8 | Downloading : 1.36G/1.54G [00:27&lt;00:03,    54.8MB/s]
+ 89%|########8 | Downloading : 1.36G/1.54G [00:27&lt;00:03,    53.7MB/s]
+ 89%|########8 | Downloading : 1.37G/1.54G [00:27&lt;00:03,    52.9MB/s]
+ 89%|########8 | Downloading : 1.37G/1.54G [00:27&lt;00:03,    54.0MB/s]
+ 89%|########9 | Downloading : 1.37G/1.54G [00:27&lt;00:03,    53.2MB/s]
+ 89%|########9 | Downloading : 1.37G/1.54G [00:27&lt;00:03,    54.2MB/s]
+ 89%|########9 | Downloading : 1.37G/1.54G [00:27&lt;00:03,    53.4MB/s]
+ 89%|########9 | Downloading : 1.38G/1.54G [00:27&lt;00:03,    54.3MB/s]
+ 90%|########9 | Downloading : 1.38G/1.54G [00:27&lt;00:03,    53.2MB/s]
+ 90%|########9 | Downloading : 1.38G/1.54G [00:27&lt;00:03,    54.5MB/s]
+ 90%|########9 | Downloading : 1.38G/1.54G [00:27&lt;00:03,    53.5MB/s]
+ 90%|########9 | Downloading : 1.38G/1.54G [00:28&lt;00:03,    52.7MB/s]
+ 90%|######### | Downloading : 1.39G/1.54G [00:28&lt;00:03,    53.7MB/s]
+ 90%|######### | Downloading : 1.39G/1.54G [00:28&lt;00:03,    52.9MB/s]
+ 90%|######### | Downloading : 1.39G/1.54G [00:28&lt;00:02,    54.0MB/s]
+ 90%|######### | Downloading : 1.39G/1.54G [00:28&lt;00:02,    53.4MB/s]
+ 91%|######### | Downloading : 1.39G/1.54G [00:28&lt;00:02,    54.3MB/s]
+ 91%|######### | Downloading : 1.40G/1.54G [00:28&lt;00:02,    53.4MB/s]
+ 91%|######### | Downloading : 1.40G/1.54G [00:28&lt;00:02,    54.5MB/s]
+ 91%|######### | Downloading : 1.40G/1.54G [00:28&lt;00:02,    53.3MB/s]
+ 91%|#########1| Downloading : 1.40G/1.54G [00:28&lt;00:02,    54.7MB/s]
+ 91%|#########1| Downloading : 1.40G/1.54G [00:28&lt;00:02,    53.5MB/s]
+ 91%|#########1| Downloading : 1.41G/1.54G [00:28&lt;00:02,    51.4MB/s]
+ 91%|#########1| Downloading : 1.41G/1.54G [00:28&lt;00:02,    49.6MB/s]
+ 92%|#########1| Downloading : 1.41G/1.54G [00:28&lt;00:02,    48.0MB/s]
+ 92%|#########1| Downloading : 1.41G/1.54G [00:28&lt;00:02,    47.2MB/s]
+ 92%|#########1| Downloading : 1.41G/1.54G [00:28&lt;00:02,    48.7MB/s]
+ 92%|#########1| Downloading : 1.42G/1.54G [00:28&lt;00:02,    48.0MB/s]
+ 92%|#########2| Downloading : 1.42G/1.54G [00:28&lt;00:02,    47.1MB/s]
+ 92%|#########2| Downloading : 1.42G/1.54G [00:28&lt;00:02,    47.8MB/s]
+ 93%|#########2| Downloading : 1.42G/1.54G [00:28&lt;00:02,    48.4MB/s]
+ 93%|#########2| Downloading : 1.43G/1.54G [00:28&lt;00:02,    49.9MB/s]
+ 93%|#########2| Downloading : 1.43G/1.54G [00:29&lt;00:02,    49.0MB/s]
+ 93%|#########3| Downloading : 1.43G/1.54G [00:29&lt;00:02,    49.6MB/s]
+ 93%|#########3| Downloading : 1.44G/1.54G [00:29&lt;00:02,    50.1MB/s]
+ 93%|#########3| Downloading : 1.44G/1.54G [00:29&lt;00:02,    49.3MB/s]
+ 94%|#########3| Downloading : 1.44G/1.54G [00:29&lt;00:02,    49.9MB/s]
+ 94%|#########3| Downloading : 1.44G/1.54G [00:29&lt;00:01,    51.2MB/s]
+ 94%|#########3| Downloading : 1.45G/1.54G [00:29&lt;00:01,    50.3MB/s]
+ 94%|#########4| Downloading : 1.45G/1.54G [00:29&lt;00:01,    51.5MB/s]
+ 94%|#########4| Downloading : 1.45G/1.54G [00:29&lt;00:01,    50.6MB/s]
+ 94%|#########4| Downloading : 1.45G/1.54G [00:29&lt;00:01,    51.9MB/s]
+ 94%|#########4| Downloading : 1.45G/1.54G [00:29&lt;00:01,    51.0MB/s]
+ 95%|#########4| Downloading : 1.46G/1.54G [00:29&lt;00:01,    52.4MB/s]
+ 95%|#########4| Downloading : 1.46G/1.54G [00:29&lt;00:01,    50.9MB/s]
+ 95%|#########4| Downloading : 1.46G/1.54G [00:29&lt;00:01,    50.6MB/s]
+ 95%|#########4| Downloading : 1.46G/1.54G [00:29&lt;00:01,    51.2MB/s]
+ 95%|#########5| Downloading : 1.46G/1.54G [00:29&lt;00:01,    51.1MB/s]
+ 95%|#########5| Downloading : 1.47G/1.54G [00:29&lt;00:01,    51.9MB/s]
+ 95%|#########5| Downloading : 1.47G/1.54G [00:29&lt;00:01,    51.5MB/s]
+ 95%|#########5| Downloading : 1.47G/1.54G [00:29&lt;00:01,    52.3MB/s]
+ 96%|#########5| Downloading : 1.47G/1.54G [00:29&lt;00:01,    51.7MB/s]
+ 96%|#########5| Downloading : 1.47G/1.54G [00:29&lt;00:01,    52.7MB/s]
+ 96%|#########5| Downloading : 1.48G/1.54G [00:29&lt;00:01,    52.1MB/s]
+ 96%|#########5| Downloading : 1.48G/1.54G [00:29&lt;00:01,    53.1MB/s]
+ 96%|#########6| Downloading : 1.48G/1.54G [00:30&lt;00:01,    51.9MB/s]
+ 96%|#########6| Downloading : 1.48G/1.54G [00:30&lt;00:01,    51.5MB/s]
+ 96%|#########6| Downloading : 1.48G/1.54G [00:30&lt;00:01,    52.3MB/s]
+ 97%|#########6| Downloading : 1.49G/1.54G [00:30&lt;00:01,    52.0MB/s]
+ 97%|#########6| Downloading : 1.49G/1.54G [00:30&lt;00:01,    52.6MB/s]
+ 97%|#########6| Downloading : 1.49G/1.54G [00:30&lt;00:01,    52.3MB/s]
+ 97%|#########6| Downloading : 1.49G/1.54G [00:30&lt;00:00,    53.0MB/s]
+ 97%|#########7| Downloading : 1.49G/1.54G [00:30&lt;00:00,    52.5MB/s]
+ 97%|#########7| Downloading : 1.50G/1.54G [00:30&lt;00:00,    53.4MB/s]
+ 97%|#########7| Downloading : 1.50G/1.54G [00:30&lt;00:00,    52.9MB/s]
+ 97%|#########7| Downloading : 1.50G/1.54G [00:30&lt;00:00,    53.8MB/s]
+ 98%|#########7| Downloading : 1.50G/1.54G [00:30&lt;00:00,    52.5MB/s]
+ 98%|#########7| Downloading : 1.50G/1.54G [00:30&lt;00:00,    52.2MB/s]
+ 98%|#########7| Downloading : 1.50G/1.54G [00:30&lt;00:00,    52.8MB/s]
+ 98%|#########7| Downloading : 1.51G/1.54G [00:30&lt;00:00,    52.6MB/s]
+ 98%|#########8| Downloading : 1.51G/1.54G [00:30&lt;00:00,    53.1MB/s]
+ 98%|#########8| Downloading : 1.51G/1.54G [00:30&lt;00:00,    52.9MB/s]
+ 98%|#########8| Downloading : 1.51G/1.54G [00:30&lt;00:00,    53.4MB/s]
+ 98%|#########8| Downloading : 1.51G/1.54G [00:30&lt;00:00,    53.0MB/s]
+ 99%|#########8| Downloading : 1.52G/1.54G [00:30&lt;00:00,    53.5MB/s]
+ 99%|#########8| Downloading : 1.52G/1.54G [00:30&lt;00:00,    52.7MB/s]
+ 99%|#########8| Downloading : 1.52G/1.54G [00:30&lt;00:00,    52.3MB/s]
+ 99%|#########8| Downloading : 1.52G/1.54G [00:30&lt;00:00,    53.0MB/s]
+ 99%|#########9| Downloading : 1.52G/1.54G [00:30&lt;00:00,    52.6MB/s]
+ 99%|#########9| Downloading : 1.53G/1.54G [00:30&lt;00:00,    53.3MB/s]
+ 99%|#########9| Downloading : 1.53G/1.54G [00:31&lt;00:00,    52.9MB/s]
+ 99%|#########9| Downloading : 1.53G/1.54G [00:31&lt;00:00,    53.6MB/s]
+100%|#########9| Downloading : 1.53G/1.54G [00:31&lt;00:00,    53.4MB/s]
+100%|#########9| Downloading : 1.53G/1.54G [00:31&lt;00:00,    54.0MB/s]
+100%|#########9| Downloading : 1.54G/1.54G [00:31&lt;00:00,    53.5MB/s]
+100%|#########9| Downloading : 1.54G/1.54G [00:31&lt;00:00,    54.3MB/s]
+100%|##########| Downloading : 1.54G/1.54G [00:31&lt;00:00,    53.1MB/s]
+100%|##########| Downloading : 1.54G/1.54G [00:31&lt;00:00,    52.9MB/s]
+Verifying hash 12b75d1cb7df9dfb4ad73ed82f61094f.
+Decompressing the archive: /home/runner/mne_data/MNE-sample-data-processed.tar.gz
+(please be patient, this can take some time)
+Successfully extracted to: [&#39;/home/runner/mne_data/MNE-sample-data&#39;]
+Attempting to create new mne-python configuration file:
+/home/runner/.mne/mne-python.json
+16 files missing from root.txt in /home/runner/mne_data/MNE-sample-data/subjects
+Downloading missing files remotely
+Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5cbdba4ef2be3c0019091890?revision=2&amp;action=download&amp;direct&amp;version=2 (186.7 MB)
+
+  0%|          | Downloading : 0.00/187M [00:00&lt;?,        ?B/s]
+  0%|          | Downloading : 56.0k/187M [00:00&lt;01:17,    2.51MB/s]
+  0%|          | Downloading : 88.0k/187M [00:00&lt;03:28,     940kB/s]
+  0%|          | Downloading : 152k/187M [00:00&lt;02:32,    1.28MB/s]
+  0%|          | Downloading : 216k/187M [00:00&lt;02:11,    1.49MB/s]
+  0%|          | Downloading : 280k/187M [00:00&lt;01:59,    1.64MB/s]
+  0%|          | Downloading : 344k/187M [00:00&lt;01:49,    1.78MB/s]
+  0%|          | Downloading : 440k/187M [00:00&lt;01:36,    2.03MB/s]
+  0%|          | Downloading : 632k/187M [00:00&lt;01:13,    2.65MB/s]
+  0%|          | Downloading : 760k/187M [00:00&lt;01:04,    3.02MB/s]
+  0%|          | Downloading : 888k/187M [00:00&lt;00:58,    3.34MB/s]
+  1%|          | Downloading : 1.12M/187M [00:00&lt;00:48,    4.04MB/s]
+  1%|          | Downloading : 1.49M/187M [00:00&lt;00:37,    5.12MB/s]
+  1%|1         | Downloading : 1.99M/187M [00:00&lt;00:29,    6.46MB/s]
+  1%|1         | Downloading : 2.49M/187M [00:00&lt;00:24,    7.75MB/s]
+  2%|1         | Downloading : 2.99M/187M [00:00&lt;00:21,    9.03MB/s]
+  2%|2         | Downloading : 3.99M/187M [00:00&lt;00:16,    11.6MB/s]
+  3%|2         | Downloading : 4.99M/187M [00:00&lt;00:13,    14.1MB/s]
+  3%|3         | Downloading : 5.99M/187M [00:00&lt;00:11,    16.5MB/s]
+  4%|3         | Downloading : 6.99M/187M [00:00&lt;00:09,    19.0MB/s]
+  4%|4         | Downloading : 7.99M/187M [00:00&lt;00:08,    21.1MB/s]
+  5%|4         | Downloading : 8.99M/187M [00:00&lt;00:08,    22.7MB/s]
+  5%|5         | Downloading : 9.99M/187M [00:00&lt;00:07,    24.7MB/s]
+  6%|6         | Downloading : 12.0M/187M [00:00&lt;00:06,    28.0MB/s]
+  7%|6         | Downloading : 13.0M/187M [00:00&lt;00:06,    29.4MB/s]
+  7%|7         | Downloading : 14.0M/187M [00:00&lt;00:05,    30.7MB/s]
+  9%|8         | Downloading : 16.0M/187M [00:00&lt;00:05,    32.9MB/s]
+  9%|9         | Downloading : 17.0M/187M [00:00&lt;00:05,    34.1MB/s]
+ 10%|9         | Downloading : 18.0M/187M [00:00&lt;00:05,    35.2MB/s]
+ 10%|#         | Downloading : 19.0M/187M [00:00&lt;00:04,    36.4MB/s]
+ 11%|#         | Downloading : 20.0M/187M [00:00&lt;00:04,    36.6MB/s]
+ 12%|#1        | Downloading : 22.0M/187M [00:00&lt;00:04,    39.1MB/s]
+ 12%|#2        | Downloading : 23.0M/187M [00:00&lt;00:04,    39.3MB/s]
+ 13%|#2        | Downloading : 24.0M/187M [00:00&lt;00:04,    40.1MB/s]
+ 13%|#3        | Downloading : 25.0M/187M [00:00&lt;00:04,    40.7MB/s]
+ 14%|#4        | Downloading : 27.0M/187M [00:00&lt;00:04,    41.7MB/s]
+ 15%|#4        | Downloading : 28.0M/187M [00:00&lt;00:03,    42.4MB/s]
+ 16%|#5        | Downloading : 29.0M/187M [00:00&lt;00:03,    43.2MB/s]
+ 16%|#6        | Downloading : 30.0M/187M [00:00&lt;00:03,    43.8MB/s]
+ 17%|#6        | Downloading : 31.0M/187M [00:00&lt;00:03,    43.5MB/s]
+ 18%|#7        | Downloading : 33.0M/187M [00:01&lt;00:03,    45.5MB/s]
+ 18%|#8        | Downloading : 34.0M/187M [00:01&lt;00:03,    45.2MB/s]
+ 19%|#8        | Downloading : 35.0M/187M [00:01&lt;00:03,    45.6MB/s]
+ 19%|#9        | Downloading : 36.0M/187M [00:01&lt;00:03,    45.9MB/s]
+ 20%|##        | Downloading : 38.0M/187M [00:01&lt;00:03,    46.4MB/s]
+ 21%|##        | Downloading : 39.0M/187M [00:01&lt;00:03,    47.0MB/s]
+ 21%|##1       | Downloading : 40.0M/187M [00:01&lt;00:03,    47.4MB/s]
+ 22%|##1       | Downloading : 41.0M/187M [00:01&lt;00:03,    47.6MB/s]
+ 22%|##2       | Downloading : 42.0M/187M [00:01&lt;00:03,    47.3MB/s]
+ 24%|##3       | Downloading : 44.0M/187M [00:01&lt;00:03,    48.6MB/s]
+ 24%|##4       | Downloading : 45.0M/187M [00:01&lt;00:03,    48.5MB/s]
+ 25%|##4       | Downloading : 46.0M/187M [00:01&lt;00:03,    48.8MB/s]
+ 25%|##5       | Downloading : 47.0M/187M [00:01&lt;00:02,    49.0MB/s]
+ 26%|##6       | Downloading : 49.0M/187M [00:01&lt;00:02,    48.5MB/s]
+ 28%|##7       | Downloading : 52.0M/187M [00:01&lt;00:02,    50.0MB/s]
+ 29%|##8       | Downloading : 54.0M/187M [00:01&lt;00:02,    50.1MB/s]
+ 30%|##9       | Downloading : 56.0M/187M [00:01&lt;00:02,    50.4MB/s]
+ 31%|###1      | Downloading : 58.0M/187M [00:01&lt;00:02,    50.6MB/s]
+ 32%|###2      | Downloading : 60.0M/187M [00:01&lt;00:02,    50.6MB/s]
+ 33%|###3      | Downloading : 62.0M/187M [00:01&lt;00:02,    51.2MB/s]
+ 34%|###4      | Downloading : 64.0M/187M [00:01&lt;00:02,    50.9MB/s]
+ 35%|###5      | Downloading : 66.0M/187M [00:01&lt;00:02,    51.5MB/s]
+ 36%|###6      | Downloading : 68.0M/187M [00:01&lt;00:02,    51.2MB/s]
+ 37%|###7      | Downloading : 70.0M/187M [00:01&lt;00:02,    52.3MB/s]
+ 39%|###8      | Downloading : 72.0M/187M [00:01&lt;00:02,    51.9MB/s]
+ 40%|###9      | Downloading : 74.0M/187M [00:01&lt;00:02,    52.1MB/s]
+ 41%|####      | Downloading : 76.0M/187M [00:01&lt;00:02,    52.0MB/s]
+ 42%|####1     | Downloading : 78.0M/187M [00:01&lt;00:02,    52.0MB/s]
+ 43%|####2     | Downloading : 80.0M/187M [00:01&lt;00:02,    52.2MB/s]
+ 44%|####3     | Downloading : 82.0M/187M [00:01&lt;00:02,    51.8MB/s]
+ 45%|####4     | Downloading : 84.0M/187M [00:02&lt;00:02,    52.6MB/s]
+ 46%|####6     | Downloading : 86.0M/187M [00:02&lt;00:02,    52.1MB/s]
+ 47%|####7     | Downloading : 88.0M/187M [00:02&lt;00:01,    52.7MB/s]
+ 48%|####8     | Downloading : 90.0M/187M [00:02&lt;00:01,    52.6MB/s]
+ 49%|####9     | Downloading : 92.0M/187M [00:02&lt;00:01,    53.2MB/s]
+ 50%|#####     | Downloading : 94.0M/187M [00:02&lt;00:01,    52.7MB/s]
+ 51%|#####1    | Downloading : 96.0M/187M [00:02&lt;00:01,    52.8MB/s]
+ 52%|#####2    | Downloading : 98.0M/187M [00:02&lt;00:01,    52.5MB/s]
+ 54%|#####3    | Downloading : 100M/187M [00:02&lt;00:01,    52.9MB/s]
+ 55%|#####4    | Downloading : 102M/187M [00:02&lt;00:01,    52.9MB/s]
+ 56%|#####5    | Downloading : 104M/187M [00:02&lt;00:01,    52.5MB/s]
+ 57%|#####6    | Downloading : 106M/187M [00:02&lt;00:01,    53.3MB/s]
+ 58%|#####7    | Downloading : 108M/187M [00:02&lt;00:01,    53.0MB/s]
+ 59%|#####8    | Downloading : 110M/187M [00:02&lt;00:01,    53.7MB/s]
+ 60%|#####9    | Downloading : 112M/187M [00:02&lt;00:01,    53.1MB/s]
+ 61%|######1   | Downloading : 114M/187M [00:02&lt;00:01,    53.6MB/s]
+ 62%|######2   | Downloading : 116M/187M [00:02&lt;00:01,    53.0MB/s]
+ 63%|######3   | Downloading : 118M/187M [00:02&lt;00:01,    52.9MB/s]
+ 64%|######4   | Downloading : 120M/187M [00:02&lt;00:01,    52.8MB/s]
+ 65%|######5   | Downloading : 122M/187M [00:02&lt;00:01,    53.3MB/s]
+ 66%|######6   | Downloading : 124M/187M [00:02&lt;00:01,    53.3MB/s]
+ 67%|######7   | Downloading : 126M/187M [00:02&lt;00:01,    52.8MB/s]
+ 69%|######8   | Downloading : 128M/187M [00:02&lt;00:01,    53.4MB/s]
+ 70%|######9   | Downloading : 130M/187M [00:02&lt;00:01,    53.2MB/s]
+ 71%|#######   | Downloading : 132M/187M [00:02&lt;00:01,    53.8MB/s]
+ 72%|#######1  | Downloading : 134M/187M [00:02&lt;00:01,    53.3MB/s]
+ 73%|#######2  | Downloading : 136M/187M [00:03&lt;00:00,    54.0MB/s]
+ 74%|#######3  | Downloading : 138M/187M [00:03&lt;00:00,    53.3MB/s]
+ 75%|#######4  | Downloading : 140M/187M [00:03&lt;00:00,    53.0MB/s]
+ 76%|#######6  | Downloading : 142M/187M [00:03&lt;00:00,    52.9MB/s]
+ 77%|#######7  | Downloading : 144M/187M [00:03&lt;00:00,    53.5MB/s]
+ 78%|#######8  | Downloading : 146M/187M [00:03&lt;00:00,    53.3MB/s]
+ 79%|#######9  | Downloading : 148M/187M [00:03&lt;00:00,    53.0MB/s]
+ 80%|########  | Downloading : 150M/187M [00:03&lt;00:00,    53.7MB/s]
+ 81%|########1 | Downloading : 152M/187M [00:03&lt;00:00,    53.3MB/s]
+ 82%|########2 | Downloading : 154M/187M [00:03&lt;00:00,    53.9MB/s]
+ 84%|########3 | Downloading : 156M/187M [00:03&lt;00:00,    53.5MB/s]
+ 85%|########4 | Downloading : 158M/187M [00:03&lt;00:00,    54.0MB/s]
+ 86%|########5 | Downloading : 160M/187M [00:03&lt;00:00,    53.6MB/s]
+ 87%|########6 | Downloading : 162M/187M [00:03&lt;00:00,    53.1MB/s]
+ 88%|########7 | Downloading : 164M/187M [00:03&lt;00:00,    53.0MB/s]
+ 89%|########8 | Downloading : 166M/187M [00:03&lt;00:00,    53.2MB/s]
+ 90%|########9 | Downloading : 168M/187M [00:03&lt;00:00,    53.3MB/s]
+ 91%|#########1| Downloading : 170M/187M [00:03&lt;00:00,    53.7MB/s]
+ 92%|#########2| Downloading : 172M/187M [00:03&lt;00:00,    53.6MB/s]
+ 93%|#########3| Downloading : 174M/187M [00:03&lt;00:00,    53.4MB/s]
+ 94%|#########4| Downloading : 176M/187M [00:03&lt;00:00,    53.8MB/s]
+ 95%|#########5| Downloading : 178M/187M [00:03&lt;00:00,    53.2MB/s]
+ 96%|#########6| Downloading : 180M/187M [00:03&lt;00:00,    53.8MB/s]
+ 97%|#########7| Downloading : 182M/187M [00:03&lt;00:00,    53.7MB/s]
+ 99%|#########8| Downloading : 184M/187M [00:03&lt;00:00,    53.1MB/s]
+100%|#########9| Downloading : 186M/187M [00:04&lt;00:00,    53.0MB/s]
+100%|##########| Downloading : 187M/187M [00:04&lt;00:00,    48.6MB/s]
+Verifying hash 5133fe92b7b8f03ae19219d5f46e4177.
+File saved as /tmp/tmpermazts5/temp.zip.
+
+Extracting missing files
+Successfully extracted 16 files
+10 files missing from bem.txt in /home/runner/mne_data/MNE-sample-data/subjects/fsaverage
+Downloading missing files remotely
+Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5cbdb9f5353c58001aa02025?revision=4&amp;action=download&amp;direct&amp;version=4 (227.8 MB)
+
+  0%|          | Downloading : 0.00/228M [00:00&lt;?,        ?B/s]
+  0%|          | Downloading : 120k/228M [00:00&lt;02:22,    1.68MB/s]
+  0%|          | Downloading : 568k/228M [00:00&lt;00:40,    5.90MB/s]
+  0%|          | Downloading : 824k/228M [00:00&lt;00:32,    7.44MB/s]
+  0%|          | Downloading : 1.05M/228M [00:00&lt;00:27,    8.59MB/s]
+  1%|          | Downloading : 1.30M/228M [00:00&lt;00:25,    9.41MB/s]
+  1%|          | Downloading : 1.80M/228M [00:00&lt;00:21,    10.9MB/s]
+  1%|1         | Downloading : 2.30M/228M [00:00&lt;00:19,    12.4MB/s]
+  1%|1         | Downloading : 3.05M/228M [00:00&lt;00:15,    15.2MB/s]
+  2%|1         | Downloading : 4.05M/228M [00:00&lt;00:12,    18.7MB/s]
+  2%|2         | Downloading : 5.05M/228M [00:00&lt;00:10,    21.3MB/s]
+  3%|2         | Downloading : 6.55M/228M [00:00&lt;00:09,    25.6MB/s]
+  4%|3         | Downloading : 8.55M/228M [00:00&lt;00:07,    29.5MB/s]
+  4%|4         | Downloading : 9.55M/228M [00:00&lt;00:07,    31.5MB/s]
+  5%|5         | Downloading : 11.6M/228M [00:00&lt;00:06,    35.2MB/s]
+  6%|5         | Downloading : 12.6M/228M [00:00&lt;00:06,    36.0MB/s]
+  6%|5         | Downloading : 13.6M/228M [00:00&lt;00:06,    37.0MB/s]
+  7%|6         | Downloading : 15.6M/228M [00:00&lt;00:05,    39.0MB/s]
+  7%|7         | Downloading : 16.6M/228M [00:00&lt;00:05,    39.8MB/s]
+  8%|8         | Downloading : 18.6M/228M [00:00&lt;00:05,    41.7MB/s]
+  9%|8         | Downloading : 19.6M/228M [00:00&lt;00:05,    42.7MB/s]
+  9%|9         | Downloading : 20.6M/228M [00:00&lt;00:05,    42.7MB/s]
+ 10%|9         | Downloading : 22.6M/228M [00:00&lt;00:04,    44.5MB/s]
+ 10%|#         | Downloading : 23.6M/228M [00:00&lt;00:04,    44.4MB/s]
+ 11%|#         | Downloading : 24.6M/228M [00:00&lt;00:04,    45.0MB/s]
+ 12%|#1        | Downloading : 26.6M/228M [00:00&lt;00:04,    46.7MB/s]
+ 12%|#2        | Downloading : 27.6M/228M [00:00&lt;00:04,    46.2MB/s]
+ 13%|#2        | Downloading : 29.6M/228M [00:00&lt;00:04,    47.8MB/s]
+ 13%|#3        | Downloading : 30.6M/228M [00:00&lt;00:04,    47.6MB/s]
+ 14%|#3        | Downloading : 31.6M/228M [00:00&lt;00:04,    47.6MB/s]
+ 15%|#4        | Downloading : 33.6M/228M [00:00&lt;00:04,    48.5MB/s]
+ 15%|#5        | Downloading : 34.6M/228M [00:00&lt;00:04,    48.4MB/s]
+ 16%|#5        | Downloading : 35.6M/228M [00:00&lt;00:04,    48.6MB/s]
+ 16%|#6        | Downloading : 37.6M/228M [00:00&lt;00:03,    49.9MB/s]
+ 17%|#6        | Downloading : 38.6M/228M [00:00&lt;00:04,    49.4MB/s]
+ 18%|#7        | Downloading : 40.6M/228M [00:00&lt;00:03,    50.5MB/s]
+ 18%|#8        | Downloading : 41.6M/228M [00:00&lt;00:03,    49.9MB/s]
+ 19%|#8        | Downloading : 42.6M/228M [00:01&lt;00:03,    49.8MB/s]
+ 20%|#9        | Downloading : 44.6M/228M [00:01&lt;00:03,    50.6MB/s]
+ 20%|##        | Downloading : 45.6M/228M [00:01&lt;00:03,    50.7MB/s]
+ 20%|##        | Downloading : 46.6M/228M [00:01&lt;00:03,    50.6MB/s]
+ 21%|##1       | Downloading : 48.6M/228M [00:01&lt;00:03,    51.6MB/s]
+ 22%|##1       | Downloading : 49.6M/228M [00:01&lt;00:03,    51.2MB/s]
+ 22%|##2       | Downloading : 50.6M/228M [00:01&lt;00:03,    51.6MB/s]
+ 23%|##3       | Downloading : 52.6M/228M [00:01&lt;00:03,    51.9MB/s]
+ 24%|##3       | Downloading : 53.6M/228M [00:01&lt;00:03,    50.7MB/s]
+ 25%|##4       | Downloading : 56.6M/228M [00:01&lt;00:03,    51.8MB/s]
+ 26%|##5       | Downloading : 58.6M/228M [00:01&lt;00:03,    52.6MB/s]
+ 27%|##6       | Downloading : 60.6M/228M [00:01&lt;00:03,    52.1MB/s]
+ 27%|##7       | Downloading : 62.6M/228M [00:01&lt;00:03,    52.7MB/s]
+ 28%|##8       | Downloading : 64.6M/228M [00:01&lt;00:03,    52.2MB/s]
+ 29%|##9       | Downloading : 66.6M/228M [00:01&lt;00:03,    52.7MB/s]
+ 30%|###       | Downloading : 68.6M/228M [00:01&lt;00:03,    52.9MB/s]
+ 31%|###       | Downloading : 70.6M/228M [00:01&lt;00:03,    53.3MB/s]
+ 32%|###1      | Downloading : 72.6M/228M [00:01&lt;00:03,    53.0MB/s]
+ 33%|###2      | Downloading : 74.6M/228M [00:01&lt;00:03,    52.9MB/s]
+ 34%|###3      | Downloading : 76.6M/228M [00:01&lt;00:03,    52.7MB/s]
+ 34%|###4      | Downloading : 78.6M/228M [00:01&lt;00:02,    53.0MB/s]
+ 35%|###5      | Downloading : 80.6M/228M [00:01&lt;00:02,    53.6MB/s]
+ 36%|###6      | Downloading : 82.6M/228M [00:01&lt;00:02,    53.1MB/s]
+ 37%|###7      | Downloading : 84.6M/228M [00:01&lt;00:02,    53.5MB/s]
+ 38%|###8      | Downloading : 86.6M/228M [00:01&lt;00:02,    52.9MB/s]
+ 39%|###8      | Downloading : 88.6M/228M [00:01&lt;00:02,    54.0MB/s]
+ 40%|###9      | Downloading : 90.6M/228M [00:01&lt;00:02,    53.4MB/s]
+ 41%|####      | Downloading : 92.6M/228M [00:01&lt;00:02,    53.6MB/s]
+ 42%|####1     | Downloading : 94.6M/228M [00:02&lt;00:02,    53.6MB/s]
+ 42%|####2     | Downloading : 96.6M/228M [00:02&lt;00:02,    53.6MB/s]
+ 43%|####3     | Downloading : 98.6M/228M [00:02&lt;00:02,    53.3MB/s]
+ 44%|####4     | Downloading : 101M/228M [00:02&lt;00:02,    53.4MB/s]
+ 45%|####5     | Downloading : 103M/228M [00:02&lt;00:02,    53.7MB/s]
+ 46%|####5     | Downloading : 105M/228M [00:02&lt;00:02,    53.6MB/s]
+ 47%|####6     | Downloading : 107M/228M [00:02&lt;00:02,    53.9MB/s]
+ 48%|####7     | Downloading : 109M/228M [00:02&lt;00:02,    54.0MB/s]
+ 49%|####8     | Downloading : 111M/228M [00:02&lt;00:02,    54.3MB/s]
+ 49%|####9     | Downloading : 113M/228M [00:02&lt;00:02,    53.7MB/s]
+ 50%|#####     | Downloading : 115M/228M [00:02&lt;00:02,    53.6MB/s]
+ 51%|#####1    | Downloading : 117M/228M [00:02&lt;00:02,    53.9MB/s]
+ 52%|#####2    | Downloading : 119M/228M [00:02&lt;00:02,    53.7MB/s]
+ 53%|#####2    | Downloading : 121M/228M [00:02&lt;00:02,    53.7MB/s]
+ 54%|#####3    | Downloading : 123M/228M [00:02&lt;00:02,    53.3MB/s]
+ 55%|#####4    | Downloading : 125M/228M [00:02&lt;00:02,    54.0MB/s]
+ 56%|#####5    | Downloading : 127M/228M [00:02&lt;00:01,    53.8MB/s]
+ 56%|#####6    | Downloading : 129M/228M [00:02&lt;00:01,    54.1MB/s]
+ 57%|#####7    | Downloading : 131M/228M [00:02&lt;00:01,    54.1MB/s]
+ 58%|#####8    | Downloading : 133M/228M [00:02&lt;00:01,    54.5MB/s]
+ 59%|#####9    | Downloading : 135M/228M [00:02&lt;00:01,    53.9MB/s]
+ 60%|#####9    | Downloading : 137M/228M [00:02&lt;00:01,    53.9MB/s]
+ 61%|######    | Downloading : 139M/228M [00:02&lt;00:01,    53.9MB/s]
+ 62%|######1   | Downloading : 141M/228M [00:02&lt;00:01,    53.8MB/s]
+ 63%|######2   | Downloading : 143M/228M [00:02&lt;00:01,    53.6MB/s]
+ 63%|######3   | Downloading : 145M/228M [00:02&lt;00:01,    53.5MB/s]
+ 64%|######4   | Downloading : 147M/228M [00:03&lt;00:01,    54.1MB/s]
+ 65%|######5   | Downloading : 149M/228M [00:03&lt;00:01,    53.8MB/s]
+ 66%|######6   | Downloading : 151M/228M [00:03&lt;00:01,    54.4MB/s]
+ 67%|######6   | Downloading : 153M/228M [00:03&lt;00:01,    53.9MB/s]
+ 68%|######7   | Downloading : 155M/228M [00:03&lt;00:01,    54.5MB/s]
+ 69%|######8   | Downloading : 157M/228M [00:03&lt;00:01,    53.8MB/s]
+ 70%|######9   | Downloading : 159M/228M [00:03&lt;00:01,    54.1MB/s]
+ 70%|#######   | Downloading : 161M/228M [00:03&lt;00:01,    54.0MB/s]
+ 71%|#######1  | Downloading : 163M/228M [00:03&lt;00:01,    54.0MB/s]
+ 72%|#######2  | Downloading : 165M/228M [00:03&lt;00:01,    53.9MB/s]
+ 73%|#######3  | Downloading : 167M/228M [00:03&lt;00:01,    53.3MB/s]
+ 74%|#######4  | Downloading : 169M/228M [00:03&lt;00:01,    54.0MB/s]
+ 75%|#######4  | Downloading : 171M/228M [00:03&lt;00:01,    53.7MB/s]
+ 76%|#######5  | Downloading : 173M/228M [00:03&lt;00:01,    53.8MB/s]
+ 77%|#######6  | Downloading : 175M/228M [00:03&lt;00:01,    54.1MB/s]
+ 78%|#######7  | Downloading : 177M/228M [00:03&lt;00:00,    54.6MB/s]
+ 78%|#######8  | Downloading : 179M/228M [00:03&lt;00:00,    53.7MB/s]
+ 79%|#######9  | Downloading : 181M/228M [00:03&lt;00:00,    54.1MB/s]
+ 80%|########  | Downloading : 183M/228M [00:03&lt;00:00,    54.1MB/s]
+ 81%|########1 | Downloading : 185M/228M [00:03&lt;00:00,    54.0MB/s]
+ 82%|########1 | Downloading : 187M/228M [00:03&lt;00:00,    53.8MB/s]
+ 83%|########2 | Downloading : 189M/228M [00:03&lt;00:00,    53.3MB/s]
+ 84%|########3 | Downloading : 191M/228M [00:03&lt;00:00,    54.0MB/s]
+ 85%|########4 | Downloading : 193M/228M [00:03&lt;00:00,    53.5MB/s]
+ 85%|########5 | Downloading : 195M/228M [00:03&lt;00:00,    54.3MB/s]
+ 86%|########6 | Downloading : 197M/228M [00:03&lt;00:00,    53.8MB/s]
+ 87%|########7 | Downloading : 199M/228M [00:04&lt;00:00,    54.6MB/s]
+ 88%|########8 | Downloading : 201M/228M [00:04&lt;00:00,    54.0MB/s]
+ 89%|########8 | Downloading : 203M/228M [00:04&lt;00:00,    54.1MB/s]
+ 90%|########9 | Downloading : 205M/228M [00:04&lt;00:00,    54.2MB/s]
+ 91%|######### | Downloading : 207M/228M [00:04&lt;00:00,    54.1MB/s]
+ 92%|#########1| Downloading : 209M/228M [00:04&lt;00:00,    54.0MB/s]
+ 92%|#########2| Downloading : 211M/228M [00:04&lt;00:00,    53.4MB/s]
+ 93%|#########3| Downloading : 213M/228M [00:04&lt;00:00,    54.4MB/s]
+ 94%|#########4| Downloading : 215M/228M [00:04&lt;00:00,    53.7MB/s]
+ 95%|#########5| Downloading : 217M/228M [00:04&lt;00:00,    54.1MB/s]
+ 96%|#########5| Downloading : 219M/228M [00:04&lt;00:00,    53.9MB/s]
+ 97%|#########6| Downloading : 221M/228M [00:04&lt;00:00,    54.6MB/s]
+ 98%|#########7| Downloading : 223M/228M [00:04&lt;00:00,    53.7MB/s]
+ 99%|#########8| Downloading : 225M/228M [00:04&lt;00:00,    53.9MB/s]
+ 99%|#########9| Downloading : 227M/228M [00:04&lt;00:00,    54.0MB/s]
+100%|##########| Downloading : 228M/228M [00:04&lt;00:00,    52.1MB/s]
+Verifying hash b31509cdcf7908af6a83dc5ee8f49fb1.
+File saved as /tmp/tmp2qjqt4x2/temp.zip.
+
+Extracting missing files
+Successfully extracted 10 files
+Using pyvista 3d backend.
+
+Using outer_skin.surf for head surface.
+Plotting 16 fNIRS locations
+Plotting 16 fNIRS sources
+Plotting 16 fNIRS detectors
+Plotting 16 fNIRS pairs
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  20.826 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  331 MB</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-01-data-io-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/2ebe5dc88f0ef82a935e6f42e0e7eab9/plot_01_data_io.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_01_data_io.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/e935415e95d52fffa2f9d0f41620f0e1/plot_01_data_io.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_01_data_io.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Examples</a>
+    <a class='right-next' id="next-link" href="plot_10_hrf_simulation.html" title="next page">GLM Analysis (Simulated)</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-188272121-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2020, Robert Luke.<br/>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

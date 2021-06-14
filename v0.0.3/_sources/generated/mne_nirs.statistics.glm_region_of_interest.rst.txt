@@ -1,0 +1,11 @@
+﻿mne\_nirs.statistics.glm\_region\_of\_interest
+==============================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. autofunction:: glm_region_of_interest
+
+.. _sphx_glr_backreferences_mne_nirs.statistics.glm_region_of_interest:
+
+.. minigallery:: mne_nirs.statistics.glm_region_of_interest
+    :add-heading:

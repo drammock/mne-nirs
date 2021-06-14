@@ -1,0 +1,291 @@
+:orphan:
+
+
+
+.. _sphx_glr_auto_examples:
+
+.. _general_examples:
+
+Examples
+========
+
+The examples gallery provides working code samples demonstrating various
+analysis and visualization techniques.
+
+.. warning::
+
+   These examples sometimes use simulations or shortcuts (such as intentionally
+   adding noise to recordings) to illustrate a point. Use caution when
+   copy-pasting code samples.
+
+
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_general:
+
+.. _general_examples:
+
+Analysis examples
+-----------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we simulate a block design functional near-infrared spectroscopy (fNIRS) experi...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_10_hrf_simulation_thumb.png
+     :alt: GLM Analysis (Simulated)
+
+     :ref:`sphx_glr_auto_examples_general_plot_10_hrf_simulation.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_10_hrf_simulation
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel functional near-infrared spectroscopy ...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_11_hrf_measured_thumb.png
+     :alt: GLM Analysis (Measured)
+
+     :ref:`sphx_glr_auto_examples_general_plot_11_hrf_measured.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_11_hrf_measured
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of a group level GLM based functional near-infrared spectroscopy (fNIRS) ana...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_12_group_glm_thumb.png
+     :alt: Group Level GLM
+
+     :ref:`sphx_glr_auto_examples_general_plot_12_group_glm.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_12_group_glm
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" This tutorial covers how to convert functional near-infrared spectroscopy (fNIRS) data from ra...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_15_waveform_thumb.png
+     :alt: Waveform averaging analysis
+
+     :ref:`sphx_glr_auto_examples_general_plot_15_waveform.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_15_waveform
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="   If you wish to process your .nirs files in MNE use the official snirf    converter to create...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_19_snirf_thumb.png
+     :alt: SNIRF Support in MNE
+
+     :ref:`sphx_glr_auto_examples_general_plot_19_snirf.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_19_snirf
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this document we investigate the effect of different signal enhancement techniques on functi...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_20_enhance_thumb.png
+     :alt: Signal Enhancement Techniques
+
+     :ref:`sphx_glr_auto_examples_general_plot_20_enhance.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_20_enhance
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Here we artificially introduce several artifacts in a functional near-infrared spectroscopy (fN...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_21_artifacts_thumb.png
+     :alt: Artifact correction techniques
+
+     :ref:`sphx_glr_auto_examples_general_plot_21_artifacts.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_21_artifacts
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example we discuss frequency and filters in the context of functional near-infrared spe...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_30_frequency_thumb.png
+     :alt: Frequency and Filter Commentary
+
+     :ref:`sphx_glr_auto_examples_general_plot_30_frequency.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_30_frequency
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="   Huppert TJ. Commentary on the statistical properties of noise and its    implication on gene...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_99_bad_thumb.png
+     :alt: Importance of Controls and Parameter Selection
+
+     :ref:`sphx_glr_auto_examples_general_plot_99_bad.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_99_bad
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_examples_migration:
+
+.. _migration:
+
+Migrating from other software packages
+--------------------------------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial will demonstrate how to do convert a basic Homer script to MNE and highlight diff...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/migration/images/thumb/sphx_glr_plot_01_homer_thumb.png
+     :alt: Migrating from Homer to MNE
+
+     :ref:`sphx_glr_auto_examples_migration_plot_01_homer.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/migration/plot_01_homer
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial will demonstrate how to do convert a nirs-toolbox script to MNE and highlight dif...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/migration/images/thumb/sphx_glr_plot_02_nirstoolbox_thumb.png
+     :alt: Migrating from nirs-toolbox to MNE
+
+     :ref:`sphx_glr_auto_examples_migration_plot_02_nirstoolbox.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/migration/plot_02_nirstoolbox
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_
