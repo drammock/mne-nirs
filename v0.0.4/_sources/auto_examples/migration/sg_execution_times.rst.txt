@@ -5,10 +5,10 @@
 
 Computation times
 =================
-**00:02.198** total execution time for **auto_examples_migration** files:
+**00:01.748** total execution time for **auto_examples_migration** files:
 
 +---------------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_migration_plot_01_homer.py` (``plot_01_homer.py``)             | 00:02.198 | 79.8 MB |
+| :ref:`sphx_glr_auto_examples_migration_plot_01_homer.py` (``plot_01_homer.py``)             | 00:01.748 | 80.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_migration_plot_02_nirstoolbox.py` (``plot_02_nirstoolbox.py``) | 00:00.001 | 8.2 MB  |
+| :ref:`sphx_glr_auto_examples_migration_plot_02_nirstoolbox.py` (``plot_02_nirstoolbox.py``) | 00:00.000 | 8.2 MB  |
 +---------------------------------------------------------------------------------------------+-----------+---------+
