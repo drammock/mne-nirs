@@ -129,7 +129,7 @@ to meet github memory constraints.
     Using default location ~/mne_data for fnirs_motor...
     Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      1%|          | Downloading : 120k/17.1M [00:00<00:05,    3.06MB/s]      1%|1         | Downloading : 248k/17.1M [00:00<00:04,    4.13MB/s]      2%|2         | Downloading : 376k/17.1M [00:00<00:03,    4.73MB/s]      4%|3         | Downloading : 632k/17.1M [00:00<00:02,    6.52MB/s]      7%|6         | Downloading : 1.12M/17.1M [00:00<00:01,    9.65MB/s]      9%|9         | Downloading : 1.62M/17.1M [00:00<00:01,    12.6MB/s]     18%|#8        | Downloading : 3.12M/17.1M [00:00<00:00,    21.1MB/s]     36%|###5      | Downloading : 6.12M/17.1M [00:00<00:00,    36.2MB/s]     59%|#####9    | Downloading : 10.1M/17.1M [00:00<00:00,    53.0MB/s]     71%|#######1  | Downloading : 12.1M/17.1M [00:00<00:00,    59.3MB/s]     95%|#########4| Downloading : 16.1M/17.1M [00:00<00:00,    69.9MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    63.0MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      0%|          | Downloading : 40.0k/17.1M [00:00<00:11,    1.54MB/s]      0%|          | Downloading : 72.0k/17.1M [00:00<00:24,     726kB/s]      1%|          | Downloading : 104k/17.1M [00:00<00:20,     876kB/s]       1%|          | Downloading : 136k/17.1M [00:00<00:17,    1.00MB/s]      1%|          | Downloading : 168k/17.1M [00:00<00:16,    1.10MB/s]      1%|1         | Downloading : 200k/17.1M [00:00<00:14,    1.18MB/s]      1%|1         | Downloading : 232k/17.1M [00:00<00:14,    1.25MB/s]      2%|1         | Downloading : 264k/17.1M [00:00<00:13,    1.32MB/s]      2%|1         | Downloading : 328k/17.1M [00:00<00:11,    1.50MB/s]      2%|2         | Downloading : 424k/17.1M [00:00<00:09,    1.82MB/s]      3%|3         | Downloading : 552k/17.1M [00:00<00:07,    2.21MB/s]      4%|3         | Downloading : 680k/17.1M [00:00<00:06,    2.55MB/s]      5%|4         | Downloading : 808k/17.1M [00:00<00:05,    2.89MB/s]      6%|6         | Downloading : 1.04M/17.1M [00:00<00:04,    3.61MB/s]      8%|7         | Downloading : 1.29M/17.1M [00:00<00:03,    4.31MB/s]     10%|9         | Downloading : 1.66M/17.1M [00:00<00:03,    5.34MB/s]     13%|#2        | Downloading : 2.16M/17.1M [00:00<00:02,    6.64MB/s]     16%|#5        | Downloading : 2.66M/17.1M [00:00<00:01,    7.92MB/s]     19%|#8        | Downloading : 3.16M/17.1M [00:00<00:01,    9.19MB/s]     24%|##4       | Downloading : 4.16M/17.1M [00:00<00:01,    11.7MB/s]     30%|###       | Downloading : 5.16M/17.1M [00:00<00:00,    14.2MB/s]     39%|###9      | Downloading : 6.66M/17.1M [00:00<00:00,    17.8MB/s]     51%|#####     | Downloading : 8.66M/17.1M [00:00<00:00,    21.6MB/s]     57%|#####6    | Downloading : 9.66M/17.1M [00:00<00:00,    23.5MB/s]     63%|######2   | Downloading : 10.7M/17.1M [00:00<00:00,    25.3MB/s]     68%|######8   | Downloading : 11.7M/17.1M [00:00<00:00,    26.8MB/s]     74%|#######4  | Downloading : 12.7M/17.1M [00:00<00:00,    27.9MB/s]     86%|########5 | Downloading : 14.7M/17.1M [00:00<00:00,    31.3MB/s]     92%|#########1| Downloading : 15.7M/17.1M [00:00<00:00,    31.8MB/s]     98%|#########7| Downloading : 16.7M/17.1M [00:00<00:00,    33.1MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    23.8MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -653,7 +653,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f460a1e4550>
+    <matplotlib.collections.LineCollection object at 0x7fdc5b91b9a0>
 
 
 
@@ -759,11 +759,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmp5lox585a/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmp0iscdd0l/b3f547fdcb58073d7f35acfbe886e8bf4e6f016a/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmp5lox585a/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmp0iscdd0l/b3f547fdcb58073d7f35acfbe886e8bf4e6f016a/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmp5lox585a/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:325: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmp0iscdd0l/b3f547fdcb58073d7f35acfbe886e8bf4e6f016a/examples/general/plot_11_hrf_measured.py:325: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -1032,7 +1032,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.597 seconds)
+   **Total running time of the script:** ( 0 minutes  9.601 seconds)
 
 **Estimated memory usage:**  65 MB
 
