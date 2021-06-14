@@ -333,7 +333,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="Fvdvuv"></div>
+              <div id="0VFMi4"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -384,7 +384,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("Fvdvuv");
+           var plotContainer = document.getElementById("0VFMi4");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -570,7 +570,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="7pJim1"></div>
+              <div id="TGyt9w"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -644,7 +644,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("7pJim1");
+           var plotContainer = document.getElementById("TGyt9w");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -1369,7 +1369,7 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.016 seconds)
+   **Total running time of the script:** ( 0 minutes  18.164 seconds)
 
 **Estimated memory usage:**  48 MB
 

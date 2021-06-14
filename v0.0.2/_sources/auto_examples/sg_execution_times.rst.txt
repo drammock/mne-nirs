@@ -5,20 +5,20 @@
 
 Computation times
 =================
-**01:16.234** total execution time for **auto_examples** files:
+**01:23.248** total execution time for **auto_examples** files:
 
 +-----------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_plot_30_frequency.py` (``plot_30_frequency.py``)           | 00:39.404 | 78.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_30_frequency.py` (``plot_30_frequency.py``)           | 00:42.895 | 92.6 MB |
 +-----------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_plot_12_group_glm.py` (``plot_12_group_glm.py``)           | 00:16.391 | 47.8 MB |
+| :ref:`sphx_glr_auto_examples_plot_12_group_glm.py` (``plot_12_group_glm.py``)           | 00:17.648 | 46.6 MB |
 +-----------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_plot_99_bad.py` (``plot_99_bad.py``)                       | 00:05.871 | 29.9 MB |
+| :ref:`sphx_glr_auto_examples_plot_99_bad.py` (``plot_99_bad.py``)                       | 00:06.670 | 58.5 MB |
 +-----------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_plot_11_hrf_measured.py` (``plot_11_hrf_measured.py``)     | 00:05.680 | 61.5 MB |
+| :ref:`sphx_glr_auto_examples_plot_11_hrf_measured.py` (``plot_11_hrf_measured.py``)     | 00:06.357 | 61.8 MB |
 +-----------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_plot_20_enhance.py` (``plot_20_enhance.py``)               | 00:03.408 | 25.2 MB |
+| :ref:`sphx_glr_auto_examples_plot_20_enhance.py` (``plot_20_enhance.py``)               | 00:03.679 | 52.9 MB |
 +-----------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_plot_10_hrf_simulation.py` (``plot_10_hrf_simulation.py``) | 00:03.012 | 62.8 MB |
+| :ref:`sphx_glr_auto_examples_plot_10_hrf_simulation.py` (``plot_10_hrf_simulation.py``) | 00:03.280 | 62.7 MB |
 +-----------------------------------------------------------------------------------------+-----------+---------+
-| :ref:`sphx_glr_auto_examples_plot_19_snirf.py` (``plot_19_snirf.py``)                   | 00:02.468 | 34.1 MB |
+| :ref:`sphx_glr_auto_examples_plot_19_snirf.py` (``plot_19_snirf.py``)                   | 00:02.718 | 62.7 MB |
 +-----------------------------------------------------------------------------------------+-----------+---------+
