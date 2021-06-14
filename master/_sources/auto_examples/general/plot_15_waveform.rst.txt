@@ -955,14 +955,14 @@ driving the topographic plot above.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7fcb772b4a00>
+    <matplotlib.legend.Legend object at 0x7f4e4e355160>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.392 seconds)
+   **Total running time of the script:** ( 0 minutes  14.613 seconds)
 
 **Estimated memory usage:**  80 MB
 
