@@ -280,8 +280,8 @@ for the region of interest, channel level, and contrast results.
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (41.7 MB)
-      0%|          | Downloading : 0.00/41.7M [00:00<?,        ?B/s]      1%|1         | Downloading : 504k/41.7M [00:00<00:01,    22.6MB/s]      4%|3         | Downloading : 1.49M/41.7M [00:00<00:01,    34.0MB/s]      6%|5         | Downloading : 2.49M/41.7M [00:00<00:01,    41.1MB/s]     11%|#         | Downloading : 4.49M/41.7M [00:00<00:00,    54.5MB/s]     16%|#5        | Downloading : 6.49M/41.7M [00:00<00:00,    62.1MB/s]     20%|##        | Downloading : 8.49M/41.7M [00:00<00:00,    71.1MB/s]     25%|##5       | Downloading : 10.5M/41.7M [00:00<00:00,    77.5MB/s]     35%|###4      | Downloading : 14.5M/41.7M [00:00<00:00,    93.0MB/s]     44%|####4     | Downloading : 18.5M/41.7M [00:00<00:00,     102MB/s]     54%|#####3    | Downloading : 22.5M/41.7M [00:00<00:00,     108MB/s]     63%|######3   | Downloading : 26.5M/41.7M [00:00<00:00,     115MB/s]     73%|#######3  | Downloading : 30.5M/41.7M [00:00<00:00,     123MB/s]     83%|########2 | Downloading : 34.5M/41.7M [00:00<00:00,     129MB/s]     92%|#########2| Downloading : 38.5M/41.7M [00:00<00:00,     134MB/s]    100%|##########| Downloading : 41.7M/41.7M [00:00<00:00,     128MB/s]
-    Verifying hash ef2d41fc2824ded78d065214cdbc9b36.
+      0%|          | Downloading : 0.00/41.7M [00:00<?,        ?B/s]      1%|          | Downloading : 248k/41.7M [00:00<00:03,    13.1MB/s]      2%|2         | Downloading : 0.99M/41.7M [00:00<00:01,    27.5MB/s]      6%|5         | Downloading : 2.49M/41.7M [00:00<00:01,    25.8MB/s]      8%|8         | Downloading : 3.49M/41.7M [00:00<00:01,    31.3MB/s]     11%|#         | Downloading : 4.49M/41.7M [00:00<00:01,    29.4MB/s]     13%|#3        | Downloading : 5.49M/41.7M [00:00<00:01,    29.5MB/s]     16%|#5        | Downloading : 6.49M/41.7M [00:00<00:01,    30.4MB/s]     18%|#7        | Downloading : 7.49M/41.7M [00:00<00:01,    30.4MB/s]     20%|##        | Downloading : 8.49M/41.7M [00:00<00:01,    31.2MB/s]     23%|##2       | Downloading : 9.49M/41.7M [00:00<00:01,    31.1MB/s]     25%|##5       | Downloading : 10.5M/41.7M [00:00<00:01,    31.5MB/s]     28%|##7       | Downloading : 11.5M/41.7M [00:00<00:01,    31.4MB/s]     35%|###4      | Downloading : 14.5M/41.7M [00:00<00:00,    33.1MB/s]     40%|###9      | Downloading : 16.5M/41.7M [00:00<00:00,    33.6MB/s]     44%|####4     | Downloading : 18.5M/41.7M [00:00<00:00,    33.8MB/s]     49%|####9     | Downloading : 20.5M/41.7M [00:00<00:00,    33.7MB/s]     54%|#####3    | Downloading : 22.5M/41.7M [00:00<00:00,    33.6MB/s]     59%|#####8    | Downloading : 24.5M/41.7M [00:00<00:00,    35.4MB/s]     63%|######3   | Downloading : 26.5M/41.7M [00:00<00:00,    35.1MB/s]     68%|######8   | Downloading : 28.5M/41.7M [00:00<00:00,    34.9MB/s]     73%|#######3  | Downloading : 30.5M/41.7M [00:00<00:00,    34.7MB/s]     78%|#######7  | Downloading : 32.5M/41.7M [00:01<00:00,    34.5MB/s]     83%|########2 | Downloading : 34.5M/41.7M [00:01<00:00,    34.4MB/s]     87%|########7 | Downloading : 36.5M/41.7M [00:01<00:00,    35.5MB/s]     92%|#########2| Downloading : 38.5M/41.7M [00:01<00:00,    35.3MB/s]     97%|#########7| Downloading : 40.5M/41.7M [00:01<00:00,    35.1MB/s]    100%|##########| Downloading : 41.7M/41.7M [00:01<00:00,    35.4MB/s]    100%|##########| Downloading : 41.7M/41.7M [00:01<00:00,    34.7MB/s]
+    Verifying hash 10d2976fd0844a6c44b6355a9a212611.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
     Loading /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-01/nirs/sub-01_task-tapping_nirs.snirf
@@ -348,13 +348,13 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="C4dBLj"></div>
+              <div id="tIa5RH"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
     "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-    "theta":[0.3676377879419309,0.27521483184439877,2.252085434581774,5.653589489162204,7.087739373980638,3.192321601921026,-0.9138041110985545,-1.8643484236105758,3.148547839330601,5.776145401378432,7.812296365157039,1.854052537827757,-0.8909307291191998,-2.1223762385646907,0.9764229099051926,5.036159706122357,3.4598361798977795,2.9474897047227144,-0.02918268520493178,-0.20848317947588973,-3.205087466622479,10.679081188946558,5.029087403055464,-0.6378543557628967,0.035076394795561586,-0.49952852725852787,6.648984980822942,23.39956706645463,23.02238742315741,11.595057836752776],
+    "theta":[0.36652017966973005,0.2767052477835328,2.2533062442560743,5.6534390983132425,7.092229283121558,3.1843575972327196,-0.9143790325342254,-1.8651492092869202,3.1485090797715003,5.773968178088424,7.8175269761491055,1.8613712743535529,-0.8896275974260267,-2.1196440112667974,0.9805964990165716,5.062971026929868,3.4573458561375543,2.949068721851661,-0.03231701254771663,-0.20974555678101264,-3.194303721236945,10.659305305836709,4.9927174218761365,-0.6397740924432194,0.04158322036019463,-0.47821308970614457,6.662184919644767,23.340210278136816,22.989542590877168,11.577755280381151],
     "ID":["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
     "mapping":{
@@ -399,7 +399,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("C4dBLj");
+           var plotContainer = document.getElementById("tIa5RH");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -479,10 +479,10 @@ model by using the code
       <td>No. Observations:</td>   <td>60</td>          <td>Method:</td>         <td>REML</td>   
     </tr>
     <tr>
-         <td>No. Groups:</td>       <td>5</td>          <td>Scale:</td>         <td>16.0679</td> 
+         <td>No. Groups:</td>       <td>5</td>          <td>Scale:</td>         <td>15.9978</td> 
     </tr>
     <tr>
-      <td>Min. group size:</td>    <td>12</td>      <td>Log-Likelihood:</td>   <td>-144.4094</td>
+      <td>Min. group size:</td>    <td>12</td>      <td>Log-Likelihood:</td>   <td>-144.3046</td>
     </tr>
     <tr>
       <td>Max. group size:</td>    <td>12</td>        <td>Converged:</td>         <td>Yes</td>   
@@ -496,43 +496,43 @@ model by using the code
                                    <td></td>                               <th>Coef.</th> <th>Std.Err.</th>    <th>z</th>   <th>P>|z|</th> <th>[0.025</th> <th>0.975]</th>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbo]</th>        <td>-0.286</td>   <td>1.793</td>  <td>-0.160</td> <td>0.873</td> <td>-3.800</td>  <td>3.227</td>
+      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbo]</th>        <td>-0.286</td>   <td>1.789</td>  <td>-0.160</td> <td>0.873</td> <td>-3.791</td>  <td>3.220</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbo]</th>       <td>-0.884</td>   <td>1.793</td>  <td>-0.493</td> <td>0.622</td> <td>-4.397</td>  <td>2.630</td>
+      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbo]</th>       <td>-0.879</td>   <td>1.789</td>  <td>-0.492</td> <td>0.623</td> <td>-4.385</td>  <td>2.627</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>    <td>1.964</td>   <td>1.793</td>   <td>1.096</td> <td>0.273</td> <td>-1.549</td>  <td>5.478</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>    <td>1.970</td>   <td>1.789</td>   <td>1.101</td> <td>0.271</td> <td>-1.536</td>  <td>5.476</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>  <td>10.109</td>   <td>1.793</td>   <td>5.639</td> <td>0.000</td>  <td>6.595</td> <td>13.622</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>  <td>10.098</td>   <td>1.789</td>   <td>5.645</td> <td>0.000</td>  <td>6.592</td> <td>13.604</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>   <td>9.282</td>   <td>1.793</td>   <td>5.178</td> <td>0.000</td>  <td>5.769</td> <td>12.796</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>   <td>9.270</td>   <td>1.789</td>   <td>5.182</td> <td>0.000</td>  <td>5.764</td> <td>12.776</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>3.790</td>   <td>1.793</td>   <td>2.114</td> <td>0.034</td>  <td>0.277</td>  <td>7.304</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>3.787</td>   <td>1.789</td>   <td>2.117</td> <td>0.034</td>  <td>0.281</td>  <td>7.292</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbr]</th>         <td>0.269</td>   <td>1.793</td>   <td>0.150</td> <td>0.881</td> <td>-3.245</td>  <td>3.782</td>
+      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbr]</th>         <td>0.269</td>   <td>1.789</td>   <td>0.150</td> <td>0.881</td> <td>-3.237</td>  <td>3.775</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbr]</th>        <td>0.140</td>   <td>1.793</td>   <td>0.078</td> <td>0.938</td> <td>-3.373</td>  <td>3.654</td>
+      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbr]</th>        <td>0.140</td>   <td>1.789</td>   <td>0.078</td> <td>0.937</td> <td>-3.365</td>  <td>3.646</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>   <td>-2.004</td>   <td>1.793</td>  <td>-1.118</td> <td>0.264</td> <td>-5.518</td>  <td>1.509</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>   <td>-2.010</td>   <td>1.789</td>  <td>-1.124</td> <td>0.261</td> <td>-5.516</td>  <td>1.496</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>  <td>-4.436</td>   <td>1.793</td>  <td>-2.474</td> <td>0.013</td> <td>-7.949</td> <td>-0.922</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>  <td>-4.428</td>   <td>1.789</td>  <td>-2.476</td> <td>0.013</td> <td>-7.934</td> <td>-0.923</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th>  <td>-4.133</td>   <td>1.793</td>  <td>-2.306</td> <td>0.021</td> <td>-7.647</td> <td>-0.620</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th>  <td>-4.130</td>   <td>1.789</td>  <td>-2.309</td> <td>0.021</td> <td>-7.636</td> <td>-0.624</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th> <td>-1.960</td>   <td>1.793</td>  <td>-1.094</td> <td>0.274</td> <td>-5.474</td>  <td>1.553</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th> <td>-1.956</td>   <td>1.789</td>  <td>-1.094</td> <td>0.274</td> <td>-5.462</td>  <td>1.550</td>
     </tr>
     <tr>
-      <th>Group Var</th>                                                   <td>0.000</td>   <td>0.277</td>     <td></td>      <td></td>       <td></td>       <td></td>   
+      <th>Group Var</th>                                                   <td>0.000</td>   <td>0.275</td>     <td></td>      <td></td>       <td></td>       <td></td>   
     </tr>
     </table>
     </div>
@@ -585,11 +585,11 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="nW8Aj3"></div>
+              <div id="nmCJjI"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
-    "Coef.":[-0.28624066853703856,-0.8839043074130573,1.9641907396036065,10.108908570412833,9.282269349049665,3.790213465092275],
+    "Coef.":[-0.2856440484956088,-0.8792093238514687,1.970058604290393,10.09797877746101,9.269872425632304,3.786555756275173],
     "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     "Significant":[false,false,false,true,true,true]
@@ -634,7 +634,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     "geom":"point",
     "data":{
-    "Coef.":[0.268561304675635,-2.0041359222189112,-4.133400318185701],
+    "Coef.":[0.26865728080246076,-2.010230243751068,-4.130176130163723],
     "Condition":["Control","Tapping/Left","Tapping/Right"],
     "Significant":[false,false,true]
     },
@@ -647,7 +647,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     "geom":"point",
     "data":{
-    "Coef.":[0.1404606610572079,-4.435860134664392,-1.9604999075419347],
+    "Coef.":[0.14039044097632752,-4.428427669196087,-1.956083810815505],
     "Condition":["Control","Tapping/Left","Tapping/Right"],
     "Significant":[false,true,false]
     },
@@ -659,7 +659,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("nW8Aj3");
+           var plotContainer = document.getElementById("nmCJjI");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -917,460 +917,460 @@ This can be generated from the statistics dataframe.
         <tr>
           <th rowspan="2" valign="top">S1_D1 hbo</th>
           <th>Tapping/Left</th>
-          <td>2.737095</td>
-          <td>4.195591</td>
-          <td>0.652374</td>
-          <td>0.514160</td>
-          <td>-5.486112</td>
-          <td>10.960301</td>
+          <td>2.725038</td>
+          <td>4.189391</td>
+          <td>0.650462</td>
+          <td>0.515394</td>
+          <td>-5.486018</td>
+          <td>10.936094</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>6.594783</td>
-          <td>4.195591</td>
-          <td>1.571837</td>
-          <td>0.115988</td>
-          <td>-1.628423</td>
-          <td>14.81799</td>
+          <td>6.592228</td>
+          <td>4.189391</td>
+          <td>1.573553</td>
+          <td>0.115591</td>
+          <td>-1.618829</td>
+          <td>14.803284</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S1_D2 hbo</th>
           <th>Tapping/Left</th>
-          <td>0.743025</td>
-          <td>4.195591</td>
-          <td>0.177097</td>
-          <td>0.859432</td>
-          <td>-7.480181</td>
-          <td>8.966232</td>
+          <td>0.747997</td>
+          <td>4.189391</td>
+          <td>0.178546</td>
+          <td>0.858295</td>
+          <td>-7.463059</td>
+          <td>8.959054</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>7.159065</td>
-          <td>4.195591</td>
-          <td>1.706331</td>
-          <td>0.087947</td>
-          <td>-1.064142</td>
-          <td>15.382271</td>
+          <td>7.154465</td>
+          <td>4.189391</td>
+          <td>1.707758</td>
+          <td>0.087681</td>
+          <td>-1.056591</td>
+          <td>15.365521</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S1_D3 hbo</th>
           <th>Tapping/Left</th>
-          <td>1.979368</td>
-          <td>4.195591</td>
-          <td>0.471773</td>
-          <td>0.637088</td>
-          <td>-6.243838</td>
-          <td>10.202575</td>
+          <td>2.003291</td>
+          <td>4.189391</td>
+          <td>0.478182</td>
+          <td>0.632521</td>
+          <td>-6.207765</td>
+          <td>10.214347</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>17.050793</td>
-          <td>4.195591</td>
-          <td>4.063979</td>
+          <td>17.029723</td>
+          <td>4.189391</td>
+          <td>4.064963</td>
           <td>0.000048</td>
-          <td>8.827587</td>
-          <td>25.274</td>
+          <td>8.818667</td>
+          <td>25.24078</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S2_D1 hbo</th>
           <th>Tapping/Left</th>
-          <td>-0.032397</td>
-          <td>4.195591</td>
-          <td>-0.007722</td>
-          <td>0.993839</td>
-          <td>-8.255603</td>
-          <td>8.19081</td>
+          <td>-0.030335</td>
+          <td>4.189391</td>
+          <td>-0.007241</td>
+          <td>0.994223</td>
+          <td>-8.241391</td>
+          <td>8.180721</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>1.183063</td>
-          <td>4.195591</td>
-          <td>0.281978</td>
-          <td>0.777961</td>
-          <td>-7.040143</td>
-          <td>9.40627</td>
+          <td>1.185932</td>
+          <td>4.189391</td>
+          <td>0.283080</td>
+          <td>0.777116</td>
+          <td>-7.025124</td>
+          <td>9.396988</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S2_D3 hbo</th>
           <th>Tapping/Left</th>
-          <td>1.003134</td>
-          <td>4.195591</td>
-          <td>0.239092</td>
-          <td>0.811034</td>
-          <td>-7.220073</td>
-          <td>9.22634</td>
+          <td>1.009418</td>
+          <td>4.189391</td>
+          <td>0.240946</td>
+          <td>0.809597</td>
+          <td>-7.201638</td>
+          <td>9.220475</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>6.892621</td>
-          <td>4.195591</td>
-          <td>1.642825</td>
-          <td>0.100419</td>
-          <td>-1.330585</td>
-          <td>15.115828</td>
+          <td>6.895600</td>
+          <td>4.189391</td>
+          <td>1.645967</td>
+          <td>0.099771</td>
+          <td>-1.315456</td>
+          <td>15.106657</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S2_D4 hbo</th>
           <th>Tapping/Left</th>
-          <td>-1.273985</td>
-          <td>4.195591</td>
-          <td>-0.303649</td>
-          <td>0.761396</td>
-          <td>-9.497192</td>
-          <td>6.949221</td>
+          <td>-1.272552</td>
+          <td>4.189391</td>
+          <td>-0.303756</td>
+          <td>0.761314</td>
+          <td>-9.483608</td>
+          <td>6.938504</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>0.169087</td>
-          <td>4.195591</td>
-          <td>0.040301</td>
-          <td>0.967853</td>
-          <td>-8.054119</td>
-          <td>8.392294</td>
+          <td>0.170163</td>
+          <td>4.189391</td>
+          <td>0.040618</td>
+          <td>0.967601</td>
+          <td>-8.040893</td>
+          <td>8.381219</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S3_D2 hbo</th>
           <th>Tapping/Left</th>
-          <td>3.602213</td>
-          <td>4.195591</td>
-          <td>0.858571</td>
-          <td>0.390577</td>
-          <td>-4.620994</td>
-          <td>11.825419</td>
+          <td>3.601137</td>
+          <td>4.189391</td>
+          <td>0.859585</td>
+          <td>0.390018</td>
+          <td>-4.60992</td>
+          <td>11.812193</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>9.643033</td>
-          <td>4.195591</td>
-          <td>2.298373</td>
-          <td>0.021541</td>
-          <td>1.419827</td>
-          <td>17.86624</td>
+          <td>9.612044</td>
+          <td>4.189391</td>
+          <td>2.294377</td>
+          <td>0.021769</td>
+          <td>1.400987</td>
+          <td>17.8231</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S3_D3 hbo</th>
           <th>Tapping/Left</th>
-          <td>3.040734</td>
-          <td>4.195591</td>
-          <td>0.724745</td>
-          <td>0.468608</td>
-          <td>-5.182472</td>
-          <td>11.263941</td>
+          <td>3.058901</td>
+          <td>4.189391</td>
+          <td>0.730154</td>
+          <td>0.465296</td>
+          <td>-5.152155</td>
+          <td>11.269957</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>13.394102</td>
-          <td>4.195591</td>
-          <td>3.192424</td>
-          <td>0.001411</td>
-          <td>5.170896</td>
-          <td>21.617309</td>
+          <td>13.372372</td>
+          <td>4.189391</td>
+          <td>3.191961</td>
+          <td>0.001413</td>
+          <td>5.161316</td>
+          <td>21.583429</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S4_D3 hbo</th>
           <th>Tapping/Left</th>
-          <td>2.818356</td>
-          <td>4.195591</td>
-          <td>0.671742</td>
-          <td>0.501748</td>
-          <td>-5.40485</td>
-          <td>11.041562</td>
+          <td>2.828156</td>
+          <td>4.189391</td>
+          <td>0.675076</td>
+          <td>0.499628</td>
+          <td>-5.382901</td>
+          <td>11.039212</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>9.806812</td>
-          <td>4.195591</td>
-          <td>2.337409</td>
-          <td>0.019418</td>
-          <td>1.583606</td>
-          <td>18.030019</td>
+          <td>9.813455</td>
+          <td>4.189391</td>
+          <td>2.342453</td>
+          <td>0.019157</td>
+          <td>1.602398</td>
+          <td>18.024511</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S4_D4 hbo</th>
           <th>Tapping/Left</th>
-          <td>5.153202</td>
-          <td>4.195591</td>
-          <td>1.228242</td>
-          <td>0.219356</td>
-          <td>-3.070005</td>
-          <td>13.376408</td>
+          <td>5.163194</td>
+          <td>4.189391</td>
+          <td>1.232445</td>
+          <td>0.217783</td>
+          <td>-3.047862</td>
+          <td>13.374251</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>7.295477</td>
-          <td>4.195591</td>
-          <td>1.738844</td>
-          <td>0.082062</td>
-          <td>-0.927729</td>
-          <td>15.518684</td>
+          <td>7.303296</td>
+          <td>4.189391</td>
+          <td>1.743283</td>
+          <td>0.081284</td>
+          <td>-0.907761</td>
+          <td>15.514352</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S5_D5 hbo</th>
           <th>Tapping/Left</th>
-          <td>5.682073</td>
-          <td>4.195591</td>
-          <td>1.354296</td>
-          <td>0.175642</td>
-          <td>-2.541133</td>
-          <td>13.90528</td>
+          <td>5.693955</td>
+          <td>4.189391</td>
+          <td>1.359137</td>
+          <td>0.174103</td>
+          <td>-2.517101</td>
+          <td>13.905011</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>3.154426</td>
-          <td>4.195591</td>
-          <td>0.751843</td>
-          <td>0.452145</td>
-          <td>-5.068781</td>
-          <td>11.377632</td>
+          <td>3.160458</td>
+          <td>4.189391</td>
+          <td>0.754395</td>
+          <td>0.450612</td>
+          <td>-5.050599</td>
+          <td>11.371514</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S5_D6 hbo</th>
           <th>Tapping/Left</th>
-          <td>2.677485</td>
-          <td>4.195591</td>
-          <td>0.638166</td>
-          <td>0.523365</td>
-          <td>-5.545721</td>
-          <td>10.900692</td>
+          <td>2.682824</td>
+          <td>4.189391</td>
+          <td>0.640385</td>
+          <td>0.521922</td>
+          <td>-5.528233</td>
+          <td>10.89388</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>1.514392</td>
-          <td>4.195591</td>
-          <td>0.360948</td>
-          <td>0.718138</td>
-          <td>-6.708815</td>
-          <td>9.737598</td>
+          <td>1.507595</td>
+          <td>4.189391</td>
+          <td>0.359860</td>
+          <td>0.718952</td>
+          <td>-6.703461</td>
+          <td>9.718652</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S5_D7 hbo</th>
           <th>Tapping/Left</th>
-          <td>19.372161</td>
-          <td>4.195591</td>
-          <td>4.617267</td>
+          <td>19.332204</td>
+          <td>4.189391</td>
+          <td>4.614561</td>
           <td>0.000004</td>
-          <td>11.148954</td>
-          <td>27.595367</td>
+          <td>11.121148</td>
+          <td>27.54326</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>4.470708</td>
-          <td>4.195591</td>
-          <td>1.065573</td>
-          <td>0.286617</td>
-          <td>-3.752498</td>
-          <td>12.693915</td>
+          <td>4.468471</td>
+          <td>4.189391</td>
+          <td>1.066616</td>
+          <td>0.286145</td>
+          <td>-3.742586</td>
+          <td>12.679527</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S6_D5 hbo</th>
           <th>Tapping/Left</th>
-          <td>2.999096</td>
-          <td>4.195591</td>
-          <td>0.714821</td>
-          <td>0.474720</td>
-          <td>-5.22411</td>
-          <td>11.222303</td>
+          <td>3.000136</td>
+          <td>4.189391</td>
+          <td>0.716127</td>
+          <td>0.473913</td>
+          <td>-5.21092</td>
+          <td>11.211193</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>2.581611</td>
-          <td>4.195591</td>
-          <td>0.615315</td>
-          <td>0.538347</td>
-          <td>-5.641595</td>
-          <td>10.804817</td>
+          <td>2.584979</td>
+          <td>4.189391</td>
+          <td>0.617030</td>
+          <td>0.537215</td>
+          <td>-5.626078</td>
+          <td>10.796035</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S6_D7 hbo</th>
           <th>Tapping/Left</th>
-          <td>12.629307</td>
-          <td>4.195591</td>
-          <td>3.010138</td>
-          <td>0.002611</td>
-          <td>4.406101</td>
-          <td>20.852513</td>
+          <td>12.589845</td>
+          <td>4.189391</td>
+          <td>3.005173</td>
+          <td>0.002654</td>
+          <td>4.378789</td>
+          <td>20.800902</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>4.685671</td>
-          <td>4.195591</td>
-          <td>1.116808</td>
-          <td>0.264076</td>
-          <td>-3.537536</td>
-          <td>12.908877</td>
+          <td>4.669816</td>
+          <td>4.189391</td>
+          <td>1.114677</td>
+          <td>0.264989</td>
+          <td>-3.54124</td>
+          <td>12.880873</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S6_D8 hbo</th>
           <th>Tapping/Left</th>
-          <td>10.583127</td>
-          <td>4.195591</td>
-          <td>2.522440</td>
-          <td>0.011654</td>
-          <td>2.359921</td>
-          <td>18.806334</td>
+          <td>10.559629</td>
+          <td>4.189391</td>
+          <td>2.520564</td>
+          <td>0.011717</td>
+          <td>2.348573</td>
+          <td>18.770685</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>6.113560</td>
-          <td>4.195591</td>
-          <td>1.457139</td>
-          <td>0.145078</td>
-          <td>-2.109647</td>
-          <td>14.336766</td>
+          <td>6.095097</td>
+          <td>4.189391</td>
+          <td>1.454889</td>
+          <td>0.145700</td>
+          <td>-2.115959</td>
+          <td>14.306154</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S7_D6 hbo</th>
           <th>Tapping/Left</th>
-          <td>8.633135</td>
-          <td>4.195591</td>
-          <td>2.057669</td>
-          <td>0.039622</td>
-          <td>0.409928</td>
-          <td>16.856341</td>
+          <td>8.613836</td>
+          <td>4.189391</td>
+          <td>2.056107</td>
+          <td>0.039772</td>
+          <td>0.40278</td>
+          <td>16.824892</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>3.938374</td>
-          <td>4.195591</td>
-          <td>0.938694</td>
-          <td>0.347888</td>
-          <td>-4.284833</td>
-          <td>12.16158</td>
+          <td>3.928645</td>
+          <td>4.189391</td>
+          <td>0.937760</td>
+          <td>0.348368</td>
+          <td>-4.282412</td>
+          <td>12.139701</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S7_D7 hbo</th>
           <th>Tapping/Left</th>
-          <td>10.973454</td>
-          <td>4.195591</td>
-          <td>2.615473</td>
-          <td>0.008910</td>
-          <td>2.750248</td>
-          <td>19.196661</td>
+          <td>10.974402</td>
+          <td>4.189391</td>
+          <td>2.619570</td>
+          <td>0.008804</td>
+          <td>2.763346</td>
+          <td>19.185459</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>3.905806</td>
-          <td>4.195591</td>
-          <td>0.930931</td>
-          <td>0.351889</td>
-          <td>-4.3174</td>
-          <td>12.129013</td>
+          <td>3.907378</td>
+          <td>4.189391</td>
+          <td>0.932684</td>
+          <td>0.350983</td>
+          <td>-4.303678</td>
+          <td>12.118435</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S8_D7 hbo</th>
           <th>Tapping/Left</th>
-          <td>16.468741</td>
-          <td>4.195591</td>
-          <td>3.925250</td>
-          <td>0.000087</td>
-          <td>8.245535</td>
-          <td>24.691947</td>
+          <td>16.481581</td>
+          <td>4.189391</td>
+          <td>3.934123</td>
+          <td>0.000084</td>
+          <td>8.270524</td>
+          <td>24.692637</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>6.932071</td>
-          <td>4.195591</td>
-          <td>1.652228</td>
-          <td>0.098488</td>
-          <td>-1.291136</td>
-          <td>15.155277</td>
+          <td>6.938884</td>
+          <td>4.189391</td>
+          <td>1.656299</td>
+          <td>0.097661</td>
+          <td>-1.272172</td>
+          <td>15.14994</td>
           <td>hbo</td>
           <td>False</td>
         </tr>
         <tr>
           <th rowspan="2" valign="top">S8_D8 hbo</th>
           <th>Tapping/Left</th>
-          <td>11.668169</td>
-          <td>4.195591</td>
-          <td>2.781055</td>
-          <td>0.005418</td>
-          <td>3.444963</td>
-          <td>19.891376</td>
+          <td>11.664569</td>
+          <td>4.189391</td>
+          <td>2.784311</td>
+          <td>0.005364</td>
+          <td>3.453512</td>
+          <td>19.875625</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
         <tr>
           <th>Tapping/Right</th>
-          <td>8.762187</td>
-          <td>4.195591</td>
-          <td>2.088428</td>
-          <td>0.036759</td>
-          <td>0.538981</td>
-          <td>16.985394</td>
+          <td>8.740735</td>
+          <td>4.189391</td>
+          <td>2.086397</td>
+          <td>0.036943</td>
+          <td>0.529679</td>
+          <td>16.951792</td>
           <td>hbo</td>
           <td>True</td>
         </tr>
@@ -1384,7 +1384,7 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.335 seconds)
+   **Total running time of the script:** ( 0 minutes  21.846 seconds)
 
 **Estimated memory usage:**  47 MB
 
