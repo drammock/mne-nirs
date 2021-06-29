@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -171,7 +171,7 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
-    Estimate: [4.e-06]   MSE: [1.52643584e-42]   Error (uM): [3.38813179e-15]
+    Estimate: [4.e-06]   MSE: [5.9140112e-43]   Error (uM): [1.69406589e-15]
 
 
 
@@ -452,9 +452,9 @@ model of the noise can improve the accuracy of the response estimate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.142 seconds)
+   **Total running time of the script:** ( 0 minutes  5.063 seconds)
 
-**Estimated memory usage:**  37 MB
+**Estimated memory usage:**  38 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:
@@ -465,6 +465,13 @@ model of the noise can improve the accuracy of the response estimate.
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_10_hrf_simulation.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python
