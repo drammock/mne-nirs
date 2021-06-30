@@ -333,15 +333,13 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  3%|3         | Downloading : 568k/17.1M [00:00&lt;00:00,    30.3MB/s]
- 12%|#2        | Downloading : 2.05M/17.1M [00:00&lt;00:00,    49.3MB/s]
- 30%|##9       | Downloading : 5.05M/17.1M [00:00&lt;00:00,    21.8MB/s]
- 47%|####7     | Downloading : 8.05M/17.1M [00:00&lt;00:00,    32.6MB/s]
- 59%|#####8    | Downloading : 10.1M/17.1M [00:00&lt;00:00,    38.5MB/s]
- 71%|#######   | Downloading : 12.1M/17.1M [00:00&lt;00:00,    42.9MB/s]
- 82%|########2 | Downloading : 14.1M/17.1M [00:00&lt;00:00,    46.4MB/s]
- 94%|#########4| Downloading : 16.1M/17.1M [00:00&lt;00:00,    50.3MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    49.4MB/s]
+  3%|2         | Downloading : 504k/17.1M [00:00&lt;00:00,    21.5MB/s]
+  9%|8         | Downloading : 1.49M/17.1M [00:00&lt;00:00,    30.9MB/s]
+ 29%|##9       | Downloading : 4.99M/17.1M [00:00&lt;00:00,    69.5MB/s]
+ 41%|####1     | Downloading : 6.99M/17.1M [00:00&lt;00:00,    78.2MB/s]
+ 76%|#######6  | Downloading : 13.0M/17.1M [00:00&lt;00:00,    98.9MB/s]
+100%|#########9| Downloading : 17.0M/17.1M [00:00&lt;00:00,     102MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    98.5MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -373,7 +371,7 @@ Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
     <tr>
         <th>Good channels</th>
         <td>0 magnetometer, 0 gradiometer,
-            and 0 EEG channels</td>
+            0 EEG channels, and 56 fNIRS channels.</td>
     </tr>
     <tr>
         <th>Bad channels</th>
@@ -395,7 +393,7 @@ Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
         <th>Highpass</th>
         <td>0.00 Hz</td>
     </tr>
-     <tr>
+    <tr>
         <th>Lowpass</th>
         <td>0.35 Hz</td>
     </tr>
@@ -456,7 +454,7 @@ experimental conditions.</p>
     <tr>
         <th>Good channels</th>
         <td>0 magnetometer, 0 gradiometer,
-            and 0 EEG channels</td>
+            0 EEG channels, and 56 fNIRS channels.</td>
     </tr>
     <tr>
         <th>Bad channels</th>
@@ -478,7 +476,7 @@ experimental conditions.</p>
         <th>Highpass</th>
         <td>0.00 Hz</td>
     </tr>
-     <tr>
+    <tr>
         <th>Lowpass</th>
         <td>0.35 Hz</td>
     </tr>
@@ -649,7 +647,7 @@ desired channel name. You can view an overview of the estimates as:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;S1_D1 hbo&#39;: &lt;nilearn.glm.regression.RegressionResults object at 0x7efc9ba2ddc0&gt;, &#39;S1_D1 hbr&#39;: &lt;nilearn.glm.regression.RegressionResults object at 0x7efc9ba428b0&gt;}
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;S1_D1 hbo&#39;: &lt;nilearn.glm.regression.RegressionResults object at 0x7f6e79853c40&gt;, &#39;S1_D1 hbr&#39;: &lt;nilearn.glm.regression.RegressionResults object at 0x7f6e79783f10&gt;}
 </pre></div>
 </div>
 <p>Or you can view the estimate for a single channel by indexing it by name.
@@ -863,7 +861,7 @@ is seen in the epoching tutorial.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_11_hrf_measured_005.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_005.png" alt="plot 11 hrf measured" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7efc9b8fc7c0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f6e796af7f0&gt;
 </pre></div>
 </div>
 </div>
@@ -921,11 +919,11 @@ the center of the head.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_11_hrf_measured_007.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_007.png" alt="Smoothed across hemispheres, Hemispheres plotted independently" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpgo_tjq0g/1ff4d3ce31fa11e8bd2bbb9f12fb35ddafaa88ac/examples/general/plot_11_hrf_measured.py:350: RuntimeWarning: Reducing GLM results to match MNE data
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpfkn6yze9/5097a44bffbee22a3796cc52db2b2505ea67e4a4/examples/general/plot_11_hrf_measured.py:350: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;), glm_est, design_matrix,
-/tmp/tmpgo_tjq0g/1ff4d3ce31fa11e8bd2bbb9f12fb35ddafaa88ac/examples/general/plot_11_hrf_measured.py:353: RuntimeWarning: Reducing GLM results to match MNE data
+/tmp/tmpfkn6yze9/5097a44bffbee22a3796cc52db2b2505ea67e4a4/examples/general/plot_11_hrf_measured.py:353: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10)),
-/tmp/tmpgo_tjq0g/1ff4d3ce31fa11e8bd2bbb9f12fb35ddafaa88ac/examples/general/plot_11_hrf_measured.py:356: RuntimeWarning: Reducing GLM results to match MNE data
+/tmp/tmpfkn6yze9/5097a44bffbee22a3796cc52db2b2505ea67e4a4/examples/general/plot_11_hrf_measured.py:356: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10, 20)),
 
 Text(0.5, 1.0, &#39;Hemispheres plotted independently&#39;)
@@ -1293,7 +1291,7 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.576 seconds)</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.497 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  65 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-11-hrf-measured-py">
 <div class="binder-badge docutils container">

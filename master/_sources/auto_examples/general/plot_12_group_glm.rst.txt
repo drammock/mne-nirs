@@ -84,7 +84,7 @@ information about triggers, condition names, etc.
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-106
+.. GENERATED FROM PYTHON SOURCE LINES 68-107
 
 .. code-block:: default
 
@@ -112,6 +112,7 @@ information about triggers, condition names, etc.
     from mne_nirs.utils._io import glm_to_tidy
     from mne_nirs.visualisation import plot_glm_group_topo
     from mne_nirs.datasets import fnirs_motor_group
+    from mne_nirs.visualisation import plot_glm_surface_projection
 
     # Import MNE-BIDS processing
     from mne_bids import BIDSPath, read_raw_bids
@@ -133,7 +134,7 @@ information about triggers, condition names, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-131
+.. GENERATED FROM PYTHON SOURCE LINES 108-132
 
 Define individual analysis
 --------------------------
@@ -160,7 +161,7 @@ Here we also resample to a 0.3 Hz sample rate just to speed up the example
 and use less memory, resampling to 0.6 Hz is a better choice for full
 analyses.
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-192
+.. GENERATED FROM PYTHON SOURCE LINES 132-193
 
 .. code-block:: default
 
@@ -232,7 +233,7 @@ analyses.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 193-200
+.. GENERATED FROM PYTHON SOURCE LINES 194-201
 
 Run analysis on all participants
 --------------------------------
@@ -242,7 +243,7 @@ on each. We append the individual results in to a large dataframe that
 will contain the results from all measurements. We create a group dataframe
 for the region of interest, channel level, and contrast results.
 
-.. GENERATED FROM PYTHON SOURCE LINES 200-222
+.. GENERATED FROM PYTHON SOURCE LINES 201-223
 
 .. code-block:: default
 
@@ -280,7 +281,7 @@ for the region of interest, channel level, and contrast results.
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    14.8kB/s]      0%|          | Downloading : 512k/0.00 [00:00<00:00,     951kB/s]       0%|          | Downloading : 1.50M/0.00 [00:00<00:00,    2.81MB/s]      0%|          | Downloading : 3.00M/0.00 [00:00<00:00,    5.58MB/s]      0%|          | Downloading : 4.00M/0.00 [00:00<00:00,    7.33MB/s]      0%|          | Downloading : 7.00M/0.00 [00:00<00:00,    12.8MB/s]      0%|          | Downloading : 11.0M/0.00 [00:01<00:00,    12.4MB/s]      0%|          | Downloading : 18.0M/0.00 [00:01<00:00,    14.2MB/s]      0%|          | Downloading : 24.0M/0.00 [00:01<00:00,    13.7MB/s]      0%|          | Downloading : 30.0M/0.00 [00:01<00:00,    17.4MB/s]      0%|          | Downloading : 34.0M/0.00 [00:02<00:00,    15.1MB/s]      0%|          | Downloading : 40.0M/0.00 [00:02<00:00,    18.1MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    17.4MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    13.6kB/s]      0%|          | Downloading : 256k/0.00 [00:00<00:00,     446kB/s]       0%|          | Downloading : 768k/0.00 [00:00<00:00,    1.33MB/s]      0%|          | Downloading : 1.75M/0.00 [00:00<00:00,    3.09MB/s]      0%|          | Downloading : 2.75M/0.00 [00:00<00:00,    4.83MB/s]      0%|          | Downloading : 4.75M/0.00 [00:00<00:00,    8.33MB/s]      0%|          | Downloading : 6.75M/0.00 [00:00<00:00,    11.5MB/s]      0%|          | Downloading : 8.75M/0.00 [00:00<00:00,    14.9MB/s]      0%|          | Downloading : 10.8M/0.00 [00:01<00:00,    11.1MB/s]      0%|          | Downloading : 13.8M/0.00 [00:01<00:00,    14.5MB/s]      0%|          | Downloading : 17.8M/0.00 [00:01<00:00,    12.5MB/s]      0%|          | Downloading : 23.8M/0.00 [00:01<00:00,    17.2MB/s]      0%|          | Downloading : 27.8M/0.00 [00:02<00:00,    14.1MB/s]      0%|          | Downloading : 33.8M/0.00 [00:02<00:00,    13.3MB/s]      0%|          | Downloading : 37.8M/0.00 [00:02<00:00,    15.1MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.9MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    15.5MB/s]
     Verifying hash 10d2976fd0844a6c44b6355a9a212611.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -308,7 +309,7 @@ for the region of interest, channel level, and contrast results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-232
+.. GENERATED FROM PYTHON SOURCE LINES 224-233
 
 Visualise Individual results
 ----------------------------
@@ -320,7 +321,7 @@ values and observe they are in the expect range.
 We can already see that the control condition is always near zero,
 and that the responses look to be contralateral to the tapping hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 232-243
+.. GENERATED FROM PYTHON SOURCE LINES 233-244
 
 .. code-block:: default
 
@@ -348,7 +349,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="LOY1bs"></div>
+              <div id="KUYa0S"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -399,7 +400,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("LOY1bs");
+           var plotContainer = document.getElementById("KUYa0S");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -408,7 +409,7 @@ and that the responses look to be contralateral to the tapping hand.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 244-275
+.. GENERATED FROM PYTHON SOURCE LINES 245-276
 
 Compute group level results
 ---------------------------
@@ -442,7 +443,7 @@ Alternatively, we could use a robust linear
 model by using the code
 `roi_model = rlm('theta ~ -1 + ROI:Condition:Chroma', grp_results).fit()`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 275-283
+.. GENERATED FROM PYTHON SOURCE LINES 276-284
 
 .. code-block:: default
 
@@ -539,7 +540,7 @@ model by using the code
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 284-295
+.. GENERATED FROM PYTHON SOURCE LINES 285-296
 
 Visualise group results
 -----------------------
@@ -553,7 +554,7 @@ We also observe the the tapping response is
 larger in the contralateral hemisphere.
 Filled symbols represent HbO, unfilled symbols represent HbR.
 
-.. GENERATED FROM PYTHON SOURCE LINES 295-310
+.. GENERATED FROM PYTHON SOURCE LINES 296-311
 
 .. code-block:: default
 
@@ -585,7 +586,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="2kvLNO"></div>
+              <div id="kJgqV8"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -659,7 +660,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("2kvLNO");
+           var plotContainer = document.getElementById("kJgqV8");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -668,7 +669,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 311-320
+.. GENERATED FROM PYTHON SOURCE LINES 312-321
 
 Group topographic visualisation
 -------------------------------
@@ -680,7 +681,7 @@ First we compute the mixed effects model for each channel (rather
 than region of interest as above).
 Then we pass these results to the topomap function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 320-364
+.. GENERATED FROM PYTHON SOURCE LINES 321-365
 
 .. code-block:: default
 
@@ -748,7 +749,7 @@ Then we pass these results to the topomap function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 365-371
+.. GENERATED FROM PYTHON SOURCE LINES 366-372
 
 Contrasts
 ---------
@@ -757,7 +758,7 @@ Finally we can examine the difference between the left and right hand
 tapping conditions by viewing the contrast results
 in a topographic representation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 371-386
+.. GENERATED FROM PYTHON SOURCE LINES 372-387
 
 .. code-block:: default
 
@@ -800,13 +801,13 @@ in a topographic representation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 387-390
+.. GENERATED FROM PYTHON SOURCE LINES 388-391
 
 Or we can view only the left hemisphere for the contrast.
 And set all channels that dont have a significant response to zero.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 391-396
+.. GENERATED FROM PYTHON SOURCE LINES 392-397
 
 .. code-block:: default
 
@@ -836,7 +837,94 @@ And set all channels that dont have a significant response to zero.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 397-402
+.. GENERATED FROM PYTHON SOURCE LINES 398-420
+
+Cortical Surface Projections
+----------------------------
+
+.. sidebar:: 3D plotting
+
+   Due to limitations with the cloud computing used to generate these
+   documents, the 3D plot will not appear in the online documentation.
+   However, when you run this code locally you will obtain a 3D head figure
+   simillar to what is shown in the tutorial:
+   `ECOG tutorial <https://mne.tools/dev/auto_tutorials/clinical/30_ecog.html#sphx-glr-auto-tutorials-clinical-30-ecog-py>`_.
+
+The topographic plots above can sometimes be difficult to interpret with
+respect to the underlying cortical locations. It is also possible to present
+the data by projecting the channel level GLM values to the nearest cortical
+surface. This can make it easier to understand the spatial aspects of your
+data. Note however, that this is not a complete forward model with photon
+migration simulations.
+In the figure below we project the group results from the two conditions
+to the cortical surface, and also present the contrast results in the same
+fashion.
+As in the topo plots above you can see that the activity is predominately
+contralateral to the side of finger tapping.
+
+.. GENERATED FROM PYTHON SOURCE LINES 420-447
+
+.. code-block:: default
+
+
+
+    # Generate brain figure from data
+    clim = dict(kind='value', pos_lims=(0, 8, 11))
+    brain = plot_glm_surface_projection(raw_haemo.copy().pick("hbo"),
+                                        con_model_df, clim=clim, view='dorsal',
+                                        colorbar=True, size=(800, 700))
+    brain.add_text(0.05, 0.95, "Left-Right", 'title', font_size=16, color='k')
+
+    # Run model code as above
+    clim = dict(kind='value', pos_lims=(0, 11.5, 17))
+    for idx, cond in enumerate(['Tapping/Left', 'Tapping/Right']):
+
+        # Run same model as explained in the sections above
+        ch_summary = df_cha.query("Condition in [@cond]")
+        ch_summary = ch_summary.query("Chroma in ['hbo']")
+        ch_model = smf.mixedlm("theta ~ -1 + ch_name", ch_summary,
+                               groups=ch_summary["ID"]).fit(method='nm')
+        model_df = statsmodels_to_results(ch_model)
+
+        # Generate brain figure from data
+        brain = plot_glm_surface_projection(raw_haemo.copy().pick("hbo"),
+                                            model_df, clim=clim, view='dorsal',
+                                            colorbar=True, size=(800, 700))
+        brain.add_text(0.05, 0.95, cond, 'title', font_size=16, color='k')
+
+
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_12_group_glm_004.png
+          :alt: plot 12 group glm
+          :srcset: /auto_examples/general/images/sphx_glr_plot_12_group_glm_004.png
+          :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_12_group_glm_005.png
+          :alt: plot 12 group glm
+          :srcset: /auto_examples/general/images/sphx_glr_plot_12_group_glm_005.png
+          :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/general/images/sphx_glr_plot_12_group_glm_006.png
+          :alt: plot 12 group glm
+          :srcset: /auto_examples/general/images/sphx_glr_plot_12_group_glm_006.png
+          :class: sphx-glr-multi-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 448-453
 
 Table of channel level results
 ------------------------------
@@ -844,7 +932,7 @@ Table of channel level results
 Sometimes a reviewer wants a long table of results per channel.
 This can be generated from the statistics dataframe.
 
-.. GENERATED FROM PYTHON SOURCE LINES 402-418
+.. GENERATED FROM PYTHON SOURCE LINES 453-469
 
 .. code-block:: default
 
@@ -1384,9 +1472,9 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.799 seconds)
+   **Total running time of the script:** ( 0 minutes  45.255 seconds)
 
-**Estimated memory usage:**  48 MB
+**Estimated memory usage:**  805 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
