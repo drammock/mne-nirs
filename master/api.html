@@ -160,7 +160,7 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-mne_nirs.preprocessing">
+  <a class="reference internal nav-link" href="#preprocessing">
    Preprocessing
   </a>
  </li>
@@ -175,9 +175,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-mne_nirs.visualisation">
+  <a class="reference internal nav-link" href="#visualisation">
    Visualisation
   </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#module-mne_nirs.simulation">
@@ -185,12 +187,12 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-mne_nirs.channels">
+  <a class="reference internal nav-link" href="#channels">
    Channels
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-mne_nirs.utils">
+  <a class="reference internal nav-link" href="#utilities">
    Utilities
   </a>
  </li>
@@ -228,7 +230,6 @@
 </div>
 <div class="section" id="module-mne_nirs.experimental_design">
 <span id="experimental-design-and-analysis"></span><h2>Experimental Design and Analysis<a class="headerlink" href="#module-mne_nirs.experimental_design" title="Permalink to this headline">¶</a></h2>
-<p>Experimental design and analysis.</p>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
@@ -236,35 +237,34 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_first_level_design_matrix</span></code></a>(raw[, …])</p></td>
-<td><p>Generate a design matrix for the experiment.</p></td>
+<td><p>Generate design matrix from MNE data structure.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar" title="mne_nirs.experimental_design.create_boxcar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_boxcar</span></code></a>(raw[, event_id, stim_dur])</p></td>
-<td><p>Create a boxcar of the experiment.</p></td>
+<td><p>Generate boxcar waveform from MNE data structure.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="module-mne_nirs.preprocessing">
-<span id="preprocessing"></span><h2>Preprocessing<a class="headerlink" href="#module-mne_nirs.preprocessing" title="Permalink to this headline">¶</a></h2>
-<p>Preprocessing.</p>
-<table class="longtable table autosummary">
+<div class="section" id="preprocessing">
+<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>Data quality evaluation.</p>
+<span class="target" id="module-mne_nirs.preprocessing"></span><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.preprocessing.peak_power.html#mne_nirs.preprocessing.peak_power" title="mne_nirs.preprocessing.peak_power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peak_power</span></code></a>(raw[, time_window, threshold, …])</p></td>
-<td><p>Compute peak spectral power metric from <a class="reference internal" href="generated/mne_nirs.preprocessing.peak_power.html#r3994e11a5132-1" id="id1"><span>[R3994e11a5132-1]</span></a> and <a class="reference internal" href="generated/mne_nirs.preprocessing.peak_power.html#r3994e11a5132-2" id="id2"><span>[R3994e11a5132-2]</span></a>.</p></td>
+<td><p>Compute peak spectral power metric for each channel and time window.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.preprocessing.scalp_coupling_index_windowed.html#mne_nirs.preprocessing.scalp_coupling_index_windowed" title="mne_nirs.preprocessing.scalp_coupling_index_windowed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalp_coupling_index_windowed</span></code></a>(raw[, …])</p></td>
-<td><p>Compute windowed scalp coupling index metric from <a class="reference internal" href="generated/mne_nirs.preprocessing.scalp_coupling_index_windowed.html#rb8c50aa701f2-1" id="id3"><span>[Rb8c50aa701f2-1]</span></a> and <a class="reference internal" href="generated/mne_nirs.preprocessing.scalp_coupling_index_windowed.html#rb8c50aa701f2-2" id="id4"><span>[Rb8c50aa701f2-2]</span></a>.</p></td>
+<td><p>Compute scalp coupling index for each channel and time window.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="module-mne_nirs.signal_enhancement">
 <span id="signal-enhancement"></span><h2>Signal Enhancement<a class="headerlink" href="#module-mne_nirs.signal_enhancement" title="Permalink to this headline">¶</a></h2>
-<p>Signal enhancement techniques.</p>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
@@ -272,7 +272,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.signal_enhancement.enhance_negative_correlation.html#mne_nirs.signal_enhancement.enhance_negative_correlation" title="mne_nirs.signal_enhancement.enhance_negative_correlation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enhance_negative_correlation</span></code></a>(raw)</p></td>
-<td><p>Apply algorithm from Cui et al 2009.</p></td>
+<td><p>Apply negative correlation enhancement algorithm.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.signal_enhancement.short_channel_regression.html#mne_nirs.signal_enhancement.short_channel_regression" title="mne_nirs.signal_enhancement.short_channel_regression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">short_channel_regression</span></code></a>(raw[, max_dist])</p></td>
 <td><p>Short channel regression based on nearest channel.</p></td>
@@ -304,39 +304,56 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="module-mne_nirs.visualisation">
-<span id="visualisation"></span><h2>Visualisation<a class="headerlink" href="#module-mne_nirs.visualisation" title="Permalink to this headline">¶</a></h2>
-<p>NIRS specific plotting functions.</p>
-<table class="longtable table autosummary">
+<div class="section" id="visualisation">
+<h2>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">¶</a></h2>
+<p>fNIRS specific data visualisation.</p>
+<span class="target" id="module-mne_nirs.visualisation"></span><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_nirs_source_detector.html#mne_nirs.visualisation.plot_nirs_source_detector" title="mne_nirs.visualisation.plot_nirs_source_detector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_nirs_source_detector</span></code></a>(data[, info, …])</p></td>
-<td><p>Plot NIRS activity between sources and detectors in 3D.</p></td>
+<td><p>3D visualisation of fNIRS response magnitude.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_topo</span></code></a>(raw, glm_estimates, design_matrix)</p></td>
+</tbody>
+</table>
+<p>GLM result visualisation.</p>
+<span class="target" id="module-0"></span><table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_topo</span></code></a>(raw, glm_estimates, design_matrix)</p></td>
 <td><p>Plot topomap of NIRS GLM data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo" title="mne_nirs.visualisation.plot_glm_contrast_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_contrast_topo</span></code></a>(raw, contrast[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo" title="mne_nirs.visualisation.plot_glm_contrast_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_contrast_topo</span></code></a>(raw, contrast[, …])</p></td>
 <td><p>Plot topomap of NIRS GLM data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_group_topo</span></code></a>(raw, statsmodel_df[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_group_topo</span></code></a>(raw, statsmodel_df[, …])</p></td>
 <td><p>Plot topomap of NIRS group level GLM results.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_timechannel_quality_metric.html#mne_nirs.visualisation.plot_timechannel_quality_metric" title="mne_nirs.visualisation.plot_timechannel_quality_metric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_timechannel_quality_metric</span></code></a>(raw, scores, …)</p></td>
-<td><p>Plot time x channel based quality metrics.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_surface_projection.html#mne_nirs.visualisation.plot_glm_surface_projection" title="mne_nirs.visualisation.plot_glm_surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_surface_projection</span></code></a>(raw, statsmodel_df)</p></td>
 <td><p>Project GLM results on to the surface of the brain.</p></td>
 </tr>
 </tbody>
 </table>
+<p>Data quality visualisation.</p>
+<span class="target" id="module-1"></span><table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_timechannel_quality_metric.html#mne_nirs.visualisation.plot_timechannel_quality_metric" title="mne_nirs.visualisation.plot_timechannel_quality_metric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_timechannel_quality_metric</span></code></a>(raw, scores, …)</p></td>
+<td><p>Plot time x channel based quality metrics.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="module-mne_nirs.simulation">
 <span id="simulation"></span><h2>Simulation<a class="headerlink" href="#module-mne_nirs.simulation" title="Permalink to this headline">¶</a></h2>
-<p>Simulation of NIRS signals.</p>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
@@ -349,10 +366,10 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="module-mne_nirs.channels">
-<span id="channels"></span><h2>Channels<a class="headerlink" href="#module-mne_nirs.channels" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="channels">
+<h2>Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h2>
 <p>Functions to help with handling channel information.</p>
-<table class="longtable table autosummary">
+<span class="target" id="module-mne_nirs.channels"></span><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -370,10 +387,10 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="module-mne_nirs.utils">
-<span id="utilities"></span><h2>Utilities<a class="headerlink" href="#module-mne_nirs.utils" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="utilities">
+<h2>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h2>
 <p>General helper functions.</p>
-<table class="longtable table autosummary">
+<span class="target" id="module-mne_nirs.utils"></span><table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -387,7 +404,6 @@
 </div>
 <div class="section" id="module-mne_nirs.io.snirf">
 <span id="input-output"></span><h2>Input/Output<a class="headerlink" href="#module-mne_nirs.io.snirf" title="Permalink to this headline">¶</a></h2>
-<p>SNIRF module for conversion to FIF.</p>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
@@ -395,7 +411,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.snirf.write_raw_snirf.html#mne_nirs.io.snirf.write_raw_snirf" title="mne_nirs.io.snirf.write_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_raw_snirf</span></code></a>(raw, fname)</p></td>
-<td><p>Writer for continuous wave SNIRF data.</p></td>
+<td><p>Write continuous wave data to disk in SNIRF format.</p></td>
 </tr>
 </tbody>
 </table>

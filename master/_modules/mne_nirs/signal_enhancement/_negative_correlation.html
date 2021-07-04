@@ -170,12 +170,11 @@
 
 <div class="viewcode-block" id="enhance_negative_correlation"><a class="viewcode-back" href="../../../generated/mne_nirs.signal_enhancement.enhance_negative_correlation.html#mne_nirs.signal_enhancement.enhance_negative_correlation">[docs]</a><span class="k">def</span> <span class="nf">enhance_negative_correlation</span><span class="p">(</span><span class="n">raw</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Apply algorithm from Cui et al 2009.</span>
+<span class="sd">    Apply negative correlation enhancement algorithm.</span>
 
-<span class="sd">    Cui et al, Functional Near Infrared Spectroscopy (NIRS) signal</span>
-<span class="sd">    improvement based on negative correlation between oxygenated and</span>
-<span class="sd">    deoxygenated hemoglobin dynamics, NeuroImage</span>
-<span class="sd">    https://doi.org/10.1016/j.neuroimage.2009.11.050</span>
+<span class="sd">    As descirbed in [1]_.</span>
+<span class="sd">    This function will return a modified raw instance that has the</span>
+<span class="sd">    enhancement applied to it.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -186,6 +185,13 @@
 <span class="sd">    -------</span>
 <span class="sd">    raw : instance of Raw</span>
 <span class="sd">        The modified raw instance.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] Cui et al, Functional Near Infrared Spectroscopy (NIRS) signal</span>
+<span class="sd">           improvement based on negative correlation between oxygenated and</span>
+<span class="sd">           deoxygenated hemoglobin dynamics, NeuroImage</span>
+<span class="sd">           https://doi.org/10.1016/j.neuroimage.2009.11.050</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">raw</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
     <span class="n">_validate_type</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">BaseRaw</span><span class="p">,</span> <span class="s1">&#39;raw&#39;</span><span class="p">)</span>
