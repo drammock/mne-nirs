@@ -280,8 +280,8 @@ for the region of interest, channel level, and contrast results.
  .. code-block:: none
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
-    Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (41.7 MB)
-      0%|          | Downloading : 0.00/41.7M [00:00<?,        ?B/s]      0%|          | Downloading : 120k/41.7M [00:00<00:07,    6.03MB/s]      3%|2         | Downloading : 1.05M/41.7M [00:00<00:01,    29.3MB/s]     10%|9         | Downloading : 4.05M/41.7M [00:00<00:01,    33.2MB/s]     15%|#4        | Downloading : 6.05M/41.7M [00:00<00:01,    33.9MB/s]     19%|#9        | Downloading : 8.05M/41.7M [00:00<00:01,    33.7MB/s]     24%|##4       | Downloading : 10.1M/41.7M [00:00<00:00,    33.8MB/s]     29%|##8       | Downloading : 12.1M/41.7M [00:00<00:00,    33.8MB/s]     38%|###8      | Downloading : 16.1M/41.7M [00:00<00:00,    38.1MB/s]     43%|####3     | Downloading : 18.1M/41.7M [00:00<00:00,    37.6MB/s]     48%|####8     | Downloading : 20.1M/41.7M [00:00<00:00,    37.1MB/s]     53%|#####2    | Downloading : 22.1M/41.7M [00:00<00:00,    36.7MB/s]     58%|#####7    | Downloading : 24.1M/41.7M [00:00<00:00,    36.4MB/s]     62%|######2   | Downloading : 26.1M/41.7M [00:00<00:00,    36.1MB/s]     67%|######7   | Downloading : 28.1M/41.7M [00:00<00:00,    35.8MB/s]     72%|#######2  | Downloading : 30.1M/41.7M [00:00<00:00,    35.6MB/s]     77%|#######6  | Downloading : 32.1M/41.7M [00:00<00:00,    35.4MB/s]     82%|########1 | Downloading : 34.1M/41.7M [00:01<00:00,    35.3MB/s]     86%|########6 | Downloading : 36.1M/41.7M [00:01<00:00,    35.2MB/s]     91%|#########1| Downloading : 38.1M/41.7M [00:01<00:00,    35.0MB/s]     96%|#########5| Downloading : 40.1M/41.7M [00:01<00:00,    35.0MB/s]    100%|##########| Downloading : 41.7M/41.7M [00:01<00:00,    36.3MB/s]
+    Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    11.5kB/s]      0%|          | Downloading : 128k/0.00 [00:00<00:00,     187kB/s]       0%|          | Downloading : 320k/0.00 [00:00<00:00,     468kB/s]      0%|          | Downloading : 576k/0.00 [00:00<00:00,     837kB/s]      0%|          | Downloading : 960k/0.00 [00:00<00:00,    1.39MB/s]      0%|          | Downloading : 1.44M/0.00 [00:00<00:00,    2.13MB/s]      0%|          | Downloading : 1.94M/0.00 [00:00<00:00,    2.85MB/s]      0%|          | Downloading : 2.44M/0.00 [00:00<00:00,    3.59MB/s]      0%|          | Downloading : 2.94M/0.00 [00:00<00:00,    4.34MB/s]      0%|          | Downloading : 3.94M/0.00 [00:00<00:00,    5.83MB/s]      0%|          | Downloading : 4.94M/0.00 [00:00<00:00,    7.32MB/s]      0%|          | Downloading : 5.94M/0.00 [00:00<00:00,    8.81MB/s]      0%|          | Downloading : 6.94M/0.00 [00:00<00:00,    10.3MB/s]      0%|          | Downloading : 7.94M/0.00 [00:01<00:00,    11.4MB/s]      0%|          | Downloading : 8.94M/0.00 [00:01<00:00,    12.9MB/s]      0%|          | Downloading : 9.94M/0.00 [00:01<00:00,    11.3MB/s]      0%|          | Downloading : 11.4M/0.00 [00:01<00:00,    12.6MB/s]      0%|          | Downloading : 14.4M/0.00 [00:01<00:00,    15.4MB/s]      0%|          | Downloading : 16.4M/0.00 [00:01<00:00,    12.4MB/s]      0%|          | Downloading : 19.4M/0.00 [00:01<00:00,    14.6MB/s]      0%|          | Downloading : 21.4M/0.00 [00:01<00:00,    15.6MB/s]      0%|          | Downloading : 23.4M/0.00 [00:01<00:00,    16.6MB/s]      0%|          | Downloading : 25.4M/0.00 [00:02<00:00,    13.4MB/s]      0%|          | Downloading : 26.4M/0.00 [00:02<00:00,    13.6MB/s]      0%|          | Downloading : 29.4M/0.00 [00:02<00:00,    15.1MB/s]      0%|          | Downloading : 31.4M/0.00 [00:02<00:00,    15.9MB/s]      0%|          | Downloading : 33.4M/0.00 [00:02<00:00,    13.5MB/s]      0%|          | Downloading : 36.4M/0.00 [00:02<00:00,    14.8MB/s]      0%|          | Downloading : 38.4M/0.00 [00:03<00:00,    15.5MB/s]      0%|          | Downloading : 40.4M/0.00 [00:03<00:00,    16.1MB/s]      0%|          | Downloading : 41.7M/0.00 [00:03<00:00,    14.2MB/s]
     Verifying hash 10d2976fd0844a6c44b6355a9a212611.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -349,7 +349,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="QmnPjg"></div>
+              <div id="M88Dgn"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -400,7 +400,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("QmnPjg");
+           var plotContainer = document.getElementById("M88Dgn");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -586,7 +586,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="YSZPc8"></div>
+              <div id="R3KLmC"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -660,7 +660,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("YSZPc8");
+           var plotContainer = document.getElementById("R3KLmC");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -1472,9 +1472,9 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  48.520 seconds)
+   **Total running time of the script:** ( 0 minutes  49.952 seconds)
 
-**Estimated memory usage:**  801 MB
+**Estimated memory usage:**  843 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
