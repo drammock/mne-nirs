@@ -129,7 +129,7 @@ to meet github memory constraints.
     Using default location ~/mne_data for fnirs_motor...
     Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      0%|          | Downloading : 56.0k/17.1M [00:00<00:06,    2.83MB/s]      1%|          | Downloading : 152k/17.1M [00:00<00:04,    4.30MB/s]       3%|3         | Downloading : 600k/17.1M [00:00<00:01,    10.4MB/s]      9%|9         | Downloading : 1.59M/17.1M [00:00<00:00,    19.0MB/s]     30%|##9       | Downloading : 5.09M/17.1M [00:00<00:00,    50.0MB/s]     42%|####1     | Downloading : 7.09M/17.1M [00:00<00:00,    59.5MB/s]     77%|#######6  | Downloading : 13.1M/17.1M [00:00<00:00,    79.9MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    91.6MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    85.3MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      1%|1         | Downloading : 184k/17.1M [00:00<00:01,    9.01MB/s]      3%|3         | Downloading : 568k/17.1M [00:00<00:01,    13.7MB/s]     14%|#3        | Downloading : 2.30M/17.1M [00:00<00:00,    37.1MB/s]     25%|##5       | Downloading : 4.30M/17.1M [00:00<00:00,    42.7MB/s]     49%|####8     | Downloading : 8.30M/17.1M [00:00<00:00,    65.8MB/s]     72%|#######2  | Downloading : 12.3M/17.1M [00:00<00:00,    79.9MB/s]     84%|########3 | Downloading : 14.3M/17.1M [00:00<00:00,    84.8MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    93.6MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    88.2MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -639,7 +639,7 @@ desired channel name. You can view an overview of the estimates as:
  .. code-block:: none
 
 
-    {'S1_D1 hbo': <nilearn.glm.regression.RegressionResults object at 0x7f765dd0d9a0>, 'S1_D1 hbr': <nilearn.glm.regression.RegressionResults object at 0x7f765db10850>}
+    {'S1_D1 hbo': <nilearn.glm.regression.RegressionResults object at 0x7f93e8119bb0>, 'S1_D1 hbr': <nilearn.glm.regression.RegressionResults object at 0x7f93e919b6d0>}
 
 
 
@@ -912,7 +912,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f765dd555e0>
+    <matplotlib.collections.LineCollection object at 0x7f93e93cf880>
 
 
 
@@ -1018,11 +1018,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmp26g84wxc/b4aee77c569f61f89d62b71f8905010be29f5dc8/examples/general/plot_11_hrf_measured.py:350: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmp7v6z431n/8d4efdb57d8f54bcc538301db70f6a1f1abcb855/examples/general/plot_11_hrf_measured.py:350: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmp26g84wxc/b4aee77c569f61f89d62b71f8905010be29f5dc8/examples/general/plot_11_hrf_measured.py:353: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmp7v6z431n/8d4efdb57d8f54bcc538301db70f6a1f1abcb855/examples/general/plot_11_hrf_measured.py:353: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmp26g84wxc/b4aee77c569f61f89d62b71f8905010be29f5dc8/examples/general/plot_11_hrf_measured.py:356: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmp7v6z431n/8d4efdb57d8f54bcc538301db70f6a1f1abcb855/examples/general/plot_11_hrf_measured.py:356: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -1479,9 +1479,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.085 seconds)
+   **Total running time of the script:** ( 0 minutes  10.483 seconds)
 
-**Estimated memory usage:**  70 MB
+**Estimated memory usage:**  66 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:
