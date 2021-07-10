@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -56,15 +56,6 @@ measurement length has on response amplitude estimates.
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/nilearn/datasets/__init__.py:86: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
-      warn("Fetchers from the nilearn.datasets module will be "
 
 
 
@@ -378,9 +369,9 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.888 seconds)
+   **Total running time of the script:** ( 0 minutes  2.613 seconds)
 
-**Estimated memory usage:**  61 MB
+**Estimated memory usage:**  63 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:
@@ -391,6 +382,13 @@ error decreased.
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_10_hrf_simulation.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python

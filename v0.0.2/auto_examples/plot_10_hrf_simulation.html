@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GLM Analysis (Simulated) &#8212; MNE-NIRS 0.0.6 dev documentation</title>
+    <title>GLM Analysis (Simulated) &#8212; MNE-NIRS 0.1.0 dev documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -97,12 +97,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.0.6 dev
+        v0.1.0 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.2/index.html">v0.0.2</a>
@@ -231,7 +232,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-10-hrf-simulation-py"><span class="std std-ref">here</span></a>
-to download the full example code</p>
+to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <div class="sphx-glr-example-title section" id="glm-analysis-simulated">
 <span id="tut-fnirs-hrf-sim"></span><span id="sphx-glr-auto-examples-plot-10-hrf-simulation-py"></span><h1>GLM Analysis (Simulated)<a class="headerlink" href="#glm-analysis-simulated" title="Permalink to this headline">¶</a></h1>
@@ -264,11 +265,6 @@ measurement length has on response amplitude estimates.</p>
 <span class="kn">from</span> <span class="nn">mne_nirs.statistics</span> <span class="kn">import</span> <a href="../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM" title="mne_nirs.statistics.run_GLM" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_GLM</span></a>
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="http://nilearn.github.io/modules/generated/nilearn.plotting.plot_design_matrix.html#nilearn.plotting.plot_design_matrix" title="nilearn.plotting.plot_design_matrix" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_design_matrix</span></a>
 <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.seed.html#numpy.random.seed" title="numpy.random.seed" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/nilearn/datasets/__init__.py:86: FutureWarning: Fetchers from the nilearn.datasets module will be updated in version 0.9 to return python strings instead of bytes and Pandas dataframes instead of Numpy arrays.
-  warn(&quot;Fetchers from the nilearn.datasets module will be &quot;
 </pre></div>
 </div>
 <div class="section" id="simulate-noise-free-nirs-data">
@@ -438,9 +434,12 @@ of the simulated signal. We then added noise and illustrated that the
 estimate provided by the GLM was correct, but contained some error. We
 observed that as the measurement time was increased, the estimated
 error decreased.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.914 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  61 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.674 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  68 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-10-hrf-simulation-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/plot_10_hrf_simulation.ipynb"><img alt="Launch binder" src="../_images/binder_badge_logo.svg" width="150px" /></a>
+</div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/cc0fd99e521b68320bc82f551e3619b9/plot_10_hrf_simulation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_10_hrf_simulation.py</span></code></a></p>
 </div>
@@ -493,7 +492,7 @@ error decreased.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
 </p>
     </div>
     

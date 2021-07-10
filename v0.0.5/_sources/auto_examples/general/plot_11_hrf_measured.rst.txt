@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -155,7 +155,7 @@ to meet github memory constraints.
         <tr>
             <th>Good channels</th>
             <td>0 magnetometer, 0 gradiometer,
-                and 0 EEG channels</td>
+                0 EEG channels, and 56 fNIRS channels.</td>
         </tr>
         <tr>
             <th>Bad channels</th>
@@ -177,7 +177,7 @@ to meet github memory constraints.
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
-         <tr>
+        <tr>
             <th>Lowpass</th>
             <td>0.35 Hz</td>
         </tr>
@@ -255,7 +255,7 @@ experimental conditions.
         <tr>
             <th>Good channels</th>
             <td>0 magnetometer, 0 gradiometer,
-                and 0 EEG channels</td>
+                0 EEG channels, and 56 fNIRS channels.</td>
         </tr>
         <tr>
             <th>Bad channels</th>
@@ -277,7 +277,7 @@ experimental conditions.
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
-         <tr>
+        <tr>
             <th>Lowpass</th>
             <td>0.35 Hz</td>
         </tr>
@@ -645,7 +645,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f1e88eda2b0>
+    <matplotlib.collections.LineCollection object at 0x7f943da98f40>
 
 
 
@@ -751,11 +751,11 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmp0iscdd0l/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpwchxap1y/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:319: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmp0iscdd0l/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpwchxap1y/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:322: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmp0iscdd0l/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:325: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpwchxap1y/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py:325: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -936,7 +936,7 @@ the tapping, but we do expect 5% or less for the false positive rate.
       <thead>
         <tr>
           <th></th>
-          <th></th>
+          <th>variable</th>
           <th>se</th>
           <th>theta</th>
           <th>Source</th>
@@ -1024,9 +1024,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.951 seconds)
+   **Total running time of the script:** ( 0 minutes  6.046 seconds)
 
-**Estimated memory usage:**  93 MB
+**Estimated memory usage:**  40 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:
@@ -1037,6 +1037,13 @@ the tapping, but we do expect 5% or less for the false positive rate.
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_11_hrf_measured.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python

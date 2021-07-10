@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_auto_examples_general_plot_01_data_io.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -381,6 +381,11 @@ See :ref:`plot_source_alignment` for more details.
 
 
 
+.. image-sg:: /auto_examples/general/images/sphx_glr_plot_01_data_io_002.png
+   :alt: plot 01 data io
+   :srcset: /auto_examples/general/images/sphx_glr_plot_01_data_io_002.png
+   :class: sphx-glr-single-img
+
 
 .. rst-class:: sphx-glr-script-out
 
@@ -404,9 +409,9 @@ See :ref:`plot_source_alignment` for more details.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.709 seconds)
+   **Total running time of the script:** ( 0 minutes  2.981 seconds)
 
-**Estimated memory usage:**  329 MB
+**Estimated memory usage:**  270 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_01_data_io.py:
@@ -417,6 +422,13 @@ See :ref:`plot_source_alignment` for more details.
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_01_data_io.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python

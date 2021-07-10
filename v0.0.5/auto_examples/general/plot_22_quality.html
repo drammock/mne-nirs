@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signal Quality Evaluation &#8212; MNE-NIRS 0.0.6 dev documentation</title>
+    <title>Signal Quality Evaluation &#8212; MNE-NIRS 0.1.0 dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -97,12 +97,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.0.6 dev
+        v0.1.0 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.2/index.html">v0.0.2</a>
@@ -248,7 +249,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-general-plot-22-quality-py"><span class="std std-ref">here</span></a>
-to download the full example code</p>
+to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <div class="sphx-glr-example-title section" id="signal-quality-evaluation">
 <span id="ex-fnirs-quality"></span><span id="sphx-glr-auto-examples-general-plot-22-quality-py"></span><h1>Signal Quality Evaluation<a class="headerlink" href="#signal-quality-evaluation" title="Permalink to this headline">¶</a></h1>
@@ -345,7 +346,22 @@ the entire signal and view the distribution of values.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_22_quality_002.png" srcset="../../_images/sphx_glr_plot_22_quality_002.png" alt="plot 22 quality" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Text(0.5, 23.52222222222222, &#39;Scalp Coupling Index&#39;), Text(33.972222222222214, 0.5, &#39;Count&#39;), (0.0, 1.0)]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Filtering raw data in 1 contiguous segment
+Setting up band-pass filter from 0.7 - 1.5 Hz
+
+FIR filter parameters
+---------------------
+Designing a one-pass, zero-phase, non-causal bandpass filter:
+- Windowed time-domain design (firwin) method
+- Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
+- Lower passband edge: 0.70
+- Lower transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 0.55 Hz)
+- Upper passband edge: 1.50 Hz
+- Upper transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 1.65 Hz)
+- Filter length: 45 samples (11.250 sec)
+
+
+[Text(0.5, 23.52222222222222, &#39;Scalp Coupling Index&#39;), Text(33.972222222222214, 0.5, &#39;Count&#39;), (0.0, 1.0)]
 </pre></div>
 </div>
 <p>We observe that most of the channels have a good SCI of 1, but a few channels
@@ -396,7 +412,22 @@ but this may vary depending on your experimental design and setup.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_22_quality_005.png" srcset="../../_images/sphx_glr_plot_22_quality_005.png" alt="plot 22 quality" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Text(0.5, 23.52222222222222, &#39;Scalp Coupling Index&#39;), Text(33.972222222222214, 0.5, &#39;Count&#39;), (0.0, 1.0)]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Filtering raw data in 1 contiguous segment
+Setting up band-pass filter from 0.7 - 1.5 Hz
+
+FIR filter parameters
+---------------------
+Designing a one-pass, zero-phase, non-causal bandpass filter:
+- Windowed time-domain design (firwin) method
+- Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
+- Lower passband edge: 0.70
+- Lower transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 0.55 Hz)
+- Upper passband edge: 1.50 Hz
+- Upper transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 1.65 Hz)
+- Filter length: 45 samples (11.250 sec)
+
+
+[Text(0.5, 23.52222222222222, &#39;Scalp Coupling Index&#39;), Text(33.972222222222214, 0.5, &#39;Count&#39;), (0.0, 1.0)]
 </pre></div>
 </div>
 </div>
@@ -535,9 +566,12 @@ And one metric for determining specific time and channel segments that are
 bad.
 It was demonstrated how bad segments are visualised and how bad segments
 are treated in downstream analysis.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  24.366 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  92 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  21.596 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  29 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-22-quality-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_22_quality.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
+</div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/9a9efbce3264d6170ff89f6f3b534f38/plot_22_quality.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_22_quality.py</span></code></a></p>
 </div>
@@ -590,7 +624,7 @@ are treated in downstream analysis.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
 </p>
     </div>
     

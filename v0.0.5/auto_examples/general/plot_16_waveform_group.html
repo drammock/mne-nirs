@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group Level Waveform Analysis &#8212; MNE-NIRS 0.0.6 dev documentation</title>
+    <title>Group Level Waveform Analysis &#8212; MNE-NIRS 0.1.0 dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -97,12 +97,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.0.6 dev
+        v0.1.0 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.2/index.html">v0.0.2</a>
@@ -241,7 +242,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-general-plot-16-waveform-group-py"><span class="std std-ref">here</span></a>
-to download the full example code</p>
+to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <div class="sphx-glr-example-title section" id="group-level-waveform-analysis">
 <span id="tut-fnirs-group-wave"></span><span id="sphx-glr-auto-examples-general-plot-16-waveform-group-py"></span><h1>Group Level Waveform Analysis<a class="headerlink" href="#group-level-waveform-analysis" title="Permalink to this headline">¶</a></h1>
@@ -429,9 +430,9 @@ dictionary (<cite>all_evokeds</cite>) for each condition.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmp0iscdd0l/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpwchxap1y/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
-/tmp/tmp0iscdd0l/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+/tmp/tmpwchxap1y/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
 </pre></div>
 </div>
@@ -483,7 +484,7 @@ as illustrated by the head inset in the top right corner of the figure.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f1e879fcbe0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f943c062700&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping condition
@@ -558,7 +559,7 @@ regions of the brain for each condition.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f1e88b58610&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f942f5a2c70&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to tapping appears
@@ -695,7 +696,7 @@ single ROI between conditions.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="rdZ1Tk"></div>
+          <div id="5LHMF4"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -743,7 +744,7 @@ single ROI between conditions.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("rdZ1Tk");
+       var plotContainer = document.getElementById("5LHMF4");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -876,9 +877,12 @@ conditions and the model is applied.</p>
 <br /><p>The model indicates that for the oxyhaemoglobin (HbO) data, the ipsilateral
 responses are 4.2 μMol smaller than those on the contralateral side to the
 hand that is tapping.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.945 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  20 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.499 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-16-waveform-group-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_16_waveform_group.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
+</div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/dbf2d5f5770776e46b2030610adfa52f/plot_16_waveform_group.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_16_waveform_group.py</span></code></a></p>
 </div>
@@ -931,7 +935,7 @@ hand that is tapping.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
 </p>
     </div>
     

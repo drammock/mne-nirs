@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.visualisation.plot_nirs_source_detector &#8212; MNE-NIRS 0.0.6 dev documentation</title>
+    <title>mne_nirs.visualisation.plot_nirs_source_detector &#8212; MNE-NIRS 0.1.0 dev documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -97,12 +97,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.0.6 dev
+        v0.1.0 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.2/index.html">v0.0.2</a>
@@ -193,7 +194,10 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="mne_nirs.visualisation.plot_nirs_source_detector">
 <span class="sig-prename descclassname"><span class="pre">mne_nirs.visualisation.</span></span><span class="sig-name descname"><span class="pre">plot_nirs_source_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subject</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subjects_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaces</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'head'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord_frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'head'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eeg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'original'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mri_fiducials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bem</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seeg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fnirs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interaction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'trackball'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/visualisation/_plot_nirs_source_detector.html#plot_nirs_source_detector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.visualisation.plot_nirs_source_detector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot NIRS activity between sources and detectors in 3D.</p>
+<dd><p>3D visualisation of fNIRS response magnitude.</p>
+<p>This function plots the response amplitude for each channel.
+Each channel is represented by a line between the source and detector,
+the color of the line reflects the response magnitude.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -309,8 +313,8 @@ camera.</p>
 <p><span class="versionmodified added">New in version 0.16.</span></p>
 </div>
 </dd>
-<dt><strong>verbose</strong><span class="classifier">bool, str, int, or None</span></dt><dd><p>If not None, override default verbose level (see <a class="reference external" href="https://mne.tools/stable/generated/mne.verbose.html#mne.verbose" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
-and <a class="reference external" href="https://mne.tools/stable/auto_tutorials/intro/50_configure_mne.html#tut-logging" title="(in MNE v0.23.0)"><span class="xref std std-ref">Logging documentation</span></a> for more).
+<dt><strong>verbose</strong><span class="classifier">bool | str | int | None</span></dt><dd><p>If not None, override default verbose level (see <a class="reference external" href="https://mne.tools/stable/generated/mne.verbose.html#mne.verbose" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
+and <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib2.html#tut-logging" title="(in Python v3.9)"><span class="xref std std-ref">Logging documentation</span></a> for more).
 If used, it should be passed as a keyword-argument only.</p>
 </dd>
 </dl>
@@ -372,7 +376,7 @@ If used, it should be passed as a keyword-argument only.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
 </p>
     </div>
     

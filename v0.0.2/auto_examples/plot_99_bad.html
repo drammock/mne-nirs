@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Importance of Controls and Parameter Selection &#8212; MNE-NIRS 0.0.6 dev documentation</title>
+    <title>Importance of Controls and Parameter Selection &#8212; MNE-NIRS 0.1.0 dev documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -97,12 +97,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.0.6 dev
+        v0.1.0 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.2/index.html">v0.0.2</a>
@@ -241,7 +242,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-plot-99-bad-py"><span class="std std-ref">here</span></a>
-to download the full example code</p>
+to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <div class="sphx-glr-example-title section" id="importance-of-controls-and-parameter-selection">
 <span id="tut-fnirs-processing-bad"></span><span id="sphx-glr-auto-examples-plot-99-bad-py"></span><h1>Importance of Controls and Parameter Selection<a class="headerlink" href="#importance-of-controls-and-parameter-selection" title="Permalink to this headline">¶</a></h1>
@@ -333,7 +334,7 @@ Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
     <tr>
         <th>Good channels</th>
         <td>0 magnetometer, 0 gradiometer,
-            and 0 EEG channels</td>
+            0 EEG channels, and 56 fNIRS channels.</td>
     </tr>
     <tr>
         <th>Bad channels</th>
@@ -355,7 +356,7 @@ Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
         <th>Highpass</th>
         <td>0.00 Hz</td>
     </tr>
-     <tr>
+    <tr>
         <th>Lowpass</th>
         <td>3.91 Hz</td>
     </tr>
@@ -577,9 +578,12 @@ approach, and the benefits of the GLM style of analysis
 <p class="admonition-title">Warning</p>
 <p>DO NOT USE THIS SCRIPT TO PROCESS YOUR DATA</p>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.124 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  58 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.833 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  49 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-plot-99-bad-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/plot_99_bad.ipynb"><img alt="Launch binder" src="../_images/binder_badge_logo.svg" width="150px" /></a>
+</div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/678e06965ad46c3693a1f31f0c10455a/plot_99_bad.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_99_bad.py</span></code></a></p>
 </div>
@@ -632,7 +636,7 @@ approach, and the benefits of the GLM style of analysis
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
 </p>
     </div>
     

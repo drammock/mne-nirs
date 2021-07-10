@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_auto_examples_general_plot_15_waveform.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -101,7 +101,7 @@ Here we will work with the :ref:`fNIRS motor data <mne:fnirs-motor-dataset>`.
         <tr>
             <th>Good channels</th>
             <td>0 magnetometer, 0 gradiometer,
-                and 0 EEG channels</td>
+                0 EEG channels, and 56 fNIRS channels.</td>
         </tr>
         <tr>
             <th>Bad channels</th>
@@ -123,7 +123,7 @@ Here we will work with the :ref:`fNIRS motor data <mne:fnirs-motor-dataset>`.
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
-         <tr>
+        <tr>
             <th>Lowpass</th>
             <td>3.91 Hz</td>
         </tr>
@@ -261,6 +261,20 @@ coupling index.
  Out:
 
  .. code-block:: none
+
+    Filtering raw data in 1 contiguous segment
+    Setting up band-pass filter from 0.7 - 1.5 Hz
+
+    FIR filter parameters
+    ---------------------
+    Designing a one-pass, zero-phase, non-causal bandpass filter:
+    - Windowed time-domain design (firwin) method
+    - Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
+    - Lower passband edge: 0.70
+    - Lower transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 0.55 Hz)
+    - Upper passband edge: 1.50 Hz
+    - Upper transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 1.65 Hz)
+    - Filter length: 87 samples (11.136 sec)
 
 
     [Text(0.5, 23.52222222222222, 'Scalp Coupling Index'), Text(47.097222222222214, 0.5, 'Count'), (0.0, 1.0)]
@@ -540,14 +554,14 @@ the HbO peak.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_009.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_009.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_010.png
          :class: sphx-glr-multi-img
 
@@ -601,14 +615,14 @@ that it does not show the expected morphology.
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
-         :alt: Deoxyhemoglobin (mean)
+         :alt: Oxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_011.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
-         :alt: Oxyhemoglobin (mean)
+         :alt: Deoxyhemoglobin (mean)
          :srcset: /auto_examples/general/images/sphx_glr_plot_15_waveform_012.png
          :class: sphx-glr-multi-img
 
@@ -955,16 +969,16 @@ driving the topographic plot above.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f1e87abb9a0>
+    <matplotlib.legend.Legend object at 0x7f942f454e20>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.434 seconds)
+   **Total running time of the script:** ( 0 minutes  12.891 seconds)
 
-**Estimated memory usage:**  52 MB
+**Estimated memory usage:**  38 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_15_waveform.py:
@@ -975,6 +989,13 @@ driving the topographic plot above.
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_15_waveform.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python

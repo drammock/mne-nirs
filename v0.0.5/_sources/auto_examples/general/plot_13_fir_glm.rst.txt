@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_auto_examples_general_plot_13_fir_glm.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -365,12 +365,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
       <tbody>
         <tr>
           <th>delay[0]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>0.485508</td>
-          <td>0.967749</td>
-          <td>0.501688</td>
-          <td>6.158869e-01</td>
-          <td>-1.411245</td>
-          <td>2.382262</td>
+          <td>0.501460</td>
+          <td>0.949137</td>
+          <td>0.528333</td>
+          <td>5.972682e-01</td>
+          <td>-1.358814</td>
+          <td>2.361735</td>
           <td>0</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -378,12 +378,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[1]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>2.110420</td>
-          <td>0.967749</td>
-          <td>2.180751</td>
-          <td>2.920185e-02</td>
-          <td>0.213666</td>
-          <td>4.007174</td>
+          <td>2.138084</td>
+          <td>0.949137</td>
+          <td>2.252661</td>
+          <td>2.428051e-02</td>
+          <td>0.27781</td>
+          <td>3.998359</td>
           <td>1</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -391,12 +391,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[2]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>4.900977</td>
-          <td>0.967749</td>
-          <td>5.064304</td>
-          <td>4.098943e-07</td>
-          <td>3.004223</td>
-          <td>6.797731</td>
+          <td>4.938155</td>
+          <td>0.949137</td>
+          <td>5.202783</td>
+          <td>1.963257e-07</td>
+          <td>3.07788</td>
+          <td>6.798429</td>
           <td>2</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -404,12 +404,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[3]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>6.736631</td>
-          <td>0.967749</td>
-          <td>6.961133</td>
-          <td>3.375470e-12</td>
-          <td>4.839878</td>
-          <td>8.633385</td>
+          <td>6.757687</td>
+          <td>0.949137</td>
+          <td>7.119822</td>
+          <td>1.080663e-12</td>
+          <td>4.897413</td>
+          <td>8.617962</td>
           <td>3</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -417,12 +417,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[4]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>6.824745</td>
-          <td>0.967749</td>
-          <td>7.052183</td>
-          <td>1.761328e-12</td>
-          <td>4.927991</td>
-          <td>8.721498</td>
+          <td>6.835496</td>
+          <td>0.949137</td>
+          <td>7.201801</td>
+          <td>5.942248e-13</td>
+          <td>4.975222</td>
+          <td>8.695771</td>
           <td>4</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -430,12 +430,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[5]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>4.192759</td>
-          <td>0.967749</td>
-          <td>4.332485</td>
-          <td>1.474356e-05</td>
-          <td>2.296006</td>
-          <td>6.089513</td>
+          <td>4.210454</td>
+          <td>0.949137</td>
+          <td>4.436086</td>
+          <td>9.160905e-06</td>
+          <td>2.35018</td>
+          <td>6.070729</td>
           <td>5</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -443,12 +443,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[6]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>1.627902</td>
-          <td>0.967749</td>
-          <td>1.682152</td>
-          <td>9.253931e-02</td>
-          <td>-0.268852</td>
-          <td>3.524655</td>
+          <td>1.647502</td>
+          <td>0.949137</td>
+          <td>1.735789</td>
+          <td>8.260111e-02</td>
+          <td>-0.212773</td>
+          <td>3.507776</td>
           <td>6</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -456,12 +456,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[7]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>0.465338</td>
-          <td>0.967749</td>
-          <td>0.480845</td>
-          <td>6.306264e-01</td>
-          <td>-1.431416</td>
-          <td>2.362091</td>
+          <td>0.483581</td>
+          <td>0.949137</td>
+          <td>0.509496</td>
+          <td>6.104047e-01</td>
+          <td>-1.376693</td>
+          <td>2.343856</td>
           <td>7</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -469,12 +469,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[8]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>-0.011068</td>
-          <td>0.967749</td>
-          <td>-0.011437</td>
-          <td>9.908751e-01</td>
-          <td>-1.907821</td>
-          <td>1.885686</td>
+          <td>0.009984</td>
+          <td>0.949137</td>
+          <td>0.010519</td>
+          <td>9.916070e-01</td>
+          <td>-1.85029</td>
+          <td>1.870259</td>
           <td>8</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -482,12 +482,12 @@ for oxyhaemoglobin (HbO) for the right hand tapping condition.
         </tr>
         <tr>
           <th>delay[9]:TidyCond[Tapping]:Chroma[hbo]</th>
-          <td>-0.091390</td>
-          <td>0.967749</td>
-          <td>-0.094436</td>
-          <td>9.247630e-01</td>
-          <td>-1.988144</td>
-          <td>1.805364</td>
+          <td>-0.074056</td>
+          <td>0.949137</td>
+          <td>-0.078025</td>
+          <td>9.378084e-01</td>
+          <td>-1.934331</td>
+          <td>1.786218</td>
           <td>9</td>
           <td>Tapping</td>
           <td>hbo</td>
@@ -587,7 +587,7 @@ per chromophore (HbR not shown in first two facets).
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f1e877329d0>
+    <matplotlib.legend.Legend object at 0x7f943cec5220>
 
 
 
@@ -656,9 +656,9 @@ Plot the response with confidence intervals
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.154 seconds)
+   **Total running time of the script:** ( 0 minutes  12.671 seconds)
 
-**Estimated memory usage:**  56 MB
+**Estimated memory usage:**  10 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_13_fir_glm.py:
@@ -669,6 +669,13 @@ Plot the response with confidence intervals
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_13_fir_glm.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python

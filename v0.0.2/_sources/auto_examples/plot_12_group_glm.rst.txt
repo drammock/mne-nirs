@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_auto_examples_plot_12_group_glm.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -328,13 +328,13 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="70VnW6"></div>
+              <div id="d86kKF"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
     "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-    "theta":[0.36763778794193236,0.24216791563667922,2.2520854345903762,5.535759442804399,7.087739373951743,2.9972862403619374,-0.9138041110985555,-1.5653869258976254,3.1485478393502975,4.2117132848675345,7.812296365137946,1.2730389458852223,-0.8909307291192041,-1.9721982630084989,0.9764229099003393,5.646050806887254,3.459836179912905,3.7005965141176693,-0.02918268520492165,-0.1699492177434879,-3.205087466632684,9.462549627273786,5.029087403069214,-1.434354419867131,0.03507639479558166,-0.49251555325113205,6.648984980838687,23.377426935183124,23.022387423127885,11.012768420772638],
+    "theta":[0.36652017966974343,0.24373568446323846,2.253306244277834,5.535799266620057,7.092229283094632,2.990214147124229,-0.9143790325342777,-1.5661417648902838,3.1485090797794264,4.209716656827987,7.817526976153357,1.2795636938978825,-0.8896275974260163,-1.9683807856082078,0.980596499006172,5.679694435175857,3.457345856141115,3.7029498563597585,-0.0323170125477342,-0.17317518348214073,-3.1943037212456247,9.419071512238084,4.9927174218778845,-1.4430174553672612,0.0415832203602035,-0.4683577207228821,6.662184919645529,23.310287268716888,22.98954259087019,10.99080839925179],
     "ID":["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
     },
     "mapping":{
@@ -379,7 +379,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("70VnW6");
+           var plotContainer = document.getElementById("d86kKF");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -444,7 +444,7 @@ model by using the code
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+    /opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
       warnings.warn(msg, ConvergenceWarning)
 
 
@@ -459,10 +459,10 @@ model by using the code
       <td>No. Observations:</td>   <td>60</td>          <td>Method:</td>         <td>REML</td>   
     </tr>
     <tr>
-         <td>No. Groups:</td>       <td>5</td>          <td>Scale:</td>         <td>16.2279</td> 
+         <td>No. Groups:</td>       <td>5</td>          <td>Scale:</td>         <td>16.1569</td> 
     </tr>
     <tr>
-      <td>Min. group size:</td>    <td>12</td>      <td>Log-Likelihood:</td>   <td>-144.6473</td>
+      <td>Min. group size:</td>    <td>12</td>      <td>Log-Likelihood:</td>   <td>-144.5421</td>
     </tr>
     <tr>
       <td>Max. group size:</td>    <td>12</td>        <td>Converged:</td>         <td>Yes</td>   
@@ -476,43 +476,43 @@ model by using the code
                                    <td></td>                               <th>Coef.</th> <th>Std.Err.</th>    <th>z</th>   <th>P>|z|</th> <th>[0.025</th> <th>0.975]</th>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbo]</th>        <td>-0.286</td>   <td>1.802</td>  <td>-0.159</td> <td>0.874</td> <td>-3.817</td>  <td>3.245</td>
+      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbo]</th>        <td>-0.286</td>   <td>1.798</td>  <td>-0.159</td> <td>0.874</td> <td>-3.809</td>  <td>3.238</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbo]</th>       <td>-0.792</td>   <td>1.802</td>  <td>-0.439</td> <td>0.660</td> <td>-4.323</td>  <td>2.739</td>
+      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbo]</th>       <td>-0.786</td>   <td>1.798</td>  <td>-0.438</td> <td>0.662</td> <td>-4.310</td>  <td>2.737</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>    <td>1.964</td>   <td>1.802</td>   <td>1.090</td> <td>0.276</td> <td>-1.567</td>  <td>5.495</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>    <td>1.970</td>   <td>1.798</td>   <td>1.096</td> <td>0.273</td> <td>-1.553</td>  <td>5.493</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>   <td>9.647</td>   <td>1.802</td>   <td>5.355</td> <td>0.000</td>  <td>6.116</td> <td>13.178</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbo]</th>   <td>9.631</td>   <td>1.798</td>   <td>5.358</td> <td>0.000</td>  <td>6.108</td> <td>13.154</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>   <td>9.282</td>   <td>1.802</td>   <td>5.152</td> <td>0.000</td>  <td>5.751</td> <td>12.813</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>   <td>9.270</td>   <td>1.798</td>   <td>5.157</td> <td>0.000</td>  <td>5.747</td> <td>12.793</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>3.510</td>   <td>1.802</td>   <td>1.948</td> <td>0.051</td> <td>-0.021</td>  <td>7.041</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbo]</th>  <td>3.504</td>   <td>1.798</td>   <td>1.949</td> <td>0.051</td> <td>-0.019</td>  <td>7.027</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbr]</th>         <td>0.269</td>   <td>1.802</td>   <td>0.149</td> <td>0.881</td> <td>-3.262</td>  <td>3.800</td>
+      <th>ROI[Left_Hemisphere]:Condition[Control]:Chroma[hbr]</th>         <td>0.269</td>   <td>1.798</td>   <td>0.149</td> <td>0.881</td> <td>-3.255</td>  <td>3.792</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbr]</th>        <td>0.104</td>   <td>1.802</td>   <td>0.058</td> <td>0.954</td> <td>-3.427</td>  <td>3.635</td>
+      <th>ROI[Right_Hemisphere]:Condition[Control]:Chroma[hbr]</th>        <td>0.105</td>   <td>1.798</td>   <td>0.058</td> <td>0.954</td> <td>-3.419</td>  <td>3.628</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>   <td>-2.004</td>   <td>1.802</td>  <td>-1.112</td> <td>0.266</td> <td>-5.535</td>  <td>1.527</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>   <td>-2.010</td>   <td>1.798</td>  <td>-1.118</td> <td>0.263</td> <td>-5.533</td>  <td>1.513</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>  <td>-4.265</td>   <td>1.802</td>  <td>-2.367</td> <td>0.018</td> <td>-7.795</td> <td>-0.734</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Left]:Chroma[hbr]</th>  <td>-4.260</td>   <td>1.798</td>  <td>-2.370</td> <td>0.018</td> <td>-7.783</td> <td>-0.737</td>
     </tr>
     <tr>
-      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th>  <td>-4.133</td>   <td>1.802</td>  <td>-2.294</td> <td>0.022</td> <td>-7.664</td> <td>-0.602</td>
+      <th>ROI[Left_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th>  <td>-4.130</td>   <td>1.798</td>  <td>-2.298</td> <td>0.022</td> <td>-7.653</td> <td>-0.607</td>
     </tr>
     <tr>
-      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th> <td>-1.770</td>   <td>1.802</td>  <td>-0.983</td> <td>0.326</td> <td>-5.301</td>  <td>1.761</td>
+      <th>ROI[Right_Hemisphere]:Condition[Tapping/Right]:Chroma[hbr]</th> <td>-1.767</td>   <td>1.798</td>  <td>-0.983</td> <td>0.325</td> <td>-5.291</td>  <td>1.756</td>
     </tr>
     <tr>
-      <th>Group Var</th>                                                   <td>0.000</td>   <td>0.272</td>     <td></td>      <td></td>       <td></td>       <td></td>   
+      <th>Group Var</th>                                                   <td>0.000</td>   <td>0.270</td>     <td></td>      <td></td>       <td></td>       <td></td>   
     </tr>
     </table>
     </div>
@@ -565,11 +565,11 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="Fi5hq7"></div>
+              <div id="qQS6Ps"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
-    "Coef.":[-0.28624066853703345,-0.7915764088528128,1.9641907396094027,9.64670001940322,9.282269349039941,3.5098671402540655],
+    "Coef.":[-0.2856440484956162,-0.7864639540480551,1.970058604292667,9.630913827915771,9.269872425627435,3.5041037282532805],
     "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
     "Significant":[false,false,false,true,true,false]
@@ -614,7 +614,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     "geom":"point",
     "data":{
-    "Coef.":[0.2685613046756379,-2.0041359222210744,-4.133400318183256],
+    "Coef.":[0.26865728080245566,-2.0102302437532034,-4.130176130165046],
     "Condition":["Control","Tapping/Left","Tapping/Right"],
     "Significant":[false,false,true]
     },
@@ -627,7 +627,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     },{
     "geom":"point",
     "data":{
-    "Coef.":[0.10387550370193072,-4.264512597644622,-1.770381914939157],
+    "Coef.":[0.10457188466550937,-4.259999156693591,-1.7674592246009058],
     "Condition":["Control","Tapping/Left","Tapping/Right"],
     "Significant":[false,true,false]
     },
@@ -639,7 +639,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("Fi5hq7");
+           var plotContainer = document.getElementById("qQS6Ps");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -769,9 +769,9 @@ in a topographic representation.
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+    /opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
       warnings.warn(msg, ConvergenceWarning)
-    /opt/hostedtoolcache/Python/3.8.10/x64/lib/python3.8/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+    /opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
       warnings.warn(msg, ConvergenceWarning)
 
     <AxesSubplot:title={'center':'Contrast'}>
@@ -814,9 +814,9 @@ And set all channels that dont have a significant response to zero.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.853 seconds)
+   **Total running time of the script:** ( 0 minutes  11.595 seconds)
 
-**Estimated memory usage:**  47 MB
+**Estimated memory usage:**  48 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_12_group_glm.py:
@@ -827,6 +827,13 @@ And set all channels that dont have a significant response to zero.
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/plot_12_group_glm.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python

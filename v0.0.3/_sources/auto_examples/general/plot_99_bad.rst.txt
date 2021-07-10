@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_auto_examples_general_plot_99_bad.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -120,7 +120,7 @@ appear as if a fNIRS response is observed.
         <tr>
             <th>Good channels</th>
             <td>0 magnetometer, 0 gradiometer,
-                and 0 EEG channels</td>
+                0 EEG channels, and 56 fNIRS channels.</td>
         </tr>
         <tr>
             <th>Bad channels</th>
@@ -142,7 +142,7 @@ appear as if a fNIRS response is observed.
             <th>Highpass</th>
             <td>0.00 Hz</td>
         </tr>
-         <tr>
+        <tr>
             <th>Lowpass</th>
             <td>3.91 Hz</td>
         </tr>
@@ -577,9 +577,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.136 seconds)
+   **Total running time of the script:** ( 0 minutes  5.874 seconds)
 
-**Estimated memory usage:**  39 MB
+**Estimated memory usage:**  41 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_99_bad.py:
@@ -590,6 +590,13 @@ approach, and the benefits of the GLM style of analysis
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_99_bad.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python
