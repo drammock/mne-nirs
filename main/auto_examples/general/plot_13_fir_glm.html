@@ -425,7 +425,7 @@ from the dataframe and design matrix for the following statistical analysis.</p>
 <p>A linear mixed effects (LME) model is used to determine the effect
 of FIR delay for each chromophore on the evoked response with participant
 (ID) as a random variable.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lme</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span><span class="p">(</span><span class="s1">&#39;theta ~ -1 + delay:TidyCond:Chroma&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lme</span> <span class="o">=</span> <a href="https://www.statsmodels.org/stable/generated/statsmodels.formula.api.mixedlm.html#statsmodels.formula.api.mixedlm" title="statsmodels.formula.api.mixedlm" class="sphx-glr-backref-module-statsmodels-formula-api sphx-glr-backref-type-py-function"><span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span></a><span class="p">(</span><span class="s1">&#39;theta ~ -1 + delay:TidyCond:Chroma&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span>
                   <span class="n">groups</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
 <span class="c1"># The model is summarised below, and is not displayed here.</span>
@@ -677,7 +677,7 @@ per chromophore (HbR not shown in first two facets).</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_13_fir_glm_001.png" srcset="../../_images/sphx_glr_plot_13_fir_glm_001.png" alt="FIR Model (Unscaled by GLM estimates), FIR Components (Scaled by Tapping/Right GLM Estimates), Evoked Response (Tapping/Right)" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f17632057f0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f6f824cb280&gt;
 </pre></div>
 </div>
 </div>
@@ -720,7 +720,7 @@ per chromophore (HbR not shown in first two facets).</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0.5, 47.7222222222222, &#39;Time (s)&#39;)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  20.610 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  15.682 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  10 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-13-fir-glm-py">
 <div class="binder-badge docutils container">
