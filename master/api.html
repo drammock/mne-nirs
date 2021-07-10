@@ -41,7 +41,7 @@
     <script src="_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="mne_nirs.experimental_design.make_first_level_design_matrix" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html" />
+    <link rel="next" title="mne.io.read_raw_hitachi" href="generated/mne.io.read_raw_hitachi.html" />
     <link rel="prev" title="Migrating from nirs-toolbox to MNE" href="auto_examples/migration/plot_02_nirstoolbox.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -161,18 +161,44 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-mne_nirs.experimental_design">
-   Experimental Design and Analysis
+  <a class="reference internal nav-link" href="#input-output">
+   Input/Output
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     MNE-Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-mne_nirs.io.snirf">
+     MNE-NIRS
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#preprocessing">
    Preprocessing
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     MNE-Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     MNE-NIRS
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-mne_nirs.signal_enhancement">
-   Signal Enhancement
+  <a class="reference internal nav-link" href="#module-mne_nirs.experimental_design">
+   Experimental Design
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -202,11 +228,6 @@
    Utilities
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-mne_nirs.io.snirf">
-   Input/Output
-  </a>
- </li>
 </ul>
 
 </nav>
@@ -232,27 +253,111 @@
 
   <div class="section" id="api">
 <h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<p>This page describes the application programming interface of MNE-NIRS.
+The functions and classes of this package are described below.
+The description of each interface includes links to the examples
+relevant to that code.</p>
+<p>This library extends the fNIRS functionality available within
+<a class="reference external" href="https://mne.tools">MNE-Python</a>.
+When analysing fNIRS data with these tools you are likely to use functions
+from both MNE-Python and MNE-NIRS.
+As such, documentation is provided below for relevant functions and classes
+from both packages.
+General neuroimaging functionality provided by MNE-Python such as filtering,
+epoching, visualisation, etc is not included here and can be found in the
+<a class="reference external" href="https://mne.tools/dev/python_reference.html">MNE-Python API page</a>.</p>
 <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="module-mne_nirs.experimental_design">
-<span id="experimental-design-and-analysis"></span><h2>Experimental Design and Analysis<a class="headerlink" href="#module-mne_nirs.experimental_design" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="input-output">
+<h2>Input/Output<a class="headerlink" href="#input-output" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>MNE-Python<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-mne.io"></span><p>IO module for reading raw data.</p>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_first_level_design_matrix</span></code></a>(raw[, …])</p></td>
-<td><p>Generate design matrix from MNE data structure.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.io.read_raw_hitachi.html#mne.io.read_raw_hitachi" title="mne.io.read_raw_hitachi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_hitachi</span></code></a>(fname[, preload, verbose])</p></td>
+<td><p>Reader for a Hitachi fNIRS recording.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar" title="mne_nirs.experimental_design.create_boxcar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_boxcar</span></code></a>(raw[, event_id, stim_dur])</p></td>
-<td><p>Generate boxcar waveform from MNE data structure.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.io.read_raw_nirx.html#mne.io.read_raw_nirx" title="mne.io.read_raw_nirx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_nirx</span></code></a>(fname[, saturated, preload, …])</p></td>
+<td><p>Reader for a NIRX fNIRS recording.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf" title="mne.io.read_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_snirf</span></code></a>(fname[, optode_frame, …])</p></td>
+<td><p>Reader for a continuous wave SNIRF data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.io.read_raw_boxy.html#mne.io.read_raw_boxy" title="mne.io.read_raw_boxy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_boxy</span></code></a>(fname[, preload, verbose])</p></td>
+<td><p>Reader for an optical imaging recording.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<div class="section" id="module-mne_nirs.io.snirf">
+<span id="mne-nirs"></span><h3>MNE-NIRS<a class="headerlink" href="#module-mne_nirs.io.snirf" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.snirf.write_raw_snirf.html#mne_nirs.io.snirf.write_raw_snirf" title="mne_nirs.io.snirf.write_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_raw_snirf</span></code></a>(raw, fname)</p></td>
+<td><p>Write continuous wave data to disk in SNIRF format.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="section" id="preprocessing">
 <h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>MNE-Python<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-mne.preprocessing.nirs"></span><p>NIRS specific preprocessing functions.</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.optical_density.html#mne.preprocessing.nirs.optical_density" title="mne.preprocessing.nirs.optical_density"><code class="xref py py-obj docutils literal notranslate"><span class="pre">optical_density</span></code></a>(raw, *[, verbose])</p></td>
+<td><p>Convert NIRS raw data to optical density.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.beer_lambert_law.html#mne.preprocessing.nirs.beer_lambert_law" title="mne.preprocessing.nirs.beer_lambert_law"><code class="xref py py-obj docutils literal notranslate"><span class="pre">beer_lambert_law</span></code></a>(raw[, ppf])</p></td>
+<td><p>Convert NIRS optical density data to haemoglobin concentration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.source_detector_distances.html#mne.preprocessing.nirs.source_detector_distances" title="mne.preprocessing.nirs.source_detector_distances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">source_detector_distances</span></code></a>(info[, picks])</p></td>
+<td><p>Determine the distance between NIRS source and detectors.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.short_channels.html#mne.preprocessing.nirs.short_channels" title="mne.preprocessing.nirs.short_channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">short_channels</span></code></a>(info[, threshold])</p></td>
+<td><p>Determine which NIRS channels are short.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.scalp_coupling_index.html#mne.preprocessing.nirs.scalp_coupling_index" title="mne.preprocessing.nirs.scalp_coupling_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalp_coupling_index</span></code></a>(raw[, l_freq, h_freq, …])</p></td>
+<td><p>Calculate scalp coupling index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.temporal_derivative_distribution_repair.html#mne.preprocessing.nirs.temporal_derivative_distribution_repair" title="mne.preprocessing.nirs.temporal_derivative_distribution_repair"><code class="xref py py-obj docutils literal notranslate"><span class="pre">temporal_derivative_distribution_repair</span></code></a>(raw, *)</p></td>
+<td><p>Apply temporal derivative distribution repair to data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h3>MNE-NIRS<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Signal Enhancement</p>
+<span class="target" id="module-mne_nirs.signal_enhancement"></span><table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.signal_enhancement.enhance_negative_correlation.html#mne_nirs.signal_enhancement.enhance_negative_correlation" title="mne_nirs.signal_enhancement.enhance_negative_correlation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enhance_negative_correlation</span></code></a>(raw)</p></td>
+<td><p>Apply negative correlation enhancement algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.signal_enhancement.short_channel_regression.html#mne_nirs.signal_enhancement.short_channel_regression" title="mne_nirs.signal_enhancement.short_channel_regression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">short_channel_regression</span></code></a>(raw[, max_dist])</p></td>
+<td><p>Short channel regression based on nearest channel.</p></td>
+</tr>
+</tbody>
+</table>
 <p>Data quality evaluation.</p>
 <span class="target" id="module-mne_nirs.preprocessing"></span><table class="longtable table autosummary">
 <colgroup>
@@ -269,19 +374,20 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="module-mne_nirs.signal_enhancement">
-<span id="signal-enhancement"></span><h2>Signal Enhancement<a class="headerlink" href="#module-mne_nirs.signal_enhancement" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-mne_nirs.experimental_design">
+<span id="experimental-design"></span><h2>Experimental Design<a class="headerlink" href="#module-mne_nirs.experimental_design" title="Permalink to this headline">¶</a></h2>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.signal_enhancement.enhance_negative_correlation.html#mne_nirs.signal_enhancement.enhance_negative_correlation" title="mne_nirs.signal_enhancement.enhance_negative_correlation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">enhance_negative_correlation</span></code></a>(raw)</p></td>
-<td><p>Apply negative correlation enhancement algorithm.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_first_level_design_matrix</span></code></a>(raw[, …])</p></td>
+<td><p>Generate design matrix from MNE data structure.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.signal_enhancement.short_channel_regression.html#mne_nirs.signal_enhancement.short_channel_regression" title="mne_nirs.signal_enhancement.short_channel_regression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">short_channel_regression</span></code></a>(raw[, max_dist])</p></td>
-<td><p>Short channel regression based on nearest channel.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar" title="mne_nirs.experimental_design.create_boxcar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_boxcar</span></code></a>(raw[, event_id, stim_dur])</p></td>
+<td><p>Generate boxcar waveform from MNE data structure.</p></td>
 </tr>
 </tbody>
 </table>
@@ -408,20 +514,6 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="module-mne_nirs.io.snirf">
-<span id="input-output"></span><h2>Input/Output<a class="headerlink" href="#module-mne_nirs.io.snirf" title="Permalink to this headline">¶</a></h2>
-<table class="longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.snirf.write_raw_snirf.html#mne_nirs.io.snirf.write_raw_snirf" title="mne_nirs.io.snirf.write_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_raw_snirf</span></code></a>(raw, fname)</p></td>
-<td><p>Write continuous wave data to disk in SNIRF format.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 
 
@@ -432,7 +524,7 @@
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="auto_examples/migration/plot_02_nirstoolbox.html" title="previous page">Migrating from nirs-toolbox to MNE</a>
-    <a class='right-next' id="next-link" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html" title="next page">mne_nirs.experimental_design.make_first_level_design_matrix</a>
+    <a class='right-next' id="next-link" href="generated/mne.io.read_raw_hitachi.html" title="next page">mne.io.read_raw_hitachi</a>
 
               </div>
               
