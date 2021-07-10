@@ -155,24 +155,9 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples-using-mne-nirs-visualisation-plot-glm-topo">
-   Examples using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     mne_nirs.visualisation.plot_glm_topo
-    </span>
-   </code>
-  </a>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -198,14 +183,14 @@
 <h1>mne_nirs.visualisation.plot_glm_topo<a class="headerlink" href="#mne-nirs-visualisation-plot-glm-topo" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="mne_nirs.visualisation.plot_glm_topo">
-<span class="sig-prename descclassname"><span class="pre">mne_nirs.visualisation.</span></span><span class="sig-name descname"><span class="pre">plot_glm_topo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glm_estimates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">design_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requested_conditions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/visualisation/_plot_GLM_topo.html#plot_glm_topo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.visualisation.plot_glm_topo" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mne_nirs.visualisation.</span></span><span class="sig-name descname"><span class="pre">plot_glm_topo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glm_estimates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">design_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requested_conditions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/visualisation/_plot_GLM_topo.html#plot_glm_topo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.visualisation.plot_glm_topo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot topomap of NIRS GLM data.</p>
 <p>If the channels in raw is a subset of those in the GLM estimate,
 then only the subset in raw will be plotted.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>raw</strong><span class="classifier">instance of Raw</span></dt><dd><p>Haemoglobin data.</p>
+<dt><strong>inst</strong><span class="classifier">instance of Info or Raw</span></dt><dd><p>Raw data or info structure used to generate the GLM results.</p>
 </dd>
 <dt><strong>glm_estimates</strong><span class="classifier">dict</span></dt><dd><p>Keys correspond to the different labels values values are
 RegressionResults instances corresponding to the voxels.</p>
@@ -241,14 +226,7 @@ and hbr (bottom row).</p>
 </dl>
 </dd></dl>
 
-<div class="section" id="examples-using-mne-nirs-visualisation-plot-glm-topo">
-<span id="sphx-glr-backreferences-mne-nirs-visualisation-plot-glm-topo"></span><h2>Examples using <code class="docutils literal notranslate"><span class="pre">mne_nirs.visualisation.plot_glm_topo</span></code><a class="headerlink" href="#examples-using-mne-nirs-visualisation-plot-glm-topo" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel functional near-infrared spectroscopy ..."><div class="figure align-default" id="id1">
-<img alt="GLM Analysis (Measured)" src="../_images/sphx_glr_plot_11_hrf_measured_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/general/plot_11_hrf_measured.html#sphx-glr-auto-examples-general-plot-11-hrf-measured-py"><span class="std std-ref">GLM Analysis (Measured)</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-</div><div class="sphx-glr-clear"></div></div>
-</div>
+<span class="target" id="sphx-glr-backreferences-mne-nirs-visualisation-plot-glm-topo"></span></div>
 
 
 

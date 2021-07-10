@@ -48,7 +48,7 @@ measurement length has on response amplitude estimates.
     import matplotlib.pylab as plt
     import numpy as np
     from mne_nirs.experimental_design import make_first_level_design_matrix
-    from mne_nirs.statistics import run_GLM
+    from mne_nirs.statistics import run_glm
     from nilearn.plotting import plot_design_matrix
     np.random.seed(1)
 
@@ -149,16 +149,22 @@ We see that the estimate of the first component is 4e-6 (4 uM),
 which was the amplitude we used in the simulation.
 We also see that the mean square error of the model fit is close to zero.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-85
+.. GENERATED FROM PYTHON SOURCE LINES 77-91
 
 .. code-block:: default
 
 
-    glm_est = run_GLM(raw, design_matrix)
+    glm_est = run_glm(raw, design_matrix)
 
-    print("Estimate:", glm_est['Simulated'].theta[0],
-          "  MSE:", glm_est['Simulated'].MSE,
-          "  Error (uM):", 1e6*(glm_est['Simulated'].theta[0] - amp*1e-6))
+
+    def print_results(glm_est, truth):
+        """Function to print the results of GLM estimate"""
+        print("Estimate:", glm_est.theta()[0][0],
+              "  MSE:", glm_est.MSE()[0],
+              "  Error (uM):", 1e6*(glm_est.theta()[0][0] - truth * 1e-6))
+
+    print_results(glm_est, amp)
+
 
 
 
@@ -171,12 +177,12 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
-    Estimate: [4.e-06]   MSE: [1.52643584e-42]   Error (uM): [3.38813179e-15]
+    Estimate: [4.e-06]   MSE: 1.5264358382991667e-42   Error (uM): [3.38813179e-15]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-96
+.. GENERATED FROM PYTHON SOURCE LINES 92-102
 
 Simulate noisy NIRS data (white)
 --------------------------------
@@ -189,7 +195,7 @@ We print the response estimate and see that is close, but not exactly correct,
 we observe the mean square error is similar to the added noise.
 Note that the clean data plot is so similar to the GLM estimate that it is hard to see unless zoomed in. 
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-115
+.. GENERATED FROM PYTHON SOURCE LINES 102-119
 
 .. code-block:: default
 
@@ -198,18 +204,16 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
     raw_noise_free = raw.copy()
 
     raw._data += np.random.normal(0, np.sqrt(1e-11), raw._data.shape)
-    glm_est = run_GLM(raw, design_matrix)
+    glm_est = run_glm(raw, design_matrix)
 
     plt.plot(raw.times, raw_noise_free.get_data().T * 1e6)
     plt.plot(raw.times, raw.get_data().T * 1e6, alpha=0.3)
-    plt.plot(raw.times, glm_est['Simulated'].theta[0] * design_matrix["A"].values * 1e6)
+    plt.plot(raw.times, glm_est.theta()[0][0] * design_matrix["A"].values * 1e6)
     plt.xlabel("Time (s)")
     plt.ylabel("Haemoglobin (uM)")
     plt.legend(["Clean Data", "Noisy Data", "GLM Estimate"])
 
-    print("Estimate:", glm_est['Simulated'].theta[0],
-          "  MSE:", glm_est['Simulated'].MSE,
-          "  Error (uM):", 1e6*(glm_est['Simulated'].theta[0] - amp*1e-6))
+    print_results(glm_est, amp)
 
 
 
@@ -227,12 +231,12 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
 
  .. code-block:: none
 
-    Estimate: [3.85152156e-06]   MSE: [9.4081311e-12]   Error (uM): [-0.14847844]
+    Estimate: [3.85152156e-06]   MSE: 9.408131103888489e-12   Error (uM): [-0.14847844]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-124
+.. GENERATED FROM PYTHON SOURCE LINES 120-128
 
 Simulate noisy NIRS data (colored)
 ----------------------------------
@@ -243,7 +247,7 @@ The estimate is reported below, and even though the signal was difficult to
 observe in the raw data, the GLM analysis has extracted an accurate estimate.
 However, the error is greater for the colored than white noise.
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-149
+.. GENERATED FROM PYTHON SOURCE LINES 128-151
 
 .. code-block:: default
 
@@ -258,18 +262,16 @@ However, the error is greater for the colored than white noise.
     design_matrix = make_first_level_design_matrix(raw, stim_dur=5.0,
                                                    drift_order=1,
                                                    drift_model='polynomial')
-    glm_est = run_GLM(raw, design_matrix)
+    glm_est = run_glm(raw, design_matrix)
 
     plt.plot(raw.times, raw_noise_free.get_data().T * 1e6)
     plt.plot(raw.times, raw.get_data().T * 1e6, alpha=0.3)
-    plt.plot(raw.times, glm_est['Simulated'].theta[0] * design_matrix["A"].values * 1e6)
+    plt.plot(raw.times, glm_est.theta()[0][0] * design_matrix["A"].values * 1e6)
     plt.xlabel("Time (s)")
     plt.ylabel("Haemoglobin (uM)")
     plt.legend(["Clean Data", "Noisy Data", "GLM Estimate"])
 
-    print("Estimate:", glm_est['Simulated'].theta[0],
-          "  MSE:", glm_est['Simulated'].MSE,
-          "  Error (uM):", 1e6*(glm_est['Simulated'].theta[0] - amp*1e-6))
+    print_results(glm_est, amp)
 
 
 
@@ -288,12 +290,12 @@ However, the error is greater for the colored than white noise.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
-    Estimate: [5.6774337e-06]   MSE: [4.703062e-10]   Error (uM): [1.6774337]
+    Estimate: [5.6774337e-06]   MSE: 4.7030620049396e-10   Error (uM): [1.6774337]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-157
+.. GENERATED FROM PYTHON SOURCE LINES 152-159
 
 How does increasing the measurement length affect estimation accuracy?
 ----------------------------------------------------------------------
@@ -303,7 +305,7 @@ data. Here we simulated increasing the recording time to 30 minutes.
 We run the same analysis and observe that the error is reduced from
 approximately 0.6 uM for 5 minutes of data to 0.25 uM for 30 minutes of data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-183
+.. GENERATED FROM PYTHON SOURCE LINES 159-183
 
 .. code-block:: default
 
@@ -320,17 +322,15 @@ approximately 0.6 uM for 5 minutes of data to 0.25 uM for 30 minutes of data.
     design_matrix = make_first_level_design_matrix(raw, stim_dur=5.0,
                                                    drift_order=1,
                                                    drift_model='polynomial')
-    glm_est = run_GLM(raw, design_matrix)
+    glm_est = run_glm(raw, design_matrix)
 
     plt.plot(raw.times, raw.get_data().T * 1e6, alpha=0.3)
-    plt.plot(raw.times, glm_est['Simulated'].theta[0] * design_matrix["A"].values * 1e6)
+    plt.plot(raw.times, glm_est.theta()[0][0] * design_matrix["A"].values * 1e6)
     plt.xlabel("Time (s)")
     plt.ylabel("Haemoglobin (uM)")
     plt.legend(["Noisy Data", "GLM Estimate"])
 
-    print("Estimate:", glm_est['Simulated'].theta[0],
-          "  MSE:", glm_est['Simulated'].MSE,
-          "  Error (uM):", 1e6*(glm_est['Simulated'].theta[0] - amp*1e-6))
+    print_results(glm_est, amp)
 
 
 
@@ -349,7 +349,7 @@ approximately 0.6 uM for 5 minutes of data to 0.25 uM for 30 minutes of data.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
-    Estimate: [6.84350151e-06]   MSE: [1.14130839e-09]   Error (uM): [2.84350151]
+    Estimate: [6.84350151e-06]   MSE: 1.1413083931553461e-09   Error (uM): [2.84350151]
 
 
 
@@ -371,12 +371,12 @@ improved the response estimate.
 .. code-block:: default
 
 
-    glm_est = run_GLM(raw, design_matrix, noise_model='ar5')
+    glm_est = run_glm(raw, design_matrix, noise_model='ar5')
 
     fig, axes = plt.subplots(nrows=1, ncols=1, figsize=(15, 6))
     plt.plot([-0.58853134, -0.29575669, -0.52246482, 0.38735476, 0.02428681],
              axes=axes)  # actual values from model above
-    plt.plot(glm_est['Simulated'].model.rho * -1.0,  axes=axes)  # estimates
+    plt.plot(glm_est.model()[0].rho * -1.0,  axes=axes)  # estimates
     plt.legend(["Simulation AR coefficients", "Estimated AR coefficients"])
     plt.xlabel("Coefficient")
 
@@ -406,14 +406,12 @@ improved the response estimate.
 We can see that the estimates from the GLM AR model are quite accurate,
 but how does this affect the accuracy of the response estimate?
 
-.. GENERATED FROM PYTHON SOURCE LINES 207-212
+.. GENERATED FROM PYTHON SOURCE LINES 207-210
 
 .. code-block:: default
 
 
-    print("Estimate:", glm_est['Simulated'].theta[0],
-          "  MSE:", glm_est['Simulated'].MSE,
-          "  Error (uM):", 1e6*(glm_est['Simulated'].theta[0] - amp*1e-6))
+    print_results(glm_est, amp)
 
 
 
@@ -425,17 +423,17 @@ but how does this affect the accuracy of the response estimate?
 
  .. code-block:: none
 
-    Estimate: [4.26283431e-06]   MSE: [9.88198782e-12]   Error (uM): [0.26283431]
+    Estimate: [4.26283431e-06]   MSE: 9.881987820436524e-12   Error (uM): [0.26283431]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 213-215
+.. GENERATED FROM PYTHON SOURCE LINES 211-213
 
 The response estimate using the AR(5) model is more accurate than the
 AR(1) model (error of 0.25 vs 2.8 uM).
 
-.. GENERATED FROM PYTHON SOURCE LINES 217-228
+.. GENERATED FROM PYTHON SOURCE LINES 215-226
 
 Conclusion?
 -----------
@@ -452,9 +450,9 @@ model of the noise can improve the accuracy of the response estimate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.574 seconds)
+   **Total running time of the script:** ( 0 minutes  4.236 seconds)
 
-**Estimated memory usage:**  38 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:

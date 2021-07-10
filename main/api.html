@@ -203,9 +203,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-mne_nirs.statistics">
+  <a class="reference internal nav-link" href="#statistics">
    Statistics
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-level-analysis">
+     First level analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-level-analysis">
+     Second level analysis
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualisation">
@@ -393,29 +407,53 @@ epoching, visualisation, etc is not included here and can be found in the
 </tbody>
 </table>
 </div>
-<div class="section" id="module-mne_nirs.statistics">
-<span id="statistics"></span><h2>Statistics<a class="headerlink" href="#module-mne_nirs.statistics" title="Permalink to this headline">¶</a></h2>
-<p>Statistical analysis.</p>
+<div class="section" id="statistics">
+<h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="first-level-analysis">
+<h3>First level analysis<a class="headerlink" href="#first-level-analysis" title="Permalink to this headline">¶</a></h3>
+<p>Individual (first) level analysis functions.</p>
+<span class="target" id="module-mne_nirs.statistics"></span><table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.run_glm.html#mne_nirs.statistics.run_glm" title="mne_nirs.statistics.run_glm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_glm</span></code></a>(raw, design_matrix[, noise_model, …])</p></td>
+<td><p>GLM fit for an MNE structure containing fNIRS data.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Individual (first) level result classes.</p>
 <table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM" title="mne_nirs.statistics.run_GLM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_GLM</span></code></a>(raw, design_matrix[, noise_model, …])</p></td>
-<td><p>Run GLM on data using supplied design matrix.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults" title="mne_nirs.statistics.RegressionResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults</span></code></a>(info, data, design)</p></td>
+<td><p>Class containing GLM regression results.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.compute_contrast.html#mne_nirs.statistics.compute_contrast" title="mne_nirs.statistics.compute_contrast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_contrast</span></code></a>(glm_est, contrast[, …])</p></td>
-<td><p>Compute contrasts on regression results.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.ContrastResults.html#mne_nirs.statistics.ContrastResults" title="mne_nirs.statistics.ContrastResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ContrastResults</span></code></a>(info, data, design)</p></td>
+<td><p>Class containing GLM contrast results.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest" title="mne_nirs.statistics.glm_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">glm_region_of_interest</span></code></a>(stats, group_by, …)</p></td>
-<td><p>Calculate statistics for region of interest.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">statsmodels_to_results</span></code></a>(model[, order])</p></td>
+</tbody>
+</table>
+</div>
+<div class="section" id="second-level-analysis">
+<h3>Second level analysis<a class="headerlink" href="#second-level-analysis" title="Permalink to this headline">¶</a></h3>
+<p>Group (second) level analysis functions.</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results"><code class="xref py py-obj docutils literal notranslate"><span class="pre">statsmodels_to_results</span></code></a>(model[, order])</p></td>
 <td><p>Convert statsmodels summary to a dataframe.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 <div class="section" id="visualisation">
 <h2>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">¶</a></h2>
@@ -438,16 +476,16 @@ epoching, visualisation, etc is not included here and can be found in the
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_topo</span></code></a>(raw, glm_estimates, design_matrix)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_topo</span></code></a>(inst, glm_estimates, design_matrix)</p></td>
 <td><p>Plot topomap of NIRS GLM data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo" title="mne_nirs.visualisation.plot_glm_contrast_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_contrast_topo</span></code></a>(raw, contrast[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo" title="mne_nirs.visualisation.plot_glm_contrast_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_contrast_topo</span></code></a>(inst, contrast[, …])</p></td>
 <td><p>Plot topomap of NIRS GLM data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_group_topo</span></code></a>(raw, statsmodel_df[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_group_topo</span></code></a>(inst, statsmodel_df[, …])</p></td>
 <td><p>Plot topomap of NIRS group level GLM results.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_surface_projection.html#mne_nirs.visualisation.plot_glm_surface_projection" title="mne_nirs.visualisation.plot_glm_surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_surface_projection</span></code></a>(raw, statsmodel_df)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_surface_projection.html#mne_nirs.visualisation.plot_glm_surface_projection" title="mne_nirs.visualisation.plot_glm_surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_surface_projection</span></code></a>(inst, statsmodel_df)</p></td>
 <td><p>Project GLM results on to the surface of the brain.</p></td>
 </tr>
 </tbody>
@@ -509,7 +547,7 @@ epoching, visualisation, etc is not included here and can be found in the
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy" title="mne_nirs.utils.glm_to_tidy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">glm_to_tidy</span></code></a>(raw, statistic, design_matrix[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.utils.glm_to_tidy.html#mne_nirs.utils.glm_to_tidy" title="mne_nirs.utils.glm_to_tidy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">glm_to_tidy</span></code></a>(info, statistic, design_matrix)</p></td>
 <td><p>Export GLM regression or contrast results in tidy format.</p></td>
 </tr>
 </tbody>
