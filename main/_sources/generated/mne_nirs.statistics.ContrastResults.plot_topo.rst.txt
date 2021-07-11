@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.ContrastResults.plot\_topo
+===============================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: ContrastResults.plot_topo

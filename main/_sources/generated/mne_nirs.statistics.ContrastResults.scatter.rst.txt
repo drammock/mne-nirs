@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.ContrastResults.scatter
+============================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: ContrastResults.scatter

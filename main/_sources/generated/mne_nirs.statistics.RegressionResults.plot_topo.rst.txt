@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.RegressionResults.plot\_topo
+=================================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: RegressionResults.plot_topo

@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.RegressionResults.surface\_projection
+==========================================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: RegressionResults.surface_projection

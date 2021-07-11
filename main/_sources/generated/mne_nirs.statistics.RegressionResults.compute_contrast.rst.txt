@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.RegressionResults.compute\_contrast
+========================================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: RegressionResults.compute_contrast

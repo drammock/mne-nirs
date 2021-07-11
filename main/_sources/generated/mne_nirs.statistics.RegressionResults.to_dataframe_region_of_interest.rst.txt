@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.RegressionResults.to\_dataframe\_region\_of\_interest
+==========================================================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: RegressionResults.to_dataframe_region_of_interest
