@@ -628,7 +628,7 @@ are treated in downstream analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  34.747 seconds)
+   **Total running time of the script:** ( 0 minutes  26.197 seconds)
 
 **Estimated memory usage:**  21 MB
 
