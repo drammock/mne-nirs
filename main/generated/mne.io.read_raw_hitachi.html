@@ -219,7 +219,7 @@ If used, it should be passed as a keyword-argument only.</p>
 <p class="rubric">Notes</p>
 <p>Hitachi does not encode their channel positions, so you will need to
 create a suitable mapping using <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html#mne.channels.make_standard_montage" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_standard_montage()</span></code></a>
-or <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_dig_montage.html#mne.channels.make_dig_montage" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_dig_montage()</span></code></a> like:</p>
+or <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_dig_montage.html#mne.channels.make_dig_montage" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_dig_montage()</span></code></a> like (for a 3x5/ETG-7000 example):</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mon</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">make_standard_montage</span><span class="p">(</span><span class="s1">&#39;standard_1020&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">need</span> <span class="o">=</span> <span class="s1">&#39;S1 D1 S2 D2 S3 D3 S4 D4 S5 D5 S6 D6 S7 D7 S8&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">have</span> <span class="o">=</span> <span class="s1">&#39;F3 FC3 C3 CP3 P3 F5 FC5 C5 CP5 P5 F7 FT7 T7 TP7 P7&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
@@ -227,6 +227,43 @@ or <a class="reference external" href="https://mne.tools/stable/generated/mne.ch
 <span class="gp">&gt;&gt;&gt; </span><span class="n">raw</span><span class="o">.</span><span class="n">set_montage</span><span class="p">(</span><span class="n">mon</span><span class="p">)</span>  
 </pre></div>
 </div>
+<p>The 3x3 (ETG-100) is laid out as two separate layouts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">--</span><span class="n">D1</span><span class="o">--</span><span class="n">S2</span>    <span class="n">S6</span><span class="o">--</span><span class="n">D6</span><span class="o">--</span><span class="n">S7</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">D2</span><span class="o">--</span><span class="n">S3</span><span class="o">--</span><span class="n">D3</span>    <span class="n">D7</span><span class="o">--</span><span class="n">S8</span><span class="o">--</span><span class="n">D8</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">S4</span><span class="o">--</span><span class="n">D4</span><span class="o">--</span><span class="n">S5</span>    <span class="n">S9</span><span class="o">--</span><span class="n">D9</span><span class="o">--</span><span class="n">S10</span>
+</pre></div>
+</div>
+<p>The 3x5 (ETG-7000) is laid out as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">--</span><span class="n">D1</span><span class="o">--</span><span class="n">S2</span><span class="o">--</span><span class="n">D2</span><span class="o">--</span><span class="n">S3</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">D3</span><span class="o">--</span><span class="n">S4</span><span class="o">--</span><span class="n">D4</span><span class="o">--</span><span class="n">S5</span><span class="o">--</span><span class="n">D5</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">S6</span><span class="o">--</span><span class="n">D6</span><span class="o">--</span><span class="n">S7</span><span class="o">--</span><span class="n">D7</span><span class="o">--</span><span class="n">S8</span>
+</pre></div>
+</div>
+<p>The 4x4 (ETG-7000) is laid out as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">--</span><span class="n">D1</span><span class="o">--</span><span class="n">S2</span><span class="o">--</span><span class="n">D2</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">D3</span><span class="o">--</span><span class="n">S3</span><span class="o">--</span><span class="n">D4</span><span class="o">--</span><span class="n">S4</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">S5</span><span class="o">--</span><span class="n">D5</span><span class="o">--</span><span class="n">S6</span><span class="o">--</span><span class="n">D6</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">D7</span><span class="o">--</span><span class="n">S7</span><span class="o">--</span><span class="n">D8</span><span class="o">--</span><span class="n">S8</span>
+</pre></div>
+</div>
+<p>The 3x11 (ETG-4000) is laid out as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span><span class="o">--</span><span class="n">D1</span><span class="o">--</span><span class="n">S2</span><span class="o">--</span><span class="n">D2</span><span class="o">--</span><span class="n">S3</span><span class="o">--</span><span class="n">D3</span><span class="o">--</span><span class="n">S4</span><span class="o">--</span><span class="n">D4</span><span class="o">--</span><span class="n">S5</span><span class="o">--</span><span class="n">D5</span><span class="o">--</span><span class="n">S6</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">D6</span><span class="o">--</span><span class="n">S7</span><span class="o">--</span><span class="n">D7</span><span class="o">--</span><span class="n">S8</span><span class="o">--</span><span class="n">D8</span><span class="o">--</span><span class="n">S9</span><span class="o">--</span><span class="n">D9</span><span class="o">--</span><span class="n">S10</span><span class="o">-</span><span class="n">D10</span><span class="o">-</span><span class="n">S11</span><span class="o">-</span><span class="n">D11</span>
+<span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+<span class="n">S12</span><span class="o">-</span><span class="n">D12</span><span class="o">-</span><span class="n">S13</span><span class="o">-</span><span class="n">D13</span><span class="o">-</span><span class="n">S14</span><span class="o">-</span><span class="n">D14</span><span class="o">-</span><span class="n">S16</span><span class="o">-</span><span class="n">D16</span><span class="o">-</span><span class="n">S17</span><span class="o">-</span><span class="n">D17</span><span class="o">-</span><span class="n">S18</span>
+</pre></div>
+</div>
+<p>For each layout, the channels come from the (left-to-right) neighboring
+source-detector pairs in the first row, then between the first and second row,
+then the second row, etc.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.</span></p>
 </div>
@@ -275,7 +312,7 @@ or <a class="reference external" href="https://mne.tools/stable/generated/mne.ch
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
 </p>
     </div>
     

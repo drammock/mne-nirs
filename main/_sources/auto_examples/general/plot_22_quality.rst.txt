@@ -184,20 +184,6 @@ the entire signal and view the distribution of values.
 
  .. code-block:: none
 
-    Filtering raw data in 1 contiguous segment
-    Setting up band-pass filter from 0.7 - 1.5 Hz
-
-    FIR filter parameters
-    ---------------------
-    Designing a one-pass, zero-phase, non-causal bandpass filter:
-    - Windowed time-domain design (firwin) method
-    - Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
-    - Lower passband edge: 0.70
-    - Lower transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 0.55 Hz)
-    - Upper passband edge: 1.50 Hz
-    - Upper transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 1.65 Hz)
-    - Filter length: 45 samples (11.250 sec)
-
 
     [Text(0.5, 23.52222222222222, 'Scalp Coupling Index'), Text(33.972222222222214, 0.5, 'Count'), (0.0, 1.0)]
 
@@ -335,20 +321,6 @@ but this may vary depending on your experimental design and setup.
  Out:
 
  .. code-block:: none
-
-    Filtering raw data in 1 contiguous segment
-    Setting up band-pass filter from 0.7 - 1.5 Hz
-
-    FIR filter parameters
-    ---------------------
-    Designing a one-pass, zero-phase, non-causal bandpass filter:
-    - Windowed time-domain design (firwin) method
-    - Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
-    - Lower passband edge: 0.70
-    - Lower transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 0.55 Hz)
-    - Upper passband edge: 1.50 Hz
-    - Upper transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 1.65 Hz)
-    - Filter length: 45 samples (11.250 sec)
 
 
     [Text(0.5, 23.52222222222222, 'Scalp Coupling Index'), Text(33.972222222222214, 0.5, 'Count'), (0.0, 1.0)]
@@ -656,7 +628,7 @@ are treated in downstream analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  33.740 seconds)
+   **Total running time of the script:** ( 0 minutes  33.704 seconds)
 
 **Estimated memory usage:**  21 MB
 

@@ -396,6 +396,127 @@ improved the response estimate.
 
  .. code-block:: none
 
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
+    Exception ignored on calling ctypes callback function: <function _ThreadpoolInfo._find_modules_with_dl_iterate_phdr.<locals>.match_module_callback at 0x7f9c2d27cf70>
+    Traceback (most recent call last):
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 400, in match_module_callback
+        self._make_module_from_path(filepath)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 515, in _make_module_from_path
+        module = module_class(filepath, prefix, user_api, internal_api)
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 606, in __init__
+        self.version = self.get_version()
+      File "/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/threadpoolctl.py", line 646, in get_version
+        config = get_config().split()
+    AttributeError: 'NoneType' object has no attribute 'split'
 
     Text(0.5, 36.72222222222221, 'Coefficient')
 
@@ -450,9 +571,9 @@ model of the noise can improve the accuracy of the response estimate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.781 seconds)
+   **Total running time of the script:** ( 0 minutes  5.747 seconds)
 
-**Estimated memory usage:**  27 MB
+**Estimated memory usage:**  29 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:
