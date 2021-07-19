@@ -168,7 +168,7 @@
 <span class="c1">#          Eric Larson &lt;larson.eric.d@gmail.com&gt;</span>
 <span class="c1">#          Alexandre Gramfort &lt;alexandre.gramfort@inria.fr&gt;</span>
 <span class="c1">#</span>
-<span class="c1"># License: BSD (3-clause)</span>
+<span class="c1"># License: BSD-3-Clause</span>
 
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -188,8 +188,7 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    info : Info</span>
-<span class="sd">        The measurement info.</span>
+<span class="sd">    %(info_not_none)s</span>
 <span class="sd">    %(picks_all)s</span>
 
 <span class="sd">    Returns</span>
@@ -204,7 +203,8 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="nb">float</span><span class="p">)[</span><span class="n">picks</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="short_channels"><a class="viewcode-back" href="../../../../generated/mne.preprocessing.nirs.short_channels.html#mne.preprocessing.nirs.short_channels">[docs]</a><span class="k">def</span> <span class="nf">short_channels</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<div class="viewcode-block" id="short_channels"><a class="viewcode-back" href="../../../../generated/mne.preprocessing.nirs.short_channels.html#mne.preprocessing.nirs.short_channels">[docs]</a><span class="nd">@fill_doc</span>
+<span class="k">def</span> <span class="nf">short_channels</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Determine which NIRS channels are short.</span>
 
 <span class="sd">    Channels with a source to detector distance of less than</span>
@@ -212,8 +212,7 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    info : Info</span>
-<span class="sd">        The measurement info.</span>
+<span class="sd">    %(info_not_none)s</span>
 <span class="sd">    threshold : float</span>
 <span class="sd">        The threshold distance for what is considered short in meters.</span>
 
