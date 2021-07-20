@@ -180,6 +180,13 @@
   <a class="reference internal nav-link" href="#compute-group-level-results">
    Compute group level results
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-level-analysis-with-covariates">
+     Second level analysis with covariates
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualise-group-results">
@@ -293,12 +300,16 @@ stimulus interval.</p>
 <li><p><a class="reference internal" href="#define-individual-analysis" id="id2">Define individual analysis</a></p></li>
 <li><p><a class="reference internal" href="#run-analysis-on-all-participants" id="id3">Run analysis on all participants</a></p></li>
 <li><p><a class="reference internal" href="#visualise-individual-results" id="id4">Visualise Individual results</a></p></li>
-<li><p><a class="reference internal" href="#compute-group-level-results" id="id5">Compute group level results</a></p></li>
-<li><p><a class="reference internal" href="#visualise-group-results" id="id6">Visualise group results</a></p></li>
-<li><p><a class="reference internal" href="#group-topographic-visualisation" id="id7">Group topographic visualisation</a></p></li>
-<li><p><a class="reference internal" href="#contrasts" id="id8">Contrasts</a></p></li>
-<li><p><a class="reference internal" href="#cortical-surface-projections" id="id9">Cortical Surface Projections</a></p></li>
-<li><p><a class="reference internal" href="#table-of-channel-level-results" id="id10">Table of channel level results</a></p></li>
+<li><p><a class="reference internal" href="#compute-group-level-results" id="id5">Compute group level results</a></p>
+<ul>
+<li><p><a class="reference internal" href="#second-level-analysis-with-covariates" id="id6">Second level analysis with covariates</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#visualise-group-results" id="id7">Visualise group results</a></p></li>
+<li><p><a class="reference internal" href="#group-topographic-visualisation" id="id8">Group topographic visualisation</a></p></li>
+<li><p><a class="reference internal" href="#contrasts" id="id9">Contrasts</a></p></li>
+<li><p><a class="reference internal" href="#cortical-surface-projections" id="id10">Cortical Surface Projections</a></p></li>
+<li><p><a class="reference internal" href="#table-of-channel-level-results" id="id11">Table of channel level results</a></p></li>
 </ul>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 2</span>
@@ -396,7 +407,9 @@ analyses.</p>
     <span class="n">cha</span> <span class="o">=</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
 
     <span class="c1"># Compute region of interest results from channel data</span>
-    <span class="n">roi</span> <span class="o">=</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">to_dataframe_region_of_interest</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">roi</span> <span class="o">=</span> <span class="n">glm_est</span><span class="o">.</span><span class="n">to_dataframe_region_of_interest</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span>
+                                                  <span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+                                                  <span class="n">demographic_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># Define left vs right tapping contrast</span>
     <span class="n">contrast_matrix</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.eye.html#numpy.eye" title="numpy.eye" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">eye</span></a><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -452,37 +465,19 @@ for the region of interest, channel level, and contrast results.</p>
 Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
 
   0%|          | Downloading : 0.00/0.00 [00:00&lt;?,        ?B/s]
-  0%|          | Downloading : 8.00k/0.00 [00:00&lt;00:00,    14.3kB/s]
-  0%|          | Downloading : 128k/0.00 [00:00&lt;00:00,     230kB/s]
-  0%|          | Downloading : 320k/0.00 [00:00&lt;00:00,     573kB/s]
-  0%|          | Downloading : 576k/0.00 [00:00&lt;00:00,    1.02MB/s]
-  0%|          | Downloading : 960k/0.00 [00:00&lt;00:00,    1.67MB/s]
-  0%|          | Downloading : 1.44M/0.00 [00:00&lt;00:00,    2.53MB/s]
-  0%|          | Downloading : 1.94M/0.00 [00:00&lt;00:00,    3.39MB/s]
-  0%|          | Downloading : 2.44M/0.00 [00:00&lt;00:00,    4.21MB/s]
-  0%|          | Downloading : 3.19M/0.00 [00:00&lt;00:00,    5.47MB/s]
-  0%|          | Downloading : 4.19M/0.00 [00:00&lt;00:00,    7.07MB/s]
-  0%|          | Downloading : 5.19M/0.00 [00:00&lt;00:00,    8.71MB/s]
-  0%|          | Downloading : 6.19M/0.00 [00:00&lt;00:00,    10.4MB/s]
-  0%|          | Downloading : 7.19M/0.00 [00:00&lt;00:00,    12.0MB/s]
-  0%|          | Downloading : 8.19M/0.00 [00:00&lt;00:00,    13.6MB/s]
-  0%|          | Downloading : 9.19M/0.00 [00:01&lt;00:00,    11.6MB/s]
-  0%|          | Downloading : 10.7M/0.00 [00:01&lt;00:00,    13.7MB/s]
-  0%|          | Downloading : 11.7M/0.00 [00:01&lt;00:00,    14.4MB/s]
-  0%|          | Downloading : 13.7M/0.00 [00:01&lt;00:00,    16.1MB/s]
-  0%|          | Downloading : 16.7M/0.00 [00:01&lt;00:00,    13.7MB/s]
-  0%|          | Downloading : 18.7M/0.00 [00:01&lt;00:00,    15.0MB/s]
-  0%|          | Downloading : 21.7M/0.00 [00:01&lt;00:00,    17.1MB/s]
-  0%|          | Downloading : 23.7M/0.00 [00:01&lt;00:00,    18.1MB/s]
-  0%|          | Downloading : 25.7M/0.00 [00:02&lt;00:00,    14.3MB/s]
-  0%|          | Downloading : 26.7M/0.00 [00:02&lt;00:00,    14.5MB/s]
-  0%|          | Downloading : 29.7M/0.00 [00:02&lt;00:00,    16.1MB/s]
-  0%|          | Downloading : 31.7M/0.00 [00:02&lt;00:00,    16.9MB/s]
-  0%|          | Downloading : 33.7M/0.00 [00:02&lt;00:00,    14.4MB/s]
-  0%|          | Downloading : 36.7M/0.00 [00:02&lt;00:00,    15.7MB/s]
-  0%|          | Downloading : 38.7M/0.00 [00:02&lt;00:00,    16.4MB/s]
-  0%|          | Downloading : 40.7M/0.00 [00:02&lt;00:00,    17.1MB/s]
-  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    15.3MB/s]
+  0%|          | Downloading : 8.00k/0.00 [00:00&lt;00:00,    15.2kB/s]
+  0%|          | Downloading : 512k/0.00 [00:00&lt;00:00,     984kB/s]
+  0%|          | Downloading : 1.00M/0.00 [00:00&lt;00:00,    1.95MB/s]
+  0%|          | Downloading : 2.50M/0.00 [00:00&lt;00:00,    4.81MB/s]
+  0%|          | Downloading : 4.50M/0.00 [00:00&lt;00:00,    8.59MB/s]
+  0%|          | Downloading : 6.50M/0.00 [00:00&lt;00:00,    12.2MB/s]
+  0%|          | Downloading : 10.5M/0.00 [00:01&lt;00:00,    12.2MB/s]
+  0%|          | Downloading : 17.5M/0.00 [00:01&lt;00:00,    14.0MB/s]
+  0%|          | Downloading : 23.5M/0.00 [00:01&lt;00:00,    19.0MB/s]
+  0%|          | Downloading : 27.5M/0.00 [00:01&lt;00:00,    15.9MB/s]
+  0%|          | Downloading : 33.5M/0.00 [00:02&lt;00:00,    14.5MB/s]
+  0%|          | Downloading : 39.5M/0.00 [00:02&lt;00:00,    17.4MB/s]
+  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    17.1MB/s]
 Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
 (please be patient, this can take some time)
@@ -538,13 +533,13 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="3gW9fH"></div>
+          <div id="AUmlvQ"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
 "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
 "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-"theta":[0.36652017966973005,0.2767052477835328,2.2533062442560743,5.6534390983132425,7.092229283121558,3.1843575972327196,-0.9143790325342254,-1.8651492092869202,3.1485090797715003,5.773968178088424,7.8175269761491055,1.8613712743535529,-0.8896275974260267,-2.1196440112667974,0.9805964990165716,5.062971026929868,3.4573458561375543,2.949068721851661,-0.03231701254771663,-0.20974555678101264,-3.194303721236945,10.659305305836709,4.9927174218761365,-0.6397740924432194,0.04158322036019463,-0.47821308970614457,6.662184919644767,23.340210278136816,22.989542590877168,11.577755280381151],
+"theta":[0.36652017966974343,0.2767052477835211,2.253306244277834,5.653439098296028,7.092229283094632,3.1843575972760507,-0.9143790325342777,-1.8651492092869217,3.1485090797794264,5.7739681780791905,7.817526976153357,1.8613712743597257,-0.8896275974260163,-2.119644011266758,0.980596499006172,5.062971026914605,3.457345856141115,2.9490687218065506,-0.0323170125477342,-0.20974555678100865,-3.1943037212456247,10.65930530583943,4.9927174218778845,-0.639774092446876,0.0415832203602035,-0.4782130897061782,6.662184919645529,23.340210278152615,22.98954259087019,11.577755280382911],
 "ID":["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
 },
 "mapping":{
@@ -589,7 +584,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("3gW9fH");
+       var plotContainer = document.getElementById("AUmlvQ");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -703,9 +698,76 @@ model by using the code
 </table>
 </div>
 <br />
+<br /><div class="section" id="second-level-analysis-with-covariates">
+<h3><a class="toc-backref" href="#id6">Second level analysis with covariates</a><a class="headerlink" href="#second-level-analysis-with-covariates" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title">Relevant literature</p>
+<p>For a detailed discussion about covariates in fNIRS analysis see
+the seminar by Dr. Jessica Gemignani
+(<a class="reference external" href="https://www.youtube.com/watch?feature=emb_logo&amp;v=3E28sT1JI14">youtube</a>).</p>
+</div>
+<p>It is simple to extend these models to include covariates.
+This dataset is small, so including additional factors may not be
+appropriate. However, for instructional purpose, we will include a
+covariate of gender. Also, for instructional purpose, we modify the model
+above to only explore the difference between the two tapping conditions in
+the hbo signal in the right hemisphere.</p>
+<p>From the model result we observe that hbo responses in the right hemisphere
+are smaller when the right hand was used (as expected for these
+contralaterally dominant responses) and there is no effect of gender.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grp_results</span> <span class="o">=</span> <span class="n">df_roi</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+<span class="n">grp_results</span> <span class="o">=</span> <span class="n">grp_results</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbo&#39;]&quot;</span><span class="p">)</span>
+<span class="n">grp_results</span> <span class="o">=</span> <span class="n">grp_results</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;ROI in [&#39;Right_Hemisphere&#39;]&quot;</span><span class="p">)</span>
+
+<span class="n">roi_model</span> <span class="o">=</span> <a href="https://www.statsmodels.org/stable/generated/statsmodels.formula.api.mixedlm.html#statsmodels.formula.api.mixedlm" title="statsmodels.formula.api.mixedlm" class="sphx-glr-backref-module-statsmodels-formula-api sphx-glr-backref-type-py-function"><span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span></a><span class="p">(</span><span class="s2">&quot;theta ~ Condition + Sex&quot;</span><span class="p">,</span>
+                        <span class="n">grp_results</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">grp_results</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nm&#39;</span><span class="p">)</span>
+<span class="n">roi_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<table class="simpletable">
+<tr>
+       <td>Model:</td>       <td>MixedLM</td> <td>Dependent Variable:</td>   <td>theta</td>
+</tr>
+<tr>
+  <td>No. Observations:</td>   <td>10</td>          <td>Method:</td>         <td>REML</td>
+</tr>
+<tr>
+     <td>No. Groups:</td>       <td>5</td>          <td>Scale:</td>         <td>11.5908</td>
+</tr>
+<tr>
+  <td>Min. group size:</td>     <td>2</td>      <td>Log-Likelihood:</td>   <td>-22.9508</td>
+</tr>
+<tr>
+  <td>Max. group size:</td>     <td>2</td>        <td>Converged:</td>         <td>Yes</td>
+</tr>
+<tr>
+  <td>Mean group size:</td>    <td>2.0</td>            <td></td>               <td></td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+               <td></td>               <th>Coef.</th> <th>Std.Err.</th>    <th>z</th>   <th>P>|z|</th> <th>[0.025</th>  <th>0.975]</th>
+</tr>
+<tr>
+  <th>Intercept</th>                   <td>7.434</td>   <td>3.271</td>   <td>2.273</td> <td>0.023</td>  <td>1.023</td>  <td>13.844</td>
+</tr>
+<tr>
+  <th>Condition[T.Tapping/Right]</th> <td>-6.311</td>   <td>2.153</td>  <td>-2.931</td> <td>0.003</td> <td>-10.532</td> <td>-2.091</td>
+</tr>
+<tr>
+  <th>Sex[T.male]</th>                 <td>6.661</td>   <td>4.883</td>   <td>1.364</td> <td>0.173</td> <td>-2.910</td>  <td>16.232</td>
+</tr>
+<tr>
+  <th>Group Var</th>                  <td>22.820</td>   <td>9.079</td>     <td></td>      <td></td>       <td></td>        <td></td>
+</tr>
+</table>
+</div>
+<br />
 <br /></div>
+</div>
 <div class="section" id="visualise-group-results">
-<h2><a class="toc-backref" href="#id6">Visualise group results</a><a class="headerlink" href="#visualise-group-results" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Visualise group results</a><a class="headerlink" href="#visualise-group-results" title="Permalink to this headline">¶</a></h2>
 <p>Now we can summarise the output of the second level model.
 This figure shows that the control condition has small responses that
 are not significantly different to zero for both HbO
@@ -714,7 +776,12 @@ Whereas clear significant responses are show for the two tapping conditions.
 We also observe the the tapping response is
 larger in the contralateral hemisphere.
 Filled symbols represent HbO, unfilled symbols represent HbR.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <a href="../../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a><span class="p">(</span><span class="n">roi_model</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regenerate the results from the original group model above</span>
+<span class="n">grp_results</span> <span class="o">=</span> <span class="n">df_roi</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Control&#39;,&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
+<span class="n">roi_model</span> <span class="o">=</span> <a href="https://www.statsmodels.org/stable/generated/statsmodels.formula.api.mixedlm.html#statsmodels.formula.api.mixedlm" title="statsmodels.formula.api.mixedlm" class="sphx-glr-backref-module-statsmodels-formula-api sphx-glr-backref-type-py-function"><span class="n">smf</span><span class="o">.</span><span class="n">mixedlm</span></a><span class="p">(</span><span class="s2">&quot;theta ~ -1 + ROI:Condition:Chroma&quot;</span><span class="p">,</span>
+                        <span class="n">grp_results</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="n">grp_results</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;nm&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <a href="../../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a><span class="p">(</span><span class="n">roi_model</span><span class="p">)</span>
 
 <span class="n">ggplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma == &#39;hbo&#39;&quot;</span><span class="p">),</span>
        <span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Condition&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Coef.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Significant&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">&#39;ROI&#39;</span><span class="p">))</span> \
@@ -728,17 +795,22 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
                  <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;ROI == &#39;Right_Hemisphere&#39;&quot;</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+  warnings.warn(msg, ConvergenceWarning)
+</pre></div>
+</div>
 <div class="output_subarea output_html rendered_html output_result">
 <html lang="en">
    <head>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="xx1164"></div>
+          <div id="BHM0uB"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
-"Coef.":[-0.2856440484956088,-0.8792093238514687,1.970058604290393,10.09797877746101,9.269872425632304,3.786555756275173],
+"Coef.":[-0.2856440484956162,-0.8792093238514693,1.9700586042926667,10.097978777456373,9.269872425627437,3.786555756275672],
 "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
 "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
 "Significant":[false,false,false,true,true,true]
@@ -783,7 +855,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 },{
 "geom":"point",
 "data":{
-"Coef.":[0.26865728080246076,-2.010230243751068,-4.130176130163723],
+"Coef.":[0.26865728080245566,-2.0102302437532042,-4.1301761301650455],
 "Condition":["Control","Tapping/Left","Tapping/Right"],
 "Significant":[false,false,true]
 },
@@ -796,7 +868,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 },{
 "geom":"point",
 "data":{
-"Coef.":[0.14039044097632752,-4.428427669196087,-1.956083810815505],
+"Coef.":[0.1403904409763277,-4.428427669197642,-1.9560838108139995],
 "Condition":["Control","Tapping/Left","Tapping/Right"],
 "Significant":[false,true,false]
 },
@@ -808,7 +880,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 "shape":2
 }]
 };
-       var plotContainer = document.getElementById("xx1164");
+       var plotContainer = document.getElementById("BHM0uB");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -817,7 +889,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 <br />
 <br /></div>
 <div class="section" id="group-topographic-visualisation">
-<h2><a class="toc-backref" href="#id7">Group topographic visualisation</a><a class="headerlink" href="#group-topographic-visualisation" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Group topographic visualisation</a><a class="headerlink" href="#group-topographic-visualisation" title="Permalink to this headline">¶</a></h2>
 <p>We can also view the topographic representation of the data
 (rather than the ROI summary above).
 Here we just plot the oxyhaemoglobin for the two tapping conditions.
@@ -873,7 +945,7 @@ Then we pass these results to the topomap function.</p>
 </div>
 </div>
 <div class="section" id="contrasts">
-<h2><a class="toc-backref" href="#id8">Contrasts</a><a class="headerlink" href="#contrasts" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Contrasts</a><a class="headerlink" href="#contrasts" title="Permalink to this headline">¶</a></h2>
 <p>Finally we can examine the difference between the left and right hand
 tapping conditions by viewing the contrast results
 in a topographic representation.</p>
@@ -914,7 +986,7 @@ And set all channels that dont have a significant response to zero.</p>
 </div>
 </div>
 <div class="section" id="cortical-surface-projections">
-<h2><a class="toc-backref" href="#id9">Cortical Surface Projections</a><a class="headerlink" href="#cortical-surface-projections" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Cortical Surface Projections</a><a class="headerlink" href="#cortical-surface-projections" title="Permalink to this headline">¶</a></h2>
 <div class="sidebar">
 <p class="sidebar-title">3D plotting</p>
 <p>Due to limitations with the cloud computing used to generate these
@@ -966,7 +1038,7 @@ contralateral to the side of finger tapping.</p>
 </ul>
 </div>
 <div class="section" id="table-of-channel-level-results">
-<h2><a class="toc-backref" href="#id10">Table of channel level results</a><a class="headerlink" href="#table-of-channel-level-results" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Table of channel level results</a><a class="headerlink" href="#table-of-channel-level-results" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes a reviewer wants a long table of results per channel.
 This can be generated from the statistics dataframe.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ch_summary</span> <span class="o">=</span> <span class="n">df_cha</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
@@ -1494,8 +1566,8 @@ This can be generated from the statistics dataframe.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  50.837 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  658 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  37.209 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  667 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-12-group-glm-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_12_group_glm.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>

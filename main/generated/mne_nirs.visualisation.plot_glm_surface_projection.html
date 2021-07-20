@@ -278,8 +278,8 @@ Has no effect with mpl backend.</p>
 </dd>
 <dt><strong>distance</strong><span class="classifier">float</span></dt><dd><p>Distance (m) defining the activation “ball” of the sensor.</p>
 </dd>
-<dt><strong>subjects_dir</strong><span class="classifier">str | None</span></dt><dd><p>The path to the FreeSurfer subjects reconstructions.
-It corresponds to FreeSurfer environment variable <code class="docutils literal notranslate"><span class="pre">SUBJECTS_DIR</span></code>.</p>
+<dt><strong>subjects_dir</strong><span class="classifier">str | pathlib.Path | None</span></dt><dd><p>The path to the FreeSurfer subjects reconstructions.
+If None, defaults to the <code class="docutils literal notranslate"><span class="pre">SUBJECTS_DIR</span></code> environment variable.</p>
 </dd>
 <dt><strong>src</strong><span class="classifier">instance of SourceSpaces</span></dt><dd><p>The source space.</p>
 </dd>

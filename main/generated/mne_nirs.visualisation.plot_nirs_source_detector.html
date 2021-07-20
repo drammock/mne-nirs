@@ -211,8 +211,8 @@ If trans is None, an identity matrix is assumed.</p>
 <dt><strong>subject</strong><span class="classifier">str | None</span></dt><dd><p>The subject name corresponding to FreeSurfer environment
 variable SUBJECT. Can be omitted if <code class="docutils literal notranslate"><span class="pre">src</span></code> is provided.</p>
 </dd>
-<dt><strong>subjects_dir</strong><span class="classifier">str | None</span></dt><dd><p>The path to the FreeSurfer subjects reconstructions.
-It corresponds to FreeSurfer environment variable <code class="docutils literal notranslate"><span class="pre">SUBJECTS_DIR</span></code>.</p>
+<dt><strong>subjects_dir</strong><span class="classifier">str | pathlib.Path | None</span></dt><dd><p>The path to the FreeSurfer subjects reconstructions.
+If None, defaults to the <code class="docutils literal notranslate"><span class="pre">SUBJECTS_DIR</span></code> environment variable.</p>
 </dd>
 <dt><strong>surfaces</strong><span class="classifier">str | list</span></dt><dd><p>Surfaces to plot. Supported values:</p>
 <ul class="simple">

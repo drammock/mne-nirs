@@ -180,6 +180,7 @@
 <span class="kn">from</span> <span class="nn">mne.channels.channels</span> <span class="kn">import</span> <span class="n">ContainsMixin</span>
 <span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">fill_doc</span><span class="p">,</span> <span class="n">warn</span><span class="p">,</span> <span class="n">verbose</span>
 <span class="kn">from</span> <span class="nn">mne.io.pick</span> <span class="kn">import</span> <span class="n">_picks_to_idx</span>
+<span class="kn">from</span> <span class="nn">mne.io.constants</span> <span class="kn">import</span> <span class="n">FIFF</span>
 
 <span class="kn">from</span> <span class="nn">..visualisation._plot_GLM_topo</span> <span class="kn">import</span> <span class="n">_plot_glm_topo</span><span class="p">,</span>\
     <span class="n">_plot_glm_contrast_topo</span>
@@ -462,7 +463,7 @@
                               <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">sphere</span><span class="o">=</span><span class="n">sphere</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RegressionResults.to_dataframe_region_of_interest"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest.html#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest">[docs]</a>    <span class="k">def</span> <span class="nf">to_dataframe_region_of_interest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_by</span><span class="p">,</span> <span class="n">condition</span><span class="p">,</span>
-                                        <span class="n">weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+                                        <span class="n">weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">demographic_info</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Region of interest results as a dataframe.</span>
 
 <span class="sd">        Parameters</span>
@@ -479,7 +480,10 @@
 <span class="sd">        condition : str | list</span>
 <span class="sd">            Name to be used for condition.</span>
 <span class="sd">        weighted : Bool</span>
-<span class="sd">            Should channels be weighted by inverse of standard error (True).</span>
+<span class="sd">            Should channels be weighted by inverse of standard error.</span>
+<span class="sd">        demographic_info : Bool</span>
+<span class="sd">            Add an extra column with demographic information from</span>
+<span class="sd">            info[&quot;subject_info&quot;].</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -496,6 +500,18 @@
             <span class="n">roi</span> <span class="o">=</span> <span class="n">_glm_region_of_interest</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">group_by</span><span class="p">,</span>
                                           <span class="n">cond_idx</span><span class="p">,</span> <span class="n">cond</span><span class="p">,</span> <span class="n">weighted</span><span class="p">)</span>
             <span class="n">tidy</span> <span class="o">=</span> <span class="n">tidy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">demographic_info</span><span class="p">:</span>
+            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_MALE</span><span class="p">:</span>
+                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;male&quot;</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> \
+                    <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_FEMALE</span><span class="p">:</span>
+                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;female&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sex</span>
+            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Hand&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;hand&#39;</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">tidy</span></div>
 

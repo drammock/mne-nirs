@@ -605,8 +605,8 @@ Has no effect with mpl backend.</p>
 </dd>
 <dt><strong>distance</strong><span class="classifier">float</span></dt><dd><p>Distance (m) defining the activation “ball” of the sensor.</p>
 </dd>
-<dt><strong>subjects_dir</strong><span class="classifier">str | None</span></dt><dd><p>The path to the FreeSurfer subjects reconstructions.
-It corresponds to FreeSurfer environment variable <code class="docutils literal notranslate"><span class="pre">SUBJECTS_DIR</span></code>.</p>
+<dt><strong>subjects_dir</strong><span class="classifier">str | pathlib.Path | None</span></dt><dd><p>The path to the FreeSurfer subjects reconstructions.
+If None, defaults to the <code class="docutils literal notranslate"><span class="pre">SUBJECTS_DIR</span></code> environment variable.</p>
 </dd>
 <dt><strong>src</strong><span class="classifier">instance of SourceSpaces</span></dt><dd><p>The source space.</p>
 </dd>
@@ -661,7 +661,7 @@ If used, it should be passed as a keyword-argument only.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest">
-<span class="sig-name descname"><span class="pre">to_dataframe_region_of_interest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults.to_dataframe_region_of_interest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_dataframe_region_of_interest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_by</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demographic_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/statistics/_glm_level_first.html#RegressionResults.to_dataframe_region_of_interest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Region of interest results as a dataframe.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -677,7 +677,10 @@ integer indices of <code class="docutils literal notranslate"><span class="pre">
 </dd>
 <dt><strong>condition</strong><span class="classifier">str | list</span></dt><dd><p>Name to be used for condition.</p>
 </dd>
-<dt><strong>weighted</strong><span class="classifier">Bool</span></dt><dd><p>Should channels be weighted by inverse of standard error (True).</p>
+<dt><strong>weighted</strong><span class="classifier">Bool</span></dt><dd><p>Should channels be weighted by inverse of standard error.</p>
+</dd>
+<dt><strong>demographic_info</strong><span class="classifier">Bool</span></dt><dd><p>Add an extra column with demographic information from
+info[“subject_info”].</p>
 </dd>
 </dl>
 </dd>
