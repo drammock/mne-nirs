@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group Level GLM &#8212; MNE-NIRS 0.1.0 dev documentation</title>
+    <title>Group Level GLM &#8212; MNE-NIRS 0.1.1 dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -97,12 +97,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.0 dev
+        v0.1.1 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
-            <a class="list-group-item list-group-item-action py-1" href=../../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href=../../../main/index.html>main</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
@@ -216,22 +217,6 @@
               
               <div>
                 
-
-<p>
-  <strong>
-    <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
-    
-    You are reading a version (v0.0.4) of the documentation associated with a release.
-    Releases provide a snapshot of the software from a specific instance in time,
-    allowing you to always revert to a working version of the code.
-    Releases are created at instances when the code is considered stable and feature complete.
-    Whereas, the master branch contains the latest features and newest version of the code.
-    To view the latest up-to-date documentation for this project,
-    please have a look at <a href="../../../master/index.html">master</a>.
-    
-    </p>
-  </strong>
-</p>
 
 
   <div class="sphx-glr-download-link-note admonition note">
@@ -447,23 +432,652 @@ for the region of interest, channel level, and contrast results.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-01/nirs/sub-01_task-tapping_nirs.snirf
 Reading events from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-01/nirs/sub-01_task-tapping_events.tsv.
 Reading channel info from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-01/nirs/sub-01_task-tapping_channels.tsv.
+Not fully anonymizing info - keeping his_id, sex, and hand info
 Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:145: DeprecationWarning: &quot;run_GLM&quot; has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+  glm_est = run_GLM(raw_haemo, design_matrix)
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:171: DeprecationWarning: &quot;compute_contrast&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ResultsGLM class &quot;compute_contrast()&quot; method instead.
+  contrast = compute_contrast(glm_est, contrast_LvR)
 Loading /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-02/nirs/sub-02_task-tapping_nirs.snirf
 Reading events from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-02/nirs/sub-02_task-tapping_events.tsv.
 Reading channel info from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-02/nirs/sub-02_task-tapping_channels.tsv.
+Not fully anonymizing info - keeping his_id, sex, and hand info
 Reading 0 ... 18877  =      0.000 ...  2416.256 secs...
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:145: DeprecationWarning: &quot;run_GLM&quot; has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+  glm_est = run_GLM(raw_haemo, design_matrix)
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:171: DeprecationWarning: &quot;compute_contrast&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ResultsGLM class &quot;compute_contrast()&quot; method instead.
+  contrast = compute_contrast(glm_est, contrast_LvR)
 Loading /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-03/nirs/sub-03_task-tapping_nirs.snirf
 Reading events from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-03/nirs/sub-03_task-tapping_events.tsv.
 Reading channel info from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-03/nirs/sub-03_task-tapping_channels.tsv.
+Not fully anonymizing info - keeping his_id, sex, and hand info
 Reading 0 ... 18874  =      0.000 ...  2415.872 secs...
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:145: DeprecationWarning: &quot;run_GLM&quot; has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+  glm_est = run_GLM(raw_haemo, design_matrix)
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:171: DeprecationWarning: &quot;compute_contrast&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ResultsGLM class &quot;compute_contrast()&quot; method instead.
+  contrast = compute_contrast(glm_est, contrast_LvR)
 Loading /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-04/nirs/sub-04_task-tapping_nirs.snirf
 Reading events from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-04/nirs/sub-04_task-tapping_events.tsv.
 Reading channel info from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-04/nirs/sub-04_task-tapping_channels.tsv.
+Not fully anonymizing info - keeping his_id, sex, and hand info
 Reading 0 ... 23120  =      0.000 ...  2959.360 secs...
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:145: DeprecationWarning: &quot;run_GLM&quot; has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+  glm_est = run_GLM(raw_haemo, design_matrix)
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:171: DeprecationWarning: &quot;compute_contrast&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ResultsGLM class &quot;compute_contrast()&quot; method instead.
+  contrast = compute_contrast(glm_est, contrast_LvR)
 Loading /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-05/nirs/sub-05_task-tapping_nirs.snirf
 Reading events from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-05/nirs/sub-05_task-tapping_events.tsv.
 Reading channel info from /home/runner/mne_data/MNE-fNIRS-motor-group-data/sub-05/nirs/sub-05_task-tapping_channels.tsv.
+Not fully anonymizing info - keeping his_id, sex, and hand info
 Reading 0 ... 23006  =      0.000 ...  2944.768 secs...
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:145: DeprecationWarning: &quot;run_GLM&quot; has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+  glm_est = run_GLM(raw_haemo, design_matrix)
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:163: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  roi = roi.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_12_group_glm.py:171: DeprecationWarning: &quot;compute_contrast&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ResultsGLM class &quot;compute_contrast()&quot; method instead.
+  contrast = compute_contrast(glm_est, contrast_LvR)
 </pre></div>
 </div>
 </div>
@@ -491,7 +1105,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="fDrbLP"></div>
+          <div id="LFrSPR"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -542,7 +1156,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("fDrbLP");
+       var plotContainer = document.getElementById("LFrSPR");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -585,7 +1199,7 @@ model by using the code
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
   warnings.warn(msg, ConvergenceWarning)
 </pre></div>
 </div>
@@ -687,7 +1301,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="J8ARf7"></div>
+          <div id="2LbzLF"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -761,7 +1375,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 "shape":2
 }]
 };
-       var plotContainer = document.getElementById("J8ARf7");
+       var plotContainer = document.getElementById("2LbzLF");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -845,9 +1459,9 @@ in a topographic representation.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_12_group_glm_002.png" srcset="../../_images/sphx_glr_plot_12_group_glm_002.png" alt="Contrast" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2237: ConvergenceWarning: The MLE may be on the boundary of the parameter space.
   warnings.warn(msg, ConvergenceWarning)
-/opt/hostedtoolcache/Python/3.9.5/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
   warnings.warn(msg, ConvergenceWarning)
 
 &lt;AxesSubplot:title={&#39;center&#39;:&#39;Contrast&#39;}&gt;
@@ -1395,8 +2009,8 @@ This can be generated from the statistics dataframe.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.905 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  49 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.298 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  113 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-12-group-glm-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_12_group_glm.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -1453,7 +2067,7 @@ This can be generated from the statistics dataframe.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
 </p>
     </div>
     

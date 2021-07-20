@@ -171,6 +171,8 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
+    /tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_10_hrf_simulation.py:78: DeprecationWarning: "run_GLM" has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+      glm_est = run_GLM(raw, design_matrix)
     Estimate: [4.e-06]   MSE: [5.9140112e-43]   Error (uM): [1.69406589e-15]
 
 
@@ -227,6 +229,8 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
 
  .. code-block:: none
 
+    /tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_10_hrf_simulation.py:101: DeprecationWarning: "run_GLM" has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+      glm_est = run_GLM(raw, design_matrix)
     Estimate: [3.85152156e-06]   MSE: [9.4081311e-12]   Error (uM): [-0.14847844]
 
 
@@ -288,6 +292,8 @@ However, the error is greater for the colored than white noise.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
+    /tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_10_hrf_simulation.py:135: DeprecationWarning: "run_GLM" has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+      glm_est = run_GLM(raw, design_matrix)
     Estimate: [5.6774337e-06]   MSE: [4.703062e-10]   Error (uM): [1.6774337]
 
 
@@ -349,6 +355,8 @@ approximately 0.6 uM for 5 minutes of data to 0.25 uM for 30 minutes of data.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
+    /tmp/tmpiz34u6gd/a47ac1c1a01668c70ea07deafbd61645b8ddb09d/examples/general/plot_10_hrf_simulation.py:170: DeprecationWarning: "run_GLM" has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+      glm_est = run_GLM(raw, design_matrix)
     Estimate: [6.84350151e-06]   MSE: [1.14130839e-09]   Error (uM): [2.84350151]
 
 
@@ -369,9 +377,9 @@ error decreased.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.631 seconds)
+   **Total running time of the script:** ( 0 minutes  2.796 seconds)
 
-**Estimated memory usage:**  67 MB
+**Estimated memory usage:**  40 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Waveform averaging analysis &#8212; MNE-NIRS 0.1.0 dev documentation</title>
+    <title>Waveform averaging analysis &#8212; MNE-NIRS 0.1.1 dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -97,12 +97,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.0 dev
+        v0.1.1 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
-            <a class="list-group-item list-group-item-action py-1" href=../../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href=../../../main/index.html>main</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
@@ -231,22 +232,6 @@
               
               <div>
                 
-
-<p>
-  <strong>
-    <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
-    
-    You are reading a version (v0.0.3) of the documentation associated with a release.
-    Releases provide a snapshot of the software from a specific instance in time,
-    allowing you to always revert to a working version of the code.
-    Releases are created at instances when the code is considered stable and feature complete.
-    Whereas, the master branch contains the latest features and newest version of the code.
-    To view the latest up-to-date documentation for this project,
-    please have a look at <a href="../../../master/index.html">master</a>.
-    
-    </p>
-  </strong>
-</p>
 
 
   <div class="sphx-glr-download-link-note admonition note">
@@ -413,22 +398,7 @@ coupling index.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_15_waveform_003.png" srcset="../../_images/sphx_glr_plot_15_waveform_003.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Filtering raw data in 1 contiguous segment
-Setting up band-pass filter from 0.7 - 1.5 Hz
-
-FIR filter parameters
----------------------
-Designing a one-pass, zero-phase, non-causal bandpass filter:
-- Windowed time-domain design (firwin) method
-- Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
-- Lower passband edge: 0.70
-- Lower transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 0.55 Hz)
-- Upper passband edge: 1.50 Hz
-- Upper transition bandwidth: 0.30 Hz (-6 dB cutoff frequency: 1.65 Hz)
-- Filter length: 87 samples (11.136 sec)
-
-
-[Text(0.5, 23.52222222222222, &#39;Scalp Coupling Index&#39;), Text(47.097222222222214, 0.5, &#39;Count&#39;), (0.0, 1.0)]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Text(0.5, 23.52222222222222, &#39;Scalp Coupling Index&#39;), Text(47.097222222222214, 0.5, &#39;Count&#39;), (0.0, 1.0)]
 </pre></div>
 </div>
 <p>In this example we will mark all channels with a SCI less than 0.5 as bad
@@ -567,8 +537,8 @@ the HbO peak.</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_15_waveform_009.png" srcset="../../_images/sphx_glr_plot_15_waveform_009.png" alt="Deoxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_15_waveform_010.png" srcset="../../_images/sphx_glr_plot_15_waveform_010.png" alt="Oxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_15_waveform_009.png" srcset="../../_images/sphx_glr_plot_15_waveform_009.png" alt="Oxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_15_waveform_010.png" srcset="../../_images/sphx_glr_plot_15_waveform_010.png" alt="Deoxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Not setting metadata
@@ -597,8 +567,8 @@ that it does not show the expected morphology.</p>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_15_waveform_011.png" srcset="../../_images/sphx_glr_plot_15_waveform_011.png" alt="Deoxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_15_waveform_012.png" srcset="../../_images/sphx_glr_plot_15_waveform_012.png" alt="Oxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_15_waveform_011.png" srcset="../../_images/sphx_glr_plot_15_waveform_011.png" alt="Oxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_15_waveform_012.png" srcset="../../_images/sphx_glr_plot_15_waveform_012.png" alt="Deoxyhemoglobin (mean)" class = "sphx-glr-multi-img"/></li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Not setting metadata
@@ -768,11 +738,11 @@ driving the topographic plot above.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_15_waveform_021.png" srcset="../../_images/sphx_glr_plot_15_waveform_021.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fe758b295e0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fd106e50ee0&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  12.434 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  26 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  15.202 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  93 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-15-waveform-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_15_waveform.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -829,7 +799,7 @@ driving the topographic plot above.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
 </p>
     </div>
     

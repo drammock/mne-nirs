@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.visualisation.plot_glm_contrast_topo &#8212; MNE-NIRS 0.1.0 dev documentation</title>
+    <title>mne_nirs.visualisation.plot_glm_contrast_topo &#8212; MNE-NIRS 0.1.1 dev documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -103,12 +103,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.0 dev
+        v0.1.1 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
-            <a class="list-group-item list-group-item-action py-1" href=../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href=../../main/index.html>main</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
@@ -193,33 +194,17 @@
               <div>
                 
 
-<p>
-  <strong>
-    <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
-    
-    You are reading a version (v0.0.6) of the documentation associated with a release.
-    Releases provide a snapshot of the software from a specific instance in time,
-    allowing you to always revert to a working version of the code.
-    Releases are created at instances when the code is considered stable and feature complete.
-    Whereas, the master branch contains the latest features and newest version of the code.
-    To view the latest up-to-date documentation for this project,
-    please have a look at <a href="../../master/index.html">master</a>.
-    
-    </p>
-  </strong>
-</p>
-
 
   <div class="section" id="mne-nirs-visualisation-plot-glm-contrast-topo">
 <h1>mne_nirs.visualisation.plot_glm_contrast_topo<a class="headerlink" href="#mne-nirs-visualisation-plot-glm-contrast-topo" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="mne_nirs.visualisation.plot_glm_contrast_topo">
-<span class="sig-prename descclassname"><span class="pre">mne_nirs.visualisation.</span></span><span class="sig-name descname"><span class="pre">plot_glm_contrast_topo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/visualisation/_plot_GLM_topo.html#plot_glm_contrast_topo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.visualisation.plot_glm_contrast_topo" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mne_nirs.visualisation.</span></span><span class="sig-name descname"><span class="pre">plot_glm_contrast_topo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne_nirs/visualisation/_plot_GLM_topo.html#plot_glm_contrast_topo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne_nirs.visualisation.plot_glm_contrast_topo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot topomap of NIRS GLM data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>raw</strong><span class="classifier">instance of Raw</span></dt><dd><p>Haemoglobin data.</p>
+<dt><strong>inst</strong><span class="classifier">instance of Info or Raw</span></dt><dd><p>Raw data or info structure used to generate the GLM results.</p>
 </dd>
 <dt><strong>contrast</strong><span class="classifier">dict</span></dt><dd><p>As in nilearn.stats.compute_contrast.</p>
 </dd>
@@ -289,7 +274,7 @@ and hbr (bottom row).</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
 </p>
     </div>
     

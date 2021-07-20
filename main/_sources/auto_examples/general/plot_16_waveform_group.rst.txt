@@ -248,9 +248,9 @@ dictionary (`all_evokeds`) for each condition.
 
  .. code-block:: none
 
-    /tmp/tmp25jytw1s/e331358a398b17ee2b573e5484b93fa291aa98d6/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmpiz34u6gd/6cad718be5a96bca1f2101ac734dfca900305e85/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
-    /tmp/tmp25jytw1s/e331358a398b17ee2b573e5484b93fa291aa98d6/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmpiz34u6gd/6cad718be5a96bca1f2101ac734dfca900305e85/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
 
 
@@ -344,7 +344,7 @@ as illustrated by the head inset in the top right corner of the figure.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7fd922a573a0>
+    <matplotlib.legend.Legend object at 0x7f8d4615e130>
 
 
 
@@ -464,7 +464,7 @@ regions of the brain for each condition.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7fd97f793df0>
+    <matplotlib.legend.Legend object at 0x7f8d465ead60>
 
 
 
@@ -637,7 +637,7 @@ single ROI between conditions.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="pLQjmb"></div>
+              <div id="oclAU7"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -685,7 +685,7 @@ single ROI between conditions.
     }
     }]
     };
-           var plotContainer = document.getElementById("pLQjmb");
+           var plotContainer = document.getElementById("oclAU7");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -871,7 +871,7 @@ hand that is tapping.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.092 seconds)
+   **Total running time of the script:** ( 0 minutes  8.644 seconds)
 
 **Estimated memory usage:**  9 MB
 

@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.RegressionResults.scatter
+==============================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: RegressionResults.scatter

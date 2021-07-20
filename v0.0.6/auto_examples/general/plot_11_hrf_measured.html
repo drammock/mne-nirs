@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GLM Analysis (Measured) &#8212; MNE-NIRS 0.1.0 dev documentation</title>
+    <title>GLM Analysis (Measured) &#8212; MNE-NIRS 0.1.1 dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -103,12 +103,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.0 dev
+        v0.1.1 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
-            <a class="list-group-item list-group-item-action py-1" href=../../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href=../../../main/index.html>main</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
@@ -242,22 +243,6 @@
               
               <div>
                 
-
-<p>
-  <strong>
-    <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
-    
-    You are reading a version (v0.0.6) of the documentation associated with a release.
-    Releases provide a snapshot of the software from a specific instance in time,
-    allowing you to always revert to a working version of the code.
-    Releases are created at instances when the code is considered stable and feature complete.
-    Whereas, the master branch contains the latest features and newest version of the code.
-    To view the latest up-to-date documentation for this project,
-    please have a look at <a href="../../../master/index.html">master</a>.
-    
-    </p>
-  </strong>
-</p>
 
 
   <div class="sphx-glr-download-link-note admonition note">
@@ -582,6 +567,11 @@ of a single source detector pair.</p>
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a> <span class="o">=</span> <a href="../../generated/mne_nirs.statistics.run_GLM.html#mne_nirs.statistics.run_GLM" title="mne_nirs.statistics.run_GLM" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_GLM</span></a><span class="p">(</span><span class="n">data_subset</span><span class="p">,</span> <span class="n">design_matrix</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:250: DeprecationWarning: &quot;run_GLM&quot; has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+  glm_est = run_GLM(data_subset, design_matrix)
+</pre></div>
+</div>
 <p>This returns a GLM regression estimate for each channel.
 This data is stored in a dictionary, which can be addressed using the
 desired channel name. You can view an overview of the estimates as:</p>
@@ -589,7 +579,7 @@ desired channel name. You can view an overview of the estimates as:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;S1_D1 hbo&#39;: &lt;nilearn.glm.regression.RegressionResults object at 0x7f10c8d16e80&gt;, &#39;S1_D1 hbr&#39;: &lt;nilearn.glm.regression.RegressionResults object at 0x7f10c8d1ecd0&gt;}
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;S1_D1 hbo&#39;: &lt;nilearn.glm.regression.RegressionResults object at 0x7f104d48c580&gt;, &#39;S1_D1 hbr&#39;: &lt;nilearn.glm.regression.RegressionResults object at 0x7f104d08eaf0&gt;}
 </pre></div>
 </div>
 <p>Or you can view the estimate for a single channel by indexing it by name.
@@ -803,7 +793,7 @@ is seen in the epoching tutorial.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_11_hrf_measured_005.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_005.png" alt="plot 11 hrf measured" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f10c8f9d8e0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection object at 0x7f104d039d30&gt;
 </pre></div>
 </div>
 </div>
@@ -822,7 +812,12 @@ negative of HbO as expected.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_11_hrf_measured_006.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_006.png" alt="Tapping/Left, Tapping/Right, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1200x700 with 6 Axes&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:312: DeprecationWarning: &quot;run_GLM&quot; has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+  glm_est = run_GLM(raw_haemo, design_matrix)
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:313: DeprecationWarning: &quot;plot_glm_topo&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;plot_topo()&quot; method instead.
+  plot_glm_topo(raw_haemo, glm_est, design_matrix,
+
+&lt;Figure size 1200x700 with 6 Axes&gt;
 </pre></div>
 </div>
 <p>Note that the topographic visualisation is a high level representation
@@ -861,11 +856,17 @@ the center of the head.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_11_hrf_measured_007.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_007.png" alt="Smoothed across hemispheres, Hemispheres plotted independently" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpwchxap1y/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:343: RuntimeWarning: Reducing GLM results to match MNE data
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:343: DeprecationWarning: &quot;plot_glm_topo&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;plot_topo()&quot; method instead.
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;), glm_est, design_matrix,
-/tmp/tmpwchxap1y/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:346: RuntimeWarning: Reducing GLM results to match MNE data
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:343: RuntimeWarning: Reducing GLM results to match MNE data
+  plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;), glm_est, design_matrix,
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:346: DeprecationWarning: &quot;plot_glm_topo&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;plot_topo()&quot; method instead.
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10)),
-/tmp/tmpwchxap1y/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:349: RuntimeWarning: Reducing GLM results to match MNE data
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:346: RuntimeWarning: Reducing GLM results to match MNE data
+  plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10)),
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:349: DeprecationWarning: &quot;plot_glm_topo&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;plot_topo()&quot; method instead.
+  plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10, 20)),
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:349: RuntimeWarning: Reducing GLM results to match MNE data
   plot_glm_topo(raw_haemo.copy().pick(picks=&quot;hbo&quot;).pick(picks=range(10, 20)),
 
 Text(0.5, 1.0, &#39;Hemispheres plotted independently&#39;)
@@ -900,6 +901,15 @@ And consideration should be paid to ensure optimal size ROIs are selected.</p>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">col</span></a> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">3</span><span class="p">]):</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="../../generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest" title="mne_nirs.statistics.glm_region_of_interest" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">glm_region_of_interest</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glm_est</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">groups</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">col</span></a><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  df = df.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  df = df.append(glm_region_of_interest(glm_est, groups, idx, col))
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: &quot;glm_region_of_interest&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; method instead.
+  df = df.append(glm_region_of_interest(glm_est, groups, idx, col))
 </pre></div>
 </div>
 <p>As with the single channel results above, this is placed in a tidy dataframe
@@ -1092,7 +1102,12 @@ from tapping on the right hand.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_11_hrf_measured_008.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_008.png" alt="Oxyhaemoglobin, Deoxyhaemoglobin" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1200x700 with 3 Axes&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:412: DeprecationWarning: &quot;compute_contrast&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ResultsGLM class &quot;compute_contrast()&quot; method instead.
+  contrast = mne_nirs.statistics.compute_contrast(glm_est, contrast_LvR)
+/tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:413: DeprecationWarning: &quot;plot_glm_contrast_topo&quot; has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ContrastResults class &quot;plot_topo()&quot; method instead.
+  mne_nirs.visualisation.plot_glm_contrast_topo(raw_haemo, contrast)
+
+&lt;Figure size 1200x700 with 3 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -1233,8 +1248,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.589 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  66 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.469 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  57 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-11-hrf-measured-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_11_hrf_measured.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -1291,7 +1306,7 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
 </p>
     </div>
     

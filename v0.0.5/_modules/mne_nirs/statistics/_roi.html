@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.statistics._roi &#8212; MNE-NIRS 0.1.0 dev documentation</title>
+    <title>mne_nirs.statistics._roi &#8212; MNE-NIRS 0.1.1 dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -95,12 +95,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.0 dev
+        v0.1.1 dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
-            <a class="list-group-item list-group-item-action py-1" href=../../../../master/index.html>master</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href=../../../../main/index.html>main</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.3/index.html">v0.0.3</a>
@@ -156,29 +157,59 @@
               <div>
                 
 
-<p>
-  <strong>
-    <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
-    
-    You are reading a version (v0.0.5) of the documentation associated with a release.
-    Releases provide a snapshot of the software from a specific instance in time,
-    allowing you to always revert to a working version of the code.
-    Releases are created at instances when the code is considered stable and feature complete.
-    Whereas, the master branch contains the latest features and newest version of the code.
-    To view the latest up-to-date documentation for this project,
-    please have a look at <a href="../../../../master/index.html">master</a>.
-    
-    </p>
-  </strong>
-</p>
-
 
   <h1>Source code for mne_nirs.statistics._roi</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># License: BSD (3-clause)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">warn</span>
 
 
-<div class="viewcode-block" id="glm_region_of_interest"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest">[docs]</a><span class="k">def</span> <span class="nf">glm_region_of_interest</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">group_by</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">,</span>
+<div class="viewcode-block" id="glm_region_of_interest"><a class="viewcode-back" href="../../../generated/mne_nirs.statistics.glm_region_of_interest.html#mne_nirs.statistics.glm_region_of_interest">[docs]</a><span class="k">def</span> <span class="nf">glm_region_of_interest</span><span class="p">(</span><span class="n">glm</span><span class="p">,</span> <span class="n">group_by</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">,</span>
                            <span class="n">cond_name</span><span class="p">,</span> <span class="n">weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate statistics for region of interest.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    glm : dict</span>
+<span class="sd">        Need to write.</span>
+<span class="sd">    group_by : dict</span>
+<span class="sd">        Specifies which channels are aggregated into a single ROI.</span>
+<span class="sd">        The dict key will be used as the ROI label and the dict</span>
+<span class="sd">        values must be lists of picks (either channel names or integer indices</span>
+<span class="sd">        of ``epochs.ch_names``). For example::</span>
+
+<span class="sd">            group_by=dict(Left_ROI=[1, 2, 3, 4], Right_ROI=[5, 6, 7, 8])</span>
+
+<span class="sd">        Note that within a dict entry all channels must have the same type.</span>
+<span class="sd">    cond_name : str</span>
+<span class="sd">        Name to be used for condition.</span>
+<span class="sd">    cond_idx : int</span>
+<span class="sd">        Index of condition of interest.</span>
+<span class="sd">    weighted : Bool</span>
+<span class="sd">        Should channels be weighted by inverse of standard error (True).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    stats : DataFrame</span>
+<span class="sd">        Statistics for each ROI.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;&quot;glm_region_of_interest&quot; has been deprecated in favor of the more &#39;</span>
+         <span class="s1">&#39;comprehensive GLM class and will be removed in v1.0.0. &#39;</span>
+         <span class="s1">&#39;Use the RegressionResults class &quot;region_of_interest_dataframe()&quot; &#39;</span>
+         <span class="s1">&#39;method instead.&#39;</span><span class="p">,</span>
+         <span class="ne">DeprecationWarning</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_glm_region_of_interest</span><span class="p">(</span><span class="n">glm</span><span class="p">,</span> <span class="n">group_by</span><span class="p">,</span>
+                                   <span class="n">cond_idx</span><span class="p">,</span> <span class="n">cond_name</span><span class="p">,</span> <span class="n">weighted</span><span class="o">=</span><span class="n">weighted</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_glm_region_of_interest</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">group_by</span><span class="p">,</span> <span class="n">cond_idx</span><span class="p">,</span>
+                            <span class="n">cond_name</span><span class="p">,</span> <span class="n">weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate statistics for region of interest.</span>
 
@@ -258,7 +289,7 @@
                             <span class="s1">&#39;p&#39;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span> <span class="p">},</span>
                            <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">df</span></div>
+    <span class="k">return</span> <span class="n">df</span>
 
 
 <span class="k">def</span> <span class="nf">_se</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
@@ -303,7 +334,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.3.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
 </p>
     </div>
     

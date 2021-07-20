@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.ContrastResults.to\_dataframe
+==================================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: ContrastResults.to_dataframe
