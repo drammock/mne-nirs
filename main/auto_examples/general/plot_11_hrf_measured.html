@@ -294,7 +294,6 @@ for a comparison of the epoching and GLM approaches.</p>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="kn">import</span> <span class="nn">mne</span>
@@ -302,12 +301,11 @@ for a comparison of the epoching and GLM approaches.</p>
 
 <span class="kn">from</span> <span class="nn">mne_nirs.experimental_design</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix" class="sphx-glr-backref-module-mne_nirs-experimental_design sphx-glr-backref-type-py-function"><span class="n">make_first_level_design_matrix</span></a>
 <span class="kn">from</span> <span class="nn">mne_nirs.statistics</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.statistics.run_glm.html#mne_nirs.statistics.run_glm" title="mne_nirs.statistics.run_glm" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_glm</span></a>
-<span class="kn">from</span> <span class="nn">mne_nirs.visualisation</span> <span class="kn">import</span> <span class="n">plot_glm_topo</span>
-<span class="kn">from</span> <span class="nn">mne_nirs.channels</span> <span class="kn">import</span> <span class="p">(</span><a href="../../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels" title="mne_nirs.channels.get_long_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_long_channels</span></a><span class="p">,</span> <a href="../../generated/mne_nirs.channels.get_short_channels.html#mne_nirs.channels.get_short_channels" title="mne_nirs.channels.get_short_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_short_channels</span></a><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">mne_nirs.channels</span> <span class="kn">import</span> <span class="p">(</span><a href="../../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels" title="mne_nirs.channels.get_long_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_long_channels</span></a><span class="p">,</span>
+                               <a href="../../generated/mne_nirs.channels.get_short_channels.html#mne_nirs.channels.get_short_channels" title="mne_nirs.channels.get_short_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_short_channels</span></a><span class="p">,</span>
                                <a href="../../generated/mne_nirs.channels.picks_pair_to_idx.html#mne_nirs.channels.picks_pair_to_idx" title="mne_nirs.channels.picks_pair_to_idx" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">picks_pair_to_idx</span></a><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">nilearn.plotting</span> <span class="kn">import</span> <a href="http://nilearn.github.io/modules/generated/nilearn.plotting.plot_design_matrix.html#nilearn.plotting.plot_design_matrix" title="nilearn.plotting.plot_design_matrix" class="sphx-glr-backref-module-nilearn-plotting sphx-glr-backref-type-py-function"><span class="n">plot_design_matrix</span></a>
-<span class="kn">from</span> <span class="nn">mne_nirs.utils._io</span> <span class="kn">import</span> <span class="n">glm_to_tidy</span>
 </pre></div>
 </div>
 <div class="section" id="import-raw-nirs-data">
@@ -341,29 +339,20 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  1%|          | Downloading : 120k/17.1M [00:00&lt;00:12,    1.46MB/s]
-  1%|1         | Downloading : 248k/17.1M [00:00&lt;00:07,    2.34MB/s]
-  2%|2         | Downloading : 376k/17.1M [00:00&lt;00:06,    2.91MB/s]
-  3%|2         | Downloading : 504k/17.1M [00:00&lt;00:05,    3.31MB/s]
-  4%|3         | Downloading : 632k/17.1M [00:00&lt;00:04,    3.59MB/s]
-  4%|4         | Downloading : 760k/17.1M [00:00&lt;00:04,    3.94MB/s]
-  6%|5         | Downloading : 0.99M/17.1M [00:00&lt;00:03,    4.83MB/s]
-  7%|7         | Downloading : 1.24M/17.1M [00:00&lt;00:02,    5.72MB/s]
-  9%|8         | Downloading : 1.49M/17.1M [00:00&lt;00:02,    6.39MB/s]
- 10%|#         | Downloading : 1.74M/17.1M [00:00&lt;00:02,    7.10MB/s]
- 13%|#3        | Downloading : 2.24M/17.1M [00:00&lt;00:01,    8.57MB/s]
- 18%|#7        | Downloading : 2.99M/17.1M [00:00&lt;00:01,    10.8MB/s]
- 23%|##3       | Downloading : 3.99M/17.1M [00:00&lt;00:01,    13.6MB/s]
- 29%|##9       | Downloading : 4.99M/17.1M [00:00&lt;00:00,    16.2MB/s]
- 38%|###8      | Downloading : 6.49M/17.1M [00:00&lt;00:00,    20.1MB/s]
- 50%|####9     | Downloading : 8.49M/17.1M [00:00&lt;00:00,    24.2MB/s]
- 56%|#####5    | Downloading : 9.49M/17.1M [00:00&lt;00:00,    26.1MB/s]
- 67%|######7   | Downloading : 11.5M/17.1M [00:00&lt;00:00,    29.5MB/s]
- 73%|#######3  | Downloading : 12.5M/17.1M [00:00&lt;00:00,    30.9MB/s]
- 79%|#######9  | Downloading : 13.5M/17.1M [00:00&lt;00:00,    32.0MB/s]
- 91%|######### | Downloading : 15.5M/17.1M [00:00&lt;00:00,    34.2MB/s]
- 97%|#########6| Downloading : 16.5M/17.1M [00:00&lt;00:00,    35.4MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    28.7MB/s]
+  0%|          | Downloading : 40.0k/17.1M [00:00&lt;00:08,    2.13MB/s]
+  1%|          | Downloading : 104k/17.1M [00:00&lt;00:06,    2.91MB/s]
+  1%|1         | Downloading : 232k/17.1M [00:00&lt;00:03,    4.47MB/s]
+  4%|3         | Downloading : 616k/17.1M [00:00&lt;00:01,    8.74MB/s]
+  8%|7         | Downloading : 1.35M/17.1M [00:00&lt;00:01,    16.2MB/s]
+ 17%|#6        | Downloading : 2.85M/17.1M [00:00&lt;00:00,    29.3MB/s]
+ 34%|###4      | Downloading : 5.85M/17.1M [00:00&lt;00:00,    52.3MB/s]
+ 46%|####6     | Downloading : 7.85M/17.1M [00:00&lt;00:00,    44.4MB/s]
+ 58%|#####7    | Downloading : 9.85M/17.1M [00:00&lt;00:00,    43.2MB/s]
+ 69%|######9   | Downloading : 11.9M/17.1M [00:00&lt;00:00,    42.9MB/s]
+ 81%|########1 | Downloading : 13.9M/17.1M [00:00&lt;00:00,    41.9MB/s]
+ 93%|#########2| Downloading : 15.9M/17.1M [00:00&lt;00:00,    41.2MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    37.4MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    37.4MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -894,14 +883,14 @@ cortical surface</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_11_hrf_measured_008.png" srcset="../../_images/sphx_glr_plot_11_hrf_measured_008.png" alt="plot 11 hrf measured" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/pandas/core/frame.py:3597: SettingWithCopyWarning:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/pandas/core/frame.py:3598: SettingWithCopyWarning:
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   self._set_item(key, value)
 
-&lt;mne.viz._brain._brain.Brain object at 0x7f79e254fd00&gt;
+&lt;mne.viz._brain._brain.Brain object at 0x7f21c25833d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1267,8 +1256,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.970 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  361 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.249 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  365 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-11-hrf-measured-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_11_hrf_measured.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>

@@ -331,10 +331,8 @@ stimulus interval.</p>
 <span class="kn">from</span> <span class="nn">mne_nirs.statistics</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.statistics.run_glm.html#mne_nirs.statistics.run_glm" title="mne_nirs.statistics.run_glm" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">run_glm</span></a>
 <span class="kn">from</span> <span class="nn">mne_nirs.experimental_design</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix" class="sphx-glr-backref-module-mne_nirs-experimental_design sphx-glr-backref-type-py-function"><span class="n">make_first_level_design_matrix</span></a>
 <span class="kn">from</span> <span class="nn">mne_nirs.statistics</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.statistics.statsmodels_to_results.html#mne_nirs.statistics.statsmodels_to_results" title="mne_nirs.statistics.statsmodels_to_results" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">statsmodels_to_results</span></a>
-<span class="kn">from</span> <span class="nn">mne_nirs.statistics</span> <span class="kn">import</span> <span class="n">compute_contrast</span>
 <span class="kn">from</span> <span class="nn">mne_nirs.channels</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.channels.get_short_channels.html#mne_nirs.channels.get_short_channels" title="mne_nirs.channels.get_short_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_short_channels</span></a><span class="p">,</span> <a href="../../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels" title="mne_nirs.channels.get_long_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_long_channels</span></a>
 <span class="kn">from</span> <span class="nn">mne_nirs.channels</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.channels.picks_pair_to_idx.html#mne_nirs.channels.picks_pair_to_idx" title="mne_nirs.channels.picks_pair_to_idx" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">picks_pair_to_idx</span></a>
-<span class="kn">from</span> <span class="nn">mne_nirs.utils._io</span> <span class="kn">import</span> <span class="n">glm_to_tidy</span>
 <span class="kn">from</span> <span class="nn">mne_nirs.visualisation</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_group_topo</span></a>
 <span class="kn">from</span> <span class="nn">mne_nirs.datasets</span> <span class="kn">import</span> <span class="n">fnirs_motor_group</span>
 <span class="kn">from</span> <span class="nn">mne_nirs.visualisation</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.visualisation.plot_glm_surface_projection.html#mne_nirs.visualisation.plot_glm_surface_projection" title="mne_nirs.visualisation.plot_glm_surface_projection" class="sphx-glr-backref-module-mne_nirs-visualisation sphx-glr-backref-type-py-function"><span class="n">plot_glm_surface_projection</span></a>
@@ -466,25 +464,29 @@ for the region of interest, channel level, and contrast results.</p>
 Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
 
   0%|          | Downloading : 0.00/0.00 [00:00&lt;?,        ?B/s]
-  0%|          | Downloading : 8.00k/0.00 [00:00&lt;00:00,    14.0kB/s]
-  0%|          | Downloading : 64.0k/0.00 [00:00&lt;00:00,     114kB/s]
-  0%|          | Downloading : 128k/0.00 [00:00&lt;00:00,     227kB/s]
-  0%|          | Downloading : 320k/0.00 [00:00&lt;00:00,     568kB/s]
-  0%|          | Downloading : 1.19M/0.00 [00:00&lt;00:00,    2.21MB/s]
-  0%|          | Downloading : 4.19M/0.00 [00:00&lt;00:00,    7.38MB/s]
-  0%|          | Downloading : 6.19M/0.00 [00:00&lt;00:00,    10.1MB/s]
-  0%|          | Downloading : 12.2M/0.00 [00:01&lt;00:00,    13.0MB/s]
-  0%|          | Downloading : 14.2M/0.00 [00:01&lt;00:00,    14.5MB/s]
-  0%|          | Downloading : 18.2M/0.00 [00:01&lt;00:00,    14.0MB/s]
-  0%|          | Downloading : 19.2M/0.00 [00:01&lt;00:00,    14.1MB/s]
-  0%|          | Downloading : 22.2M/0.00 [00:01&lt;00:00,    15.9MB/s]
-  0%|          | Downloading : 24.2M/0.00 [00:02&lt;00:00,    13.2MB/s]
-  0%|          | Downloading : 27.2M/0.00 [00:02&lt;00:00,    14.7MB/s]
-  0%|          | Downloading : 29.2M/0.00 [00:02&lt;00:00,    15.4MB/s]
-  0%|          | Downloading : 35.2M/0.00 [00:02&lt;00:00,    15.3MB/s]
-  0%|          | Downloading : 37.2M/0.00 [00:02&lt;00:00,    15.9MB/s]
-  0%|          | Downloading : 39.2M/0.00 [00:02&lt;00:00,    16.6MB/s]
-  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    16.0MB/s]
+  0%|          | Downloading : 8.00k/0.00 [00:00&lt;00:00,    14.8kB/s]
+  0%|          | Downloading : 32.0k/0.00 [00:00&lt;00:00,    58.0kB/s]
+  0%|          | Downloading : 80.0k/0.00 [00:00&lt;00:00,     142kB/s]
+  0%|          | Downloading : 112k/0.00 [00:00&lt;00:00,     191kB/s]
+  0%|          | Downloading : 144k/0.00 [00:00&lt;00:00,     237kB/s]
+  0%|          | Downloading : 240k/0.00 [00:00&lt;00:00,     393kB/s]
+  0%|          | Downloading : 432k/0.00 [00:00&lt;00:00,     708kB/s]
+  0%|          | Downloading : 816k/0.00 [00:00&lt;00:00,    1.34MB/s]
+  0%|          | Downloading : 1.55M/0.00 [00:00&lt;00:00,    2.59MB/s]
+  0%|          | Downloading : 3.05M/0.00 [00:00&lt;00:00,    5.06MB/s]
+  0%|          | Downloading : 6.05M/0.00 [00:00&lt;00:00,    9.94MB/s]
+  0%|          | Downloading : 8.05M/0.00 [00:00&lt;00:00,    12.9MB/s]
+  0%|          | Downloading : 10.0M/0.00 [00:00&lt;00:00,    14.6MB/s]
+  0%|          | Downloading : 12.0M/0.00 [00:01&lt;00:00,    17.2MB/s]
+  0%|          | Downloading : 18.0M/0.00 [00:01&lt;00:00,    16.4MB/s]
+  0%|          | Downloading : 20.0M/0.00 [00:01&lt;00:00,    18.1MB/s]
+  0%|          | Downloading : 22.0M/0.00 [00:01&lt;00:00,    19.6MB/s]
+  0%|          | Downloading : 24.0M/0.00 [00:01&lt;00:00,    14.8MB/s]
+  0%|          | Downloading : 27.0M/0.00 [00:01&lt;00:00,    16.7MB/s]
+  0%|          | Downloading : 33.0M/0.00 [00:02&lt;00:00,    15.5MB/s]
+  0%|          | Downloading : 39.0M/0.00 [00:02&lt;00:00,    18.5MB/s]
+  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    19.8MB/s]
+  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    16.9MB/s]
 Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
 (please be patient, this can take some time)
@@ -540,7 +542,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="OcWU9G"></div>
+          <div id="KydTqz"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -591,7 +593,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("OcWU9G");
+       var plotContainer = document.getElementById("KydTqz");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -716,12 +718,14 @@ the seminar by Dr. Jessica Gemignani
 <p>It is simple to extend these models to include covariates.
 This dataset is small, so including additional factors may not be
 appropriate. However, for instructional purpose, we will include a
-covariate of gender. Also, for instructional purpose, we modify the model
+covariate of gender. There are 3 females and 2 males in this dataset.
+Also, for instructional purpose, we modify the model
 above to only explore the difference between the two tapping conditions in
 the hbo signal in the right hemisphere.</p>
 <p>From the model result we observe that hbo responses in the right hemisphere
 are smaller when the right hand was used (as expected for these
-contralaterally dominant responses) and there is no effect of gender.</p>
+contralaterally dominant responses) and there is no significant
+effect of gender.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grp_results</span> <span class="o">=</span> <span class="n">df_roi</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Condition in [&#39;Tapping/Left&#39;, &#39;Tapping/Right&#39;]&quot;</span><span class="p">)</span>
 <span class="n">grp_results</span> <span class="o">=</span> <span class="n">grp_results</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;Chroma in [&#39;hbo&#39;]&quot;</span><span class="p">)</span>
 <span class="n">grp_results</span> <span class="o">=</span> <span class="n">grp_results</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;ROI in [&#39;Right_Hemisphere&#39;]&quot;</span><span class="p">)</span>
@@ -813,7 +817,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="oEtIL3"></div>
+          <div id="v0NkD5"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -887,7 +891,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 "shape":2
 }]
 };
-       var plotContainer = document.getElementById("oEtIL3");
+       var plotContainer = document.getElementById("v0NkD5");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -1573,8 +1577,8 @@ This can be generated from the statistics dataframe.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  43.990 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  659 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  47.386 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  595 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-12-group-glm-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_12_group_glm.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>

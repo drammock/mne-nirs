@@ -84,7 +84,7 @@ information about triggers, condition names, etc.
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-107
+.. GENERATED FROM PYTHON SOURCE LINES 68-105
 
 .. code-block:: default
 
@@ -106,10 +106,8 @@ information about triggers, condition names, etc.
     from mne_nirs.statistics import run_glm
     from mne_nirs.experimental_design import make_first_level_design_matrix
     from mne_nirs.statistics import statsmodels_to_results
-    from mne_nirs.statistics import compute_contrast
     from mne_nirs.channels import get_short_channels, get_long_channels
     from mne_nirs.channels import picks_pair_to_idx
-    from mne_nirs.utils._io import glm_to_tidy
     from mne_nirs.visualisation import plot_glm_group_topo
     from mne_nirs.datasets import fnirs_motor_group
     from mne_nirs.visualisation import plot_glm_surface_projection
@@ -134,7 +132,7 @@ information about triggers, condition names, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-132
+.. GENERATED FROM PYTHON SOURCE LINES 106-130
 
 Define individual analysis
 --------------------------
@@ -161,7 +159,7 @@ Here we also resample to a 0.3 Hz sample rate just to speed up the example
 and use less memory, resampling to 0.6 Hz is a better choice for full
 analyses.
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-195
+.. GENERATED FROM PYTHON SOURCE LINES 130-193
 
 .. code-block:: default
 
@@ -235,7 +233,7 @@ analyses.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 196-203
+.. GENERATED FROM PYTHON SOURCE LINES 194-201
 
 Run analysis on all participants
 --------------------------------
@@ -245,7 +243,7 @@ on each. We append the individual results in to a large dataframe that
 will contain the results from all measurements. We create a group dataframe
 for the region of interest, channel level, and contrast results.
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-225
+.. GENERATED FROM PYTHON SOURCE LINES 201-223
 
 .. code-block:: default
 
@@ -283,7 +281,7 @@ for the region of interest, channel level, and contrast results.
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    14.0kB/s]      0%|          | Downloading : 64.0k/0.00 [00:00<00:00,     114kB/s]      0%|          | Downloading : 128k/0.00 [00:00<00:00,     227kB/s]       0%|          | Downloading : 320k/0.00 [00:00<00:00,     568kB/s]      0%|          | Downloading : 1.19M/0.00 [00:00<00:00,    2.21MB/s]      0%|          | Downloading : 4.19M/0.00 [00:00<00:00,    7.38MB/s]      0%|          | Downloading : 6.19M/0.00 [00:00<00:00,    10.1MB/s]      0%|          | Downloading : 12.2M/0.00 [00:01<00:00,    13.0MB/s]      0%|          | Downloading : 14.2M/0.00 [00:01<00:00,    14.5MB/s]      0%|          | Downloading : 18.2M/0.00 [00:01<00:00,    14.0MB/s]      0%|          | Downloading : 19.2M/0.00 [00:01<00:00,    14.1MB/s]      0%|          | Downloading : 22.2M/0.00 [00:01<00:00,    15.9MB/s]      0%|          | Downloading : 24.2M/0.00 [00:02<00:00,    13.2MB/s]      0%|          | Downloading : 27.2M/0.00 [00:02<00:00,    14.7MB/s]      0%|          | Downloading : 29.2M/0.00 [00:02<00:00,    15.4MB/s]      0%|          | Downloading : 35.2M/0.00 [00:02<00:00,    15.3MB/s]      0%|          | Downloading : 37.2M/0.00 [00:02<00:00,    15.9MB/s]      0%|          | Downloading : 39.2M/0.00 [00:02<00:00,    16.6MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.0MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    14.8kB/s]      0%|          | Downloading : 32.0k/0.00 [00:00<00:00,    58.0kB/s]      0%|          | Downloading : 80.0k/0.00 [00:00<00:00,     142kB/s]      0%|          | Downloading : 112k/0.00 [00:00<00:00,     191kB/s]       0%|          | Downloading : 144k/0.00 [00:00<00:00,     237kB/s]      0%|          | Downloading : 240k/0.00 [00:00<00:00,     393kB/s]      0%|          | Downloading : 432k/0.00 [00:00<00:00,     708kB/s]      0%|          | Downloading : 816k/0.00 [00:00<00:00,    1.34MB/s]      0%|          | Downloading : 1.55M/0.00 [00:00<00:00,    2.59MB/s]      0%|          | Downloading : 3.05M/0.00 [00:00<00:00,    5.06MB/s]      0%|          | Downloading : 6.05M/0.00 [00:00<00:00,    9.94MB/s]      0%|          | Downloading : 8.05M/0.00 [00:00<00:00,    12.9MB/s]      0%|          | Downloading : 10.0M/0.00 [00:00<00:00,    14.6MB/s]      0%|          | Downloading : 12.0M/0.00 [00:01<00:00,    17.2MB/s]      0%|          | Downloading : 18.0M/0.00 [00:01<00:00,    16.4MB/s]      0%|          | Downloading : 20.0M/0.00 [00:01<00:00,    18.1MB/s]      0%|          | Downloading : 22.0M/0.00 [00:01<00:00,    19.6MB/s]      0%|          | Downloading : 24.0M/0.00 [00:01<00:00,    14.8MB/s]      0%|          | Downloading : 27.0M/0.00 [00:01<00:00,    16.7MB/s]      0%|          | Downloading : 33.0M/0.00 [00:02<00:00,    15.5MB/s]      0%|          | Downloading : 39.0M/0.00 [00:02<00:00,    18.5MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    19.8MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.9MB/s]
     Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -316,7 +314,7 @@ for the region of interest, channel level, and contrast results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 226-235
+.. GENERATED FROM PYTHON SOURCE LINES 224-233
 
 Visualise Individual results
 ----------------------------
@@ -328,7 +326,7 @@ values and observe they are in the expect range.
 We can already see that the control condition is always near zero,
 and that the responses look to be contralateral to the tapping hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 235-246
+.. GENERATED FROM PYTHON SOURCE LINES 233-244
 
 .. code-block:: default
 
@@ -356,7 +354,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="OcWU9G"></div>
+              <div id="KydTqz"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -407,7 +405,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("OcWU9G");
+           var plotContainer = document.getElementById("KydTqz");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -416,7 +414,7 @@ and that the responses look to be contralateral to the tapping hand.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 247-278
+.. GENERATED FROM PYTHON SOURCE LINES 245-276
 
 Compute group level results
 ---------------------------
@@ -450,7 +448,7 @@ Alternatively, we could use a robust linear
 model by using the code
 `roi_model = rlm('theta ~ -1 + ROI:Condition:Chroma', grp_results).fit()`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 278-286
+.. GENERATED FROM PYTHON SOURCE LINES 276-284
 
 .. code-block:: default
 
@@ -547,7 +545,7 @@ model by using the code
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 287-306
+.. GENERATED FROM PYTHON SOURCE LINES 285-306
 
 Second level analysis with covariates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -561,13 +559,15 @@ Second level analysis with covariates
 It is simple to extend these models to include covariates.
 This dataset is small, so including additional factors may not be
 appropriate. However, for instructional purpose, we will include a
-covariate of gender. Also, for instructional purpose, we modify the model
+covariate of gender. There are 3 females and 2 males in this dataset.
+Also, for instructional purpose, we modify the model
 above to only explore the difference between the two tapping conditions in
 the hbo signal in the right hemisphere.
 
 From the model result we observe that hbo responses in the right hemisphere
 are smaller when the right hand was used (as expected for these
-contralaterally dominant responses) and there is no effect of gender.
+contralaterally dominant responses) and there is no significant
+effect of gender.
 
 .. GENERATED FROM PYTHON SOURCE LINES 306-315
 
@@ -691,7 +691,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="oEtIL3"></div>
+              <div id="v0NkD5"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -765,7 +765,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("oEtIL3");
+           var plotContainer = document.getElementById("v0NkD5");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -1577,9 +1577,9 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  43.990 seconds)
+   **Total running time of the script:** ( 0 minutes  47.386 seconds)
 
-**Estimated memory usage:**  659 MB
+**Estimated memory usage:**  595 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
