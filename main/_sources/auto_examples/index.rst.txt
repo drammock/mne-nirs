@@ -45,7 +45,7 @@ Analysis examples
 .. only:: html
 
  .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_01_data_io_thumb.png
-     :alt: Importing data from fNIRS devices
+     :alt: Importing Data From fNIRS Devices
 
      :ref:`sphx_glr_auto_examples_general_plot_01_data_io.py`
 
@@ -150,7 +150,7 @@ Analysis examples
 .. only:: html
 
  .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_15_waveform_thumb.png
-     :alt: Waveform averaging analysis
+     :alt: Waveform Averaging Analysis
 
      :ref:`sphx_glr_auto_examples_general_plot_15_waveform.py`
 
@@ -234,7 +234,7 @@ Analysis examples
 .. only:: html
 
  .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_21_artifacts_thumb.png
-     :alt: Artifact correction techniques
+     :alt: Artifact Correction Techniques
 
      :ref:`sphx_glr_auto_examples_general_plot_21_artifacts.py`
 
