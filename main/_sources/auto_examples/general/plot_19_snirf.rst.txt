@@ -168,14 +168,14 @@ ensure that the values are the same.
  .. code-block:: none
 
 
-    <MNEBrowseFigure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 800x800 with 4 Axes>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.230 seconds)
+   **Total running time of the script:** ( 0 minutes  4.439 seconds)
 
 **Estimated memory usage:**  9 MB
 
