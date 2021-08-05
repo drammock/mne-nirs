@@ -248,9 +248,9 @@ dictionary (`all_evokeds`) for each condition.
 
  .. code-block:: none
 
-    /tmp/tmp9ods1s8e/22ac1e311cbef5ea591dcde7d86c329c350220d3/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmpy08mkzjn/ab6d4ef45d4eb1b55a1d3b5b96243f58a9226502/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
-    /tmp/tmp9ods1s8e/22ac1e311cbef5ea591dcde7d86c329c350220d3/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmpy08mkzjn/ab6d4ef45d4eb1b55a1d3b5b96243f58a9226502/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
 
 
@@ -344,7 +344,7 @@ as illustrated by the head inset in the top right corner of the figure.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7fdc3230f3a0>
+    <matplotlib.legend.Legend object at 0x7faace8c1a00>
 
 
 
@@ -464,7 +464,7 @@ regions of the brain for each condition.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7fdc324c1820>
+    <matplotlib.legend.Legend object at 0x7faafc533820>
 
 
 
@@ -637,14 +637,14 @@ single ROI between conditions.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="XKtnXU"></div>
+              <div id="sluU22"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
     "ID":["mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize","mne_anonymize"],
     "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
     "Condition":["Control","Control","Control","Control","Control","Control","Control","Control","Control","Control","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right","Tapping/Right"],
-    "Value":[-0.3295528573408232,-0.6133735919400434,-0.16729631089212768,-0.6047449882561183,-0.15189216881524364,1.15554316090754,0.35071337426859184,0.1991429844567381,1.2588913480438835,1.7414193732773384,8.211843698809318,11.294978700456674,7.655505813602199,9.056724059326124,2.7505908391955542,5.522052629704319,8.196649348247904,16.764419825157972,7.083026405396799,14.491281382572614,10.262367793693675,6.436869388619864,11.778355113774404,4.504846370846226,1.86081413170051,2.4750090383741115,8.184910132924282,3.935061732446444,14.305775852714694,10.22116213745563]
+    "Value":[-0.3295528573408304,-0.6133735919400424,-0.1672963108921213,-0.6047449882561284,-0.15189216881524661,1.1555431609075442,0.3507133742685995,0.19914298445674328,1.2588913480438833,1.741419373277339,8.211843698809329,11.294978700456618,7.655505813602202,9.056724059326111,2.75059083919557,5.522052629704296,8.196649348247886,16.764419825157983,7.0830264053968035,14.491281382572625,10.262367793693686,6.436869388619821,11.778355113774408,4.504846370846222,1.8608141317005156,2.4750090383741,8.18491013292426,3.935061732446473,14.305775852714701,10.221162137455634]
     },
     "mapping":{
     "x":"Condition",
@@ -685,7 +685,7 @@ single ROI between conditions.
     }
     }]
     };
-           var plotContainer = document.getElementById("XKtnXU");
+           var plotContainer = document.getElementById("sluU22");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -871,7 +871,7 @@ hand that is tapping.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.473 seconds)
+   **Total running time of the script:** ( 0 minutes  8.773 seconds)
 
 **Estimated memory usage:**  9 MB
 

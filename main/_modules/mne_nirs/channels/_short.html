@@ -177,14 +177,14 @@
 
 <div class="viewcode-block" id="get_short_channels"><a class="viewcode-back" href="../../../generated/mne_nirs.channels.get_short_channels.html#mne_nirs.channels.get_short_channels">[docs]</a><span class="k">def</span> <span class="nf">get_short_channels</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Return channels with a short source detector separation.</span>
+<span class="sd">    Return channels with a short source-detector separation.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    raw : instance of Raw</span>
-<span class="sd">        The haemoglobin data.</span>
+<span class="sd">        Raw instance containing fNIRS data.</span>
 <span class="sd">    max_dist : number</span>
-<span class="sd">        Maximum distance of returned channel (m).</span>
+<span class="sd">        Maximum distance of returned channels (m).</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -206,18 +206,18 @@
     <span class="k">return</span> <span class="n">short_chans</span></div>
 
 
-<div class="viewcode-block" id="get_long_channels"><a class="viewcode-back" href="../../../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels">[docs]</a><span class="k">def</span> <span class="nf">get_long_channels</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+<div class="viewcode-block" id="get_long_channels"><a class="viewcode-back" href="../../../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels">[docs]</a><span class="k">def</span> <span class="nf">get_long_channels</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.045</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return channels with a long source detector separation.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    raw : instance of Raw</span>
-<span class="sd">        The haemoglobin data.</span>
+<span class="sd">        Raw instance containing fNIRS data.</span>
 <span class="sd">    min_dist : number</span>
-<span class="sd">        Minimum distance of returned channel.</span>
+<span class="sd">        Minimum distance of returned channels (m).</span>
 <span class="sd">    max_dist : number</span>
-<span class="sd">        Maximum distance of returned channel.</span>
+<span class="sd">        Maximum distance of returned channels (m).</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
