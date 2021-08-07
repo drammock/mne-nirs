@@ -249,6 +249,7 @@
 
         <span class="n">start_sample</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">window</span> <span class="o">*</span> <span class="n">window_samples</span><span class="p">)</span>
         <span class="n">end_sample</span> <span class="o">=</span> <span class="n">start_sample</span> <span class="o">+</span> <span class="n">window_samples</span>
+        <span class="n">end_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">end_sample</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
 
         <span class="n">t_start</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">times</span><span class="p">[</span><span class="n">start_sample</span><span class="p">]</span>
         <span class="n">t_stop</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">times</span><span class="p">[</span><span class="n">end_sample</span><span class="p">]</span>
