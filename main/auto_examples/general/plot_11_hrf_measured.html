@@ -347,16 +347,17 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  0%|          | Downloading : 56.0k/17.1M [00:00&lt;00:05,    3.39MB/s]
-  1%|1         | Downloading : 184k/17.1M [00:00&lt;00:03,    5.19MB/s]
-  3%|3         | Downloading : 568k/17.1M [00:00&lt;00:01,    10.8MB/s]
-  9%|9         | Downloading : 1.55M/17.1M [00:00&lt;00:00,    23.1MB/s]
- 27%|##6       | Downloading : 4.55M/17.1M [00:00&lt;00:00,    32.7MB/s]
- 50%|#####     | Downloading : 8.55M/17.1M [00:00&lt;00:00,    40.1MB/s]
- 62%|######1   | Downloading : 10.6M/17.1M [00:00&lt;00:00,    46.3MB/s]
- 74%|#######3  | Downloading : 12.6M/17.1M [00:00&lt;00:00,    52.2MB/s]
- 97%|#########7| Downloading : 16.6M/17.1M [00:00&lt;00:00,    62.3MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    59.6MB/s]
+  0%|          | Downloading : 72.0k/17.1M [00:00&lt;00:06,    2.66MB/s]
+  1%|          | Downloading : 168k/17.1M [00:00&lt;00:04,    3.69MB/s]
+  2%|1         | Downloading : 296k/17.1M [00:00&lt;00:03,    4.41MB/s]
+  3%|3         | Downloading : 552k/17.1M [00:00&lt;00:02,    6.36MB/s]
+  6%|6         | Downloading : 1.04M/17.1M [00:00&lt;00:01,    9.80MB/s]
+ 12%|#1        | Downloading : 2.04M/17.1M [00:00&lt;00:00,    16.2MB/s]
+ 21%|##        | Downloading : 3.54M/17.1M [00:00&lt;00:00,    25.2MB/s]
+ 38%|###8      | Downloading : 6.54M/17.1M [00:00&lt;00:00,    40.5MB/s]
+ 74%|#######3  | Downloading : 12.5M/17.1M [00:00&lt;00:00,    62.1MB/s]
+ 97%|#########6| Downloading : 16.5M/17.1M [00:00&lt;00:00,    73.6MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    66.0MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -513,9 +514,7 @@ Text(0.5, 36.72222222222221, &#39;Time (s)&#39;)
 <p class="sidebar-title">Relevant literature</p>
 <p>For further discussion on design matrices see
 the Nilearn examples. Specifically the
-<a class="reference external" href="http://nilearn.github.io/auto_examples/04_glm_first_level/plot_first_level_details.html">first level model</a>
-and
-<a class="reference external" href="http://nilearn.github.io/auto_examples/04_glm_first_level/plot_design_matrix.html">design matrix examples</a>.</p>
+<a class="reference external" href="http://nilearn.github.io/auto_examples/04_glm_first_level/plot_first_level_details.html">first level model example</a>.</p>
 </div>
 <p>Next we create a model to fit our data to.
 The model consists of various components to model different things we assume
@@ -524,12 +523,16 @@ We model the expected neural response for each experimental condition
 using the SPM haemodynamic response
 function (HRF) combined with the known stimulus event times and durations
 (as described above).
-We also include a third order polynomial drift and constant to model
-slow fluctuations in the data and a constant DC shift.</p>
+We also include a cosine drift model with components up to the high pass
+parameter value. See the nilearn documentation for recommendations on setting
+these values. In short, they suggest <cite>“The cutoff period (1/high_pass) should be
+set as the longest period between two trials of the same condition multiplied by 2.
+For instance, if the longest period is 32s, the high_pass frequency shall be 1/64 Hz ~ 0.016 Hz”</cite>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">design_matrix</span> <span class="o">=</span> <a href="../../generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix" class="sphx-glr-backref-module-mne_nirs-experimental_design sphx-glr-backref-type-py-function"><span class="n">make_first_level_design_matrix</span></a><span class="p">(</span><span class="n">raw_haemo</span><span class="p">,</span>
-                                               <span class="n">hrf_model</span><span class="o">=</span><span class="s1">&#39;spm&#39;</span><span class="p">,</span> <span class="n">stim_dur</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
-                                               <span class="n">drift_order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-                                               <span class="n">drift_model</span><span class="o">=</span><span class="s1">&#39;polynomial&#39;</span><span class="p">)</span>
+                                               <span class="n">drift_model</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span>
+                                               <span class="n">high_pass</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>  <span class="c1"># Must be specified per experiment</span>
+                                               <span class="n">hrf_model</span><span class="o">=</span><span class="s1">&#39;spm&#39;</span><span class="p">,</span>
+                                               <span class="n">stim_dur</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We also add the mean of the short channels to the design matrix.
@@ -632,7 +635,7 @@ estimates for two channels you would call:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[4.101725840397223e-11, 1.1436145311140775e-11]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[3.635950128126076e-11, 9.482010775760916e-12]
 </pre></div>
 </div>
 <p>And we can chain the methods to quickly access required details.
@@ -642,7 +645,7 @@ you would call:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[1.1436145311140775e-11]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[9.482010775760916e-12]
 </pre></div>
 </div>
 <p>Due to the richness of the objects we provide a function to
@@ -691,12 +694,12 @@ first channel.</p>
       <th>0</th>
       <td>S1_D1 hbo</td>
       <td>Control</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>4.731295e-01</td>
-      <td>1.336405e-06</td>
-      <td>0.748736</td>
-      <td>1.000614e-06</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>5.703922e-01</td>
+      <td>1.271854e-06</td>
+      <td>0.572874</td>
+      <td>7.286122e-07</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
@@ -706,12 +709,12 @@ first channel.</p>
       <th>1</th>
       <td>S1_D1 hbo</td>
       <td>ShortHbO</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>6.838526e-14</td>
-      <td>1.162124e-02</td>
-      <td>74.875517</td>
-      <td>8.701466e-01</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>5.988346e-39</td>
+      <td>1.253564e-02</td>
+      <td>68.802806</td>
+      <td>8.624875e-01</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
@@ -721,12 +724,12 @@ first channel.</p>
       <th>2</th>
       <td>S1_D1 hbo</td>
       <td>ShortHbR</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>1.028018e-08</td>
-      <td>7.300006e-02</td>
-      <td>-19.720267</td>
-      <td>-1.439581e+00</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>2.051290e-19</td>
+      <td>7.976514e-02</td>
+      <td>-18.187656</td>
+      <td>-1.450741e+00</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
@@ -736,12 +739,12 @@ first channel.</p>
       <th>3</th>
       <td>S1_D1 hbo</td>
       <td>Tapping/Left</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>7.120565e-04</td>
-      <td>1.354390e-06</td>
-      <td>5.027219</td>
-      <td>6.808817e-06</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>8.464418e-06</td>
+      <td>1.289978e-06</td>
+      <td>5.211297</td>
+      <td>6.722461e-06</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
@@ -751,12 +754,12 @@ first channel.</p>
       <th>4</th>
       <td>S1_D1 hbo</td>
       <td>Tapping/Right</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>3.760128e-07</td>
-      <td>1.348587e-06</td>
-      <td>13.048762</td>
-      <td>1.759739e-05</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>7.547857e-16</td>
+      <td>1.294997e-06</td>
+      <td>13.935896</td>
+      <td>1.804694e-05</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
@@ -766,12 +769,12 @@ first channel.</p>
       <th>5</th>
       <td>S1_D1 hbo</td>
       <td>constant</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>9.071715e-02</td>
-      <td>3.112939e-07</td>
-      <td>-1.894257</td>
-      <td>-5.896706e-07</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>5.227182e-02</td>
+      <td>2.943860e-07</td>
+      <td>-2.009249</td>
+      <td>-5.914949e-07</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
@@ -781,12 +784,12 @@ first channel.</p>
       <th>6</th>
       <td>S1_D1 hbo</td>
       <td>drift_1</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>2.692657e-10</td>
-      <td>2.208465e-06</td>
-      <td>-29.729501</td>
-      <td>-6.565657e-05</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>6.333101e-25</td>
+      <td>3.084314e-05</td>
+      <td>26.818114</td>
+      <td>8.271549e-04</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
@@ -795,13 +798,13 @@ first channel.</p>
     <tr>
       <th>7</th>
       <td>S1_D1 hbo</td>
-      <td>drift_2</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>3.831044e-10</td>
-      <td>7.145901e-06</td>
-      <td>28.576480</td>
-      <td>2.042047e-04</td>
+      <td>drift_10</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>8.211815e-07</td>
+      <td>1.215036e-05</td>
+      <td>5.979676</td>
+      <td>7.265522e-05</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
@@ -810,17 +813,17 @@ first channel.</p>
     <tr>
       <th>8</th>
       <td>S1_D1 hbo</td>
-      <td>drift_3</td>
-      <td>9.0</td>
-      <td>4.101726e-11</td>
-      <td>1.813445e-06</td>
-      <td>1.756232e-05</td>
-      <td>-10.845683</td>
-      <td>-1.904754e-04</td>
+      <td>drift_11</td>
+      <td>35.0</td>
+      <td>3.635950e-11</td>
+      <td>4.069713e-01</td>
+      <td>1.242152e-05</td>
+      <td>0.839347</td>
+      <td>1.042596e-05</td>
       <td>1</td>
       <td>1</td>
       <td>hbo</td>
-      <td>True</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
@@ -907,7 +910,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df[&quot;theta&quot;] = df[&quot;theta&quot;] * 1e6
 
-&lt;mne.viz._brain._brain.Brain object at 0x7fe1fb2a6340&gt;
+&lt;mne.viz._brain._brain.Brain object at 0x7f1c9171b130&gt;
 </pre></div>
 </div>
 </div>
@@ -982,132 +985,132 @@ of interest.</p>
       <td>Left_ROI</td>
       <td>Control</td>
       <td>hbo</td>
-      <td>-1.022117e-07</td>
-      <td>0.937469</td>
-      <td>-0.109029</td>
-      <td>9.0</td>
-      <td>0.915571</td>
+      <td>-1.690850e-07</td>
+      <td>0.906548</td>
+      <td>-0.186515</td>
+      <td>35.0</td>
+      <td>8.531176e-01</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Left_ROI</td>
       <td>Control</td>
       <td>hbr</td>
-      <td>1.885587e-07</td>
-      <td>0.523065</td>
-      <td>0.360488</td>
-      <td>9.0</td>
-      <td>0.726798</td>
+      <td>1.621215e-07</td>
+      <td>0.510929</td>
+      <td>0.317307</td>
+      <td>35.0</td>
+      <td>7.528959e-01</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Right_ROI</td>
       <td>Control</td>
       <td>hbo</td>
-      <td>2.067752e-07</td>
-      <td>0.966665</td>
-      <td>0.213906</td>
-      <td>9.0</td>
-      <td>0.835388</td>
+      <td>3.814778e-08</td>
+      <td>0.941335</td>
+      <td>0.040525</td>
+      <td>35.0</td>
+      <td>9.679047e-01</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Right_ROI</td>
       <td>Control</td>
       <td>hbr</td>
-      <td>-7.585512e-08</td>
-      <td>0.539113</td>
-      <td>-0.140704</td>
-      <td>9.0</td>
-      <td>0.891203</td>
+      <td>-1.034544e-07</td>
+      <td>0.532735</td>
+      <td>-0.194195</td>
+      <td>35.0</td>
+      <td>8.471461e-01</td>
     </tr>
     <tr>
       <th>0</th>
       <td>Left_ROI</td>
       <td>Tapping/Left</td>
       <td>hbo</td>
-      <td>4.882654e-06</td>
-      <td>0.951223</td>
-      <td>5.133029</td>
-      <td>9.0</td>
-      <td>0.000617</td>
+      <td>4.808888e-06</td>
+      <td>0.919870</td>
+      <td>5.227791</td>
+      <td>35.0</td>
+      <td>8.051619e-06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Left_ROI</td>
       <td>Tapping/Left</td>
       <td>hbr</td>
-      <td>-1.923505e-06</td>
-      <td>0.530754</td>
-      <td>-3.624097</td>
-      <td>9.0</td>
-      <td>0.005536</td>
+      <td>-1.837941e-06</td>
+      <td>0.518407</td>
+      <td>-3.545361</td>
+      <td>35.0</td>
+      <td>1.136272e-03</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Right_ROI</td>
       <td>Tapping/Left</td>
       <td>hbo</td>
-      <td>9.178021e-06</td>
-      <td>0.980833</td>
-      <td>9.357373</td>
-      <td>9.0</td>
-      <td>0.000006</td>
+      <td>9.219006e-06</td>
+      <td>0.955125</td>
+      <td>9.652143</td>
+      <td>35.0</td>
+      <td>2.123476e-11</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Right_ROI</td>
       <td>Tapping/Left</td>
       <td>hbr</td>
-      <td>-3.948888e-06</td>
-      <td>0.547043</td>
-      <td>-7.218604</td>
-      <td>9.0</td>
-      <td>0.000050</td>
+      <td>-3.877839e-06</td>
+      <td>0.540531</td>
+      <td>-7.174123</td>
+      <td>35.0</td>
+      <td>2.280434e-08</td>
     </tr>
     <tr>
       <th>0</th>
       <td>Left_ROI</td>
       <td>Tapping/Right</td>
       <td>hbo</td>
-      <td>9.656099e-06</td>
-      <td>0.953521</td>
-      <td>10.126786</td>
-      <td>9.0</td>
-      <td>0.000003</td>
+      <td>9.738244e-06</td>
+      <td>0.922471</td>
+      <td>10.556691</td>
+      <td>35.0</td>
+      <td>2.015806e-12</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Left_ROI</td>
       <td>Tapping/Right</td>
       <td>hbr</td>
-      <td>-3.213928e-06</td>
-      <td>0.532111</td>
-      <td>-6.039955</td>
-      <td>9.0</td>
-      <td>0.000193</td>
+      <td>-3.240867e-06</td>
+      <td>0.519857</td>
+      <td>-6.234145</td>
+      <td>35.0</td>
+      <td>3.799977e-07</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Right_ROI</td>
       <td>Tapping/Right</td>
       <td>hbo</td>
-      <td>5.705888e-06</td>
-      <td>0.983101</td>
-      <td>5.803970</td>
-      <td>9.0</td>
-      <td>0.000258</td>
+      <td>5.997574e-06</td>
+      <td>0.957747</td>
+      <td>6.262169</td>
+      <td>35.0</td>
+      <td>3.491383e-07</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Right_ROI</td>
       <td>Tapping/Right</td>
       <td>hbr</td>
-      <td>-2.338472e-06</td>
-      <td>0.548476</td>
-      <td>-4.263585</td>
-      <td>9.0</td>
-      <td>0.002100</td>
+      <td>-2.408893e-06</td>
+      <td>0.542023</td>
+      <td>-4.444261</td>
+      <td>35.0</td>
+      <td>8.484410e-05</td>
     </tr>
   </tbody>
 </table>
@@ -1220,16 +1223,16 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
     <tr>
       <th rowspan="2" valign="top">Control</th>
       <th>hbo</th>
-      <td>1.084555e-06</td>
-      <td>-3.386871e-08</td>
+      <td>1.054770e-06</td>
+      <td>-1.599538e-07</td>
       <td>5.561117e+17</td>
       <td>6.156712e+17</td>
       <td>0.00</td>
     </tr>
     <tr>
       <th>hbr</th>
-      <td>6.083848e-07</td>
-      <td>1.348140e-08</td>
+      <td>5.952317e-07</td>
+      <td>-1.648622e-08</td>
       <td>5.561117e+17</td>
       <td>6.156712e+17</td>
       <td>0.00</td>
@@ -1237,16 +1240,16 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
     <tr>
       <th rowspan="2" valign="top">Tapping/Left</th>
       <th>hbo</th>
-      <td>1.100472e-06</td>
-      <td>6.898189e-06</td>
+      <td>1.070265e-06</td>
+      <td>6.881075e-06</td>
       <td>5.561117e+17</td>
       <td>6.156712e+17</td>
       <td>0.90</td>
     </tr>
     <tr>
       <th>hbr</th>
-      <td>6.173233e-07</td>
-      <td>-3.039020e-06</td>
+      <td>6.039312e-07</td>
+      <td>-2.958917e-06</td>
       <td>5.561117e+17</td>
       <td>6.156712e+17</td>
       <td>0.75</td>
@@ -1254,16 +1257,16 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
     <tr>
       <th rowspan="2" valign="top">Tapping/Right</th>
       <th>hbo</th>
-      <td>1.103144e-06</td>
-      <td>7.604877e-06</td>
+      <td>1.073288e-06</td>
+      <td>7.809773e-06</td>
       <td>5.561117e+17</td>
       <td>6.156712e+17</td>
-      <td>0.90</td>
+      <td>0.95</td>
     </tr>
     <tr>
       <th>hbr</th>
-      <td>6.188749e-07</td>
-      <td>-2.841256e-06</td>
+      <td>6.055956e-07</td>
+      <td>-2.910487e-06</td>
       <td>5.561117e+17</td>
       <td>6.156712e+17</td>
       <td>0.80</td>
@@ -1273,8 +1276,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.052 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  323 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.730 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  466 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-11-hrf-measured-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_11_hrf_measured.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>

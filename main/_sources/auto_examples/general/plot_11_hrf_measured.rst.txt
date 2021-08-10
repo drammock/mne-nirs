@@ -134,7 +134,7 @@ to meet github memory constraints.
     Using default location ~/mne_data for fnirs_motor...
     Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      0%|          | Downloading : 56.0k/17.1M [00:00<00:05,    3.39MB/s]      1%|1         | Downloading : 184k/17.1M [00:00<00:03,    5.19MB/s]       3%|3         | Downloading : 568k/17.1M [00:00<00:01,    10.8MB/s]      9%|9         | Downloading : 1.55M/17.1M [00:00<00:00,    23.1MB/s]     27%|##6       | Downloading : 4.55M/17.1M [00:00<00:00,    32.7MB/s]     50%|#####     | Downloading : 8.55M/17.1M [00:00<00:00,    40.1MB/s]     62%|######1   | Downloading : 10.6M/17.1M [00:00<00:00,    46.3MB/s]     74%|#######3  | Downloading : 12.6M/17.1M [00:00<00:00,    52.2MB/s]     97%|#########7| Downloading : 16.6M/17.1M [00:00<00:00,    62.3MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    59.6MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      0%|          | Downloading : 72.0k/17.1M [00:00<00:06,    2.66MB/s]      1%|          | Downloading : 168k/17.1M [00:00<00:04,    3.69MB/s]       2%|1         | Downloading : 296k/17.1M [00:00<00:03,    4.41MB/s]      3%|3         | Downloading : 552k/17.1M [00:00<00:02,    6.36MB/s]      6%|6         | Downloading : 1.04M/17.1M [00:00<00:01,    9.80MB/s]     12%|#1        | Downloading : 2.04M/17.1M [00:00<00:00,    16.2MB/s]     21%|##        | Downloading : 3.54M/17.1M [00:00<00:00,    25.2MB/s]     38%|###8      | Downloading : 6.54M/17.1M [00:00<00:00,    40.5MB/s]     74%|#######3  | Downloading : 12.5M/17.1M [00:00<00:00,    62.1MB/s]     97%|#########6| Downloading : 16.5M/17.1M [00:00<00:00,    73.6MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    66.0MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -383,7 +383,7 @@ line is raised for the duration of the stimulus/condition.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-184
+.. GENERATED FROM PYTHON SOURCE LINES 164-185
 
 Create design matrix
 --------------------
@@ -392,9 +392,7 @@ Create design matrix
 
    For further discussion on design matrices see
    the Nilearn examples. Specifically the 
-   `first level model <http://nilearn.github.io/auto_examples/04_glm_first_level/plot_first_level_details.html>`_
-   and 
-   `design matrix examples <http://nilearn.github.io/auto_examples/04_glm_first_level/plot_design_matrix.html>`_.
+   `first level model example <http://nilearn.github.io/auto_examples/04_glm_first_level/plot_first_level_details.html>`_.
 
 Next we create a model to fit our data to.
 The model consists of various components to model different things we assume
@@ -403,18 +401,22 @@ We model the expected neural response for each experimental condition
 using the SPM haemodynamic response
 function (HRF) combined with the known stimulus event times and durations
 (as described above).
-We also include a third order polynomial drift and constant to model
-slow fluctuations in the data and a constant DC shift.
+We also include a cosine drift model with components up to the high pass
+parameter value. See the nilearn documentation for recommendations on setting
+these values. In short, they suggest `"The cutoff period (1/high_pass) should be
+set as the longest period between two trials of the same condition multiplied by 2.
+For instance, if the longest period is 32s, the high_pass frequency shall be 1/64 Hz ~ 0.016 Hz"`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-191
+.. GENERATED FROM PYTHON SOURCE LINES 185-193
 
 .. code-block:: default
 
 
     design_matrix = make_first_level_design_matrix(raw_haemo,
-                                                   hrf_model='spm', stim_dur=5.0,
-                                                   drift_order=3,
-                                                   drift_model='polynomial')
+                                                   drift_model='cosine',
+                                                   high_pass=0.005,  # Must be specified per experiment
+                                                   hrf_model='spm',
+                                                   stim_dur=5.0)
 
 
 
@@ -424,7 +426,7 @@ slow fluctuations in the data and a constant DC shift.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-197
+.. GENERATED FROM PYTHON SOURCE LINES 194-199
 
 We also add the mean of the short channels to the design matrix.
 In theory these channels contain only systemic components, so including
@@ -432,7 +434,7 @@ them in the design matrix allows us to estimate the neural component
 related to each experimental condition
 uncontaminated by systemic effects.
 
-.. GENERATED FROM PYTHON SOURCE LINES 198-206
+.. GENERATED FROM PYTHON SOURCE LINES 200-208
 
 .. code-block:: default
 
@@ -451,7 +453,7 @@ uncontaminated by systemic effects.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 207-213
+.. GENERATED FROM PYTHON SOURCE LINES 209-215
 
 And we display a summary of the design matrix
 using standard Nilearn reporting functions.
@@ -460,7 +462,7 @@ event information.
 The next columns illustrate the drift and constant components.
 The last columns illustrate the short channel signals.
 
-.. GENERATED FROM PYTHON SOURCE LINES 214-219
+.. GENERATED FROM PYTHON SOURCE LINES 216-221
 
 .. code-block:: default
 
@@ -481,7 +483,7 @@ The last columns illustrate the short channel signals.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 220-238
+.. GENERATED FROM PYTHON SOURCE LINES 222-240
 
 Examine expected response
 -------------------------
@@ -502,7 +504,7 @@ may be different, so you may need to alter either the ``s`` index or condition
 name. Note however, that this is just for visualisation and does not affect
 the results below.
 
-.. GENERATED FROM PYTHON SOURCE LINES 238-248
+.. GENERATED FROM PYTHON SOURCE LINES 240-250
 
 .. code-block:: default
 
@@ -537,7 +539,7 @@ the results below.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 249-261
+.. GENERATED FROM PYTHON SOURCE LINES 251-263
 
 Fit GLM to subset of data and estimate response for each experimental condition
 -------------------------------------------------------------------------------
@@ -552,7 +554,7 @@ We run a GLM fit for the data and experiment matrix.
 First we analyse just the first two channels which correspond to HbO and HbR
 of a single source detector pair.
 
-.. GENERATED FROM PYTHON SOURCE LINES 262-266
+.. GENERATED FROM PYTHON SOURCE LINES 264-268
 
 .. code-block:: default
 
@@ -567,13 +569,13 @@ of a single source detector pair.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 267-270
+.. GENERATED FROM PYTHON SOURCE LINES 269-272
 
 This returns a GLM regression estimate for each channel.
 This data is stored in a dedicated type.
 You can view an overview of the estimates by addressing the variable:
 
-.. GENERATED FROM PYTHON SOURCE LINES 271-274
+.. GENERATED FROM PYTHON SOURCE LINES 273-276
 
 .. code-block:: default
 
@@ -595,7 +597,7 @@ You can view an overview of the estimates by addressing the variable:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 275-280
+.. GENERATED FROM PYTHON SOURCE LINES 277-282
 
 As with other MNE types you can use the `pick` function.
 To query the mean square error of a single channel you would call.
@@ -603,7 +605,7 @@ To query the mean square error of a single channel you would call.
 Note: as we wish to retain both channels for further the analysis below,
 we operate on a copy to demonstrate this channel picking functionality.
 
-.. GENERATED FROM PYTHON SOURCE LINES 281-284
+.. GENERATED FROM PYTHON SOURCE LINES 283-286
 
 .. code-block:: default
 
@@ -625,7 +627,7 @@ we operate on a copy to demonstrate this channel picking functionality.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 285-290
+.. GENERATED FROM PYTHON SOURCE LINES 287-292
 
 Underlying the data for each channel is a standard
 `Nilearn RegressionResults object <https://nilearn.github.io/modules/generated/nilearn.glm.RegressionResults.html>`_
@@ -633,7 +635,7 @@ object. These objects are rich with information that can be requested
 from the object, for example to determine the mean square error of the
 estimates for two channels you would call:
 
-.. GENERATED FROM PYTHON SOURCE LINES 291-294
+.. GENERATED FROM PYTHON SOURCE LINES 293-296
 
 .. code-block:: default
 
@@ -651,17 +653,17 @@ estimates for two channels you would call:
  .. code-block:: none
 
 
-    [4.101725840397223e-11, 1.1436145311140775e-11]
+    [3.635950128126076e-11, 9.482010775760916e-12]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 295-298
+.. GENERATED FROM PYTHON SOURCE LINES 297-300
 
 And we can chain the methods to quickly access required details.
 For example, to determine the MSE for channel `S1` `D1` for the hbr type
 you would call:
 
-.. GENERATED FROM PYTHON SOURCE LINES 299-303
+.. GENERATED FROM PYTHON SOURCE LINES 301-305
 
 .. code-block:: default
 
@@ -680,11 +682,11 @@ you would call:
  .. code-block:: none
 
 
-    [1.1436145311140775e-11]
+    [9.482010775760916e-12]
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 304-309
+.. GENERATED FROM PYTHON SOURCE LINES 306-311
 
 Due to the richness of the objects we provide a function to
 extract commonly used information and put it in a convenient dataframe/table.
@@ -692,7 +694,7 @@ Below this is demonstrated and then we just display the first 9 rows of the
 table which correspond to the 9 components of the design matrix for the
 first channel.
 
-.. GENERATED FROM PYTHON SOURCE LINES 310-313
+.. GENERATED FROM PYTHON SOURCE LINES 312-315
 
 .. code-block:: default
 
@@ -744,12 +746,12 @@ first channel.
           <th>0</th>
           <td>S1_D1 hbo</td>
           <td>Control</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>4.731295e-01</td>
-          <td>1.336405e-06</td>
-          <td>0.748736</td>
-          <td>1.000614e-06</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>5.703922e-01</td>
+          <td>1.271854e-06</td>
+          <td>0.572874</td>
+          <td>7.286122e-07</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
@@ -759,12 +761,12 @@ first channel.
           <th>1</th>
           <td>S1_D1 hbo</td>
           <td>ShortHbO</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>6.838526e-14</td>
-          <td>1.162124e-02</td>
-          <td>74.875517</td>
-          <td>8.701466e-01</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>5.988346e-39</td>
+          <td>1.253564e-02</td>
+          <td>68.802806</td>
+          <td>8.624875e-01</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
@@ -774,12 +776,12 @@ first channel.
           <th>2</th>
           <td>S1_D1 hbo</td>
           <td>ShortHbR</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>1.028018e-08</td>
-          <td>7.300006e-02</td>
-          <td>-19.720267</td>
-          <td>-1.439581e+00</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>2.051290e-19</td>
+          <td>7.976514e-02</td>
+          <td>-18.187656</td>
+          <td>-1.450741e+00</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
@@ -789,12 +791,12 @@ first channel.
           <th>3</th>
           <td>S1_D1 hbo</td>
           <td>Tapping/Left</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>7.120565e-04</td>
-          <td>1.354390e-06</td>
-          <td>5.027219</td>
-          <td>6.808817e-06</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>8.464418e-06</td>
+          <td>1.289978e-06</td>
+          <td>5.211297</td>
+          <td>6.722461e-06</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
@@ -804,12 +806,12 @@ first channel.
           <th>4</th>
           <td>S1_D1 hbo</td>
           <td>Tapping/Right</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>3.760128e-07</td>
-          <td>1.348587e-06</td>
-          <td>13.048762</td>
-          <td>1.759739e-05</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>7.547857e-16</td>
+          <td>1.294997e-06</td>
+          <td>13.935896</td>
+          <td>1.804694e-05</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
@@ -819,12 +821,12 @@ first channel.
           <th>5</th>
           <td>S1_D1 hbo</td>
           <td>constant</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>9.071715e-02</td>
-          <td>3.112939e-07</td>
-          <td>-1.894257</td>
-          <td>-5.896706e-07</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>5.227182e-02</td>
+          <td>2.943860e-07</td>
+          <td>-2.009249</td>
+          <td>-5.914949e-07</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
@@ -834,12 +836,12 @@ first channel.
           <th>6</th>
           <td>S1_D1 hbo</td>
           <td>drift_1</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>2.692657e-10</td>
-          <td>2.208465e-06</td>
-          <td>-29.729501</td>
-          <td>-6.565657e-05</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>6.333101e-25</td>
+          <td>3.084314e-05</td>
+          <td>26.818114</td>
+          <td>8.271549e-04</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
@@ -848,13 +850,13 @@ first channel.
         <tr>
           <th>7</th>
           <td>S1_D1 hbo</td>
-          <td>drift_2</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>3.831044e-10</td>
-          <td>7.145901e-06</td>
-          <td>28.576480</td>
-          <td>2.042047e-04</td>
+          <td>drift_10</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>8.211815e-07</td>
+          <td>1.215036e-05</td>
+          <td>5.979676</td>
+          <td>7.265522e-05</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
@@ -863,17 +865,17 @@ first channel.
         <tr>
           <th>8</th>
           <td>S1_D1 hbo</td>
-          <td>drift_3</td>
-          <td>9.0</td>
-          <td>4.101726e-11</td>
-          <td>1.813445e-06</td>
-          <td>1.756232e-05</td>
-          <td>-10.845683</td>
-          <td>-1.904754e-04</td>
+          <td>drift_11</td>
+          <td>35.0</td>
+          <td>3.635950e-11</td>
+          <td>4.069713e-01</td>
+          <td>1.242152e-05</td>
+          <td>0.839347</td>
+          <td>1.042596e-05</td>
           <td>1</td>
           <td>1</td>
           <td>hbo</td>
-          <td>True</td>
+          <td>False</td>
         </tr>
       </tbody>
     </table>
@@ -882,7 +884,7 @@ first channel.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 314-321
+.. GENERATED FROM PYTHON SOURCE LINES 316-323
 
 We then display the results using the scatter plot function.
 Note that the control condition sits
@@ -892,7 +894,7 @@ Further, we note that for this channel the response to tapping on the
 right hand is larger than the left. And the values are similar to what
 is seen in the epoching tutorial.
 
-.. GENERATED FROM PYTHON SOURCE LINES 322-326
+.. GENERATED FROM PYTHON SOURCE LINES 324-328
 
 .. code-block:: default
 
@@ -920,7 +922,7 @@ is seen in the epoching tutorial.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 327-336
+.. GENERATED FROM PYTHON SOURCE LINES 329-338
 
 Fit GLM to all data and view topographic distribution
 -----------------------------------------------------
@@ -932,7 +934,7 @@ that activation is largest
 contralateral to the tapping side. Also note that HbR tends to be the
 negative of HbO as expected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 336-341
+.. GENERATED FROM PYTHON SOURCE LINES 338-343
 
 .. code-block:: default
 
@@ -961,7 +963,7 @@ negative of HbO as expected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 342-361
+.. GENERATED FROM PYTHON SOURCE LINES 344-363
 
 Note that the topographic visualisation is a high level representation
 of the underlying data. This visual representation fits a smoothed surface
@@ -983,7 +985,7 @@ When each hemisphere is plotted independently (right) it becomes immediately
 apparent that the data does not indicate that activity spreads across
 the center of the head.
 
-.. GENERATED FROM PYTHON SOURCE LINES 362-377
+.. GENERATED FROM PYTHON SOURCE LINES 364-379
 
 .. code-block:: default
 
@@ -1022,12 +1024,12 @@ the center of the head.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 378-380
+.. GENERATED FROM PYTHON SOURCE LINES 380-382
 
 Another way to view the data is to project the GLM estimates to the nearest
 cortical surface
 
-.. GENERATED FROM PYTHON SOURCE LINES 381-385
+.. GENERATED FROM PYTHON SOURCE LINES 383-387
 
 .. code-block:: default
 
@@ -1057,11 +1059,11 @@ cortical surface
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       df["theta"] = df["theta"] * 1e6
 
-    <mne.viz._brain._brain.Brain object at 0x7fe1fb2a6340>
+    <mne.viz._brain._brain.Brain object at 0x7f1c9171b130>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 386-405
+.. GENERATED FROM PYTHON SOURCE LINES 388-407
 
 Analyse regions of interest
 ---------------------------
@@ -1083,7 +1085,7 @@ Region of interest analysis can be more robust than single channel analysis.
 The fOLD toolbox can be used to assist in the design of ROIs.
 And consideration should be paid to ensure optimal size ROIs are selected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 405-419
+.. GENERATED FROM PYTHON SOURCE LINES 407-421
 
 .. code-block:: default
 
@@ -1108,13 +1110,13 @@ And consideration should be paid to ensure optimal size ROIs are selected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 420-423
+.. GENERATED FROM PYTHON SOURCE LINES 422-425
 
 As with the single channel results above, this is placed in a tidy dataframe
 which contains conveniently extracted information, but now for the region
 of interest.
 
-.. GENERATED FROM PYTHON SOURCE LINES 423-427
+.. GENERATED FROM PYTHON SOURCE LINES 425-429
 
 .. code-block:: default
 
@@ -1164,132 +1166,132 @@ of interest.
           <td>Left_ROI</td>
           <td>Control</td>
           <td>hbo</td>
-          <td>-1.022117e-07</td>
-          <td>0.937469</td>
-          <td>-0.109029</td>
-          <td>9.0</td>
-          <td>0.915571</td>
+          <td>-1.690850e-07</td>
+          <td>0.906548</td>
+          <td>-0.186515</td>
+          <td>35.0</td>
+          <td>8.531176e-01</td>
         </tr>
         <tr>
           <th>1</th>
           <td>Left_ROI</td>
           <td>Control</td>
           <td>hbr</td>
-          <td>1.885587e-07</td>
-          <td>0.523065</td>
-          <td>0.360488</td>
-          <td>9.0</td>
-          <td>0.726798</td>
+          <td>1.621215e-07</td>
+          <td>0.510929</td>
+          <td>0.317307</td>
+          <td>35.0</td>
+          <td>7.528959e-01</td>
         </tr>
         <tr>
           <th>2</th>
           <td>Right_ROI</td>
           <td>Control</td>
           <td>hbo</td>
-          <td>2.067752e-07</td>
-          <td>0.966665</td>
-          <td>0.213906</td>
-          <td>9.0</td>
-          <td>0.835388</td>
+          <td>3.814778e-08</td>
+          <td>0.941335</td>
+          <td>0.040525</td>
+          <td>35.0</td>
+          <td>9.679047e-01</td>
         </tr>
         <tr>
           <th>3</th>
           <td>Right_ROI</td>
           <td>Control</td>
           <td>hbr</td>
-          <td>-7.585512e-08</td>
-          <td>0.539113</td>
-          <td>-0.140704</td>
-          <td>9.0</td>
-          <td>0.891203</td>
+          <td>-1.034544e-07</td>
+          <td>0.532735</td>
+          <td>-0.194195</td>
+          <td>35.0</td>
+          <td>8.471461e-01</td>
         </tr>
         <tr>
           <th>0</th>
           <td>Left_ROI</td>
           <td>Tapping/Left</td>
           <td>hbo</td>
-          <td>4.882654e-06</td>
-          <td>0.951223</td>
-          <td>5.133029</td>
-          <td>9.0</td>
-          <td>0.000617</td>
+          <td>4.808888e-06</td>
+          <td>0.919870</td>
+          <td>5.227791</td>
+          <td>35.0</td>
+          <td>8.051619e-06</td>
         </tr>
         <tr>
           <th>1</th>
           <td>Left_ROI</td>
           <td>Tapping/Left</td>
           <td>hbr</td>
-          <td>-1.923505e-06</td>
-          <td>0.530754</td>
-          <td>-3.624097</td>
-          <td>9.0</td>
-          <td>0.005536</td>
+          <td>-1.837941e-06</td>
+          <td>0.518407</td>
+          <td>-3.545361</td>
+          <td>35.0</td>
+          <td>1.136272e-03</td>
         </tr>
         <tr>
           <th>2</th>
           <td>Right_ROI</td>
           <td>Tapping/Left</td>
           <td>hbo</td>
-          <td>9.178021e-06</td>
-          <td>0.980833</td>
-          <td>9.357373</td>
-          <td>9.0</td>
-          <td>0.000006</td>
+          <td>9.219006e-06</td>
+          <td>0.955125</td>
+          <td>9.652143</td>
+          <td>35.0</td>
+          <td>2.123476e-11</td>
         </tr>
         <tr>
           <th>3</th>
           <td>Right_ROI</td>
           <td>Tapping/Left</td>
           <td>hbr</td>
-          <td>-3.948888e-06</td>
-          <td>0.547043</td>
-          <td>-7.218604</td>
-          <td>9.0</td>
-          <td>0.000050</td>
+          <td>-3.877839e-06</td>
+          <td>0.540531</td>
+          <td>-7.174123</td>
+          <td>35.0</td>
+          <td>2.280434e-08</td>
         </tr>
         <tr>
           <th>0</th>
           <td>Left_ROI</td>
           <td>Tapping/Right</td>
           <td>hbo</td>
-          <td>9.656099e-06</td>
-          <td>0.953521</td>
-          <td>10.126786</td>
-          <td>9.0</td>
-          <td>0.000003</td>
+          <td>9.738244e-06</td>
+          <td>0.922471</td>
+          <td>10.556691</td>
+          <td>35.0</td>
+          <td>2.015806e-12</td>
         </tr>
         <tr>
           <th>1</th>
           <td>Left_ROI</td>
           <td>Tapping/Right</td>
           <td>hbr</td>
-          <td>-3.213928e-06</td>
-          <td>0.532111</td>
-          <td>-6.039955</td>
-          <td>9.0</td>
-          <td>0.000193</td>
+          <td>-3.240867e-06</td>
+          <td>0.519857</td>
+          <td>-6.234145</td>
+          <td>35.0</td>
+          <td>3.799977e-07</td>
         </tr>
         <tr>
           <th>2</th>
           <td>Right_ROI</td>
           <td>Tapping/Right</td>
           <td>hbo</td>
-          <td>5.705888e-06</td>
-          <td>0.983101</td>
-          <td>5.803970</td>
-          <td>9.0</td>
-          <td>0.000258</td>
+          <td>5.997574e-06</td>
+          <td>0.957747</td>
+          <td>6.262169</td>
+          <td>35.0</td>
+          <td>3.491383e-07</td>
         </tr>
         <tr>
           <th>3</th>
           <td>Right_ROI</td>
           <td>Tapping/Right</td>
           <td>hbr</td>
-          <td>-2.338472e-06</td>
-          <td>0.548476</td>
-          <td>-4.263585</td>
-          <td>9.0</td>
-          <td>0.002100</td>
+          <td>-2.408893e-06</td>
+          <td>0.542023</td>
+          <td>-4.444261</td>
+          <td>35.0</td>
+          <td>8.484410e-05</td>
         </tr>
       </tbody>
     </table>
@@ -1298,7 +1300,7 @@ of interest.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 428-436
+.. GENERATED FROM PYTHON SOURCE LINES 430-438
 
 Compute contrasts
 -----------------
@@ -1309,7 +1311,7 @@ and plot it.
 Here we contrast the response to tapping on the left hand with the response
 from tapping on the right hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 437-447
+.. GENERATED FROM PYTHON SOURCE LINES 439-449
 
 .. code-block:: default
 
@@ -1343,7 +1345,7 @@ from tapping on the right hand.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 448-462
+.. GENERATED FROM PYTHON SOURCE LINES 450-464
 
 Export Results
 ---------------
@@ -1360,7 +1362,7 @@ The long to wide conversion also adds some additional derived data, such as
 if a significant response (p<0.05) was observed, which sensor and detector is
 in the channel, which chroma, etc.
 
-.. GENERATED FROM PYTHON SOURCE LINES 462-466
+.. GENERATED FROM PYTHON SOURCE LINES 464-468
 
 .. code-block:: default
 
@@ -1375,7 +1377,7 @@ in the channel, which chroma, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 467-474
+.. GENERATED FROM PYTHON SOURCE LINES 469-476
 
 Determine true and false positive rates
 ---------------------------------------
@@ -1385,7 +1387,7 @@ positive rates. Note: optodes cover a greater region than just the
 motor cortex, so we dont expect 100% of channels to detect responses to
 the tapping, but we do expect 5% or less for the false positive rate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 474-481
+.. GENERATED FROM PYTHON SOURCE LINES 476-483
 
 .. code-block:: default
 
@@ -1456,16 +1458,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
         <tr>
           <th rowspan="2" valign="top">Control</th>
           <th>hbo</th>
-          <td>1.084555e-06</td>
-          <td>-3.386871e-08</td>
+          <td>1.054770e-06</td>
+          <td>-1.599538e-07</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.00</td>
         </tr>
         <tr>
           <th>hbr</th>
-          <td>6.083848e-07</td>
-          <td>1.348140e-08</td>
+          <td>5.952317e-07</td>
+          <td>-1.648622e-08</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.00</td>
@@ -1473,16 +1475,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
         <tr>
           <th rowspan="2" valign="top">Tapping/Left</th>
           <th>hbo</th>
-          <td>1.100472e-06</td>
-          <td>6.898189e-06</td>
+          <td>1.070265e-06</td>
+          <td>6.881075e-06</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.90</td>
         </tr>
         <tr>
           <th>hbr</th>
-          <td>6.173233e-07</td>
-          <td>-3.039020e-06</td>
+          <td>6.039312e-07</td>
+          <td>-2.958917e-06</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.75</td>
@@ -1490,16 +1492,16 @@ the tapping, but we do expect 5% or less for the false positive rate.
         <tr>
           <th rowspan="2" valign="top">Tapping/Right</th>
           <th>hbo</th>
-          <td>1.103144e-06</td>
-          <td>7.604877e-06</td>
+          <td>1.073288e-06</td>
+          <td>7.809773e-06</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
-          <td>0.90</td>
+          <td>0.95</td>
         </tr>
         <tr>
           <th>hbr</th>
-          <td>6.188749e-07</td>
-          <td>-2.841256e-06</td>
+          <td>6.055956e-07</td>
+          <td>-2.910487e-06</td>
           <td>5.561117e+17</td>
           <td>6.156712e+17</td>
           <td>0.80</td>
@@ -1514,9 +1516,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.052 seconds)
+   **Total running time of the script:** ( 0 minutes  18.730 seconds)
 
-**Estimated memory usage:**  323 MB
+**Estimated memory usage:**  466 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:

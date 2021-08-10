@@ -165,7 +165,7 @@ We first define the root directory of our dataset.
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    16.5kB/s]      0%|          | Downloading : 1.00M/0.00 [00:00<00:00,    2.11MB/s]      0%|          | Downloading : 3.00M/0.00 [00:00<00:00,    6.23MB/s]      0%|          | Downloading : 6.00M/0.00 [00:00<00:00,    12.2MB/s]      0%|          | Downloading : 10.0M/0.00 [00:00<00:00,    12.0MB/s]      0%|          | Downloading : 17.0M/0.00 [00:01<00:00,    14.0MB/s]      0%|          | Downloading : 23.0M/0.00 [00:01<00:00,    19.2MB/s]      0%|          | Downloading : 27.0M/0.00 [00:01<00:00,    15.8MB/s]      0%|          | Downloading : 33.0M/0.00 [00:02<00:00,    14.9MB/s]      0%|          | Downloading : 39.0M/0.00 [00:02<00:00,    17.9MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    18.1MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    15.5kB/s]      0%|          | Downloading : 32.0k/0.00 [00:00<00:00,    60.6kB/s]      0%|          | Downloading : 48.0k/0.00 [00:00<00:00,    87.3kB/s]      0%|          | Downloading : 96.0k/0.00 [00:00<00:00,     172kB/s]      0%|          | Downloading : 128k/0.00 [00:00<00:00,     222kB/s]       0%|          | Downloading : 224k/0.00 [00:00<00:00,     385kB/s]      0%|          | Downloading : 416k/0.00 [00:00<00:00,     711kB/s]      0%|          | Downloading : 800k/0.00 [00:00<00:00,    1.36MB/s]      0%|          | Downloading : 1.53M/0.00 [00:00<00:00,    2.65MB/s]      0%|          | Downloading : 3.03M/0.00 [00:00<00:00,    5.19MB/s]      0%|          | Downloading : 6.03M/0.00 [00:00<00:00,    10.1MB/s]      0%|          | Downloading : 8.03M/0.00 [00:00<00:00,    13.0MB/s]      0%|          | Downloading : 10.0M/0.00 [00:01<00:00,    11.4MB/s]      0%|          | Downloading : 13.0M/0.00 [00:01<00:00,    14.7MB/s]      0%|          | Downloading : 15.0M/0.00 [00:01<00:00,    16.7MB/s]      0%|          | Downloading : 17.0M/0.00 [00:01<00:00,    13.8MB/s]      0%|          | Downloading : 20.0M/0.00 [00:01<00:00,    16.2MB/s]      0%|          | Downloading : 26.0M/0.00 [00:02<00:00,    15.4MB/s]      0%|          | Downloading : 28.0M/0.00 [00:02<00:00,    16.6MB/s]      0%|          | Downloading : 30.0M/0.00 [00:02<00:00,    17.7MB/s]      0%|          | Downloading : 32.0M/0.00 [00:02<00:00,    18.8MB/s]      0%|          | Downloading : 34.0M/0.00 [00:02<00:00,    15.7MB/s]      0%|          | Downloading : 37.0M/0.00 [00:02<00:00,    17.3MB/s]      0%|          | Downloading : 39.0M/0.00 [00:02<00:00,    18.3MB/s]      0%|          | Downloading : 41.0M/0.00 [00:02<00:00,    19.3MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.6MB/s]
     Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -447,7 +447,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="budj2x"></div>
+              <div id="n2KQfK"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -498,7 +498,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("budj2x");
+           var plotContainer = document.getElementById("n2KQfK");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -784,7 +784,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="FTBHyO"></div>
+              <div id="l03SRQ"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -858,7 +858,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("FTBHyO");
+           var plotContainer = document.getElementById("l03SRQ");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -1670,9 +1670,9 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  40.360 seconds)
+   **Total running time of the script:** ( 0 minutes  40.944 seconds)
 
-**Estimated memory usage:**  658 MB
+**Estimated memory usage:**  474 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
