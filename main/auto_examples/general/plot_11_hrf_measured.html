@@ -286,6 +286,14 @@ for a comparison of the epoching and GLM approaches.</p>
 <li><p><a class="reference internal" href="#determine-true-and-false-positive-rates" id="id13">Determine true and false positive rates</a></p></li>
 </ul>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parts of this tutorial require the latest development version of MNE-Python. See these instructions for
+<a class="reference external" href="https://mne.tools/dev/install/updating.html">how to upgrade</a>.
+But basically boils down to running
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">--no-deps</span> <span class="pre">https://github.com/mne-tools/mne-python/archive/main.zip</span></code>.
+Sections of the code that require this version will be noted below.</p>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 9</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
@@ -339,22 +347,30 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  1%|          | Downloading : 120k/17.1M [00:00&lt;00:02,    7.22MB/s]
-  6%|5         | Downloading : 0.99M/17.1M [00:00&lt;00:00,    25.3MB/s]
- 15%|#4        | Downloading : 2.49M/17.1M [00:00&lt;00:00,    39.0MB/s]
- 20%|##        | Downloading : 3.49M/17.1M [00:00&lt;00:00,    43.4MB/s]
- 32%|###2      | Downloading : 5.49M/17.1M [00:00&lt;00:00,    51.8MB/s]
- 38%|###8      | Downloading : 6.49M/17.1M [00:00&lt;00:00,    53.2MB/s]
- 44%|####3     | Downloading : 7.49M/17.1M [00:00&lt;00:00,    54.2MB/s]
- 50%|####9     | Downloading : 8.49M/17.1M [00:00&lt;00:00,    52.7MB/s]
- 56%|#####5    | Downloading : 9.49M/17.1M [00:00&lt;00:00,    53.4MB/s]
- 62%|######1   | Downloading : 10.5M/17.1M [00:00&lt;00:00,    54.3MB/s]
- 67%|######7   | Downloading : 11.5M/17.1M [00:00&lt;00:00,    55.1MB/s]
- 73%|#######3  | Downloading : 12.5M/17.1M [00:00&lt;00:00,    54.9MB/s]
- 79%|#######9  | Downloading : 13.5M/17.1M [00:00&lt;00:00,    55.1MB/s]
- 91%|######### | Downloading : 15.5M/17.1M [00:00&lt;00:00,    57.0MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    58.5MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    56.6MB/s]
+  1%|          | Downloading : 120k/17.1M [00:00&lt;00:11,    1.54MB/s]
+  2%|1         | Downloading : 312k/17.1M [00:00&lt;00:05,    3.04MB/s]
+  3%|2         | Downloading : 440k/17.1M [00:00&lt;00:04,    3.70MB/s]
+  3%|3         | Downloading : 568k/17.1M [00:00&lt;00:04,    4.24MB/s]
+  4%|3         | Downloading : 696k/17.1M [00:00&lt;00:03,    4.64MB/s]
+  5%|4         | Downloading : 824k/17.1M [00:00&lt;00:03,    4.96MB/s]
+  5%|5         | Downloading : 952k/17.1M [00:00&lt;00:03,    5.23MB/s]
+  7%|6         | Downloading : 1.18M/17.1M [00:00&lt;00:02,    6.00MB/s]
+  9%|9         | Downloading : 1.55M/17.1M [00:00&lt;00:02,    7.54MB/s]
+ 12%|#2        | Downloading : 2.05M/17.1M [00:00&lt;00:01,    9.15MB/s]
+ 15%|#4        | Downloading : 2.55M/17.1M [00:00&lt;00:01,    10.5MB/s]
+ 18%|#7        | Downloading : 3.05M/17.1M [00:00&lt;00:01,    12.0MB/s]
+ 24%|##3       | Downloading : 4.05M/17.1M [00:00&lt;00:00,    15.0MB/s]
+ 33%|###2      | Downloading : 5.55M/17.1M [00:00&lt;00:00,    19.2MB/s]
+ 38%|###8      | Downloading : 6.55M/17.1M [00:00&lt;00:00,    21.9MB/s]
+ 44%|####4     | Downloading : 7.55M/17.1M [00:00&lt;00:00,    24.5MB/s]
+ 50%|#####     | Downloading : 8.55M/17.1M [00:00&lt;00:00,    26.2MB/s]
+ 56%|#####6    | Downloading : 9.55M/17.1M [00:00&lt;00:00,    27.9MB/s]
+ 68%|######7   | Downloading : 11.6M/17.1M [00:00&lt;00:00,    31.7MB/s]
+ 74%|#######3  | Downloading : 12.6M/17.1M [00:00&lt;00:00,    33.0MB/s]
+ 79%|#######9  | Downloading : 13.6M/17.1M [00:00&lt;00:00,    34.0MB/s]
+ 91%|#########1| Downloading : 15.6M/17.1M [00:00&lt;00:00,    37.2MB/s]
+ 97%|#########7| Downloading : 16.6M/17.1M [00:00&lt;00:00,    37.3MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    30.5MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -429,6 +445,13 @@ Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 <br /></div>
 <div class="section" id="clean-up-annotations-before-analysis">
 <h2><a class="toc-backref" href="#id3">Clean up annotations before analysis</a><a class="headerlink" href="#clean-up-annotations-before-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="sidebar-title">Requires MNE-Python development version</p>
+<p>This section of code requires the latest development version of MNE-Python.
+See instructions at the top of the page on how to upgrade.
+Alternatively you can use the more cumbersome version of the code as shown
+<a class="reference external" href="https://github.com/mne-tools/mne-nirs/blob/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_11_hrf_measured.py#L92-L104">in the old documentation</a>.</p>
+</div>
 <p>Next we update the annotations by assigning names to each trigger ID.
 Then we crop the recording to the section containing our
 experimental conditions.</p>
@@ -893,7 +916,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df[&quot;theta&quot;] = df[&quot;theta&quot;] * 1e6
 
-&lt;mne.viz._brain._brain.Brain object at 0x7fbd3f51e820&gt;
+&lt;mne.viz._brain._brain.Brain object at 0x7f772e5d2550&gt;
 </pre></div>
 </div>
 </div>
@@ -1259,8 +1282,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.838 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  348 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.130 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  314 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-11-hrf-measured-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_11_hrf_measured.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
