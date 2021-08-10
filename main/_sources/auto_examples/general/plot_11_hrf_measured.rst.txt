@@ -134,7 +134,7 @@ to meet github memory constraints.
     Using default location ~/mne_data for fnirs_motor...
     Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      1%|          | Downloading : 120k/17.1M [00:00<00:11,    1.54MB/s]      2%|1         | Downloading : 312k/17.1M [00:00<00:05,    3.04MB/s]      3%|2         | Downloading : 440k/17.1M [00:00<00:04,    3.70MB/s]      3%|3         | Downloading : 568k/17.1M [00:00<00:04,    4.24MB/s]      4%|3         | Downloading : 696k/17.1M [00:00<00:03,    4.64MB/s]      5%|4         | Downloading : 824k/17.1M [00:00<00:03,    4.96MB/s]      5%|5         | Downloading : 952k/17.1M [00:00<00:03,    5.23MB/s]      7%|6         | Downloading : 1.18M/17.1M [00:00<00:02,    6.00MB/s]      9%|9         | Downloading : 1.55M/17.1M [00:00<00:02,    7.54MB/s]     12%|#2        | Downloading : 2.05M/17.1M [00:00<00:01,    9.15MB/s]     15%|#4        | Downloading : 2.55M/17.1M [00:00<00:01,    10.5MB/s]     18%|#7        | Downloading : 3.05M/17.1M [00:00<00:01,    12.0MB/s]     24%|##3       | Downloading : 4.05M/17.1M [00:00<00:00,    15.0MB/s]     33%|###2      | Downloading : 5.55M/17.1M [00:00<00:00,    19.2MB/s]     38%|###8      | Downloading : 6.55M/17.1M [00:00<00:00,    21.9MB/s]     44%|####4     | Downloading : 7.55M/17.1M [00:00<00:00,    24.5MB/s]     50%|#####     | Downloading : 8.55M/17.1M [00:00<00:00,    26.2MB/s]     56%|#####6    | Downloading : 9.55M/17.1M [00:00<00:00,    27.9MB/s]     68%|######7   | Downloading : 11.6M/17.1M [00:00<00:00,    31.7MB/s]     74%|#######3  | Downloading : 12.6M/17.1M [00:00<00:00,    33.0MB/s]     79%|#######9  | Downloading : 13.6M/17.1M [00:00<00:00,    34.0MB/s]     91%|#########1| Downloading : 15.6M/17.1M [00:00<00:00,    37.2MB/s]     97%|#########7| Downloading : 16.6M/17.1M [00:00<00:00,    37.3MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    30.5MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      0%|          | Downloading : 56.0k/17.1M [00:00<00:05,    3.39MB/s]      1%|1         | Downloading : 184k/17.1M [00:00<00:03,    5.19MB/s]       3%|3         | Downloading : 568k/17.1M [00:00<00:01,    10.8MB/s]      9%|9         | Downloading : 1.55M/17.1M [00:00<00:00,    23.1MB/s]     27%|##6       | Downloading : 4.55M/17.1M [00:00<00:00,    32.7MB/s]     50%|#####     | Downloading : 8.55M/17.1M [00:00<00:00,    40.1MB/s]     62%|######1   | Downloading : 10.6M/17.1M [00:00<00:00,    46.3MB/s]     74%|#######3  | Downloading : 12.6M/17.1M [00:00<00:00,    52.2MB/s]     97%|#########7| Downloading : 16.6M/17.1M [00:00<00:00,    62.3MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    59.6MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -481,7 +481,7 @@ The last columns illustrate the short channel signals.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 220-232
+.. GENERATED FROM PYTHON SOURCE LINES 220-238
 
 Examine expected response
 -------------------------
@@ -496,12 +496,18 @@ we observe that each time a stimulus is presented there is an expected
 brain response that lags the stimulus onset and consists of a large positive
 component followed by an undershoot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 232-242
+In this example the second trigger (index 1) corresponds to the ``Tapping/Left``
+condition in the design matrix, so we plot those below. In your data the mapping
+may be different, so you may need to alter either the ``s`` index or condition
+name. Note however, that this is just for visualisation and does not affect
+the results below.
+
+.. GENERATED FROM PYTHON SOURCE LINES 238-248
 
 .. code-block:: default
 
 
-    s = mne_nirs.experimental_design.create_boxcar(raw_intensity)
+    s = mne_nirs.experimental_design.create_boxcar(raw_intensity, stim_dur=5.0)
     plt.plot(raw_intensity.times, s[:, 1])
     plt.plot(design_matrix['Tapping/Left'])
     plt.xlim(180, 300)
@@ -531,7 +537,7 @@ component followed by an undershoot.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 243-255
+.. GENERATED FROM PYTHON SOURCE LINES 249-261
 
 Fit GLM to subset of data and estimate response for each experimental condition
 -------------------------------------------------------------------------------
@@ -546,7 +552,7 @@ We run a GLM fit for the data and experiment matrix.
 First we analyse just the first two channels which correspond to HbO and HbR
 of a single source detector pair.
 
-.. GENERATED FROM PYTHON SOURCE LINES 256-260
+.. GENERATED FROM PYTHON SOURCE LINES 262-266
 
 .. code-block:: default
 
@@ -561,13 +567,13 @@ of a single source detector pair.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 261-264
+.. GENERATED FROM PYTHON SOURCE LINES 267-270
 
 This returns a GLM regression estimate for each channel.
 This data is stored in a dedicated type.
 You can view an overview of the estimates by addressing the variable:
 
-.. GENERATED FROM PYTHON SOURCE LINES 265-268
+.. GENERATED FROM PYTHON SOURCE LINES 271-274
 
 .. code-block:: default
 
@@ -589,7 +595,7 @@ You can view an overview of the estimates by addressing the variable:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 269-274
+.. GENERATED FROM PYTHON SOURCE LINES 275-280
 
 As with other MNE types you can use the `pick` function.
 To query the mean square error of a single channel you would call.
@@ -597,7 +603,7 @@ To query the mean square error of a single channel you would call.
 Note: as we wish to retain both channels for further the analysis below,
 we operate on a copy to demonstrate this channel picking functionality.
 
-.. GENERATED FROM PYTHON SOURCE LINES 275-278
+.. GENERATED FROM PYTHON SOURCE LINES 281-284
 
 .. code-block:: default
 
@@ -619,7 +625,7 @@ we operate on a copy to demonstrate this channel picking functionality.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 279-284
+.. GENERATED FROM PYTHON SOURCE LINES 285-290
 
 Underlying the data for each channel is a standard
 `Nilearn RegressionResults object <https://nilearn.github.io/modules/generated/nilearn.glm.RegressionResults.html>`_
@@ -627,7 +633,7 @@ object. These objects are rich with information that can be requested
 from the object, for example to determine the mean square error of the
 estimates for two channels you would call:
 
-.. GENERATED FROM PYTHON SOURCE LINES 285-288
+.. GENERATED FROM PYTHON SOURCE LINES 291-294
 
 .. code-block:: default
 
@@ -649,13 +655,13 @@ estimates for two channels you would call:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 289-292
+.. GENERATED FROM PYTHON SOURCE LINES 295-298
 
 And we can chain the methods to quickly access required details.
 For example, to determine the MSE for channel `S1` `D1` for the hbr type
 you would call:
 
-.. GENERATED FROM PYTHON SOURCE LINES 293-297
+.. GENERATED FROM PYTHON SOURCE LINES 299-303
 
 .. code-block:: default
 
@@ -678,7 +684,7 @@ you would call:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 298-303
+.. GENERATED FROM PYTHON SOURCE LINES 304-309
 
 Due to the richness of the objects we provide a function to
 extract commonly used information and put it in a convenient dataframe/table.
@@ -686,7 +692,7 @@ Below this is demonstrated and then we just display the first 9 rows of the
 table which correspond to the 9 components of the design matrix for the
 first channel.
 
-.. GENERATED FROM PYTHON SOURCE LINES 304-307
+.. GENERATED FROM PYTHON SOURCE LINES 310-313
 
 .. code-block:: default
 
@@ -876,7 +882,7 @@ first channel.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 308-315
+.. GENERATED FROM PYTHON SOURCE LINES 314-321
 
 We then display the results using the scatter plot function.
 Note that the control condition sits
@@ -886,7 +892,7 @@ Further, we note that for this channel the response to tapping on the
 right hand is larger than the left. And the values are similar to what
 is seen in the epoching tutorial.
 
-.. GENERATED FROM PYTHON SOURCE LINES 316-320
+.. GENERATED FROM PYTHON SOURCE LINES 322-326
 
 .. code-block:: default
 
@@ -914,7 +920,7 @@ is seen in the epoching tutorial.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 321-330
+.. GENERATED FROM PYTHON SOURCE LINES 327-336
 
 Fit GLM to all data and view topographic distribution
 -----------------------------------------------------
@@ -926,7 +932,7 @@ that activation is largest
 contralateral to the tapping side. Also note that HbR tends to be the
 negative of HbO as expected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 330-335
+.. GENERATED FROM PYTHON SOURCE LINES 336-341
 
 .. code-block:: default
 
@@ -955,7 +961,7 @@ negative of HbO as expected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 336-355
+.. GENERATED FROM PYTHON SOURCE LINES 342-361
 
 Note that the topographic visualisation is a high level representation
 of the underlying data. This visual representation fits a smoothed surface
@@ -977,7 +983,7 @@ When each hemisphere is plotted independently (right) it becomes immediately
 apparent that the data does not indicate that activity spreads across
 the center of the head.
 
-.. GENERATED FROM PYTHON SOURCE LINES 356-371
+.. GENERATED FROM PYTHON SOURCE LINES 362-377
 
 .. code-block:: default
 
@@ -1016,12 +1022,12 @@ the center of the head.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 372-374
+.. GENERATED FROM PYTHON SOURCE LINES 378-380
 
 Another way to view the data is to project the GLM estimates to the nearest
 cortical surface
 
-.. GENERATED FROM PYTHON SOURCE LINES 375-379
+.. GENERATED FROM PYTHON SOURCE LINES 381-385
 
 .. code-block:: default
 
@@ -1051,11 +1057,11 @@ cortical surface
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       df["theta"] = df["theta"] * 1e6
 
-    <mne.viz._brain._brain.Brain object at 0x7f772e5d2550>
+    <mne.viz._brain._brain.Brain object at 0x7fe1fb2a6340>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 380-399
+.. GENERATED FROM PYTHON SOURCE LINES 386-405
 
 Analyse regions of interest
 ---------------------------
@@ -1077,7 +1083,7 @@ Region of interest analysis can be more robust than single channel analysis.
 The fOLD toolbox can be used to assist in the design of ROIs.
 And consideration should be paid to ensure optimal size ROIs are selected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 399-413
+.. GENERATED FROM PYTHON SOURCE LINES 405-419
 
 .. code-block:: default
 
@@ -1102,13 +1108,13 @@ And consideration should be paid to ensure optimal size ROIs are selected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 414-417
+.. GENERATED FROM PYTHON SOURCE LINES 420-423
 
 As with the single channel results above, this is placed in a tidy dataframe
 which contains conveniently extracted information, but now for the region
 of interest.
 
-.. GENERATED FROM PYTHON SOURCE LINES 417-421
+.. GENERATED FROM PYTHON SOURCE LINES 423-427
 
 .. code-block:: default
 
@@ -1292,7 +1298,7 @@ of interest.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 422-430
+.. GENERATED FROM PYTHON SOURCE LINES 428-436
 
 Compute contrasts
 -----------------
@@ -1303,7 +1309,7 @@ and plot it.
 Here we contrast the response to tapping on the left hand with the response
 from tapping on the right hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 431-441
+.. GENERATED FROM PYTHON SOURCE LINES 437-447
 
 .. code-block:: default
 
@@ -1337,7 +1343,7 @@ from tapping on the right hand.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 442-456
+.. GENERATED FROM PYTHON SOURCE LINES 448-462
 
 Export Results
 ---------------
@@ -1354,7 +1360,7 @@ The long to wide conversion also adds some additional derived data, such as
 if a significant response (p<0.05) was observed, which sensor and detector is
 in the channel, which chroma, etc.
 
-.. GENERATED FROM PYTHON SOURCE LINES 456-460
+.. GENERATED FROM PYTHON SOURCE LINES 462-466
 
 .. code-block:: default
 
@@ -1369,7 +1375,7 @@ in the channel, which chroma, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 461-468
+.. GENERATED FROM PYTHON SOURCE LINES 467-474
 
 Determine true and false positive rates
 ---------------------------------------
@@ -1379,7 +1385,7 @@ positive rates. Note: optodes cover a greater region than just the
 motor cortex, so we dont expect 100% of channels to detect responses to
 the tapping, but we do expect 5% or less for the false positive rate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 468-475
+.. GENERATED FROM PYTHON SOURCE LINES 474-481
 
 .. code-block:: default
 
@@ -1508,9 +1514,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.130 seconds)
+   **Total running time of the script:** ( 0 minutes  18.052 seconds)
 
-**Estimated memory usage:**  314 MB
+**Estimated memory usage:**  323 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:

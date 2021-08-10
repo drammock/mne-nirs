@@ -347,30 +347,16 @@ Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
 Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&amp;action=download&amp;direct (17.1 MB)
 
   0%|          | Downloading : 0.00/17.1M [00:00&lt;?,        ?B/s]
-  1%|          | Downloading : 120k/17.1M [00:00&lt;00:11,    1.54MB/s]
-  2%|1         | Downloading : 312k/17.1M [00:00&lt;00:05,    3.04MB/s]
-  3%|2         | Downloading : 440k/17.1M [00:00&lt;00:04,    3.70MB/s]
-  3%|3         | Downloading : 568k/17.1M [00:00&lt;00:04,    4.24MB/s]
-  4%|3         | Downloading : 696k/17.1M [00:00&lt;00:03,    4.64MB/s]
-  5%|4         | Downloading : 824k/17.1M [00:00&lt;00:03,    4.96MB/s]
-  5%|5         | Downloading : 952k/17.1M [00:00&lt;00:03,    5.23MB/s]
-  7%|6         | Downloading : 1.18M/17.1M [00:00&lt;00:02,    6.00MB/s]
-  9%|9         | Downloading : 1.55M/17.1M [00:00&lt;00:02,    7.54MB/s]
- 12%|#2        | Downloading : 2.05M/17.1M [00:00&lt;00:01,    9.15MB/s]
- 15%|#4        | Downloading : 2.55M/17.1M [00:00&lt;00:01,    10.5MB/s]
- 18%|#7        | Downloading : 3.05M/17.1M [00:00&lt;00:01,    12.0MB/s]
- 24%|##3       | Downloading : 4.05M/17.1M [00:00&lt;00:00,    15.0MB/s]
- 33%|###2      | Downloading : 5.55M/17.1M [00:00&lt;00:00,    19.2MB/s]
- 38%|###8      | Downloading : 6.55M/17.1M [00:00&lt;00:00,    21.9MB/s]
- 44%|####4     | Downloading : 7.55M/17.1M [00:00&lt;00:00,    24.5MB/s]
- 50%|#####     | Downloading : 8.55M/17.1M [00:00&lt;00:00,    26.2MB/s]
- 56%|#####6    | Downloading : 9.55M/17.1M [00:00&lt;00:00,    27.9MB/s]
- 68%|######7   | Downloading : 11.6M/17.1M [00:00&lt;00:00,    31.7MB/s]
- 74%|#######3  | Downloading : 12.6M/17.1M [00:00&lt;00:00,    33.0MB/s]
- 79%|#######9  | Downloading : 13.6M/17.1M [00:00&lt;00:00,    34.0MB/s]
- 91%|#########1| Downloading : 15.6M/17.1M [00:00&lt;00:00,    37.2MB/s]
- 97%|#########7| Downloading : 16.6M/17.1M [00:00&lt;00:00,    37.3MB/s]
-100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    30.5MB/s]
+  0%|          | Downloading : 56.0k/17.1M [00:00&lt;00:05,    3.39MB/s]
+  1%|1         | Downloading : 184k/17.1M [00:00&lt;00:03,    5.19MB/s]
+  3%|3         | Downloading : 568k/17.1M [00:00&lt;00:01,    10.8MB/s]
+  9%|9         | Downloading : 1.55M/17.1M [00:00&lt;00:00,    23.1MB/s]
+ 27%|##6       | Downloading : 4.55M/17.1M [00:00&lt;00:00,    32.7MB/s]
+ 50%|#####     | Downloading : 8.55M/17.1M [00:00&lt;00:00,    40.1MB/s]
+ 62%|######1   | Downloading : 10.6M/17.1M [00:00&lt;00:00,    46.3MB/s]
+ 74%|#######3  | Downloading : 12.6M/17.1M [00:00&lt;00:00,    52.2MB/s]
+ 97%|#########7| Downloading : 16.6M/17.1M [00:00&lt;00:00,    62.3MB/s]
+100%|##########| Downloading : 17.1M/17.1M [00:00&lt;00:00,    59.6MB/s]
 Verifying hash c4935d19ddab35422a69f3326a01fef8.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
 (please be patient, this can take some time)
@@ -580,7 +566,12 @@ We also view the expected neural response using the HRF specified above,
 we observe that each time a stimulus is presented there is an expected
 brain response that lags the stimulus onset and consists of a large positive
 component followed by an undershoot.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">s</span></a> <span class="o">=</span> <a href="../../generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar" title="mne_nirs.experimental_design.create_boxcar" class="sphx-glr-backref-module-mne_nirs-experimental_design sphx-glr-backref-type-py-function"><span class="n">mne_nirs</span><span class="o">.</span><span class="n">experimental_design</span><span class="o">.</span><span class="n">create_boxcar</span></a><span class="p">(</span><span class="n">raw_intensity</span><span class="p">)</span>
+<p>In this example the second trigger (index 1) corresponds to the <code class="docutils literal notranslate"><span class="pre">Tapping/Left</span></code>
+condition in the design matrix, so we plot those below. In your data the mapping
+may be different, so you may need to alter either the <code class="docutils literal notranslate"><span class="pre">s</span></code> index or condition
+name. Note however, that this is just for visualisation and does not affect
+the results below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">s</span></a> <span class="o">=</span> <a href="../../generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar" title="mne_nirs.experimental_design.create_boxcar" class="sphx-glr-backref-module-mne_nirs-experimental_design sphx-glr-backref-type-py-function"><span class="n">mne_nirs</span><span class="o">.</span><span class="n">experimental_design</span><span class="o">.</span><span class="n">create_boxcar</span></a><span class="p">(</span><span class="n">raw_intensity</span><span class="p">,</span> <span class="n">stim_dur</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://mne.tools/stable/generated/mne.io.BaseRaw.html#mne.io.BaseRaw.times" title="mne.io.BaseRaw.times" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-property"><span class="n">raw_intensity</span><span class="o">.</span><span class="n">times</span></a><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">s</span></a><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">design_matrix</span><span class="p">[</span><span class="s1">&#39;Tapping/Left&#39;</span><span class="p">])</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlim.html#matplotlib.pyplot.xlim" title="matplotlib.pyplot.xlim" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span></a><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
@@ -916,7 +907,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df[&quot;theta&quot;] = df[&quot;theta&quot;] * 1e6
 
-&lt;mne.viz._brain._brain.Brain object at 0x7f772e5d2550&gt;
+&lt;mne.viz._brain._brain.Brain object at 0x7fe1fb2a6340&gt;
 </pre></div>
 </div>
 </div>
@@ -1282,8 +1273,8 @@ the tapping, but we do expect 5% or less for the false positive rate.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.130 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  314 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.052 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  323 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-11-hrf-measured-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_11_hrf_measured.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
