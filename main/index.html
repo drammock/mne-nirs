@@ -181,6 +181,11 @@
      Alternative installation options
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upgrading-your-software-version">
+     Upgrading your software version
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -235,14 +240,19 @@
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>To install python and MNE follow <a class="reference external" href="https://mne.tools/dev/install/mne_python.html">these instructions</a>.
+<p>MNE-NIRS requires you install Python and MNE-Python before installing MNE-NIRS.
+To install Python and MNE-Python follow <a class="reference external" href="https://mne.tools/dev/install/mne_python.html">these instructions</a>.
 Some NIRS functionality is only available in the latest version of MNE-Python,
-so I suggest installing the latest development version <a class="reference external" href="https://mne.tools/dev/install/advanced.html#using-the-development-version">as described here</a>.</p>
-<p>Run the following code to install MNE-NIRS.</p>
+so I suggest installing the latest development version <a class="reference external" href="https://mne.tools/dev/install/advanced.html#other-python-distributions">as described here</a>.</p>
+<p>Run the following code to install MNE-NIRS:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; pip install mne-nirs
 </pre></div>
 </div>
-<p>To load MNE-NIRS add these lines to your script.</p>
+<p>Or if you wish to run the latest development version of MNE-NIRS (which I strongly suggest):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; pip install https://github.com/mne-tools/mne-nirs/archive/main.zip
+</pre></div>
+</div>
+<p>To load MNE-NIRS add these lines to your script:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mne</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mne_nirs</span>
 </pre></div>
@@ -267,6 +277,13 @@ Using docker provides a notebook server running on your own computer,
 it comes pre-prepared with MNE-Python, MNE-NIRS, and other useful packages installed.
 This approach gets you up and running with a single command, and provides
 the greatest flexibility without installing python.</p>
+</div>
+<div class="section" id="upgrading-your-software-version">
+<h3>Upgrading your software version<a class="headerlink" href="#upgrading-your-software-version" title="Permalink to this headline">¶</a></h3>
+<p>See the
+<a class="reference external" href="https://mne.tools/dev/install/updating.html">MNE-Python instructions for how to update</a>
+the MNE-Python version.
+Similarly, you can update MNE-NIRS by running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">--no-deps</span> <span class="pre">https://github.com/mne-tools/mne-nirs/archive/main.zip</span></code></p>
 </div>
 </div>
 <div class="section" id="acknowledgements">
