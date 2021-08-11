@@ -259,19 +259,22 @@
 <tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.plot_topo.html#mne_nirs.statistics.RegressionResults.plot_topo" title="mne_nirs.statistics.RegressionResults.plot_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_topo</span></code></a>([conditions, axes, vmin, vmax, …])</p></td>
 <td><p>Plot 2D topography of GLM data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.scatter.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([conditions, exclude_no_interest, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.save.html#mne_nirs.statistics.RegressionResults.save" title="mne_nirs.statistics.RegressionResults.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(fname[, overwrite])</p></td>
+<td><p>Save GLM results to disk.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.scatter.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([conditions, exclude_no_interest, …])</p></td>
 <td><p>Scatter plot of the GLM results.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.surface_projection.html#mne_nirs.statistics.RegressionResults.surface_projection" title="mne_nirs.statistics.RegressionResults.surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_projection</span></code></a>([chroma, condition, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.surface_projection.html#mne_nirs.statistics.RegressionResults.surface_projection" title="mne_nirs.statistics.RegressionResults.surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_projection</span></code></a>([chroma, condition, …])</p></td>
 <td><p>Project GLM results on to the surface of the brain.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.theta" title="mne_nirs.statistics.RegressionResults.theta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">theta</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.theta" title="mne_nirs.statistics.RegressionResults.theta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">theta</span></code></a>()</p></td>
 <td><p>Return the GLM theta results.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe.html#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe</span></code></a>([order])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe.html#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe</span></code></a>([order])</p></td>
 <td><p>Return a tidy dataframe representing the GLM results.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest.html#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe_region_of_interest</span></code></a>(group_by, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest.html#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe_region_of_interest</span></code></a>(group_by, …)</p></td>
 <td><p>Region of interest results as a dataframe.</p></td>
 </tr>
 </tbody>
@@ -503,6 +506,24 @@ and hbr (bottom row).</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="mne_nirs.statistics.RegressionResults.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save GLM results to disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fname</strong><span class="classifier">str</span></dt><dd><p>The filename to use to write the HDF5 data.
+Should end in <code class="docutils literal notranslate"><span class="pre">'glm.h5'</span></code>.</p>
+</dd>
+<dt><strong>overwrite</strong><span class="classifier">bool</span></dt><dd><p>If True (default False), overwrite the destination file if it
+exists.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="mne_nirs.statistics.RegressionResults.scatter">
 <span class="sig-name descname"><span class="pre">scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conditions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_no_interest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_interest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.scatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scatter plot of the GLM results.</p>
@@ -705,6 +726,10 @@ info[“subject_info”].</p>
 </div><div class="sphx-glr-thumbcontainer" tooltip="In this example we analyse data from a real multichannel functional near-infrared spectroscopy ..."><div class="figure align-default" id="id2">
 <img alt="GLM Analysis (Measured)" src="../_images/sphx_glr_plot_11_hrf_measured_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/general/plot_11_hrf_measured.html#sphx-glr-auto-examples-general-plot-11-hrf-measured-py"><span class="std std-ref">GLM Analysis (Measured)</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This is an example of how to save and load functional near-infrared spectroscopy (fNIRS) GLM re..."><div class="figure align-default" id="id3">
+<img alt="Save and load GLM results" src="../_images/sphx_glr_plot_80_save_read_glm_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="../auto_examples/general/plot_80_save_read_glm.html#sphx-glr-auto-examples-general-plot-80-save-read-glm-py"><span class="std std-ref">Save and load GLM results</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="sphx-glr-clear"></div></div>
 </div>

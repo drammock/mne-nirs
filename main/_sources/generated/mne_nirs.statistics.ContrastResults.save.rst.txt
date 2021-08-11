@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.ContrastResults.save
+=========================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: ContrastResults.save

@@ -1,0 +1,6 @@
+﻿mne\_nirs.statistics.RegressionResults.save
+===========================================
+
+.. currentmodule:: mne_nirs.statistics
+
+.. automethod:: RegressionResults.save
