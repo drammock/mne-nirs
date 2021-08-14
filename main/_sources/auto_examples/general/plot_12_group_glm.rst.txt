@@ -175,8 +175,8 @@ In this example we use the example dataset ``fnirs_motor_group``.
  .. code-block:: none
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
-    Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    14.9kB/s]      0%|          | Downloading : 128k/0.00 [00:00<00:00,     241kB/s]       0%|          | Downloading : 1.06M/0.00 [00:00<00:00,    2.08MB/s]      0%|          | Downloading : 2.06M/0.00 [00:00<00:00,    3.90MB/s]      0%|          | Downloading : 5.06M/0.00 [00:00<00:00,    8.74MB/s]      0%|          | Downloading : 7.06M/0.00 [00:00<00:00,    11.1MB/s]      0%|          | Downloading : 9.06M/0.00 [00:00<00:00,    10.8MB/s]      0%|          | Downloading : 12.1M/0.00 [00:01<00:00,    13.6MB/s]      0%|          | Downloading : 14.1M/0.00 [00:01<00:00,    15.0MB/s]      0%|          | Downloading : 16.1M/0.00 [00:01<00:00,    16.2MB/s]      0%|          | Downloading : 18.1M/0.00 [00:01<00:00,    14.6MB/s]      0%|          | Downloading : 19.1M/0.00 [00:01<00:00,    14.8MB/s]      0%|          | Downloading : 22.1M/0.00 [00:01<00:00,    16.6MB/s]      0%|          | Downloading : 24.1M/0.00 [00:01<00:00,    13.6MB/s]      0%|          | Downloading : 27.1M/0.00 [00:02<00:00,    15.1MB/s]      0%|          | Downloading : 29.1M/0.00 [00:02<00:00,    15.8MB/s]      0%|          | Downloading : 31.1M/0.00 [00:02<00:00,    16.5MB/s]      0%|          | Downloading : 33.1M/0.00 [00:02<00:00,    14.6MB/s]      0%|          | Downloading : 36.1M/0.00 [00:02<00:00,    15.9MB/s]      0%|          | Downloading : 38.1M/0.00 [00:02<00:00,    16.5MB/s]      0%|          | Downloading : 40.1M/0.00 [00:02<00:00,    17.1MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    17.5MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    15.9MB/s]
+    Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (41.7 MB)
+      0%|          | Downloading : 0.00/41.7M [00:00<?,        ?B/s]      1%|          | Downloading : 248k/41.7M [00:00<00:11,    3.76MB/s]      3%|2         | Downloading : 1.12M/41.7M [00:00<00:05,    8.46MB/s]      4%|3         | Downloading : 1.62M/41.7M [00:00<00:05,    8.25MB/s]     12%|#2        | Downloading : 5.12M/41.7M [00:00<00:02,    19.2MB/s]     17%|#7        | Downloading : 7.12M/41.7M [00:00<00:01,    21.8MB/s]     22%|##1       | Downloading : 9.12M/41.7M [00:00<00:01,    23.5MB/s]     27%|##6       | Downloading : 11.1M/41.7M [00:00<00:01,    24.6MB/s]     31%|###1      | Downloading : 13.1M/41.7M [00:00<00:01,    25.4MB/s]     36%|###6      | Downloading : 15.1M/41.7M [00:00<00:01,    26.1MB/s]     41%|####1     | Downloading : 17.1M/41.7M [00:00<00:00,    26.6MB/s]     46%|####5     | Downloading : 19.1M/41.7M [00:00<00:00,    27.0MB/s]     51%|#####     | Downloading : 21.1M/41.7M [00:00<00:00,    27.3MB/s]     55%|#####5    | Downloading : 23.1M/41.7M [00:00<00:00,    27.6MB/s]     60%|######    | Downloading : 25.1M/41.7M [00:00<00:00,    27.9MB/s]     65%|######4   | Downloading : 27.1M/41.7M [00:01<00:00,    28.1MB/s]     70%|######9   | Downloading : 29.1M/41.7M [00:01<00:00,    28.3MB/s]     75%|#######4  | Downloading : 31.1M/41.7M [00:01<00:00,    28.5MB/s]     79%|#######9  | Downloading : 33.1M/41.7M [00:01<00:00,    28.6MB/s]     84%|########4 | Downloading : 35.1M/41.7M [00:01<00:00,    28.5MB/s]     89%|########8 | Downloading : 37.1M/41.7M [00:01<00:00,    28.8MB/s]     94%|#########3| Downloading : 39.1M/41.7M [00:01<00:00,    29.0MB/s]     99%|#########8| Downloading : 41.1M/41.7M [00:01<00:00,    29.1MB/s]    100%|##########| Downloading : 41.7M/41.7M [00:01<00:00,    28.5MB/s]
     Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -458,7 +458,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="ZpijUv"></div>
+              <div id="NgozGv"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -509,7 +509,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("ZpijUv");
+           var plotContainer = document.getElementById("NgozGv");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -795,7 +795,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="4osvb5"></div>
+              <div id="GkiwMu"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -869,7 +869,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("4osvb5");
+           var plotContainer = document.getElementById("GkiwMu");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -1681,9 +1681,9 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  53.511 seconds)
+   **Total running time of the script:** ( 0 minutes  57.289 seconds)
 
-**Estimated memory usage:**  526 MB
+**Estimated memory usage:**  407 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
