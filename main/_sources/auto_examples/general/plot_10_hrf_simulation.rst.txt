@@ -450,9 +450,9 @@ model of the noise can improve the accuracy of the response estimate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.794 seconds)
+   **Total running time of the script:** ( 0 minutes  4.650 seconds)
 
-**Estimated memory usage:**  20 MB
+**Estimated memory usage:**  9 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:
