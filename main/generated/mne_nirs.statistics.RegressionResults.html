@@ -41,7 +41,7 @@
     <script src="../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mne_nirs.statistics.RegressionResults.compute_contrast" href="mne_nirs.statistics.RegressionResults.compute_contrast.html" />
+    <link rel="next" title="mne_nirs.statistics.ContrastResults" href="mne_nirs.statistics.ContrastResults.html" />
     <link rel="prev" title="mne_nirs.statistics.run_glm" href="mne_nirs.statistics.run_glm.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -238,7 +238,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.MSE" title="mne_nirs.statistics.RegressionResults.MSE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MSE</span></code></a>()</p></td>
 <td><p>Return the GLM MSE.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.compute_contrast.html#mne_nirs.statistics.RegressionResults.compute_contrast" title="mne_nirs.statistics.RegressionResults.compute_contrast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_contrast</span></code></a>(contrast[, contrast_type])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.compute_contrast" title="mne_nirs.statistics.RegressionResults.compute_contrast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_contrast</span></code></a>(contrast[, contrast_type])</p></td>
 <td><p>Compute contrasts on regression results.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.copy" title="mne_nirs.statistics.RegressionResults.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
@@ -256,25 +256,25 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.pick" title="mne_nirs.statistics.RegressionResults.pick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pick</span></code></a>(picks[, exclude])</p></td>
 <td><p>Pick a subset of channels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.plot_topo.html#mne_nirs.statistics.RegressionResults.plot_topo" title="mne_nirs.statistics.RegressionResults.plot_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_topo</span></code></a>([conditions, axes, vmin, vmax, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.plot_topo" title="mne_nirs.statistics.RegressionResults.plot_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_topo</span></code></a>([conditions, axes, vmin, vmax, …])</p></td>
 <td><p>Plot 2D topography of GLM data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.save.html#mne_nirs.statistics.RegressionResults.save" title="mne_nirs.statistics.RegressionResults.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(fname[, overwrite])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.save" title="mne_nirs.statistics.RegressionResults.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(fname[, overwrite])</p></td>
 <td><p>Save GLM results to disk.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.scatter.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([conditions, exclude_no_interest, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([conditions, exclude_no_interest, …])</p></td>
 <td><p>Scatter plot of the GLM results.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.surface_projection.html#mne_nirs.statistics.RegressionResults.surface_projection" title="mne_nirs.statistics.RegressionResults.surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_projection</span></code></a>([chroma, condition, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.surface_projection" title="mne_nirs.statistics.RegressionResults.surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_projection</span></code></a>([chroma, condition, …])</p></td>
 <td><p>Project GLM results on to the surface of the brain.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.theta" title="mne_nirs.statistics.RegressionResults.theta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">theta</span></code></a>()</p></td>
 <td><p>Return the GLM theta results.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe.html#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe</span></code></a>([order])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe</span></code></a>([order])</p></td>
 <td><p>Return a tidy dataframe representing the GLM results.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest.html#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe_region_of_interest</span></code></a>(group_by, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe_region_of_interest</span></code></a>(group_by, …)</p></td>
 <td><p>Region of interest results as a dataframe.</p></td>
 </tr>
 </tbody>
@@ -742,7 +742,7 @@ info[“subject_info”].</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="mne_nirs.statistics.run_glm.html" title="previous page">mne_nirs.statistics.run_glm</a>
-    <a class='right-next' id="next-link" href="mne_nirs.statistics.RegressionResults.compute_contrast.html" title="next page">mne_nirs.statistics.RegressionResults.compute_contrast</a>
+    <a class='right-next' id="next-link" href="mne_nirs.statistics.ContrastResults.html" title="next page">mne_nirs.statistics.ContrastResults</a>
 
               </div>
               

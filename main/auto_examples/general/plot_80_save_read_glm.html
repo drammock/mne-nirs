@@ -357,7 +357,7 @@ on each. We will then save the GLM results to disk as <code class="docutils lite
     <a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath.fpath" title="mne_bids.BIDSPath.fpath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-property"><span class="n">save_path</span><span class="o">.</span><span class="n">fpath</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span></a><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># Finally we save the results to disk as a hdf5 file</span>
-    <a href="../../generated/mne_nirs.statistics.RegressionResults.save.html#mne_nirs.statistics.RegressionResults.save" title="mne_nirs.statistics.RegressionResults.save" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-method"><span class="n">glm</span><span class="o">.</span><span class="n">save</span></a><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath.fpath" title="mne_bids.BIDSPath.fpath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-property"><span class="n">save_path</span><span class="o">.</span><span class="n">fpath</span></a><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <a href="../../generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.save" title="mne_nirs.statistics.RegressionResults.save" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-method"><span class="n">glm</span><span class="o">.</span><span class="n">save</span></a><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath.fpath" title="mne_bids.BIDSPath.fpath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-property"><span class="n">save_path</span><span class="o">.</span><span class="n">fpath</span></a><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -376,7 +376,7 @@ on each. We will then save the GLM results to disk as <code class="docutils lite
     <a href="../../generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults" title="mne_nirs.statistics.RegressionResults" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">results</span></a> <span class="o">=</span> <a href="../../generated/mne_nirs.statistics.read_glm.html#mne_nirs.statistics.read_glm" title="mne_nirs.statistics.read_glm" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-function"><span class="n">read_glm</span></a><span class="p">(</span><a href="https://mne.tools/mne-bids/stable/generated/mne_bids.BIDSPath.html#mne_bids.BIDSPath" title="mne_bids.BIDSPath" class="sphx-glr-backref-module-mne_bids sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">save_path</span></a><span class="p">)</span>
 
     <span class="c1"># Extract results from data as dataframe</span>
-    <span class="n">individual_results</span> <span class="o">=</span> <a href="../../generated/mne_nirs.statistics.RegressionResults.to_dataframe.html#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-method"><span class="n">results</span><span class="o">.</span><span class="n">to_dataframe</span></a><span class="p">()</span>
+    <span class="n">individual_results</span> <span class="o">=</span> <a href="../../generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe" class="sphx-glr-backref-module-mne_nirs-statistics sphx-glr-backref-type-py-method"><span class="n">results</span><span class="o">.</span><span class="n">to_dataframe</span></a><span class="p">()</span>
 
     <span class="c1"># Indicate the subject ID</span>
     <span class="n">individual_results</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sub</span></a>
@@ -610,7 +610,7 @@ subjects.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.685 seconds)</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.629 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  15 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-80-save-read-glm-py">
 <div class="binder-badge docutils container">
