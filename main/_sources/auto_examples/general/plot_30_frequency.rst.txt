@@ -36,7 +36,7 @@ that is applied to the data.
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-36
+.. GENERATED FROM PYTHON SOURCE LINES 21-35
 
 .. code-block:: default
 
@@ -50,7 +50,6 @@ that is applied to the data.
     import mne_nirs
     import numpy as np
     import matplotlib.pyplot as plt
-    import matplotlib.pyplot as plt
     from mne_nirs.experimental_design import make_first_level_design_matrix
     from mne_nirs.simulation import simulate_nirs_raw
 
@@ -62,7 +61,7 @@ that is applied to the data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-48
+.. GENERATED FROM PYTHON SOURCE LINES 36-47
 
 Import and preprocess data
 --------------------------
@@ -76,7 +75,7 @@ Please see the
 :ref:`MNE documentation <mne:tut-fnirs-processing>`.
 for a detailed introduction to processing NIRS with MNE.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-69
+.. GENERATED FROM PYTHON SOURCE LINES 47-68
 
 .. code-block:: default
 
@@ -117,7 +116,7 @@ for a detailed introduction to processing NIRS with MNE.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-86
+.. GENERATED FROM PYTHON SOURCE LINES 69-85
 
 Model neural response
 ---------------------
@@ -136,7 +135,7 @@ and plot the frequency spectrum.
 We note there is a peak at 0.03 which corresponds approximately to
 the repetition rate of the experiment.
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-100
+.. GENERATED FROM PYTHON SOURCE LINES 85-99
 
 .. code-block:: default
 
@@ -175,7 +174,7 @@ the repetition rate of the experiment.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-110
+.. GENERATED FROM PYTHON SOURCE LINES 100-109
 
 Plot raw measured data
 ----------------------
@@ -187,7 +186,7 @@ We also see an increase in activity around 0.1 Hz, this is likely
 Mayer waves (https://en.wikipedia.org/wiki/Mayer_waves).
 There is also a small bump around 0.3 Hz that is likely the breathing rate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-122
+.. GENERATED FROM PYTHON SOURCE LINES 109-121
 
 .. code-block:: default
 
@@ -224,7 +223,7 @@ There is also a small bump around 0.3 Hz that is likely the breathing rate.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-131
+.. GENERATED FROM PYTHON SOURCE LINES 122-130
 
 Plot epoched data
 -----------------
@@ -235,7 +234,7 @@ The act of averaging the epochs removes some of the systemic components that
 are not time locked to the stimulus. However, the large heart rate component
 is still visible.
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-146
+.. GENERATED FROM PYTHON SOURCE LINES 130-145
 
 .. code-block:: default
 
@@ -282,7 +281,7 @@ is still visible.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-156
+.. GENERATED FROM PYTHON SOURCE LINES 146-155
 
 Plot filter response
 --------------------
@@ -294,7 +293,7 @@ https://mne.tools/stable/auto_tutorials/discussions/plot_background_filtering.ht
 This filter will be designed to remove the heart rate component that remained
 after epoching.
 
-.. GENERATED FROM PYTHON SOURCE LINES 156-166
+.. GENERATED FROM PYTHON SOURCE LINES 155-165
 
 .. code-block:: default
 
@@ -328,7 +327,7 @@ after epoching.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-184
+.. GENERATED FROM PYTHON SOURCE LINES 166-183
 
 Discussion
 ----------
@@ -348,7 +347,7 @@ stimulus interval the act of epoching and averaging the data
 removes these unwanted components and they are not visible in the
 epoched data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-204
+.. GENERATED FROM PYTHON SOURCE LINES 183-203
 
 .. code-block:: default
 
@@ -394,7 +393,7 @@ epoched data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-214
+.. GENERATED FROM PYTHON SOURCE LINES 204-213
 
 Understanding the relation between stimulus presentation and response
 ---------------------------------------------------------------------
@@ -406,7 +405,7 @@ values for the ISI. Two repeats are plotted per
 ISI to illustrate the random selection.
 Some common high pass filter values from literature are shown in red.
 
-.. GENERATED FROM PYTHON SOURCE LINES 214-239
+.. GENERATED FROM PYTHON SOURCE LINES 213-237
 
 .. code-block:: default
 
@@ -418,21 +417,20 @@ Some common high pass filter values from literature are shown in red.
         for column, min_isi in enumerate([0, 15]):
             for row, max_isi in enumerate([15, 30, 45, 60]):
                 if max_isi >= min_isi:
-                    if max_isi >= min_isi:
-                        raw = simulate_nirs_raw(sfreq=4., sig_dur=60 * 60,
-                                                amplitude=1., stim_dur=5.,
-                                                isi_min=min_isi, isi_max=max_isi)
-                        raw._data[0] = raw._data[0] - np.mean(raw._data[0])
-                        raw.pick(picks='hbo').plot_psd(
-                            average=True, fmax=2, ax=axes[rep, column],
-                            show=False, color=sm.cmap(sm.norm(max_isi)),
-                            xscale='log')
-                        axes[rep, column].set_ylim(-60, 20)
-                        axes[rep, column].set_title('ISI: {} (s) to Max ISI'.
-                                                    format(min_isi))
-                        for filt in [0.01, 0.02, 0.05]:
-                            axes[rep, column].axvline(x=filt,
-                                                      linestyle=":", color='red')
+                     raw = simulate_nirs_raw(sfreq=4., sig_dur=60 * 60,
+                                             amplitude=1., stim_dur=5.,
+                                             isi_min=min_isi, isi_max=max_isi)
+                     raw._data[0] = raw._data[0] - np.mean(raw._data[0])
+                     raw.pick(picks='hbo').plot_psd(
+                         average=True, fmax=2, ax=axes[rep, column],
+                         show=False, color=sm.cmap(sm.norm(max_isi)),
+                         xscale='log')
+                     axes[rep, column].set_ylim(-60, 20)
+                     axes[rep, column].set_title('ISI: {} (s) to Max ISI'.
+                                                 format(min_isi))
+                     for filt in [0.01, 0.02, 0.05]:
+                         axes[rep, column].axvline(x=filt,
+                                                   linestyle=":", color='red')
             axes[1, column].set_xlabel("Frequency (Hz)")
         plt.colorbar(sm, ax=axes[rep, 1], label='Max ISI (s)')
 
@@ -450,9 +448,9 @@ Some common high pass filter values from literature are shown in red.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  45.250 seconds)
+   **Total running time of the script:** ( 0 minutes  42.938 seconds)
 
-**Estimated memory usage:**  9 MB
+**Estimated memory usage:**  10 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_30_frequency.py:
