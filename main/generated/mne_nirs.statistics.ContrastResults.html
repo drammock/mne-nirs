@@ -331,7 +331,7 @@
 (e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> <span class="pre">'eeg']</span></code>) will pick channels of those
 types, channel <em>name</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['MEG0111',</span> <span class="pre">'MEG2623']</span></code>
 will pick the given channels. Can also be the string values
-“all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v0.23.0)"><span class="xref std std-term">data channels</span></a>.
+“all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v0.23)"><span class="xref std std-term">data channels</span></a>.
 None (default) will pick all channels. Note that channels in <code class="docutils literal notranslate"><span class="pre">info['bads']</span></code> <em>will be included</em> if their names or indices are explicitly provided.</p>
 </dd>
 <dt><strong>unique</strong><span class="classifier">bool</span></dt><dd><p>Whether to return only unique channel types. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
@@ -359,8 +359,8 @@ None (default) will pick all channels. Note that channels in <code class="docuti
 <dt><strong>montage</strong><span class="classifier">None | str | DigMontage</span></dt><dd><p>A montage containing channel positions. If str or DigMontage is
 specified, the channel info will be updated with the channel
 positions. Default is None. For valid <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> values see documentation
-of <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html#mne.channels.make_standard_montage" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_standard_montage()</span></code></a>. See also the documentation
-of <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.DigMontage.html#mne.channels.DigMontage" title="(in MNE v0.23.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.channels.DigMontage</span></code></a> for more information.</p>
+of <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html#mne.channels.make_standard_montage" title="(in MNE v0.23)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_standard_montage()</span></code></a>. See also the documentation
+of <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.DigMontage.html#mne.channels.DigMontage" title="(in MNE v0.23)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.channels.DigMontage</span></code></a> for more information.</p>
 </dd>
 </dl>
 </dd>

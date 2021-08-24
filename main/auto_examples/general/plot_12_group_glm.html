@@ -265,7 +265,7 @@ The NIRS brain AnalyzIR toolbox. Algorithms, 11(5), 73.</p>
 outputs of neuroimaging experiments.” Scientific data 3.1 (2016): 1-9.</p>
 </div>
 <p>Individual level analysis of this data is described in the
-<a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/70_fnirs_processing.html#tut-fnirs-processing" title="(in MNE v0.23.0)"><span class="xref std std-ref">MNE fNIRS waveform tutorial</span></a>
+<a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/70_fnirs_processing.html#tut-fnirs-processing" title="(in MNE v0.23)"><span class="xref std std-ref">MNE fNIRS waveform tutorial</span></a>
 and the
 <a class="reference internal" href="plot_11_hrf_measured.html#tut-fnirs-hrf"><span class="std std-ref">MNE-NIRS fNIRS GLM tutorial</span></a>
 So this example will skim over the individual level details
@@ -381,35 +381,33 @@ In this example we use the example dataset <code class="docutils literal notrans
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
-Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (41.7 MB)
+Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
 
-  0%|          | Downloading : 0.00/41.7M [00:00&lt;?,        ?B/s]
-  0%|          | Downloading : 24.0k/41.7M [00:00&lt;00:54,     810kB/s]
-  0%|          | Downloading : 40.0k/41.7M [00:00&lt;01:06,     655kB/s]
-  0%|          | Downloading : 152k/41.7M [00:00&lt;00:26,    1.67MB/s]
-  1%|          | Downloading : 216k/41.7M [00:00&lt;00:24,    1.77MB/s]
-  1%|          | Downloading : 408k/41.7M [00:00&lt;00:15,    2.72MB/s]
-  2%|1         | Downloading : 792k/41.7M [00:00&lt;00:09,    4.49MB/s]
-  4%|3         | Downloading : 1.52M/41.7M [00:00&lt;00:05,    7.72MB/s]
-  7%|7         | Downloading : 3.02M/41.7M [00:00&lt;00:02,    13.7MB/s]
- 14%|#4        | Downloading : 6.02M/41.7M [00:00&lt;00:01,    24.3MB/s]
- 24%|##4       | Downloading : 10.0M/41.7M [00:00&lt;00:00,    35.1MB/s]
- 29%|##8       | Downloading : 12.0M/41.7M [00:00&lt;00:00,    39.6MB/s]
- 34%|###3      | Downloading : 14.0M/41.7M [00:00&lt;00:00,    43.0MB/s]
- 38%|###8      | Downloading : 16.0M/41.7M [00:00&lt;00:00,    47.0MB/s]
- 43%|####3     | Downloading : 18.0M/41.7M [00:00&lt;00:00,    50.2MB/s]
- 48%|####7     | Downloading : 20.0M/41.7M [00:00&lt;00:00,    52.5MB/s]
- 53%|#####2    | Downloading : 22.0M/41.7M [00:00&lt;00:00,    54.8MB/s]
- 58%|#####7    | Downloading : 24.0M/41.7M [00:00&lt;00:00,    58.2MB/s]
- 62%|######2   | Downloading : 26.0M/41.7M [00:00&lt;00:00,    58.9MB/s]
- 67%|######7   | Downloading : 28.0M/41.7M [00:00&lt;00:00,    60.7MB/s]
- 72%|#######1  | Downloading : 30.0M/41.7M [00:00&lt;00:00,    63.6MB/s]
- 77%|#######6  | Downloading : 32.0M/41.7M [00:00&lt;00:00,    65.0MB/s]
- 82%|########1 | Downloading : 34.0M/41.7M [00:00&lt;00:00,    65.9MB/s]
- 86%|########6 | Downloading : 36.0M/41.7M [00:00&lt;00:00,    68.6MB/s]
- 91%|#########1| Downloading : 38.0M/41.7M [00:00&lt;00:00,    69.5MB/s]
- 96%|#########5| Downloading : 40.0M/41.7M [00:00&lt;00:00,    69.9MB/s]
-100%|##########| Downloading : 41.7M/41.7M [00:00&lt;00:00,    60.9MB/s]
+  0%|          | Downloading : 0.00/0.00 [00:00&lt;?,        ?B/s]
+  0%|          | Downloading : 8.00k/0.00 [00:00&lt;00:00,    15.1kB/s]
+  0%|          | Downloading : 64.0k/0.00 [00:00&lt;00:00,     122kB/s]
+  0%|          | Downloading : 256k/0.00 [00:00&lt;00:00,     484kB/s]
+  0%|          | Downloading : 1.12M/0.00 [00:00&lt;00:00,    2.20MB/s]
+  0%|          | Downloading : 4.62M/0.00 [00:00&lt;00:00,    8.38MB/s]
+  0%|          | Downloading : 6.62M/0.00 [00:00&lt;00:00,    11.0MB/s]
+  0%|          | Downloading : 8.62M/0.00 [00:00&lt;00:00,    13.3MB/s]
+  0%|          | Downloading : 10.6M/0.00 [00:00&lt;00:00,    12.8MB/s]
+  0%|          | Downloading : 11.6M/0.00 [00:01&lt;00:00,    13.2MB/s]
+  0%|          | Downloading : 14.6M/0.00 [00:01&lt;00:00,    15.9MB/s]
+  0%|          | Downloading : 16.6M/0.00 [00:01&lt;00:00,    13.6MB/s]
+  0%|          | Downloading : 19.6M/0.00 [00:01&lt;00:00,    15.6MB/s]
+  0%|          | Downloading : 21.6M/0.00 [00:01&lt;00:00,    16.6MB/s]
+  0%|          | Downloading : 23.6M/0.00 [00:01&lt;00:00,    17.6MB/s]
+  0%|          | Downloading : 25.6M/0.00 [00:01&lt;00:00,    14.4MB/s]
+  0%|          | Downloading : 26.6M/0.00 [00:02&lt;00:00,    14.6MB/s]
+  0%|          | Downloading : 29.6M/0.00 [00:02&lt;00:00,    16.2MB/s]
+  0%|          | Downloading : 31.6M/0.00 [00:02&lt;00:00,    16.9MB/s]
+  0%|          | Downloading : 33.6M/0.00 [00:02&lt;00:00,    14.9MB/s]
+  0%|          | Downloading : 36.6M/0.00 [00:02&lt;00:00,    16.3MB/s]
+  0%|          | Downloading : 38.6M/0.00 [00:02&lt;00:00,    16.9MB/s]
+  0%|          | Downloading : 40.6M/0.00 [00:02&lt;00:00,    17.6MB/s]
+  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    17.7MB/s]
+  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    16.1MB/s]
 Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
 (please be patient, this can take some time)
@@ -599,13 +597,13 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="RSZe9E"></div>
+          <div id="jHk3zT"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
 "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
 "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-"theta":[0.36652017966973005,0.2767052477835328,2.2533062442560743,5.6534390983132425,7.092229283121558,3.1843575972327196,-0.9143790325342254,-1.8651492092869202,3.1485090797715003,5.773968178088424,7.8175269761491055,1.8613712743535529,-0.8896275974260267,-2.1196440112667974,0.9805964990165716,5.062971026929868,3.4573458561375543,2.949068721851661,-0.03231701254771663,-0.20974555678101264,-3.194303721236945,10.659305305836709,4.9927174218761365,-0.6397740924432194,0.04158322036019463,-0.47821308970614457,6.662184919644767,23.340210278136816,22.989542590877168,11.577755280381151],
+"theta":[0.36652017966973005,0.27670524778353267,2.253306244256079,5.653439098311921,7.092229283121547,3.1843575972353824,-0.9143790325342254,-1.8651492092869202,3.1485090797714976,5.773968178088421,7.817526976149294,1.8613712743535533,-0.889627597426025,-2.119644011266796,0.9805964990165733,5.062971026929866,3.4573458561375774,2.94906872185168,-0.032317012547717044,-0.2097455567810137,-3.1943037212353453,10.65930530583735,4.992717421875437,-0.6397740924439637,0.04158322036019603,-0.47821308970614457,6.662184919644772,23.34021027813682,22.9895425908772,11.57775528038115],
 "ID":["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
 },
 "mapping":{
@@ -650,7 +648,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("RSZe9E");
+       var plotContainer = document.getElementById("jHk3zT");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -874,11 +872,11 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="NpXmMx"></div>
+          <div id="9qpS9E"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
-"Coef.":[-0.2856440484956088,-0.8792093238514687,1.970058604290393,10.09797877746101,9.269872425632304,3.786555756275173],
+"Coef.":[-0.28564404849560826,-0.8792093238514684,1.9700586042907149,10.097978777460874,9.269872425632212,3.7865557562755603],
 "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
 "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
 "Significant":[false,false,false,true,true,true]
@@ -923,7 +921,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 },{
 "geom":"point",
 "data":{
-"Coef.":[0.26865728080246076,-2.010230243751068,-4.130176130163723],
+"Coef.":[0.26865728080246076,-2.0102302437510042,-4.130176130163703],
 "Condition":["Control","Tapping/Left","Tapping/Right"],
 "Significant":[false,false,true]
 },
@@ -936,7 +934,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 },{
 "geom":"point",
 "data":{
-"Coef.":[0.14039044097632752,-4.428427669196087,-1.956083810815505],
+"Coef.":[0.14039044097632752,-4.428427669196169,-1.9560838108156173],
 "Condition":["Control","Tapping/Left","Tapping/Right"],
 "Significant":[false,true,false]
 },
@@ -948,7 +946,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 "shape":2
 }]
 };
-       var plotContainer = document.getElementById("NpXmMx");
+       var plotContainer = document.getElementById("9qpS9E");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -1099,8 +1097,7 @@ contralateral to the side of finger tapping.</p>
     <a href="https://mne.tools/stable/generated/mne.viz.Brain.html#mne.viz.Brain.add_text" title="mne.viz.Brain.add_text" class="sphx-glr-backref-module-mne-viz sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_text</span></a><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cond</span></a><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_12_group_glm_004.png" srcset="../../_images/sphx_glr_plot_12_group_glm_004.png" alt="plot 12 group glm" class = "sphx-glr-multi-img"/></li>
+<img src="../../_images/sphx_glr_plot_12_group_glm_004.png" srcset="../../_images/sphx_glr_plot_12_group_glm_004.png" alt="plot 12 group glm" class = "sphx-glr-single-img"/><ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_12_group_glm_005.png" srcset="../../_images/sphx_glr_plot_12_group_glm_005.png" alt="plot 12 group glm" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_12_group_glm_006.png" srcset="../../_images/sphx_glr_plot_12_group_glm_006.png" alt="plot 12 group glm" class = "sphx-glr-multi-img"/></li>
 </ul>
@@ -1634,8 +1631,8 @@ This can be generated from the statistics dataframe.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  56.242 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  492 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  53.669 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  517 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-12-group-glm-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_12_group_glm.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>

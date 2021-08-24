@@ -189,13 +189,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>info</strong><span class="classifier">mne.Info</span></dt><dd><p>The <a class="reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="(in MNE v0.23.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.Info</span></code></a> object with information about the sensors and methods of measurement.</p>
+<dt><strong>info</strong><span class="classifier">mne.Info</span></dt><dd><p>The <a class="reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="(in MNE v0.23)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.Info</span></code></a> object with information about the sensors and methods of measurement.</p>
 </dd>
 <dt><strong>picks</strong><span class="classifier">str | list | slice | None</span></dt><dd><p>Channels to include. Slices and lists of integers will be interpreted as channel indices. In lists, channel <em>type</em> strings
 (e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> <span class="pre">'eeg']</span></code>) will pick channels of those
 types, channel <em>name</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['MEG0111',</span> <span class="pre">'MEG2623']</span></code>
 will pick the given channels. Can also be the string values
-“all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v0.23.0)"><span class="xref std std-term">data channels</span></a>.
+“all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v0.23)"><span class="xref std std-term">data channels</span></a>.
 None (default) will pick all channels. Note that channels in <code class="docutils literal notranslate"><span class="pre">info['bads']</span></code> <em>will be included</em> if their names or indices are explicitly provided.</p>
 </dd>
 </dl>
