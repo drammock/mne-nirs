@@ -176,7 +176,7 @@ In this example we use the example dataset ``fnirs_motor_group``.
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    15.1kB/s]      0%|          | Downloading : 64.0k/0.00 [00:00<00:00,     122kB/s]      0%|          | Downloading : 256k/0.00 [00:00<00:00,     484kB/s]       0%|          | Downloading : 1.12M/0.00 [00:00<00:00,    2.20MB/s]      0%|          | Downloading : 4.62M/0.00 [00:00<00:00,    8.38MB/s]      0%|          | Downloading : 6.62M/0.00 [00:00<00:00,    11.0MB/s]      0%|          | Downloading : 8.62M/0.00 [00:00<00:00,    13.3MB/s]      0%|          | Downloading : 10.6M/0.00 [00:00<00:00,    12.8MB/s]      0%|          | Downloading : 11.6M/0.00 [00:01<00:00,    13.2MB/s]      0%|          | Downloading : 14.6M/0.00 [00:01<00:00,    15.9MB/s]      0%|          | Downloading : 16.6M/0.00 [00:01<00:00,    13.6MB/s]      0%|          | Downloading : 19.6M/0.00 [00:01<00:00,    15.6MB/s]      0%|          | Downloading : 21.6M/0.00 [00:01<00:00,    16.6MB/s]      0%|          | Downloading : 23.6M/0.00 [00:01<00:00,    17.6MB/s]      0%|          | Downloading : 25.6M/0.00 [00:01<00:00,    14.4MB/s]      0%|          | Downloading : 26.6M/0.00 [00:02<00:00,    14.6MB/s]      0%|          | Downloading : 29.6M/0.00 [00:02<00:00,    16.2MB/s]      0%|          | Downloading : 31.6M/0.00 [00:02<00:00,    16.9MB/s]      0%|          | Downloading : 33.6M/0.00 [00:02<00:00,    14.9MB/s]      0%|          | Downloading : 36.6M/0.00 [00:02<00:00,    16.3MB/s]      0%|          | Downloading : 38.6M/0.00 [00:02<00:00,    16.9MB/s]      0%|          | Downloading : 40.6M/0.00 [00:02<00:00,    17.6MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    17.7MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.1MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    16.2kB/s]      0%|          | Downloading : 64.0k/0.00 [00:00<00:00,     131kB/s]      0%|          | Downloading : 128k/0.00 [00:00<00:00,     260kB/s]       0%|          | Downloading : 320k/0.00 [00:00<00:00,     647kB/s]      0%|          | Downloading : 1.19M/0.00 [00:00<00:00,    2.51MB/s]      0%|          | Downloading : 4.19M/0.00 [00:00<00:00,    8.34MB/s]      0%|          | Downloading : 6.19M/0.00 [00:00<00:00,    11.2MB/s]      0%|          | Downloading : 8.19M/0.00 [00:00<00:00,    13.6MB/s]      0%|          | Downloading : 10.2M/0.00 [00:00<00:00,    13.5MB/s]      0%|          | Downloading : 11.2M/0.00 [00:00<00:00,    13.9MB/s]      0%|          | Downloading : 14.2M/0.00 [00:01<00:00,    16.8MB/s]      0%|          | Downloading : 16.2M/0.00 [00:01<00:00,    18.1MB/s]      0%|          | Downloading : 18.2M/0.00 [00:01<00:00,    16.0MB/s]      0%|          | Downloading : 19.2M/0.00 [00:01<00:00,    16.2MB/s]      0%|          | Downloading : 22.2M/0.00 [00:01<00:00,    18.2MB/s]      0%|          | Downloading : 24.2M/0.00 [00:01<00:00,    14.7MB/s]      0%|          | Downloading : 27.2M/0.00 [00:01<00:00,    16.2MB/s]      0%|          | Downloading : 29.2M/0.00 [00:01<00:00,    17.1MB/s]      0%|          | Downloading : 31.2M/0.00 [00:02<00:00,    17.9MB/s]      0%|          | Downloading : 33.2M/0.00 [00:02<00:00,    15.4MB/s]      0%|          | Downloading : 36.2M/0.00 [00:02<00:00,    16.7MB/s]      0%|          | Downloading : 38.2M/0.00 [00:02<00:00,    17.4MB/s]      0%|          | Downloading : 40.2M/0.00 [00:02<00:00,    18.0MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    18.5MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.8MB/s]
     Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -458,7 +458,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="jHk3zT"></div>
+              <div id="Pg2e09"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -509,7 +509,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("jHk3zT");
+           var plotContainer = document.getElementById("Pg2e09");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -795,7 +795,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="9qpS9E"></div>
+              <div id="S7KBEw"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -869,7 +869,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("9qpS9E");
+           var plotContainer = document.getElementById("S7KBEw");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -1679,9 +1679,9 @@ This can be generated from the statistics dataframe.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  53.669 seconds)
+   **Total running time of the script:** ( 1 minutes  0.103 seconds)
 
-**Estimated memory usage:**  517 MB
+**Estimated memory usage:**  492 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:
