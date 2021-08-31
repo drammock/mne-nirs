@@ -134,7 +134,7 @@ to meet github memory constraints.
     Using default location ~/mne_data for fnirs_motor...
     Downloading archive MNE-fNIRS-motor-data.tgz to /home/runner/mne_data
     Downloading https://files.osf.io/v1/resources/rxvq7/providers/osfstorage/5dbf84a9cfc96c000ec957eb?version=1&action=download&direct (17.1 MB)
-      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      1%|1         | Downloading : 184k/17.1M [00:00<00:02,    7.23MB/s]      4%|3         | Downloading : 632k/17.1M [00:00<00:01,    10.9MB/s]      5%|5         | Downloading : 888k/17.1M [00:00<00:01,    10.3MB/s]      7%|6         | Downloading : 1.12M/17.1M [00:00<00:01,    9.72MB/s]      8%|8         | Downloading : 1.37M/17.1M [00:00<00:01,    10.2MB/s]      9%|9         | Downloading : 1.62M/17.1M [00:00<00:01,    10.0MB/s]     11%|#         | Downloading : 1.87M/17.1M [00:00<00:01,    10.0MB/s]     12%|#2        | Downloading : 2.12M/17.1M [00:00<00:01,    9.90MB/s]     14%|#3        | Downloading : 2.37M/17.1M [00:00<00:01,    9.81MB/s]     15%|#5        | Downloading : 2.62M/17.1M [00:00<00:01,    9.28MB/s]     18%|#8        | Downloading : 3.12M/17.1M [00:00<00:01,    9.87MB/s]     20%|#9        | Downloading : 3.37M/17.1M [00:00<00:01,    9.63MB/s]     21%|##1       | Downloading : 3.62M/17.1M [00:00<00:01,    9.63MB/s]     23%|##2       | Downloading : 3.87M/17.1M [00:00<00:01,    9.29MB/s]     24%|##4       | Downloading : 4.12M/17.1M [00:00<00:01,    9.09MB/s]     26%|##5       | Downloading : 4.37M/17.1M [00:00<00:01,    8.77MB/s]     27%|##7       | Downloading : 4.62M/17.1M [00:00<00:01,    8.43MB/s]     29%|##8       | Downloading : 4.87M/17.1M [00:00<00:01,    8.17MB/s]     30%|###       | Downloading : 5.12M/17.1M [00:00<00:01,    7.93MB/s]     31%|###1      | Downloading : 5.37M/17.1M [00:00<00:01,    7.81MB/s]     33%|###2      | Downloading : 5.62M/17.1M [00:00<00:01,    7.65MB/s]     34%|###4      | Downloading : 5.87M/17.1M [00:00<00:01,    7.32MB/s]     36%|###5      | Downloading : 6.12M/17.1M [00:00<00:01,    7.36MB/s]     37%|###7      | Downloading : 6.37M/17.1M [00:00<00:01,    7.24MB/s]     39%|###8      | Downloading : 6.62M/17.1M [00:00<00:01,    7.10MB/s]     40%|####      | Downloading : 6.87M/17.1M [00:00<00:01,    6.96MB/s]     42%|####1     | Downloading : 7.12M/17.1M [00:01<00:01,    6.83MB/s]     43%|####3     | Downloading : 7.37M/17.1M [00:01<00:01,    6.72MB/s]     45%|####4     | Downloading : 7.62M/17.1M [00:01<00:01,    6.61MB/s]     46%|####6     | Downloading : 7.87M/17.1M [00:01<00:01,    6.55MB/s]     48%|####7     | Downloading : 8.12M/17.1M [00:01<00:01,    6.44MB/s]     55%|#####4    | Downloading : 9.37M/17.1M [00:01<00:00,    8.20MB/s]     61%|######    | Downloading : 10.4M/17.1M [00:01<00:00,    9.62MB/s]     73%|#######2  | Downloading : 12.4M/17.1M [00:01<00:00,    12.5MB/s]     78%|#######8  | Downloading : 13.4M/17.1M [00:01<00:00,    13.8MB/s]     90%|######### | Downloading : 15.4M/17.1M [00:01<00:00,    16.6MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:01<00:00,    18.9MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:01<00:00,    13.4MB/s]
+      0%|          | Downloading : 0.00/17.1M [00:00<?,        ?B/s]      1%|          | Downloading : 120k/17.1M [00:00<00:12,    1.44MB/s]      1%|1         | Downloading : 248k/17.1M [00:00<00:07,    2.30MB/s]      2%|2         | Downloading : 376k/17.1M [00:00<00:06,    2.84MB/s]      3%|2         | Downloading : 504k/17.1M [00:00<00:05,    3.23MB/s]      4%|3         | Downloading : 632k/17.1M [00:00<00:04,    3.52MB/s]      4%|4         | Downloading : 760k/17.1M [00:00<00:04,    3.85MB/s]      6%|5         | Downloading : 0.99M/17.1M [00:00<00:03,    4.78MB/s]      7%|7         | Downloading : 1.24M/17.1M [00:00<00:02,    5.59MB/s]      9%|8         | Downloading : 1.49M/17.1M [00:00<00:02,    6.39MB/s]     10%|#         | Downloading : 1.74M/17.1M [00:00<00:02,    7.13MB/s]     13%|#3        | Downloading : 2.24M/17.1M [00:00<00:01,    8.56MB/s]     18%|#7        | Downloading : 2.99M/17.1M [00:00<00:01,    10.8MB/s]     23%|##3       | Downloading : 3.99M/17.1M [00:00<00:00,    13.7MB/s]     29%|##9       | Downloading : 4.99M/17.1M [00:00<00:00,    16.4MB/s]     38%|###8      | Downloading : 6.49M/17.1M [00:00<00:00,    20.2MB/s]     50%|####9     | Downloading : 8.49M/17.1M [00:00<00:00,    24.7MB/s]     56%|#####5    | Downloading : 9.49M/17.1M [00:00<00:00,    26.1MB/s]     67%|######7   | Downloading : 11.5M/17.1M [00:00<00:00,    29.6MB/s]     73%|#######3  | Downloading : 12.5M/17.1M [00:00<00:00,    30.9MB/s]     79%|#######9  | Downloading : 13.5M/17.1M [00:00<00:00,    32.3MB/s]     91%|######### | Downloading : 15.5M/17.1M [00:00<00:00,    34.4MB/s]     97%|#########6| Downloading : 16.5M/17.1M [00:00<00:00,    35.4MB/s]    100%|##########| Downloading : 17.1M/17.1M [00:00<00:00,    28.6MB/s]
     Verifying hash c4935d19ddab35422a69f3326a01fef8.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-data.tgz
     (please be patient, this can take some time)
@@ -1059,7 +1059,7 @@ cortical surface
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       df["theta"] = df["theta"] * 1e6
 
-    <mne.viz._brain._brain.Brain object at 0x7ff9f8f0ff10>
+    <mne.viz._brain._brain.Brain object at 0x7f5bb85e8130>
 
 
 
@@ -1516,9 +1516,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.077 seconds)
+   **Total running time of the script:** ( 0 minutes  22.250 seconds)
 
-**Estimated memory usage:**  427 MB
+**Estimated memory usage:**  450 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:
