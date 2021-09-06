@@ -565,16 +565,20 @@
             <span class="n">tidy</span> <span class="o">=</span> <span class="n">tidy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">demographic_info</span><span class="p">:</span>
-            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_MALE</span><span class="p">:</span>
-                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;male&quot;</span>
-            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> \
-                    <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_FEMALE</span><span class="p">:</span>
-                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;female&quot;</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
-            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sex</span>
-            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Hand&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;hand&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s1">&#39;age&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="s1">&#39;sex&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> \
+                        <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_MALE</span><span class="p">:</span>
+                    <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;male&quot;</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> \
+                        <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_FEMALE</span><span class="p">:</span>
+                    <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;female&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+                <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sex</span>
+            <span class="k">if</span> <span class="s1">&#39;Hand&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Hand&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;hand&#39;</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">tidy</span></div>
 
