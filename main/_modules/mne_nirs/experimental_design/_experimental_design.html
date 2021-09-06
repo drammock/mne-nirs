@@ -181,10 +181,11 @@
                                    <span class="n">add_reg_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_onset</span><span class="o">=-</span><span class="mi">24</span><span class="p">,</span>
                                    <span class="n">oversampling</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Generate design matrix from MNE data structure.</span>
+<span class="sd">    Generate a design matrix based on annotations and model HRF.</span>
 
-<span class="sd">    This is a wrapper function for</span>
-<span class="sd">    nilearn.stats.first_level_model.make_first_level_design_matrix.</span>
+<span class="sd">    This is a wrapper function for the nilearn :footcite:`abraham2014machine`</span>
+<span class="sd">    function ``make_first_level_design_matrix``. For detailed description</span>
+<span class="sd">    of the arguments see the nilearn documentation at http://nilearn.github.io</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -238,6 +239,10 @@
 <span class="sd">    design_matrix : DataFrame instance,</span>
 <span class="sd">        Holding the computed design matrix, the index being the frames_times</span>
 <span class="sd">        and each column a regressor.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. footbibliography::</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">make_first_level_design_matrix</span>
     <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
@@ -268,7 +273,7 @@
 
 <div class="viewcode-block" id="create_boxcar"><a class="viewcode-back" href="../../../generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar">[docs]</a><span class="k">def</span> <span class="nf">create_boxcar</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">event_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stim_dur</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Generate boxcar waveform from MNE data structure.</span>
+<span class="sd">    Generate boxcar representation of the experimental paradigm.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -282,7 +287,7 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    s : array</span>
-<span class="sd">        Returns an array for each trigger channel.</span>
+<span class="sd">        Returns an array for each annotation label.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
     <span class="n">bc</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">boxcar</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">stim_dur</span><span class="p">))</span>
