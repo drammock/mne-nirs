@@ -145,6 +145,27 @@ Analysis examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This tutorial describes the various design choices available when analysing fNIRS data with a G...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_14_glm_components_thumb.png
+     :alt: GLM and Design Matrix Parameters
+
+     :ref:`sphx_glr_auto_examples_general_plot_14_glm_components.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_14_glm_components
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This tutorial covers how to convert functional near-infrared spectroscopy (fNIRS) data from raw...">
 
 .. only:: html

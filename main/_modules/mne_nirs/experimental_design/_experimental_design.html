@@ -193,9 +193,9 @@
 <span class="sd">    stim_dur : Number</span>
 <span class="sd">        The length of your stimulus.</span>
 
-<span class="sd">    hrf_model : {&#39;glover&#39;, &#39;spm&#39;, &#39;spm + derivative&#39;,</span>
-<span class="sd">        &#39;spm + derivative + dispersion&#39;,</span>
-<span class="sd">        &#39;glover + derivative&#39;, &#39;glover + derivative + dispersion&#39;,</span>
+<span class="sd">    hrf_model : {&#39;glover&#39;, &#39;spm&#39;, &#39;spm + derivative&#39;, \</span>
+<span class="sd">        &#39;spm + derivative + dispersion&#39;,\</span>
+<span class="sd">        &#39;glover + derivative&#39;, &#39;glover + derivative + dispersion&#39;,\</span>
 <span class="sd">        &#39;fir&#39;, None}, optional</span>
 <span class="sd">        Specifies the hemodynamic response function. Default=&#39;glover&#39;.</span>
 
@@ -298,6 +298,60 @@
         <span class="n">s</span><span class="p">[</span><span class="n">event_samples</span><span class="p">,</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span>
         <span class="n">s</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">s</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">bc</span><span class="p">)[:</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">times</span><span class="p">)]</span>
     <span class="k">return</span> <span class="n">s</span></div>
+
+
+<div class="viewcode-block" id="longest_inter_annotation_interval"><a class="viewcode-back" href="../../../generated/mne_nirs.experimental_design.longest_inter_annotation_interval.html#mne_nirs.experimental_design.longest_inter_annotation_interval">[docs]</a><span class="k">def</span> <span class="nf">longest_inter_annotation_interval</span><span class="p">(</span><span class="n">raw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute longest ISI per annotation.</span>
+
+<span class="sd">    Specifically, longest period between two trials of</span>
+<span class="sd">    the same condition.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : instance of Raw</span>
+<span class="sd">        Haemoglobin data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    longest : list</span>
+<span class="sd">        Longest ISI per annotation.</span>
+<span class="sd">    annotation_name : list</span>
+<span class="sd">        Annotation name corresponding to reported interval.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">annotation_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+    <span class="n">longest</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">annotation_name</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">description</span> <span class="o">==</span> <span class="n">desc</span>
+        <span class="n">longest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">onset</span><span class="p">[</span><span class="n">mask</span><span class="p">])))</span>
+    <span class="k">return</span> <span class="n">longest</span><span class="p">,</span> <span class="n">annotation_name</span></div>
+
+
+<div class="viewcode-block" id="drift_high_pass"><a class="viewcode-back" href="../../../generated/mne_nirs.experimental_design.drift_high_pass.html#mne_nirs.experimental_design.drift_high_pass">[docs]</a><span class="k">def</span> <span class="nf">drift_high_pass</span><span class="p">(</span><span class="n">raw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute cosine drift regressor high pass cut off.</span>
+
+<span class="sd">    Value computed according to Nilearn :footcite:`abraham2014machine`</span>
+<span class="sd">    `suggestion &lt;http://nilearn.github.io/auto_examples/04_glm_first</span>
+<span class="sd">    _level/plot_first_level_details.html#changing-the-drift-model&gt;`__.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : instance of Raw</span>
+<span class="sd">        Haemoglobin data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cutoff : number</span>
+<span class="sd">        Suggested high pass cut off.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. footbibliography::</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">longest</span><span class="p">,</span> <span class="n">annotation_name</span> <span class="o">=</span> <span class="n">longest_inter_annotation_interval</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+    <span class="n">max_isi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">longest</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">max_isi</span><span class="p">)</span></div>
 </pre></div>
 
 
