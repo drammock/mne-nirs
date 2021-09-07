@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/bootstrap_divs.js"></script>
     <script src="../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -293,11 +291,9 @@ Simply modify the <code class="docutils literal notranslate"><span class="pre">r
 See <a class="reference internal" href="plot_01_data_io.html#tut-importing-fnirs-data"><span class="std std-ref">data importing tutorial</span></a> to learn how
 to use your data with MNE-Python.</p>
 </div>
-<div class="panel panel-success">
-<div class="panel-heading"><h4 class="panel-title">
-<a data-toggle="collapse" href="#collapse_chevron-circle-down-data-description-click-to-expand"><em class="fa fa-chevron-circle-down"></em> Data description (click to expand)</a></h4></div>
-<div id="collapse_chevron-circle-down-data-description-click-to-expand" class="panel-collapse collapse">
-<div class="panel-body"><p>Optodes were placed over the motor cortex using the standard NIRX motor
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Optodes were placed over the motor cortex using the standard NIRX motor
 montage, but with 8 short channels added (see their web page for details).
 To view the sensor locations run
 <cite>raw_intensity.plot_sensors()</cite>.
@@ -305,7 +301,8 @@ A sound was presented to indicate which hand the participant should tap.
 Participants tapped their thumb to their fingers for 5s.
 Conditions were presented in a random order with a randomised inter
 stimulus interval.</p>
-</div></div></div><div class="contents local topic" id="page-contents">
+</div>
+<div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#set-up-directories" id="id2">Set up directories</a></p></li>
@@ -381,41 +378,25 @@ In this example we use the example dataset <code class="docutils literal notrans
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
-Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (41.7 MB)
+Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
 
-  0%|          | Downloading : 0.00/41.7M [00:00&lt;?,        ?B/s]
-  1%|          | Downloading : 248k/41.7M [00:00&lt;00:02,    14.7MB/s]
-  1%|1         | Downloading : 504k/41.7M [00:00&lt;00:02,    14.8MB/s]
-  2%|2         | Downloading : 0.99M/41.7M [00:00&lt;00:02,    16.4MB/s]
-  4%|4         | Downloading : 1.74M/41.7M [00:00&lt;00:01,    21.7MB/s]
-  8%|7         | Downloading : 3.24M/41.7M [00:00&lt;00:01,    28.5MB/s]
- 10%|#         | Downloading : 4.24M/41.7M [00:00&lt;00:01,    31.0MB/s]
- 13%|#2        | Downloading : 5.24M/41.7M [00:00&lt;00:01,    33.4MB/s]
- 15%|#4        | Downloading : 6.24M/41.7M [00:00&lt;00:01,    35.3MB/s]
- 17%|#7        | Downloading : 7.24M/41.7M [00:00&lt;00:00,    37.3MB/s]
- 20%|#9        | Downloading : 8.24M/41.7M [00:00&lt;00:00,    39.1MB/s]
- 22%|##2       | Downloading : 9.24M/41.7M [00:00&lt;00:00,    40.8MB/s]
- 25%|##4       | Downloading : 10.2M/41.7M [00:00&lt;00:00,    42.5MB/s]
- 27%|##6       | Downloading : 11.2M/41.7M [00:00&lt;00:00,    43.9MB/s]
- 29%|##9       | Downloading : 12.2M/41.7M [00:00&lt;00:00,    45.1MB/s]
- 32%|###1      | Downloading : 13.2M/41.7M [00:00&lt;00:00,    46.3MB/s]
- 34%|###4      | Downloading : 14.2M/41.7M [00:00&lt;00:00,    47.3MB/s]
- 37%|###6      | Downloading : 15.2M/41.7M [00:00&lt;00:00,    48.3MB/s]
- 41%|####1     | Downloading : 17.2M/41.7M [00:00&lt;00:00,    51.4MB/s]
- 46%|####6     | Downloading : 19.2M/41.7M [00:00&lt;00:00,    54.2MB/s]
- 49%|####8     | Downloading : 20.2M/41.7M [00:00&lt;00:00,    54.8MB/s]
- 53%|#####3    | Downloading : 22.2M/41.7M [00:00&lt;00:00,    57.1MB/s]
- 58%|#####8    | Downloading : 24.2M/41.7M [00:00&lt;00:00,    59.5MB/s]
- 63%|######2   | Downloading : 26.2M/41.7M [00:00&lt;00:00,    61.6MB/s]
- 68%|######7   | Downloading : 28.2M/41.7M [00:00&lt;00:00,    63.4MB/s]
- 72%|#######2  | Downloading : 30.2M/41.7M [00:00&lt;00:00,    65.0MB/s]
- 77%|#######7  | Downloading : 32.2M/41.7M [00:00&lt;00:00,    67.0MB/s]
- 82%|########2 | Downloading : 34.2M/41.7M [00:00&lt;00:00,    68.7MB/s]
- 87%|########6 | Downloading : 36.2M/41.7M [00:00&lt;00:00,    70.0MB/s]
- 92%|#########1| Downloading : 38.2M/41.7M [00:00&lt;00:00,    71.0MB/s]
- 96%|#########6| Downloading : 40.2M/41.7M [00:00&lt;00:00,    72.3MB/s]
-100%|##########| Downloading : 41.7M/41.7M [00:00&lt;00:00,    73.5MB/s]
-100%|##########| Downloading : 41.7M/41.7M [00:00&lt;00:00,    64.0MB/s]
+  0%|          | Downloading : 0.00/0.00 [00:00&lt;?,        ?B/s]
+  0%|          | Downloading : 8.00k/0.00 [00:00&lt;00:00,    17.6kB/s]
+  0%|          | Downloading : 512k/0.00 [00:00&lt;00:00,    1.11MB/s]
+  0%|          | Downloading : 1.25M/0.00 [00:00&lt;00:00,    2.71MB/s]
+  0%|          | Downloading : 2.25M/0.00 [00:00&lt;00:00,    4.81MB/s]
+  0%|          | Downloading : 3.25M/0.00 [00:00&lt;00:00,    6.87MB/s]
+  0%|          | Downloading : 5.25M/0.00 [00:00&lt;00:00,    11.0MB/s]
+  0%|          | Downloading : 7.25M/0.00 [00:00&lt;00:00,    15.0MB/s]
+  0%|          | Downloading : 9.25M/0.00 [00:00&lt;00:00,    12.7MB/s]
+  0%|          | Downloading : 12.2M/0.00 [00:00&lt;00:00,    17.1MB/s]
+  0%|          | Downloading : 16.2M/0.00 [00:00&lt;00:00,    22.6MB/s]
+  0%|          | Downloading : 20.2M/0.00 [00:01&lt;00:00,    18.8MB/s]
+  0%|          | Downloading : 26.2M/0.00 [00:01&lt;00:00,    17.1MB/s]
+  0%|          | Downloading : 32.2M/0.00 [00:01&lt;00:00,    21.3MB/s]
+  0%|          | Downloading : 36.2M/0.00 [00:02&lt;00:00,    18.4MB/s]
+  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    21.6MB/s]
+  0%|          | Downloading : 41.7M/0.00 [00:02&lt;00:00,    19.9MB/s]
 Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
 Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
 (please be patient, this can take some time)
@@ -605,7 +586,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="vJONtp"></div>
+          <div id="CgsRtK"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -656,7 +637,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("vJONtp");
+       var plotContainer = document.getElementById("CgsRtK");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -880,7 +861,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="FiMkeM"></div>
+          <div id="Kw3lfJ"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -954,7 +935,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 "shape":2
 }]
 };
-       var plotContainer = document.getElementById("FiMkeM");
+       var plotContainer = document.getElementById("Kw3lfJ");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -1639,8 +1620,8 @@ This can be generated from the statistics dataframe.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  32.231 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  379 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  39.974 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  479 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-12-group-glm-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_12_group_glm.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>

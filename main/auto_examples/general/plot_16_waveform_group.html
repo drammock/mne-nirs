@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/bootstrap_divs.js"></script>
     <script src="../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -283,11 +281,9 @@ Simply modify the <code class="docutils literal notranslate"><span class="pre">r
 See <a class="reference internal" href="plot_01_data_io.html#tut-importing-fnirs-data"><span class="std std-ref">data importing tutorial</span></a> to learn how
 to use your data with MNE-Python.</p>
 </div>
-<div class="panel panel-success">
-<div class="panel-heading"><h4 class="panel-title">
-<a data-toggle="collapse" href="#collapse_chevron-circle-down-data-description-click-to-expand"><em class="fa fa-chevron-circle-down"></em> Data description (click to expand)</a></h4></div>
-<div id="collapse_chevron-circle-down-data-description-click-to-expand" class="panel-collapse collapse">
-<div class="panel-body"><p>Optodes were placed over the motor cortex using the standard NIRx motor
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Optodes were placed over the motor cortex using the standard NIRx motor
 montage with 8 short channels added (see their web page for details).
 To view the sensor locations run
 <cite>raw_intensity.plot_sensors()</cite>.
@@ -296,7 +292,8 @@ which hand the participant should tap.
 Participants tapped their thumb to their fingers for the entire 5 sec.
 Conditions were presented in a random order with a randomised inter-
 stimulus interval.</p>
-</div></div></div><div class="contents local topic" id="page-contents">
+</div>
+<div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#define-individual-analysis" id="id3">Define individual analysis</a></p></li>
@@ -425,9 +422,9 @@ dictionary (<cite>all_evokeds</cite>) for each condition.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmp7i8mc0ag/5be20e636c3ee4936cca5088cc2b0dad07283e13/examples/general/plot_16_waveform_group.py:143: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmphzb0iizb/c9db0099612372ad6af91ec85bcb27c347e57fd0/examples/general/plot_16_waveform_group.py:142: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
-/tmp/tmp7i8mc0ag/5be20e636c3ee4936cca5088cc2b0dad07283e13/examples/general/plot_16_waveform_group.py:143: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+/tmp/tmphzb0iizb/c9db0099612372ad6af91ec85bcb27c347e57fd0/examples/general/plot_16_waveform_group.py:142: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
 </pre></div>
 </div>
@@ -479,7 +476,7 @@ as illustrated by the head inset in the top right corner of the figure.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7ff3b117e5e0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f78d5d819d0&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping condition
@@ -554,7 +551,7 @@ regions of the brain for each condition.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7ff3a3f416a0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f78c598ce80&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to tapping appears
@@ -691,7 +688,7 @@ single ROI between conditions.</p>
        <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="y1U6m5"></div>
+          <div id="ip0uwB"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -739,7 +736,7 @@ single ROI between conditions.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("y1U6m5");
+       var plotContainer = document.getElementById("ip0uwB");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -877,7 +874,7 @@ conditions and the model is applied.</p>
 <br /><p>The model indicates that for the oxyhaemoglobin (HbO) data, the ipsilateral
 responses are 4.2 μMol smaller than those on the contralateral side to the
 hand that is tapping.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.166 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.740 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-16-waveform-group-py">
 <div class="binder-badge docutils container">
