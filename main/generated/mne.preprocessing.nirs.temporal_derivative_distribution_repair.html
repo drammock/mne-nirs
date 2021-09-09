@@ -185,7 +185,7 @@
 <span class="sig-prename descclassname"><span class="pre">mne.preprocessing.nirs.</span></span><span class="sig-name descname"><span class="pre">temporal_derivative_distribution_repair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/mne/preprocessing/nirs/_tddr.html#temporal_derivative_distribution_repair"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mne.preprocessing.nirs.temporal_derivative_distribution_repair" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply temporal derivative distribution repair to data.</p>
 <p>Applies temporal derivative distribution repair (TDDR) to data
-<a class="footnote-reference brackets" href="#fishburnetal2019" id="id1">1</a>. This approach removes baseline shift
+<a class="footnote-reference brackets" href="#footcite-fishburnetal2019" id="id1">1</a>. This approach removes baseline shift
 and spike artifacts without the need for any user-supplied parameters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -209,8 +209,8 @@ If used, it should be passed as a keyword-argument only.</p>
 <p>There is a shorter alias <code class="docutils literal notranslate"><span class="pre">mne.preprocessing.nirs.tddr</span></code> that can be used
 instead of this function (e.g. if line length is an issue).</p>
 <p class="rubric">References</p>
-<p><dl class="footnote brackets">
-<dt class="label" id="fishburnetal2019"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<p id="id2"><dl class="footnote brackets">
+<dt class="label" id="footcite-fishburnetal2019"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Frank A Fishburn, Ruth S Ludlum, Chandan J Vaidya, and Andrei V Medvedev. Temporal derivative distribution repair (tddr): a motion correction method for fNIRS. <em>NeuroImage</em>, 184:171–179, 2019. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2018.09.025">doi:10.1016/j.neuroimage.2018.09.025</a>.</p>
 </dd>
 </dl>
