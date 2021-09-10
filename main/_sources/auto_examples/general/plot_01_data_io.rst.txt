@@ -354,9 +354,9 @@ OctaMon device.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.696 seconds)
+   **Total running time of the script:** ( 0 minutes  0.667 seconds)
 
-**Estimated memory usage:**  12 MB
+**Estimated memory usage:**  14 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_01_data_io.py:
