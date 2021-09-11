@@ -1050,7 +1050,7 @@ cortical surface
     See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
       df["theta"] = df["theta"] * 1e6
 
-    <mne.viz._brain._brain.Brain object at 0x7f2f59300130>
+    <mne.viz._brain._brain.Brain object at 0x7f6d04eaf4c0>
 
 
 
@@ -1507,9 +1507,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.726 seconds)
+   **Total running time of the script:** ( 0 minutes  14.515 seconds)
 
-**Estimated memory usage:**  640 MB
+**Estimated memory usage:**  636 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:
