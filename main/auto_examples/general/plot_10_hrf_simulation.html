@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GLM Analysis (Simulated) &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>GLM Analysis (Simulated) &#8212; MNE-NIRS 0.1.1 documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -101,12 +101,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.1
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=plot_10_hrf_simulation.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -320,7 +321,7 @@ We also see that the mean square error of the model fit is close to zero.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [4.e-06]   MSE: 5.3674543557763205e-43   Error (uM): [1.69406589e-15]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [4.e-06]   MSE: 1.5335790565441528e-42   Error (uM): [3.38813179e-15]
 </pre></div>
 </div>
 </div>
@@ -350,7 +351,7 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_10_hrf_simulation_003.png" srcset="../../_images/sphx_glr_plot_10_hrf_simulation_003.png" alt="plot 10 hrf simulation" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [3.85152156e-06]   MSE: 9.408131103888489e-12   Error (uM): [-0.14847844]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Estimate: [3.85152156e-06]   MSE: 9.408131103888486e-12   Error (uM): [-0.14847844]
 </pre></div>
 </div>
 </div>
@@ -385,7 +386,7 @@ However, the error is greater for the colored than white noise.</p>
 </div>
 <img src="../../_images/sphx_glr_plot_10_hrf_simulation_004.png" srcset="../../_images/sphx_glr_plot_10_hrf_simulation_004.png" alt="plot 10 hrf simulation" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Adding noise to 1/1 channels (1 channels in cov)
-Estimate: [5.6774337e-06]   MSE: 4.703062004939599e-10   Error (uM): [1.6774337]
+Estimate: [5.6774337e-06]   MSE: 4.7030620049396e-10   Error (uM): [1.6774337]
 </pre></div>
 </div>
 </div>
@@ -468,8 +469,8 @@ observed that as the measurement time was increased, the estimated
 error decreased.
 We also observed in this idealised example that including an appropriate
 model of the noise can improve the accuracy of the response estimate.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.152 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  40 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.362 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  39 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-10-hrf-simulation-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_10_hrf_simulation.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
