@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.signal_enhancement._short_channel_correction &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>mne_nirs.signal_enhancement._short_channel_correction &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/bootstrap_divs.js"></script>
     <script src="../../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -101,12 +99,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -180,26 +179,16 @@
 
 <div class="viewcode-block" id="short_channel_regression"><a class="viewcode-back" href="../../../generated/mne_nirs.signal_enhancement.short_channel_regression.html#mne_nirs.signal_enhancement.short_channel_regression">[docs]</a><span class="k">def</span> <span class="nf">short_channel_regression</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Short channel regression based on nearest channel.</span>
+<span class="sd">    Systemic correction regression based on nearest short channel.</span>
 
-<span class="sd">    Fabbri, Francesco, et al. &quot;Optical measurements of absorption changes in</span>
-<span class="sd">    two-layered diffusive media.&quot;</span>
-<span class="sd">    Physics in Medicine &amp; Biology 49.7 (2004): 1183.</span>
-
-<span class="sd">    Saager, Rolf B., and Andrew J. Berger. &quot;Direct characterization and</span>
-<span class="sd">    removal of interfering absorption trends in two-layer turbid media.&quot;</span>
-<span class="sd">    JOSA A 22.9 (2005): 1874-1882.</span>
-
-<span class="sd">    Scholkmann, Felix, Andreas Jaakko Metz, and Martin Wolf.</span>
-<span class="sd">    &quot;Measuring tissue hemodynamics and oxygenation by continuous-wave</span>
-<span class="sd">    functional near-infrared spectroscopy—how robust are the different</span>
-<span class="sd">    calculation methods against movement artifacts?.&quot;</span>
-<span class="sd">    Physiological measurement 35.4 (2014): 717.</span>
+<span class="sd">    Method as described by NIRx and based on</span>
+<span class="sd">    :footcite:`fabbri2004optical`, :footcite:`saager2005direct`,</span>
+<span class="sd">    and :footcite:`scholkmann2014measuring`.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    raw : instance of Raw</span>
-<span class="sd">        Haemoglobin data.</span>
+<span class="sd">        Raw instance containing optical density data.</span>
 <span class="sd">    max_dist : number</span>
 <span class="sd">        Channels less than this distance are considered short (m).</span>
 
@@ -207,6 +196,10 @@
 <span class="sd">    -------</span>
 <span class="sd">    raw : instance of Raw</span>
 <span class="sd">        The modified raw instance.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. footbibliography::</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">raw</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
     <span class="n">_validate_type</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">BaseRaw</span><span class="p">,</span> <span class="s1">&#39;raw&#39;</span><span class="p">)</span>
@@ -309,7 +302,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

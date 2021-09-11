@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Waveform averaging analysis &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>Waveform averaging analysis &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/bootstrap_divs.js"></script>
     <script src="../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -103,12 +101,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -273,7 +272,7 @@ deoxyhaemoglobin (HbR) concentration.</p>
 <li><p><a class="reference internal" href="#compare-tapping-of-left-and-right-hands" id="id11">Compare tapping of left and right hands</a></p></li>
 </ul>
 </div>
-<p>Here we will work with the <a class="reference external" href="https://mne.tools/stable/overview/datasets_index.html#fnirs-motor-dataset" title="(in MNE v0.23.0)"><span class="xref std std-ref">fNIRS motor data</span></a>.</p>
+<p>Here we will work with the <a class="reference external" href="https://mne.tools/stable/overview/datasets_index.html#fnirs-motor-dataset" title="(in MNE v0.23)"><span class="xref std std-ref">fNIRS motor data</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># sphinx_gallery_thumbnail_number = 14</span>
 
 <span class="c1"># Authors: Robert Luke &lt;mail@robertluke.net&gt;</span>
@@ -313,6 +312,7 @@ Reading 0 ... 23238  =      0.000 ...  2974.464 secs...
 <td>Unknown</td>
     </tr>
         <th>Participant</th>
+            <td>P1</td>
 
     </tr>
     <tr>
@@ -376,7 +376,7 @@ To achieve this we pick all the channels that are not considered to be short.</p
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_15_waveform_001.png" srcset="../../_images/sphx_glr_plot_15_waveform_001.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;MNEBrowseFigure size 640x480 with 4 Axes&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;MNEBrowseFigure size 800x800 with 4 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -389,7 +389,7 @@ To achieve this we pick all the channels that are not considered to be short.</p
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_15_waveform_002.png" srcset="../../_images/sphx_glr_plot_15_waveform_002.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;MNEBrowseFigure size 640x480 with 4 Axes&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;MNEBrowseFigure size 800x800 with 4 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -419,7 +419,7 @@ coupling index.</p>
 </div>
 <p>At this stage it is appropriate to inspect your data
 (for instructions on how to use the interactive data visualisation tool
-see <a class="reference external" href="https://mne.tools/stable/auto_tutorials/raw/40_visualize_raw.html#tut-visualize-raw" title="(in MNE v0.23.0)"><span>Built-in plotting methods for Raw objects</span></a>)
+see <a class="reference external" href="https://mne.tools/stable/auto_tutorials/raw/40_visualize_raw.html#tut-visualize-raw" title="(in MNE v0.23)"><span>Built-in plotting methods for Raw objects</span></a>)
 to ensure that channels with poor scalp coupling have been removed.
 If your data contains lots of artifacts you may decide to apply
 artifact reduction techniques as described in <a class="reference internal" href="plot_21_artifacts.html#ex-fnirs-artifacts"><span class="std std-ref">Artifact correction techniques</span></a>.</p>
@@ -434,7 +434,7 @@ the modified Beer-Lambert law.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_15_waveform_004.png" srcset="../../_images/sphx_glr_plot_15_waveform_004.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;MNEBrowseFigure size 640x480 with 4 Axes&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;MNEBrowseFigure size 800x800 with 4 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -743,17 +743,17 @@ driving the topographic plot above.</p>
                          <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Tidy the legend.</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">leg_lines</span></a> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span><span class="o">.</span><span class="n">lines</span></a> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">get_c</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span><span class="p">][:</span><span class="mi">1</span><span class="p">]</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">leg_lines</span></a><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span><span class="o">.</span><span class="n">lines</span></a> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">get_c</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">leg_lines</span></a> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">lines</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">get_c</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span><span class="p">][:</span><span class="mi">1</span><span class="p">]</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">leg_lines</span></a><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">lines</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">get_c</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 <a href="https://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure.legend" title="matplotlib.figure.Figure.legend" class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-method"><span class="n">fig</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">leg_lines</span></a><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Left&#39;</span><span class="p">,</span> <span class="s1">&#39;Right&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_15_waveform_021.png" srcset="../../_images/sphx_glr_plot_15_waveform_021.png" alt="plot 15 waveform" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f2c9de68a60&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f1eb627fa60&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  17.829 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  79 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  14.832 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  25 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-15-waveform-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_15_waveform.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -810,7 +810,7 @@ driving the topographic plot above.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

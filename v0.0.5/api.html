@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>API &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/bootstrap_divs.js"></script>
     <script src="_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -97,12 +95,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../main/api.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -237,10 +236,10 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_first_level_design_matrix</span></code></a>(raw[, …])</p></td>
-<td><p>Generate design matrix from MNE data structure.</p></td>
+<td><p>Generate a design matrix based on annotations and model HRF.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar" title="mne_nirs.experimental_design.create_boxcar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_boxcar</span></code></a>(raw[, event_id, stim_dur])</p></td>
-<td><p>Generate boxcar waveform from MNE data structure.</p></td>
+<td><p>Generate boxcar representation of the experimental paradigm.</p></td>
 </tr>
 </tbody>
 </table>
@@ -274,7 +273,7 @@
 <td><p>Apply negative correlation enhancement algorithm.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.signal_enhancement.short_channel_regression.html#mne_nirs.signal_enhancement.short_channel_regression" title="mne_nirs.signal_enhancement.short_channel_regression"><code class="xref py py-obj docutils literal notranslate"><span class="pre">short_channel_regression</span></code></a>(raw[, max_dist])</p></td>
-<td><p>Short channel regression based on nearest channel.</p></td>
+<td><p>Systemic correction regression based on nearest short channel.</p></td>
 </tr>
 </tbody>
 </table>
@@ -351,7 +350,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.channels.get_short_channels.html#mne_nirs.channels.get_short_channels" title="mne_nirs.channels.get_short_channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_short_channels</span></code></a>(raw[, max_dist])</p></td>
-<td><p>Return channels with a short source detector separation.</p></td>
+<td><p>Return channels with a short source-detector separation.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels" title="mne_nirs.channels.get_long_channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_long_channels</span></code></a>(raw[, min_dist, max_dist])</p></td>
 <td><p>Return channels with a long source detector separation.</p></td>
@@ -433,7 +432,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

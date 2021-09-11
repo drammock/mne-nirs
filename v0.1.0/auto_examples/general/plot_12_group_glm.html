@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group Level GLM Analysis &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>Group Level GLM Analysis &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/bootstrap_divs.js"></script>
     <script src="../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -103,12 +101,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -260,7 +259,7 @@ The NIRS brain AnalyzIR toolbox. Algorithms, 11(5), 73.</p>
 outputs of neuroimaging experiments.” Scientific data 3.1 (2016): 1-9.</p>
 </div>
 <p>Individual level analysis of this data is described in the
-<a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/70_fnirs_processing.html#tut-fnirs-processing" title="(in MNE v0.23.0)"><span class="xref std std-ref">MNE fNIRS waveform tutorial</span></a>
+<a class="reference external" href="https://mne.tools/stable/auto_tutorials/preprocessing/70_fnirs_processing.html#tut-fnirs-processing" title="(in MNE v0.23)"><span class="xref std std-ref">MNE fNIRS waveform tutorial</span></a>
 and the
 <a class="reference internal" href="plot_11_hrf_measured.html#tut-fnirs-hrf"><span class="std std-ref">MNE-NIRS fNIRS GLM tutorial</span></a>
 So this example will skim over the individual level details
@@ -283,19 +282,7 @@ As such, you must use the development branch of MNE-BIDS.</p>
 <p>To install the fNIRS development branch of MNE-BIDS run:
 <cite>pip install https://codeload.github.com/rob-luke/mne-bids/zip/nirs</cite></p>
 </div>
-<div class="panel panel-success">
-<div class="panel-heading"><h4 class="panel-title">
-<a data-toggle="collapse" href="#collapse_chevron-circle-down-data-description-click-to-expand"><em class="fa fa-chevron-circle-down"></em> Data description (click to expand)</a></h4></div>
-<div id="collapse_chevron-circle-down-data-description-click-to-expand" class="panel-collapse collapse">
-<div class="panel-body"><p>Optodes were placed over the motor cortex using the standard NIRX motor
-montage, but with 8 short channels added (see their web page for details).
-To view the sensor locations run
-<cite>raw_intensity.plot_sensors()</cite>.
-A sound was presented to indicate which hand the participant should tap.
-Participants tapped their thumb to their fingers for 5s.
-Conditions were presented in a random order with a randomised inter
-stimulus interval.</p>
-</div></div></div><div class="contents local topic" id="page-contents">
+<div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#define-individual-analysis" id="id2">Define individual analysis</a></p></li>
@@ -511,16 +498,16 @@ and that the responses look to be contralateral to the tapping hand.</p>
 <div class="output_subarea output_html rendered_html output_result">
 <html lang="en">
    <head>
-       <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
+       <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="NG7862"></div>
+          <div id="8edYHF"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
 "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
 "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right","Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
-"theta":[0.36652017966974343,0.2767052477835211,2.253306244277834,5.653439098296028,7.092229283094632,3.1843575972760507,-0.9143790325342777,-1.8651492092869217,3.1485090797794264,5.7739681780791905,7.817526976153357,1.8613712743597257,-0.8896275974260163,-2.119644011266758,0.980596499006172,5.062971026914605,3.457345856141115,2.9490687218065506,-0.0323170125477342,-0.20974555678100865,-3.1943037212456247,10.65930530583943,4.9927174218778845,-0.639774092446876,0.0415832203602035,-0.4782130897061782,6.662184919645529,23.340210278152615,22.98954259087019,11.577755280382911],
+"theta":[0.36652017966974304,0.2767052477835204,2.2533062442778373,5.653439098296025,7.092229283094666,3.1843575972760423,-0.9143790325342784,-1.8651492092869222,3.148509079779568,5.7739681780792065,7.817526976153176,1.8613712743597293,-0.8896275974260169,-2.119644011266758,0.980596499006114,5.062971026914602,3.4573458561409707,2.949068721806532,-0.032317012547734475,-0.2097455567810083,-3.1943037212456415,10.659305305839451,4.992717421877896,-0.6397740924468416,0.04158322036020391,-0.47821308970617843,6.662184919645522,23.340210278152618,22.989542590870172,11.577755280382902],
 "ID":["01","01","01","01","01","01","02","02","02","02","02","02","03","03","03","03","03","03","04","04","04","04","04","04","05","05","05","05","05","05"]
 },
 "mapping":{
@@ -565,7 +552,7 @@ and that the responses look to be contralateral to the tapping hand.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("NG7862");
+       var plotContainer = document.getElementById("8edYHF");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -784,14 +771,14 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 <div class="output_subarea output_html rendered_html output_result">
 <html lang="en">
    <head>
-       <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
+       <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="cUk7k8"></div>
+          <div id="86osSh"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
-"Coef.":[-0.2856440484956162,-0.8792093238514693,1.9700586042926667,10.097978777456373,9.269872425627437,3.786555756275672],
+"Coef.":[-0.2856440484956166,-0.8792093238514693,1.970058604292679,10.097978777456378,9.269872425627376,3.786555756275672],
 "ROI":["Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere","Left_Hemisphere","Right_Hemisphere"],
 "Condition":["Control","Control","Tapping/Left","Tapping/Left","Tapping/Right","Tapping/Right"],
 "Significant":[false,false,false,true,true,true]
@@ -836,7 +823,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 },{
 "geom":"point",
 "data":{
-"Coef.":[0.26865728080245566,-2.0102302437532042,-4.1301761301650455],
+"Coef.":[0.26865728080245543,-2.010230243753423,-4.130176130165128],
 "Condition":["Control","Tapping/Left","Tapping/Right"],
 "Significant":[false,false,true]
 },
@@ -849,7 +836,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 },{
 "geom":"point",
 "data":{
-"Coef.":[0.1403904409763277,-4.428427669197642,-1.9560838108139995],
+"Coef.":[0.1403904409763276,-4.428427669197784,-1.9560838108139587],
 "Condition":["Control","Tapping/Left","Tapping/Right"],
 "Significant":[false,true,false]
 },
@@ -861,7 +848,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.</p>
 "shape":2
 }]
 };
-       var plotContainer = document.getElementById("cUk7k8");
+       var plotContainer = document.getElementById("86osSh");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -1012,8 +999,7 @@ contralateral to the side of finger tapping.</p>
     <a href="https://mne.tools/stable/generated/mne.viz.Brain.html#mne.viz.Brain.add_text" title="mne.viz.Brain.add_text" class="sphx-glr-backref-module-mne-viz sphx-glr-backref-type-py-method"><span class="n">brain</span><span class="o">.</span><span class="n">add_text</span></a><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cond</span></a><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_12_group_glm_004.png" srcset="../../_images/sphx_glr_plot_12_group_glm_004.png" alt="plot 12 group glm" class = "sphx-glr-multi-img"/></li>
+<img src="../../_images/sphx_glr_plot_12_group_glm_004.png" srcset="../../_images/sphx_glr_plot_12_group_glm_004.png" alt="plot 12 group glm" class = "sphx-glr-single-img"/><ul class="sphx-glr-horizontal">
 <li><img src="../../_images/sphx_glr_plot_12_group_glm_005.png" srcset="../../_images/sphx_glr_plot_12_group_glm_005.png" alt="plot 12 group glm" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_12_group_glm_006.png" srcset="../../_images/sphx_glr_plot_12_group_glm_006.png" alt="plot 12 group glm" class = "sphx-glr-multi-img"/></li>
 </ul>
@@ -1547,8 +1533,8 @@ This can be generated from the statistics dataframe.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  44.930 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  851 MB</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  40.402 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  607 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-12-group-glm-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_12_group_glm.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -1605,7 +1591,7 @@ This can be generated from the statistics dataframe.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

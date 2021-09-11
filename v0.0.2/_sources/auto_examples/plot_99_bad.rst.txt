@@ -109,6 +109,7 @@ appear as if a fNIRS response is observed.
     <td>Unknown</td>
         </tr>
             <th>Participant</th>
+                <td>P1</td>
         
         </tr>
         <tr>
@@ -198,7 +199,7 @@ To achieve this we pick all the channels that are not considered to be short.
  .. code-block:: none
 
 
-    <MNEBrowseFigure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 800x800 with 4 Axes>
 
 
 
@@ -235,7 +236,7 @@ The raw intensity values are then converted to optical density.
  .. code-block:: none
 
 
-    <MNEBrowseFigure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 800x800 with 4 Axes>
 
 
 
@@ -274,7 +275,7 @@ the modified Beer-Lambert law.
  .. code-block:: none
 
 
-    <MNEBrowseFigure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 800x800 with 4 Axes>
 
 
 
@@ -575,9 +576,9 @@ approach, and the benefits of the GLM style of analysis
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.359 seconds)
+   **Total running time of the script:** ( 0 minutes  6.290 seconds)
 
-**Estimated memory usage:**  95 MB
+**Estimated memory usage:**  49 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_99_bad.py:

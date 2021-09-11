@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Group Level Waveform Analysis &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>Group Level Waveform Analysis &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/bootstrap_divs.js"></script>
     <script src="../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -97,12 +95,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -272,20 +271,7 @@ As such, you must use the development branch of MNE-BIDS.</p>
 <p>To install the fNIRS development branch of MNE-BIDS run:
 <cite>pip install https://codeload.github.com/rob-luke/mne-bids/zip/nirs</cite></p>
 </div>
-<div class="panel panel-success">
-<div class="panel-heading"><h4 class="panel-title">
-<a data-toggle="collapse" href="#collapse_chevron-circle-down-data-description-click-to-expand"><em class="fa fa-chevron-circle-down"></em> Data description (click to expand)</a></h4></div>
-<div id="collapse_chevron-circle-down-data-description-click-to-expand" class="panel-collapse collapse">
-<div class="panel-body"><p>Optodes were placed over the motor cortex using the standard NIRx motor
-montage with 8 short channels added (see their web page for details).
-To view the sensor locations run
-<cite>raw_intensity.plot_sensors()</cite>.
-A 5 sec sound was presented in either the left or right ear to indicate
-which hand the participant should tap.
-Participants tapped their thumb to their fingers for the entire 5 sec.
-Conditions were presented in a random order with a randomised inter-
-stimulus interval.</p>
-</div></div></div><div class="contents local topic" id="page-contents">
+<div class="contents local topic" id="page-contents">
 <p class="topic-title">Page contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#define-individual-analysis" id="id3">Define individual analysis</a></p></li>
@@ -415,9 +401,9 @@ dictionary (<cite>all_evokeds</cite>) for each condition.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpiz34u6gd/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tmp/tmpejcb2s98/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
-/tmp/tmpiz34u6gd/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+/tmp/tmpejcb2s98/38de21c2f172bd15c6e8c53d66fc462a57e9f3e1/examples/general/plot_16_waveform_group.py:138: RuntimeWarning: No bad channels to interpolate. Doing nothing...
   raw_od.interpolate_bads()
 </pre></div>
 </div>
@@ -469,7 +455,7 @@ as illustrated by the head inset in the top right corner of the figure.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_001.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_001.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fd9fe549340&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f344d832610&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to the tapping condition
@@ -544,7 +530,7 @@ regions of the brain for each condition.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_16_waveform_group_002.png" srcset="../../_images/sphx_glr_plot_16_waveform_group_002.png" alt="Control, Tapping/Left, Tapping/Right" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fd9ffa2ea00&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f344d2c2640&gt;
 </pre></div>
 </div>
 <p>From this figure we observe that the response to tapping appears
@@ -678,10 +664,10 @@ single ROI between conditions.</p>
 <div class="output_subarea output_html rendered_html output_result">
 <html lang="en">
    <head>
-       <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.0.4/js-package/distr/lets-plot.min.js"></script>
+       <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
    </head>
    <body>
-          <div id="4ot5pK"></div>
+          <div id="EItFG9"></div>
    <script type="text/javascript" data-lets-plot-script="plot">
        var plotSpec={
 "data":{
@@ -729,7 +715,7 @@ single ROI between conditions.</p>
 }
 }]
 };
-       var plotContainer = document.getElementById("4ot5pK");
+       var plotContainer = document.getElementById("EItFG9");
        LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
    </script>
    </body>
@@ -867,8 +853,8 @@ conditions and the model is applied.</p>
 <br /><p>The model indicates that for the oxyhaemoglobin (HbO) data, the ipsilateral
 responses are 4.2 μMol smaller than those on the contralateral side to the
 hand that is tapping.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.806 seconds)</p>
-<p><strong>Estimated memory usage:</strong>  19 MB</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.553 seconds)</p>
+<p><strong>Estimated memory usage:</strong>  24 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-16-waveform-group-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/rob-luke/mne-nirs-docker/main?filepath=examples/mne-nirs-website-examples/auto_examples/general/plot_16_waveform_group.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -925,7 +911,7 @@ hand that is tapping.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

@@ -395,13 +395,8 @@ See :ref:`plot_source_alignment` for more details.
 
     0 files missing from root.txt in /home/runner/mne_data/MNE-sample-data/subjects
     0 files missing from bem.txt in /home/runner/mne_data/MNE-sample-data/subjects/fsaverage
-    Using pyvista 3d backend.
-
     Using outer_skin.surf for head surface.
-    Plotting 16 fNIRS locations
-    Plotting 16 fNIRS sources
-    Plotting 16 fNIRS detectors
-    Plotting 16 fNIRS pairs
+    Channel types:: hbo: 8, hbr: 8
 
 
 
@@ -409,9 +404,9 @@ See :ref:`plot_source_alignment` for more details.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.356 seconds)
+   **Total running time of the script:** ( 0 minutes  1.614 seconds)
 
-**Estimated memory usage:**  275 MB
+**Estimated memory usage:**  183 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_01_data_io.py:

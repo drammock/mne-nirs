@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.experimental_design._experimental_design &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>mne_nirs.experimental_design._experimental_design &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/bootstrap_divs.js"></script>
     <script src="../../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -101,12 +99,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -181,10 +180,11 @@
                                    <span class="n">add_reg_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_onset</span><span class="o">=-</span><span class="mi">24</span><span class="p">,</span>
                                    <span class="n">oversampling</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Generate design matrix from MNE data structure.</span>
+<span class="sd">    Generate a design matrix based on annotations and model HRF.</span>
 
-<span class="sd">    This is a wrapper function for</span>
-<span class="sd">    nilearn.stats.first_level_model.make_first_level_design_matrix.</span>
+<span class="sd">    This is a wrapper function for the nilearn :footcite:`abraham2014machine`</span>
+<span class="sd">    function ``make_first_level_design_matrix``. For detailed description</span>
+<span class="sd">    of the arguments see the nilearn documentation at http://nilearn.github.io</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -194,9 +194,9 @@
 <span class="sd">    stim_dur : Number</span>
 <span class="sd">        The length of your stimulus.</span>
 
-<span class="sd">    hrf_model : {&#39;glover&#39;, &#39;spm&#39;, &#39;spm + derivative&#39;,</span>
-<span class="sd">        &#39;spm + derivative + dispersion&#39;,</span>
-<span class="sd">        &#39;glover + derivative&#39;, &#39;glover + derivative + dispersion&#39;,</span>
+<span class="sd">    hrf_model : {&#39;glover&#39;, &#39;spm&#39;, &#39;spm + derivative&#39;, \</span>
+<span class="sd">        &#39;spm + derivative + dispersion&#39;,\</span>
+<span class="sd">        &#39;glover + derivative&#39;, &#39;glover + derivative + dispersion&#39;,\</span>
 <span class="sd">        &#39;fir&#39;, None}, optional</span>
 <span class="sd">        Specifies the hemodynamic response function. Default=&#39;glover&#39;.</span>
 
@@ -238,6 +238,10 @@
 <span class="sd">    design_matrix : DataFrame instance,</span>
 <span class="sd">        Holding the computed design matrix, the index being the frames_times</span>
 <span class="sd">        and each column a regressor.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. footbibliography::</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">make_first_level_design_matrix</span>
     <span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
@@ -266,9 +270,9 @@
     <span class="k">return</span> <span class="n">dm</span></div>
 
 
-<div class="viewcode-block" id="create_boxcar"><a class="viewcode-back" href="../../../generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar">[docs]</a><span class="k">def</span> <span class="nf">create_boxcar</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">event_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stim_dur</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<div class="viewcode-block" id="create_boxcar"><a class="viewcode-back" href="../../../generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar">[docs]</a><span class="k">def</span> <span class="nf">create_boxcar</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">event_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stim_dur</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Generate boxcar waveform from MNE data structure.</span>
+<span class="sd">    Generate boxcar representation of the experimental paradigm.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -282,7 +286,7 @@
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    s : array</span>
-<span class="sd">        Returns an array for each trigger channel.</span>
+<span class="sd">        Returns an array for each annotation label.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
     <span class="n">bc</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">boxcar</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">stim_dur</span><span class="p">))</span>
@@ -295,6 +299,60 @@
         <span class="n">s</span><span class="p">[</span><span class="n">event_samples</span><span class="p">,</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span>
         <span class="n">s</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">s</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">bc</span><span class="p">)[:</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">times</span><span class="p">)]</span>
     <span class="k">return</span> <span class="n">s</span></div>
+
+
+<span class="k">def</span> <span class="nf">longest_inter_annotation_interval</span><span class="p">(</span><span class="n">raw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute longest ISI per annotation.</span>
+
+<span class="sd">    Specifically, longest period between two trials of</span>
+<span class="sd">    the same condition.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : instance of Raw</span>
+<span class="sd">        Haemoglobin data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    longest : list</span>
+<span class="sd">        Longest ISI per annotation.</span>
+<span class="sd">    annotation_name : list</span>
+<span class="sd">        Annotation name corresponding to reported interval.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">annotation_name</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+    <span class="n">longest</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="n">annotation_name</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">description</span> <span class="o">==</span> <span class="n">desc</span>
+        <span class="n">longest</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">onset</span><span class="p">[</span><span class="n">mask</span><span class="p">])))</span>
+    <span class="k">return</span> <span class="n">longest</span><span class="p">,</span> <span class="n">annotation_name</span>
+
+
+<span class="k">def</span> <span class="nf">drift_high_pass</span><span class="p">(</span><span class="n">raw</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute cosine drift regressor high pass cut off.</span>
+
+<span class="sd">    Value computed according to Nilearn :footcite:`abraham2014machine`</span>
+<span class="sd">    `suggestion &lt;http://nilearn.github.io/auto_examples/04_glm_first</span>
+<span class="sd">    _level/plot_first_level_details.html#changing-the-drift-model&gt;`__.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : instance of Raw</span>
+<span class="sd">        Haemoglobin data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    cutoff : number</span>
+<span class="sd">        Suggested high pass cut off.</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. footbibliography::</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">longest</span><span class="p">,</span> <span class="n">annotation_name</span> <span class="o">=</span> <span class="n">longest_inter_annotation_interval</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+    <span class="n">max_isi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">longest</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">max_isi</span><span class="p">)</span>
 </pre></div>
 
 
@@ -335,7 +393,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

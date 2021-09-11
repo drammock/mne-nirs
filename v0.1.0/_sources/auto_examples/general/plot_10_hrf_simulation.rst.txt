@@ -99,8 +99,9 @@ The simulated signal is plotted below.
 
  .. code-block:: none
 
+    Using matplotlib as 2D backend.
 
-    <MNEBrowseFigure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 800x800 with 4 Axes>
 
 
 
@@ -177,7 +178,7 @@ We also see that the mean square error of the model fit is close to zero.
 
  .. code-block:: none
 
-    Estimate: [4.e-06]   MSE: 5.914011196264044e-43   Error (uM): [1.69406589e-15]
+    Estimate: [4.e-06]   MSE: 5.3674543557763205e-43   Error (uM): [1.69406589e-15]
 
 
 
@@ -231,7 +232,7 @@ Note that the clean data plot is so similar to the GLM estimate that it is hard 
 
  .. code-block:: none
 
-    Estimate: [3.85152156e-06]   MSE: 9.408131103888486e-12   Error (uM): [-0.14847844]
+    Estimate: [3.85152156e-06]   MSE: 9.408131103888489e-12   Error (uM): [-0.14847844]
 
 
 
@@ -290,7 +291,7 @@ However, the error is greater for the colored than white noise.
  .. code-block:: none
 
     Adding noise to 1/1 channels (1 channels in cov)
-    Estimate: [5.6774337e-06]   MSE: 4.7030620049396e-10   Error (uM): [1.6774337]
+    Estimate: [5.6774337e-06]   MSE: 4.703062004939599e-10   Error (uM): [1.6774337]
 
 
 
@@ -423,7 +424,7 @@ but how does this affect the accuracy of the response estimate?
 
  .. code-block:: none
 
-    Estimate: [4.26283431e-06]   MSE: 9.881987820436521e-12   Error (uM): [0.26283431]
+    Estimate: [4.26283431e-06]   MSE: 9.881987820436524e-12   Error (uM): [0.26283431]
 
 
 
@@ -450,9 +451,9 @@ model of the noise can improve the accuracy of the response estimate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.867 seconds)
+   **Total running time of the script:** ( 0 minutes  3.329 seconds)
 
-**Estimated memory usage:**  21 MB
+**Estimated memory usage:**  31 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_10_hrf_simulation.py:

@@ -146,6 +146,7 @@ to meet github memory constraints.
     <td>Unknown</td>
         </tr>
             <th>Participant</th>
+                <td>P1</td>
         
         </tr>
         <tr>
@@ -546,7 +547,7 @@ of a single source detector pair.
 
  .. code-block:: none
 
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:250: DeprecationWarning: "run_GLM" has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:250: DeprecationWarning: "run_GLM" has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
       glm_est = run_GLM(data_subset, design_matrix)
 
 
@@ -577,7 +578,7 @@ desired channel name. You can view an overview of the estimates as:
  .. code-block:: none
 
 
-    {'S1_D1 hbo': <nilearn.glm.regression.RegressionResults object at 0x7f104d48c580>, 'S1_D1 hbr': <nilearn.glm.regression.RegressionResults object at 0x7f104d08eaf0>}
+    {'S1_D1 hbo': <nilearn.glm.regression.RegressionResults object at 0x7f6e169a8ac0>, 'S1_D1 hbr': <nilearn.glm.regression.RegressionResults object at 0x7f6e46c150d0>}
 
 
 
@@ -850,7 +851,7 @@ is seen in the epoching tutorial.
  .. code-block:: none
 
 
-    <matplotlib.collections.LineCollection object at 0x7f104d039d30>
+    <matplotlib.collections.LineCollection object at 0x7f6e46bed790>
 
 
 
@@ -892,9 +893,9 @@ negative of HbO as expected.
 
  .. code-block:: none
 
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:312: DeprecationWarning: "run_GLM" has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:312: DeprecationWarning: "run_GLM" has been deprecated in favor of the more comprehensive run_glm function, and will be removed in v1.0.0. See the changelog for further details.
       glm_est = run_GLM(raw_haemo, design_matrix)
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:313: DeprecationWarning: "plot_glm_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "plot_topo()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:313: DeprecationWarning: "plot_glm_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "plot_topo()" method instead.
       plot_glm_topo(raw_haemo, glm_est, design_matrix,
 
     <Figure size 1200x700 with 6 Axes>
@@ -960,17 +961,17 @@ the center of the head.
 
  .. code-block:: none
 
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:343: DeprecationWarning: "plot_glm_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "plot_topo()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:343: DeprecationWarning: "plot_glm_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "plot_topo()" method instead.
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:343: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:343: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo"), glm_est, design_matrix,
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:346: DeprecationWarning: "plot_glm_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "plot_topo()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:346: DeprecationWarning: "plot_glm_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "plot_topo()" method instead.
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:346: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:346: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10)),
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:349: DeprecationWarning: "plot_glm_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "plot_topo()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:349: DeprecationWarning: "plot_glm_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "plot_topo()" method instead.
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:349: RuntimeWarning: Reducing GLM results to match MNE data
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:349: RuntimeWarning: Reducing GLM results to match MNE data
       plot_glm_topo(raw_haemo.copy().pick(picks="hbo").pick(picks=range(10, 20)),
 
     Text(0.5, 1.0, 'Hemispheres plotted independently')
@@ -1026,11 +1027,11 @@ And consideration should be paid to ensure optimal size ROIs are selected.
 
  .. code-block:: none
 
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: "glm_region_of_interest" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "region_of_interest_dataframe()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: "glm_region_of_interest" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "region_of_interest_dataframe()" method instead.
       df = df.append(glm_region_of_interest(glm_est, groups, idx, col))
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: "glm_region_of_interest" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "region_of_interest_dataframe()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: "glm_region_of_interest" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "region_of_interest_dataframe()" method instead.
       df = df.append(glm_region_of_interest(glm_est, groups, idx, col))
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: "glm_region_of_interest" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "region_of_interest_dataframe()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:388: DeprecationWarning: "glm_region_of_interest" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the RegressionResults class "region_of_interest_dataframe()" method instead.
       df = df.append(glm_region_of_interest(glm_est, groups, idx, col))
 
 
@@ -1094,7 +1095,7 @@ of interest.
           <td>-1.022117e-07</td>
           <td>0.937469</td>
           <td>-0.109029</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.915571</td>
         </tr>
         <tr>
@@ -1105,7 +1106,7 @@ of interest.
           <td>1.885587e-07</td>
           <td>0.523065</td>
           <td>0.360488</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.726798</td>
         </tr>
         <tr>
@@ -1116,7 +1117,7 @@ of interest.
           <td>2.067752e-07</td>
           <td>0.966665</td>
           <td>0.213906</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.835388</td>
         </tr>
         <tr>
@@ -1127,7 +1128,7 @@ of interest.
           <td>-7.585512e-08</td>
           <td>0.539113</td>
           <td>-0.140704</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.891203</td>
         </tr>
         <tr>
@@ -1138,7 +1139,7 @@ of interest.
           <td>4.882654e-06</td>
           <td>0.951223</td>
           <td>5.133029</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.000617</td>
         </tr>
         <tr>
@@ -1149,7 +1150,7 @@ of interest.
           <td>-1.923505e-06</td>
           <td>0.530754</td>
           <td>-3.624097</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.005536</td>
         </tr>
         <tr>
@@ -1160,7 +1161,7 @@ of interest.
           <td>9.178021e-06</td>
           <td>0.980833</td>
           <td>9.357373</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.000006</td>
         </tr>
         <tr>
@@ -1171,7 +1172,7 @@ of interest.
           <td>-3.948888e-06</td>
           <td>0.547043</td>
           <td>-7.218604</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.000050</td>
         </tr>
         <tr>
@@ -1182,7 +1183,7 @@ of interest.
           <td>9.656099e-06</td>
           <td>0.953521</td>
           <td>10.126786</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.000003</td>
         </tr>
         <tr>
@@ -1193,7 +1194,7 @@ of interest.
           <td>-3.213928e-06</td>
           <td>0.532111</td>
           <td>-6.039955</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.000193</td>
         </tr>
         <tr>
@@ -1204,7 +1205,7 @@ of interest.
           <td>5.705888e-06</td>
           <td>0.983101</td>
           <td>5.803970</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.000258</td>
         </tr>
         <tr>
@@ -1215,7 +1216,7 @@ of interest.
           <td>-2.338472e-06</td>
           <td>0.548476</td>
           <td>-4.263585</td>
-          <td>9.0</td>
+          <td>9</td>
           <td>0.002100</td>
         </tr>
       </tbody>
@@ -1264,9 +1265,9 @@ from tapping on the right hand.
 
  .. code-block:: none
 
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:412: DeprecationWarning: "compute_contrast" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ResultsGLM class "compute_contrast()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:412: DeprecationWarning: "compute_contrast" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ResultsGLM class "compute_contrast()" method instead.
       contrast = mne_nirs.statistics.compute_contrast(glm_est, contrast_LvR)
-    /tmp/tmpiz34u6gd/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:413: DeprecationWarning: "plot_glm_contrast_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ContrastResults class "plot_topo()" method instead.
+    /tmp/tmpejcb2s98/1ff99c8d6c7faaac9105af1cec76cbd280db9639/examples/general/plot_11_hrf_measured.py:413: DeprecationWarning: "plot_glm_contrast_topo" has been deprecated in favor of the more comprehensive GLM class and will be removed in v1.0.0. Use the ContrastResults class "plot_topo()" method instead.
       mne_nirs.visualisation.plot_glm_contrast_topo(raw_haemo, contrast)
 
     <Figure size 1200x700 with 3 Axes>
@@ -1444,9 +1445,9 @@ the tapping, but we do expect 5% or less for the false positive rate.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.469 seconds)
+   **Total running time of the script:** ( 0 minutes  6.489 seconds)
 
-**Estimated memory usage:**  57 MB
+**Estimated memory usage:**  68 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_11_hrf_measured.py:

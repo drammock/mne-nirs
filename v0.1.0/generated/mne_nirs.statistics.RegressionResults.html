@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.statistics.RegressionResults &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>mne_nirs.statistics.RegressionResults &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
@@ -37,11 +36,10 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/bootstrap_divs.js"></script>
     <script src="../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mne_nirs.statistics.RegressionResults.compute_contrast" href="mne_nirs.statistics.RegressionResults.compute_contrast.html" />
+    <link rel="next" title="mne_nirs.statistics.ContrastResults" href="mne_nirs.statistics.ContrastResults.html" />
     <link rel="prev" title="mne_nirs.statistics.run_glm" href="mne_nirs.statistics.run_glm.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -103,12 +101,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -259,19 +258,22 @@
 <tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.plot_topo.html#mne_nirs.statistics.RegressionResults.plot_topo" title="mne_nirs.statistics.RegressionResults.plot_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_topo</span></code></a>([conditions, axes, vmin, vmax, …])</p></td>
 <td><p>Plot 2D topography of GLM data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.scatter.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([conditions, exclude_no_interest, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.save" title="mne_nirs.statistics.RegressionResults.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(fname[, overwrite])</p></td>
+<td><p>Save GLM results to disk.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.scatter.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>([conditions, exclude_no_interest, …])</p></td>
 <td><p>Scatter plot of the GLM results.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.surface_projection.html#mne_nirs.statistics.RegressionResults.surface_projection" title="mne_nirs.statistics.RegressionResults.surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_projection</span></code></a>([chroma, condition, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.surface_projection.html#mne_nirs.statistics.RegressionResults.surface_projection" title="mne_nirs.statistics.RegressionResults.surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">surface_projection</span></code></a>([chroma, condition, …])</p></td>
 <td><p>Project GLM results on to the surface of the brain.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.theta" title="mne_nirs.statistics.RegressionResults.theta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">theta</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#mne_nirs.statistics.RegressionResults.theta" title="mne_nirs.statistics.RegressionResults.theta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">theta</span></code></a>()</p></td>
 <td><p>Return the GLM theta results.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe.html#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe</span></code></a>([order])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe.html#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe</span></code></a>([order])</p></td>
 <td><p>Return a tidy dataframe representing the GLM results.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest.html#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe_region_of_interest</span></code></a>(group_by, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest.html#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dataframe_region_of_interest</span></code></a>(group_by, …)</p></td>
 <td><p>Region of interest results as a dataframe.</p></td>
 </tr>
 </tbody>
@@ -388,7 +390,7 @@ and ‘F’ for 2D con_val.</p>
 (e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> <span class="pre">'eeg']</span></code>) will pick channels of those
 types, channel <em>name</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['MEG0111',</span> <span class="pre">'MEG2623']</span></code>
 will pick the given channels. Can also be the string values
-“all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v0.23.0)"><span class="xref std std-term">data channels</span></a>.
+“all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v0.23)"><span class="xref std std-term">data channels</span></a>.
 None (default) will pick all channels. Note that channels in <code class="docutils literal notranslate"><span class="pre">info['bads']</span></code> <em>will be included</em> if their names or indices are explicitly provided.</p>
 </dd>
 <dt><strong>unique</strong><span class="classifier">bool</span></dt><dd><p>Whether to return only unique channel types. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
@@ -416,8 +418,8 @@ None (default) will pick all channels. Note that channels in <code class="docuti
 <dt><strong>montage</strong><span class="classifier">None | str | DigMontage</span></dt><dd><p>A montage containing channel positions. If str or DigMontage is
 specified, the channel info will be updated with the channel
 positions. Default is None. For valid <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> values see documentation
-of <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html#mne.channels.make_standard_montage" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_standard_montage()</span></code></a>. See also the documentation
-of <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.DigMontage.html#mne.channels.DigMontage" title="(in MNE v0.23.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.channels.DigMontage</span></code></a> for more information.</p>
+of <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.make_standard_montage.html#mne.channels.make_standard_montage" title="(in MNE v0.23)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.channels.make_standard_montage()</span></code></a>. See also the documentation
+of <a class="reference external" href="https://mne.tools/stable/generated/mne.channels.DigMontage.html#mne.channels.DigMontage" title="(in MNE v0.23)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.channels.DigMontage</span></code></a> for more information.</p>
 </dd>
 </dl>
 </dd>
@@ -449,7 +451,7 @@ of <a class="reference external" href="https://mne.tools/stable/generated/mne.ch
 (e.g., <code class="docutils literal notranslate"><span class="pre">['meg',</span> <span class="pre">'eeg']</span></code>) will pick channels of those
 types, channel <em>name</em> strings (e.g., <code class="docutils literal notranslate"><span class="pre">['MEG0111',</span> <span class="pre">'MEG2623']</span></code>
 will pick the given channels. Can also be the string values
-“all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v0.23.0)"><span class="xref std std-term">data channels</span></a>.
+“all” to pick all channels, or “data” to pick <a class="reference external" href="https://mne.tools/stable/glossary.html#term-data-channels" title="(in MNE v0.23)"><span class="xref std std-term">data channels</span></a>.
 None (default) will pick all channels. Note that channels in <code class="docutils literal notranslate"><span class="pre">info['bads']</span></code> <em>will be included</em> if their names or indices are explicitly provided.</p>
 </dd>
 <dt><strong>exclude</strong><span class="classifier">list | str</span></dt><dd><p>Set of channels to exclude, only used when picking based on
@@ -496,6 +498,24 @@ If None, the maximum absolute value is used. Defaults to None.</p>
 <dd class="field-even"><dl class="simple">
 <dt><strong>fig</strong><span class="classifier">figure</span></dt><dd><p>Figure of each design matrix componenent for hbo (top row)
 and hbr (bottom row).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mne_nirs.statistics.RegressionResults.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mne_nirs.statistics.RegressionResults.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save GLM results to disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>fname</strong><span class="classifier">str</span></dt><dd><p>The filename to use to write the HDF5 data.
+Should end in <code class="docutils literal notranslate"><span class="pre">'glm.h5'</span></code>.</p>
+</dd>
+<dt><strong>overwrite</strong><span class="classifier">bool</span></dt><dd><p>If True (default False), overwrite the destination file if it
+exists.</p>
 </dd>
 </dl>
 </dd>
@@ -611,7 +631,7 @@ If None, defaults to the <code class="docutils literal notranslate"><span class=
 </dd>
 <dt><strong>src</strong><span class="classifier">instance of SourceSpaces</span></dt><dd><p>The source space.</p>
 </dd>
-<dt><strong>verbose</strong><span class="classifier">bool | str | int | None</span></dt><dd><p>If not None, override default verbose level (see <a class="reference external" href="https://mne.tools/stable/generated/mne.verbose.html#mne.verbose" title="(in MNE v0.23.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
+<dt><strong>verbose</strong><span class="classifier">bool | str | int | None</span></dt><dd><p>If not None, override default verbose level (see <a class="reference external" href="https://mne.tools/stable/generated/mne.verbose.html#mne.verbose" title="(in MNE v0.23)"><code class="xref py py-func docutils literal notranslate"><span class="pre">mne.verbose()</span></code></a>
 and <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib2.html#tut-logging" title="(in Python v3.9)"><span class="xref std std-ref">Logging documentation</span></a> for more).
 If used, it should be passed as a keyword-argument only.</p>
 </dd>
@@ -619,7 +639,7 @@ If used, it should be passed as a keyword-argument only.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>figure</strong><span class="classifier">instance of mne.viz.Brain | matplotlib.figure.Figure</span></dt><dd><p>An instance of <a class="reference external" href="https://mne.tools/stable/generated/mne.viz.Brain.html#mne.viz.Brain" title="(in MNE v0.23.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.viz.Brain</span></code></a> or matplotlib figure.</p>
+<dt><strong>figure</strong><span class="classifier">instance of mne.viz.Brain | matplotlib.figure.Figure</span></dt><dd><p>An instance of <a class="reference external" href="https://mne.tools/stable/generated/mne.viz.Brain.html#mne.viz.Brain" title="(in MNE v0.23)"><code class="xref py py-class docutils literal notranslate"><span class="pre">mne.viz.Brain</span></code></a> or matplotlib figure.</p>
 </dd>
 </dl>
 </dd>
@@ -717,7 +737,7 @@ info[“subject_info”].</p>
               <div class='prev-next-bottom'>
                 
     <a class='left-prev' id="prev-link" href="mne_nirs.statistics.run_glm.html" title="previous page">mne_nirs.statistics.run_glm</a>
-    <a class='right-next' id="next-link" href="mne_nirs.statistics.RegressionResults.compute_contrast.html" title="next page">mne_nirs.statistics.RegressionResults.compute_contrast</a>
+    <a class='right-next' id="next-link" href="mne_nirs.statistics.ContrastResults.html" title="next page">mne_nirs.statistics.ContrastResults</a>
 
               </div>
               
@@ -750,7 +770,7 @@ info[“subject_info”].</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

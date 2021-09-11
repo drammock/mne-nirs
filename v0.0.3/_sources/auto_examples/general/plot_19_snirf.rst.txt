@@ -148,7 +148,7 @@ Next we can read back the snirf file.
 
  .. code-block:: none
 
-    Loading /tmp/tmpiz34u6gd/3f2cf6f0304bd84837ddfbfd191e70aadfc335f1/examples/general/test_raw.snirf
+    Loading /tmp/tmpejcb2s98/3f2cf6f0304bd84837ddfbfd191e70aadfc335f1/examples/general/test_raw.snirf
 
 
 
@@ -185,16 +185,16 @@ ensure that the values are the same.
  .. code-block:: none
 
 
-    <MNEBrowseFigure size 640x480 with 4 Axes>
+    <MNEBrowseFigure size 800x800 with 4 Axes>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.325 seconds)
+   **Total running time of the script:** ( 0 minutes  2.777 seconds)
 
-**Estimated memory usage:**  38 MB
+**Estimated memory usage:**  52 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_19_snirf.py:

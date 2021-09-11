@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.statistics._glm_level_first &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>mne_nirs.statistics._glm_level_first &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/bootstrap_divs.js"></script>
     <script src="../../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -95,12 +93,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -164,6 +163,7 @@
 <span class="c1"># License: BSD (3-clause)</span>
 
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">PosixPath</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -173,9 +173,11 @@
 <span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">run_glm</span> <span class="k">as</span> <span class="n">nilearn_glm</span>
 
 <span class="kn">from</span> <span class="nn">mne.channels.channels</span> <span class="kn">import</span> <span class="n">ContainsMixin</span>
-<span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">fill_doc</span><span class="p">,</span> <span class="n">warn</span><span class="p">,</span> <span class="n">verbose</span>
+<span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">fill_doc</span><span class="p">,</span> <span class="n">warn</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">check_fname</span><span class="p">,</span> <span class="n">_validate_type</span>
 <span class="kn">from</span> <span class="nn">mne.io.pick</span> <span class="kn">import</span> <span class="n">_picks_to_idx</span>
 <span class="kn">from</span> <span class="nn">mne.io.constants</span> <span class="kn">import</span> <span class="n">FIFF</span>
+<span class="kn">from</span> <span class="nn">mne.externals.h5io</span> <span class="kn">import</span> <span class="n">read_hdf5</span><span class="p">,</span> <span class="n">write_hdf5</span>
+<span class="kn">from</span> <span class="nn">mne</span> <span class="kn">import</span> <span class="n">Info</span>
 
 <span class="kn">from</span> <span class="nn">..visualisation._plot_GLM_topo</span> <span class="kn">import</span> <span class="n">_plot_glm_topo</span><span class="p">,</span>\
     <span class="n">_plot_glm_contrast_topo</span>
@@ -207,6 +209,36 @@
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span>
 
+    <span class="k">def</span> <span class="nf">_get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># noqa: D105</span>
+        <span class="sd">&quot;&quot;&quot;Return the state of the GLM results as a dictionary.</span>
+
+<span class="sd">        See _state_to_glm for inverse operation.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        state : dict</span>
+<span class="sd">            State of the object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span>
+            <span class="n">design</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">design</span><span class="p">,</span>
+            <span class="n">info</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">,</span>
+            <span class="n">preload</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">preload</span><span class="p">,</span>
+            <span class="n">classname</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+        <span class="p">))</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">channel</span> <span class="ow">in</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]:</span>
+                <span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">],</span>
+                              <span class="n">nilearn</span><span class="o">.</span><span class="n">glm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">OLSModel</span><span class="p">):</span>
+                    <span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;modelname&#39;</span><span class="p">]</span> <span class="o">=</span> \
+                        <span class="nb">str</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+                    <span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">]</span> <span class="o">=</span> \
+                        <span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">glm</span><span class="o">.</span><span class="n">contrasts</span><span class="o">.</span><span class="n">Contrast</span><span class="p">):</span>
+            <span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span>
+        <span class="k">return</span> <span class="n">state</span>
+
     <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy of the GLM results.</span>
 
@@ -216,6 +248,26 @@
 <span class="sd">            A copy of the object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@fill_doc</span>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save GLM results to disk.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fname : str</span>
+<span class="sd">            The filename to use to write the HDF5 data.</span>
+<span class="sd">            Should end in ``&#39;glm.h5&#39;``.</span>
+<span class="sd">        %(overwrite)s</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_validate_type</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;path-like&#39;</span><span class="p">,</span> <span class="s1">&#39;fname&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">PosixPath</span><span class="p">):</span>
+            <span class="n">fname</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;glm.h5&#39;</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;The filename must end with glm.h5, &#39;</span>
+                          <span class="sa">f</span><span class="s1">&#39;instead received </span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">write_hdf5</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_state</span><span class="p">(),</span>
+                   <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;mnepython&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">to_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a tidy dataframe representing the GLM results.</span>
@@ -342,6 +394,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">design</span> <span class="o">=</span> <span class="n">design</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">preload</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+        <span class="n">same_keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">==</span> <span class="n">res</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="n">same_design</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">design</span> <span class="o">==</span> <span class="n">res</span><span class="o">.</span><span class="n">design</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="n">same_ch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">ch_names</span> <span class="o">==</span> <span class="n">res</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">ch_names</span>
+        <span class="n">same_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">([(</span><span class="n">res</span><span class="o">.</span><span class="n">theta</span><span class="p">()[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+                             <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span>
+                             <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">theta</span><span class="p">())])</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">same_ch</span> <span class="ow">and</span> <span class="n">same_design</span> <span class="ow">and</span> <span class="n">same_keys</span> <span class="ow">and</span> <span class="n">same_theta</span><span class="p">)</span>
 
     <span class="nd">@fill_doc</span>
     <span class="k">def</span> <span class="nf">pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">picks</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="p">()):</span>
@@ -497,16 +558,20 @@
             <span class="n">tidy</span> <span class="o">=</span> <span class="n">tidy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">demographic_info</span><span class="p">:</span>
-            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_MALE</span><span class="p">:</span>
-                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;male&quot;</span>
-            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> \
-                    <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_FEMALE</span><span class="p">:</span>
-                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;female&quot;</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
-            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sex</span>
-            <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Hand&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;hand&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s1">&#39;age&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="s1">&#39;sex&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> \
+                        <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_MALE</span><span class="p">:</span>
+                    <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;male&quot;</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> \
+                        <span class="n">FIFF</span><span class="o">.</span><span class="n">FIFFV_SUBJ_SEX_FEMALE</span><span class="p">:</span>
+                    <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;female&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">sex</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+                <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sex</span>
+            <span class="k">if</span> <span class="s1">&#39;Hand&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">tidy</span><span class="p">[</span><span class="s1">&#39;Hand&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subject_info&quot;</span><span class="p">][</span><span class="s1">&#39;hand&#39;</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">tidy</span>
 
@@ -631,6 +696,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">design</span> <span class="o">=</span> <span class="n">design</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">preload</span> <span class="o">=</span> <span class="kc">True</span>
 
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+        <span class="n">same_design</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">design</span> <span class="o">==</span> <span class="n">res</span><span class="o">.</span><span class="n">design</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="n">same_ch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">ch_names</span> <span class="o">==</span> <span class="n">res</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">ch_names</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">same_ch</span> <span class="ow">and</span> <span class="n">same_design</span><span class="p">)</span>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
@@ -725,7 +795,8 @@
 <span class="sd">    design_matrix : as specified in Nilearn</span>
 <span class="sd">        The design matrix as generated by</span>
 <span class="sd">        `mne_nirs.make_first_level_design_matrix`.</span>
-<span class="sd">        See https://nilearn.github.io/auto_examples/04_glm_first_level/plot_design_matrix.html</span>
+<span class="sd">        See example ``9.5.5. Examples of design matrices`` at</span>
+<span class="sd">        https://nilearn.github.io/auto_examples/index.html</span>
 <span class="sd">        for details on how to specify design matrices.</span>
 <span class="sd">    noise_model : {&#39;ar1&#39;, &#39;ols&#39;, &#39;arN&#39;, &#39;auto&#39;}, optional</span>
 <span class="sd">        The temporal variance model. Defaults to first order</span>
@@ -802,6 +873,97 @@
     <span class="kn">from</span> <span class="nn">nilearn.glm.contrasts</span> <span class="kn">import</span> <span class="n">compute_contrast</span> <span class="k">as</span> <span class="n">_cc</span>
     <span class="k">return</span> <span class="n">_cc</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">glm_est</span><span class="o">.</span><span class="n">keys</span><span class="p">())),</span> <span class="n">glm_est</span><span class="p">,</span> <span class="n">contrast</span><span class="p">,</span>
                <span class="n">contrast_type</span><span class="o">=</span><span class="n">contrast_type</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">read_glm</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Read GLM results from disk.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fname : str</span>
+<span class="sd">        The file name, which should end with ``glm.h5``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    glm : RegressionResults or ContrastResults</span>
+<span class="sd">        RegressionResults or ContrastResults class</span>
+<span class="sd">        which stores the GLM results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">check_fname</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;path-like&#39;</span><span class="p">,</span> <span class="s1">&#39;glm.h5&#39;</span><span class="p">)</span>
+    <span class="n">glm</span> <span class="o">=</span> <span class="n">read_hdf5</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;mnepython&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_state_to_glm</span><span class="p">(</span><span class="n">glm</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_state_to_glm</span><span class="p">(</span><span class="n">glm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert state of GLM stored as dictionary to a MNE-NIRS GLM type.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    glm : dict</span>
+<span class="sd">        State of GLM type.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    glm : _BaseGLM</span>
+<span class="sd">        RegressionResults or ContrastResults class</span>
+<span class="sd">        which stores the GLM results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;classname&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&lt;class &#39;mne_nirs.statistics._glm_level_first&quot;</span> \
+                           <span class="s2">&quot;.RegressionResults&#39;&gt;&quot;</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">channel</span> <span class="ow">in</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]:</span>
+
+            <span class="c1"># Recreate model type</span>
+            <span class="k">if</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;modelname&#39;</span><span class="p">]</span> <span class="o">==</span> \
+                    <span class="s2">&quot;&lt;class &#39;nilearn.glm.regression.ARModel&#39;&gt;&quot;</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">glm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">ARModel</span><span class="p">(</span>
+                    <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">][</span><span class="s1">&#39;design&#39;</span><span class="p">],</span>
+                    <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">][</span><span class="s1">&#39;rho&#39;</span><span class="p">],</span>
+                <span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;modelname&#39;</span><span class="p">]</span> <span class="o">==</span> \
+                    <span class="s2">&quot;&lt;class &#39;nilearn.glm.regression.OLSModel&#39;&gt;&quot;</span><span class="p">:</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">glm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">OLSModel</span><span class="p">(</span>
+                    <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">][</span><span class="s1">&#39;design&#39;</span><span class="p">],</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;Unknown model type &quot;</span>
+                              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;modelname&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">]:</span>
+                <span class="n">model</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">])</span>
+            <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span>
+
+            <span class="c1"># Then recreate result type</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">glm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">RegressionResults</span><span class="p">(</span>
+                <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;theta&#39;</span><span class="p">],</span>
+                <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;Y&#39;</span><span class="p">],</span>
+                <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">],</span>
+                <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;whitened_Y&#39;</span><span class="p">],</span>
+                <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;whitened_residuals&#39;</span><span class="p">],</span>
+                <span class="n">cov</span><span class="o">=</span><span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="s1">&#39;cov&#39;</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">]:</span>
+                <span class="n">res</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">][</span><span class="n">key</span><span class="p">])</span>
+            <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+
+        <span class="c1"># Ensure order of dictionary matches info</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">][</span><span class="s1">&#39;ch_names&#39;</span><span class="p">]}</span>
+        <span class="k">return</span> <span class="n">RegressionResults</span><span class="p">(</span><span class="n">Info</span><span class="p">(</span><span class="n">glm</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">]),</span> <span class="n">data</span><span class="p">,</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;design&#39;</span><span class="p">])</span>
+
+    <span class="k">elif</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;classname&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&lt;class &#39;mne_nirs.statistics._glm_level_first&quot;</span> \
+                             <span class="s2">&quot;.ContrastResults&#39;&gt;&quot;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">nilearn</span><span class="o">.</span><span class="n">glm</span><span class="o">.</span><span class="n">contrasts</span><span class="o">.</span><span class="n">Contrast</span><span class="p">(</span><span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;effect&#39;</span><span class="p">],</span>
+                                              <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;variance&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]:</span>
+            <span class="n">data</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="n">key</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">ContrastResults</span><span class="p">(</span><span class="n">Info</span><span class="p">(</span><span class="n">glm</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">]),</span> <span class="n">data</span><span class="p">,</span> <span class="n">glm</span><span class="p">[</span><span class="s1">&#39;design&#39;</span><span class="p">])</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s1">&#39;Unable to read data&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -842,7 +1004,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

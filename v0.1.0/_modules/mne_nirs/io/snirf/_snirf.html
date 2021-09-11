@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.io.snirf._snirf &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>mne_nirs.io.snirf._snirf &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/bootstrap_divs.js"></script>
     <script src="../../../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -101,12 +99,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -235,16 +234,13 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">metadata_tags</span> <span class="o">=</span> <span class="n">nirs</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s1">&#39;metaDataTags&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Store measurement and birth date</span>
+    <span class="c1"># Store measurement</span>
     <span class="n">datestr</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;meas_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">timestr</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;meas_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%H:%M:%SZ&#39;</span><span class="p">)</span>
-    <span class="n">birthday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="o">*</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">][</span><span class="s1">&#39;birthday&#39;</span><span class="p">])</span>
-    <span class="n">birthstr</span> <span class="o">=</span> <span class="n">birthday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">metadata_tags</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;MeasurementDate&#39;</span><span class="p">,</span>
                                  <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">_str_encode</span><span class="p">(</span><span class="n">datestr</span><span class="p">)])</span>
     <span class="n">metadata_tags</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;MeasurementTime&#39;</span><span class="p">,</span>
                                  <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">_str_encode</span><span class="p">(</span><span class="n">timestr</span><span class="p">)])</span>
-    <span class="n">metadata_tags</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;DateOfBirth&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">_str_encode</span><span class="p">(</span><span class="n">birthstr</span><span class="p">)])</span>
 
     <span class="c1"># Store demographic info</span>
     <span class="n">subject_id</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">][</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span>
@@ -256,6 +252,11 @@
     <span class="n">metadata_tags</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;FrequencyUnit&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">_str_encode</span><span class="p">(</span><span class="s1">&#39;Hz&#39;</span><span class="p">)])</span>
 
     <span class="c1"># Add non standard (but allowed) custom metadata tags</span>
+    <span class="k">if</span> <span class="s1">&#39;birthday&#39;</span> <span class="ow">in</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">]:</span>
+        <span class="n">birthday</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="o">*</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">][</span><span class="s1">&#39;birthday&#39;</span><span class="p">])</span>
+        <span class="n">birthstr</span> <span class="o">=</span> <span class="n">birthday</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">metadata_tags</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;DateOfBirth&#39;</span><span class="p">,</span>
+                                     <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">_str_encode</span><span class="p">(</span><span class="n">birthstr</span><span class="p">)])</span>
     <span class="k">if</span> <span class="s1">&#39;middle_name&#39;</span> <span class="ow">in</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">]:</span>
         <span class="n">middle_name</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subject_info&#39;</span><span class="p">][</span><span class="s1">&#39;middle_name&#39;</span><span class="p">]</span>
         <span class="n">metadata_tags</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;middleName&#39;</span><span class="p">,</span>
@@ -404,9 +405,9 @@
         <span class="n">stim_group</span> <span class="o">=</span> <span class="n">nirs</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;stim</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="n">trgs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">description</span> <span class="o">==</span> <span class="n">desc</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">stims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">trgs</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">trg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">trgs</span><span class="p">):</span>
-            <span class="n">stims</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">onset</span><span class="p">[</span><span class="n">trg</span><span class="p">],</span> <span class="mf">5.0</span><span class="p">,</span>
-                             <span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">duration</span><span class="p">[</span><span class="n">trg</span><span class="p">]]</span>
+        <span class="k">for</span> <span class="n">idx_t</span><span class="p">,</span> <span class="n">trg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">trgs</span><span class="p">):</span>
+            <span class="n">stims</span><span class="p">[</span><span class="n">idx_t</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">onset</span><span class="p">[</span><span class="n">trg</span><span class="p">],</span> <span class="mf">5.0</span><span class="p">,</span>
+                               <span class="n">raw</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">duration</span><span class="p">[</span><span class="n">trg</span><span class="p">]]</span>
         <span class="n">stim_group</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">stims</span><span class="p">)</span>
         <span class="n">stim_group</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">_str_encode</span><span class="p">(</span><span class="n">desc</span><span class="p">)])</span>
 
@@ -543,7 +544,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     

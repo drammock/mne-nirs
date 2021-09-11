@@ -511,9 +511,9 @@ detector pairs for analysis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.876 seconds)
+   **Total running time of the script:** ( 0 minutes  3.206 seconds)
 
-**Estimated memory usage:**  50 MB
+**Estimated memory usage:**  44 MB
 
 
 .. _sphx_glr_download_auto_examples_plot_20_enhance.py:

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mne_nirs.channels._short &#8212; MNE-NIRS 0.1.1 dev documentation</title>
+    <title>mne_nirs.channels._short &#8212; MNE-NIRS 0.1.2-dev documentation</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -24,7 +24,6 @@
     
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap_divs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gallery-binder.css" />
@@ -37,7 +36,6 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/bootstrap_divs.js"></script>
     <script src="../../../_static/js/copybutton.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -101,12 +99,13 @@
       <div class="navbar-end-item">
         <div class="dropdown">
     <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="dLabelMore" data-toggle="dropdown">
-        v0.1.1 dev
+        v0.1.2-dev
         <span class="caret"></span>
     </button>
     <div class="dropdown-menu list-group-flush py-0" aria-labelledby="dLabelMore">
             <a class="list-group-item list-group-item-action py-1" href=../../../../main/index.html>main</a>
-            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.1/index.html">v0.1.1 (stable)</a>
+            <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.1.0/index.html">v0.1.0</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.6/index.html">v0.0.6</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.5/index.html">v0.0.5</a>
             <a class="list-group-item list-group-item-action py-1" href="https://mne.tools/mne-nirs/v0.0.4/index.html">v0.0.4</a>
@@ -177,14 +176,14 @@
 
 <div class="viewcode-block" id="get_short_channels"><a class="viewcode-back" href="../../../generated/mne_nirs.channels.get_short_channels.html#mne_nirs.channels.get_short_channels">[docs]</a><span class="k">def</span> <span class="nf">get_short_channels</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Return channels with a short source detector separation.</span>
+<span class="sd">    Return channels with a short source-detector separation.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    raw : instance of Raw</span>
-<span class="sd">        The haemoglobin data.</span>
+<span class="sd">        Raw instance containing fNIRS data.</span>
 <span class="sd">    max_dist : number</span>
-<span class="sd">        Maximum distance of returned channel (m).</span>
+<span class="sd">        Maximum distance of returned channels (m).</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -206,18 +205,18 @@
     <span class="k">return</span> <span class="n">short_chans</span></div>
 
 
-<div class="viewcode-block" id="get_long_channels"><a class="viewcode-back" href="../../../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels">[docs]</a><span class="k">def</span> <span class="nf">get_long_channels</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+<div class="viewcode-block" id="get_long_channels"><a class="viewcode-back" href="../../../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels">[docs]</a><span class="k">def</span> <span class="nf">get_long_channels</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">min_dist</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">max_dist</span><span class="o">=</span><span class="mf">0.045</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return channels with a long source detector separation.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    raw : instance of Raw</span>
-<span class="sd">        The haemoglobin data.</span>
+<span class="sd">        Raw instance containing fNIRS data.</span>
 <span class="sd">    min_dist : number</span>
-<span class="sd">        Minimum distance of returned channel.</span>
+<span class="sd">        Minimum distance of returned channels (m).</span>
 <span class="sd">    max_dist : number</span>
-<span class="sd">        Maximum distance of returned channel.</span>
+<span class="sd">        Maximum distance of returned channels (m).</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -277,7 +276,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.1.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
 </p>
     </div>
     
