@@ -247,6 +247,88 @@
     <span class="n">detectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">detectors</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">detectors</span></div>
+
+
+<div class="viewcode-block" id="drop_sources"><a class="viewcode-back" href="../../../generated/mne_nirs.channels.drop_sources.html#mne_nirs.channels.drop_sources">[docs]</a><span class="k">def</span> <span class="nf">drop_sources</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">sources</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Drop sources.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : instance of Raw</span>
+<span class="sd">        Raw instance containing fNIRS data.</span>
+<span class="sd">    sources : iterable or str</span>
+<span class="sd">        Iterable (e.g. list) of source(s) or source to remove.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    inst : instance of Raw</span>
+<span class="sd">        The modified instance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="n">sources</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">all_str</span> <span class="o">=</span> <span class="nb">all</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;ch_names&#39; must be iterable, got &quot;</span>
+                         <span class="s2">&quot;type </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">).&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sources</span><span class="p">),</span> <span class="n">sources</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">all_str</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Each element in &#39;ch_names&#39; must be int, got &quot;</span>
+                         <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">([</span><span class="nb">type</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">]))</span>
+
+    <span class="n">keeps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">:</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;S</span><span class="si">{</span><span class="n">src</span><span class="si">}</span><span class="s2">_&quot;</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">template</span> <span class="ow">in</span> <span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">[</span><span class="n">idx</span><span class="p">]:</span>
+                <span class="n">keeps</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">keeps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">keeps</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">raw</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">keeps</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="drop_detectors"><a class="viewcode-back" href="../../../generated/mne_nirs.channels.drop_detectors.html#mne_nirs.channels.drop_detectors">[docs]</a><span class="k">def</span> <span class="nf">drop_detectors</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">detectors</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Drop detectors.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    raw : instance of Raw</span>
+<span class="sd">        Raw instance containing fNIRS data.</span>
+<span class="sd">    detectors : iterable or str</span>
+<span class="sd">        Iterable (e.g. list) of detector(s) or detector to remove.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    inst : instance of Raw</span>
+<span class="sd">        The modified instance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">detectors</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">detectors</span> <span class="o">=</span> <span class="p">[</span><span class="n">detectors</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">all_str</span> <span class="o">=</span> <span class="nb">all</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">det</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">detectors</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;ch_names&#39; must be iterable, got &quot;</span>
+                         <span class="s2">&quot;type </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">).&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">detectors</span><span class="p">),</span> <span class="n">detectors</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">all_str</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Each element in &#39;ch_names&#39; must be int, got &quot;</span>
+                         <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">([</span><span class="nb">type</span><span class="p">(</span><span class="n">det</span><span class="p">)</span> <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">detectors</span><span class="p">]))</span>
+
+    <span class="n">keeps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">detectors</span><span class="p">:</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;_D</span><span class="si">{</span><span class="n">det</span><span class="si">}</span><span class="s2"> &quot;</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">template</span> <span class="ow">in</span> <span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">[</span><span class="n">idx</span><span class="p">]:</span>
+                <span class="n">keeps</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">keeps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">keeps</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">raw</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">keeps</span><span class="p">)</span></div>
 </pre></div>
 
 
