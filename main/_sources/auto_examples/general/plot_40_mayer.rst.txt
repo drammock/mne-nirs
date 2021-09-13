@@ -34,7 +34,7 @@ Mayer Wave Parametrisation
    Donoghue, Thomas, Julio Dominguez, and Bradley Voytek. "Electrophysiological frequency band ratio measures conflate periodic and aperiodic neural activity." Eneuro 7.6 (2020).
 
 Mayer waves are spontaneous oscillations in arterial blood pressure with a
-frequency of ~0.1 Hz (Ghali and Ghali, 2020; Julien, 2006).
+frequency of ~0.1 Hz (Ghali and Ghali, 2020; Julien, 2006; Yucel, 2016).
 Mayer waves are not easily removed from hemodynamic signatures of brain
 activity as they tend to occur on a time course often confounded with
 the frequency of a sensory task, for example, and/or the
@@ -266,7 +266,7 @@ it matches well to the data.
  .. code-block:: none
 
 
-    ([<matplotlib.axis.XTick object at 0x7f4bc6e89970>, <matplotlib.axis.XTick object at 0x7f4bc6e89340>, <matplotlib.axis.XTick object at 0x7f4b99909eb0>, <matplotlib.axis.XTick object at 0x7f4bc6ba1a30>, <matplotlib.axis.XTick object at 0x7f4bc6408c70>, <matplotlib.axis.XTick object at 0x7f4bc6408d00>, <matplotlib.axis.XTick object at 0x7f4b9962bdc0>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
+    ([<matplotlib.axis.XTick object at 0x7f6af5c2e190>, <matplotlib.axis.XTick object at 0x7f6af5c2e460>, <matplotlib.axis.XTick object at 0x7f6af6ceb550>, <matplotlib.axis.XTick object at 0x7f6b2e15e550>, <matplotlib.axis.XTick object at 0x7f6af5cbff10>, <matplotlib.axis.XTick object at 0x7f6af619ea30>, <matplotlib.axis.XTick object at 0x7f6af619e7c0>], [Text(0, 0, '0.0'), Text(1, 0, '0.1'), Text(2, 0, '0.2'), Text(3, 0, '0.3'), Text(4, 0, '0.4'), Text(5, 0, '0.5'), Text(6, 0, '0.6')])
 
 
 
@@ -340,7 +340,7 @@ authors if you use this function.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.758 seconds)
+   **Total running time of the script:** ( 0 minutes  3.624 seconds)
 
 **Estimated memory usage:**  9 MB
 
