@@ -313,6 +313,27 @@ Analysis examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="   This tutorial is only possible due to the excellent and generous work of    the FOOOF author...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/general/images/thumb/sphx_glr_plot_40_mayer_thumb.png
+     :alt: Mayer Wave Parametrisation
+
+     :ref:`sphx_glr_auto_examples_general_plot_40_mayer.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/general/plot_40_mayer
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This is an example of how to save and load functional near-infrared spectroscopy (fNIRS) GLM re...">
 
 .. only:: html
