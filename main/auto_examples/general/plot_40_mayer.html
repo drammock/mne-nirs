@@ -255,7 +255,6 @@ data for the purpose of extracting Mayer waves oscillation parameters.</p>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">mne</span>
-<span class="kn">import</span> <span class="nn">mne_nirs</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -263,8 +262,6 @@ data for the purpose of extracting Mayer waves oscillation parameters.</p>
 <span class="kn">from</span> <span class="nn">mne.time_frequency</span> <span class="kn">import</span> <a href="https://mne.tools/stable/generated/mne.time_frequency.psd_welch.html#mne.time_frequency.psd_welch" title="mne.time_frequency.psd_welch" class="sphx-glr-backref-module-mne-time_frequency sphx-glr-backref-type-py-function"><span class="n">psd_welch</span></a>
 
 <span class="kn">from</span> <span class="nn">mne_nirs.channels</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.channels.get_long_channels.html#mne_nirs.channels.get_long_channels" title="mne_nirs.channels.get_long_channels" class="sphx-glr-backref-module-mne_nirs-channels sphx-glr-backref-type-py-function"><span class="n">get_long_channels</span></a>
-<span class="kn">from</span> <span class="nn">mne_nirs.experimental_design</span> <span class="kn">import</span> <span class="n">make_first_level_design_matrix</span>
-<span class="kn">from</span> <span class="nn">mne_nirs.simulation</span> <span class="kn">import</span> <span class="n">simulate_nirs_raw</span>
 <span class="kn">from</span> <span class="nn">mne_nirs.preprocessing</span> <span class="kn">import</span> <a href="../../generated/mne_nirs.preprocessing.quantify_mayer_fooof.html#mne_nirs.preprocessing.quantify_mayer_fooof" title="mne_nirs.preprocessing.quantify_mayer_fooof" class="sphx-glr-backref-module-mne_nirs-preprocessing sphx-glr-backref-type-py-function"><span class="n">quantify_mayer_fooof</span></a>
 
 <span class="kn">from</span> <span class="nn">fooof</span> <span class="kn">import</span> <span class="n">FOOOF</span>
@@ -397,7 +394,7 @@ it matches well to the data.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_40_mayer_001.png" srcset="../../_images/sphx_glr_plot_40_mayer_001.png" alt="plot 40 mayer" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>([&lt;matplotlib.axis.XTick object at 0x7f6af5c2e190&gt;, &lt;matplotlib.axis.XTick object at 0x7f6af5c2e460&gt;, &lt;matplotlib.axis.XTick object at 0x7f6af6ceb550&gt;, &lt;matplotlib.axis.XTick object at 0x7f6b2e15e550&gt;, &lt;matplotlib.axis.XTick object at 0x7f6af5cbff10&gt;, &lt;matplotlib.axis.XTick object at 0x7f6af619ea30&gt;, &lt;matplotlib.axis.XTick object at 0x7f6af619e7c0&gt;], [Text(0, 0, &#39;0.0&#39;), Text(1, 0, &#39;0.1&#39;), Text(2, 0, &#39;0.2&#39;), Text(3, 0, &#39;0.3&#39;), Text(4, 0, &#39;0.4&#39;), Text(5, 0, &#39;0.5&#39;), Text(6, 0, &#39;0.6&#39;)])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>([&lt;matplotlib.axis.XTick object at 0x7f1309f52f40&gt;, &lt;matplotlib.axis.XTick object at 0x7f1309f52e20&gt;, &lt;matplotlib.axis.XTick object at 0x7f1309f52dc0&gt;, &lt;matplotlib.axis.XTick object at 0x7f12cb0d5e50&gt;, &lt;matplotlib.axis.XTick object at 0x7f12cadbfca0&gt;, &lt;matplotlib.axis.XTick object at 0x7f12cadbf3a0&gt;, &lt;matplotlib.axis.XTick object at 0x7f12cabd5520&gt;], [Text(0, 0, &#39;0.0&#39;), Text(1, 0, &#39;0.1&#39;), Text(2, 0, &#39;0.2&#39;), Text(3, 0, &#39;0.3&#39;), Text(4, 0, &#39;0.4&#39;), Text(5, 0, &#39;0.5&#39;), Text(6, 0, &#39;0.6&#39;)])
 </pre></div>
 </div>
 </div>
@@ -452,7 +449,7 @@ authors if you use this function.</p>
 </div>
 </div>
 <br />
-<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.624 seconds)</p>
+<br /><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.151 seconds)</p>
 <p><strong>Estimated memory usage:</strong>  9 MB</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-general-plot-40-mayer-py">
 <div class="binder-badge docutils container">
