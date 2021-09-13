@@ -271,6 +271,26 @@
     <span class="n">ea</span> <span class="o">=</span> <span class="n">EvokedArray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">statsmodel_df</span><span class="p">[</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
                      <span class="n">info</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
 
+    <span class="k">return</span> <span class="n">_plot_3d_evoked_array</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">ea</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">,</span>
+                                 <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+                                 <span class="n">background</span><span class="o">=</span><span class="n">background</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">figure</span><span class="p">,</span>
+                                 <span class="n">clim</span><span class="o">=</span><span class="n">clim</span><span class="p">,</span>
+                                 <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="n">colormap</span><span class="p">,</span>
+                                 <span class="n">surface</span><span class="o">=</span><span class="n">surface</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="n">hemi</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span>
+                                 <span class="n">view</span><span class="o">=</span><span class="n">view</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="n">colorbar</span><span class="p">,</span>
+                                 <span class="n">distance</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span>
+                                 <span class="n">subjects_dir</span><span class="o">=</span><span class="n">subjects_dir</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">,</span>
+                                 <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_plot_3d_evoked_array</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">ea</span><span class="p">,</span> <span class="n">picks</span><span class="o">=</span><span class="s2">&quot;hbo&quot;</span><span class="p">,</span>
+                          <span class="n">value</span><span class="o">=</span><span class="s2">&quot;Coef.&quot;</span><span class="p">,</span>
+                          <span class="n">background</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                          <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span>
+                          <span class="n">surface</span><span class="o">=</span><span class="s1">&#39;pial&#39;</span><span class="p">,</span> <span class="n">hemi</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+                          <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span>
+                          <span class="n">subjects_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">src</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
     <span class="c1"># TODO: mimic behaviour of other MNE-NIRS glm plotting options</span>
     <span class="k">if</span> <span class="n">picks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">ea</span> <span class="o">=</span> <span class="n">ea</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="n">picks</span><span class="p">)</span>
@@ -303,7 +323,7 @@
     <span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">brain</span><span class="o">.</span><span class="n">show_view</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">brain</span></div>
+    <span class="k">return</span> <span class="n">brain</span>
 </pre></div>
 
 
@@ -344,7 +364,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
 </p>
     </div>
     

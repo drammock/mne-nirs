@@ -89,7 +89,7 @@ information about triggers, condition names, etc.
    :local:
    :depth: 2
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-110
+.. GENERATED FROM PYTHON SOURCE LINES 73-112
 
 .. code-block:: default
 
@@ -103,6 +103,7 @@ information about triggers, condition names, etc.
     # Import common libraries
     import numpy as np
     import pandas as pd
+    import os
 
     # Import MNE processing
     from mne.preprocessing.nirs import optical_density, beer_lambert_law
@@ -116,6 +117,7 @@ information about triggers, condition names, etc.
     from mne_nirs.visualisation import plot_glm_group_topo
     from mne_nirs.datasets import fnirs_motor_group
     from mne_nirs.visualisation import plot_glm_surface_projection
+    from mne_nirs.io.fold import fold_landmark_specificity, fold_channel_specificity
 
     # Import MNE-BIDS processing
     from mne_bids import BIDSPath, read_raw_bids, get_entity_vals
@@ -137,7 +139,7 @@ information about triggers, condition names, etc.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-125
+.. GENERATED FROM PYTHON SOURCE LINES 113-127
 
 Set up directories
 ------------------
@@ -154,7 +156,7 @@ without manually specifying the trigger names etc.
 We first define where the root directory of our dataset is.
 In this example we use the example dataset ``fnirs_motor_group``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-130
+.. GENERATED FROM PYTHON SOURCE LINES 127-132
 
 .. code-block:: default
 
@@ -175,7 +177,7 @@ In this example we use the example dataset ``fnirs_motor_group``.
 
     Downloading archive MNE-fNIRS-motor-group-data.zip to /home/runner/mne_data
     Downloading https://codeload.github.com/rob-luke/BIDS-NIRS-Tapping/zip/master (0 bytes)
-      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    16.0kB/s]      0%|          | Downloading : 64.0k/0.00 [00:00<00:00,     129kB/s]      0%|          | Downloading : 128k/0.00 [00:00<00:00,     257kB/s]       0%|          | Downloading : 320k/0.00 [00:00<00:00,     649kB/s]      0%|          | Downloading : 1.06M/0.00 [00:00<00:00,    2.24MB/s]      0%|          | Downloading : 3.06M/0.00 [00:00<00:00,    6.55MB/s]      0%|          | Downloading : 5.06M/0.00 [00:00<00:00,    10.2MB/s]      0%|          | Downloading : 7.06M/0.00 [00:00<00:00,    12.9MB/s]      0%|          | Downloading : 9.06M/0.00 [00:00<00:00,    11.9MB/s]      0%|          | Downloading : 12.1M/0.00 [00:00<00:00,    15.0MB/s]      0%|          | Downloading : 14.1M/0.00 [00:01<00:00,    16.5MB/s]      0%|          | Downloading : 16.1M/0.00 [00:01<00:00,    17.8MB/s]      0%|          | Downloading : 18.1M/0.00 [00:01<00:00,    16.0MB/s]      0%|          | Downloading : 19.1M/0.00 [00:01<00:00,    16.1MB/s]      0%|          | Downloading : 22.1M/0.00 [00:01<00:00,    18.2MB/s]      0%|          | Downloading : 24.1M/0.00 [00:01<00:00,    14.7MB/s]      0%|          | Downloading : 27.1M/0.00 [00:01<00:00,    16.4MB/s]      0%|          | Downloading : 29.1M/0.00 [00:01<00:00,    17.2MB/s]      0%|          | Downloading : 31.1M/0.00 [00:02<00:00,    18.0MB/s]      0%|          | Downloading : 33.1M/0.00 [00:02<00:00,    15.6MB/s]      0%|          | Downloading : 36.1M/0.00 [00:02<00:00,    17.0MB/s]      0%|          | Downloading : 38.1M/0.00 [00:02<00:00,    17.7MB/s]      0%|          | Downloading : 40.1M/0.00 [00:02<00:00,    18.3MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    18.8MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    16.9MB/s]
+      0%|          | Downloading : 0.00/0.00 [00:00<?,        ?B/s]      0%|          | Downloading : 8.00k/0.00 [00:00<00:00,    16.7kB/s]      0%|          | Downloading : 256k/0.00 [00:00<00:00,     538kB/s]       0%|          | Downloading : 640k/0.00 [00:00<00:00,    1.33MB/s]      0%|          | Downloading : 1.38M/0.00 [00:00<00:00,    2.90MB/s]      0%|          | Downloading : 2.38M/0.00 [00:00<00:00,    4.98MB/s]      0%|          | Downloading : 3.38M/0.00 [00:00<00:00,    6.97MB/s]      0%|          | Downloading : 5.38M/0.00 [00:00<00:00,    11.1MB/s]      0%|          | Downloading : 7.38M/0.00 [00:00<00:00,    15.1MB/s]      0%|          | Downloading : 9.38M/0.00 [00:00<00:00,    12.4MB/s]      0%|          | Downloading : 12.4M/0.00 [00:00<00:00,    16.5MB/s]      0%|          | Downloading : 18.4M/0.00 [00:01<00:00,    16.4MB/s]      0%|          | Downloading : 24.4M/0.00 [00:01<00:00,    15.4MB/s]      0%|          | Downloading : 30.4M/0.00 [00:01<00:00,    19.5MB/s]      0%|          | Downloading : 34.4M/0.00 [00:02<00:00,    16.8MB/s]      0%|          | Downloading : 40.4M/0.00 [00:02<00:00,    20.1MB/s]      0%|          | Downloading : 41.7M/0.00 [00:02<00:00,    18.9MB/s]
     Verifying hash 8b1a09e4af64ec66426b9c70c07a5594.
     Decompressing the archive: /home/runner/mne_data/MNE-fNIRS-motor-group-data.zip
     (please be patient, this can take some time)
@@ -184,14 +186,14 @@ In this example we use the example dataset ``fnirs_motor_group``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-135
+.. GENERATED FROM PYTHON SOURCE LINES 133-137
 
 And as we are using MNE-BIDS we can create a BIDSPath object.
 This class helps to handle all the path wrangling.
 We inform the software that we are analysing nirs data that is saved in
 the snirf format.
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-141
+.. GENERATED FROM PYTHON SOURCE LINES 137-143
 
 .. code-block:: default
 
@@ -216,11 +218,11 @@ the snirf format.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-143
+.. GENERATED FROM PYTHON SOURCE LINES 144-145
 
 For example we can automatically query the subjects, tasks, and sessions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-148
+.. GENERATED FROM PYTHON SOURCE LINES 145-150
 
 .. code-block:: default
 
@@ -244,7 +246,7 @@ For example we can automatically query the subjects, tasks, and sessions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-173
+.. GENERATED FROM PYTHON SOURCE LINES 151-175
 
 Define individual analysis
 --------------------------
@@ -271,7 +273,7 @@ Here we also resample to a 0.3 Hz sample rate just to speed up the example
 and use less memory, resampling to 0.6 Hz is a better choice for full
 analyses.
 
-.. GENERATED FROM PYTHON SOURCE LINES 173-236
+.. GENERATED FROM PYTHON SOURCE LINES 175-238
 
 .. code-block:: default
 
@@ -345,7 +347,7 @@ analyses.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 237-244
+.. GENERATED FROM PYTHON SOURCE LINES 239-246
 
 Run analysis on all participants
 --------------------------------
@@ -355,7 +357,7 @@ on each. We append the individual results in to a large dataframe that
 will contain the results from all measurements. We create a group dataframe
 for the region of interest, channel level, and contrast results.
 
-.. GENERATED FROM PYTHON SOURCE LINES 244-263
+.. GENERATED FROM PYTHON SOURCE LINES 246-265
 
 .. code-block:: default
 
@@ -417,7 +419,7 @@ for the region of interest, channel level, and contrast results.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 264-273
+.. GENERATED FROM PYTHON SOURCE LINES 266-275
 
 Visualise Individual results
 ----------------------------
@@ -429,7 +431,7 @@ values and observe they are in the expect range.
 We can already see that the control condition is always near zero,
 and that the responses look to be contralateral to the tapping hand.
 
-.. GENERATED FROM PYTHON SOURCE LINES 273-284
+.. GENERATED FROM PYTHON SOURCE LINES 275-286
 
 .. code-block:: default
 
@@ -457,7 +459,7 @@ and that the responses look to be contralateral to the tapping hand.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="MSyy28"></div>
+              <div id="7jl04x"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -508,7 +510,7 @@ and that the responses look to be contralateral to the tapping hand.
     }
     }]
     };
-           var plotContainer = document.getElementById("MSyy28");
+           var plotContainer = document.getElementById("7jl04x");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -517,7 +519,7 @@ and that the responses look to be contralateral to the tapping hand.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 285-316
+.. GENERATED FROM PYTHON SOURCE LINES 287-318
 
 Compute group level results
 ---------------------------
@@ -551,7 +553,7 @@ Alternatively, we could use a robust linear
 model by using the code
 `roi_model = rlm('theta ~ -1 + ROI:Condition:Chroma', grp_results).fit()`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 316-324
+.. GENERATED FROM PYTHON SOURCE LINES 318-326
 
 .. code-block:: default
 
@@ -648,7 +650,7 @@ model by using the code
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 325-346
+.. GENERATED FROM PYTHON SOURCE LINES 327-348
 
 Second level analysis with covariates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -672,7 +674,7 @@ are smaller when the right hand was used (as expected for these
 contralaterally dominant responses) and there is no significant
 effect of gender.
 
-.. GENERATED FROM PYTHON SOURCE LINES 346-355
+.. GENERATED FROM PYTHON SOURCE LINES 348-357
 
 .. code-block:: default
 
@@ -734,7 +736,7 @@ effect of gender.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 356-367
+.. GENERATED FROM PYTHON SOURCE LINES 358-369
 
 Visualise group results
 -----------------------
@@ -748,7 +750,7 @@ We also observe the the tapping response is
 larger in the contralateral hemisphere.
 Filled symbols represent HbO, unfilled symbols represent HbR.
 
-.. GENERATED FROM PYTHON SOURCE LINES 367-387
+.. GENERATED FROM PYTHON SOURCE LINES 369-389
 
 .. code-block:: default
 
@@ -794,7 +796,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="ikvaVW"></div>
+              <div id="NdwSD3"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -868,7 +870,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     "shape":2
     }]
     };
-           var plotContainer = document.getElementById("ikvaVW");
+           var plotContainer = document.getElementById("NdwSD3");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -877,7 +879,7 @@ Filled symbols represent HbO, unfilled symbols represent HbR.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 388-397
+.. GENERATED FROM PYTHON SOURCE LINES 390-399
 
 Group topographic visualisation
 -------------------------------
@@ -889,7 +891,7 @@ First we compute the mixed effects model for each channel (rather
 than region of interest as above).
 Then we pass these results to the topomap function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 397-441
+.. GENERATED FROM PYTHON SOURCE LINES 399-443
 
 .. code-block:: default
 
@@ -957,7 +959,7 @@ Then we pass these results to the topomap function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 442-448
+.. GENERATED FROM PYTHON SOURCE LINES 444-450
 
 Contrasts
 ---------
@@ -966,7 +968,7 @@ Finally we can examine the difference between the left and right hand
 tapping conditions by viewing the contrast results
 in a topographic representation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 448-463
+.. GENERATED FROM PYTHON SOURCE LINES 450-465
 
 .. code-block:: default
 
@@ -1009,13 +1011,13 @@ in a topographic representation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 464-467
+.. GENERATED FROM PYTHON SOURCE LINES 466-469
 
 Or we can view only the left hemisphere for the contrast.
 And set all channels that dont have a significant response to zero.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 468-473
+.. GENERATED FROM PYTHON SOURCE LINES 470-475
 
 .. code-block:: default
 
@@ -1045,7 +1047,7 @@ And set all channels that dont have a significant response to zero.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 474-496
+.. GENERATED FROM PYTHON SOURCE LINES 476-498
 
 Cortical Surface Projections
 ----------------------------
@@ -1070,7 +1072,7 @@ fashion.
 As in the topo plots above you can see that the activity is predominately
 contralateral to the side of finger tapping.
 
-.. GENERATED FROM PYTHON SOURCE LINES 496-523
+.. GENERATED FROM PYTHON SOURCE LINES 498-525
 
 .. code-block:: default
 
@@ -1130,7 +1132,7 @@ contralateral to the side of finger tapping.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 524-529
+.. GENERATED FROM PYTHON SOURCE LINES 526-531
 
 Table of channel level results
 ------------------------------
@@ -1138,7 +1140,7 @@ Table of channel level results
 Sometimes a reviewer wants a long table of results per channel.
 This can be generated from the statistics dataframe.
 
-.. GENERATED FROM PYTHON SOURCE LINES 529-545
+.. GENERATED FROM PYTHON SOURCE LINES 531-549
 
 .. code-block:: default
 
@@ -1158,6 +1160,8 @@ This can be generated from the statistics dataframe.
     ch_model_df.reset_index(drop=True, inplace=True)
     ch_model_df = ch_model_df.set_index(['ch_name', 'Condition'])
     ch_model_df
+
+
 
 
 
@@ -1675,12 +1679,240 @@ This can be generated from the statistics dataframe.
     <br />
     <br />
 
+.. GENERATED FROM PYTHON SOURCE LINES 550-578
+
+Relating Responses to Brain Landmarks
+-------------------------------------
+
+.. sidebar:: fOLD Toolbox
+
+   You should use the fOLD toolbox to pick your optode locations
+   when designing your experiment.
+   The tool is very intuitive and easy to use.
+   Be sure to cite the authors if you use their tool or data:
+
+   Morais, Guilherme Augusto Zimeo, Joana Bisol Balardin, and João Ricardo Sato. "fNIRS optodes’ location decider (fOLD): a toolbox for probe arrangement guided by brain regions-of-interest." Scientific reports 8.1 (2018): 1-11.
+
+It can be useful to understand what brain structures
+the measured response may have resulted from. Here we illustrate
+how to report the brain structures/landmarks that the source
+detector pair with the largest response was sensitive to.
+
+First we determine the channel with the largest response.
+
+Next, we query the fOLD dataset to determine the
+brain landmarks that this channel is most sensitive to.
+
+MNE-NIRS does not distribute the fOLD toolbox or the data
+that they provide.
+The fOLD data is hosted at https://github.com/nirx/fOLD-public
+and you should download that first. Then you can use these functions
+to query their data. You must cite the fOLD authors if you
+use their tool or data.
+
+.. GENERATED FROM PYTHON SOURCE LINES 578-583
+
+.. code-block:: default
+
+
+    largest_response_channel = ch_model_df.loc[ch_model_df['Coef.'].idxmax()]
+    largest_response_channel
+
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    Coef.          19.332204
+    Std.Err.        4.189391
+    z               4.614561
+    P>|z|           0.000004
+    [0.025         11.121148
+    0.975]          27.54326
+    Chroma               hbo
+    Significant         True
+    Name: (S5_D7 hbo, Tapping/Left), dtype: object
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 584-593
+
+Next we use information from the fOLD toolbox to report the
+channel specificity to different brain regions.
+These files are not distributedd with MNE-NIRS.
+You need to download them from the authors website.
+In this example I have downloaded the entire ``fOLD-public`` repository
+as a zip and expanded it in ``/home/rob/mne_data/fOLD/``.
+To use the functions ``fold_channel_specificity`` and ``fold_landmark_specificity``
+you must pass the location of the fOLD xls files as an argument
+so the software knows where you placed the data.
+
+.. GENERATED FROM PYTHON SOURCE LINES 594-602
+
+.. code-block:: default
+
+
+    fold_files = [os.path.join(os.path.expanduser("~"), "mne_data", "fOLD", "fOLD-public-master", "Supplementary", "10-10.xls"),
+                  os.path.join(os.path.expanduser("~"), "mne_data", "fOLD", "fOLD-public-master", "Supplementary", "10-5.xls")]
+
+    raw_channel = raw_haemo.copy().pick(largest_response_channel.name[0])
+    fold_channel_specificity(raw_channel, fold_files)[0]
+
+
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>Channel</th>
+          <th>Source</th>
+          <th>Detector</th>
+          <th>Distance (mm)</th>
+          <th>brainSens</th>
+          <th>X (mm)</th>
+          <th>Y (mm)</th>
+          <th>Z (mm)</th>
+          <th>Landmark</th>
+          <th>Specificity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>0</th>
+          <td>100.0</td>
+          <td>C4</td>
+          <td>C2</td>
+          <td>40.0</td>
+          <td>7.944795</td>
+          <td>42.0</td>
+          <td>-21.0</td>
+          <td>62.0</td>
+          <td>R Precentral Gyrus</td>
+          <td>48.935362</td>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td>100.0</td>
+          <td>C4</td>
+          <td>C2</td>
+          <td>40.0</td>
+          <td>7.944795</td>
+          <td>42.0</td>
+          <td>-21.0</td>
+          <td>62.0</td>
+          <td>R Postcentral Gyrus</td>
+          <td>40.399862</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>100.0</td>
+          <td>C4</td>
+          <td>C2</td>
+          <td>40.0</td>
+          <td>7.944795</td>
+          <td>42.0</td>
+          <td>-21.0</td>
+          <td>62.0</td>
+          <td>R Inferior Parietal Lobule</td>
+          <td>2.960631</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>100.0</td>
+          <td>C4</td>
+          <td>C2</td>
+          <td>40.0</td>
+          <td>7.944795</td>
+          <td>42.0</td>
+          <td>-21.0</td>
+          <td>62.0</td>
+          <td>R Superior Frontal Gyrus</td>
+          <td>2.944289</td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>100.0</td>
+          <td>C4</td>
+          <td>C2</td>
+          <td>40.0</td>
+          <td>7.944795</td>
+          <td>42.0</td>
+          <td>-21.0</td>
+          <td>62.0</td>
+          <td>R SupraMarginal Gyrus</td>
+          <td>2.083585</td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>100.0</td>
+          <td>C4</td>
+          <td>C2</td>
+          <td>40.0</td>
+          <td>7.944795</td>
+          <td>42.0</td>
+          <td>-21.0</td>
+          <td>62.0</td>
+          <td>R Middle Frontal Gyrus</td>
+          <td>1.981430</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 603-607
+
+We observe that the channel with the largest response to tapping
+had the greatest specificity to the Precentral Gyrus, which is
+the site of the primary motor cortex. This is consistent
+with the expectation for a finger tapping task.
+
+.. GENERATED FROM PYTHON SOURCE LINES 611-618
+
+Conclusion
+----------
+
+This example has demonstrated how to perform a group level analysis
+using a GLM approach.
+We observed the responses were evoked primarily contralateral to the
+hand of tapping and most likely originate from the primary motor cortex.
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  57.648 seconds)
+   **Total running time of the script:** ( 1 minutes  8.457 seconds)
 
-**Estimated memory usage:**  459 MB
+**Estimated memory usage:**  526 MB
 
 
 .. _sphx_glr_download_auto_examples_general_plot_12_group_glm.py:

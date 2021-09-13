@@ -175,6 +175,8 @@
     <a class="reference internal nav-link" href="#module-mne_nirs.io.snirf">
      MNE-NIRS
     </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
    </li>
   </ul>
  </li>
@@ -302,10 +304,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.io.read_raw_hitachi.html#mne.io.read_raw_hitachi" title="mne.io.read_raw_hitachi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_hitachi</span></code></a>(fname[, preload, verbose])</p></td>
 <td><p>Reader for a Hitachi fNIRS recording.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.io.read_raw_nirx.html#mne.io.read_raw_nirx" title="mne.io.read_raw_nirx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_nirx</span></code></a>(fname[, saturated, preload, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne.io.read_raw_nirx.html#mne.io.read_raw_nirx" title="mne.io.read_raw_nirx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_nirx</span></code></a>(fname[, saturated, preload, ...])</p></td>
 <td><p>Reader for a NIRX fNIRS recording.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf" title="mne.io.read_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_snirf</span></code></a>(fname[, optode_frame, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.io.read_raw_snirf.html#mne.io.read_raw_snirf" title="mne.io.read_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_snirf</span></code></a>(fname[, optode_frame, ...])</p></td>
 <td><p>Reader for a continuous wave SNIRF data.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne.io.read_raw_boxy.html#mne.io.read_raw_boxy" title="mne.io.read_raw_boxy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_raw_boxy</span></code></a>(fname[, preload, verbose])</p></td>
@@ -324,6 +326,20 @@ epoching, visualisation, etc is not included here and can be found in the
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.snirf.write_raw_snirf.html#mne_nirs.io.snirf.write_raw_snirf" title="mne_nirs.io.snirf.write_raw_snirf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_raw_snirf</span></code></a>(raw, fname)</p></td>
 <td><p>Write continuous wave data to disk in SNIRF format.</p></td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="module-mne_nirs.io"></span><table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.io.fold_landmark_specificity.html#mne_nirs.io.fold_landmark_specificity" title="mne_nirs.io.fold_landmark_specificity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fold_landmark_specificity</span></code></a>(raw, landmark[, ...])</p></td>
+<td><p>Return the specificity of each channel to a specified brain landmark.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.io.fold_channel_specificity.html#mne_nirs.io.fold_channel_specificity" title="mne_nirs.io.fold_channel_specificity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fold_channel_specificity</span></code></a>(raw[, fold_files, ...])</p></td>
+<td><p>Return the landmarks and specificity a channel is sensitive to.</p></td>
 </tr>
 </tbody>
 </table>
@@ -352,7 +368,7 @@ epoching, visualisation, etc is not included here and can be found in the
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.short_channels.html#mne.preprocessing.nirs.short_channels" title="mne.preprocessing.nirs.short_channels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">short_channels</span></code></a>(info[, threshold])</p></td>
 <td><p>Determine which NIRS channels are short.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.scalp_coupling_index.html#mne.preprocessing.nirs.scalp_coupling_index" title="mne.preprocessing.nirs.scalp_coupling_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalp_coupling_index</span></code></a>(raw[, l_freq, h_freq, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.scalp_coupling_index.html#mne.preprocessing.nirs.scalp_coupling_index" title="mne.preprocessing.nirs.scalp_coupling_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalp_coupling_index</span></code></a>(raw[, l_freq, h_freq, ...])</p></td>
 <td><p>Calculate scalp coupling index.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne.preprocessing.nirs.temporal_derivative_distribution_repair.html#mne.preprocessing.nirs.temporal_derivative_distribution_repair" title="mne.preprocessing.nirs.temporal_derivative_distribution_repair"><code class="xref py py-obj docutils literal notranslate"><span class="pre">temporal_derivative_distribution_repair</span></code></a>(raw, *)</p></td>
@@ -385,10 +401,10 @@ epoching, visualisation, etc is not included here and can be found in the
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.preprocessing.peak_power.html#mne_nirs.preprocessing.peak_power" title="mne_nirs.preprocessing.peak_power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peak_power</span></code></a>(raw[, time_window, threshold, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.preprocessing.peak_power.html#mne_nirs.preprocessing.peak_power" title="mne_nirs.preprocessing.peak_power"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peak_power</span></code></a>(raw[, time_window, threshold, ...])</p></td>
 <td><p>Compute peak spectral power metric for each channel and time window.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.preprocessing.scalp_coupling_index_windowed.html#mne_nirs.preprocessing.scalp_coupling_index_windowed" title="mne_nirs.preprocessing.scalp_coupling_index_windowed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalp_coupling_index_windowed</span></code></a>(raw[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.preprocessing.scalp_coupling_index_windowed.html#mne_nirs.preprocessing.scalp_coupling_index_windowed" title="mne_nirs.preprocessing.scalp_coupling_index_windowed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalp_coupling_index_windowed</span></code></a>(raw[, ...])</p></td>
 <td><p>Compute scalp coupling index for each channel and time window.</p></td>
 </tr>
 </tbody>
@@ -403,7 +419,7 @@ epoching, visualisation, etc is not included here and can be found in the
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_first_level_design_matrix</span></code></a>(raw[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.make_first_level_design_matrix.html#mne_nirs.experimental_design.make_first_level_design_matrix" title="mne_nirs.experimental_design.make_first_level_design_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_first_level_design_matrix</span></code></a>(raw[, ...])</p></td>
 <td><p>Generate a design matrix based on annotations and model HRF.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.experimental_design.create_boxcar.html#mne_nirs.experimental_design.create_boxcar" title="mne_nirs.experimental_design.create_boxcar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_boxcar</span></code></a>(raw[, event_id, stim_dur])</p></td>
@@ -429,7 +445,7 @@ epoching, visualisation, etc is not included here and can be found in the
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.run_glm.html#mne_nirs.statistics.run_glm" title="mne_nirs.statistics.run_glm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_glm</span></code></a>(raw, design_matrix[, noise_model, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.run_glm.html#mne_nirs.statistics.run_glm" title="mne_nirs.statistics.run_glm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_glm</span></code></a>(raw, design_matrix[, noise_model, ...])</p></td>
 <td><p>GLM fit for an MNE structure containing fNIRS data.</p></td>
 </tr>
 </tbody>
@@ -466,19 +482,19 @@ View the class documentation above for a detailed list of methods.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.to_dataframe" title="mne_nirs.statistics.RegressionResults.to_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.to_dataframe</span></code></a>([order])</p></td>
 <td><p>Return a tidy dataframe representing the GLM results.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.to_dataframe_region_of_interest</span></code></a>(…)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest" title="mne_nirs.statistics.RegressionResults.to_dataframe_region_of_interest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.to_dataframe_region_of_interest</span></code></a>(...)</p></td>
 <td><p>Region of interest results as a dataframe.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.scatter</span></code></a>([conditions, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.scatter</span></code></a>([conditions, ...])</p></td>
 <td><p>Scatter plot of the GLM results.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.plot_topo" title="mne_nirs.statistics.RegressionResults.plot_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.plot_topo</span></code></a>([conditions, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.plot_topo" title="mne_nirs.statistics.RegressionResults.plot_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.plot_topo</span></code></a>([conditions, ...])</p></td>
 <td><p>Plot 2D topography of GLM data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.surface_projection" title="mne_nirs.statistics.RegressionResults.surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.surface_projection</span></code></a>([…])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.surface_projection" title="mne_nirs.statistics.RegressionResults.surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.surface_projection</span></code></a>([...])</p></td>
 <td><p>Project GLM results on to the surface of the brain.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.scatter</span></code></a>([conditions, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.scatter" title="mne_nirs.statistics.RegressionResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.scatter</span></code></a>([conditions, ...])</p></td>
 <td><p>Scatter plot of the GLM results.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.RegressionResults.html#mne_nirs.statistics.RegressionResults.save" title="mne_nirs.statistics.RegressionResults.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegressionResults.save</span></code></a>(fname[, overwrite])</p></td>
@@ -490,7 +506,7 @@ View the class documentation above for a detailed list of methods.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.ContrastResults.html#mne_nirs.statistics.ContrastResults.plot_topo" title="mne_nirs.statistics.ContrastResults.plot_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ContrastResults.plot_topo</span></code></a>([figsize, sphere])</p></td>
 <td><p>Plot topomap GLM contrast data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.ContrastResults.html#mne_nirs.statistics.ContrastResults.scatter" title="mne_nirs.statistics.ContrastResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ContrastResults.scatter</span></code></a>([conditions, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.ContrastResults.html#mne_nirs.statistics.ContrastResults.scatter" title="mne_nirs.statistics.ContrastResults.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ContrastResults.scatter</span></code></a>([conditions, ...])</p></td>
 <td><p>Scatter plot of the GLM results.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.statistics.ContrastResults.html#mne_nirs.statistics.ContrastResults.save" title="mne_nirs.statistics.ContrastResults.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ContrastResults.save</span></code></a>(fname[, overwrite])</p></td>
@@ -524,7 +540,7 @@ View the class documentation above for a detailed list of methods.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_nirs_source_detector.html#mne_nirs.visualisation.plot_nirs_source_detector" title="mne_nirs.visualisation.plot_nirs_source_detector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_nirs_source_detector</span></code></a>(data[, info, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_nirs_source_detector.html#mne_nirs.visualisation.plot_nirs_source_detector" title="mne_nirs.visualisation.plot_nirs_source_detector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_nirs_source_detector</span></code></a>(data[, info, ...])</p></td>
 <td><p>3D visualisation of fNIRS response magnitude.</p></td>
 </tr>
 </tbody>
@@ -539,10 +555,10 @@ View the class documentation above for a detailed list of methods.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_topo.html#mne_nirs.visualisation.plot_glm_topo" title="mne_nirs.visualisation.plot_glm_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_topo</span></code></a>(inst, glm_estimates, design_matrix)</p></td>
 <td><p>Plot topomap of NIRS GLM data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo" title="mne_nirs.visualisation.plot_glm_contrast_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_contrast_topo</span></code></a>(inst, contrast[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_contrast_topo.html#mne_nirs.visualisation.plot_glm_contrast_topo" title="mne_nirs.visualisation.plot_glm_contrast_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_contrast_topo</span></code></a>(inst, contrast[, ...])</p></td>
 <td><p>Plot topomap of NIRS GLM data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_group_topo</span></code></a>(inst, statsmodel_df[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_group_topo.html#mne_nirs.visualisation.plot_glm_group_topo" title="mne_nirs.visualisation.plot_glm_group_topo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_group_topo</span></code></a>(inst, statsmodel_df[, ...])</p></td>
 <td><p>Plot topomap of NIRS group level GLM results.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_glm_surface_projection.html#mne_nirs.visualisation.plot_glm_surface_projection" title="mne_nirs.visualisation.plot_glm_surface_projection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_glm_surface_projection</span></code></a>(inst, statsmodel_df)</p></td>
@@ -557,7 +573,7 @@ View the class documentation above for a detailed list of methods.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_timechannel_quality_metric.html#mne_nirs.visualisation.plot_timechannel_quality_metric" title="mne_nirs.visualisation.plot_timechannel_quality_metric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_timechannel_quality_metric</span></code></a>(raw, scores, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.visualisation.plot_timechannel_quality_metric.html#mne_nirs.visualisation.plot_timechannel_quality_metric" title="mne_nirs.visualisation.plot_timechannel_quality_metric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_timechannel_quality_metric</span></code></a>(raw, scores, ...)</p></td>
 <td><p>Plot time x channel based quality metrics.</p></td>
 </tr>
 </tbody>
@@ -571,7 +587,7 @@ View the class documentation above for a detailed list of methods.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.simulation.simulate_nirs_raw.html#mne_nirs.simulation.simulate_nirs_raw" title="mne_nirs.simulation.simulate_nirs_raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate_nirs_raw</span></code></a>([sfreq, amplitude, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mne_nirs.simulation.simulate_nirs_raw.html#mne_nirs.simulation.simulate_nirs_raw" title="mne_nirs.simulation.simulate_nirs_raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate_nirs_raw</span></code></a>([sfreq, amplitude, ...])</p></td>
 <td><p>Create simulated fNIRS data.</p></td>
 </tr>
 </tbody>
@@ -659,7 +675,7 @@ View the class documentation above for a detailed list of methods.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
 </p>
     </div>
     
