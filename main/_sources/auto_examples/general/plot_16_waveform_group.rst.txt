@@ -252,9 +252,9 @@ dictionary (`all_evokeds`) for each condition.
 
  .. code-block:: none
 
-    /tmp/tmpk28kvw46/20ba005abd7002dc96fc5054139d0bbf2ca6de52/examples/general/plot_16_waveform_group.py:142: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmp6fpcmb5k/2deb73184b4609d0a72495e65565f430bbff0704/examples/general/plot_16_waveform_group.py:142: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
-    /tmp/tmpk28kvw46/20ba005abd7002dc96fc5054139d0bbf2ca6de52/examples/general/plot_16_waveform_group.py:142: RuntimeWarning: No bad channels to interpolate. Doing nothing...
+    /tmp/tmp6fpcmb5k/2deb73184b4609d0a72495e65565f430bbff0704/examples/general/plot_16_waveform_group.py:142: RuntimeWarning: No bad channels to interpolate. Doing nothing...
       raw_od.interpolate_bads()
 
 
@@ -348,7 +348,7 @@ as illustrated by the head inset in the top right corner of the figure.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f6b08f861c0>
+    <matplotlib.legend.Legend object at 0x7f4fb62fe130>
 
 
 
@@ -468,7 +468,7 @@ regions of the brain for each condition.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f6ad89ea160>
+    <matplotlib.legend.Legend object at 0x7f4fb63d4df0>
 
 
 
@@ -641,7 +641,7 @@ single ROI between conditions.
            <script type="text/javascript" data-lets-plot-script="library" src="https://cdn.jsdelivr.net/gh/JetBrains/lets-plot@v2.1.0/js-package/distr/lets-plot.min.js"></script>
        </head>
        <body>
-              <div id="lJqeD9"></div>
+              <div id="5Mm8Bg"></div>
        <script type="text/javascript" data-lets-plot-script="plot">
            var plotSpec={
     "data":{
@@ -689,7 +689,7 @@ single ROI between conditions.
     }
     }]
     };
-           var plotContainer = document.getElementById("lJqeD9");
+           var plotContainer = document.getElementById("5Mm8Bg");
            LetsPlot.buildPlotFromProcessedSpecs(plotSpec, -1, -1, plotContainer);
        </script>
        </body>
@@ -732,7 +732,7 @@ effect model.
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.9.6/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
+    /opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/statsmodels/regression/mixed_linear_model.py:2261: ConvergenceWarning: The Hessian matrix at the estimated parameter values is not positive definite.
       warnings.warn(msg, ConvergenceWarning)
 
 
@@ -875,7 +875,7 @@ hand that is tapping.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.787 seconds)
+   **Total running time of the script:** ( 0 minutes  8.056 seconds)
 
 **Estimated memory usage:**  9 MB
 
